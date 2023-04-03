@@ -23,7 +23,7 @@ export class Resume {
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
   }
 
-  async activate() {
+  binding() {
 
     this.basics = this.resumeStore.basics;
     this.languages = this.resumeStore.languages;
@@ -105,23 +105,23 @@ export class Resume {
     }
   }
 
-  attaching() {
-    ($('body') as any).scrollspy({ target: '#TOC', offset: 232 });
+  // attaching() {
+  //   ($('body') as any).scrollspy({ target: '#TOC', offset: 232 });
 
-    $("#publications-list").on("show.bs.collapse", () => { this.showingPublications = true; });
-    $("#publications-list").on("hide.bs.collapse", () => { this.showingPublications = false; });
-    this.companies = this.companies
-      .map((s, index) => {
-        s.showingHighlights = false;
-        $(`#highlights_${index}`).on("show.bs.collapse", () => { s.showingHighlights = true; });
-        $(`#highlights_${index}`).on("hide.bs.collapse", () => { s.showingHighlights = false; });
-        return s;
-      });
+  //   $("#publications-list").on("show.bs.collapse", () => { this.showingPublications = true; });
+  //   $("#publications-list").on("hide.bs.collapse", () => { this.showingPublications = false; });
+  //   this.companies = this.companies
+  //     .map((s, index) => {
+  //       s.showingHighlights = false;
+  //       $(`#highlights_${index}`).on("show.bs.collapse", () => { s.showingHighlights = true; });
+  //       $(`#highlights_${index}`).on("hide.bs.collapse", () => { s.showingHighlights = false; });
+  //       return s;
+  //     });
 
-    ($(".company .remote i") as any).tooltip();
-    ($(".company .contract i") as any).tooltip();
-    ($(".company .personal i") as any).tooltip();
-  }
+  //   ($(".company .remote i") as any).tooltip();
+  //   ($(".company .contract i") as any).tooltip();
+  //   ($(".company .personal i") as any).tooltip();
+  // }
 
 
   // private evaluateSkillPriority(a: number, b: number) {
