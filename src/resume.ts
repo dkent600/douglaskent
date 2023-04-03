@@ -18,29 +18,24 @@ export class Resume {
   qualities: Array<string>;
   publications: Array<any>;
   showingPublications = false;
-  categories: Array<string>;
-
-  resumeJson: IResume;
+  keywords: Array<string>;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
-    this.resumeJson = resumeStore.resumeJson;
   }
 
   async activate() {
 
-    this.basics = this.resumeJson.basics;
-    this.languages = this.resumeJson.languages;
-    this.profiles = this.resumeJson.basics.profiles;
-    this.citizenship = this.resumeJson.citizenship;
-    this.companies = this.resumeJson.work
-      .sort((a, b) => { return this.evaluateDateTime(a.endDate, b.endDate, -1); });
-    const schools = this.resumeJson.education;
-    this.schools = schools.sort((a, b) => { return this.evaluateDateTime(a.startDate, b.startDate, -1); });
-    this.testimonials = this.resumeJson.references;
-    this.accomplishments = this.resumeJson.accomplishments;
-    this.qualities = this.resumeJson.qualities;
-    this.publications = this.resumeJson.publications;
-    this.categories = this.resumeJson.keywords;
+    this.basics = this.resumeStore.basics;
+    this.languages = this.resumeStore.languages;
+    this.profiles = this.resumeStore.profiles;
+    this.citizenship = this.resumeStore.citizenship;
+    this.companies = this.resumeStore.work.sort((a, b) => { return this.evaluateDateTime(a.endDate, b.endDate, -1); })
+    this.schools = this.resumeStore.schools.sort((a, b) => { return this.evaluateDateTime(a.startDate, b.startDate, -1); });
+    this.testimonials = this.resumeStore.testimonials;
+    this.accomplishments = this.resumeStore.accomplishments;
+    this.qualities = this.resumeStore.qualities;
+    this.publications = this.resumeStore.publications;
+    this.keywords = this.resumeStore.keywords;
 
     /**
      * Map a keyword (a category of skills) to a set of skill names.
@@ -68,7 +63,7 @@ export class Resume {
       for (const keyword of skill.keywords) {
         let skillCategory = this.skills.get(keyword);
         if (!skillCategory) {
-          if (!this.categories.find((s) => s === keyword)) {
+          if (!this.keywords.find((s) => s === keyword)) {
             // this.categories.push(`${keyword} [not in keywords list!]`);
             console.log(`!!! ${keyword} is not in keywords list!`);
           }
@@ -128,28 +123,29 @@ export class Resume {
     $(".company .personal i").tooltip();
   }
 
-  private evaluateSkillPriority(a: number, b: number) {
-    const factor = 1;
-    /* whereever pririty is 0 or undefined, it goes last, otherwise is increasing */
-    if (!a && !b) return -1;
 
-    if (!a) return factor;
-    if (!b) return -factor;
+  // private evaluateSkillPriority(a: number, b: number) {
+  //     const factor = 1;
+  //     /* whereever pririty is 0 or undefined, it goes last, otherwise is increasing */
+  //     if (!a && !b) return -1;
 
-    return (a - b) * factor;
-  }
+  //     if (!a) return factor;
+  //     if (!b) return -factor;
 
-  private evaluateString(a: string, b: string, factor: number) {
-    if (!a && !b) return 0;
+  //     return (a - b) * factor;
+  // }
 
-    if (!a) return -factor;
-    if (!b) return factor;
+  // private evaluateString(a: string, b: string, factor: number) {
+  //     if (!a && !b) return 0;
 
-    a = a.toLowerCase();
-    b = b.toLowerCase();
+  //     if (!a) return -factor;
+  //     if (!b) return factor;
 
-    return a.localeCompare(b) * factor;
-  }
+  //     a = a.toLowerCase();
+  //     b = b.toLowerCase();
+
+  //     return a.localeCompare(b) * factor;
+  // }
 
   private evaluateDateTime(valueA: string, valueB: string, factor: number) {
     // let a = this.moment.utc(valueA);

@@ -140,10 +140,10 @@
             <section id="skills" class="section scrollspy">
                 <h3>Skills</h3>
                 <div class="content">
-                    <div repeat.for="category of categories">
+                    <div repeat.for="keyword of keywords">
                         <div class="skills-for-keyword">
-                            <h4 class="skill-keyword">${category}</h4>
-                            <span repeat.for="skill of skills.get(category)">
+                            <h4 class="skill-keyword">${keyword}</h4>
+                            <span repeat.for="skill of skills.get(keyword)">
                                 <span if.bind="skill.url" class="badge badge-pill skill-name">
                                     <a href.bind="skill.url" target="_blank">${skill.name}</a>
                                 </span>
