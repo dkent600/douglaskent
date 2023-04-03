@@ -1,4 +1,3 @@
-import { IResume } from "./resume-service";
 import { IResumeStore, ISkill } from "./resume-store";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */

@@ -8,7 +8,3 @@ Aurelia
   .register(ResumeStore)
   .app(Resume)
   .start();
-
-  // Aurelia
-  // .app(Resume)
-  // .start();
