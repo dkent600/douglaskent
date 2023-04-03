@@ -1,3 +1,297 @@
-.message {
-  background-color: lightblue;
+/* bootpstrap colors*/
+$green-500: #198754;
+$green-600: #146c43;
+$orange-a700: #ff6d00;
+
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+/* bootstrap classes */
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+$paragraph-margin-bottom: 1rem !default;
+p {
+  margin-top: 0;
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+/* not-bootstrap */
+h1 {
+  font-weight: 400;
+  margin-bottom:1.5rem;
+}
+
+@mixin highlight-text {
+  color: $gray-700;
+  font-weight: 500;
+}
+
+.section .content {
+  padding-left: .75rem;
+}
+
+.section h3 {
+  width: 100%;
+  border-bottom: .1rem solid $gray-400;
+  margin-bottom: 1rem;
+  padding-left: .1rem;
+}
+
+@mixin happy-text {
+  color: $orange-a700;
+}
+
+.quality {
+  padding-top: 0;
+  margin-bottom: .3rem;
+}
+
+.quality td>i {
+  padding-right: .5rem;
+}
+
+.quality-body {
+  // border-left: 3px solid $gray-400;
+  padding-left: .5rem;
+}
+
+// .quality-bullet i {
+//   font-weight: 900;
+//   color: $green-500;
+//   padding-right: .75rem;
+// }
+
+.quality-bullet i {
+  font-weight: 900;
+  font-size: 2rem;
+  padding:0;
+  color: $green-500;
+  background-color: $gray-300 !important;
+  @extend .rounded-circle;
+}
+
+.list-group-item.quality {
+  display: inline-block;
+}
+
+.accomplishment-stars {
+  text-align: center; 
+  margin-bottom:.75rem;
+  padding-right: 3rem;
+  width: 100%;
+}
+
+.accomplishment-star {
+  color: $green-500;
+  padding-right: .2rem;
+}
+
+.accomplishment-body {
+  text-align: justify;
+  padding-right: 3rem;
+}
+
+.accomplishment.list-group-item {
+  padding-left:0 !important;
+}
+
+.profile-icon {
+  margin-right: 1rem;
+  @include happy-text;
+}
+
+.section {
+  margin-bottom:1.5rem;
+}
+
+.company-position,
+.language-name,
+.school-name,
+.language-name,
+.citizenship-name {
+  @include highlight-text;
+}
+
+.company .remote i
+, .company .contract i 
+, .company .personal i 
+{
+  font-size: 1rem;
+  color:$green-500;
+}
+
+.company-icons {
+  display:inline-block;
+  padding-left: .5rem;
+}
+
+.company-name {
+  display: inline-block;
+  font-weight: 500;
+}
+
+.company,
+.school 
+{
+  margin-bottom: 1.5rem;
+}
+
+.company .highlights {
+  padding-left: .5rem;
+  padding-top: .5rem;
+}
+
+.company .highlights a.show-link {
+  display: inline-block;
+  margin-bottom: .5rem;
+  color: $green-600;
+  text-decoration: underline;
+}
+
+.company .highlights a.show-link i {
+  margin-left:.25rem;
+}
+
+.company-summary {
+  margin-bottom: 1rem;
+}
+
+.company .separator {
+  display: inline-block;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+.skill-name {
+  font-weight: normal;
+  padding:.55rem;
+  margin-bottom:.3rem;
+  margin-right:.3rem;
+  background-color: $gray-200;
+  color: $gray-900;
+}
+
+.skills-for-keyword {
+  margin-bottom: 1.5rem;
+}
+
+body {
+  // for scrollspy
+  position:relative;
+}
+
+#TOC a.active {
+  border-left: 2px solid black;
+  font-weight: bold;
+}
+
+#TOC a:hover,
+#TOCSmall a:hover {
+  opacity: .5;
+}
+
+#TOC a {
+  padding-bottom:.1rem;
+  color: inherit;
+  border-left: 2px solid transparent;
+  padding-left:1.1rem;
+}
+
+nav#TOC {
+  box-shadow: none;
+  padding-left: 0;
+
+}
+
+#TOCSmall {
+  z-index: 1030;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1030;
+}
+
+#TOCSmall a.active {
+  font-weight: bold;
+}
+
+#TOCSmall button {
+  background-color: $gray-100;
+  opacity: .8;
+}
+
+#TOCSmall button:focus {
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+#TOCSmall a {
+  padding-bottom:.1rem;
+  color: inherit;
+  padding-left:1.1rem;
+}
+
+#TOCSmall .dropdown-menu {
+  background-color: $gray-300;
+}
+
+.side-panel {
+  position: fixed;
+  z-index: 1030;
+}
+
+blockquote.testimonial  .citation::before {
+    font-family: "serif";
+    content: "\201C";
+    font-size: 4rem;
+    position: absolute;
+    left: -2.2rem;
+    top: -1.75rem;
+    color: #7a7a7a;
+  }
+  
+blockquote.testimonial {
+  border: none !important;
+  position: relative;
+  display: inline-block;
+  margin-left: 2.25rem;
+  margin-bottom: 1.5rem;
+}
+
+blockquote.testimonial .blockquote-quote {
+  font-size: 1rem !important;
+  font-style: italic;
+}
+
+blockquote.testimonial .blockquote-footer {
+  margin-top: 1rem;
+  font-size: .9rem;
+}
+
+#publications-list {
+  padding-left: .75rem;
+  padding-right: 3rem;
+}
+
+#reasons,
+#testimonials,
+#accomplishments,
+#education,
+#skill,
+#history
+ {
+  page-break-before: always;
+}
+
+.summary div {
+  @extend p;
 }

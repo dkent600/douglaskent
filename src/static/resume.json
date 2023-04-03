@@ -1,0 +1,1966 @@
+{
+  "$schema": "./schema.json",
+  "basics": {
+    "name": "Douglas Kent",
+    "label": "Fullstack Web3/Web Application Developer",
+    "picture": "",
+    "email": "resume@douglaskent.com",
+    "resumeFeedbackEmail": "resume-feedback@douglaskent.com",
+    "phone": "+506 8591-5302 (CR)",
+    "phone2": "+1 (512) 402-8735 (US)",
+    "website": "http://www.douglaskent.com/techresume",
+    "summary": "<div>Hi, I am an experienced software engineer and web site developer, specializing in building antifragility for my clients using full-stack development of enterprise-scale websites built from state-of-the-art technologies and architectures, including single page applications and service-oriented architectures using Aurelia/Typescript, .NET Core/C# and Ethereum blockchain technologies.</div><div>I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest!</div>",
+    "location": {
+      "address": "Alegria Village",
+      "postalCode": "",
+      "city": "San Mateo",
+      "countryCode": "CR",
+      "region": "Alajuela",
+      "countryName": "Costa Rica"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "Doug Kent",
+        "url": "http://www.linkedin.com/in/doug-kent-760876a",
+        "icon": "linkedin"
+      },
+      {
+        "network": "GitHub",
+        "username": "dkent600",
+        "url": "http://github.com/dkent600",
+        "icon": "github"
+      }
+    ]
+  },
+  "keywords": [
+    "Website and Application Development",
+    "Software Languages",
+    "Markup Languages",
+    "Blockchain",
+    "Databases",
+    "Module Bundling and Loading",
+    "Software Development Platforms",
+    "Test Frameworks",
+    "Scripting",
+    "Development Tools",
+    "Website and Application Hosting",
+    "Cryptography",
+    "Localization/Globalization",
+    "Charting & Graphing Frameworks",
+    "Semantic Search Frameworks",
+    "Cloud Services",
+    "Operating Systems",
+    "Development Processes"
+  ],
+  "work": [
+    {
+      "company": "Curve Labs",
+      "position": "Senior Lead Developer",
+      "remote": true,
+      "website": "https://www.curvelabs.eu/",
+      "startDate": "2020-08",
+      "summary": "Developed multiple decentralized applications (dApps), running on the Ethereum blockchain, focused on decentralize finance (Defi) and regenerative finance (Refi), including <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo (in progress)</a>, <a href=\"https://deals.prime.xyz/\" target=\"_blank\">PrimeDeals Web3 partnerships made easy</a>, <a href=\"https://launch.prime.xyz\" target=\"_blank\">PrimeLaunch decentralized project funding raising</a>, <a href=\"https://primepool.primedao.io\" target=\"_blank\">PrimePool liquidity and farming</a>, <a href=\"https://primelock.eth.link\" target=\"_blank\">PrimeLocking for reputation</a> (hosted on IPFS), and the original <a href=\"https://primedao.eth.link\" target=\"_blank\">PRIMEDao Home Page</a> (hosted on IPFS).",
+      "endDate": "2022-11",
+      "highlights": [
+        "Development Lead on Kolektivo, Prime Deals and Prime Launch, sole developer on all of the other dApps listed above",
+        "Led teams of two front-end developers on Kolektivo, five on Prime Deals, and one on Prime Launch",
+        "As a developer, was primarily responsible for developing the Web3 front-end user interfaces.  Colleagues wrote the smart contracts.",
+        "The Prime dApps are working with <a href=\"https://balancer.finance/\" target=\"_blank\">Balancer liquidity pools</a>, a decentralized automated market maker running on ethereum.",
+        "With the exception of the PrimeDAO Home Page, which uses React.js, the dApps are all implemented using <a href=\"https://aurelia.io/\" target=\"_blank\">Aurelia</a>."
+      ],
+      "skills": [
+        "Ethereum",
+        "IPFS",
+        "ENS",
+        "Defi",
+        "TypeScript",
+        "Javascript",
+        "Solidity",
+        "Kovan",
+        "Aurelia",
+        "HTML5",
+        "Webpack",
+        "CSS",
+        "SASS",
+        "Responsive",
+        "NodeJs",
+        "GitHub",
+        "ReactJs",
+        "SOA",
+        "SPA"
+      ]
+    },
+    {
+      "company": "DAOstack",
+      "position": "Senior Lead Developer",
+      "remote": true,
+      "website": "http://www.daostack.io/",
+      "startDate": "2017-10",
+      "summary": "Performed multiple roles in the design, creation and use of DAOstack DAOs (decentralized autonomous organizations on the Ethereum blockchain) that are capable of decentralized governance at large scales.",
+      "endDate": "2020-10",
+      "highlights": [
+        "I was one of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
+        "Implemented and helped to design the <a href=\"https://github.com/daostack/dutchx-bootstrapper-ui\" target=\"_blank\">dxDAO Vote Staking Interface</a>, a website for initializing reputation in the dxDAO, a new decentralized autonomous organization (DAO) that governs the DutchX, a permissionless trading protocol for ERC20 tokens on the Ethereum blockchain. (The UI will disappear on 2019-06-28 when the dxDAO initialization period ends, but you can see walkthroughs <a href=\"https://twitter.com/_dx_dao/status/1138824722211311616\" target=\"_blank\">here</a> and <a href=\"https://blog.gnosis.pm/step-by-step-guide-to-earn-reputation-for-the-dxdao-with-the-gnosis-safe-cc54f3a93f3e\" target=\"_blank\">here</a>.)",
+        "Designed and implemented a well-reviewed architecture for the original version of <a href=\"https://github.com/daostack/arc.js_legacy\" target=\"_blank\">DAOstack Arc.js</a>",
+        "Implemented <a href=\"https://github.com/daostack/vanille\" target=\"_blank\">Vanille</a>, open-source software that leverage <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOStack Arc</a> to facilitate the creation of DAOstack DAOs",
+        "Responsible for deploying <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> smart contracts to Ethereum",
+        "Contributed to the design and development of <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> Solidity smart contracts"
+      ],
+      "skills": [
+        "Ethereum",
+        "TypeScript",
+        "Javascript",
+        "Solidity",
+        "Truffle",
+        "Heroku",
+        "Ganache",
+        "Kovan",
+        "Aurelia",
+        "HTML5",
+        "Webpack",
+        "Bootstrap",
+        "Bootstrap Material Design",
+        "JQuery",
+        "CSS",
+        "SASS",
+        "Responsive",
+        "NodeJs",
+        "GitHub",
+        "ReactJs",
+        "SOA",
+        "SPA"
+      ]
+    },
+    {
+      "company": "Vivalia Bistro Express",
+      "position": "Senior Lead Web Developer",
+      "remote": true,
+      "contract": true,
+      "website": "http://vivalia.ca/",
+      "startDate": "2016-06",
+      "summary": "Developed a website that gives Vivalia and its customers a highly efficient and enjoyable way to place and handle orders",
+      "endDate": "2016-10",
+      "highlights": [
+        "Designed and created the entire website and database myself",
+        "Highly performant, pleasing and intuitive user interface",
+        "Used all best-available web application technologies",
+        "Well-structured, modular code amenable to future maintenance and enhancement"
+      ],
+      "skills": [
+        "Aurelia",
+        "TypeScript",
+        "ASP.NET Core",
+        "C#",
+        "TypeScript",
+        "Javascript",
+        "HTML5",
+        "WebApi",
+        "JQuery",
+        "Ajax",
+        "Bootstrap",
+        "Entity Framework Core",
+        "ASP.NET Identity",
+        "Microsoft Sql Server",
+        "T-SQL",
+        "Unity",
+        "Azure",
+        "CSS",
+        "Responsive",
+        "TFS",
+        "SOA",
+        "SPA"
+      ]
+    },
+    {
+      "company": "Dicom Transportation Group",
+      "remote": true,
+      "contract": true,
+      "position": "Senior Web Developer",
+      "website": "http://www.dicom.com/",
+      "startDate": "2017-02",
+      "summary": "Fixed bugs and developed new features for an internal web application used to coordinate trucks, drivers, routes and delivery locations across Québec",
+      "endDate": "2017-04",
+      "highlights": [
+        "Fixed more bugs and added more features than the client planned-for"
+      ],
+      "skills": [
+        "MVC",
+        "ASP.NET",
+        "C#",
+        "Razor",
+        "HTML5",
+        "CSS",
+        "JQuery",
+        "Sql Server",
+        "T-SQL",
+        "Jira",
+        "BitBucket",
+        "Telerik"
+      ]
+    },
+    {
+      "company": "GE Healthcare",
+      "position": "Senior Lead Web Developer",
+      "remote": true,
+      "contract": true,
+      "website": "http://www.gehealthcare.com/",
+      "startDate": "2015-03",
+      "summary": "Developed automated machine communication enabling two companies to vastly increase the efficiency of their relationship",
+      "endDate": "2016-02",
+      "highlights": [
+        "Designed the whole thing, end-to-end",
+        "The only part I didn't write entirely myself was the AngularJs web application",
+        "Created a dynamic, data-driven schema for the exchanged content",
+        "Integrated lots of moving parts: an AngularJs web application, two external web services, .NET web server, Azure web job, and Sql Server database",
+        "Hosted on Azure"
+      ],
+      "skills": [
+        "ASP.NET",
+        "C#",
+        "Sql Server",
+        "T-SQL",
+        "Entity FrameWork",
+        "Unity",
+        "AngularJs",
+        "Typescript",
+        "WebApi",
+        "Azure",
+        "TFS",
+        "SPA",
+        "SOA"
+      ]
+    },
+    {
+      "company": "PSP Investments",
+      "position": "Senior Lead Web Developer",
+      "contract": true,
+      "website": "http://investpsp.ca/",
+      "startDate": "2014-05",
+      "summary": "As a member of the PSP business intelligence (BI) analytics group, single-handedly developed successful web applications for other departments within PSP",
+      "endDate": "2015-12",
+      "highlights": [
+        "Many commented that these websites were most performant and usable ever internally developed at PSP",
+        "One web application enabled users to search unstructured documents using a google-like interface and semantic search technologies",
+        "Another website reported data in charts, graphs and tables to assist PSP's executive portfolio rebalancing committee",
+        "Conducted research on knowledge base and graph and RDF database technologies and products, including AllegroGraph, Semaphore and Neo4j, to plot directions for expanding PSP's knowledge-based search capabilities"
+      ],
+      "skills": [
+        "DurandalJs",
+        ".NET",
+        "WebApi",
+        "C#",
+        "KnockoutJs",
+        "Javascript",
+        "HTML5",
+        "CSS",
+        "Unity",
+        "JQuery",
+        "Ajax",
+        "Bootstrap",
+        "Ajax",
+        "Entity Framework",
+        "RequireJs",
+        "D3",
+        "Highcharts",
+        "RequireJs",
+        "Agile",
+        "TFS",
+        "SPA",
+        "SOA"
+      ]
+    },
+    {
+      "company": "Revionics",
+      "position": "Senior Web Developer",
+      "remote": true,
+      "contract": true,
+      "website": "http://www.revionics.com/",
+      "startDate": "2011-11",
+      "summary": "Lead an offshore development team and participated in an Agile Scrum environment in the architecture and development of portions of a complex enterprise-scale, customer-facing web application",
+      "endDate": "2013-03",
+      "highlights": [
+        "In daily scrums, coordinated and helped train a team of seven developers located in India.  Training was primarily on Agile, development processes, and in the standards of code development quality upheld at Revionics",
+        "Led a team three developers in India in the architecture and development of a web GUI for managing security rights in the Revionics web application.  Responsible for the entire architecture, quality of the result, coordination of the entire team, and timely delivery.  Did half the coding myself",
+        "Saved the security rights project, in jeopardy of missing its deadline, by dropping the participating India team from 7 to 3 (sad but necessary)",
+        "Helped port a complex web GUI from ASP.NET to MVC.NET 3.0.  Designed the server-side architecture for the team.  Wrote most of the server-side code and assisted with client-side",
+        "Developed an unobtrusive framework for logging web application activity using dependency injection and API interception using Unity and a plugin architecture using the Managed Extensibility Framework (MEF)",
+        "Designed, developed and prototyped a reusable/extensible framework for writing SpecFlow integration tests using Unity, Moq and VSTest.  The prototype was written against Selenium to drive automated GUI tests"
+      ],
+      "skills": [
+        "ASP.NET",
+        "C#",
+        "MVC",
+        "Javascript",
+        "HTML",
+        "CSS",
+        "KnockoutJs",
+        "jquery",
+        "Telerik",
+        "ADO",
+        "MEF",
+        "Enterprise Framework",
+        "nHibernate",
+        "Moq",
+        "Unity",
+        "Selenium",
+        "SpecFlow",
+        "VSTest",
+        "Agile",
+        "TFS"
+      ]
+    },
+    {
+      "company": "ShiftWise",
+      "position": "Senior Lead Web Developer, Manager Partner Integrations",
+      "remote": true,
+      "website": "http://www.shiftwise.com/",
+      "startDate": "2003-08",
+      "summary": "Performed a lead role in an Agile Scrum environment in coding a complex enterprise-scale, customer-facing web application and associated automated web service interface",
+      "endDate": "2011-07",
+      "highlights": [
+        "Meeting an urgent deadline, virtually single-handedly implemented a system for handling mission-critical incoming and outgoing (SMS) messages to and from cell phones.   The architecture spanned a web site, three web services, two windows services, and two Sql Server databases",
+        "Was the Lead Developer on the ShiftWise Vendor Management System (VMS), a large and complex web application used by hospital administrators and medical staffing agencies to improve the process of hiring and placing temporary medical staff in hospitals",
+        "Was Manager and Lead Developer of ShiftWise Partner Integrations (PI), a set of web services and Windows applications enabling automated integrations between the ShiftWise VMS application and ShiftWise' customers' backoffice systems",
+        "Was the Senior Developer of ShiftWise TextConnect, enabling nurses to interact with the ShiftWise VMS using cell phone text messaging (SMS)",
+        "As Interim Development Team Manager and the most experienced .NET developer on the team, coordinated and set priorities for the team; helped raise the skills of the developers and improve the quality of output of the software engineering process",
+        "Worked smoothly with ShiftWise clients to plan and coordinate their side of the development of automated interfaces"
+      ],
+      "skills": [
+        "ASP.NET",
+        "C#",
+        "Javascript",
+        "MVC",
+        "Enterprise Framework",
+        "HTML",
+        "CSS",
+        "jquery",
+        "xml",
+        "XSLT",
+        "XSD",
+        "Entity Framework",
+        "LINQ",
+        "Sql Server",
+        "t-sql",
+        "WCF",
+        "WWF",
+        "Moq",
+        "NUnit",
+        "MSTest",
+        "Agile",
+        "TFS"
+      ]
+    },
+    {
+      "company": "Kill My TV!",
+      "position": "Web Designer and Developer",
+      "remote": true,
+      "personal": true,
+      "startDate": "2013-12",
+      "summary": "Designed and implemented a web application to intelligently exchange resources relevant to the implications of watching too much television",
+      "endDate": "2014-03",
+      "highlights": [
+        "Presented in French and English with instantaneous transition when switching between the two -- no postback",
+        "Takes users through a series of questions and customizes a set of resources according to their answers",
+        "Users can suggest and submit their own resources",
+        "Includes an extensive set of administration pages for creating the questions, answers and correlating them with resources"
+      ],
+      "skills": [
+        "ASP.NET",
+        "MVC",
+        "C#",
+        "Durandal",
+        "KnockoutJs",
+        "Javascript",
+        "HTML",
+        "CSS",
+        "WebAPI",
+        "jquery",
+        "Ajax",
+        "bootstrap",
+        "Sql Server",
+        "entity framework",
+        "t-sql",
+        "i18Next",
+        "jquery globalization",
+        "RequireJs",
+        "SPA",
+        "SOA"
+      ]
+    },
+    {
+      "company": "Ceiba Realty",
+      "position": "Web Designer and Developer",
+      "remote": true,
+      "personal": true,
+      "website": "http://www.ceibarealestatebelize.com/",
+      "startDate": "2002-10",
+      "summary": "For a real estate agency in Belize, designed and implemented a website for anyone looking for Belize real estate",
+      "endDate": "2017-10 (intermittent)",
+      "highlights": [
+        "I have taken the <a href='http://www.ceibarealestatebelize.com' target='_blank'>Ceiba Realty website</a> through several iterations in technologies and graphic designs since I first created it in 2005, keeping up with the latest technologies and trends",
+        "Did the whole thing myself"
+      ],
+      "skills": [
+        "ASP.NET Core",
+        "C#",
+        "Javascript",
+        "MVC",
+        "WebApi",
+        "Razor",
+        "HTML",
+        "CSS",
+        "KnockoutJs",
+        "Ajax",
+        "Bootstrap",
+        "Bootstrap Material Design",
+        "Responsive",
+        "Identity",
+        "entity Framework",
+        "Sql Server",
+        "T-Sql",
+        "Unity",
+        "jquery",
+        "RequireJs"
+      ]
+    },
+    {
+      "company": "Password Repository",
+      "position": "Web Designer and Developer",
+      "remote": true,
+      "personal": true,
+      "website": "",
+      "startDate": "2013-08",
+      "summary": "Designed and implemented a personal website using encription techniques that enable me to access all of my logins/passwords from anywhere without requiring SSL",
+      "endDate": "2017-09 (intermittent)",
+      "highlights": [
+        "Extensive use of hashing and encryption (both server and client-side), custom server-side authentication and other techniques to achieve data privacy with no SSL",
+        "Been through a couple iterations as technologies have changed.  Was Durandal+KnockoutJs+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core"
+      ],
+      "skills": [
+        "Aurelia",
+        "ASP.NET Core",
+        "C#",
+        "Javascript",
+        "HTML",
+        "CSS",
+        "MVC",
+        "KnockoutJs",
+        "WebAPI",
+        "Ajax",
+        "jquery",
+        "bootstrap",
+        "Identity",
+        "entity framework",
+        "Sql Server",
+        "t-sql",
+        "webpack",
+        "RequireJs",
+        "XUnit.NET",
+        "MsTest",
+        "crypto-js",
+        "DES",
+        "SHA",
+        "System.Security.Cryptography",
+        "SPA",
+        "SOA"
+      ]
+    },
+    {
+      "company": "Texas Turnpike Authority",
+      "position": "Web Application Developer",
+      "contract": true,
+      "website": "http://www.dot.state.tx.us/default.htm",
+      "startDate": "2003-05",
+      "summary": "Using ASP.NET, implemented main 'dashboard' web page and site-wide security code",
+      "endDate": "2003-06",
+      "highlights": [
+        "Created web-based workflow involving inspections and tests of Texas turnpike construction",
+        "Implemented site-wide forms-based roles authorization and page customization, as well as user/groups management pages"
+      ],
+      "skills": [
+        "ASP.NET",
+        "C#",
+        "HTML",
+        "JavaScript",
+        "T-SQL"
+      ]
+    },
+    {
+      "company": "Schlumberger/Cingular Wireless",
+      "position": "Application Developer",
+      "contract": true,
+      "website": "http://www.schlumberger.com/",
+      "startDate": "2002-10",
+      "summary": "Enhanced a Java Swing application that enables users to display and edit data contained on Smart Cards",
+      "endDate": "2003-01",
+      "highlights": [
+        "Enhanced a Java Swing application that enables users to display and edit data contained on Smart Cards",
+        "Designed and implemented a user-friendly panel system.  By integrating it snugly and efficiently into the existing code, provided enhanced functionality to both new code and existing code",
+        "Implemented application configuration files formatted as XML, accessed using Xerces"
+      ],
+      "skills": [
+        "Java",
+        "Swing",
+        "XML",
+        "Xerces"
+      ]
+    },
+    {
+      "company": "Trilogy",
+      "position": "Software Engineer (Ford.com)",
+      "website": "http://www.trilogy.com/",
+      "startDate": "2000-09",
+      "summary": "Wrote major components of Ford Motor Company's flagship Ford.com website",
+      "endDate": "2001-03",
+      "highlights": [
+        "The Ford.com code was virtually flawless on first release",
+        "Wrote JSP and Java components, a Java/Swing applet that enabled administrators to edit the XML content using a browser, and a Flash binary SWF file preprocessor",
+        "Wrote thorough and professionally-styled User and Developer Guide documentation"
+      ],
+      "skills": [
+        "Java",
+        "XML",
+        "Xerces",
+        "Swing",
+        "Flash SWF",
+        "Javascript",
+        "Html",
+        "JSP",
+        "JRun"
+      ]
+    },
+    {
+      "company": "Trilogy",
+      "position": "Software Engineer (carOrder.com)",
+      "website": "http://www.trilogy.com/",
+      "startDate": "2000-01",
+      "summary": "Enhanced and maintained the lease and loan sales features and Needs Analysis and Car Comparison features of carOrder.com's website",
+      "endDate": "2000-08",
+      "highlights": [
+        "Took the initiative to write a 'Developer's Reference' web page for carOrder developers.  This document vastly reduced  the time required to bring new developers up to speed, as well as served as an ongoing reference for all developers on the team",
+        "Repaired broken Needs Analysis and Car Comparison features, fixed both the front end web GUI and the back-end scripts that generate the supporting data. Reduced to zero the flood of customer complaints about bad data and broken features",
+        "Designed and wrote an application to assist in browsing Jato automobile data",
+        "Ported DES-encryption-based software licensing code (see Imagen) from C++ to Java"
+      ],
+      "skills": [
+        "Java",
+        "C++",
+        "JSP",
+        "Xerces",
+        "Javascript",
+        "Html",
+        "T-Sql",
+        "Sql Server",
+        "JDBC",
+        "CORBA",
+        "WCF",
+        "DES"
+      ]
+    },
+    {
+      "company": "Trilogy",
+      "position": "Software Engineer (IBM)",
+      "website": "http://www.trilogy.com/",
+      "startDate": "1999-03",
+      "summary": "Provided sole development and support for an application critical to an international IBM workflow",
+      "endDate": "1999-12",
+      "highlights": [
+        "Right off the bat solved a critical issue that had been vexing prior developers. IBM was very happy",
+        "Took the initiative to save this part of the IBM contract for Trilogy"
+      ],
+      "skills": [
+        "Java",
+        "JSP",
+        "XML",
+        "XSL",
+        "Swing",
+        "Javascript",
+        "Html",
+        "T-Sql",
+        "Perl",
+        "JDBC",
+        "DB2",
+        "SQL"
+      ]
+    },
+    {
+      "company": "Imagen Communications, Inc.",
+      "position": "Development Lead, Software Engineer",
+      "remote": true,
+      "website": "",
+      "startDate": "1996-10",
+      "summary": "Designed and developed NT Paymaster, a billing application for ISPs",
+      "endDate": "1998-03",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "Biomonitors, Ltd",
+      "position": "Lead Software Engineer",
+      "remote": true,
+      "contract": true,
+      "website": "",
+      "startDate": "1997-02",
+      "summary": "Ported from DOS to Windows 95 MindMirror, an application that displays real-time electroencephalograph data in a GUI application",
+      "endDate": "1997-03",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "Microsoft Corporation",
+      "position": "Software Engineer",
+      "contract": true,
+      "website": "http://www.microsoft.com/",
+      "startDate": "1996-03",
+      "summary": "Wrote subsystem to facilitate localization of Encarta `97 into 5 languages",
+      "endDate": "1996-06",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "Microsoft Corporation",
+      "position": "Development Manager, Software Engineer",
+      "contract": true,
+      "website": "http://www.microsoft.com/",
+      "startDate": "1995-06",
+      "summary": "Managed team of 7 in code development and release to market of the Reader's Digest Complete Do-It-Yourself Guide multimedia CD-ROM title",
+      "endDate": "1996-02",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "Microsoft Corporation",
+      "position": "Software Engineer, Tech Lead",
+      "contract": true,
+      "website": "http://www.microsoft.com/",
+      "startDate": "1994-11",
+      "summary": "Wrote the core GUI engine for Julia Child's Home Cooking With Master Chefs multimedia CD-ROM title",
+      "endDate": "1995-06",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "Asymetrix Corporation",
+      "position": "Software Engineer",
+      "contract": true,
+      "website": "http://home.click2learn.com/showcase",
+      "startDate": "1992-04",
+      "summary": "Developed software for Toolbook 3.0 and multimedia screensavers (Jurassic Park, et. al.)",
+      "endDate": "1994-10",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "Microsoft Corporation",
+      "position": "Software Engineer",
+      "contract": true,
+      "website": "http://www.microsoft.com",
+      "startDate": "1991-01",
+      "summary": "On the Windows 3.1 team, developed software for File Manager, Packager, Paintbrush , Cardfile, and others",
+      "endDate": "1992-03",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "Mouthing Flowers",
+      "position": "President, CEO, Director of Development, and Chief Programmer",
+      "website": "",
+      "personal": true,
+      "startDate": "1995-02",
+      "summary": "For the NEXTSTEP platform, designed and wrote <i>TimeFlies</i>, designed and implemented a 3D graphics API, and wrote the <i>SwoopnPrint</i>&nbsp;&nbsp;\"service\" application. TimeFlies received a positive product review from NeXTWorld magazine",
+      "endDate": "1999-09",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "ConnectSoft",
+      "position": "VP Applications Development",
+      "website": "",
+      "startDate": "1989-10",
+      "summary": "Managed all development efforts (see ConnectSoft, below)",
+      "endDate": "1990-12",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "ConnectSoft",
+      "position": "Software Engineer",
+      "website": "",
+      "startDate": "1988-12",
+      "summary": "Developed software for Clip-Art Window Shopper, an early electronic clip-art distribution application, and Presto 3D, a 3D CAD application",
+      "endDate": "1989-10",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "University of North Carolina",
+      "position": "Software Engineer",
+      "website": "http://www.unc.edu/",
+      "startDate": "1988-11",
+      "summary": "For EGA/VGA graphics hardware, developed code that reproduces PGA 3D and 2D graphics hardware commands",
+      "endDate": "1989-12",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "Dupont Design Technologies, Inc.",
+      "position": "Software Engineer",
+      "website": "",
+      "startDate": "1988-03",
+      "summary": "Developed object-oriented, resolution-independent 2D graphics code, including airbrushes, framebuffer manager, and graphics hardware emulator",
+      "endDate": "1988-11",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "SAS Institute Inc.",
+      "position": "Software Engineer",
+      "contract": true,
+      "website": "http://www.sas.com/",
+      "startDate": "1986-12",
+      "summary": "Ported Visuals (see UNC below) to the SAS Graphical User Interface System",
+      "endDate": "1987-05",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "University of North Carolina",
+      "position": "Software Engineer",
+      "website": "http://www.unc.edu/",
+      "startDate": "1986-05",
+      "summary": "Assembled a local area network (LAN) and a system to digitize and manipulate video microscopic images for display in medical school classroom lab sessions",
+      "endDate": "1986-11",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "University of North Carolina",
+      "position": "Software Engineer",
+      "website": "http://www.unc.edu/",
+      "startDate": "1985-05",
+      "summary": "Wrote Visuals, an application that uses interactive 3D graphics animation to reveal meaning in multidimensional statistical data",
+      "endDate": "1986-11",
+      "highlights": [],
+      "skills": []
+    },
+    {
+      "company": "Pacific Environmental Services, Inc",
+      "position": "Associate Public Policy Analyst ",
+      "startDate": "1980-01",
+      "summary": "Conducted regulatory technical analyses, managed preparation of technical business proposals, managed a waste brokerage program",
+      "endDate": "1982-09",
+      "highlights": [],
+      "skills": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "Duke University",
+      "area": "Environment Management",
+      "studyType": "Masters",
+      "startDate": "1977-01-01",
+      "gpa": "",
+      "courses": [],
+      "endDate": "1980-01-01"
+    },
+    {
+      "institution": "University of North Carolina at Chapel Hill",
+      "area": "Computer Science",
+      "studyType": "Continuing Education",
+      "startDate": "1985-01-01",
+      "gpa": "",
+      "courses": [],
+      "endDate": "1987-01-01"
+    },
+    {
+      "institution": "Duke University",
+      "area": "Public Policy Sciences",
+      "studyType": "Master of Arts",
+      "startDate": "1977-01-01",
+      "gpa": "",
+      "courses": [],
+      "endDate": "1980-01-01"
+    },
+    {
+      "institution": "Miami University",
+      "area": "Botany",
+      "studyType": "Bachelor of Science",
+      "startDate": "1973-01-01",
+      "gpa": "",
+      "courses": [],
+      "endDate": "1977-01-01"
+    }
+  ],
+  "skills": [
+    {
+      "priority": 1,
+      "name": "Aurelia",
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://aurelia.io"
+    },
+    {
+      "priority": 2,
+      "name": "RequireJs",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Module Bundling and Loading"
+      ],
+      "url": "http://requirejs.org/"
+    },
+    {
+      "priority": 3,
+      "name": "ASP.NET Core",
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://www.microsoft.com/net/core#windows"
+    },
+    {
+      "name": "ASP.NET",
+      "level": "",
+      "hide": true,
+      "keywords": [
+        "Website and Application Development",
+        "Markup Languages"
+      ]
+    },
+    {
+      "name": ".NET",
+      "level": "",
+      "keywords": [
+        "Software Development Platforms"
+      ]
+    },
+    {
+      "priority": 4,
+      "name": "TypeScript",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Software Languages"
+      ],
+      "url": "http://www.typescriptlang.org"
+    },
+    {
+      "priority": 5,
+      "name": "C#",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Software Languages"
+      ],
+      "url": "http://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
+    },
+    {
+      "priority": 4,
+      "name": "JavaScript",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Software Languages"
+      ]
+    },
+    {
+      "priority": 2,
+      "name": "Solidity",
+      "level": "",
+      "keywords": [
+        "Blockchain",
+        "Software Languages"
+      ],
+      "url": "http://github.com/ethereum/solidity"
+    },
+    {
+      "priority": 3,
+      "name": "MVC",
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://en.wikipedia.org/wiki/ASP.NET_MVC_Framework"
+    },
+    {
+      "priority": 3,
+      "name": "WebApi",
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://msdn.microsoft.com/en-us/library/hh833994(v=vs.108).aspx"
+    },
+    {
+      "priority": 4,
+      "name": "HTML5",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Markup Languages"
+      ]
+    },
+    {
+      "name": "HTML",
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Markup Languages"
+      ]
+    },
+    {
+      "priority": 4,
+      "name": "Razor",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Markup Languages"
+      ]
+    },
+    {
+      "priority": 4,
+      "name": "CSS",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Markup Languages"
+      ]
+    },
+    {
+      "priority": 4,
+      "name": "SASS",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Markup Languages"
+      ]
+    },
+    {
+      "name": "jQuery",
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://jquery.com"
+    },
+    {
+      "priority": 30,
+      "name": "Ajax",
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Ajax_(programming)"
+    },
+    {
+      "priority": 6,
+      "name": "Bootstrap",
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://getbootstrap.com"
+    },
+    {
+      "priority": 7,
+      "name": "Bootstrap Material Design",
+      "aliases": [
+        "BMD"
+      ],
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://fezvrasta.github.io/bootstrap-material-design/"
+    },
+    {
+      "priority": 5,
+      "name": "Entity Framework Core",
+      "level": "",
+      "keywords": [
+        "Databases"
+      ],
+      "url": "http://ef.readthedocs.io/en/latest"
+    },
+    {
+      "name": "Entity Framework",
+      "level": "",
+      "hide": true,
+      "keywords": [
+        "Databases"
+      ],
+      "url": "http://ef.readthedocs.io/en/latest"
+    },
+    {
+      "name": "T-SQL",
+      "level": "",
+      "hide": true,
+      "aliases": [
+        "T-SQL"
+      ],
+      "keywords": [
+        "Databases",
+        "Software Languages"
+      ]
+    },
+    {
+      "name": "SQL",
+      "priority": 4,
+      "level": "",
+      "keywords": [
+        "Databases",
+        "Software Languages"
+      ]
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "priority": 1,
+      "aliases": [
+        "Sql Server"
+      ],
+      "level": "",
+      "keywords": [
+        "Databases"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Microsoft_SQL_Server"
+    },
+    {
+      "name": "ASP.NET Identity",
+      "aliases": [
+        "Identity"
+      ],
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ]
+    },
+    {
+      "name": "Microsoft Enterprise Library",
+      "aliases": [
+        "Enterprise framework"
+      ],
+      "level": "",
+      "keywords": [
+        "Databases"
+      ],
+      "url": "http://msdn.microsoft.com/en-us/library/ff648951.aspx"
+    },
+    {
+      "name": "Microsoft Extensibility Framework (MEF)",
+      "aliases": [
+        "MEF"
+      ],
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://docs.microsoft.com/en-us/dotnet/framework/mef/"
+    },
+    {
+      "name": ".NET System.Security.Cryptography",
+      "aliases": [
+        "System.Security.Cryptography"
+      ],
+      "level": "",
+      "keywords": [
+        "Cryptography"
+      ],
+      "url": "http://msdn.microsoft.com/en-us/library/system.security.cryptography(v=vs.110).aspx"
+    },
+    {
+      "name": "crypto-js",
+      "level": "",
+      "keywords": [
+        "Cryptography"
+      ],
+      "url": "http://github.com/brix/crypto-js"
+    },
+    {
+      "name": "DES",
+      "level": "",
+      "keywords": [
+        "Cryptography"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Data_Encryption_Standard"
+    },
+    {
+      "name": "SHA-2",
+      "aliases": [
+        "hashing",
+        "SHA"
+      ],
+      "level": "",
+      "keywords": [
+        "Cryptography"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Data_Encryption_Standard"
+    },
+    {
+      "name": "Sql Server Semantic Search",
+      "level": "",
+      "keywords": [
+        "Semantic Search Frameworks"
+      ],
+      "url": "http://docs.microsoft.com/en-us/sql/relational-databases/search/semantic-search-sql-server"
+    },
+    {
+      "priority": 20,
+      "name": "Enterprise Scale Web Applications",
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ]
+    },
+    {
+      "name": "DurandalJs",
+      "aliases": [
+        "Durandal"
+      ],
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://durandaljs.com/"
+    },
+    {
+      "name": "KnockoutJs",
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://knockoutjs.com/"
+    },
+    {
+      "name": "Responsive UIs",
+      "aliases": [
+        "Responsive"
+      ],
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Responsive_web_design"
+    },
+    {
+      "name": "ReactJs",
+      "level": "",
+      "hide": true,
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://reactjs.org/"
+    },
+    {
+      "name": "AngularJs",
+      "level": "",
+      "hide": true,
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://angularjs.org/"
+    },
+    {
+      "name": "i18Next",
+      "level": "",
+      "keywords": [
+        "Localization/Globalization"
+      ],
+      "url": "http://www.i18next.com/"
+    },
+    {
+      "name": "jQuery Globalization",
+      "level": "",
+      "keywords": [
+        "Localization/Globalization"
+      ],
+      "url": "http://github.com/globalizejs/globalize"
+    },
+    {
+      "priority": 20,
+      "name": "Service-Oriented Architecture (SOA)",
+      "aliases": [
+        "SOA"
+      ],
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ]
+    },
+    {
+      "priority": 20,
+      "name": "Single Page Application (SPA)",
+      "aliases": [
+        "SPA"
+      ],
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ]
+    },
+    {
+      "name": "C++",
+      "level": "",
+      "hide": true,
+      "keywords": [
+        "Website and Application Development",
+        "Software Languages"
+      ],
+      "url": "http://en.wikipedia.org/wiki/C%2B%2B"
+    },
+    {
+      "name": "D3.js",
+      "aliases": [
+        "D3"
+      ],
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Charting & Graphing Frameworks"
+      ],
+      "url": "http://d3js.org/"
+    },
+    {
+      "name": "Highcharts",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Charting & Graphing Frameworks"
+      ],
+      "url": "http://www.highcharts.com/"
+    },
+    {
+      "name": "XML",
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ]
+    },
+    {
+      "name": "Xerces",
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://xerces.apache.org/"
+    },
+    {
+      "name": "XSLT",
+      "fullname": "Extensible Stylesheet Language Transformations",
+      "aliases": [
+        "XSLT",
+        "XSL"
+      ],
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://en.wikipedia.org/wiki/XSLT"
+    },
+    {
+      "name": "XML Schema Definition (XSD)",
+      "aliases": [
+        "XSD"
+      ],
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://en.wikipedia.org/wiki/XML_Schema_(W3C)"
+    },
+    {
+      "name": "WCF",
+      "fullname": "Windows Communication Foundation",
+      "aliases": [
+        "WCF"
+      ],
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://docs.microsoft.com/en-us/dotnet/framework/wcf/"
+    },
+    {
+      "name": "WWF",
+      "fullname": "Windows Workflow Foundation",
+      "aliases": [
+        "WWF"
+      ],
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://docs.microsoft.com/en-us/dotnet/framework/windows-workflow-foundation/"
+    },
+    {
+      "name": "Microsoft Extensibility Framework (MEF)",
+      "aliases": [
+        "MEF"
+      ],
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://docs.microsoft.com/en-us/dotnet/framework/mef/"
+    },
+    {
+      "name": "Java",
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ]
+    },
+    {
+      "name": "IIS",
+      "level": "",
+      "keywords": [
+        "Website and Application Hosting"
+      ],
+      "url": "http://www.iis.net/"
+    },
+    {
+      "priority": 5,
+      "name": "NodeJs",
+      "level": "",
+      "keywords": [
+        "Software Development Platforms",
+        "Website and Application Hosting"
+      ],
+      "url": "http://nodejs.org/en/"
+    },
+    {
+      "name": "JRun",
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Hosting"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Adobe_JRun"
+    },
+    {
+      "name": "JSP",
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://en.wikipedia.org/wiki/JavaServer_Pages"
+    },
+    {
+      "name": "JDBC",
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Databases"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Java_Database_Connectivity"
+    },
+    {
+      "name": "DB2",
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Databases"
+      ],
+      "url": "http://www.ibm.com/analytics/us/en/db2/"
+    },
+    {
+      "name": "PowerShell",
+      "level": "",
+      "keywords": [
+        "Scripting"
+      ],
+      "url": "http://docs.microsoft.com/en-us/powershell/scripting/powershell-scripting"
+    },
+    {
+      "name": "Windows Batch",
+      "level": "",
+      "keywords": [
+        "Scripting"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Batch_file"
+    },
+    {
+      "name": "Perl",
+      "level": "",
+      "keywords": [
+        "Scripting"
+      ],
+      "url": "http://www.perl.org/"
+    },
+    {
+      "name": "Flash SWF",
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://en.wikipedia.org/wiki/SWF"
+    },
+    {
+      "name": "Swing",
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Swing_(Java)"
+    },
+    {
+      "name": "Ethereum",
+      "level": "",
+      "keywords": [
+        "Blockchain"
+      ]
+    },
+    {
+      "name": "Bitcoin",
+      "level": "",
+      "keywords": [
+        "Blockchain"
+      ]
+    },
+    {
+      "name": "Truffle",
+      "level": "",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "http://truffleframework.com/"
+    },
+    {
+      "name": "IPFS",
+      "level": "",
+      "keywords": [
+        "Blockchain",
+        "Website and Application Hosting"
+      ],
+      "url": "https://ipfs.io/"
+    },
+    {
+      "name": "Heroku",
+      "level": "",
+      "keywords": [
+        "Website and Application Hosting"
+      ],
+      "url": "https://www.heroku.com/"
+    },
+    {
+      "name": "Defi",
+      "level": "",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "https://www.coindesk.com/what-is-defi"
+    },
+    {
+      "name": "ENS",
+      "level": "",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "https://app.ens.domains/"
+    },
+    {
+      "priority": 1,
+      "name": "Web3",
+      "level": "",
+      "keywords": [
+        "Blockchain"
+      ]
+    },
+    {
+      "name": "Parity",
+      "level": "",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "http://www.parity.io/"
+    },
+    {
+      "name": "Kovan",
+      "level": "",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "http://kovan-testnet.github.io/website/"
+    },
+    {
+      "name": "Ganache",
+      "aliases": [
+        "Testrpc"
+      ],
+      "level": "",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "http://github.com/trufflesuite/ganache-cli"
+    },
+    {
+      "name": "nHibernate",
+      "level": "",
+      "hide": true,
+      "keywords": [
+        "Databases"
+      ],
+      "url": "http://nhibernate.info/"
+    },
+    {
+      "name": "CORBA",
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Databases"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture"
+    },
+    {
+      "name": "Active-X Data Objects (ADO)",
+      "aliases": [
+        "ADO.NET",
+        "ADO"
+      ],
+      "hide": true,
+      "level": "",
+      "keywords": [
+        "Databases"
+      ],
+      "url": "http://en.wikipedia.org/wiki/ADO.NET"
+    },
+    {
+      "name": "LINQ",
+      "level": "",
+      "hide": true,
+      "keywords": [
+        "Databases"
+      ],
+      "url": "http://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/"
+    },
+    {
+      "name": "Visual Studio",
+      "priority": 2,
+      "level": "",
+      "keywords": [
+        "Development Tools"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Microsoft_Visual_Studio"
+    },
+    {
+      "name": "Visual Studio Code",
+      "priority": 1,
+      "level": "",
+      "keywords": [
+        "Development Tools"
+      ],
+      "url": "http://code.visualstudio.com"
+    },
+    {
+      "name": "NPM",
+      "level": "",
+      "keywords": [
+        "Development Tools"
+      ],
+      "url": "http://www.npmjs.com"
+    },
+    {
+      "name": "GitHub",
+      "level": "",
+      "keywords": [
+        "Development Tools"
+      ],
+      "url": "http://github.com"
+    },
+    {
+      "name": "GitKraken",
+      "level": "",
+      "keywords": [
+        "Development Tools"
+      ],
+      "url": "http://www.gitkraken.com/"
+    },
+    {
+      "name": "GitHub Desktop",
+      "level": "",
+      "keywords": [
+        "Development Tools"
+      ],
+      "url": "http://desktop.github.com/"
+    },
+    {
+      "name": "Jira",
+      "level": "",
+      "keywords": [
+        "Development Tools"
+      ],
+      "url": "http://www.atlassian.com/software/jira"
+    },
+    {
+      "name": "BitBucket",
+      "level": "",
+      "keywords": [
+        "Development Tools"
+      ],
+      "url": "http://bitbucket.org/product"
+    },
+    {
+      "name": "NuGet",
+      "level": "",
+      "keywords": [
+        "Development Tools"
+      ],
+      "url": "http://www.nuget.org/"
+    },
+    {
+      "name": "Microsoft Azure",
+      "aliases": [
+        "Azure"
+      ],
+      "level": "",
+      "keywords": [
+        "Cloud Services"
+      ],
+      "url": "http://azure.microsoft.com"
+    },
+    {
+      "name": "Microsoft Windows",
+      "priority": 1,
+      "level": "http://www.microsoft.com",
+      "keywords": [
+        "Operating Systems"
+      ],
+      "url": "http://www.microsoft.com/windows"
+    },
+    {
+      "name": "Agile Methodologies",
+      "priority": 1,
+      "aliases": [
+        "Agile"
+      ],
+      "level": "",
+      "keywords": [
+        "Development Processes"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Agile_software_development"
+    },
+    {
+      "name": "Team Foundation Server (TFS)",
+      "priority": 2,
+      "aliases": [
+        "TFS"
+      ],
+      "level": "",
+      "keywords": [
+        "Development Tools",
+        "Development Processes"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Team_Foundation_Server"
+    },
+    {
+      "name": "Waterfall",
+      "priority": 2,
+      "level": "",
+      "keywords": [
+        "Development Processes"
+      ],
+      "url": "http://en.wikipedia.org/wiki/Waterfall_model"
+    },
+    {
+      "name": "Just Get It Done",
+      "level": "",
+      "keywords": [
+        "Development Processes"
+      ]
+    },
+    {
+      "name": "Webpack",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Module Bundling and Loading"
+      ],
+      "url": "http://webpack.js.org"
+    },
+    {
+      "name": "JSPM",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Module Bundling and Loading"
+      ],
+      "url": "http://jspm.io"
+    },
+    {
+      "name": "SystemJs",
+      "level": "",
+      "keywords": [
+        "Website and Application Development",
+        "Module Bundling and Loading"
+      ],
+      "url": "http://github.com/systemjs/systemjs"
+    },
+    {
+      "priority": 5,
+      "name": "Unity (Dependency Injection)",
+      "aliases": [
+        "Unity",
+        "Unity.Container",
+        "Unity Framework"
+      ],
+      "level": "",
+      "keywords": [
+        "Test Frameworks"
+      ],
+      "url": "http://github.com/unitycontainer/unity"
+    },
+    {
+      "name": "XUnit.NET",
+      "aliases": [
+        "XUnit"
+      ],
+      "level": "",
+      "keywords": [
+        "Test Frameworks"
+      ],
+      "url": "http://xunit.github.io/"
+    },
+    {
+      "name": "NUnit",
+      "level": "",
+      "keywords": [
+        "Test Frameworks"
+      ]
+    },
+    {
+      "name": "Moq",
+      "level": "",
+      "keywords": [
+        "Test Frameworks"
+      ],
+      "url": "http://code.google.com/p/moq"
+    },
+    {
+      "name": "Jasmine",
+      "level": "",
+      "keywords": [
+        "Test Frameworks"
+      ]
+    },
+    {
+      "name": "Karma",
+      "level": "",
+      "keywords": [
+        "Test Frameworks"
+      ]
+    },
+    {
+      "name": "Selenium",
+      "level": "",
+      "keywords": [
+        "Test Frameworks"
+      ]
+    },
+    {
+      "name": "SpecFlow",
+      "level": "",
+      "keywords": [
+        "Test Frameworks"
+      ],
+      "url": "http://specflow.org/"
+    },
+    {
+      "name": "MSTest",
+      "level": "",
+      "keywords": [
+        "Test Frameworks"
+      ]
+    },
+    {
+      "name": "VSTest",
+      "level": "",
+      "keywords": [
+        "Test Frameworks"
+      ],
+      "url": "http://github.com/Microsoft/vstest"
+    },
+    {
+      "name": "Telerik",
+      "level": "",
+      "hide": true,
+      "keywords": [
+        "Website and Application Development"
+      ],
+      "url": "http://github.com/unitycontainer/unity"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native proficiency"
+    },
+    {
+      "language": "French",
+      "fluency": "Professional working proficiency"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Minimal proficiency"
+    }
+  ],
+  "citizenship": [
+    {
+      "country": "United States",
+      "status": "Full Citizenship"
+    },
+    {
+      "country": "Canada",
+      "status": "Full Citizenship"
+    },
+    {
+      "country": "Britain",
+      "status": "Valid Passport"
+    }
+  ],
+  "references": [
+    {
+      "name": "Renç Korzay",
+      "reference": "Doug is a brilliant front-end engineer who stands out for his exceptional professionalism, team-player attitude, and a strong sense of ownership. He goes out of his way to ensure that projects are delivered on time and to the highest possible standard. Doug is great at leading other developers and working across disciplines, he's an expert in prioritization and can dissect complex problems. His perfectionism and ability to set a great example for the team have been invaluable. I had the chance to work with Doug on multiple Web3 projects throughout the years and I would always look forward to an opportunity to work with him.",
+      "title": "Web3 Product Manager",
+      "website": "https://www.linkedin.com/in/renckorzay/"
+    },
+    {
+      "name": "Ghalem Ben Nouna",
+      "reference": "It's rare that you come across standout talent like Doug. I hired Doug as an application developer in my analytics team at PSP. He was able to complete the development of complex data products with complex custom visualizations on time. I was particularly impressed by Doug’s ability to precisely understand business requirements effortlessly due to his extensive experience as well as being an amazing team player.",
+      "title": "Senior Director of Data Management and Business Intelligence at Ivanhoé Cambridge",
+      "website": "http://www.linkedin.com/in/ghalem-ben-nouna-2356011/"
+    },
+    {
+      "name": "Ross Barbieri",
+      "reference": "I know Doug Kent both personally and professionally. I have had the great pleasure of working with him on several projects at multiple companies. These include industry changing applications like Shiftwise (healthcare staffing vendor management systems) and at large companies like GE . He is a highly reliable and methodical .NET web developer, and <b><i>the</i></b> best OO developer I've worked with. Doug works well solo and on teams and is an excellent communicator in both settings. On that point, he is an open and honest person and one who is not afraid to speak up (appropriately) when necessary. He is my go to .NET developer for these reasons, and also because he takes full ownership of his work; including peripheral dependencies, and will self manage through to completion.",
+      "title": "Serial Entrepreneur, CTO and Software Development Manager",
+      "website": "http://www.linkedin.com/in/rosshere/"
+    },
+    {
+      "name": "Jean-Paul Widmer",
+      "reference": "The customization Doug did for us of our online ordering system allowed my business to be more flexible and proactive with customers, a real time saver.",
+      "title": "Director of Operations, Vivalia Bistro Express",
+      "website": "http://www.linkedin.com/in/jean-paul-widmer-a2271845/"
+    }
+  ],
+  "accomplishments": [
+    "With Curve Labs, I coded, delivered and led, in some cases single-handedly, the front-end development of multiple complex Web3 dApps, each demonstrating innovative means of effecting global system change capable of emerging regenerative impacts, and including improving social and economic justice",
+    "In an enterprise website environment at ShiftWise, while facing an urgent deadline, I single-handedly implemented a complete system for handling mission-critical SMS messages. The architecture spanned a web site, three web services, two Windows services, and two Sql Server databases.",
+    "In an enterprise website environment at Revionics, I saved a project in jeopardy of missing its deadline. I took the counter-intuitive and risky step of dropping the participating India team from 7 to 3, but it enabled us to meet our deadline.",
+    "At Microsoft, I led a multi-disciplinary development team of 7 software engineers plus writers and graphic designers to produce a multimedia CD-ROM title for Windows. We delivered on time, meeting all quality goals.",
+    "At ConnectSoft I led the development of an application that won a <i>Windows 100</i> award from <i>Windows Magazine</i>: <i>Clip-Art Window Shopper</i>, one of the first ever applications for purchasing and downloading clip-art online.",
+    "At Microsoft, I incorporated the new technology of OLE 1.0 into Windows Write. OLE was a highly visible and strategic initiative of interest at the highest levels in Microsoft.",
+    "For Ford Motor Company I designed, wrote, and delivered ahead of schedule a framework that served content to every page of the company&#39;s flagship website, Ford.com.",
+    "On a Microsoft project whose development lead and content developer each unexpectedly and simultaneously departed, I took the initiative to undertake some of each person's responsibilities, keeping the project on schedule and leading it to a successful market release.",
+    "In my very first job as a software engineer, at the University of N. Carolina, I wrote a multi-dimensional data visualization application that was adopted as a product by the SAS Institute, a major statistical software company."
+  ],
+  "qualities": [
+    "I try to view situations from your point of view to anticipate your needs and assist you in building your antifragility.",
+    "I have worked with great programmers at some of the greatest software companies in the world.",
+    "I have a wide range of experience from the best software engineering companies in the world to dotcoms to garage startups.",
+    "I have the maturity and experience to design, develop, coordinate, and lead a team from product conception to release.",
+    "I have the broad full-stack knowledge and self-starting mentality to architect, design, implement and deploy an entire application by myself.",
+    "I am a great team player and communicator, fully embracing team diversity and cohesiveness.",
+    "I am smart and educated: I attended one of the best graduate universities in the world.",
+    "I am reliable and honest: I speak truth to clients and colleagues.",
+    "I work efficiently, producing quality code in minimal time and on time.",
+    "I understand the software development process: Agile, Waterfall, and just-make-it-happen.",
+    "I specialize in best-available technologies.",
+    "I have a great record of success."
+  ],
+  "publications": [
+    {
+      "authors": "Young, Forest W., D.P. Kent, W.F. Kuhfeld",
+      "name": "Dynamic Graphics for Exploring Multivariate Data. Chapter 8, Dynamic Graphics for Statistics",
+      "publisher": "Cleveland, W.S. and McGill, M. eds., Wadsworth",
+      "releaseDate": "1988"
+    },
+    {
+      "authors": "Young, Forrest W., D.P. Kent, W.F. Kuhfeld",
+      "name": "Visual Exploratory Data Analysis and the VISUALS System for Dynamic Hyper-Dimensional Graphics",
+      "publisher": "Paper presented at 1986 annual meeting of the Psychometric Society, Toronto, Ontario",
+      "releaseDate": "1986"
+    },
+    {
+      "authors": "Young, Forrest W., D.P. Kent, W.F. Kuhfeld",
+      "name": "VISUALS: Dynamic HyperDimensional Graphics Software for Visual Exploratory Data Analysis",
+      "publisher": "Paper presented at the National Computer Graphics Association annual trade show, Anaheim, California",
+      "releaseDate": "1986"
+    },
+    {
+      "authors": "Kent, Douglas P., T.C. Edds, W.F. Kuhfeld, and F.W. Young",
+      "name": "PROC VISUALS: Experimental Software for Animated 3-D Graphics Using the IBM Professional Graphics Device",
+      "publisher": "Proceedings of the Eleventh Annual SAS Users Group International Conference, Atlanta, Georgia",
+      "releaseDate": "1986"
+    },
+    {
+      "authors": "Young, Forrest W., D.P. Kent, T.C. Edds, W.F. Kuhfeld",
+      "name": "Visual Exploratory Data Analysis: PROC VISUALS, A User-Written Experimental SAS Procedure",
+      "publisher": "Proceedings of the Eleventh Annual SAS Users Group International Conference, Atlanta, Georgia",
+      "releaseDate": "1986"
+    },
+    {
+      "authors": "Young, Forrest W., T. Edds, D.P. Kent, W.F. Kuhfeld",
+      "name": "Visual Exploratory Data Analysis: A Preliminary Report in Classification As A Tool Of Research, Gaul, W. and Schader, M. editors",
+      "publisher": "Elsevier Science Publishers B.V. (North Holland)",
+      "releaseDate": "1986"
+    },
+    {
+      "authors": "McAdams, M.T., K.R. Meardon, D.P. Kent",
+      "name": "Assessment for Future Environmental Problems - Agricultural Residues. Chapter 5.0 and part of chapter 3.0",
+      "publisher": "U.S. Environmental Protection Agency",
+      "releaseDate": "1984"
+    },
+    {
+      "authors": "McAdams, M.T., D.P. Kent",
+      "name": "Rubber Tire Manufacturing Industry - Background Information for Proposed Standards: Draft EIS. EPA-450-3-81-008a. Chapters 1, 3, 4 and 7",
+      "publisher": "U.S. Environmental Protection Agency, OANR:OAQPS",
+      "releaseDate": "1981"
+    },
+    {
+      "authors": "Douglas Kent",
+      "name": "U.S. Environmental Protection Agency, OANR: AOQPS. Benzene Fugitive Emissions - Background Information for Promulgated Standards: EIS. EPA-450/3-80-032b. Chapters 2.1, 2.2, 2.5, 2.7, 2.8.6, Appendix C",
+      "publisher": "U.S. Environmental Protection Agency",
+      "releaseDate": "1980"
+    },
+    {
+      "authors": "McAdams, M.T., D.P. Kent",
+      "name": "Benzene Fugitive Emissions - Background Information for Proposed Standards: Draft EIS. EPA-450-3-80-032a. Appendix C",
+      "publisher": "U.S. Environmental Protection Agency, OANR:OAQPS",
+      "releaseDate": "1980"
+    },
+    {
+      "authors": "Findley, S., Gundlach, J., Kent, D.P., and Rhoda, R.",
+      "name": "Higher Education in the 1980's: Declining Enrollments, New Markets, and the Management of Decline. Part II, Section III, Uncertainty in College Enrollment Projections. For the U.S. Senate Committee on Labor and Human Resources",
+      "publisher": "The Center for Educational Policy, Duke University Institute for Policy Sciences and Public Affairs",
+      "releaseDate": "1979"
+    },
+    {
+      "authors": "Douglas Kent",
+      "name": "Rural-Urban Migration and Fertility: What Do We Know: Report to the U.S. Agency for International Development. Annotated Bibliography",
+      "publisher": "Research Triangle Institute Contract #AID/ta-CA-1",
+      "releaseDate": "1979"
+    },
+    {
+      "authors": "",
+      "name": "Air Quality Plan for Mobile Sources. Appendix II-12, Baseline Data on Attainment Status Designations for Areawide Air Pollutants",
+      "publisher": "Toledo Metropolitan Area Council of Governments",
+      "releaseDate": "1978"
+    }
+  ]
+}
