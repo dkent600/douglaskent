@@ -106,7 +106,7 @@ export class Resume {
   }
 
   attached() {
-    $('body').scrollspy({ target: '#TOC', offset: 232 });
+    ($('body') as any).scrollspy({ target: '#TOC', offset: 232 });
 
     $("#publications-list").on("show.bs.collapse", () => { this.showingPublications = true; });
     $("#publications-list").on("hide.bs.collapse", () => { this.showingPublications = false; });
@@ -118,9 +118,9 @@ export class Resume {
         return s;
       });
 
-    $(".company .remote i").tooltip();
-    $(".company .contract i").tooltip();
-    $(".company .personal i").tooltip();
+    ($(".company .remote i") as any).tooltip();
+    ($(".company .contract i") as any).tooltip();
+    ($(".company .personal i") as any).tooltip();
   }
 
 

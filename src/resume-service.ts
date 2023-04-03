@@ -1,6 +1,7 @@
 import { DI, IContainer, Registration } from "aurelia";
 
-export const ResumeJson = (await import("./static/resume.json"));
+import ResumeJson from "./static/resume.json";
+export { ResumeJson };
 export type IResume = typeof ResumeJson;
 
 export type IResumeService = ResumeService;
