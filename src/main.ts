@@ -1,6 +1,6 @@
 import Aurelia from 'aurelia';
-import { MyApp } from './my-app';
+import { Resume } from './resume';
 
 Aurelia
-  .app(MyApp)
+  .app(Resume)
   .start();
