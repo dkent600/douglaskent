@@ -1,4 +1,5 @@
 import { IResumeStore, ISkill } from "./resume-store";
+import "resume.scss";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -104,7 +105,7 @@ export class Resume {
     }
   }
 
-  attached() {
+  attaching() {
     ($('body') as any).scrollspy({ target: '#TOC', offset: 232 });
 
     $("#publications-list").on("show.bs.collapse", () => { this.showingPublications = true; });
