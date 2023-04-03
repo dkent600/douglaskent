@@ -1,12 +1,13 @@
 {
-  "name": "toot",
-  "description": "An Aurelia 2 client application.",
-  "version": "0.1.0",
+  "version": "1.1.0",
+  "author": "Doug Kent",
+  "description": "Data-driven Resume by and for Douglas Kent",
   "repository": {
     "type": "git",
-    "url": "???"
+    "url": "https://github.com/dkent600/douglaskent.git"
   },
   "license": "UNLICENSED",
+  "main": "dist/app.bundle.js",
   "dependencies": {
     "aurelia": "latest",
     "@aurelia/router": "latest"
