@@ -1,5 +1,5 @@
 {
-  "$schema": "./schema.json",
+  "$schema": "./schema-resume.json",
   "basics": {
     "name": "Douglas Kent",
     "label": "Fullstack Web3/Web Application Developer",

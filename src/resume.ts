@@ -1,5 +1,7 @@
+import { IResume } from "./resume-service";
+import { IResumeStore, ISkill } from "./resume-store";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const resumeJson = (await import("./static/resume.json"));
 
 export class Resume {
   content: HTMLElement;
@@ -9,7 +11,7 @@ export class Resume {
   schools: Array<any>;
   languages: Array<any>;
   citizenship: Array<any>;
-  skills: Map<string, Set<string>>;
+  skills: Map<string, Set<ISkill>>;
   skillByName: Map<string, any>;
   testimonials: Array<any>;
   accomplishments: Array<string>;
@@ -18,21 +20,27 @@ export class Resume {
   showingPublications = false;
   categories: Array<string>;
 
+  resumeJson: IResume;
+
+  constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
+    this.resumeJson = resumeStore.resumeJson;
+  }
+
   async activate() {
 
-    this.basics = resumeJson.basics;
-    this.languages = resumeJson.languages;
-    this.profiles = resumeJson.basics.profiles;
-    this.citizenship = resumeJson.citizenship;
-    this.companies = resumeJson.work
+    this.basics = this.resumeJson.basics;
+    this.languages = this.resumeJson.languages;
+    this.profiles = this.resumeJson.basics.profiles;
+    this.citizenship = this.resumeJson.citizenship;
+    this.companies = this.resumeJson.work
       .sort((a, b) => { return this.evaluateDateTime(a.endDate, b.endDate, -1); });
-    const schools = resumeJson.education;
+    const schools = this.resumeJson.education;
     this.schools = schools.sort((a, b) => { return this.evaluateDateTime(a.startDate, b.startDate, -1); });
-    this.testimonials = resumeJson.references;
-    this.accomplishments = resumeJson.accomplishments;
-    this.qualities = resumeJson.qualities;
-    this.publications = resumeJson.publications;
-    this.categories = resumeJson.keywords;
+    this.testimonials = this.resumeJson.references;
+    this.accomplishments = this.resumeJson.accomplishments;
+    this.qualities = this.resumeJson.qualities;
+    this.publications = this.resumeJson.publications;
+    this.categories = this.resumeJson.keywords;
 
     /**
      * Map a keyword (a category of skills) to a set of skill names.
@@ -55,7 +63,7 @@ export class Resume {
     /**
      * get category names sorted in the order they appear in the json
      */
-    for (const skill of resumeJson.skills.filter((s) => !s.hide)
+    for (const skill of this.resumeStore.skills.filter((s) => !s.hide)
     ) {
       for (const keyword of skill.keywords) {
         let skillCategory = this.skills.get(keyword);
@@ -64,7 +72,7 @@ export class Resume {
             // this.categories.push(`${keyword} [not in keywords list!]`);
             console.log(`!!! ${keyword} is not in keywords list!`);
           }
-          skillCategory = new Set<string>();
+          skillCategory = new Set<ISkill>();
           this.skills.set(keyword, skillCategory);
         }
         skillCategory.add(skill);
@@ -77,7 +85,7 @@ export class Resume {
      * name and the alias, then what ever is the last one encountered
      * will be keyed by the duplicated skill name.
      */
-    for (const skill of resumeJson.skills) {
+    for (const skill of this.resumeStore.skills) {
       // will overwrite dups
       this.skillByName.set(skill.name.toLowerCase(), skill);
       const aliases = skill.aliases || [];

@@ -1,9 +1,13 @@
 {
+  "$id": "http://douglaskent.com/schemas/resume",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Resume Schema",
   "type": "object",
   "additionalProperties": false,
   "properties": {
+    "$schema": {
+      "type": "string"
+    },
     "basics": {
       "type": "object",
       "additionalProperties": true,
@@ -43,7 +47,7 @@
           "properties": {
             "address": {
               "type": "string",
-              "description": "To add multiple address lines, use \n. For example, 1234 Glücklichkeit Straße\nHinterhaus 5. Etage li."
+              "description": "To add multiple address lines, use \n. For example, 1234 Glï¿½cklichkeit Straï¿½e\nHinterhaus 5. Etage li."
             },
             "postalCode": {
               "type": "string"
@@ -464,6 +468,41 @@
           "type": "string",
           "description": "Using ISO 8601 with YYYY-MM-DDThh:mm:ss"
         }
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "uniqueItems": true
+      }
+    },
+    "citizenship": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "accomplishments": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "uniqueItems": true
+      }
+    },
+    "qualities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "uniqueItems": true
       }
     }
   }
