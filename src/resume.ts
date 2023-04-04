@@ -1,11 +1,11 @@
 import { IAccomplishment, IBasics, ICategory, ICitizenship, ICompany, ILanguage, IProfile, IPublication, IQuality, IResumeStore, ISchool, ISkill, ITestimonial } from "./resume-store";
 
+import "font-awesome/css/font-awesome.css";
 import "resume.scss";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export class Resume {
-  content!: HTMLElement;
   basics!: IBasics;
   profiles!: Array<IProfile>;
   companies!: Array<ICompany>;
