@@ -18,6 +18,7 @@
   "devDependencies": {
     "@aurelia/plugin-gulp": "latest",
     "@aurelia/testing": "latest",
+    "@types/dompurify": "^3.0.1",
     "@types/jquery": "^3.2.13",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.57.1",

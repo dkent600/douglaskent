@@ -1,15 +1,13 @@
 import { valueConverter } from "aurelia";
 
-import DOMPurify from "dompurify";
+import { sanitize } from "dompurify";
 
 /**
  * Html Sanitizer to prevent script injection.
  */
 @valueConverter("sanitizeHTML")
-export class sanitizeHTML {
-  constructor(private domPurify: DOMPurify) {}
-
+export class sanitizeHTMLValueConverter {
   toView(input: string): string {
-    return this.domPurify.sanitize(input, { USE_PROFILES: { html: true } });
+    return sanitize(input, { USE_PROFILES: { html: true } });
   }
 }
