@@ -2,7 +2,15 @@ import { DI, IContainer, Registration } from "aurelia";
 
 import { IResume, ResumeJson } from "./resume-service";
 
-export type ISkill = IResume["skills"][0];
+export interface ISkill {
+  priority: number;
+  name: string;
+  keywords: Array<string>;
+  url: string;
+  aliases?: Array<string>;
+  hide?: boolean;
+}
+
 export type IBasics = IResume["basics"];
 export type ILanguage = IResume["languages"][0];
 export type IProfile = IResume["basics"]["profiles"][0];
@@ -28,7 +36,7 @@ export class ResumeStore {
   }
 
   public get skills(): Array<ISkill> {
-    return this.resumeJson.skills;
+    return this.resumeJson.skills as Array<ISkill>;
   }
 
   public get basics(): IBasics {
@@ -47,7 +55,7 @@ export class ResumeStore {
     return this.resumeJson.citizenship;
   }
 
-  public get work(): Array<ICompany> {
+  public get companies(): Array<ICompany> {
     return this.resumeJson.work;
   }
 

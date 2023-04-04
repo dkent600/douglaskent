@@ -1,4 +1,4 @@
-import { IResumeStore, ISkill } from "./resume-store";
+import { IAccomplishment, IBasics, ICategory, ICitizenship, ICompany, ILanguage, IProfile, IPublication, IQuality, IResumeStore, ISchool, ISkill, ITestimonial } from "./resume-store";
 
 import "resume.scss";
 
@@ -6,20 +6,20 @@ import "resume.scss";
 
 export class Resume {
   content!: HTMLElement;
-  basics: any;
-  profiles!: Array<any>;
-  companies!: Array<any>;
-  schools!: Array<any>;
-  languages!: Array<any>;
-  citizenship!: Array<any>;
+  basics!: IBasics;
+  profiles!: Array<IProfile>;
+  companies!: Array<ICompany>;
+  schools!: Array<ISchool>;
+  languages!: Array<ILanguage>;
+  citizenship!: Array<ICitizenship>;
   skills!: Map<string, Set<ISkill>>;
-  skillByName!: Map<string, any>;
-  testimonials!: Array<any>;
-  accomplishments!: Array<string>;
-  qualities!: Array<string>;
-  publications!: Array<any>;
+  skillByName!: Map<string, ISkill>;
+  testimonials!: Array<ITestimonial>;
+  accomplishments!: Array<IAccomplishment>;
+  qualities!: Array<IQuality>;
+  publications!: Array<IPublication>;
   showingPublications = false;
-  keywords!: Array<string>;
+  keywords!: Array<ICategory>;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {}
 
@@ -28,7 +28,7 @@ export class Resume {
     this.languages = this.resumeStore.languages;
     this.profiles = this.resumeStore.profiles;
     this.citizenship = this.resumeStore.citizenship;
-    this.companies = this.resumeStore.work.sort((a, b) => {
+    this.companies = this.resumeStore.companies.sort((a, b) => {
       return this.evaluateDateTime(a.endDate, b.endDate, -1);
     });
     this.schools = this.resumeStore.schools.sort((a, b) => {
@@ -95,14 +95,11 @@ export class Resume {
         this.skillByName.set(alias.toLowerCase(), skill);
       }
     }
+  }
 
-    for (const company of this.companies) {
-      if (!company.skills) {
-        // console.log(`!!! company has no skills: ${company.name}`);
-        continue;
-      }
-      company.skills = company.skills.map((name: string) => this.skillByName.get(name.toLowerCase()));
-    }
+  companySkills(company: ICompany): Array<ISkill> {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    return company.skills.map((name: string) => this.skillByName.get(name.toLowerCase())!);
   }
 
   // attaching() {

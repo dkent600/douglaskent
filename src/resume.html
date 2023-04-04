@@ -186,7 +186,7 @@
                             <div class="company-summary" innerhtml.bind="company.summary | sanitizeHTML"></div>
 
                             <div class="company-skills">
-                                <span repeat.for="skill of company.skills">
+                                <span repeat.for="skill of companySkills(company)">
                                     <span if.bind="skill">
                                         <span if.bind="skill.url" class="badge badge-pill skill-name">
                                             <a href.bind="skill.url" target="_blank">${skill.name}</a>
