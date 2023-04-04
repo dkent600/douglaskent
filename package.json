@@ -11,8 +11,6 @@
   "dependencies": {
     "@aurelia/router": "latest",
     "aurelia": "latest",
-    "bootstrap": "^4.1.1",
-    "bootstrap-material-design": "^4.1.1",
     "dompurify": "^3.0.1"
   },
   "devDependencies": {
