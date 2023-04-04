@@ -1,4 +1,5 @@
 import { DI, IContainer, Registration } from "aurelia";
+
 import { IResume, ResumeJson } from "./resume-service";
 
 export type ISkill = IResume["skills"][0];
@@ -18,61 +19,59 @@ export type IResumeStore = ResumeStore;
 export const IResumeStore = DI.createInterface<IResumeStore>();
 
 export class ResumeStore {
+  public static register(container: IContainer): void {
+    container.register(Registration.singleton(IResumeStore, ResumeStore));
+  }
 
-    public static register(container: IContainer): void {
-        container.register(Registration.singleton(IResumeStore, ResumeStore));
-    }
+  private get resumeJson(): IResume {
+    return ResumeJson;
+  }
 
-    private get resumeJson(): IResume {
-        return ResumeJson;
-    }
+  public get skills(): Array<ISkill> {
+    return this.resumeJson.skills;
+  }
 
-    public get skills(): Array<ISkill> {
-        return this.resumeJson.skills;
-    }
+  public get basics(): IBasics {
+    return this.resumeJson.basics;
+  }
 
-    public get basics(): IBasics {
-        return this.resumeJson.basics;
-    }
+  public get languages(): Array<ILanguage> {
+    return this.resumeJson.languages;
+  }
 
-    public get languages(): Array<ILanguage> {
-        return this.resumeJson.languages;
-    }
+  public get profiles(): Array<IProfile> {
+    return this.resumeJson.basics.profiles;
+  }
 
-    public get profiles(): Array<IProfile> {
-        return this.resumeJson.basics.profiles;
-    }
+  public get citizenship(): Array<ICitizenship> {
+    return this.resumeJson.citizenship;
+  }
 
-    public get citizenship(): Array<ICitizenship> {
-        return this.resumeJson.citizenship;
-    }
+  public get work(): Array<ICompany> {
+    return this.resumeJson.work;
+  }
 
-    public get work(): Array<ICompany> {
-        return this.resumeJson.work;
-    }
+  public get schools(): Array<ISchool> {
+    return this.resumeJson.education;
+  }
 
-    public get schools(): Array<ISchool> {
-        return this.resumeJson.education;
-    }
+  public get testimonials(): Array<ITestimonial> {
+    return this.resumeJson.references;
+  }
 
-    public get testimonials(): Array<ITestimonial> {
-        return this.resumeJson.references;
-    }
+  public get accomplishments(): Array<IAccomplishment> {
+    return this.resumeJson.accomplishments;
+  }
 
-    public get accomplishments(): Array<IAccomplishment> {
-        return this.resumeJson.accomplishments;
-    }
+  public get qualities(): Array<IQuality> {
+    return this.resumeJson.qualities;
+  }
 
-    public get qualities(): Array<IQuality> {
-        return this.resumeJson.qualities;
-    }
+  public get publications(): Array<IPublication> {
+    return this.resumeJson.publications;
+  }
 
-    public get publications(): Array<IPublication> {
-        return this.resumeJson.publications;
-    }
-
-    public get keywords(): Array<ICategory> {
-        return this.resumeJson.keywords;
-    }
-
+  public get keywords(): Array<ICategory> {
+    return this.resumeJson.keywords;
+  }
 }

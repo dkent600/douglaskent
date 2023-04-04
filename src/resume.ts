@@ -1,36 +1,39 @@
 import { IResumeStore, ISkill } from "./resume-store";
+
 import "resume.scss";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export class Resume {
-  content: HTMLElement;
+  content!: HTMLElement;
   basics: any;
-  profiles: Array<any>;
-  companies: Array<any>;
-  schools: Array<any>;
-  languages: Array<any>;
-  citizenship: Array<any>;
-  skills: Map<string, Set<ISkill>>;
-  skillByName: Map<string, any>;
-  testimonials: Array<any>;
-  accomplishments: Array<string>;
-  qualities: Array<string>;
-  publications: Array<any>;
+  profiles!: Array<any>;
+  companies!: Array<any>;
+  schools!: Array<any>;
+  languages!: Array<any>;
+  citizenship!: Array<any>;
+  skills!: Map<string, Set<ISkill>>;
+  skillByName!: Map<string, any>;
+  testimonials!: Array<any>;
+  accomplishments!: Array<string>;
+  qualities!: Array<string>;
+  publications!: Array<any>;
   showingPublications = false;
-  keywords: Array<string>;
+  keywords!: Array<string>;
 
-  constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
-  }
+  constructor(@IResumeStore private readonly resumeStore: IResumeStore) {}
 
   binding() {
-
     this.basics = this.resumeStore.basics;
     this.languages = this.resumeStore.languages;
     this.profiles = this.resumeStore.profiles;
     this.citizenship = this.resumeStore.citizenship;
-    this.companies = this.resumeStore.work.sort((a, b) => { return this.evaluateDateTime(a.endDate, b.endDate, -1); })
-    this.schools = this.resumeStore.schools.sort((a, b) => { return this.evaluateDateTime(a.startDate, b.startDate, -1); });
+    this.companies = this.resumeStore.work.sort((a, b) => {
+      return this.evaluateDateTime(a.endDate, b.endDate, -1);
+    });
+    this.schools = this.resumeStore.schools.sort((a, b) => {
+      return this.evaluateDateTime(a.startDate, b.startDate, -1);
+    });
     this.testimonials = this.resumeStore.testimonials;
     this.accomplishments = this.resumeStore.accomplishments;
     this.qualities = this.resumeStore.qualities;
@@ -49,7 +52,7 @@ export class Resume {
      * Key skills in a category by the keyword that they have in common.
      * "Hide" means don't show among the categories, but the
      * item can still show up under jobs.
-     * 
+     *
      * An alias does not need to have its own element in json.
      * But if you want something to show up as its own pill, it
      * needs its own json element.
@@ -58,15 +61,14 @@ export class Resume {
     /**
      * get category names sorted in the order they appear in the json
      */
-    for (const skill of this.resumeStore.skills.filter((s) => !s.hide)
-    ) {
+    for (const skill of this.resumeStore.skills.filter((s) => !s.hide)) {
       for (const keyword of skill.keywords) {
         let skillCategory = this.skills.get(keyword);
         if (!skillCategory) {
-          if (!this.keywords.find((s) => s === keyword)) {
-            // this.categories.push(`${keyword} [not in keywords list!]`);
-            console.log(`!!! ${keyword} is not in keywords list!`);
-          }
+          // if (!this.keywords.find((s) => s === keyword)) {
+          //   // this.categories.push(`${keyword} [not in keywords list!]`);
+          //   console.log(`!!! ${keyword} is not in keywords list!`);
+          // }
           skillCategory = new Set<ISkill>();
           this.skills.set(keyword, skillCategory);
         }
@@ -76,14 +78,14 @@ export class Resume {
 
     /**
      * Key the skill element by its lowercase name and all its aliases.
-     * If there is a circular reference here between 
+     * If there is a circular reference here between
      * name and the alias, then what ever is the last one encountered
      * will be keyed by the duplicated skill name.
      */
     for (const skill of this.resumeStore.skills) {
       // will overwrite dups
       this.skillByName.set(skill.name.toLowerCase(), skill);
-      const aliases = skill.aliases || [];
+      const aliases = skill.aliases ?? [];
       /**
        * when the alias is referenced in a job, it will be
        * displayed using this skill.
@@ -96,12 +98,10 @@ export class Resume {
 
     for (const company of this.companies) {
       if (!company.skills) {
-        console.log(`!!! company has no skills: ${company.name}`);
+        // console.log(`!!! company has no skills: ${company.name}`);
         continue;
       }
-      company.skills = company.skills
-        .map((name) => this.skillByName.get(name.toLowerCase()))
-        ;
+      company.skills = company.skills.map((name: string) => this.skillByName.get(name.toLowerCase()));
     }
   }
 
@@ -122,7 +122,6 @@ export class Resume {
   //   ($(".company .contract i") as any).tooltip();
   //   ($(".company .personal i") as any).tooltip();
   // }
-
 
   // private evaluateSkillPriority(a: number, b: number) {
   //     const factor = 1;
