@@ -9,13 +9,14 @@
   "license": "UNLICENSED",
   "main": "dist/app.bundle.js",
   "dependencies": {
-    "@aurelia/router": "latest",
-    "aurelia": "latest",
-    "dompurify": "^3.0.1"
+    "@aurelia/router": "^2.1.0-dev.202304030920",
+    "aurelia": "^2.1.0-dev.202304030920",
+    "dompurify": "^3.0.1",
+    "font-awesome": "^4.7.0"
   },
   "devDependencies": {
-    "@aurelia/plugin-gulp": "latest",
-    "@aurelia/testing": "latest",
+    "@aurelia/plugin-gulp": "^2.1.0-dev.202304030920",
+    "@aurelia/testing": "^2.1.0-dev.202304030920",
     "@types/dompurify": "^3.0.1",
     "@types/jquery": "^3.2.13",
     "@types/node": "^18.11.18",
@@ -62,7 +63,8 @@
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
     "start": "gulp",
     "build": "gulp clean && cross-env NODE_ENV=production gulp build",
-    "clear-cache": "gulp clear-cache"
+    "clear-cache": "gulp clear-cache",
+    "clean": "npx -y rimraf node_modules package-lock.json && npm i"
   },
   "overrides": {
     "chokidar": "^3.5.3",

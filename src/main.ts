@@ -1,9 +1,9 @@
 import Aurelia from "aurelia";
 
+import { Resume } from "./pages/resume/resume";
+import { ResumeService } from "./services/resume-service";
+import { ResumeStore } from "./stores/resume-store";
 import * as resources from "./resources";
-import { Resume } from "./resume";
-import { ResumeService } from "./resume-service";
-import { ResumeStore } from "./resume-store";
 
 // eslint-disable-next-line prettier/prettier
 void Aurelia

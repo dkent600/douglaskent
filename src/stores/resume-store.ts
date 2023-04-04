@@ -1,6 +1,6 @@
 import { DI, IContainer, Registration } from "aurelia";
 
-import { IResume, ResumeJson } from "./resume-service";
+import { IResume, ResumeJson } from "../services/resume-service";
 
 export interface ISkill {
   priority: number;

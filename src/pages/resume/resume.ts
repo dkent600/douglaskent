@@ -1,9 +1,7 @@
-import { IAccomplishment, IBasics, ICategory, ICitizenship, ICompany, ILanguage, IProfile, IPublication, IQuality, IResumeStore, ISchool, ISkill, ITestimonial } from "./resume-store";
+import { IAccomplishment, IBasics, ICategory, ICitizenship, ICompany, ILanguage, IProfile, IPublication, IQuality, IResumeStore, ISchool, ISkill, ITestimonial } from "../../stores/resume-store";
 
 import "font-awesome/css/font-awesome.css";
-import "resume.scss";
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import "./resume.scss";
 
 export class Resume {
   basics!: IBasics;

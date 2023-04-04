@@ -1,6 +1,6 @@
 import { DI, IContainer, Registration } from "aurelia";
 
-import ResumeJson from "./static/resume.json";
+import ResumeJson from "../static/resume.json";
 export { ResumeJson };
 export type IResume = typeof ResumeJson;
 

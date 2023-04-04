@@ -12,23 +12,46 @@ $gray-600: #6c757d;
 $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
-$black:    #000;
+$black: #000;
 
-/* bootstrap classes */
+.print-only {
+  display: none;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  .print-only {
+    display: block;
+  }
+}
+
+.root {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 32px;
+  grid-row-gap: 0px;
+  grid-template-areas: "leftColumn rightColumn";
+
+  .leftColumn {
+    grid-area: leftColumn;
+  }
+
+  .rightColumn {
+    grid-area: rightColumn;
+  }
+}
+
 .rounded-circle {
   border-radius: 50% !important;
 }
 
-$paragraph-margin-bottom: 1rem !default;
-p {
-  margin-top: 0;
-  margin-bottom: $paragraph-margin-bottom;
-}
-
-/* not-bootstrap */
 h1 {
   font-weight: 400;
-  margin-bottom:1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 @mixin highlight-text {
@@ -37,14 +60,14 @@ h1 {
 }
 
 .section .content {
-  padding-left: .75rem;
+  padding-left: 0.75rem;
 }
 
 .section h3 {
   width: 100%;
-  border-bottom: .1rem solid $gray-400;
+  border-bottom: 0.1rem solid $gray-400;
   margin-bottom: 1rem;
-  padding-left: .1rem;
+  padding-left: 0.1rem;
 }
 
 @mixin happy-text {
@@ -53,16 +76,16 @@ h1 {
 
 .quality {
   padding-top: 0;
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }
 
-.quality td>i {
-  padding-right: .5rem;
+.quality td > i {
+  padding-right: 0.5rem;
 }
 
 .quality-body {
   // border-left: 3px solid $gray-400;
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 }
 
 // .quality-bullet i {
@@ -74,7 +97,7 @@ h1 {
 .quality-bullet i {
   font-weight: 900;
   font-size: 2rem;
-  padding:0;
+  padding: 0;
   color: $green-500;
   background-color: $gray-300 !important;
   @extend .rounded-circle;
@@ -85,15 +108,15 @@ h1 {
 }
 
 .accomplishment-stars {
-  text-align: center; 
-  margin-bottom:.75rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
   padding-right: 3rem;
   width: 100%;
 }
 
 .accomplishment-star {
   color: $green-500;
-  padding-right: .2rem;
+  padding-right: 0.2rem;
 }
 
 .accomplishment-body {
@@ -102,7 +125,7 @@ h1 {
 }
 
 .accomplishment.list-group-item {
-  padding-left:0 !important;
+  padding-left: 0 !important;
 }
 
 .profile-icon {
@@ -111,7 +134,7 @@ h1 {
 }
 
 .section {
-  margin-bottom:1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .company-position,
@@ -122,17 +145,16 @@ h1 {
   @include highlight-text;
 }
 
-.company .remote i
-, .company .contract i 
-, .company .personal i 
-{
+.company .remote i,
+.company .contract i,
+.company .personal i {
   font-size: 1rem;
-  color:$green-500;
+  color: $green-500;
 }
 
 .company-icons {
-  display:inline-block;
-  padding-left: .5rem;
+  display: inline-block;
+  padding-left: 0.5rem;
 }
 
 .company-name {
@@ -141,25 +163,24 @@ h1 {
 }
 
 .company,
-.school 
-{
+.school {
   margin-bottom: 1.5rem;
 }
 
 .company .highlights {
-  padding-left: .5rem;
-  padding-top: .5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 .company .highlights a.show-link {
   display: inline-block;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   color: $green-600;
   text-decoration: underline;
 }
 
 .company .highlights a.show-link i {
-  margin-left:.25rem;
+  margin-left: 0.25rem;
 }
 
 .company-summary {
@@ -168,14 +189,14 @@ h1 {
 
 .company .separator {
   display: inline-block;
-  margin-left: .5rem;
-  margin-right: .5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .skill-name {
   font-weight: normal;
-  padding:.55rem;
-  margin-bottom:.3rem;
-  margin-right:.3rem;
+  padding: 0.55rem;
+  margin-bottom: 0.3rem;
+  margin-right: 0.3rem;
   background-color: $gray-200;
   color: $gray-900;
 }
@@ -186,7 +207,7 @@ h1 {
 
 body {
   // for scrollspy
-  position:relative;
+  position: relative;
 }
 
 #TOC a.active {
@@ -196,20 +217,19 @@ body {
 
 #TOC a:hover,
 #TOCSmall a:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 #TOC a {
-  padding-bottom:.1rem;
+  padding-bottom: 0.1rem;
   color: inherit;
   border-left: 2px solid transparent;
-  padding-left:1.1rem;
+  padding-left: 1.1rem;
 }
 
 nav#TOC {
   box-shadow: none;
   padding-left: 0;
-
 }
 
 #TOCSmall {
@@ -226,18 +246,18 @@ nav#TOC {
 
 #TOCSmall button {
   background-color: $gray-100;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 #TOCSmall button:focus {
--webkit-box-shadow: none;
-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 #TOCSmall a {
-  padding-bottom:.1rem;
+  padding-bottom: 0.1rem;
   color: inherit;
-  padding-left:1.1rem;
+  padding-left: 1.1rem;
 }
 
 #TOCSmall .dropdown-menu {
@@ -249,16 +269,16 @@ box-shadow: none;
   z-index: 1030;
 }
 
-blockquote.testimonial  .citation::before {
-    font-family: "serif";
-    content: "\201C";
-    font-size: 4rem;
-    position: absolute;
-    left: -2.2rem;
-    top: -1.75rem;
-    color: #7a7a7a;
-  }
-  
+blockquote.testimonial .citation::before {
+  font-family: "serif";
+  content: "\201C";
+  font-size: 4rem;
+  position: absolute;
+  left: -2.2rem;
+  top: -1.75rem;
+  color: #7a7a7a;
+}
+
 blockquote.testimonial {
   border: none !important;
   position: relative;
@@ -274,11 +294,11 @@ blockquote.testimonial .blockquote-quote {
 
 blockquote.testimonial .blockquote-footer {
   margin-top: 1rem;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 #publications-list {
-  padding-left: .75rem;
+  padding-left: 0.75rem;
   padding-right: 3rem;
 }
 
@@ -287,11 +307,10 @@ blockquote.testimonial .blockquote-footer {
 #accomplishments,
 #education,
 #skill,
-#history
- {
+#history {
   page-break-before: always;
 }
 
 .summary div {
-  @extend p;
+  //  @extend p;
 }
