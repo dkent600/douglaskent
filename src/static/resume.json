@@ -9,7 +9,7 @@
     "phone": "+506 8591-5302 (CR)",
     "phone2": "+1 (512) 402-8735 (US)",
     "website": "http://www.douglaskent.com/techresume",
-    "summary": "<div>Hi, I am an experienced software engineer and web site developer, specializing in building antifragility for my clients using full-stack development of enterprise-scale websites built from state-of-the-art technologies and architectures, including single page applications and service-oriented architectures using Aurelia/Typescript, .NET Core/C# and Ethereum blockchain technologies.</div><div>I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest!</div>",
+    "summary": "<div>Hi, I am an experienced software engineer and web site developer, specializing in building antifragility for my clients using full-stack development of enterprise-scale websites built from state-of-the-art technologies and architectures, including single page applications and service-oriented architectures using Aurelia/Typescript, React and Web3 Ethereum blockchain technologies.</div><div>I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest!</div>",
     "location": {
       "address": "Alegria Village",
       "postalCode": "",
@@ -56,14 +56,14 @@
   "work": [
     {
       "company": "Curve Labs",
-      "position": "Senior Lead Developer",
+      "position": "Development Team Lead and Lead Developer",
       "remote": true,
       "website": "https://www.curvelabs.eu/",
       "startDate": "2020-08",
       "summary": "Developed multiple decentralized applications (dApps), running on the Ethereum blockchain, focused on decentralize finance (Defi) and regenerative finance (Refi), including <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo (in progress)</a>, <a href=\"https://deals.prime.xyz/\" target=\"_blank\">PrimeDeals Web3 partnerships made easy</a>, <a href=\"https://launch.prime.xyz\" target=\"_blank\">PrimeLaunch decentralized project funding raising</a>, <a href=\"https://primepool.primedao.io\" target=\"_blank\">PrimePool liquidity and farming</a>, <a href=\"https://primelock.eth.link\" target=\"_blank\">PrimeLocking for reputation</a> (hosted on IPFS), and the original <a href=\"https://primedao.eth.link\" target=\"_blank\">PRIMEDao Home Page</a> (hosted on IPFS).",
       "endDate": "2022-11",
       "highlights": [
-        "Development Lead on Kolektivo, Prime Deals and Prime Launch, sole developer on all of the other dApps listed above",
+        "Development Team Lead on Kolektivo, Prime Deals and Prime Launch, sole developer on all of the other dApps listed above",
         "Led teams of two front-end developers on Kolektivo, five on Prime Deals, and one on Prime Launch",
         "As a developer, was primarily responsible for developing the Web3 front-end user interfaces.  Colleagues wrote the smart contracts.",
         "The Prime dApps are working with <a href=\"https://balancer.finance/\" target=\"_blank\">Balancer liquidity pools</a>, a decentralized automated market maker running on ethereum.",
