@@ -12,7 +12,12 @@
     "@aurelia/router": "^2.1.0-dev.202304030920",
     "aurelia": "^2.1.0-dev.202304030920",
     "dompurify": "^3.0.1",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "arrive": "^2.4.1",
+    "bootstrap": "^4.1.1",
+    "bootstrap-material-design": "^4.1.1",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.11.0"
   },
   "devDependencies": {
     "@aurelia/plugin-gulp": "^2.1.0-dev.202304030920",
@@ -22,6 +27,7 @@
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
+    "@types/bootstrap": "^3.3.36",
     "autoprefixer": "^10.4.13",
     "connect": "^3.7.0",
     "connect-history-api-fallback": "^2.0.0",

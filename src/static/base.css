@@ -1,0 +1,47 @@
+@media print {
+  .hidden-print, .hidden-print * {
+    display: none !important;
+  }
+  .visible-print, .visible-print * {
+    display: inherit !important;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.nofocus:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/** APPLICATION **/
+
+.container {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+/* animate page transitions */
+
+section.au-enter-active {
+  animation: fadeInRight 1s;
+}
+
+div.au-stagger {
+  /* 50ms will be applied between each successive enter operation */
+  animation-delay: 50ms;
+}
+
+a {
+  color: #2196f3;
+}
+
+a:hover {
+  color: #0a6ebd;
+  text-decoration: underline;
+}

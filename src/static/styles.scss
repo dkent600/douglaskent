@@ -1,0 +1,13 @@
+@import "../../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../../node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.min.css";
+@import "./base";
+@import "../pages/resume/resume";
+
+/** eliminate the nasty 32 pixel margin that BMD adds **/
+.list-group.clean .list-group-item :first-child {
+  margin-right: unset; // override BMD
+}
+
+.list-group.clean .list-group-item .material-icons:last-child {
+  padding-left: unset !important;
+}
