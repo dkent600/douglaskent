@@ -7,6 +7,11 @@
   }
 }
 
+.spinner {
+  color: #198754;
+  font-size: 48px;
+}
+
 .nowrap {
   white-space: nowrap;
 }

@@ -101,8 +101,6 @@ export class Resume {
   }
 
   attaching() {
-    $("#splash").css("display", "none");
-
     $("#publications-list").on("show.bs.collapse", () => {
       this.showingPublications = true;
     });
