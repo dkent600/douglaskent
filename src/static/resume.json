@@ -1722,6 +1722,10 @@
     {
       "country": "Britain",
       "status": "Valid Passport"
+    },
+    {
+      "country": "Costa Rica",
+      "status": "Residency"
     }
   ],
   "references": [

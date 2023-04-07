@@ -2,6 +2,7 @@ import Aurelia from "aurelia";
 
 import "arrive"; // do bmd does it's thing whenever views are attached
 import "node-waves";
+import "bootstrap-material-design";
 
 import { Resume } from "./pages/resume/resume";
 import { ResumeService } from "./services/resume-service";

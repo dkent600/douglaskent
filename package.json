@@ -15,7 +15,6 @@
     "bootstrap": "^4.1.1",
     "bootstrap-material-design": "^4.1.1",
     "dompurify": "^3.0.1",
-    "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "node-waves": "^0.7.5",
     "popper.js": "^1.11.0"

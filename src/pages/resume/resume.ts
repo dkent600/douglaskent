@@ -1,6 +1,7 @@
 import { IAccomplishment, IBasics, ICategory, ICitizenship, ICompany, ILanguage, IProfile, IPublication, IQuality, IResumeStore, ISchool, ISkill, ITestimonial } from "../../stores/resume-store";
 
 import "../../static/styles.scss";
+
 export class Resume {
   basics!: IBasics;
   profiles!: Array<IProfile>;
