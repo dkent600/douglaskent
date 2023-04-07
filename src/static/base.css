@@ -7,7 +7,26 @@
   }
 }
 
-.spinner {
+#splash {
+  font-family: Roboto;
+  padding-top: 48px;
+}
+
+#splash .welcome {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+#splash .message {
+  margin-bottom: 48px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+
+#splash .spinner {
   color: #198754;
   font-size: 48px;
 }
