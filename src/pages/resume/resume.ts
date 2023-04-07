@@ -1,6 +1,6 @@
 import { IAccomplishment, IBasics, ICategory, ICitizenship, ICompany, ILanguage, IProfile, IPublication, IQuality, IResumeStore, ISchool, ISkill, ITestimonial } from "../../stores/resume-store";
 
-import "../../static/styles.scss";
+import "./resume.scss";
 
 export class Resume {
   basics!: IBasics;
@@ -93,6 +93,8 @@ export class Resume {
         this.skillByName.set(alias.toLowerCase(), skill);
       }
     }
+
+    $("#splash").css("display", "none");
   }
 
   companySkills(company: ICompany): Array<ISkill> {
