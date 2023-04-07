@@ -1,5 +1,8 @@
 import Aurelia from "aurelia";
 
+import "arrive"; // do bmd does it's thing whenever views are attached
+import "node-waves";
+
 import { Resume } from "./pages/resume/resume";
 import { ResumeService } from "./services/resume-service";
 import { ResumeStore } from "./stores/resume-store";

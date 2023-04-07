@@ -1,6 +1,24 @@
-@import "../../node_modules/font-awesome/css/font-awesome.min.css";
-@import "../../node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.min.css";
-@import "./base";
+@import "~bootstrap-material-design";
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+// @import "~bootstrap-material-design/scss/color";
+// @import "~bootstrap-material-design/scss/variables";
+
+// @import "~materialize-sass/global";
+// @import "~materialize-sass/icons-material-design";
+// @import "~materialize-sass/preloader";
+// @import "~materialize-sass/table_of_contents";
+// @import "~materialize-sass/buttons";
+
+// @import "~mdbootstrap-sass/data/prefixer";
+// @import "~mdbootstrap-sass/data/mixins";
+// @import "~mdbootstrap-sass/data/colors";
+// @import "~mdbootstrap-sass/data/variables";
+// $roboto-font-path: "../node_modules/mdbootstrap/font/roboto/";
+// $image-path: "../node_modules/mdbootstrap/img/";
+
 @import "../pages/resume/resume";
 
 /** eliminate the nasty 32 pixel margin that BMD adds **/

@@ -55,6 +55,7 @@
   ],
   "work": [
     {
+      "showingHighlights": false,
       "company": "Curve Labs",
       "position": "Development Team Lead and Lead Developer",
       "remote": true,
