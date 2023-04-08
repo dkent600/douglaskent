@@ -59,7 +59,7 @@ export class Resume {
     /**
      * get category names sorted in the order they appear in the json
      */
-    for (const skill of this.resumeStore.skills.filter((s) => !s.hide)) {
+    for (const skill of this.resumeStore.skills.filter((s) => !s.hide).sort((a, b) => this.evaluateSkillPriority(a.priority, b.priority))) {
       for (const keyword of skill.keywords) {
         let skillCategory = this.skills.get(keyword);
         if (!skillCategory) {
@@ -129,16 +129,15 @@ export class Resume {
     ($(".company .personal i") as any).tooltip();
   }
 
-  // private evaluateSkillPriority(a: number, b: number) {
-  //     const factor = 1;
-  //     /* whereever pririty is 0 or undefined, it goes last, otherwise is increasing */
-  //     if (!a && !b) return -1;
+  private evaluateSkillPriority(a: number, b: number, factor = 1) {
+    /* whereever pririty is 0 or undefined, it goes last, otherwise is increasing */
+    if (!a && !b) return -1;
 
-  //     if (!a) return factor;
-  //     if (!b) return -factor;
+    if (!a) return factor;
+    if (!b) return -factor;
 
-  //     return (a - b) * factor;
-  // }
+    return (a - b) * factor;
+  }
 
   // private evaluateString(a: string, b: string, factor: number) {
   //     if (!a && !b) return 0;
@@ -152,7 +151,7 @@ export class Resume {
   //     return a.localeCompare(b) * factor;
   // }
 
-  private evaluateDateTime(valueA: string, valueB: string, factor: number) {
+  private evaluateDateTime(valueA: string, valueB: string, factor = 1) {
     // let a = this.moment.utc(valueA);
     // let b = this.moment.utc(valueB);
 

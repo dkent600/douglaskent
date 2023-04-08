@@ -35,9 +35,9 @@
   },
   "keywords": [
     "Website and Application Development",
+    "Blockchain",
     "Software Languages",
     "Markup Languages",
-    "Blockchain",
     "Databases",
     "Module Bundling and Loading",
     "Software Development Platforms",
@@ -61,30 +61,35 @@
       "remote": true,
       "website": "https://www.curvelabs.eu/",
       "startDate": "2020-08",
-      "summary": "Developed multiple decentralized applications (dApps), running on the Ethereum blockchain, focused on decentralize finance (Defi) and regenerative finance (Refi), including <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo (in progress)</a>, <a href=\"https://deals.prime.xyz/\" target=\"_blank\">PrimeDeals Web3 partnerships made easy</a>, <a href=\"https://launch.prime.xyz\" target=\"_blank\">PrimeLaunch decentralized project funding raising</a>, <a href=\"https://primepool.primedao.io\" target=\"_blank\">PrimePool liquidity and farming</a>, <a href=\"https://primelock.eth.link\" target=\"_blank\">PrimeLocking for reputation</a> (hosted on IPFS), and the original <a href=\"https://primedao.eth.link\" target=\"_blank\">PRIMEDao Home Page</a> (hosted on IPFS).",
+      "summary": "Coordinated the development of the frontends of multiple decentralized applications (dApps), running against the Ethereum blockchain, focused on decentralized (Defi) and regenerative finance (Refi).",
       "endDate": "2022-11",
       "highlights": [
-        "Development Team Lead on Kolektivo, Prime Deals and Prime Launch, sole developer on all of the other dApps listed above",
-        "Led teams of two front-end developers on Kolektivo, five on Prime Deals, and one on Prime Launch",
-        "As a developer, was primarily responsible for developing the Web3 front-end user interfaces.  Colleagues wrote the smart contracts.",
-        "The Prime dApps are working with <a href=\"https://balancer.finance/\" target=\"_blank\">Balancer liquidity pools</a>, a decentralized automated market maker running on ethereum.",
-        "With the exception of the PrimeDAO Home Page, which uses React.js, the dApps are all implemented using <a href=\"https://aurelia.io/\" target=\"_blank\">Aurelia</a>."
+        "Coordinated a team of two and participated in the coding of the dApp frontend of <a href=\"https://github.com/Kolektivo/kolektivo-dapp\" target=\"_blank\">Kolektivo</a>",
+        "Coordinated a team of five, owned the architecture and participated in the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-deals-dapp\"target=\"_blank\">Prime Deals</a>",
+        "Coordinated a team of two, owned the architecture and did most of the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-launch-dapp\"target=\"_blank\">Prime Launch</a>",
+        "Was the lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\"target=\"_blank\">Prime Pools</a>, <a href=\"https://github.com/PrimeDAO/locking-for-rep-dapp\"target=\"_blank\">Prime Locking For Reputation</a> and the original PRIMEDao Home Page",
+        "The Prime dApps use <a href=\"https://balancer.fi/\" target=\"_blank\">Balancer liquidity pools</a>, a decentralized automated market maker running on ethereum.",
+        "With the exception of the PrimeDAO Home Page, which uses React.js, the dApps are all implemented using the <a href=\"https://aurelia.io/\" target=\"_blank\">Aurelia</a> framework.",
+        "As products, these applications are innovative and impressive. Read more about them: <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo (development still in progress)</a>, <a href=\"https://deals.prime.xyz/\" target=\"_blank\">Prime Deals</a>, <a href=\"https://launch.prime.xyz\" target=\"_blank\">Prime Launch</a>, <a href=\"https://primepool.primedao.io\" target=\"_blank\">Prime Pools</a>, <a href=\"https://primelock.eth.link\" target=\"_blank\">Prime Locking for Reputation</a> (hosted on IPFS), and the original <a href=\"https://primedao.eth.link\" target=\"_blank\">PRIMEDao Home Page</a> (hosted on IPFS)"
       ],
       "skills": [
         "Ethereum",
-        "IPFS",
-        "ENS",
+        "DAOs",
+        "Web3",
+        "Refi",
         "Defi",
         "TypeScript",
         "Javascript",
         "Solidity",
-        "Kovan",
         "Aurelia",
         "HTML5",
+        "i18Next",
         "Webpack",
         "CSS",
         "SASS",
         "Responsive",
+        "IPFS",
+        "ENS",
         "NodeJs",
         "GitHub",
         "ReactJs",
@@ -101,7 +106,7 @@
       "summary": "Performed multiple roles in the design, creation and use of DAOstack DAOs (decentralized autonomous organizations on the Ethereum blockchain) that are capable of decentralized governance at large scales.",
       "endDate": "2020-10",
       "highlights": [
-        "I was one of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
+        "Was one of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
         "Implemented and helped to design the <a href=\"https://github.com/daostack/dutchx-bootstrapper-ui\" target=\"_blank\">dxDAO Vote Staking Interface</a>, a website for initializing reputation in the dxDAO, a new decentralized autonomous organization (DAO) that governs the DutchX, a permissionless trading protocol for ERC20 tokens on the Ethereum blockchain. (The UI will disappear on 2019-06-28 when the dxDAO initialization period ends, but you can see walkthroughs <a href=\"https://twitter.com/_dx_dao/status/1138824722211311616\" target=\"_blank\">here</a> and <a href=\"https://blog.gnosis.pm/step-by-step-guide-to-earn-reputation-for-the-dxdao-with-the-gnosis-safe-cc54f3a93f3e\" target=\"_blank\">here</a>.)",
         "Designed and implemented a well-reviewed architecture for the original version of <a href=\"https://github.com/daostack/arc.js_legacy\" target=\"_blank\">DAOstack Arc.js</a>",
         "Implemented <a href=\"https://github.com/daostack/vanille\" target=\"_blank\">Vanille</a>, open-source software that leverage <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOStack Arc</a> to facilitate the creation of DAOstack DAOs",
@@ -110,13 +115,11 @@
       ],
       "skills": [
         "Ethereum",
+        "DAOs",
+        "Web3",
         "TypeScript",
         "Javascript",
         "Solidity",
-        "Truffle",
-        "Heroku",
-        "Ganache",
-        "Kovan",
         "Aurelia",
         "HTML5",
         "Webpack",
@@ -843,7 +846,7 @@
       "url": "http://www.typescriptlang.org"
     },
     {
-      "priority": 5,
+      "priority": 15,
       "name": "C#",
       "keywords": [
         "Website and Application Development",
@@ -852,21 +855,12 @@
       "url": "http://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
     },
     {
-      "priority": 4,
+      "priority": 5,
       "name": "JavaScript",
       "keywords": [
         "Website and Application Development",
         "Software Languages"
       ]
-    },
-    {
-      "priority": 2,
-      "name": "Solidity",
-      "keywords": [
-        "Blockchain",
-        "Software Languages"
-      ],
-      "url": "http://github.com/ethereum/solidity"
     },
     {
       "priority": 3,
@@ -901,7 +895,7 @@
       ]
     },
     {
-      "priority": 4,
+      "priority": 14,
       "name": "Razor",
       "keywords": [
         "Website and Application Development",
@@ -909,7 +903,16 @@
       ]
     },
     {
-      "priority": 4,
+      "priority": 13,
+      "name": "Markdown",
+      "keywords": [
+        "Website and Application Development",
+        "Markup Languages"
+      ],
+      "url": "https://www.markdownguide.org/getting-started"
+    },
+    {
+      "priority": 5,
       "name": "CSS",
       "keywords": [
         "Website and Application Development",
@@ -922,7 +925,8 @@
       "keywords": [
         "Website and Application Development",
         "Markup Languages"
-      ]
+      ],
+      "url": "https://sass-lang.com/"
     },
     {
       "name": "jQuery",
@@ -987,7 +991,7 @@
     },
     {
       "name": "SQL",
-      "priority": 4,
+      "priority": 18,
       "keywords": [
         "Databases",
         "Software Languages"
@@ -1354,25 +1358,116 @@
       "url": "http://en.wikipedia.org/wiki/Swing_(Java)"
     },
     {
+      "priority": 1,
       "name": "Ethereum",
       "keywords": [
         "Blockchain"
-      ]
+      ],
+      "url": "https://ethereum.org/en/"
     },
     {
-      "name": "Bitcoin",
-      "keywords": [
-        "Blockchain"
-      ]
-    },
-    {
-      "name": "Truffle",
+      "priority": 2,
+      "name": "Web3",
       "keywords": [
         "Blockchain"
       ],
-      "url": "http://truffleframework.com/"
+      "url": "https://en.wikipedia.org/wiki/Web3"
     },
     {
+      "name": "Refi",
+      "priority": 3,
+      "keywords": [
+        "Blockchain",
+        "Regenerative Finance"
+      ],
+      "url": "https://www.financemagnates.com/cryptocurrency/innovation/understanding-the-role-of-regenerative-finance-refi-in-crypto/"
+    },
+    {
+      "name": "Defi",
+      "priority": 4,
+      "keywords": [
+        "Blockchain",
+        "Decentralized Finance"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Decentralized_finance"
+    },
+    {
+      "priority": 5,
+      "name": "DAOs",
+      "keywords": [
+        "Blockchain",
+        "Decentralized Autonomous Organizations"
+      ],
+      "url": "https://www.investopedia.com/tech/what-dao/"
+    },
+    {
+      "priority": 6,
+      "name": "ethers.js",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "https://ethers.org/"
+    },
+    {
+      "priority": 7,
+      "name": "web3.js",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "https://web3js.org/"
+    },
+    {
+      "priority": 8,
+      "name": "Solidity",
+      "keywords": [
+        "Blockchain",
+        "Software Languages"
+      ],
+      "url": "https://soliditylang.org/"
+    },
+    {
+      "priority": 20,
+      "name": "Metamask",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "https://metamask.io/"
+    },
+    {
+      "priority": 21,
+      "name": "WalletConnect",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "https://walletconnect.com/"
+    },
+    {
+      "priority": 22,
+      "name": "Web3Modal",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "https://web3modal.com/"
+    },
+    {
+      "priority": 23,
+      "name": "Gnosis Safe",
+      "keywords": [
+        "Blockchain"
+      ],
+      "url": "https://safe.global/"
+    },
+    {
+      "priority": 24,
+      "name": "Balancer Liquidity Pools",
+      "keywords": [
+        "Blockchain",
+        "Decentralized Finance"
+      ],
+      "url": "https://balancer.fi/"
+    },
+    {
+      "priority": 30,
       "name": "IPFS",
       "keywords": [
         "Blockchain",
@@ -1381,56 +1476,12 @@
       "url": "https://ipfs.io/"
     },
     {
-      "name": "Heroku",
-      "keywords": [
-        "Website and Application Hosting"
-      ],
-      "url": "https://www.heroku.com/"
-    },
-    {
-      "name": "Defi",
-      "keywords": [
-        "Blockchain"
-      ],
-      "url": "https://www.coindesk.com/what-is-defi"
-    },
-    {
+      "priority": 31,
       "name": "ENS",
       "keywords": [
         "Blockchain"
       ],
       "url": "https://app.ens.domains/"
-    },
-    {
-      "priority": 1,
-      "name": "Web3",
-      "keywords": [
-        "Blockchain"
-      ]
-    },
-    {
-      "name": "Parity",
-      "keywords": [
-        "Blockchain"
-      ],
-      "url": "http://www.parity.io/"
-    },
-    {
-      "name": "Kovan",
-      "keywords": [
-        "Blockchain"
-      ],
-      "url": "http://kovan-testnet.github.io/website/"
-    },
-    {
-      "name": "Ganache",
-      "aliases": [
-        "Testrpc"
-      ],
-      "keywords": [
-        "Blockchain"
-      ],
-      "url": "http://github.com/trufflesuite/ganache-cli"
     },
     {
       "name": "nHibernate",
@@ -1686,6 +1737,14 @@
         "Test Frameworks"
       ],
       "url": "http://github.com/Microsoft/vstest"
+    },
+    {
+      "name": "Jest",
+      "priority": 1,
+      "keywords": [
+        "Test Frameworks"
+      ],
+      "url": "https://jestjs.io/"
     },
     {
       "name": "Telerik",
