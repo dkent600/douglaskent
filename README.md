@@ -15,12 +15,14 @@ It builds `dist/*bundle.[hash].js`, updates index.html with hashed js bundle fil
 For example
 ```
 base.css
+favicon.ico
 index.html
 dist/*
 ```
 Copy to production root folder
 ```
 root_folder/base.css
+root-folder/favicon.ico
 root_folder/index.html
 root_folder/dist/*
 ```
