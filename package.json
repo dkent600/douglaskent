@@ -8,6 +8,17 @@
   },
   "license": "UNLICENSED",
   "main": "dist/app.bundle.js",
+  "scripts": {
+    "lint:js": "eslint src --ext .js,.ts",
+    "lint:js.fix": "eslint src --ext .js,.ts --fix",
+    "lint:css": "sass-lint -c .sass-lint.yml \"src/**/*.scss\"",
+    "lint:html": "htmlhint -c .htmlhintrc src",
+    "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
+    "start": "gulp",
+    "build": "gulp clean && cross-env NODE_ENV=production gulp build",
+    "clear-cache": "gulp clear-cache",
+    "clean": "npx -y rimraf node_modules package-lock.json && npm i"
+  },
   "dependencies": {
     "@aurelia/router": "^2.1.0-dev.202304030920",
     "arrive": "^2.4.1",
@@ -60,17 +71,6 @@
     "socket.io": "^4.5.4",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4"
-  },
-  "scripts": {
-    "lint:js": "eslint src --ext .js,.ts",
-    "lint:js.fix": "eslint src --ext .js,.ts --fix",
-    "lint:css": "sass-lint -c .sass-lint.yml \"src/**/*.scss\"",
-    "lint:html": "htmlhint -c .htmlhintrc src",
-    "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
-    "start": "gulp",
-    "build": "gulp clean && cross-env NODE_ENV=production gulp build",
-    "clear-cache": "gulp clear-cache",
-    "clean": "npx -y rimraf node_modules package-lock.json && npm i"
   },
   "overrides": {
     "chokidar": "^3.5.3",
