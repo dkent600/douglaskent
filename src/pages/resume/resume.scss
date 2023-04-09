@@ -1,53 +1,36 @@
-/* bootpstrap colors*/
+@import "~bootstrap-material-design";
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+// @import "~bootstrap-material-design/scss/color";
+// @import "~bootstrap-material-design/scss/variables";
+
+// @import "~materialize-sass/global";
+// @import "~materialize-sass/icons-material-design";
+// @import "~materialize-sass/preloader";
+// @import "~materialize-sass/table_of_contents";
+// @import "~materialize-sass/buttons";
+
+// @import "~mdbootstrap-sass/data/prefixer";
+// @import "~mdbootstrap-sass/data/mixins";
+// @import "~mdbootstrap-sass/data/colors";
+// @import "~mdbootstrap-sass/data/variables";
+// $roboto-font-path: "../node_modules/mdbootstrap/font/roboto/";
+// $image-path: "../node_modules/mdbootstrap/img/";
+
+/** eliminate the nasty 32 pixel margin that BMD adds **/
+.list-group.clean .list-group-item :first-child {
+  margin-right: unset; // override BMD
+}
+
+.list-group.clean .list-group-item .material-icons:last-child {
+  padding-left: unset !important;
+}
+
 $green-500: #198754;
-$green-600: #146c43;
+$green-600: #43a047;
 $orange-a700: #ff6d00;
-
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
-$black: #000;
-
-.print-only {
-  display: none;
-}
-
-@media print {
-  .no-print {
-    display: none;
-  }
-
-  .print-only {
-    display: block;
-  }
-}
-
-.root {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 32px;
-  grid-row-gap: 0px;
-  grid-template-areas: "leftColumn rightColumn";
-
-  .leftColumn {
-    grid-area: leftColumn;
-  }
-
-  .rightColumn {
-    grid-area: rightColumn;
-  }
-}
-
-.rounded-circle {
-  border-radius: 50% !important;
-}
 
 h1 {
   font-weight: 400;
@@ -55,7 +38,7 @@ h1 {
 }
 
 @mixin highlight-text {
-  color: $gray-700;
+  color: $grey-700;
   font-weight: 500;
 }
 
@@ -65,7 +48,7 @@ h1 {
 
 .section h3 {
   width: 100%;
-  border-bottom: 0.1rem solid $gray-400;
+  border-bottom: 0.1rem solid $grey-400;
   margin-bottom: 1rem;
   padding-left: 0.1rem;
 }
@@ -84,7 +67,7 @@ h1 {
 }
 
 .quality-body {
-  // border-left: 3px solid $gray-400;
+  // border-left: 3px solid $grey-400;
   padding-left: 0.5rem;
 }
 
@@ -99,7 +82,7 @@ h1 {
   font-size: 2rem;
   padding: 0;
   color: $green-500;
-  background-color: $gray-300 !important;
+  background-color: $grey-300 !important;
   @extend .rounded-circle;
 }
 
@@ -197,8 +180,8 @@ h1 {
   padding: 0.55rem;
   margin-bottom: 0.3rem;
   margin-right: 0.3rem;
-  background-color: $gray-200;
-  color: $gray-900;
+  background-color: $grey-200;
+  color: $grey-900;
 }
 
 .skills-for-keyword {
@@ -245,7 +228,7 @@ nav#TOC {
 }
 
 #TOCSmall button {
-  background-color: $gray-100;
+  background-color: $grey-100;
   opacity: 0.8;
 }
 
@@ -261,7 +244,7 @@ nav#TOC {
 }
 
 #TOCSmall .dropdown-menu {
-  background-color: $gray-300;
+  background-color: $grey-300;
 }
 
 .side-panel {
@@ -306,11 +289,11 @@ blockquote.testimonial .blockquote-footer {
 #testimonials,
 #accomplishments,
 #education,
-#skill,
+#skills,
 #history {
   page-break-before: always;
 }
 
 .summary div {
-  //  @extend p;
+  @extend p;
 }

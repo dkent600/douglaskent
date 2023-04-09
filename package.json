@@ -8,15 +8,32 @@
   },
   "license": "UNLICENSED",
   "main": "dist/app.bundle.js",
+  "scripts": {
+    "lint:js": "eslint src --ext .js,.ts",
+    "lint:js.fix": "eslint src --ext .js,.ts --fix",
+    "lint:css": "sass-lint -c .sass-lint.yml \"src/**/*.scss\"",
+    "lint:html": "htmlhint -c .htmlhintrc src",
+    "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
+    "start": "gulp",
+    "build": "gulp clean && cross-env NODE_ENV=production gulp build",
+    "clear-cache": "gulp clear-cache",
+    "clean": "npx -y rimraf node_modules package-lock.json && npm i"
+  },
   "dependencies": {
     "@aurelia/router": "^2.1.0-dev.202304030920",
+    "arrive": "^2.4.1",
     "aurelia": "^2.1.0-dev.202304030920",
+    "bootstrap": "^4.1.1",
+    "bootstrap-material-design": "^4.1.1",
     "dompurify": "^3.0.1",
-    "font-awesome": "^4.7.0"
+    "jquery": "^3.2.1",
+    "node-waves": "^0.7.5",
+    "popper.js": "^1.11.0"
   },
   "devDependencies": {
     "@aurelia/plugin-gulp": "^2.1.0-dev.202304030920",
     "@aurelia/testing": "^2.1.0-dev.202304030920",
+    "@types/bootstrap": "^3.3.36",
     "@types/dompurify": "^3.0.1",
     "@types/jquery": "^3.2.13",
     "@types/node": "^18.11.18",
@@ -54,17 +71,6 @@
     "socket.io": "^4.5.4",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4"
-  },
-  "scripts": {
-    "lint:js": "eslint src --ext .js,.ts",
-    "lint:js.fix": "eslint src --ext .js,.ts --fix",
-    "lint:css": "sass-lint -c .sass-lint.yml \"src/**/*.scss\"",
-    "lint:html": "htmlhint -c .htmlhintrc src",
-    "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
-    "start": "gulp",
-    "build": "gulp clean && cross-env NODE_ENV=production gulp build",
-    "clear-cache": "gulp clear-cache",
-    "clean": "npx -y rimraf node_modules package-lock.json && npm i"
   },
   "overrides": {
     "chokidar": "^3.5.3",

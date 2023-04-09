@@ -1,0 +1,71 @@
+@media print {
+  .hidden-print, .hidden-print * {
+    display: none !important;
+  }
+  .visible-print, .visible-print * {
+    display: inherit !important;
+  }
+}
+
+#splash {
+  font-family: Roboto;
+  padding-top: 48px;
+}
+
+#splash .welcome {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+#splash .message {
+  margin-bottom: 48px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+
+#splash .spinner {
+  color: #198754;
+  font-size: 48px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.nofocus:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/** APPLICATION **/
+
+.container {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+/* animate page transitions */
+
+section.au-enter-active {
+  animation: fadeInRight 1s;
+}
+
+div.au-stagger {
+  /* 50ms will be applied between each successive enter operation */
+  animation-delay: 50ms;
+}
+
+a {
+  color: #2196f3;
+}
+
+a:hover {
+  color: #0a6ebd;
+  text-decoration: underline;
+}

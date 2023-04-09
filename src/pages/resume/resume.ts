@@ -1,6 +1,5 @@
 import { IAccomplishment, IBasics, ICategory, ICitizenship, ICompany, ILanguage, IProfile, IPublication, IQuality, IResumeStore, ISchool, ISkill, ITestimonial } from "../../stores/resume-store";
 
-import "font-awesome/css/font-awesome.css";
 import "./resume.scss";
 
 export class Resume {
@@ -17,6 +16,7 @@ export class Resume {
   qualities!: Array<IQuality>;
   publications!: Array<IPublication>;
   showingPublications = false;
+  showingHighlights = false;
   keywords!: Array<ICategory>;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {}
@@ -59,7 +59,7 @@ export class Resume {
     /**
      * get category names sorted in the order they appear in the json
      */
-    for (const skill of this.resumeStore.skills.filter((s) => !s.hide)) {
+    for (const skill of this.resumeStore.skills.filter((s) => !s.hide).sort((a, b) => this.evaluateSkillPriority(a.priority, b.priority))) {
       for (const keyword of skill.keywords) {
         let skillCategory = this.skills.get(keyword);
         if (!skillCategory) {
@@ -93,6 +93,8 @@ export class Resume {
         this.skillByName.set(alias.toLowerCase(), skill);
       }
     }
+
+    $("#splash").css("display", "none");
   }
 
   companySkills(company: ICompany): Array<ISkill> {
@@ -100,34 +102,41 @@ export class Resume {
     return company.skills.map((name: string) => this.skillByName.get(name.toLowerCase())!);
   }
 
-  // attaching() {
-  //   ($('body') as any).scrollspy({ target: '#TOC', offset: 232 });
+  attaching() {
+    $("#publications-list").on("show.bs.collapse", () => {
+      this.showingPublications = true;
+    });
+    $("#publications-list").on("hide.bs.collapse", () => {
+      this.showingPublications = false;
+    });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.companies = this.companies.map((s, _index) => {
+      s.showingHighlights = false;
+      return s;
+    });
+  }
 
-  //   $("#publications-list").on("show.bs.collapse", () => { this.showingPublications = true; });
-  //   $("#publications-list").on("hide.bs.collapse", () => { this.showingPublications = false; });
-  //   this.companies = this.companies
-  //     .map((s, index) => {
-  //       s.showingHighlights = false;
-  //       $(`#highlights_${index}`).on("show.bs.collapse", () => { s.showingHighlights = true; });
-  //       $(`#highlights_${index}`).on("hide.bs.collapse", () => { s.showingHighlights = false; });
-  //       return s;
-  //     });
+  attached() {
+    ($("body") as any).bootstrapMaterialDesign();
+    ($("body") as any).scrollspy({ target: "#TOC", offset: 232 });
+    ($(".company .remote i") as any).tooltip();
+    ($(".company .contract i") as any).tooltip();
+    ($(".company .personal i") as any).tooltip();
+  }
 
-  //   ($(".company .remote i") as any).tooltip();
-  //   ($(".company .contract i") as any).tooltip();
-  //   ($(".company .personal i") as any).tooltip();
-  // }
+  private toggleHighlights(company: ICompany): void {
+    company.showingHighlights = !company.showingHighlights;
+  }
 
-  // private evaluateSkillPriority(a: number, b: number) {
-  //     const factor = 1;
-  //     /* whereever pririty is 0 or undefined, it goes last, otherwise is increasing */
-  //     if (!a && !b) return -1;
+  private evaluateSkillPriority(a: number, b: number, factor = 1) {
+    /* whereever pririty is 0 or undefined, it goes last, otherwise is increasing */
+    if (!a && !b) return -1;
 
-  //     if (!a) return factor;
-  //     if (!b) return -factor;
+    if (!a) return factor;
+    if (!b) return -factor;
 
-  //     return (a - b) * factor;
-  // }
+    return (a - b) * factor;
+  }
 
   // private evaluateString(a: string, b: string, factor: number) {
   //     if (!a && !b) return 0;
@@ -141,7 +150,7 @@ export class Resume {
   //     return a.localeCompare(b) * factor;
   // }
 
-  private evaluateDateTime(valueA: string, valueB: string, factor: number) {
+  private evaluateDateTime(valueA: string, valueB: string, factor = 1) {
     // let a = this.moment.utc(valueA);
     // let b = this.moment.utc(valueB);
 
