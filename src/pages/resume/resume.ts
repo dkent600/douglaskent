@@ -109,14 +109,9 @@ export class Resume {
     $("#publications-list").on("hide.bs.collapse", () => {
       this.showingPublications = false;
     });
-    this.companies = this.companies.map((s, index) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.companies = this.companies.map((s, _index) => {
       s.showingHighlights = false;
-      $(`#highlights_${index}`).on("show.bs.collapse", () => {
-        s.showingHighlights = true;
-      });
-      $(`#highlights_${index}`).on("hide.bs.collapse", () => {
-        s.showingHighlights = false;
-      });
       return s;
     });
   }
@@ -127,6 +122,10 @@ export class Resume {
     ($(".company .remote i") as any).tooltip();
     ($(".company .contract i") as any).tooltip();
     ($(".company .personal i") as any).tooltip();
+  }
+
+  private toggleHighlights(company: ICompany): void {
+    company.showingHighlights = !company.showingHighlights;
   }
 
   private evaluateSkillPriority(a: number, b: number, factor = 1) {

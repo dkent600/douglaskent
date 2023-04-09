@@ -199,7 +199,7 @@
 
                   <div if.bind="company.highlights.length" class="highlights">
                     <a class="show-link" data-toggle="collapse" href="#highlights_${$index}" aria-expanded="false"
-                      aria-controls="highlights-list">
+                      aria-controls="highlights-list" click.trigger="toggleHighlights(company)">
                       <span>Highlights
                         <i class="fa-solid ${company.showingHighlights ? 'fa-angles-up' : 'fa-angles-down'}"></i>
                       </span>
