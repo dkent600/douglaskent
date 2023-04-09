@@ -68,6 +68,7 @@
         "Coordinated a team of five, owned the architecture and participated in the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-deals-dapp\"target=\"_blank\">Prime Deals</a>",
         "Coordinated a team of two, owned the architecture and did most of the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-launch-dapp\"target=\"_blank\">Prime Launch</a>",
         "Was the lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\"target=\"_blank\">Prime Pools</a>, <a href=\"https://github.com/PrimeDAO/locking-for-rep-dapp\"target=\"_blank\">Prime Locking For Reputation</a> and the original PRIMEDao Home Page",
+        "Reviewed Solidity contracts for correctness and errors",
         "The Prime dApps use <a href=\"https://balancer.fi/\" target=\"_blank\">Balancer liquidity pools</a>, a decentralized automated market maker running on ethereum.",
         "With the exception of the PrimeDAO Home Page, which uses React.js, the dApps are all implemented using the <a href=\"https://aurelia.io/\" target=\"_blank\">Aurelia</a> framework.",
         "As products, these applications are innovative and impressive. Read more about them: <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo (development still in progress)</a>, <a href=\"https://deals.prime.xyz/\" target=\"_blank\">Prime Deals</a>, <a href=\"https://launch.prime.xyz\" target=\"_blank\">Prime Launch</a>, <a href=\"https://primepool.primedao.io\" target=\"_blank\">Prime Pools</a>, <a href=\"https://primelock.eth.link\" target=\"_blank\">Prime Locking for Reputation</a> (hosted on IPFS), and the original <a href=\"https://primedao.eth.link\" target=\"_blank\">PRIMEDao Home Page</a> (hosted on IPFS)"
@@ -81,6 +82,13 @@
         "TypeScript",
         "Javascript",
         "Solidity",
+        "ethers.js",
+        "web3.js",
+        "Metamask",
+        "WalletConnect",
+        "Gnosis Safe",
+        "Balancer Liquidity Pools",
+        "Web3Modal",
         "Aurelia",
         "HTML5",
         "i18Next",
@@ -111,7 +119,8 @@
         "Designed and implemented a well-reviewed architecture for the original version of <a href=\"https://github.com/daostack/arc.js_legacy\" target=\"_blank\">DAOstack Arc.js</a>",
         "Implemented <a href=\"https://github.com/daostack/vanille\" target=\"_blank\">Vanille</a>, open-source software that leverage <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOStack Arc</a> to facilitate the creation of DAOstack DAOs",
         "Responsible for deploying <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> smart contracts to Ethereum",
-        "Contributed to the design and development of <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> Solidity smart contracts"
+        "Contributed to the design and development of <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> Solidity smart contracts",
+        "Reviewed Solidity contracts for correctness and errors"
       ],
       "skills": [
         "Ethereum",
