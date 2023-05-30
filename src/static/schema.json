@@ -310,9 +310,9 @@
             "type": "string",
             "description": "e.g. Master"
           },
-          "keywords": {
+          "categories": {
             "type": "array",
-            "description": "List some keywords pertaining to this skill",
+            "description": "List categories pertaining to this skill",
             "additionalItems": false,
             "items": {
               "type": "string",
@@ -352,7 +352,7 @@
             "type": "string",
             "description": "e.g. Philosophy"
           },
-          "keywords": {
+          "skills": {
             "type": "array",
             "additionalItems": false,
             "items": {
@@ -407,7 +407,7 @@
               "description": "e.g. Directs you close but not quite there"
             }
           },
-          "keywords": {
+          "skills": {
             "type": "array",
             "description": "Specify special elements involved",
             "additionalItems": false,
