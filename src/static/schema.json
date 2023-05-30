@@ -470,7 +470,7 @@
         }
       }
     },
-    "keywords": {
+    "skillCategories": {
       "type": "array",
       "items": {
         "type": "string",

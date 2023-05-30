@@ -5,7 +5,7 @@ import { IResume, ResumeJson } from "../services/resume-service";
 export interface ISkill {
   priority: number;
   name: string;
-  keywords: Array<string>;
+  categories: Array<ICategory>;
   url: string;
   aliases?: Array<string>;
   hide?: boolean;
@@ -21,7 +21,7 @@ export type ITestimonial = IResume["references"][0];
 export type IAccomplishment = IResume["accomplishments"][0];
 export type IQuality = IResume["qualities"][0];
 export type IPublication = IResume["publications"][0];
-export type ICategory = IResume["keywords"][0];
+export type ICategory = IResume["skillCategories"][0];
 
 export type IResumeStore = ResumeStore;
 export const IResumeStore = DI.createInterface<IResumeStore>();
@@ -33,6 +33,10 @@ export class ResumeStore {
 
   private get resumeJson(): IResume {
     return ResumeJson;
+  }
+
+  public get skillCategories(): Array<ICategory> {
+    return this.resumeJson.skillCategories;
   }
 
   public get skills(): Array<ISkill> {
@@ -77,9 +81,5 @@ export class ResumeStore {
 
   public get publications(): Array<IPublication> {
     return this.resumeJson.publications;
-  }
-
-  public get keywords(): Array<ICategory> {
-    return this.resumeJson.keywords;
   }
 }

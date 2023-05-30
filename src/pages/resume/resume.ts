@@ -9,7 +9,7 @@ export class Resume {
   schools!: Array<ISchool>;
   languages!: Array<ILanguage>;
   citizenship!: Array<ICitizenship>;
-  skills!: Map<string, Set<ISkill>>;
+  categoryToSkills!: Map<string, Set<ISkill>>;
   skillByName!: Map<string, ISkill>;
   testimonials!: Array<ITestimonial>;
   accomplishments!: Array<IAccomplishment>;
@@ -17,7 +17,7 @@ export class Resume {
   publications!: Array<IPublication>;
   showingPublications = false;
   showingHighlights = false;
-  keywords!: Array<ICategory>;
+  skillCategories!: Array<ICategory>;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {}
 
@@ -36,14 +36,14 @@ export class Resume {
     this.accomplishments = this.resumeStore.accomplishments;
     this.qualities = this.resumeStore.qualities;
     this.publications = this.resumeStore.publications;
-    this.keywords = this.resumeStore.keywords;
+    this.skillCategories = this.resumeStore.skillCategories;
 
     /**
-     * Map a keyword (a category of skills) to a set of skill names.
+     * Map a category of skills to a set of skill names.
      */
-    this.skills = new Map();
+    this.categoryToSkills = new Map();
     /**
-     * given a name or alias, return the skill json
+     * given the name or alias of a skill, return the skill json
      */
     this.skillByName = new Map();
     /**
@@ -57,18 +57,19 @@ export class Resume {
      */
 
     /**
-     * get category names sorted in the order they appear in the json
+     * collect the skills associated with each skill category,
+     * sorted in the order they appear in the json
      */
     for (const skill of this.resumeStore.skills.filter((s) => !s.hide).sort((a, b) => this.evaluateSkillPriority(a.priority, b.priority))) {
-      for (const keyword of skill.keywords) {
-        let skillCategory = this.skills.get(keyword);
+      for (const keyword of skill.categories) {
+        let skillCategory = this.categoryToSkills.get(keyword);
         if (!skillCategory) {
           // if (!this.keywords.find((s) => s === keyword)) {
           //   // this.categories.push(`${keyword} [not in keywords list!]`);
           //   console.log(`!!! ${keyword} is not in keywords list!`);
           // }
           skillCategory = new Set<ISkill>();
-          this.skills.set(keyword, skillCategory);
+          this.categoryToSkills.set(keyword, skillCategory);
         }
         skillCategory.add(skill);
       }
