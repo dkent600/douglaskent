@@ -295,7 +295,7 @@
       "highlights": [
         "In daily scrums, coordinated and helped train a team of seven developers located in India.  Training was primarily on Agile, development processes, and in the standards of code development quality upheld at Revionics",
         "Led a team three developers in India in the architecture and development of a web GUI for managing security rights in the Revionics web application.  Responsible for the entire architecture, quality of the result, coordination of the entire team, and timely delivery.  Did half the coding myself",
-        "Saved the security rights project, in jeopardy of missing its deadline, by dropping the participating India team from 7 to 3 (sad but necessary)",
+        "Saved the security rights project, in jeopardy of missing its deadline, by dropping the size of the assisting team from 7 to 3 (sad but necessary)",
         "Helped port a complex web GUI from ASP.NET to MVC.NET 3.0.  Designed the server-side architecture for the team.  Wrote most of the server-side code and assisted with client-side",
         "Developed an unobtrusive framework for logging web application activity using dependency injection and API interception using Unity and a plugin architecture using the Managed Extensibility Framework (MEF)",
         "Designed, developed and prototyped a reusable/extensible framework for writing SpecFlow integration tests using Unity, Moq and VSTest.  The prototype was written against Selenium to drive automated GUI tests"
@@ -1825,7 +1825,7 @@
   "accomplishments": [
     "With Curve Labs, I coded, delivered and led, in some cases single-handedly, the front-end development of multiple complex Web3 dApps, each demonstrating innovative means of effecting global system change capable of emerging regenerative impacts, and including improving social and economic justice",
     "In an enterprise website environment at ShiftWise, while facing an urgent deadline, I single-handedly implemented a complete system for handling mission-critical SMS messages. The architecture spanned a web site, three web services, two Windows services, and two Sql Server databases.",
-    "In an enterprise website environment at Revionics, I saved a project in jeopardy of missing its deadline. I took the counter-intuitive and risky step of dropping the participating India team from 7 to 3, but it enabled us to meet our deadline.",
+    "In an enterprise website environment at Revionics, I saved a project in jeopardy of missing its deadline. I took the counter-intuitive and risky step of dropping the assisting team from 7 to 3, but it enabled us to meet our deadline.",
     "At Microsoft, I led a multi-disciplinary development team of 7 software engineers plus writers and graphic designers to produce a multimedia CD-ROM title for Windows. We delivered on time, meeting all quality goals.",
     "At ConnectSoft I led the development of an application that won a <i>Windows 100</i> award from <i>Windows Magazine</i>: <i>Clip-Art Window Shopper</i>, one of the first ever applications for purchasing and downloading clip-art online.",
     "At Microsoft, I incorporated the new technology of OLE 1.0 into Windows Write. OLE was a highly visible and strategic initiative of interest at the highest levels in Microsoft.",
