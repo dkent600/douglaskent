@@ -76,6 +76,7 @@
         "dApps",
         "Ethereum",
         "DAOs",
+        "Defender",
         "Web3",
         "Refi",
         "Defi",
@@ -826,7 +827,7 @@
     },
     {
       "name": "dApps",
-      "priority": 1.2,
+      "priority": 1.201,
       "categories": [
         "Website and Application Development",
         "Blockchain"
@@ -859,7 +860,7 @@
     },
     {
       "name": "DAOs",
-      "priority": 4,
+      "priority": 1.202,
       "categories": [
         "Blockchain"
       ],
@@ -921,6 +922,17 @@
         "Blockchain"
       ],
       "url": "https://safe.global/"
+    },
+    {
+      "name": "OpenZeppelin Defender",
+      "priority": 4,
+      "categories": [
+        "Blockchain"
+      ],
+      "aliases": [
+        "Defender"
+      ],
+      "url": "https://www.openzeppelin.com/defender"
     },
     {
       "name": "Balancer Liquidity Pools",
@@ -1008,7 +1020,7 @@
     },
     {
       "name": "CSS",
-      "priority": 1.25,
+      "priority": 1.2,
       "categories": [
         "Website and Application Development",
         "Markup Languages"
