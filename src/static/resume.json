@@ -1061,7 +1061,8 @@
       "categories": [
         "Databases",
         "Software Languages"
-      ]
+      ],
+      "url": "https://www.techtarget.com/searchdatamanagement/definition/T-SQL"
     },
     {
       "name": "SQL",
@@ -1069,7 +1070,8 @@
       "categories": [
         "Databases",
         "Software Languages"
-      ]
+      ],
+      "url": "https://www.w3schools.com/sql/sql_intro.asp"
     },
     {
       "name": "Microsoft SQL Server",
@@ -1247,14 +1249,15 @@
       ]
     },
     {
-      "name": "Single Page Application (SPA)",
+      "name": "SPA",
       "priority": 400,
       "aliases": [
-        "SPA"
+        "Single Page Application"
       ],
       "categories": [
         "Website and Application Development"
-      ]
+      ],
+      "url": "https://developer.mozilla.org/en-US/docs/Glossary/SPA"
     },
     {
       "name": "C++",
@@ -1477,7 +1480,7 @@
     },
     {
       "name": "Ethereum",
-      "priority": 1.5,
+      "priority": 1.21,
       "categories": [
         "Blockchain"
       ],
@@ -1485,15 +1488,16 @@
     },
     {
       "name": "Web3",
-      "priority": 1.5,
+      "priority": 1.2,
       "categories": [
+        "Website and Application Development",
         "Blockchain"
       ],
       "url": "https://en.wikipedia.org/wiki/Web3"
     },
     {
       "name": "Refi",
-      "priority": 3,
+      "priority": 1.22,
       "categories": [
         "Blockchain"
       ],
@@ -1501,7 +1505,7 @@
     },
     {
       "name": "Defi",
-      "priority": 3,
+      "priority": 1.22,
       "categories": [
         "Blockchain"
       ],
@@ -1744,10 +1748,10 @@
       "url": "http://en.wikipedia.org/wiki/Agile_software_development"
     },
     {
-      "name": "Team Foundation Server (TFS)",
+      "name": "TFS",
       "priority": 40,
       "aliases": [
-        "TFS"
+        "Team Foundation Server"
       ],
       "categories": [
         "Development Tools",
