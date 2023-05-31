@@ -10,7 +10,7 @@ This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new).
 
     npm run build
 
-It builds `dist/*bundle.[hash].js`, updates index.html with hashed js bundle file name. If the code has changed (as opposed to json, html or css), then the hash will change.  So to deploy to the production server, be sure to copy the generated `index.html` and `dist/*`.  Otherwise those files will not have changed and will need not be redeployed.
+It builds `dist/*bundle.[hash].js`, updates index.html with hashed js bundle file name.  then the hash will change.  So to deploy to the production server, be sure to copy the generated `index.html` and `dist/*`.  Otherwise those files will not have changed and will need not be redeployed.
 
 To deploy everything, copy to production root folder:
 
