@@ -73,6 +73,7 @@
         "As products, these applications are innovative and impressive. Read more about them: <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo (development still in progress)</a>, <a href=\"https://deals.prime.xyz/\" target=\"_blank\">Prime Deals</a>, <a href=\"https://launch.prime.xyz\" target=\"_blank\">Prime Launch</a>, <a href=\"https://primepool.primedao.io\" target=\"_blank\">Prime Pools</a>, <a href=\"https://primelock.eth.link\" target=\"_blank\">Prime Locking for Reputation</a> (hosted on IPFS), and the original <a href=\"https://primedao.eth.link\" target=\"_blank\">PRIMEDao Home Page</a> (hosted on IPFS)"
       ],
       "skills": [
+        "dApps",
         "Ethereum",
         "DAOs",
         "Web3",
@@ -121,6 +122,7 @@
         "Reviewed Solidity contracts for correctness and errors"
       ],
       "skills": [
+        "dApps",
         "Ethereum",
         "DAOs",
         "Web3",
@@ -805,39 +807,6 @@
       "url": "https://docs.aurelia.io/"
     },
     {
-      "name": "RequireJs",
-      "priority": 200,
-      "categories": [
-        "Website and Application Development",
-        "Module Bundling and Loading"
-      ],
-      "url": "http://requirejs.org/"
-    },
-    {
-      "name": "ASP.NET Core",
-      "priority": 40,
-      "categories": [
-        "Website and Application Development"
-      ],
-      "url": "http://www.microsoft.com/net/core#windows"
-    },
-    {
-      "name": "ASP.NET",
-      "priority": 40,
-      "hide": true,
-      "categories": [
-        "Website and Application Development",
-        "Markup Languages"
-      ]
-    },
-    {
-      "name": ".NET",
-      "priority": 40,
-      "categories": [
-        "Software Development Platforms"
-      ]
-    },
-    {
       "name": "TypeScript",
       "priority": 1,
       "categories": [
@@ -845,6 +814,138 @@
         "Software Languages"
       ],
       "url": "http://www.typescriptlang.org"
+    },
+    {
+      "name": "Web3",
+      "priority": 1.2,
+      "categories": [
+        "Website and Application Development",
+        "Blockchain"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Web3"
+    },
+    {
+      "name": "dApps",
+      "priority": 1.2,
+      "categories": [
+        "Website and Application Development",
+        "Blockchain"
+      ],
+      "url": "https://ethereum.org/en/developers/docs/dapps/"
+    },
+    {
+      "name": "Ethereum",
+      "priority": 1.21,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://ethereum.org/en/"
+    },
+    {
+      "name": "Refi",
+      "priority": 1.22,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://www.financemagnates.com/cryptocurrency/innovation/understanding-the-role-of-regenerative-finance-refi-in-crypto/"
+    },
+    {
+      "name": "Defi",
+      "priority": 1.22,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Decentralized_finance"
+    },
+    {
+      "name": "DAOs",
+      "priority": 4,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://www.investopedia.com/tech/what-dao/"
+    },
+    {
+      "name": "ethers.js",
+      "priority": 1.5,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://ethers.org/"
+    },
+    {
+      "name": "web3.js",
+      "priority": 1.5,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://web3js.org/"
+    },
+    {
+      "name": "Solidity",
+      "priority": 3,
+      "categories": [
+        "Blockchain",
+        "Software Languages"
+      ],
+      "url": "https://soliditylang.org/"
+    },
+    {
+      "name": "Metamask",
+      "priority": 3,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://metamask.io/"
+    },
+    {
+      "name": "WalletConnect",
+      "priority": 3,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://walletconnect.com/"
+    },
+    {
+      "name": "Web3Modal",
+      "priority": 4,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://web3modal.com/"
+    },
+    {
+      "name": "Gnosis Safe",
+      "priority": 4,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://safe.global/"
+    },
+    {
+      "name": "Balancer Liquidity Pools",
+      "priority": 4,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://balancer.fi/"
+    },
+    {
+      "name": "IPFS",
+      "priority": 4,
+      "categories": [
+        "Blockchain",
+        "Website and Application Hosting"
+      ],
+      "url": "https://ipfs.io/"
+    },
+    {
+      "name": "ENS",
+      "priority": 4,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://app.ens.domains/"
     },
     {
       "name": "C#",
@@ -1033,6 +1134,39 @@
         "Website and Application Development"
       ],
       "url": "http://fezvrasta.github.io/bootstrap-material-design/"
+    },
+    {
+      "name": "RequireJs",
+      "priority": 200,
+      "categories": [
+        "Website and Application Development",
+        "Module Bundling and Loading"
+      ],
+      "url": "http://requirejs.org/"
+    },
+    {
+      "name": "ASP.NET Core",
+      "priority": 40,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "http://www.microsoft.com/net/core#windows"
+    },
+    {
+      "name": "ASP.NET",
+      "priority": 40,
+      "hide": true,
+      "categories": [
+        "Website and Application Development",
+        "Markup Languages"
+      ]
+    },
+    {
+      "name": ".NET",
+      "priority": 40,
+      "categories": [
+        "Software Development Platforms"
+      ]
     },
     {
       "name": "Entity Framework Core",
@@ -1477,129 +1611,6 @@
         "Website and Application Development"
       ],
       "url": "http://en.wikipedia.org/wiki/Swing_(Java)"
-    },
-    {
-      "name": "Ethereum",
-      "priority": 1.21,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://ethereum.org/en/"
-    },
-    {
-      "name": "Web3",
-      "priority": 1.2,
-      "categories": [
-        "Website and Application Development",
-        "Blockchain"
-      ],
-      "url": "https://en.wikipedia.org/wiki/Web3"
-    },
-    {
-      "name": "Refi",
-      "priority": 1.22,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://www.financemagnates.com/cryptocurrency/innovation/understanding-the-role-of-regenerative-finance-refi-in-crypto/"
-    },
-    {
-      "name": "Defi",
-      "priority": 1.22,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://en.wikipedia.org/wiki/Decentralized_finance"
-    },
-    {
-      "name": "DAOs",
-      "priority": 4,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://www.investopedia.com/tech/what-dao/"
-    },
-    {
-      "name": "ethers.js",
-      "priority": 1.5,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://ethers.org/"
-    },
-    {
-      "name": "web3.js",
-      "priority": 1.5,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://web3js.org/"
-    },
-    {
-      "name": "Solidity",
-      "priority": 3,
-      "categories": [
-        "Blockchain",
-        "Software Languages"
-      ],
-      "url": "https://soliditylang.org/"
-    },
-    {
-      "name": "Metamask",
-      "priority": 3,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://metamask.io/"
-    },
-    {
-      "name": "WalletConnect",
-      "priority": 3,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://walletconnect.com/"
-    },
-    {
-      "name": "Web3Modal",
-      "priority": 4,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://web3modal.com/"
-    },
-    {
-      "name": "Gnosis Safe",
-      "priority": 4,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://safe.global/"
-    },
-    {
-      "name": "Balancer Liquidity Pools",
-      "priority": 4,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://balancer.fi/"
-    },
-    {
-      "name": "IPFS",
-      "priority": 4,
-      "categories": [
-        "Blockchain",
-        "Website and Application Hosting"
-      ],
-      "url": "https://ipfs.io/"
-    },
-    {
-      "name": "ENS",
-      "priority": 4,
-      "categories": [
-        "Blockchain"
-      ],
-      "url": "https://app.ens.domains/"
     },
     {
       "name": "nHibernate",
