@@ -42,7 +42,6 @@
     "Module Bundling and Loading",
     "Software Development Platforms",
     "Test Frameworks",
-    "Scripting",
     "Development Tools",
     "Website and Application Hosting",
     "Cryptography",
@@ -101,7 +100,6 @@
         "NodeJs",
         "GitHub",
         "ReactJs",
-        "SOA",
         "SPA"
       ]
     },
@@ -141,7 +139,6 @@
         "NodeJs",
         "GitHub",
         "ReactJs",
-        "SOA",
         "SPA"
       ]
     },
@@ -165,7 +162,6 @@
         "TypeScript",
         "ASP.NET Core",
         "C#",
-        "TypeScript",
         "Javascript",
         "HTML5",
         "WebApi",
@@ -181,7 +177,6 @@
         "CSS",
         "Responsive",
         "TFS",
-        "SOA",
         "SPA"
       ]
     },
@@ -240,8 +235,7 @@
         "WebApi",
         "Azure",
         "TFS",
-        "SPA",
-        "SOA"
+        "SPA"
       ]
     },
     {
@@ -276,11 +270,9 @@
         "RequireJs",
         "D3",
         "Highcharts",
-        "RequireJs",
         "Agile",
         "TFS",
-        "SPA",
-        "SOA"
+        "SPA"
       ]
     },
     {
@@ -397,8 +389,7 @@
         "i18Next",
         "jquery globalization",
         "RequireJs",
-        "SPA",
-        "SOA"
+        "SPA"
       ]
     },
     {
@@ -475,8 +466,7 @@
         "DES",
         "SHA",
         "System.Security.Cryptography",
-        "SPA",
-        "SOA"
+        "SPA"
       ]
     },
     {
@@ -807,16 +797,16 @@
   ],
   "skills": [
     {
-      "priority": 1,
       "name": "Aurelia",
+      "priority": 1.4,
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://aurelia.io"
+      "url": "https://docs.aurelia.io/"
     },
     {
-      "priority": 2,
       "name": "RequireJs",
+      "priority": 200,
       "categories": [
         "Website and Application Development",
         "Module Bundling and Loading"
@@ -824,8 +814,8 @@
       "url": "http://requirejs.org/"
     },
     {
-      "priority": 3,
       "name": "ASP.NET Core",
+      "priority": 40,
       "categories": [
         "Website and Application Development"
       ],
@@ -833,6 +823,7 @@
     },
     {
       "name": "ASP.NET",
+      "priority": 40,
       "hide": true,
       "categories": [
         "Website and Application Development",
@@ -841,13 +832,14 @@
     },
     {
       "name": ".NET",
+      "priority": 40,
       "categories": [
         "Software Development Platforms"
       ]
     },
     {
-      "priority": 4,
       "name": "TypeScript",
+      "priority": 1,
       "categories": [
         "Website and Application Development",
         "Software Languages"
@@ -855,8 +847,8 @@
       "url": "http://www.typescriptlang.org"
     },
     {
-      "priority": 15,
       "name": "C#",
+      "priority": 4,
       "categories": [
         "Website and Application Development",
         "Software Languages"
@@ -864,32 +856,24 @@
       "url": "http://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
     },
     {
-      "priority": 5,
-      "name": "JavaScript",
-      "categories": [
-        "Website and Application Development",
-        "Software Languages"
-      ]
-    },
-    {
-      "priority": 3,
       "name": "MVC",
+      "priority": 40,
       "categories": [
         "Website and Application Development"
       ],
       "url": "http://en.wikipedia.org/wiki/ASP.NET_MVC_Framework"
     },
     {
-      "priority": 3,
       "name": "WebApi",
+      "priority": 40,
       "categories": [
         "Website and Application Development"
       ],
       "url": "http://msdn.microsoft.com/en-us/library/hh833994(v=vs.108).aspx"
     },
     {
-      "priority": 4,
       "name": "HTML5",
+      "priority": 1.2,
       "categories": [
         "Website and Application Development",
         "Markup Languages"
@@ -897,6 +881,7 @@
     },
     {
       "name": "HTML",
+      "priority": 1.2,
       "hide": true,
       "categories": [
         "Website and Application Development",
@@ -904,16 +889,16 @@
       ]
     },
     {
-      "priority": 14,
       "name": "Razor",
+      "priority": 40,
       "categories": [
         "Website and Application Development",
         "Markup Languages"
       ]
     },
     {
-      "priority": 13,
       "name": "Markdown",
+      "priority": 3,
       "categories": [
         "Website and Application Development",
         "Markup Languages"
@@ -921,16 +906,16 @@
       "url": "https://www.markdownguide.org/getting-started"
     },
     {
-      "priority": 5,
       "name": "CSS",
+      "priority": 1.25,
       "categories": [
         "Website and Application Development",
         "Markup Languages"
       ]
     },
     {
-      "priority": 4,
       "name": "SASS",
+      "priority": 1.2,
       "categories": [
         "Website and Application Development",
         "Markup Languages"
@@ -938,31 +923,109 @@
       "url": "https://sass-lang.com/"
     },
     {
+      "name": "Web Components",
+      "priority": 1.2,
+      "categories": [
+        "Website and Application Development",
+        "Markup Languages"
+      ],
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Web_Components"
+    },
+    {
+      "name": "Shadow DOM",
+      "priority": 1.2,
+      "categories": [
+        "Website and Application Development",
+        "Markup Languages"
+      ],
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM"
+    },
+    {
+      "name": "HTML Templates",
+      "priority": 1.2,
+      "categories": [
+        "Website and Application Development",
+        "Markup Languages"
+      ],
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots"
+    },
+    {
+      "name": "JavaScript",
+      "priority": 1.2,
+      "categories": [
+        "Website and Application Development",
+        "Software Languages"
+      ]
+    },
+    {
+      "name": "Custom (HTML) Elements",
+      "priority": 1.2,
+      "categories": [
+        "Website and Application Development",
+        "Markup Languages"
+      ],
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Web_Components"
+    },
+    {
+      "name": "Data Binding",
+      "priority": 1.2,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://www.techtarget.com/whatis/definition/data-binding"
+    },
+    {
+      "name": "Observables",
+      "priority": 1.2,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://refactoring.guru/design-patterns/observer"
+    },
+    {
+      "name": "Pub/Sub Pattern",
+      "priority": 1.2,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern"
+    },
+    {
+      "name": "RxJS",
+      "priority": 1.2,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://github.com/reactivex/rxjs"
+    },
+    {
       "name": "jQuery",
+      "priority": 40,
       "categories": [
         "Website and Application Development"
       ],
       "url": "http://jquery.com"
     },
     {
-      "priority": 30,
       "name": "Ajax",
+      "priority": 40,
       "categories": [
         "Website and Application Development"
       ],
       "url": "http://en.wikipedia.org/wiki/Ajax_(programming)"
     },
     {
-      "priority": 6,
       "name": "Bootstrap",
+      "priority": 30,
       "categories": [
         "Website and Application Development"
       ],
       "url": "http://getbootstrap.com"
     },
     {
-      "priority": 7,
       "name": "Bootstrap Material Design",
+      "priority": 30,
+      "hide": true,
       "aliases": [
         "BMD"
       ],
@@ -972,8 +1035,8 @@
       "url": "http://fezvrasta.github.io/bootstrap-material-design/"
     },
     {
-      "priority": 5,
       "name": "Entity Framework Core",
+      "priority": 40,
       "categories": [
         "Databases"
       ],
@@ -981,6 +1044,7 @@
     },
     {
       "name": "Entity Framework",
+      "priority": 40,
       "hide": true,
       "categories": [
         "Databases"
@@ -989,6 +1053,7 @@
     },
     {
       "name": "T-SQL",
+      "priority": 4,
       "hide": true,
       "aliases": [
         "T-SQL"
@@ -1000,7 +1065,7 @@
     },
     {
       "name": "SQL",
-      "priority": 18,
+      "priority": 4,
       "categories": [
         "Databases",
         "Software Languages"
@@ -1008,7 +1073,7 @@
     },
     {
       "name": "Microsoft SQL Server",
-      "priority": 1,
+      "priority": 4,
       "aliases": [
         "Sql Server"
       ],
@@ -1019,6 +1084,7 @@
     },
     {
       "name": "ASP.NET Identity",
+      "priority": 40,
       "aliases": [
         "Identity"
       ],
@@ -1028,6 +1094,8 @@
     },
     {
       "name": "Microsoft Enterprise Library",
+      "priority": 40,
+      "hide": true,
       "aliases": [
         "Enterprise framework"
       ],
@@ -1038,6 +1106,7 @@
     },
     {
       "name": "Microsoft Extensibility Framework (MEF)",
+      "priority": 40,
       "aliases": [
         "MEF"
       ],
@@ -1049,6 +1118,7 @@
     },
     {
       "name": ".NET System.Security.Cryptography",
+      "priority": 40,
       "aliases": [
         "System.Security.Cryptography"
       ],
@@ -1059,6 +1129,7 @@
     },
     {
       "name": "crypto-js",
+      "priority": 20,
       "categories": [
         "Cryptography"
       ],
@@ -1066,6 +1137,7 @@
     },
     {
       "name": "DES",
+      "priority": 20,
       "categories": [
         "Cryptography"
       ],
@@ -1073,6 +1145,7 @@
     },
     {
       "name": "SHA-2",
+      "priority": 20,
       "aliases": [
         "hashing",
         "SHA"
@@ -1084,20 +1157,23 @@
     },
     {
       "name": "Sql Server Semantic Search",
+      "priority": 30,
       "categories": [
         "Semantic Search Frameworks"
       ],
       "url": "http://docs.microsoft.com/en-us/sql/relational-databases/search/semantic-search-sql-server"
     },
     {
-      "priority": 20,
       "name": "Enterprise Scale Web Applications",
+      "priority": 30,
+      "hide": true,
       "categories": [
         "Website and Application Development"
       ]
     },
     {
       "name": "DurandalJs",
+      "priority": 2,
       "aliases": [
         "Durandal"
       ],
@@ -1109,6 +1185,8 @@
     },
     {
       "name": "KnockoutJs",
+      "priority": 200,
+      "hide": true,
       "categories": [
         "Website and Application Development"
       ],
@@ -1116,6 +1194,7 @@
     },
     {
       "name": "Responsive UIs",
+      "priority": 4,
       "aliases": [
         "Responsive"
       ],
@@ -1126,7 +1205,7 @@
     },
     {
       "name": "ReactJs",
-      "hide": true,
+      "priority": 2,
       "categories": [
         "Website and Application Development"
       ],
@@ -1134,7 +1213,7 @@
     },
     {
       "name": "AngularJs",
-      "hide": true,
+      "priority": 3,
       "categories": [
         "Website and Application Development"
       ],
@@ -1142,6 +1221,7 @@
     },
     {
       "name": "i18Next",
+      "priority": 1.5,
       "categories": [
         "Localization/Globalization"
       ],
@@ -1149,14 +1229,16 @@
     },
     {
       "name": "jQuery Globalization",
+      "priority": 1.5,
+      "hide": true,
       "categories": [
         "Localization/Globalization"
       ],
       "url": "http://github.com/globalizejs/globalize"
     },
     {
-      "priority": 20,
       "name": "Service-Oriented Architecture (SOA)",
+      "priority": 3,
       "aliases": [
         "SOA"
       ],
@@ -1165,8 +1247,8 @@
       ]
     },
     {
-      "priority": 20,
       "name": "Single Page Application (SPA)",
+      "priority": 400,
       "aliases": [
         "SPA"
       ],
@@ -1176,6 +1258,7 @@
     },
     {
       "name": "C++",
+      "priority": 1,
       "hide": true,
       "categories": [
         "Website and Application Development",
@@ -1185,6 +1268,7 @@
     },
     {
       "name": "D3.js",
+      "priority": 4,
       "aliases": [
         "D3"
       ],
@@ -1196,6 +1280,7 @@
     },
     {
       "name": "Highcharts",
+      "priority": 4,
       "categories": [
         "Website and Application Development",
         "Charting & Graphing Frameworks"
@@ -1204,12 +1289,14 @@
     },
     {
       "name": "XML",
+      "priority": 3,
       "categories": [
         "Website and Application Development"
       ]
     },
     {
       "name": "Xerces",
+      "priority": 200,
       "hide": true,
       "categories": [
         "Website and Application Development"
@@ -1218,6 +1305,8 @@
     },
     {
       "name": "XSLT",
+      "priority": 2,
+      "hide": true,
       "fullname": "Extensible Stylesheet Language Transformations",
       "aliases": [
         "XSLT",
@@ -1230,6 +1319,8 @@
     },
     {
       "name": "XML Schema Definition (XSD)",
+      "priority": 3,
+      "hide": true,
       "aliases": [
         "XSD"
       ],
@@ -1240,6 +1331,7 @@
     },
     {
       "name": "WCF",
+      "priority": 30,
       "fullname": "Windows Communication Foundation",
       "aliases": [
         "WCF"
@@ -1252,6 +1344,7 @@
     },
     {
       "name": "WWF",
+      "priority": 30,
       "fullname": "Windows Workflow Foundation",
       "aliases": [
         "WWF"
@@ -1264,6 +1357,7 @@
     },
     {
       "name": "Microsoft Extensibility Framework (MEF)",
+      "priority": 30,
       "aliases": [
         "MEF"
       ],
@@ -1275,6 +1369,7 @@
     },
     {
       "name": "Java",
+      "priority": 1,
       "hide": true,
       "categories": [
         "Website and Application Development"
@@ -1282,14 +1377,16 @@
     },
     {
       "name": "IIS",
+      "priority": 40,
+      "hide": true,
       "categories": [
         "Website and Application Hosting"
       ],
       "url": "http://www.iis.net/"
     },
     {
-      "priority": 5,
       "name": "NodeJs",
+      "priority": 1.5,
       "categories": [
         "Software Development Platforms",
         "Website and Application Hosting"
@@ -1298,6 +1395,7 @@
     },
     {
       "name": "JRun",
+      "priority": 3,
       "hide": true,
       "categories": [
         "Website and Application Hosting"
@@ -1306,6 +1404,7 @@
     },
     {
       "name": "JSP",
+      "priority": 4,
       "hide": true,
       "categories": [
         "Website and Application Development"
@@ -1314,6 +1413,7 @@
     },
     {
       "name": "JDBC",
+      "priority": 30,
       "hide": true,
       "categories": [
         "Website and Application Development",
@@ -1323,6 +1423,7 @@
     },
     {
       "name": "DB2",
+      "priority": 30,
       "hide": true,
       "categories": [
         "Databases"
@@ -1331,6 +1432,8 @@
     },
     {
       "name": "PowerShell",
+      "priority": 5,
+      "hide": true,
       "categories": [
         "Scripting"
       ],
@@ -1338,6 +1441,8 @@
     },
     {
       "name": "Windows Batch",
+      "priority": 5,
+      "hide": true,
       "categories": [
         "Scripting"
       ],
@@ -1345,6 +1450,8 @@
     },
     {
       "name": "Perl",
+      "priority": 5,
+      "hide": true,
       "categories": [
         "Scripting"
       ],
@@ -1352,6 +1459,7 @@
     },
     {
       "name": "Flash SWF",
+      "priority": 5,
       "hide": true,
       "categories": [
         "Website and Application Development"
@@ -1360,6 +1468,7 @@
     },
     {
       "name": "Swing",
+      "priority": 5,
       "hide": true,
       "categories": [
         "Website and Application Development"
@@ -1367,16 +1476,16 @@
       "url": "http://en.wikipedia.org/wiki/Swing_(Java)"
     },
     {
-      "priority": 1,
       "name": "Ethereum",
+      "priority": 1.5,
       "categories": [
         "Blockchain"
       ],
       "url": "https://ethereum.org/en/"
     },
     {
-      "priority": 2,
       "name": "Web3",
+      "priority": 1.5,
       "categories": [
         "Blockchain"
       ],
@@ -1386,48 +1495,45 @@
       "name": "Refi",
       "priority": 3,
       "categories": [
-        "Blockchain",
-        "Regenerative Finance"
+        "Blockchain"
       ],
       "url": "https://www.financemagnates.com/cryptocurrency/innovation/understanding-the-role-of-regenerative-finance-refi-in-crypto/"
     },
     {
       "name": "Defi",
-      "priority": 4,
+      "priority": 3,
       "categories": [
-        "Blockchain",
-        "Decentralized Finance"
+        "Blockchain"
       ],
       "url": "https://en.wikipedia.org/wiki/Decentralized_finance"
     },
     {
-      "priority": 5,
       "name": "DAOs",
+      "priority": 4,
       "categories": [
-        "Blockchain",
-        "Decentralized Autonomous Organizations"
+        "Blockchain"
       ],
       "url": "https://www.investopedia.com/tech/what-dao/"
     },
     {
-      "priority": 6,
       "name": "ethers.js",
+      "priority": 1.5,
       "categories": [
         "Blockchain"
       ],
       "url": "https://ethers.org/"
     },
     {
-      "priority": 7,
       "name": "web3.js",
+      "priority": 1.5,
       "categories": [
         "Blockchain"
       ],
       "url": "https://web3js.org/"
     },
     {
-      "priority": 8,
       "name": "Solidity",
+      "priority": 3,
       "categories": [
         "Blockchain",
         "Software Languages"
@@ -1435,49 +1541,48 @@
       "url": "https://soliditylang.org/"
     },
     {
-      "priority": 20,
       "name": "Metamask",
+      "priority": 3,
       "categories": [
         "Blockchain"
       ],
       "url": "https://metamask.io/"
     },
     {
-      "priority": 21,
       "name": "WalletConnect",
+      "priority": 3,
       "categories": [
         "Blockchain"
       ],
       "url": "https://walletconnect.com/"
     },
     {
-      "priority": 22,
       "name": "Web3Modal",
+      "priority": 4,
       "categories": [
         "Blockchain"
       ],
       "url": "https://web3modal.com/"
     },
     {
-      "priority": 23,
       "name": "Gnosis Safe",
+      "priority": 4,
       "categories": [
         "Blockchain"
       ],
       "url": "https://safe.global/"
     },
     {
-      "priority": 24,
       "name": "Balancer Liquidity Pools",
+      "priority": 4,
       "categories": [
-        "Blockchain",
-        "Decentralized Finance"
+        "Blockchain"
       ],
       "url": "https://balancer.fi/"
     },
     {
-      "priority": 30,
       "name": "IPFS",
+      "priority": 4,
       "categories": [
         "Blockchain",
         "Website and Application Hosting"
@@ -1485,8 +1590,8 @@
       "url": "https://ipfs.io/"
     },
     {
-      "priority": 31,
       "name": "ENS",
+      "priority": 4,
       "categories": [
         "Blockchain"
       ],
@@ -1494,6 +1599,7 @@
     },
     {
       "name": "nHibernate",
+      "priority": 5,
       "hide": true,
       "categories": [
         "Databases"
@@ -1502,6 +1608,7 @@
     },
     {
       "name": "CORBA",
+      "priority": 5,
       "hide": true,
       "categories": [
         "Website and Application Development",
@@ -1511,6 +1618,7 @@
     },
     {
       "name": "Active-X Data Objects (ADO)",
+      "priority": 5,
       "aliases": [
         "ADO.NET",
         "ADO"
@@ -1523,6 +1631,7 @@
     },
     {
       "name": "LINQ",
+      "priority": 5,
       "hide": true,
       "categories": [
         "Databases"
@@ -1531,7 +1640,7 @@
     },
     {
       "name": "Visual Studio",
-      "priority": 2,
+      "priority": 5,
       "categories": [
         "Development Tools"
       ],
@@ -1539,7 +1648,7 @@
     },
     {
       "name": "Visual Studio Code",
-      "priority": 1,
+      "priority": 5,
       "categories": [
         "Development Tools"
       ],
@@ -1547,6 +1656,7 @@
     },
     {
       "name": "NPM",
+      "priority": 5,
       "categories": [
         "Development Tools"
       ],
@@ -1554,6 +1664,7 @@
     },
     {
       "name": "GitHub",
+      "priority": 5,
       "categories": [
         "Development Tools"
       ],
@@ -1561,6 +1672,7 @@
     },
     {
       "name": "GitKraken",
+      "priority": 5,
       "categories": [
         "Development Tools"
       ],
@@ -1568,6 +1680,7 @@
     },
     {
       "name": "GitHub Desktop",
+      "priority": 5,
       "categories": [
         "Development Tools"
       ],
@@ -1575,6 +1688,8 @@
     },
     {
       "name": "Jira",
+      "priority": 6,
+      "hide": true,
       "categories": [
         "Development Tools"
       ],
@@ -1582,6 +1697,8 @@
     },
     {
       "name": "BitBucket",
+      "priority": 6,
+      "hide": true,
       "categories": [
         "Development Tools"
       ],
@@ -1589,6 +1706,8 @@
     },
     {
       "name": "NuGet",
+      "priority": 6,
+      "hide": true,
       "categories": [
         "Development Tools"
       ],
@@ -1596,6 +1715,7 @@
     },
     {
       "name": "Microsoft Azure",
+      "priority": 40,
       "aliases": [
         "Azure"
       ],
@@ -1606,7 +1726,7 @@
     },
     {
       "name": "Microsoft Windows",
-      "priority": 1,
+      "priority": 6,
       "categories": [
         "Operating Systems"
       ],
@@ -1614,7 +1734,7 @@
     },
     {
       "name": "Agile Methodologies",
-      "priority": 1,
+      "priority": 6,
       "aliases": [
         "Agile"
       ],
@@ -1625,7 +1745,7 @@
     },
     {
       "name": "Team Foundation Server (TFS)",
-      "priority": 2,
+      "priority": 40,
       "aliases": [
         "TFS"
       ],
@@ -1637,7 +1757,7 @@
     },
     {
       "name": "Waterfall",
-      "priority": 2,
+      "priority": 6,
       "categories": [
         "Development Processes"
       ],
@@ -1645,12 +1765,15 @@
     },
     {
       "name": "Just Get It Done",
+      "priority": 6,
+      "hide": true,
       "categories": [
         "Development Processes"
       ]
     },
     {
       "name": "Webpack",
+      "priority": 6,
       "categories": [
         "Website and Application Development",
         "Module Bundling and Loading"
@@ -1659,6 +1782,8 @@
     },
     {
       "name": "JSPM",
+      "priority": 6,
+      "hide": true,
       "categories": [
         "Website and Application Development",
         "Module Bundling and Loading"
@@ -1667,6 +1792,8 @@
     },
     {
       "name": "SystemJs",
+      "priority": 6,
+      "hide": true,
       "categories": [
         "Website and Application Development",
         "Module Bundling and Loading"
@@ -1674,8 +1801,9 @@
       "url": "http://github.com/systemjs/systemjs"
     },
     {
-      "priority": 5,
       "name": "Unity (Dependency Injection)",
+      "priority": 6,
+      "hide": true,
       "aliases": [
         "Unity",
         "Unity.Container",
@@ -1688,6 +1816,8 @@
     },
     {
       "name": "XUnit.NET",
+      "priority": 6,
+      "hide": true,
       "aliases": [
         "XUnit"
       ],
@@ -1698,12 +1828,15 @@
     },
     {
       "name": "NUnit",
+      "priority": 6,
+      "hide": true,
       "categories": [
         "Test Frameworks"
       ]
     },
     {
       "name": "Moq",
+      "priority": 6,
       "categories": [
         "Test Frameworks"
       ],
@@ -1711,24 +1844,28 @@
     },
     {
       "name": "Jasmine",
+      "priority": 6,
       "categories": [
         "Test Frameworks"
       ]
     },
     {
       "name": "Karma",
+      "priority": 6,
       "categories": [
         "Test Frameworks"
       ]
     },
     {
       "name": "Selenium",
+      "priority": 6,
       "categories": [
         "Test Frameworks"
       ]
     },
     {
       "name": "SpecFlow",
+      "priority": 6,
       "categories": [
         "Test Frameworks"
       ],
@@ -1736,12 +1873,14 @@
     },
     {
       "name": "MSTest",
+      "priority": 6,
       "categories": [
         "Test Frameworks"
       ]
     },
     {
       "name": "VSTest",
+      "priority": 6,
       "categories": [
         "Test Frameworks"
       ],
@@ -1749,7 +1888,7 @@
     },
     {
       "name": "Jest",
-      "priority": 1,
+      "priority": 6,
       "categories": [
         "Test Frameworks"
       ],
@@ -1757,6 +1896,7 @@
     },
     {
       "name": "Telerik",
+      "priority": 6,
       "hide": true,
       "categories": [
         "Website and Application Development"

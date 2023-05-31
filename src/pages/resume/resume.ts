@@ -60,7 +60,10 @@ export class Resume {
      * collect the skills associated with each skill category,
      * sorted in the order they appear in the json
      */
-    for (const skill of this.resumeStore.skills.filter((s) => !s.hide).sort((a, b) => this.evaluateSkillPriority(a.priority, b.priority))) {
+    for (const skill of this.resumeStore.skills
+      .filter((s) => !s.hide)
+      .sort((a, b) => this.evaluateSkillName(a.name, b.name))
+      .sort((a, b) => this.evaluateSkillPriority(a.priority, b.priority))) {
       for (const keyword of skill.categories) {
         let skillCategory = this.categoryToSkills.get(keyword);
         if (!skillCategory) {
@@ -99,8 +102,13 @@ export class Resume {
   }
 
   companySkills(company: ICompany): Array<ISkill> {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    return company.skills.map((name: string) => this.skillByName.get(name.toLowerCase())!);
+    return company.skills
+      .map((name: string) => {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        return this.skillByName.get(name.toLowerCase())!;
+      })
+      .sort((a, b) => this.evaluateSkillName(a.name, b.name))
+      .sort((a, b) => this.evaluateSkillPriority(a.priority, b.priority));
   }
 
   attaching() {
@@ -127,6 +135,24 @@ export class Resume {
 
   private toggleHighlights(company: ICompany): void {
     company.showingHighlights = !company.showingHighlights;
+  }
+
+  private evaluateSkillName(a: string, b: string, factor = 1) {
+    if (!a && !b) {
+      return 0;
+    }
+
+    if (!a) {
+      return -factor;
+    }
+    if (!b) {
+      return factor;
+    }
+
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+
+    return a.localeCompare(b) * factor;
   }
 
   private evaluateSkillPriority(a: number, b: number, factor = 1) {
