@@ -118,7 +118,6 @@ export class Resume {
     $("#publications-list").on("hide.bs.collapse", () => {
       this.showingPublications = false;
     });
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     this.companies = this.companies.map((s, _index) => {
       s.showingHighlights = false;
       return s;
