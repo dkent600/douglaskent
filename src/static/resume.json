@@ -54,22 +54,53 @@
   ],
   "work": [
     {
-      "showingHighlights": false,
+      "company": "Curve Labs",
+      "position": "Blockchain Oracle Developer",
+      "remote": true,
+      "website": "https://www.curvelabs.eu/",
+      "startDate": "2023-04",
+      "summary": "Developed an automated \"Oracle\" service maintaining states of <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> regenerative finance (Refi) smart contracts on the <a href=\"https://celo.org/\" target=\"_blank\">Celo</a> (EVM compatible) blockchain.",
+      "endDate": "2023-05",
+      "highlights": [
+        "Worked on the <a href=\"https://celo.org/\" target=\"_blank\">Celo blockchain</a> with the tokens kG, kCur and cUSD and a Balancer WeightedPool (kCur <> cUSD) ported to Celo by Symmetric",
+        "Leveraged smart contracts MentoReserve and the Balancer WeightedPool to maintain the value of the total supply of kCur in the MentoReserve contract equal to the value of the total supply of the kG token (by changing the total supply of kCur in the MentoReserve)",
+        "Leveraged the Balancer WeightedPool to help maintain kCur price stability within an acceptable range in its role of backing up kG",
+        "Leveraged <a href=\"https://www.openzeppelin.com/defender\" target=\"_blank\">OpenZeppelin Defender</a> for managing private keys, encrypting secrets, sending transactions, hosting and invoking the service",
+        "Reported the prices of cUSD, kCur and kG price to smart contract Oracles"
+      ],
+      "skills": [
+        "Ethereum",
+        "Defender",
+        "Refi",
+        "Defi",
+        "TypeScript",
+        "Javascript",
+        "Solidity",
+        "ethers.js",
+        "Balancer Liquidity Pools",
+        "Mento",
+        "Celo",
+        "GitHub"
+      ]
+    },
+    {
       "company": "Curve Labs",
       "position": "Development Team Lead and Lead Developer",
       "remote": true,
       "website": "https://www.curvelabs.eu/",
       "startDate": "2020-08",
-      "summary": "Coordinated the development of the frontends of multiple decentralized applications (dApps), running against the Ethereum blockchain, focused on decentralized (Defi) and regenerative finance (Refi).",
+      "summary": "Lead developer for the frontends of multiple decentralized applications (dApps), running against the Ethereum blockchain, focused on decentralized (Defi) and regenerative finance (Refi).",
       "endDate": "2022-11",
       "highlights": [
+        "Was the lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\"target=\"_blank\">Prime Pools</a>, <a href=\"https://github.com/PrimeDAO/locking-for-rep-dapp\"target=\"_blank\">Prime Locking For Reputation</a> and the original PRIMEDao Home Page",
+        "With the exception of the PrimeDAO Home Page, which uses React.js, the dApps were all implemented using the <a href=\"https://aurelia.io/\" target=\"_blank\">Aurelia</a> framework",
+        "Leveraged many Ethereum smart contracts developed by CurveLabs, as well as other contracts from OpenZeppelin. Reviewed CurveLabs contracts for correctness and errors",
+        "Leveraged <a href=\"https://balancer.fi/\" target=\"_blank\">Balancer Liquidity Pools</a>, smart contracts that implement decentralized automated market makers",
+        "Leveraged GnosisSafe API, for governance purposes",
+        "Leveraged CoinGecko for token prices",
         "Coordinated a team of two and participated in the coding of the dApp frontend of <a href=\"https://github.com/Kolektivo/kolektivo-dapp\" target=\"_blank\">Kolektivo</a>",
         "Coordinated a team of five, owned the architecture and participated in the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-deals-dapp\"target=\"_blank\">Prime Deals</a>",
         "Coordinated a team of two, owned the architecture and did most of the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-launch-dapp\"target=\"_blank\">Prime Launch</a>",
-        "Was the lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\"target=\"_blank\">Prime Pools</a>, <a href=\"https://github.com/PrimeDAO/locking-for-rep-dapp\"target=\"_blank\">Prime Locking For Reputation</a> and the original PRIMEDao Home Page",
-        "Reviewed Solidity contracts for correctness and errors",
-        "The Prime dApps use <a href=\"https://balancer.fi/\" target=\"_blank\">Balancer liquidity pools</a>, a decentralized automated market maker running on ethereum.",
-        "With the exception of the PrimeDAO Home Page, which uses React.js, the dApps are all implemented using the <a href=\"https://aurelia.io/\" target=\"_blank\">Aurelia</a> framework.",
         "As products, these applications are innovative and impressive. Read more about them: <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo (development still in progress)</a>, <a href=\"https://deals.prime.xyz/\" target=\"_blank\">Prime Deals</a>, <a href=\"https://launch.prime.xyz\" target=\"_blank\">Prime Launch</a>, <a href=\"https://primepool.primedao.io\" target=\"_blank\">Prime Pools</a>, <a href=\"https://primelock.eth.link\" target=\"_blank\">Prime Locking for Reputation</a> (hosted on IPFS), and the original <a href=\"https://primedao.eth.link\" target=\"_blank\">PRIMEDao Home Page</a> (hosted on IPFS)"
       ],
       "skills": [
@@ -102,7 +133,8 @@
         "NodeJs",
         "GitHub",
         "ReactJs",
-        "SPA"
+        "SPA",
+        "Wallets"
       ]
     },
     {
@@ -142,7 +174,8 @@
         "NodeJs",
         "GitHub",
         "ReactJs",
-        "SPA"
+        "SPA",
+        "Wallets"
       ]
     },
     {
@@ -751,6 +784,7 @@
       "skills": []
     },
     {
+      "showingHighlights": false,
       "company": "Pacific Environmental Services, Inc",
       "position": "Associate Public Policy Analyst ",
       "startDate": "1980-01",
@@ -833,6 +867,15 @@
         "Blockchain"
       ],
       "url": "https://ethereum.org/en/developers/docs/dapps/"
+    },
+    {
+      "name": "Wallets",
+      "priority": 1.202,
+      "categories": [
+        "Website and Application Development",
+        "Blockchain"
+      ],
+      "url": "https://ethereum.org/en/wallets/"
     },
     {
       "name": "Ethereum",
@@ -933,6 +976,25 @@
         "Defender"
       ],
       "url": "https://www.openzeppelin.com/defender"
+    },
+    {
+      "name": "Mento",
+      "priority": 4,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://www.mento.org/"
+    },
+    {
+      "name": "Celo BlockChain",
+      "priority": 4,
+      "categories": [
+        "Blockchain"
+      ],
+      "aliases": [
+        "Celo"
+      ],
+      "url": "https://celo.org/"
     },
     {
       "name": "Balancer Liquidity Pools",
