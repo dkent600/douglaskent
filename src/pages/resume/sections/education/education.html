@@ -1,0 +1,12 @@
+<section class="section scrollspy">
+  <h3>Education</h3>
+  <div class="content">
+    <div repeat.for="school of schools">
+      <div class="school">
+        <h5 class="school-name">${school.institution}</h5>
+        <div>${school.studyType}, ${school.area}</div>
+        <div>${school.startDate} to ${school.endDate}</div>
+      </div>
+    </div>
+  </div>
+</section>

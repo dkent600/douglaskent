@@ -1,0 +1,16 @@
+<section class="section scrollspy">
+  <h3>Me? Really?</h3>
+  <p>I'm biased, of course, but I think there are a lot of reasons why you might like to work with me:</p>
+  <ul class="list-group clean">
+    <li class="list-group-item quality" repeat.for="quality of qualities">
+      <table>
+        <tr>
+          <td>
+            <i class="material-icons quality-bullet">check</i>
+          </td>
+          <td class="quality-body" innerhtml.bind="quality | sanitizeHTML"></td>
+        </tr>
+      </table>
+    </li>
+  </ul>
+</section>

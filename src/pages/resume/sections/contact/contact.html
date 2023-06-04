@@ -1,0 +1,17 @@
+<section class="section d-lg-none">
+  <h3>Contact</h3>
+  <!-- <div>${basics.location.address}</div>
+<div>${basics.location.city}, ${basics.location.region} ${basics.location.postalCode}, ${basics.location.countryName}</div> -->
+  <div>${basics.phone}</div>
+  <div>${basics.phone2}</div>
+  <div>
+    <a href="mailto:${basics.email}">${basics.email}</a>
+  </div>
+  <div>
+    <a href.bind="basics.website" target="_blank">${basics.website}</a>
+  </div>
+  <div repeat.for="profile of profiles">
+    <a href.bind="profile.url" target="_blank">
+      <i class="profile-icon fa-brands fa-${profile.icon}"></i> ${profile.network}</a>
+  </div>
+</section>

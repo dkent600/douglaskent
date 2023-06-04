@@ -1,0 +1,65 @@
+<section class="section scrollspy">
+  <h3>Work History</h3>
+
+  <div class="content">
+
+    <div repeat.for="company of companies">
+      <div class="company">
+        <h5 class="company-position">${company.position}</h5>
+        <div class="company-name" if.bind="!company.website">${company.company}</div>
+        <div class="company-name" else>
+          <a href.bind="company.website" target="_blank">${company.company}</a>
+        </div>
+        <!-- <span class="separator"><i class="fa fa-angle-double-right"></i></span> -->
+        <span class="separator">&bull;</span>
+        <span class="company-date">${company.startDate} to ${company.endDate}</span>
+        <span class="company-icons">
+          <span if.bind="company.remote" class="remote">&nbsp;
+            <i class="fa-solid fa-phone" data-toggle="tooltip" data-placement="bottom" title="Worked Remotely"></i>
+          </span>
+          <span if.bind="company.contract" class="contract">&nbsp;
+            <i class="fa-solid fa-handshake" data-toggle="tooltip" data-placement="bottom" title="Contract"></i>
+          </span>
+          <span if.bind="company.personal" class="personal">&nbsp;
+            <i class="fa-solid fa-user" data-toggle="tooltip" data-placement="bottom" title="Personal Project"></i>
+          </span>
+        </span>
+        <div class="company-summary" innerhtml.bind="company.summary | sanitizeHTML"></div>
+
+        <div class="company-skills">
+          <span repeat.for="skill of companySkills(company)">
+            <span if.bind="skill">
+              <span if.bind="skill.url" class="badge badge-pill skill-name">
+                <a href.bind="skill.url" target="_blank">${skill.name}</a>
+              </span>
+              <span else class="badge badge-pill skill-name">${skill.name}</span>
+            </span>
+            <span else>
+              <span class="badge badge-pill skill-name">[Not Found]</span>
+            </span>
+          </span>
+        </div>
+
+        <div if.bind="company.highlights.length" class="highlights">
+          <a class="show-link" data-toggle="collapse" href="#highlights_${$index}" aria-expanded="false"
+            aria-controls="highlights-list" click.trigger="toggleHighlights(company)">
+            <span>Highlights
+              <i class="fa-solid ${company.showingHighlights ? 'fa-angles-up' : 'fa-angles-down'}"></i>
+            </span>
+          </a>
+
+          <div class="collapse fade" id="highlights_${$index}">
+            <ul>
+              <li repeat.for="highlight of company.highlights">
+                <!-- <div class="collapsible-header">More...</div> -->
+                <div class="collapsible-body">
+                  <span innerhtml.bind="highlight | sanitizeHTML"></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

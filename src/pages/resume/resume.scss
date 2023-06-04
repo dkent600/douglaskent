@@ -71,20 +71,20 @@ h1 {
   padding-left: 0.5rem;
 }
 
+i.quality-bullet {
+  font-weight: 900;
+  color: $green-500;
+  padding-right: 0.75rem;
+}
+
 // .quality-bullet i {
 //   font-weight: 900;
+//   font-size: 2rem;
+//   padding: 0;
 //   color: $green-500;
-//   padding-right: .75rem;
+//   background-color: $grey-300 !important;
+//   @extend .rounded-circle;
 // }
-
-.quality-bullet i {
-  font-weight: 900;
-  font-size: 2rem;
-  padding: 0;
-  color: $green-500;
-  background-color: $grey-300 !important;
-  @extend .rounded-circle;
-}
 
 .list-group-item.quality {
   display: inline-block;

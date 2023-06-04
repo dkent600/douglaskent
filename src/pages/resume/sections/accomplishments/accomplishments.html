@@ -1,0 +1,11 @@
+<section class="section scrollspy">
+  <h3>Special Accomplishments</h3>
+  <ul class="list-group clean">
+    <li class="list-group-item accomplishment" repeat.for="accomplishment of accomplishments">
+      <div class="accomplishment-stars">
+        <i repeat.for="i of 5" class="accomplishment-star material-icons">star</i>
+      </div>
+      <div class="accomplishment-body" innerhtml.bind="accomplishment | sanitizeHTML"></div>
+    </li>
+  </ul>
+</section>

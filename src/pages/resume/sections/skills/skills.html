@@ -1,0 +1,16 @@
+<section class="section scrollspy">
+  <h3>Skills</h3>
+  <div class="content">
+    <div repeat.for="category of skillCategories">
+      <div class="skills-for-category">
+        <h4 class="skill-category">${category}</h4>
+        <span repeat.for="skill of categoryToSkills.get(category)">
+          <span if.bind="skill.url" class="badge badge-pill skill-name">
+            <a href.bind="skill.url" target="_blank">${skill.name}</a>
+          </span>
+          <span if.bind="!skill.url" class="badge badge-pill skill-name">${skill.name}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
