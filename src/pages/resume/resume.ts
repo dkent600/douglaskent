@@ -130,6 +130,19 @@ export class Resume {
     ($(".company .remote i") as any).tooltip();
     ($(".company .contract i") as any).tooltip();
     ($(".company .personal i") as any).tooltip();
+
+    const bookmark = window.location.hash;
+    if (bookmark) {
+      this.scrollToBookmark(bookmark);
+    }
+  }
+
+  private scrollToBookmark(elementId: string) {
+    const element = document.getElementById(elementId);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   private toggleHighlights(company: ICompany): void {
