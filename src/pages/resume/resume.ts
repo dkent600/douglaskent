@@ -1,5 +1,5 @@
 import { IContainer } from "aurelia";
-import { IRoute, IRouteableComponent } from "@aurelia/router";
+import { IRouteableComponent } from "@aurelia/router";
 
 import { IBasics, IResumeStore, ISkill } from "../../stores/resume-store";
 
@@ -43,60 +43,6 @@ export class Resume implements IRouteableComponent {
     }
   }
 
-  static routes: IRoute[] = [
-    {
-      path: ["", "introduction"],
-      title: "Introduction",
-    },
-    {
-      path: "reasons",
-      title: "Me? Really?",
-    },
-    {
-      path: "testimonials",
-      title: "Testimonials",
-    },
-    {
-      path: "goals",
-      title: "Goals",
-    },
-    {
-      path: "accomplishments",
-      title: "Special Accomplishments",
-    },
-    {
-      path: "skills",
-      title: "Skills",
-    },
-    {
-      path: "history",
-      title: "Work History",
-    },
-    {
-      path: "education",
-      title: "Education",
-    },
-    {
-      path: "languages",
-      title: "Languages",
-    },
-    {
-      path: "citizenship",
-      title: "Citizenship",
-    },
-    {
-      path: "publications",
-      title: "Publications",
-    },
-
-    {
-      path: "*",
-      redirectTo: "",
-    },
-    // <!-- <a class="nav-link" href="#social">Other Profiles</a> -->
-    // <!-- <a class="nav-link" href="#portfolio">Portfolio</a> -->
-  ];
-
   binding() {
     $("#splash").css("display", "none");
   }
@@ -108,16 +54,16 @@ export class Resume implements IRouteableComponent {
     ($(".company .contract i") as any).tooltip();
     ($(".company .personal i") as any).tooltip();
 
-    // const bookmark = window.location.hash;
-    // if (bookmark) {
-    //   this.scrollToBookmark(bookmark.slice(1));
-    // }
+    const bookmark = window.location.hash;
+    if (bookmark) {
+      this.scrollToBookmark(bookmark.slice(1));
+    }
   }
 
-  // private scrollToBookmark(elementId: string) {
-  //   const element = document.getElementById(elementId);
-  //   if (element) {
-  //     element.scrollIntoView({ behavior: "auto" });
-  //   }
-  // }
+  private scrollToBookmark(elementId: string) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: "auto" });
+    }
+  }
 }
