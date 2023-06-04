@@ -133,15 +133,14 @@ export class Resume {
 
     const bookmark = window.location.hash;
     if (bookmark) {
-      this.scrollToBookmark(bookmark);
+      this.scrollToBookmark(bookmark.slice(1));
     }
   }
 
   private scrollToBookmark(elementId: string) {
     const element = document.getElementById(elementId);
-
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "auto" });
     }
   }
 
