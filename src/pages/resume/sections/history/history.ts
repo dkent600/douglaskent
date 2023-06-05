@@ -1,6 +1,5 @@
 import { bindable } from "aurelia";
 
-import { evaluateDateTime } from "../../../../services/utils";
 import { ICompany, IResumeStore, ISkill } from "../../../../stores/resume-store";
 export class History {
   companies!: Array<ICompany>;
@@ -8,9 +7,9 @@ export class History {
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
     this.companies = this.resumeStore.companies
-      .sort((a, b) => {
-        return evaluateDateTime(a.endDate, b.endDate, -1);
-      })
+      // .sort((a, b) => {
+      //   return evaluateDateTime(a.endDate, b.endDate, -1);
+      // })
       .map((s, _index) => {
         s.showingHighlights = false;
         return s;
