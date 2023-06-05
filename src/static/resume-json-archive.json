@@ -1,0 +1,36 @@
+{
+  "company": "Ceiba Realty",
+  "position": "Web Designer and Developer",
+  "remote": true,
+  "personal": true,
+  "website": "http://www.ceibarealestatebelize.com/",
+  "startDate": "2002-10",
+  "summary": "For a real estate agency in Belize, designed and implemented a website for anyone looking for Belize real estate",
+  "endDate": "2017-10 (intermittent)",
+  "highlights": [
+    "I have taken the <a href='http://www.ceibarealestatebelize.com' target='_blank'>Ceiba Realty website</a> through several iterations in technologies and graphic designs since I first created it in 2005, keeping up with the latest technologies and trends",
+    "Did the whole thing myself"
+  ],
+  "skills": [
+    "ASP.NET Core",
+    "C#",
+    "Javascript",
+    "MVC",
+    "WebApi",
+    "Razor",
+    "HTML",
+    "CSS",
+    "KnockoutJs",
+    "Ajax",
+    "Bootstrap",
+    "Bootstrap Material Design",
+    "Responsive",
+    "Identity",
+    "entity Framework",
+    "Sql Server",
+    "T-Sql",
+    "Unity",
+    "jquery",
+    "RequireJs"
+  ]
+}
