@@ -9,7 +9,7 @@
     "phone": "+506 8591-5302 (CR)",
     "phone2": "+1 (512) 402-8735 (US)",
     "website": "http://www.douglaskent.com",
-    "summary": "<div>Hi, I am an experienced software engineer and web site developer, specializing in building antifragility for my clients using full-stack development of enterprise-scale websites built from state-of-the-art technologies and architectures, including single page applications and service-oriented architectures using Aurelia/Typescript, React and Web3 Ethereum blockchain technologies.</div><div>I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest!</div>",
+    "summary": "<div>Hi, I am an experienced software engineer with 5+ years of proven success developing Web3 dApps, part of 34+ years of repeated success developing web and desktop applications.  I've worked with the likes of Microsoft (developing Windows 3.1) to garage startups (making clipart available for download before the Worldwide Web), to Curve Labs on a blockchain Refi dApp designed to emerge a regenerative decentralized economic system for a sovereign island nation (Curaçao).</div><div>I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest, read on!</div>",
     "location": {
       "address": "Alegria Village",
       "postalCode": "",
@@ -89,7 +89,7 @@
       "remote": true,
       "website": "https://www.curvelabs.eu/",
       "startDate": "2020-08",
-      "summary": "Lead developer for the frontends of multiple decentralized applications (dApps), running against the Ethereum blockchain, focused on decentralized (Defi) and regenerative finance (Refi).",
+      "summary": "In lead roles, developed the frontends of multiple decentralized applications (dApps), running against the Ethereum blockchain, focused on decentralized (Defi) and regenerative finance (Refi).",
       "endDate": "2022-11",
       "highlights": [
         "Was the lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\"target=\"_blank\">Prime Pools</a>, <a href=\"https://github.com/PrimeDAO/locking-for-rep-dapp\"target=\"_blank\">Prime Locking For Reputation</a> and the original PRIMEDao Home Page",
@@ -101,6 +101,7 @@
         "Coordinated a team of two and participated in the coding of the dApp frontend of <a href=\"https://github.com/Kolektivo/kolektivo-dapp\" target=\"_blank\">Kolektivo</a>",
         "Coordinated a team of five, owned the architecture and participated in the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-deals-dapp\"target=\"_blank\">Prime Deals</a>",
         "Coordinated a team of two, owned the architecture and did most of the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-launch-dapp\"target=\"_blank\">Prime Launch</a>",
+        "Interviewed applicants for developer positions",
         "As products, these applications are innovative and impressive. Read more about them: <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo (development still in progress)</a>, <a href=\"https://deals.prime.xyz/\" target=\"_blank\">Prime Deals</a>, <a href=\"https://launch.prime.xyz\" target=\"_blank\">Prime Launch</a>, <a href=\"https://primepool.primedao.io\" target=\"_blank\">Prime Pools</a>, <a href=\"https://primelock.eth.link\" target=\"_blank\">Prime Locking for Reputation</a> (hosted on IPFS), and the original <a href=\"https://primedao.eth.link\" target=\"_blank\">PRIMEDao Home Page</a> (hosted on IPFS)"
       ],
       "skills": [
@@ -119,6 +120,7 @@
         "Metamask",
         "WalletConnect",
         "Gnosis Safe",
+        "Subgraph",
         "Balancer Liquidity Pools",
         "Web3Modal",
         "Aurelia",
@@ -142,8 +144,8 @@
       "position": "Senior Lead Developer",
       "remote": true,
       "website": "http://www.daostack.io/",
-      "startDate": "2017-10",
-      "summary": "Performed multiple roles in the design, creation and use of DAOstack DAOs (decentralized autonomous organizations on the Ethereum blockchain) that are capable of decentralized governance at large scales.",
+      "startDate": "2017-09",
+      "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs (decentralized autonomous organizations on the Ethereum blockchain) that are capable of decentralized governance at large scales.",
       "endDate": "2020-10",
       "highlights": [
         "Was one of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
@@ -162,6 +164,7 @@
         "TypeScript",
         "Javascript",
         "Solidity",
+        "Subgraph",
         "Aurelia",
         "HTML5",
         "Webpack",
@@ -886,6 +889,22 @@
       "url": "https://ethereum.org/en/"
     },
     {
+      "name": "Celo",
+      "priority": 1.2101,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://celo.org/"
+    },
+    {
+      "name": "Arbitrum",
+      "priority": 1.2102,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://ethereum.org/en/"
+    },
+    {
       "name": "Refi",
       "priority": 1.22,
       "categories": [
@@ -986,17 +1005,6 @@
       "url": "https://www.mento.org/"
     },
     {
-      "name": "Celo BlockChain",
-      "priority": 4,
-      "categories": [
-        "Blockchain"
-      ],
-      "aliases": [
-        "Celo"
-      ],
-      "url": "https://celo.org/"
-    },
-    {
       "name": "Balancer Liquidity Pools",
       "priority": 4,
       "categories": [
@@ -1047,11 +1055,14 @@
       "url": "http://msdn.microsoft.com/en-us/library/hh833994(v=vs.108).aspx"
     },
     {
-      "name": "HTML5",
+      "name": "HTML",
       "priority": 1.2,
       "categories": [
         "Website and Application Development",
         "Markup Languages"
+      ],
+      "aliases": [
+        "HTML5"
       ]
     },
     {
@@ -1140,6 +1151,17 @@
         "Markup Languages"
       ],
       "url": "https://developer.mozilla.org/en-US/docs/Web/Web_Components"
+    },
+    {
+      "name": "Subgraph",
+      "priority": 1.211,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "aliases": [
+        "GraphQL"
+      ],
+      "url": "https://thegraph.com/docs/en/developing/creating-a-subgraph/"
     },
     {
       "name": "Data Binding",
