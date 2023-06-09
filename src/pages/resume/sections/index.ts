@@ -9,3 +9,4 @@ export * from "./education/education";
 export * from "./languages/languages";
 export * from "./citizenship/citizenship";
 export * from "./publications/publications";
+export * from "./toc/toc";
