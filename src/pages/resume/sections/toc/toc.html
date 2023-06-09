@@ -1,4 +1,25 @@
-<nav id="TOC" class="navbar">
+<div id="TOCSmall" class="dropdown d-lg-none hidden-print" if.bind="forDropdownMenu">
+  <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="nav-link" href="#introduction">Introduction</a>
+    <a class="nav-link" href="#reasons">Me? Really?</a>
+    <a class="nav-link" href="#testimonials">Testimonials</a>
+    <a class="nav-link" href="#accomplishments">Special Accomplishments</a>
+    <a class="nav-link" href="#skills">Skills</a>
+    <a class="nav-link" href="#history">Work History</a>
+    <a class="nav-link" href="#education">Education</a>
+    <a class="nav-link" href="#languages">Languages</a>
+    <a class="nav-link" href="#citizenship">Citizenship</a>
+    <a class="nav-link" href="#publications">Publications</a>
+    <!-- <a class="nav-link" href="#social">Other Profiles</a> -->
+    <!-- <a class="nav-link" href="#goals">Goals</a> -->
+    <!-- <a class="nav-link" href="#portfolio">Portfolio</a> -->
+  </div>
+</div>
+<nav id="TOC" class="navbar" else>
   <ul class="nav table-of-contents flex-column">
     <li class="nav-item">
       <a class="nav-link" href="#introduction">Introduction</a>

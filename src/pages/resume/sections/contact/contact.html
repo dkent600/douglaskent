@@ -11,7 +11,7 @@
     <a href.bind="basics.website" target="_blank">${basics.website}</a>
   </div>
   <div repeat.for="profile of profiles">
-    <a href.bind="profile.url" target="_blank">
+    <a class="external-link" href.bind="profile.url" target="_blank">
       <i class="profile-icon fa-brands fa-${profile.icon}"></i> ${profile.network}</a>
   </div>
 </section>

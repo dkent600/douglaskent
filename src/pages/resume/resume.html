@@ -2,27 +2,7 @@
   <!-- <require from="./nav-bar.html"></require>
       <nav-bar router.bind="router"></nav-bar> -->
   <div class="container">
-    <div id="TOCSmall" class="dropdown d-lg-none hidden-print">
-      <button class="btn btn-outline-secondary" type="button" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="nav-link" href="#introduction">Introduction</a>
-        <a class="nav-link" href="#reasons">Me? Really?</a>
-        <a class="nav-link" href="#testimonials">Testimonials</a>
-        <a class="nav-link" href="#accomplishments">Special Accomplishments</a>
-        <a class="nav-link" href="#skills">Skills</a>
-        <a class="nav-link" href="#history">Work History</a>
-        <a class="nav-link" href="#education">Education</a>
-        <a class="nav-link" href="#languages">Languages</a>
-        <a class="nav-link" href="#citizenship">Citizenship</a>
-        <a class="nav-link" href="#publications">Publications</a>
-        <!-- <a class="nav-link" href="#social">Other Profiles</a> -->
-        <!-- <a class="nav-link" href="#goals">Goals</a> -->
-        <!-- <a class="nav-link" href="#portfolio">Portfolio</a> -->
-      </div>
-    </div>
+    <toc for-dropdown-menu.bind="true"></toc>
     <div class="row">
       <div class="col-xs-12 col-lg-8 col-xl-9">
         <h1>${basics.name}</h1>
