@@ -8,10 +8,10 @@
     <a href="mailto:${basics.email}">${basics.email}</a>
   </div>
   <div>
-    <a href.bind="basics.website" target="_blank">${basics.website}</a>
+    <a href.bind="basics.website" target="_blank" rel="noopener noreferrer">${basics.website}</a>
   </div>
   <div repeat.for="profile of profiles">
-    <a class="external-link" href.bind="profile.url" target="_blank">
+    <a class="external-link" href.bind="profile.url" target="_blank" rel="noopener noreferrer">
       <i class="profile-icon fa-brands fa-${profile.icon}"></i>${inline ? profile.url : profile.network}</a>
   </div>
 </template>

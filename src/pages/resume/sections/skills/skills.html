@@ -6,7 +6,7 @@
         <h4 class="skill-category">${category}</h4>
         <span repeat.for="skill of categoryToSkills.get(category)">
           <span if.bind="skill.url" class="badge badge-pill skill-name">
-            <a href.bind="skill.url" target="_blank">${skill.name}</a>
+            <a href.bind="skill.url" target="_blank" rel="noopener noreferrer">${skill.name}</a>
           </span>
           <span if.bind="!skill.url" class="badge badge-pill skill-name">${skill.name}</span>
         </span>

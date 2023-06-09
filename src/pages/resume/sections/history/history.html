@@ -6,7 +6,7 @@
         <h5 class="company-position">${company.position}</h5>
         <div class="company-name" if.bind="!company.website">${company.company}</div>
         <div class="company-name" else>
-          <a href.bind="company.website" target="_blank">${company.company}</a>
+          <a href.bind="company.website" target="_blank" rel="noopener noreferrer">${company.company}</a>
         </div>
         <!-- <span class="separator"><i class="fa fa-angle-double-right"></i></span> -->
         <span class="separator">&bull;</span>
@@ -28,7 +28,7 @@
           <span repeat.for="skill of companySkills(company)">
             <span if.bind="skill">
               <span if.bind="skill.url" class="badge badge-pill skill-name">
-                <a href.bind="skill.url" target="_blank">${skill.name}</a>
+                <a href.bind="skill.url" target="_blank" rel="noopener noreferrer">${skill.name}</a>
               </span>
               <span else class="badge badge-pill skill-name">${skill.name}</span>
             </span>
@@ -59,7 +59,7 @@
             </div>
           </div>
           <div class="highlights printing">See my <a class="show-link external-link" href="http://www.douglaskent.com/"
-              target="_blank">dynamic
+              target="_blank" rel="noopener noreferrer">dynamic
               resume</a> for highlights about this position!</div>
         </div>
       </div>

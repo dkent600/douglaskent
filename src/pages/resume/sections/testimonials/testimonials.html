@@ -3,7 +3,7 @@
   <blockquote class="testimonial" repeat.for="testimonial of testimonials">
     <div class="citation" innerhtml.bind="testimonial.reference | sanitizeHTML"></div>
     <footer class="blockquote-footer">
-      <a href.bind="testimonial.website" target="_blank">
+      <a href.bind="testimonial.website" target="_blank" rel="noopener noreferrer">
         <cite>${testimonial.name}, ${testimonial.title}</cite>
       </a>
     </footer>
