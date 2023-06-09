@@ -49,10 +49,6 @@ export class Resume implements IRouteableComponent {
 
   attached() {
     ($("body") as any).bootstrapMaterialDesign();
-    ($("body") as any).scrollspy({ target: "#TOC", offset: 232 });
-    ($(".company .remote i") as any).tooltip();
-    ($(".company .contract i") as any).tooltip();
-    ($(".company .personal i") as any).tooltip();
 
     const bookmark = window.location.hash;
     if (bookmark) {

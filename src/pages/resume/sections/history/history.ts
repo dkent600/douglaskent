@@ -16,6 +16,12 @@ export class History {
       });
   }
 
+  attached() {
+    ($(".company .remote i") as any).tooltip();
+    ($(".company .contract i") as any).tooltip();
+    ($(".company .personal i") as any).tooltip();
+  }
+
   companySkills(company: ICompany): Array<ISkill> {
     return company.skills
       .map((name: string) => {
