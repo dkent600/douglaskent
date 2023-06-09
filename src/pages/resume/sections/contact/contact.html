@@ -1,7 +1,7 @@
-<section class="section-lg-none">
-  <h3>Contact</h3>
-  <!-- <div>${basics.location.address}</div>
-<div>${basics.location.city}, ${basics.location.region} ${basics.location.postalCode}, ${basics.location.countryName}</div> -->
+<template as-custom-element="info">
+  <bindable property='basics'></bindable>
+  <bindable property='profiles'></bindable>
+  <bindable property='inline'></bindable>
   <div>${basics.phone}</div>
   <div>${basics.phone2}</div>
   <div>
@@ -12,6 +12,28 @@
   </div>
   <div repeat.for="profile of profiles">
     <a class="external-link" href.bind="profile.url" target="_blank">
-      <i class="profile-icon fa-brands fa-${profile.icon}"></i> ${profile.network}</a>
+      <i class="profile-icon fa-brands fa-${profile.icon}"></i>${inline ? profile.url : profile.network}</a>
   </div>
+</template>
+
+<section class="section section-lg-none" if.bind="inline">
+  <h3>Contact</h3>
+  <!-- <div>${basics.location.address}</div>
+<div>${basics.location.city}, ${basics.location.region} ${basics.location.postalCode}, ${basics.location.countryName}</div> -->
+  <info basics.bind="basics" profiles.bind="profiles" inline.bind="true"></info>
+
 </section>
+
+<aside class="contact-info" else>
+  <hr />
+  <div style="margin-left:.5rem">
+    <h5>Contact</h5>
+    <!-- <div>${basics.location.address}</div>
+      <div>${basics.location.city}, ${basics.location.region} ${basics.location.postalcode}</div>
+      <div>${basics.location.countryName}</div>
+    -->
+    <info basics.bind="basics" profiles.bind="profiles"></info>
+
+  </div>
+  <hr />
+</aside
