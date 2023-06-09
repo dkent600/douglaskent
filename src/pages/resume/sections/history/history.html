@@ -38,24 +38,29 @@
           </span>
         </div>
 
-        <div if.bind="company.highlights.length" class="highlights">
-          <a class="show-link" data-toggle="collapse" href="#highlights_${$index}" aria-expanded="false"
-            aria-controls="highlights-list" click.trigger="toggleHighlights(company)">
-            <span>Highlights
-              <i class="fa-solid ${company.showingHighlights ? 'fa-angles-up' : 'fa-angles-down'}"></i>
-            </span>
-          </a>
+        <div if.bind="company.highlights.length">
+          <div class=" highlights">
+            <a class="show-link" data-toggle="collapse" href="#highlights_${$index}" aria-expanded="false"
+              aria-controls="highlights-list" click.trigger="toggleHighlights(company)">
+              <span>Highlights
+                <i class="fa-solid ${company.showingHighlights ? 'fa-angles-up' : 'fa-angles-down'}"></i>
+              </span>
+            </a>
 
-          <div class="collapse fade" id="highlights_${$index}">
-            <ul>
-              <li repeat.for="highlight of company.highlights">
-                <!-- <div class="collapsible-header">More...</div> -->
-                <div class="collapsible-body">
-                  <span innerhtml.bind="highlight | sanitizeHTML"></span>
-                </div>
-              </li>
-            </ul>
+            <div class="collapse fade" id="highlights_${$index}">
+              <ul>
+                <li repeat.for="highlight of company.highlights">
+                  <!-- <div class="collapsible-header">More...</div> -->
+                  <div class="collapsible-body">
+                    <span innerhtml.bind="highlight | sanitizeHTML"></span>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
+          <div class="highlights printing">See my <a class="show-link external-link" href="http://www.douglaskent.com/"
+              target="_blank">dynamic
+              resume</a> for highlights about this position!</div>
         </div>
       </div>
     </div>

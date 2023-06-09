@@ -167,6 +167,20 @@ i.quality-bullet {
   margin-left: 0.25rem;
 }
 
+.company .highlights.printing {
+  display: none;
+}
+
+@media print {
+  .company .highlights {
+    display: none;
+  }
+
+  .company .highlights.printing {
+    display: block;
+  }
+}
+
 .company-summary {
   margin-bottom: 1rem;
 }
