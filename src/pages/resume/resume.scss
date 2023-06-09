@@ -116,7 +116,8 @@ i.quality-bullet {
   @include happy-text;
 }
 
-.section {
+.sectionContainer {
+  display: block;
   margin-bottom: 1.5rem;
 }
 
@@ -285,15 +286,9 @@ blockquote.testimonial .blockquote-footer {
   padding-right: 3rem;
 }
 
-#reasons,
-#testimonials,
-#accomplishments,
-#education,
-#skills,
-#history {
-  page-break-before: always;
-}
-
+/**
+  just to convert div's from this json into p's
+*/
 .summary div {
   @extend p;
 }
