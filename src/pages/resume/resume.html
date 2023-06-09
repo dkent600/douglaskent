@@ -7,41 +7,41 @@
       <div class="col-xs-12 col-lg-8 col-xl-9">
         <h1>${basics.name}</h1>
         <div>
-          <contact id="contact" class="section d-lg-none">
+          <contact id="contact" class="d-lg-none" inline.bind="true">
           </contact>
 
-          <introduction id="introduction" class="section scrollspy">
+          <introduction id="introduction" class="scrollspy">
           </introduction>
 
-          <reasons id="reasons" class="section scrollspy">
+          <reasons id="reasons" class="scrollspy">
           </reasons>
 
-          <testimonials id="testimonials" class="section scrollspy">
+          <testimonials id="testimonials" class="scrollspy">
           </testimonials>
 
-          <accomplishments id="accomplishments" class="section scrollspy">
+          <accomplishments id="accomplishments" class="scrollspy">
           </accomplishments>
 
-          <skills id="skills" skill-by-name.bind="skillByName" class="section scrollspy">
+          <skills id="skills" skill-by-name.bind="skillByName" class="scrollspy">
           </skills>
 
-          <history id="history" skill-by-name.bind="skillByName" class="section scrollspy">
+          <history id="history" skill-by-name.bind="skillByName" class="scrollspy">
           </history>
 
-          <education id="education" class="section scrollspy">
+          <education id="education" class="scrollspy">
           </education>
 
-          <languages id="languages" class="section scrollspy">
+          <languages id="languages" class="scrollspy">
           </languages>
 
-          <citizenship id="citizenship" class="section scrollspy">
+          <citizenship id="citizenship" class="scrollspy">
           </citizenship>
 
-          <publications id="publications" class="section scrollspy">
+          <publications id="publications" class="scrollspy">
           </publications>
         </div>
 
-        <!-- <section id="goals id="goals"" class="section scrollspy">
+        <!-- <section id="goals id="goals"" class="scrollspy">
           <h3>Goals</h3>
           <div class="">
             <p>I want to contribute my energy, skills and talents to reversing the global ecological and social crises
@@ -51,7 +51,7 @@
         </section>
         -->
 
-        <!-- <section id="portfolio"" class="section scrollspy">
+        <!-- <section id="portfolio"" class="scrollspy">
           <h3>Portfolio</h3>
           <p>In faucibus elit at pulvinar efficitur. Sed lacus sapien, laoreet et est a, vehicula mattis felis.
             Pellentesque volutpat ultrices felis nec eleifend. Etiam interdum turpis libero, at tempor nisi molestie
@@ -65,15 +65,6 @@
             Ut vel velit mattis, fringilla nisl id, congue mi.</p>
           </section> 
         -->
-
-        <!-- <section id="social id="social"" class="section scrollspy">
-          <h3>Other Profiles</h3>
-          <div repeat.for="profile of profiles">
-            <i class="profile-icon fa-brands fa-${profile.icon}"></i><a href.bind="profile.url"
-              target="_blank">${profile.network}</a>
-          </section>
-        -->
-
 
         <!-- <section id="aboutThisResume id="aboutThisResume"" class="section">
             <h3>About This Resume</h3>
@@ -103,29 +94,7 @@
       </div>
       <div class="col-hide-md col-lg-4 col-xl-3 hidden-print">
         <div class="side-panel">
-          <div class="contact-info">
-            <hr />
-            <div style="margin-left:.5rem">
-              <h5>Contact</h5>
-              <!-- <div>${basics.location.address}</div>
-                <div>${basics.location.city}, ${basics.location.region} ${basics.location.postalcode}</div>
-                <div>${basics.location.countryName}</div>
-              -->
-              <div>${basics.phone}</div>
-              <div>${basics.phone2}</div>
-              <div>
-                <a href="mailto:${basics.email}">${basics.email}</a>
-              </div>
-              <div>
-                <a href.bind="basics.website" target="_blank">${basics.website}</a>
-              </div>
-              <div repeat.for="profile of profiles">
-                <a href.bind="profile.url" target="_blank">
-                  <i class="profile-icon fa-brands fa-${profile.icon}"></i> ${profile.network}</a>
-              </div>
-            </div>
-            <hr />
-          </div>
+          <contact></contact>
           <toc id="TOC">
           </toc>
         </div>
