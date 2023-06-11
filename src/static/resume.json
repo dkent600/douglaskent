@@ -148,7 +148,8 @@
       "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs (decentralized autonomous organizations on the Ethereum blockchain) that are capable of decentralized governance at large scales.",
       "endDate": "2020-10",
       "highlights": [
-        "Was one of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
+        "One of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
+        "One and a half years coding with React.js in Alchemy",
         "Implemented and helped to design the <a href=\"https://github.com/daostack/dutchx-bootstrapper-ui\" target=\"_blank\">dxDAO Vote Staking Interface</a>, a website for initializing reputation in the dxDAO, a new decentralized autonomous organization (DAO) that governs the DutchX, a permissionless trading protocol for ERC20 tokens on the Ethereum blockchain. (The UI will disappear on 2019-06-28 when the dxDAO initialization period ends, but you can see walkthroughs <a href=\"https://twitter.com/_dx_dao/status/1138824722211311616\" target=\"_blank\">here</a> and <a href=\"https://blog.gnosis.pm/step-by-step-guide-to-earn-reputation-for-the-dxdao-with-the-gnosis-safe-cc54f3a93f3e\" target=\"_blank\">here</a>.)",
         "Designed and implemented a well-reviewed architecture for the original version of <a href=\"https://github.com/daostack/arc.js_legacy\" target=\"_blank\">DAOstack Arc.js</a>",
         "Implemented <a href=\"https://github.com/daostack/vanille\" target=\"_blank\">Vanille</a>, open-source software that leverage <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOStack Arc</a> to facilitate the creation of DAOstack DAOs",
