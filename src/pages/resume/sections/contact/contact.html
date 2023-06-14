@@ -12,16 +12,20 @@
   </div>
   <div repeat.for="profile of profiles">
     <a class="external-link" href.bind="profile.url" target="_blank" rel="noopener noreferrer">
-      <i class="profile-icon fa-brands fa-${profile.icon}"></i>${inline ? profile.url : profile.network}</a>
+      <i class="profile-icon fa-brands fa-${profile.icon}"></i>
+      <span class="d-none d-print-inline">${profile.url}</span>
+      <span class="d-print-none">${profile.network}</span>
+    </a>
   </div>
 </template>
 
 <section class="section section-lg-none" if.bind="inline">
   <h3>Contact</h3>
-  <!-- <div>${basics.location.address}</div>
-<div>${basics.location.city}, ${basics.location.region} ${basics.location.postalCode}, ${basics.location.countryName}</div> -->
+  <!-- 
+    <div>${basics.location.address}</div>
+    <div>${basics.location.city}, ${basics.location.region} ${basics.location.postalCode}, ${basics.location.countryName}</div>\
+  -->
   <info basics.bind="basics" profiles.bind="profiles" inline.bind="true"></info>
-
 </section>
 
 <aside class="contact-info" else>

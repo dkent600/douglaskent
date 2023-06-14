@@ -21,15 +21,18 @@
     "profiles": [
       {
         "network": "LinkedIn",
-        "username": "Doug Kent",
         "url": "http://www.linkedin.com/in/doug-kent-760876a",
         "icon": "linkedin"
       },
       {
         "network": "GitHub",
-        "username": "dkent600",
         "url": "http://github.com/dkent600",
         "icon": "github"
+      },
+      {
+        "network": "Chat on WhatsApp",
+        "url": "https://wa.me/150685915302?text=Hi!%20I'm%20calling%20from%20your%20resume!",
+        "icon": "whatsapp"
       }
     ]
   },
