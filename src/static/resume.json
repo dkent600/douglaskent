@@ -192,7 +192,7 @@
       "personal": true,
       "website": "",
       "startDate": "2013-08",
-      "summary": "Designed and implemented a personal website using encription techniques enabling me to access all of my logins/passwords from anywhere without requiring SSL",
+      "summary": "Designed and implemented a personal website using encryption techniques enabling me to access all of my logins/passwords from anywhere without requiring SSL",
       "endDate": "2017-09 (intermittent)",
       "highlights": [
         "Extensive use of hashing and encryption (both server and client-side), custom server-side authentication and other techniques to achieve data privacy with no SSL",
@@ -220,7 +220,7 @@
         "XUnit.NET",
         "MsTest",
         "crypto-js",
-        "DES",
+        "Encryption",
         "SHA",
         "System.Security.Cryptography",
         "SPA"
@@ -393,7 +393,7 @@
         "JDBC",
         "CORBA",
         "WCF",
-        "DES"
+        "Encryption"
       ]
     },
     {
@@ -1336,10 +1336,14 @@
       "url": "http://github.com/brix/crypto-js"
     },
     {
-      "name": "DES",
+      "name": "Cryptography",
       "priority": 20,
       "categories": [
         "Cryptography"
+      ],
+      "aliases": [
+        "DES",
+        "Encryption"
       ],
       "url": "http://en.wikipedia.org/wiki/Data_Encryption_Standard"
     },
