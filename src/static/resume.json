@@ -222,6 +222,7 @@
         "crypto-js",
         "Encryption",
         "SHA",
+        "DES",
         "System.Security.Cryptography",
         "SPA"
       ]
@@ -393,6 +394,7 @@
         "JDBC",
         "CORBA",
         "WCF",
+        "DES",
         "Encryption"
       ]
     },
@@ -1336,14 +1338,18 @@
       "url": "http://github.com/brix/crypto-js"
     },
     {
-      "name": "Cryptography",
+      "name": "DES",
       "priority": 20,
       "categories": [
         "Cryptography"
       ],
-      "aliases": [
-        "DES",
-        "Encryption"
+      "url": "https://www.techtarget.com/searchsecurity/definition/Data-Encryption-Standard"
+    },
+    {
+      "name": "Encryption",
+      "priority": 20,
+      "categories": [
+        "Cryptography"
       ],
       "url": "http://en.wikipedia.org/wiki/Data_Encryption_Standard"
     },
