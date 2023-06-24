@@ -1,6 +1,10 @@
-import { bindable } from "aurelia";
+import { bindable, customElement } from "aurelia";
 
 import { ICompany, IResumeStore, ISkill } from "../../../../stores/resume-store";
+
+import template from "./history.html";
+
+@customElement({ name: "history", template })
 export class History {
   companies!: Array<ICompany>;
   @bindable skillByName!: Map<string, ISkill>;
@@ -14,12 +18,6 @@ export class History {
         s.showingHighlights = false;
         return s;
       });
-  }
-
-  attached() {
-    ($(".company .remote i") as any).tooltip();
-    ($(".company .contract i") as any).tooltip();
-    ($(".company .personal i") as any).tooltip();
   }
 
   companySkills(company: ICompany): Array<ISkill> {

@@ -1,6 +1,10 @@
-import { bindable } from "aurelia";
+import { bindable, customElement } from "aurelia";
 
 import { ICategory, IResumeStore, ISkill } from "../../../../stores/resume-store";
+
+import template from "./skills.html";
+
+@customElement({ name: "skills", template })
 export class Skills {
   /**
    * Map a category of skills to a set of skill names.

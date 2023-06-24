@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "noEmit": true,
+    "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "module": "esnext",
@@ -10,14 +12,21 @@
     "resolveJsonModule": true,
     "importHelpers": true,
     "sourceMap": true,
-    "strict": true,
-    "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "rootDir": ".",
+  },
+  "typeAcquisition": {
+    "enable": true
   },
   "include": [
-    "src"
+    "src",
+    "./*.ts",
   ],
   "files": [
     "src/resource.d.ts"
-  ]
+  ],
+  "exclude": [
+    "node_modules"
+  ],
 }

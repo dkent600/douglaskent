@@ -1,5 +1,11 @@
+import { customElement } from "aurelia";
+
 import { evaluateDateTime } from "../../../../services/utils";
 import { IResumeStore, ISchool } from "../../../../stores/resume-store";
+
+import template from "./education.html";
+
+@customElement({ name: "education", template })
 export class Education {
   schools!: Array<ISchool>;
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {

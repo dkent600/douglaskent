@@ -1,8 +1,9 @@
-import { IContainer } from "aurelia";
+import { customElement, IContainer } from "aurelia";
 import { IRouteableComponent } from "@aurelia/router";
 
 import { IBasics, IResumeStore, ISkill } from "../../stores/resume-store";
 
+import template from "./resume.html";
 import * as resumeComponents from "./sections";
 
 import "./resume.scss";
@@ -13,6 +14,7 @@ export class ResumeDependencies {
   }
 }
 
+@customElement({ name: "resume", template })
 export class Resume implements IRouteableComponent {
   /**
    * given the name or alias of a skill, return the skill json
