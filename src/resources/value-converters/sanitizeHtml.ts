@@ -1,12 +1,12 @@
 import { valueConverter } from "aurelia";
 
-import { addHook, sanitize } from "dompurify";
+import DOMPurify from "dompurify";
 
 export const initializeMarkdown = () => {
   // For temporarily saving original target value
   const TEMP_TARGET_ATTRIBUTE = "data-target-temp";
 
-  addHook("beforeSanitizeAttributes", function (node) {
+  DOMPurify.addHook("beforeSanitizeAttributes", function (node) {
     let targetValue;
     // Preserve default target attribute value
     if (node.tagName === "A") {
@@ -22,7 +22,7 @@ export const initializeMarkdown = () => {
     }
   });
 
-  addHook("afterSanitizeAttributes", function (node) {
+  DOMPurify.addHook("afterSanitizeAttributes", function (node) {
     if (node.tagName === "A" && node.hasAttribute(TEMP_TARGET_ATTRIBUTE)) {
       node.setAttribute("target", node.getAttribute(TEMP_TARGET_ATTRIBUTE) ?? "");
       node.removeAttribute(TEMP_TARGET_ATTRIBUTE);
@@ -41,6 +41,6 @@ export const initializeMarkdown = () => {
 @valueConverter("sanitizeHTML")
 export class sanitizeHTMLValueConverter {
   toView(input: string): string {
-    return sanitize(input, { USE_PROFILES: { html: true } });
+    return DOMPurify.sanitize(input, { USE_PROFILES: { html: true } });
   }
 }
