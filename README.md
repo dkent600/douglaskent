@@ -17,8 +17,8 @@ To deploy everything, copy to production root folder:
 ```
 base.css
 favicon.ico
-index.html
-dist/*
+dist/index.html
+dist/assets
 ```
 
 
