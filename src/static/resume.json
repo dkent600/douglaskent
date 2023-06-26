@@ -111,6 +111,7 @@
         "dApps",
         "Ethereum",
         "DAOs",
+        "DAO Governance Systems",
         "Defender",
         "Web3",
         "Refi",
@@ -125,6 +126,7 @@
         "Gnosis Safe",
         "Subgraph",
         "Balancer Liquidity Pools",
+        "Liquidity Bootstrapping Pools",
         "Web3Modal",
         "Aurelia",
         "HTML5",
@@ -164,6 +166,7 @@
         "dApps",
         "Ethereum",
         "DAOs",
+        "DAO Governance Systems",
         "Web3",
         "TypeScript",
         "Javascript",
@@ -899,6 +902,14 @@
       "url": "https://www.investopedia.com/tech/what-dao/"
     },
     {
+      "name": "DAO Governance Systems",
+      "priority": 1.202,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://www.investopedia.com/tech/what-dao/"
+    },
+    {
       "name": "ethers.js",
       "priority": 1.5,
       "categories": [
@@ -976,6 +987,14 @@
     },
     {
       "name": "Balancer Liquidity Pools",
+      "priority": 4,
+      "categories": [
+        "Blockchain"
+      ],
+      "url": "https://balancer.fi/"
+    },
+    {
+      "name": "Liquidity Bootstrapping Pools",
       "priority": 4,
       "categories": [
         "Blockchain"
