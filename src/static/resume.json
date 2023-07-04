@@ -96,15 +96,15 @@
       "endDate": "2022-11",
       "highlights": [
         "Was the lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\"target=\"_blank\">Prime Pools</a>, <a href=\"https://github.com/PrimeDAO/locking-for-rep-dapp\"target=\"_blank\">Prime Locking For Reputation</a> and the original PRIMEDao Home Page",
+        "Coordinated a team of two and did the majority of coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-launch-dapp\"target=\"_blank\">Prime Launch</a>",
+        "Coordinated a team of five and did much of the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-deals-dapp\"target=\"_blank\">Prime Deals</a>",
+        "Coordinated a team of two and participated in the coding of the dApp frontend of <a href=\"https://github.com/Kolektivo/kolektivo-dapp\" target=\"_blank\">Kolektivo</a>",
         "With the exception of the PrimeDAO Home Page, which uses React.js, the dApps were all implemented using the <a href=\"https://aurelia.io/\" target=\"_blank\">Aurelia</a> framework",
         "Leveraged many Ethereum smart contracts developed by CurveLabs, as well as other contracts from OpenZeppelin. Reviewed CurveLabs contracts for correctness and errors",
         "Leveraged <a href=\"https://balancer.fi/\" target=\"_blank\">Balancer Liquidity Pools</a>, smart contracts that implement decentralized automated market makers",
         "Leveraged GnosisSafe API, for governance purposes",
         "Leveraged CoinGecko for token prices",
-        "Coordinated a team of two and participated in the coding of the dApp frontend of <a href=\"https://github.com/Kolektivo/kolektivo-dapp\" target=\"_blank\">Kolektivo</a>",
-        "Coordinated a team of five, owned the architecture and participated in the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-deals-dapp\"target=\"_blank\">Prime Deals</a>",
-        "Coordinated a team of two, owned the architecture and did most of the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-launch-dapp\"target=\"_blank\">Prime Launch</a>",
-        "Interviewed applicants for developer positions",
+        "Interviewed applicants for developer and project lead positions",
         "As products, these applications are innovative and impressive. Read more about them: <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo (development still in progress)</a>, <a href=\"https://deals.prime.xyz/\" target=\"_blank\">Prime Deals</a>, <a href=\"https://launch.prime.xyz\" target=\"_blank\">Prime Launch</a>, <a href=\"https://primepool.primedao.io\" target=\"_blank\">Prime Pools</a>, <a href=\"https://primelock.eth.link\" target=\"_blank\">Prime Locking for Reputation</a> (hosted on IPFS), and the original <a href=\"https://primedao.eth.link\" target=\"_blank\">PRIMEDao Home Page</a> (hosted on IPFS)"
       ],
       "skills": [
