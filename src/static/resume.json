@@ -95,17 +95,17 @@
       "summary": "In lead roles, developed the frontends of multiple decentralized applications (dApps), running against the Ethereum blockchain, focused on decentralized (Defi) and regenerative finance (Refi).",
       "endDate": "2022-11",
       "highlights": [
-        "Was the lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\"target=\"_blank\">Prime Pools</a>, <a href=\"https://github.com/PrimeDAO/locking-for-rep-dapp\"target=\"_blank\">Prime Locking For Reputation</a> and the original PRIMEDao Home Page",
-        "Coordinated a team of two and did the majority of coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-launch-dapp\"target=\"_blank\">Prime Launch</a>",
-        "Coordinated a team of five and did much of the coding of the dApp frontend of <a href=\"https://github.com/PrimeDAO/prime-deals-dapp\"target=\"_blank\">Prime Deals</a>",
-        "Coordinated a team of two and participated in the coding of the dApp frontend of <a href=\"https://github.com/Kolektivo/kolektivo-dapp\" target=\"_blank\">Kolektivo</a>",
+        "Lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\" target=\"_blank\">Prime Pools (no longer active)</a>, <a href=\"https://primelock.eth.link/\" target=\"_blank\">Prime Locking For Reputation</a> and the <a href=\"https://primedao.eth.link\" target=\"_blank\">original PrimeDAO Home Page (no longer active)</a>",
+        "Coordinated a team of two and did the majority of coding of the dApp frontend of <a href=\"https://launch.prime.xyz/\"target=\"_blank\">Prime Launch</a>",
+        "Coordinated a team of five and did much of the coding of the dApp frontend of <a href=\"https://deals.prime.xyz/\"target=\"_blank\">Prime Deals</a>",
+        "Coordinated a team of two and participated in the coding of the dApp frontend of <a href=\"https://github.com/Kolektivo/kolektivo-dapp\" target=\"_blank\">Kolektivo (not currently active)</a>",
         "With the exception of the PrimeDAO Home Page, which uses React.js, the dApps were all implemented using the <a href=\"https://aurelia.io/\" target=\"_blank\">Aurelia</a> framework",
-        "Leveraged many Ethereum smart contracts developed by CurveLabs, as well as other contracts from OpenZeppelin. Reviewed CurveLabs contracts for correctness and errors",
+        "Leveraged many Ethereum smart contracts developed by CurveLabs, reviewing solidity for code quality, bugs and security, proposing accepted improvements and bug fixes",
         "Leveraged <a href=\"https://balancer.fi/\" target=\"_blank\">Balancer Liquidity Pools</a>, smart contracts that implement decentralized automated market makers",
         "Leveraged GnosisSafe API, for governance purposes",
         "Leveraged CoinGecko for token prices",
         "Interviewed applicants for developer and project lead positions",
-        "As products, these applications are innovative and impressive. Read more about them: <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo (development still in progress)</a>, <a href=\"https://deals.prime.xyz/\" target=\"_blank\">Prime Deals</a>, <a href=\"https://launch.prime.xyz\" target=\"_blank\">Prime Launch</a>, <a href=\"https://primepool.primedao.io\" target=\"_blank\">Prime Pools</a>, <a href=\"https://primelock.eth.link\" target=\"_blank\">Prime Locking for Reputation</a> (hosted on IPFS), and the original <a href=\"https://primedao.eth.link\" target=\"_blank\">PRIMEDao Home Page</a> (hosted on IPFS)"
+        "As products, these applications are innovative and impressive. Read more about them at <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> and <a href=\"https://www.prime.xyz\" target=\"_blank\">The Prime Suite</a> "
       ],
       "skills": [
         "dApps",
@@ -155,12 +155,11 @@
       "highlights": [
         "One of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
         "One and a half years coding with React.js in Alchemy",
+        "Leveraged <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> Solidity smart contracts, reviewing Solidity for code quality, bugs and security, proposing accepted improvements and bug fixes",
+        "Responsible for deploying <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> smart contracts to Ethereum",
         "Implemented and helped to design the <a href=\"https://github.com/daostack/dutchx-bootstrapper-ui\" target=\"_blank\">dxDAO Vote Staking Interface</a>, a website for initializing reputation in the dxDAO, a new decentralized autonomous organization (DAO) that governs the DutchX, a permissionless trading protocol for ERC20 tokens on the Ethereum blockchain. (The UI will disappear on 2019-06-28 when the dxDAO initialization period ends, but you can see walkthroughs <a href=\"https://twitter.com/_dx_dao/status/1138824722211311616\" target=\"_blank\">here</a> and <a href=\"https://blog.gnosis.pm/step-by-step-guide-to-earn-reputation-for-the-dxdao-with-the-gnosis-safe-cc54f3a93f3e\" target=\"_blank\">here</a>.)",
         "Designed and implemented a well-reviewed architecture for the original version of <a href=\"https://github.com/daostack/arc.js_legacy\" target=\"_blank\">DAOstack Arc.js</a>",
-        "Implemented <a href=\"https://github.com/daostack/vanille\" target=\"_blank\">Vanille</a>, open-source software that leverage <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOStack Arc</a> to facilitate the creation of DAOstack DAOs",
-        "Responsible for deploying <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> smart contracts to Ethereum",
-        "Contributed to the design and development of <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> Solidity smart contracts",
-        "Reviewed Solidity contracts for correctness and errors"
+        "Implemented <a href=\"https://github.com/daostack/vanille\" target=\"_blank\">Vanille</a>, open-source software that leverage <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOStack Arc</a> to facilitate the creation of DAOstack DAOs"
       ],
       "skills": [
         "dApps",
