@@ -41,7 +41,7 @@
     "Blockchain",
     "Software Languages",
     "Markup Languages",
-    "Databases",
+    "Data Stores",
     "Module Bundling and Loading",
     "Software Development Platforms",
     "Test Frameworks",
@@ -127,7 +127,9 @@
         "Subgraph",
         "Balancer Liquidity Pools",
         "Liquidity Bootstrapping Pools",
+        "LitProtocol",
         "Web3Modal",
+        "Ceramic",
         "Aurelia",
         "HTML5",
         "i18Next",
@@ -184,6 +186,7 @@
         "GitHub",
         "ReactJs",
         "SPA",
+        "3Box",
         "Wallets"
       ]
     },
@@ -985,6 +988,15 @@
       "url": "https://www.mento.org/"
     },
     {
+      "name": "LitProtocol",
+      "priority": 4,
+      "categories": [
+        "Blockchain",
+        "Cryptography"
+      ],
+      "url": "https://litprotocol.com/"
+    },
+    {
       "name": "Balancer Liquidity Pools",
       "priority": 4,
       "categories": [
@@ -1005,9 +1017,28 @@
       "priority": 4,
       "categories": [
         "Blockchain",
+        "Data Stores",
         "Website and Application Hosting"
       ],
       "url": "https://ipfs.io/"
+    },
+    {
+      "name": "Ceramic",
+      "priority": 4,
+      "categories": [
+        "Blockchain",
+        "Data Stores"
+      ],
+      "url": "https://ceramic.network/"
+    },
+    {
+      "name": "3Box",
+      "priority": 4,
+      "categories": [
+        "Blockchain",
+        "Data Stores"
+      ],
+      "url": "https://3boxlabs.com/"
     },
     {
       "name": "ENS",
@@ -1051,15 +1082,6 @@
       ],
       "aliases": [
         "HTML5"
-      ]
-    },
-    {
-      "name": "HTML",
-      "priority": 1.2,
-      "hide": true,
-      "categories": [
-        "Website and Application Development",
-        "Markup Languages"
       ]
     },
     {
@@ -1256,7 +1278,7 @@
       "name": "Entity Framework Core",
       "priority": 40,
       "categories": [
-        "Databases"
+        "Data Stores"
       ],
       "url": "http://ef.readthedocs.io/en/latest"
     },
@@ -1265,7 +1287,7 @@
       "priority": 40,
       "hide": true,
       "categories": [
-        "Databases"
+        "Data Stores"
       ],
       "url": "http://ef.readthedocs.io/en/latest"
     },
@@ -1277,7 +1299,7 @@
         "T-SQL"
       ],
       "categories": [
-        "Databases",
+        "Data Stores",
         "Software Languages"
       ],
       "url": "https://www.techtarget.com/searchdatamanagement/definition/T-SQL"
@@ -1286,7 +1308,7 @@
       "name": "SQL",
       "priority": 4,
       "categories": [
-        "Databases",
+        "Data Stores",
         "Software Languages"
       ],
       "url": "https://www.w3schools.com/sql/sql_intro.asp"
@@ -1298,7 +1320,7 @@
         "Sql Server"
       ],
       "categories": [
-        "Databases"
+        "Data Stores"
       ],
       "url": "http://en.wikipedia.org/wiki/Microsoft_SQL_Server"
     },
@@ -1320,7 +1342,7 @@
         "Enterprise framework"
       ],
       "categories": [
-        "Databases"
+        "Data Stores"
       ],
       "url": "http://msdn.microsoft.com/en-us/library/ff648951.aspx"
     },
@@ -1646,7 +1668,7 @@
       "hide": true,
       "categories": [
         "Website and Application Development",
-        "Databases"
+        "Data Stores"
       ],
       "url": "http://en.wikipedia.org/wiki/Java_Database_Connectivity"
     },
@@ -1655,7 +1677,7 @@
       "priority": 30,
       "hide": true,
       "categories": [
-        "Databases"
+        "Data Stores"
       ],
       "url": "http://www.ibm.com/analytics/us/en/db2/"
     },
@@ -1709,7 +1731,7 @@
       "priority": 5,
       "hide": true,
       "categories": [
-        "Databases"
+        "Data Stores"
       ],
       "url": "http://nhibernate.info/"
     },
@@ -1719,7 +1741,7 @@
       "hide": true,
       "categories": [
         "Website and Application Development",
-        "Databases"
+        "Data Stores"
       ],
       "url": "http://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture"
     },
@@ -1732,7 +1754,7 @@
       ],
       "hide": true,
       "categories": [
-        "Databases"
+        "Data Stores"
       ],
       "url": "http://en.wikipedia.org/wiki/ADO.NET"
     },
@@ -1741,7 +1763,7 @@
       "priority": 5,
       "hide": true,
       "categories": [
-        "Databases"
+        "Data Stores"
       ],
       "url": "http://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/"
     },
