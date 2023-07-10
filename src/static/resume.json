@@ -134,6 +134,8 @@
         "HTML5",
         "i18Next",
         "Webpack",
+        "Vite",
+        "Rollup",
         "CSS",
         "SASS",
         "Responsive",
@@ -1908,6 +1910,24 @@
         "Module Bundling and Loading"
       ],
       "url": "http://webpack.js.org"
+    },
+    {
+      "name": "Vite",
+      "priority": 6,
+      "categories": [
+        "Website and Application Development",
+        "Module Bundling and Loading"
+      ],
+      "url": "https://vitejs.dev/"
+    },
+    {
+      "name": "Rollup",
+      "priority": 6,
+      "categories": [
+        "Website and Application Development",
+        "Module Bundling and Loading"
+      ],
+      "url": "https://rollupjs.org/"
     },
     {
       "name": "JSPM",
