@@ -7,6 +7,7 @@ import template from "./history.html";
 @customElement({ name: "history", template })
 export class History {
   companies!: Array<ICompany>;
+  showingEntireHistory = false;
   @bindable skillByName!: Map<string, ISkill>;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {

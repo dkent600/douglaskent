@@ -32,5 +32,13 @@
     "Unity",
     "jquery",
     "RequireJs"
+  ],
+  "references": [
+    {
+      "name": "Jean-Paul Widmer",
+      "reference": "The customization Doug did for us of our online ordering system allowed my business to be more flexible and proactive with customers, a real time saver.",
+      "title": "Director of Operations, Vivalia Bistro Express",
+      "website": "http://www.linkedin.com/in/jean-paul-widmer-a2271845/"
+    }
   ]
 }

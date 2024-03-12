@@ -9,7 +9,7 @@
   "license": "UNLICENSED",
   "main": "dist/app.bundle.js",
   "scripts": {
-    "start": "vite",
+    "start": "vite --open",
     "build": "cross-env NODE_ENV=production vite build",
     "preview": "vite preview --open",
     "clean": "npx -y rimraf node_modules package-lock.json && npm i",

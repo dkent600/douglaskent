@@ -171,6 +171,17 @@ i.quality-bullet {
   display: none;
 }
 
+.show-entire-history {
+  margin-bottom: 1.5rem;
+  text-decoration: underline;
+  cursor: pointer;
+  color: $green-600;
+
+  i {
+    padding-left: 6px;
+  }
+}
+
 @media print {
   .company .highlights {
     display: none;

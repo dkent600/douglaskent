@@ -9,7 +9,7 @@
     "phone": "+506 8591-5302 (CR, WhatsApp)",
     "phone2": "+1 (512) 402-8735 (US)",
     "website": "http://www.douglaskent.com",
-    "summary": "<div>Hi, I am an experienced software engineer with 5+ years of proven success developing Web3 dApps, part of 34+ years of repeated success developing web and desktop applications.  I've worked with the likes of Microsoft (developing Windows 3.1) to garage startups (making clipart available for download before the Worldwide Web), to Curve Labs on a Refi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.</div><div>I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest, read on!</div>",
+    "summary": "<div>I am an experienced software engineer and software development project lead, having  34+ years of repeated success developing sophisticated Web, Web3 and desktop applications.</div><div>I've worked with the likes of Microsoft (developing Windows 3.1), garage startups (making clipart available for download before the Worldwide Web), to Curve Labs on a Refi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.</div><div>I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest and please read on!</div>",
     "location": {
       "address": "Alegria Village",
       "postalCode": "",
@@ -2090,25 +2090,22 @@
       "name": "Renç Korzay",
       "reference": "Doug is a brilliant front-end engineer who stands out for his exceptional professionalism, team-player attitude, and a strong sense of ownership. He goes out of his way to ensure that projects are delivered on time and to the highest possible standard. Doug is great at leading other developers and working across disciplines, he's an expert in prioritization and can dissect complex problems. His perfectionism and ability to set a great example for the team have been invaluable. I had the chance to work with Doug on multiple Web3 projects throughout the years and I would always look forward to an opportunity to work with him.",
       "title": "Web3 Product Manager",
+      "company": "Curve Labs",
       "website": "https://www.linkedin.com/in/renckorzay/"
     },
     {
       "name": "Ghalem Ben Nouna",
       "reference": "It's rare that you come across standout talent like Doug. I hired Doug as an application developer in my analytics team at PSP. He was able to complete the development of complex data products with complex custom visualizations on time. I was particularly impressed by Doug’s ability to precisely understand business requirements effortlessly due to his extensive experience as well as being an amazing team player.",
       "title": "Senior Director of Data Management and Business Intelligence at Ivanhoé Cambridge",
+      "company": "PSP Investments",
       "website": "http://www.linkedin.com/in/ghalem-ben-nouna-2356011/"
     },
     {
       "name": "Ross Barbieri",
       "reference": "I know Doug Kent both personally and professionally. I have had the great pleasure of working with him on several projects at multiple companies. These include industry changing applications like Shiftwise (healthcare staffing vendor management systems) and at large companies like GE . He is a highly reliable and methodical .NET web developer, and <b><i>the</i></b> best OO developer I've worked with. Doug works well solo and on teams and is an excellent communicator in both settings. On that point, he is an open and honest person and one who is not afraid to speak up (appropriately) when necessary. He is my go to .NET developer for these reasons, and also because he takes full ownership of his work; including peripheral dependencies, and will self manage through to completion.",
       "title": "Serial Entrepreneur, CTO and Software Development Manager",
+      "company": "Shiftwise",
       "website": "http://www.linkedin.com/in/rosshere/"
-    },
-    {
-      "name": "Jean-Paul Widmer",
-      "reference": "The customization Doug did for us of our online ordering system allowed my business to be more flexible and proactive with customers, a real time saver.",
-      "title": "Director of Operations, Vivalia Bistro Express",
-      "website": "http://www.linkedin.com/in/jean-paul-widmer-a2271845/"
     }
   ],
   "accomplishments": [
@@ -2126,17 +2123,16 @@
     "I try to view situations from your point of view to anticipate your needs and assist you in building your antifragility.",
     "I have a wide range of experience from the best software engineering companies in the world to garage startups.",
     "I have worked with great programmers at some of the greatest software companies in the world.",
-    "I have the maturity and experience to design, develop, coordinate, and lead a team from product conception to release.",
+    "I have the maturity and experience to design, develop, coordinate, and guide a team from product conception to release.",
     "I have the broad full-stack knowledge and self-starting mentality to single-handedly architect, design, implement and deploy an entire application.",
+    "I understand the software development process: Agile, Waterfall, and just-make-it-happen.",
     "I have a great record of success.",
     "I am a great team player and communicator, fully embracing team diversity and cohesiveness.",
     "I enjoy mentoring anyone who seeks it.",
     "I am smart and educated: I attended one of the best graduate universities in the world.",
-    "I am a creative self-starter who loves solving challenging problems.",
+    "I am creative and love solving challenging problems.",
     "I am reliable and honest: I speak truth to clients and colleagues.",
-    "I understand the software development process: Agile, Waterfall, and just-make-it-happen.",
-    "I have a great track record in estimating assigned tasks.",
-    "I specialize in best-available technologies.",
+    "I have a great track record in estimating task durations.",
     "I am strong at writing documentation."
   ],
   "publications": [
