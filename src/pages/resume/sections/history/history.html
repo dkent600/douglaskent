@@ -4,7 +4,7 @@
     <div repeat.for="company of companies">
       <div if.bind="$index == 3">
         <h5 class="company-position show-entire-history" click.trigger="showingEntireHistory = !showingEntireHistory">
-          ${showingEntireHistory ? 'Show only recent history' : 'Show the whole history'}
+          ${showingEntireHistory ? 'See only recent history' : 'See the whole history'}
           <i class="fa-solid ${showingEntireHistory ? 'fa-angles-up' : 'fa-angles-down'}"></i>
         </h5>
       </div>
