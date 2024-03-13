@@ -68,16 +68,20 @@
 <section class="section">
   <h3>Work History</h3>
   <div class="content">
-    <div repeat.for="company of companies">
-      <div if.bind="$index == 3">
-        <h5 class="company-position show-entire-history" click.trigger="showingEntireHistory = !showingEntireHistory">
-          ${showingEntireHistory ? 'See only recent history' : 'See the whole history'}
-          <i class="fa-solid ${showingEntireHistory ? 'fa-angles-up' : 'fa-angles-down'}"></i>
-        </h5>
-      </div>
+    <div repeat.for="company of companiesFirst">
+      <company company.bind="company" index.bind="$index">
+      </company>
+    </div>
 
-      <div if.bind="$index < 3 || showingEntireHistory">
-        <company company.bind="company" index.bind="$index">
+    <h5 class="company-position show-entire-history" data-toggle="collapse" href="#allCompanies" aria-expanded="false"
+      aria-controls="companies-list" click.trigger="showingEntireHistory = !showingEntireHistory">
+      ${showingEntireHistory ? 'See only recent history' : 'See the whole history'}
+      <i class="fa-solid ${showingEntireHistory ? 'fa-angles-up' : 'fa-angles-down'}"></i>
+    </h5>
+
+    <div class="collapse fade" id="allCompanies">
+      <div repeat.for="company of companiesTheRest">
+        <company company.bind="company" index.bind="$index + entireHistoryStartIndex">
         </company>
       </div>
     </div>

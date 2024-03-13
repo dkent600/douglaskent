@@ -8,6 +8,7 @@ import template from "./history.html";
 export class History {
   companies!: Array<ICompany>;
   showingEntireHistory = false;
+  entireHistoryStartIndex = 3;
   @bindable skillByName!: Map<string, ISkill>;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
@@ -19,6 +20,14 @@ export class History {
         s.showingHighlights = false;
         return s;
       });
+  }
+
+  get companiesFirst(): Array<ICompany> {
+    return this.companies.slice(0, this.entireHistoryStartIndex);
+  }
+
+  get companiesTheRest(): Array<ICompany> {
+    return this.companies.slice(this.entireHistoryStartIndex);
   }
 
   companySkills(company: ICompany): Array<ISkill> {
