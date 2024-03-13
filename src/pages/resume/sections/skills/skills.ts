@@ -11,6 +11,7 @@ export class Skills {
    */
   categoryToSkills = new Map<string, Set<ISkill>>();
   skillCategories!: Array<ICategory>;
+  showSkillCategories = false;
   @bindable skillByName!: Map<string, ISkill>;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {

@@ -210,6 +210,15 @@ i.quality-bullet {
   color: $grey-900;
 }
 
+.skills-header {
+  cursor: pointer;
+
+  i {
+    padding-left: 6px;
+    color: $green-500;
+  }
+}
+
 .skills-for-category {
   margin-bottom: 1.5rem;
 }

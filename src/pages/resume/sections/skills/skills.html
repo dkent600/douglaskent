@@ -1,6 +1,10 @@
 <section class="section">
-  <h3>Skills</h3>
-  <div class="content">
+  <h3 class="skills-header" data-toggle="collapse" href="#allSkills" aria-expanded="false"
+    aria-controls="companies-list" click.trigger="showSkillCategories = !showSkillCategories">${showSkillCategories ?
+    "Hide Skills Pills" : "Show Skills Pills"}
+    <i class="fa-solid ${showSkillCategories ? 'fa-angles-up' : 'fa-angles-down'}"></i>
+  </h3>
+  <div class="content collapse fade" id="allSkills">
     <div repeat.for="category of skillCategories">
       <div class="skills-for-category">
         <h4 class="skill-category">${category}</h4>
