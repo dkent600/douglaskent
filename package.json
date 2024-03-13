@@ -21,9 +21,9 @@
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css"
   },
   "dependencies": {
-    "@aurelia/router": "^2.1.0-dev.202304030920",
+    "@aurelia/router": "^v2.0.0-beta.9",
     "arrive": "^2.4.1",
-    "aurelia": "^2.1.0-dev.202304030920",
+    "aurelia": "^v2.0.0-beta.9",
     "bootstrap": "^4.1.1",
     "bootstrap-material-design": "^4.1.1",
     "dompurify": "^3.0.1",
@@ -32,7 +32,7 @@
     "popper.js": "^1.11.0"
   },
   "devDependencies": {
-    "@aurelia/plugin-gulp": "^2.1.0-dev.202304030920",
+    "@aurelia/plugin-gulp": "^v2.0.0-beta.9",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@rollup/plugin-inject": "^5.0.3",
     "@types/bootstrap": "^3.3.36",
