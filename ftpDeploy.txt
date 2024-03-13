@@ -1,0 +1,12 @@
+open ftp.douglaskent.com
+douglask
+ferngully
+binary
+cd /douglask
+mput base.css favicon.ico
+lcd dist
+put index.html
+lcd assets
+cd assets
+mput *.js *.css
+quit
