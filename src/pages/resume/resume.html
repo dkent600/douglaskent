@@ -12,13 +12,13 @@
         <introduction id="introduction" class="scrollspy sectionContainer">
         </introduction>
 
-        <reasons id="reasons" class="scrollspy sectionContainer">
+        <reasons if.bind="!isShort" id="reasons" class="scrollspy sectionContainer">
         </reasons>
 
-        <testimonials id="testimonials" class="scrollspy sectionContainer">
+        <testimonials if.bind="!isShort" id="testimonials" class="scrollspy sectionContainer">
         </testimonials>
 
-        <accomplishments id="accomplishments" class="scrollspy sectionContainer">
+        <accomplishments if.bind="!isShort" id="accomplishments" class="scrollspy sectionContainer">
         </accomplishments>
 
         <skills id="skills" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
@@ -30,13 +30,13 @@
         <education id="education" class="scrollspy sectionContainer">
         </education>
 
-        <languages id="languages" class="scrollspy sectionContainer">
+        <languages if.bind="!isShort" id="languages" class="scrollspy sectionContainer">
         </languages>
 
-        <citizenship id="citizenship" class="scrollspy sectionContainer">
+        <citizenship if.bind="!isShort" id="citizenship" class="scrollspy sectionContainer">
         </citizenship>
 
-        <publications id="publications" class="scrollspy sectionContainer">
+        <publications if.bind="!isShort" id="publications" class="scrollspy sectionContainer">
         </publications>
       </div>
 
