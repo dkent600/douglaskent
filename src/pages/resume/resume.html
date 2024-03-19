@@ -1,7 +1,7 @@
 <!-- <require from="./nav-bar.html"></require>
       <nav-bar router.bind="router"></nav-bar> -->
 <div class="container">
-  <toc for-dropdown-menu.bind="true"></toc>
+  <toc is-short.bind="isShort" for-dropdown-menu.bind="true"></toc>
   <div class="row">
     <div class="col-xs-12 col-lg-8 col-xl-9">
       <h1>${basics.name}</h1>
@@ -44,7 +44,7 @@
     <div class="col-hide-md col-lg-4 col-xl-3 hidden-print">
       <div class="side-panel">
         <contact></contact>
-        <toc id="TOC">
+        <toc is-short.bind="isShort">
         </toc>
       </div>
     </div>
