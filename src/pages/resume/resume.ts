@@ -15,7 +15,7 @@ export class ResumeDependencies {
 }
 
 @customElement({ name: "resume", template })
-export class Resume implements IRouteableComponent {
+export class Resume {
   /**
    * given the name or alias of a skill, return the skill json
    */
