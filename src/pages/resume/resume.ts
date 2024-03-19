@@ -4,7 +4,7 @@ import { IRouteableComponent } from "@aurelia/router";
 import { IBasics, IResumeStore, ISkill } from "../../stores/resume-store";
 
 import template from "./resume.html";
-import * as resumeComponents from "./sections";
+import * as resumeComponents from "../../resources/sections";
 
 import "./resume.scss";
 

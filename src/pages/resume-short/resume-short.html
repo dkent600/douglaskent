@@ -1,46 +1,38 @@
-<!-- <require from="./nav-bar.html"></require>
+<div class="animated fadeIn">
+  <!-- <require from="./nav-bar.html"></require>
       <nav-bar router.bind="router"></nav-bar> -->
-<div class="container">
-  <toc for-dropdown-menu.bind="true"></toc>
-  <div class="row">
-    <div class="col-xs-12 col-lg-8 col-xl-9">
-      <h1>${basics.name}</h1>
-      <div>
-        <contact id="contact" inline.bind="true" class="d-lg-none sectionContainer">
-        </contact>
+  <div class="container">
+    <toc for-dropdown-menu.bind="true"></toc>
+    <div class="row">
+      <div class="col-xs-12 col-lg-8 col-xl-9">
+        <h1>${basics.name}</h1>
+        <div>
+          <contact id="contact" inline.bind="true" class="d-lg-none sectionContainer">
+          </contact>
 
-        <introduction id="introduction" class="scrollspy sectionContainer">
-        </introduction>
+          <introduction id="introduction" class="scrollspy sectionContainer">
+          </introduction>
 
-        <reasons id="reasons" class="scrollspy sectionContainer">
-        </reasons>
+          <reasons id="reasons" class="scrollspy sectionContainer">
+          </reasons>
 
-        <testimonials id="testimonials" class="scrollspy sectionContainer">
-        </testimonials>
+          <testimonials id="testimonials" class="scrollspy sectionContainer">
+          </testimonials>
 
-        <accomplishments id="accomplishments" class="scrollspy sectionContainer">
-        </accomplishments>
+          <accomplishments id="accomplishments" class="scrollspy sectionContainer">
+          </accomplishments>
 
-        <skills id="skills" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
-        </skills>
+          <skills id="skills" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
+          </skills>
 
-        <history id="history" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
-        </history>
+          <history id="history" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
+          </history>
 
-        <education id="education" class="scrollspy sectionContainer">
-        </education>
+          <education id="education" class="scrollspy sectionContainer">
+          </education>
+        </div>
 
-        <languages id="languages" class="scrollspy sectionContainer">
-        </languages>
-
-        <citizenship id="citizenship" class="scrollspy sectionContainer">
-        </citizenship>
-
-        <publications id="publications" class="scrollspy sectionContainer">
-        </publications>
-      </div>
-
-      <!-- <section id="goals id="goals"" class="scrollspy">
+        <!-- <section id="goals id="goals"" class="scrollspy">
           <h3>Goals</h3>
           <div class="">
             <p>I want to contribute my energy, skills and talents to reversing the global ecological and social crises
@@ -50,7 +42,7 @@
         </section>
         -->
 
-      <!-- <section id="portfolio"" class="scrollspy">
+        <!-- <section id="portfolio"" class="scrollspy">
           <h3>Portfolio</h3>
           <p>In faucibus elit at pulvinar efficitur. Sed lacus sapien, laoreet et est a, vehicula mattis felis.
             Pellentesque volutpat ultrices felis nec eleifend. Etiam interdum turpis libero, at tempor nisi molestie
@@ -65,7 +57,7 @@
           </section> 
         -->
 
-      <!-- <section id="aboutThisResume id="aboutThisResume"" class="section">
+        <!-- <section id="aboutThisResume id="aboutThisResume"" class="section">
             <h3>About This Resume</h3>
             <div class="">
               <p>What you are looking at right now is not just a resume, but a full-fledged web application that I built.
@@ -90,12 +82,13 @@
               </div>
           </section>
         -->
-    </div>
-    <div class="col-hide-md col-lg-4 col-xl-3 hidden-print">
-      <div class="side-panel">
-        <contact></contact>
-        <toc id="TOC">
-        </toc>
+      </div>
+      <div class="col-hide-md col-lg-4 col-xl-3 hidden-print">
+        <div class="side-panel">
+          <contact></contact>
+          <toc id="TOC">
+          </toc>
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import { customElement } from "aurelia";
 
-import { IAccomplishment, IResumeStore } from "../../../../stores/resume-store";
+import { IAccomplishment, IResumeStore } from "../../../stores/resume-store";
 
 import template from "./accomplishments.html";
 @customElement({ name: "accomplishments", template })

@@ -1,6 +1,6 @@
 import { bindable, customElement } from "aurelia";
 
-import { ICategory, IResumeStore, ISkill } from "../../../../stores/resume-store";
+import { ICategory, IResumeStore, ISkill } from "../../../stores/resume-store";
 
 import template from "./skills.html";
 

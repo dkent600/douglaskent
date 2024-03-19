@@ -1,6 +1,6 @@
 import { customElement } from "aurelia";
 
-import { ILanguage, IResumeStore } from "../../../../stores/resume-store";
+import { ILanguage, IResumeStore } from "../../../stores/resume-store";
 
 import template from "./languages.html";
 
