@@ -1,7 +1,7 @@
 <!-- <require from="./nav-bar.html"></require>
       <nav-bar router.bind="router"></nav-bar> -->
 <div class="container">
-  <toc is-short.bind="isShort" for-dropdown-menu.bind="true"></toc>
+  <toc if.bind="!isShort" is-short.bind="isShort" for-dropdown-menu.bind="true"></toc>
   <div class="row">
     <div class="col-xs-12 col-lg-8 col-xl-9">
       <h1>${basics.name}</h1>
@@ -21,7 +21,7 @@
         <accomplishments if.bind="!isShort" id="accomplishments" class="scrollspy sectionContainer">
         </accomplishments>
 
-        <skills id="skills" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
+        <skills if.bind="!isShort" id="skills" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
         </skills>
 
         <history id="history" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
@@ -44,7 +44,7 @@
     <div class="col-hide-md col-lg-4 col-xl-3 hidden-print">
       <div class="side-panel">
         <contact></contact>
-        <toc id="TOC" is-short.bind="isShort">
+        <toc id="TOC" if.bind="!isShort" is-short.bind="isShort">
         </toc>
       </div>
     </div>
