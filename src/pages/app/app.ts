@@ -10,7 +10,7 @@ import { IRoute } from '@aurelia/router';
 export class App {
     static routes: IRoute[] = [
     {
-      path: ['', 'resume'],
+      path: ['', 'resume/:short?'],
       component: Resume,
       title: 'Douglas Kent',
     }

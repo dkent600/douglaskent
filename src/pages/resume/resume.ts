@@ -1,5 +1,5 @@
 import { customElement, IContainer } from "aurelia";
-import { IRouteableComponent } from "@aurelia/router";
+import { IRouteableComponent, Parameters, LoadInstruction, Navigation, RoutingInstruction } from "@aurelia/router";
 
 import { IBasics, IResumeStore, ISkill } from "../../stores/resume-store";
 
@@ -21,6 +21,7 @@ export class Resume implements IRouteableComponent {
    */
   skillByName = new Map<string, ISkill>();
   basics!: IBasics;
+  isShort = false;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
     this.basics = this.resumeStore.basics;
@@ -44,6 +45,12 @@ export class Resume implements IRouteableComponent {
       }
     }
   }
+
+  canLoad(parameters: Parameters, _instruction: RoutingInstruction, _navigation: Navigation): boolean | LoadInstruction | LoadInstruction[] | Promise<boolean | LoadInstruction | LoadInstruction[]> {
+    this.isShort = parameters.short === "short";
+    return true;
+  }
+
 
   binding() {
     $("#splash").css("display", "none");
