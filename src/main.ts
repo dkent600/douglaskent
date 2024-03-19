@@ -17,9 +17,9 @@ initializeMarkdown();
 // eslint-disable-next-line prettier/prettier
 void Aurelia
 .register(resources)
+  .register(RouterConfiguration.customize({ useUrlFragmentHash: false, useHref: false}))
   .register(ResumeService)
   .register(ResumeStore)
   .register(ResumeDependencies)
-  .register(RouterConfiguration.customize({ useUrlFragmentHash: false, useHref: false}))
   .app(App)
   .start();
