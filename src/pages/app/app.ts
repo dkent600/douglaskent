@@ -13,6 +13,11 @@ export class App {
       path: ['', 'resume/:short?'],
       component: Resume,
       title: 'Douglas Kent',
+    },
+    {
+      path: ['shortresume'],
+      redirectTo: 'resume/short',
+      title: 'Douglas Kent',
     }
   ];
 }
