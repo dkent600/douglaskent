@@ -10,14 +10,14 @@ import { ResumeService } from "./services/resume-service";
 import { ResumeStore } from "./stores/resume-store";
 import * as resources from "./resources";
 import { App } from "./pages/app/app";
-import { RouterConfiguration } from "@aurelia/router";
+import { RouterConfiguration } from "@aurelia/router-lite";
 
 initializeMarkdown();
 
 // eslint-disable-next-line prettier/prettier
 void Aurelia
-.register(resources)
-  .register(RouterConfiguration.customize({ useUrlFragmentHash: false, useHref: false}))
+ .register(resources)
+    .register(RouterConfiguration.customize({ useUrlFragmentHash: false, useHref: false}))
   .register(ResumeService)
   .register(ResumeStore)
   .register(ResumeDependencies)

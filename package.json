@@ -20,7 +20,7 @@
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css"
   },
   "dependencies": {
-    "@aurelia/router": "^v2.0.0-beta.9",
+    "@aurelia/router-lite": "^v2.0.0-beta.9",
     "arrive": "^2.4.1",
     "aurelia": "^v2.0.0-beta.9",
     "bootstrap": "^4.1.1",

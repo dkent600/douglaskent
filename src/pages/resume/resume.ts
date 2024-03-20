@@ -1,5 +1,5 @@
 import { customElement, IContainer } from "aurelia";
-import { IRouteableComponent, Parameters, LoadInstruction, Navigation, RoutingInstruction } from "@aurelia/router";
+import { IRouteViewModel, Params } from "@aurelia/router-lite";
 
 import { IBasics, IResumeStore, ISkill } from "../../stores/resume-store";
 
@@ -15,7 +15,7 @@ export class ResumeDependencies {
 }
 
 @customElement({ name: "resume", template })
-export class Resume {
+export class Resume implements IRouteViewModel {
   /**
    * given the name or alias of a skill, return the skill json
    */
@@ -45,15 +45,10 @@ export class Resume {
       }
     }
   }
-
-  canLoad(parameters: Parameters, _instruction: RoutingInstruction, _navigation: Navigation): boolean | LoadInstruction | LoadInstruction[] | Promise<boolean | LoadInstruction | LoadInstruction[]> {
+    
+  canLoad(parameters: Params) {
     this.isShort = parameters.short === "short";
     return true;
-  }
-
-
-  binding() {
-    $("#splash").css("display", "none");
   }
 
   attached() {
