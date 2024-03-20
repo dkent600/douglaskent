@@ -21,18 +21,6 @@ import { route } from '@aurelia/router-lite';
   template: view
 })
 export class App {
-  //   static routes: IRoute[] = [
-  //   {
-  //     path: ['', 'resume/:short?'],
-  //     component: Resume,
-  //     title: 'Douglas Kent',
-  //   },
-  //   {
-  //     path: ['shortresume'],
-  //     redirectTo: 'resume/short',
-  //     title: 'Douglas Kent',
-  //   }
-  // ];
   binding() {
     $("#splash").css("display", "none");
   }
