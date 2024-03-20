@@ -7,7 +7,6 @@
     "url": "https://github.com/dkent600/douglaskent.git"
   },
   "license": "UNLICENSED",
-  "main": "dist/app.bundle.js",
   "scripts": {
     "start": "vite --open",
     "build": "cross-env NODE_ENV=production vite build",
