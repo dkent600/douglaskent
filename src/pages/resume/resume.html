@@ -1,5 +1,5 @@
 <div class="container">
-  <toc if.bind="!isShort" is-short.bind="isShort" for-dropdown-menu.bind="true"></toc>
+  <toc if.bind="isLong" is-short.bind="isShort" for-dropdown-menu.bind="true"></toc>
   <div class="row">
     <div class="col-xs-12 col-lg-8 col-xl-9">
       <h1>${basics.name}</h1>
@@ -10,16 +10,16 @@
         <introduction id="introduction" class="scrollspy sectionContainer">
         </introduction>
 
-        <reasons if.bind="!isShort" id="reasons" class="scrollspy sectionContainer">
+        <reasons if.bind="isLong" id="reasons" class="scrollspy sectionContainer">
         </reasons>
 
-        <testimonials if.bind="!isShort" id="testimonials" class="scrollspy sectionContainer">
+        <testimonials if.bind="isLong" id="testimonials" class="scrollspy sectionContainer">
         </testimonials>
 
-        <accomplishments if.bind="!isShort" id="accomplishments" class="scrollspy sectionContainer">
+        <accomplishments if.bind="isLong" id="accomplishments" class="scrollspy sectionContainer">
         </accomplishments>
 
-        <skills if.bind="!isShort" id="skills" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
+        <skills if.bind="isLong" id="skills" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
         </skills>
 
         <history id="history" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
@@ -28,13 +28,13 @@
         <education id="education" class="scrollspy sectionContainer">
         </education>
 
-        <languages if.bind="!isShort" id="languages" class="scrollspy sectionContainer">
+        <languages if.bind="isLong" id="languages" class="scrollspy sectionContainer">
         </languages>
 
-        <citizenship if.bind="!isShort" id="citizenship" class="scrollspy sectionContainer">
+        <citizenship if.bind="isLong" id="citizenship" class="scrollspy sectionContainer">
         </citizenship>
 
-        <publications if.bind="!isShort" id="publications" class="scrollspy sectionContainer">
+        <publications if.bind="isLong" id="publications" class="scrollspy sectionContainer">
         </publications>
       </div>
 
@@ -42,7 +42,7 @@
     <div class="col-hide-md col-lg-4 col-xl-3 hidden-print">
       <div class="side-panel">
         <contact></contact>
-        <toc id="TOC" if.bind="!isShort" is-short.bind="isShort">
+        <toc id="TOC" if.bind="isLong" is-short.bind="isShort">
         </toc>
       </div>
     </div>

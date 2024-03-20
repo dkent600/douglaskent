@@ -46,6 +46,8 @@ export class Resume implements IRouteViewModel {
     }
   }
     
+  get isLong(): boolean { return !this.isShort; }
+
   canLoad(parameters: Params) {
     this.isShort = parameters.short === "short";
     return true;
