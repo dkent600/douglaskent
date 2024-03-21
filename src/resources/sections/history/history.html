@@ -66,18 +66,26 @@
 </template>
 
 <section class="section">
-  <h3>Work History</h3>
+  <h3>${isShort ? 'Recent' : ''} Work History</h3>
   <div class="content">
     <div repeat.for="company of companiesFirst">
       <company company.bind="company" index.bind="$index">
       </company>
     </div>
 
-    <h5 class="company-position show-entire-history" data-toggle="collapse" href="#allCompanies" aria-expanded="false"
-      aria-controls="companies-list" click.trigger="showingEntireHistory = !showingEntireHistory">
-      ${showingEntireHistory ? 'See only recent history' : 'See the whole history'}
-      <i class="fa-solid ${showingEntireHistory ? 'fa-angles-up' : 'fa-angles-down'}"></i>
-    </h5>
+    <template if.bind="isShort">
+      <h6>
+        Please see my complete work history here: <a href='https://www.douglaskent.com' target='_blank'
+          rel='noopener noreferrer'>https://www.douglaskent.com</a>.
+      </h6>
+    </template>
+    <template else>
+      <h6 class="company-position show-entire-history" data-toggle="collapse" href="#allCompanies" aria-expanded="false"
+        aria-controls="companies-list" click.trigger="showingEntireHistory = !showingEntireHistory">
+        ${showingEntireHistory ? 'Show only recent history' : 'Show the whole history'}
+        <i class="fa-solid ${showingEntireHistory ? 'fa-angles-up' : 'fa-angles-down'}"></i>
+      </h6>
+    </template>
 
     <div class="collapse fade" id="allCompanies">
       <div repeat.for="company of companiesTheRest">

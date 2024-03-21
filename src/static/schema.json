@@ -37,9 +37,17 @@
           "description": "URL (as per RFC 3986) to your website, e.g. personal homepage",
           "format": "uri"
         },
-        "summary": {
+        "summary1": {
           "type": "string",
-          "description": "Write a short 2-3 sentence biography about yourself"
+          "description": "Write a biography about yourself"
+        },
+        "summary2": {
+          "type": "string",
+          "description": "Write a biography about yourself"
+        },
+        "summary3": {
+          "type": "string",
+          "description": "Write a biography about yourself"
         },
         "location": {
           "type": "object",

@@ -151,6 +151,16 @@ i.quality-bullet {
   margin-bottom: 1.5rem;
 }
 
+.school-grid-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .company .highlights {
   padding-left: 0.5rem;
   padding-top: 0.5rem;
@@ -332,7 +342,7 @@ blockquote.testimonial .blockquote-footer {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
 
-  @media (max-width: 800px) {
+  @media screen and (max-width: 800px) {
     grid-template-columns: 1fr;
   }
 }

@@ -10,6 +10,7 @@ export class History {
   showingEntireHistory = false;
   entireHistoryStartIndex = 3;
   @bindable skillByName!: Map<string, ISkill>;
+  @bindable isShort = false;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
     this.companies = this.resumeStore.companies

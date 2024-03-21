@@ -1,6 +1,6 @@
 <section class="section">
   <h3>Introduction</h3>
-  <div class="summary" innerhtml.bind="basics.summary | sanitizeHTML"></div>
-  <!-- <div>I want to build long-term relationships of confidence and mutual benefit where I am available to you on a flexible
-  basis, project-by-project, as-needed.</div> -->
+  <div class="summary" innerhtml.bind="basics.summary1 | sanitizeHTML"></div>
+  <div class="summary" if.bind="isShort" innerhtml.bind="basics.summary2 | sanitizeHTML"></div>
+  <div class="summary" if.bind="!isShort" innerhtml.bind="basics.summary3 | sanitizeHTML"></div>
 </section>

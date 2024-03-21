@@ -7,7 +7,7 @@
         <contact id="contact" inline.bind="true" class="d-lg-none sectionContainer">
         </contact>
 
-        <introduction id="introduction" class="scrollspy sectionContainer">
+        <introduction id="introduction" is-short.bind="isShort" class="scrollspy sectionContainer">
         </introduction>
 
         <reasons if.bind="isLong" id="reasons" class="scrollspy sectionContainer">
@@ -22,7 +22,8 @@
         <skills if.bind="isLong" id="skills" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
         </skills>
 
-        <history id="history" skill-by-name.bind="skillByName" class="scrollspy sectionContainer">
+        <history id="history" skill-by-name.bind="skillByName" is-short.bind="isShort"
+          class="scrollspy sectionContainer">
         </history>
 
         <travel id="travel" class="scrollspy sectionContainer">
