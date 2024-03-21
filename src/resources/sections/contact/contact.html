@@ -18,8 +18,16 @@
       <span class="d-print-none">${profile.network}</span>
     </a>
   </div>
-  <div if.bind="!isShort" class="hidden-print"><a load="../shortresume">Short-form Resume</a></div>
-  <div else class="hidden-print"><a load="../resume">Complete Resume</a></div>
+  <div class="d-none d-print-inline">
+    <div if.bind="!isShort"><a href="https://douglaskent.com/resume/short">Short-form resume:
+        https://douglaskent.com/resume/short</a>
+    </div>
+    <!-- <div else><a href="https://douglaskent.com/resume">Complete Resume: https://douglaskent.com/resume</a></div> -->
+  </div>
+  <div class="d-print-none">
+    <div if.bind="!isShort"><a load="../shortresume">Short-form Resume</a></div>
+    <div else><a load="../resume">Complete Resume</a></div>
+  </div>
 </template>
 
 <section class="section section-lg-none" is-short.class="isShort" if.bind="inline">
