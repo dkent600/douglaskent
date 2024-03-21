@@ -53,6 +53,14 @@ h1 {
   padding-left: 0.1rem;
 }
 
+.section.is-short h3 {
+  font-size: 1.4rem;
+}
+
+h1.is-short {
+  font-size: 1.9rem;
+}
+
 @mixin happy-text {
   color: $orange-a700;
 }
@@ -177,9 +185,9 @@ i.quality-bullet {
   margin-left: 0.25rem;
 }
 
-.company .highlights.printing {
-  display: none;
-}
+// .company .highlights.printing {
+//   display: none;
+// }
 
 .show-entire-history {
   margin-bottom: 1.5rem;
@@ -193,13 +201,13 @@ i.quality-bullet {
 }
 
 @media print {
-  .company .highlights {
-    display: none;
-  }
+  // .company .highlights {
+  //   display: none;
+  // }
 
-  .company .highlights.printing {
-    display: block;
-  }
+  // .company .highlights.printing {
+  //   display: block;
+  // }
 }
 
 .company-summary {

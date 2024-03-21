@@ -2,7 +2,7 @@
   <toc if.bind="isLong" is-short.bind="isShort" for-dropdown-menu.bind="true"></toc>
   <div class="row">
     <div class="col-xs-12 col-lg-8 col-xl-9">
-      <h1>${basics.name}</h1>
+      <h1 is-short.class="isShort">${basics.name}</h1>
       <div>
         <contact id="contact" is-short.bind="isShort" inline.bind="true" class="d-lg-none sectionContainer">
         </contact>
@@ -26,10 +26,10 @@
           class="scrollspy sectionContainer">
         </history>
 
-        <travel id="travel" class="scrollspy sectionContainer">
+        <travel id="travel" is-short.bind="isShort" class="scrollspy sectionContainer">
         </travel>
 
-        <education id="education" class="scrollspy sectionContainer">
+        <education id="education" is-short.bind="isShort" class="scrollspy sectionContainer">
         </education>
 
         <!-- <languages if.bind="isLong" id="languages" class="scrollspy sectionContainer">

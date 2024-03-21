@@ -1,6 +1,7 @@
 <template as-custom-element="company">
   <bindable name="company"></bindable>
   <bindable name="index"></bindable>
+  <bindable name="isShort"></bindable>
   <div class="company">
     <!-- using Aurelia's if-else to conditionally render a block if the for loop is past the 3rd iteration -->
     <h5 class="company-position">${company.position}</h5>
@@ -38,7 +39,7 @@
       </span>
     </div>
 
-    <div if.bind="company.highlights.length">
+    <div if.bind="!isShort && company.highlights.length">
       <div class="highlights">
         <a class="show-link" data-toggle="collapse" href="#highlights_${index}" aria-expanded="false"
           aria-controls="highlights-list" click.trigger="toggleHighlights(company)">
@@ -58,18 +59,18 @@
           </ul>
         </div>
       </div>
-      <div class="highlights printing">See my dynamic
+      <!-- <div class="highlights printing">See my dynamic
         resume (<a class="show-link external-link" href="http://www.douglaskent.com/" target="_blank"
-          rel="noopener noreferrer">http://www.douglaskent.com/</a>) for highlights about this position!</div>
+          rel="noopener noreferrer">http://www.douglaskent.com/</a>) for highlights about this position!</div> -->
     </div>
   </div>
 </template>
 
-<section class="section">
+<section class="section" is-short.class="isShort">
   <h3>${isShort ? 'Recent' : ''} Work History</h3>
   <div class="content">
     <div repeat.for="company of companiesFirst">
-      <company company.bind="company" index.bind="$index">
+      <company is-short.bind="isShort" company.bind="company" index.bind="$index">
       </company>
     </div>
 
@@ -89,7 +90,7 @@
 
     <div class="collapse fade" id="allCompanies">
       <div repeat.for="company of companiesTheRest">
-        <company company.bind="company" index.bind="$index + entireHistoryStartIndex">
+        <company is-short.bind="isShort" company.bind="company" index.bind="$index + entireHistoryStartIndex">
         </company>
       </div>
     </div>
