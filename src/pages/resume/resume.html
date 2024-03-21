@@ -4,7 +4,7 @@
     <div class="col-xs-12 col-lg-8 col-xl-9">
       <h1>${basics.name}</h1>
       <div>
-        <contact id="contact" inline.bind="true" class="d-lg-none sectionContainer">
+        <contact id="contact" is-short.bind="isShort" inline.bind="true" class="d-lg-none sectionContainer">
         </contact>
 
         <introduction id="introduction" is-short.bind="isShort" class="scrollspy sectionContainer">
@@ -45,7 +45,7 @@
     </div>
     <div class="col-hide-md col-lg-4 col-xl-3 hidden-print">
       <div class="side-panel">
-        <contact></contact>
+        <contact is-short.bind="isShort"></contact>
         <toc id="TOC" if.bind="isLong" is-short.bind="isShort">
         </toc>
       </div>
