@@ -1,0 +1,59 @@
+<section class="section">
+  <h3>Travel</h3>
+  <div class="content">
+    <p>I can travel!</p>
+    <div class="travelling-grid">
+      <div class="travelling-grid-item">
+        <table class="languages">
+          <tr>
+            <th>Language</th>
+            <th>Fluency</th>
+          </tr>
+          <tr repeat.for="language of languages">
+            <td><span class="language-name">${language.language}</span></td>
+            <td>${language.fluency}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="travelling-grid-item">
+        <table class="citizenships">
+          <tr>
+            <th>Citizenship</th>
+            <th>Type</th>
+          </tr>
+          <tr repeat.for="cit of citizenship">
+            <td><span class="citizenship-name">${cit.country}</span></td>
+            <td>${cit.status}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- <tr>
+      <td>
+        <table class="languages">
+          <tr>
+            <th>Language</th>
+            <th>Fluency</th>
+          </tr>
+          <tr repeat.for="language of languages">
+            <td><span class="language-name">${language.language}</span></td>
+            <td>${language.fluency}</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table class="citizenships">
+          <tr>
+            <th>Country</th>
+            <th>Type</th>
+          </tr>
+          <tr repeat.for="cit of citizenship">
+            <td><span class="citizenship-name">${cit.country}</span></td>
+            <td>${cit.status}</td>
+          </tr>
+        </table>
+      </td>
+    </tr> 
+    </table>-->
+</section>

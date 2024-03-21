@@ -326,3 +326,21 @@ blockquote.testimonial .blockquote-footer {
 .summary div {
   @extend p;
 }
+
+.travelling-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.travelling-grid-item {
+  table.languages,
+  table.citizenships {
+    td {
+      white-space: nowrap;
+      &:first-child {
+        padding-right: 2rem;
+      }
+    }
+  }
+}

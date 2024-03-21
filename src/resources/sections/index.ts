@@ -10,3 +10,4 @@ export * from "./languages/languages";
 export * from "./citizenship/citizenship";
 export * from "./publications/publications";
 export * from "./toc/toc";
+export * from "./travel/travel";
