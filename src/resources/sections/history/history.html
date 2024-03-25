@@ -1,9 +1,7 @@
 <template as-custom-element="company">
   <bindable name="company"></bindable>
   <bindable name="index"></bindable>
-  <bindable name="isShort"></bindable>
   <div class="company">
-    <!-- using Aurelia's if-else to conditionally render a block if the for loop is past the 3rd iteration -->
     <h5 class="company-position">${company.position}</h5>
     <div class="company-name" if.bind="!company.website">${company.company}</div>
     <div class="company-name" else>
@@ -39,7 +37,7 @@
       </span>
     </div>
 
-    <div if.bind="!isShort && company.highlights.length">
+    <div resume-type="complete" if.bind="company.highlights.length">
       <div class="highlights">
         <a class="show-link" data-toggle="collapse" href="#highlights_${index}" aria-expanded="false"
           aria-controls="highlights-list" click.trigger="toggleHighlights(company)">
@@ -66,29 +64,29 @@
   </div>
 </template>
 
-<section class="section" is-short.class="isShort">
-  <h3>${isShort ? 'Recent' : ''} Work History</h3>
+<section class="section">
+  <h3><span resume-type="short">Recent </span>Work History</h3>
   <div class="content">
     <div repeat.for="company of companiesFirst">
-      <company is-short.bind="isShort" company.bind="company" index.bind="$index">
+      <company company.bind="company" index.bind="$index">
       </company>
     </div>
 
-    <template if.bind="isShort">
+    <div resume-type="short">
       <span class="see-complete">Please see my complete work history here:</span> <a href='https://www.douglaskent.com'
         target='_blank' rel='noopener noreferrer'>https://www.douglaskent.com</a>.
-    </template>
-    <template else>
+    </div>
+    <div resume-type="complete">
       <h6 class="company-position show-entire-history" data-toggle="collapse" href="#allCompanies" aria-expanded="false"
         aria-controls="companies-list" click.trigger="showingEntireHistory = !showingEntireHistory">
         ${showingEntireHistory ? 'Show only recent history' : 'Show the whole history'}
         <i class="fa-solid ${showingEntireHistory ? 'fa-angles-up' : 'fa-angles-down'}"></i>
       </h6>
-    </template>
+    </div>
 
     <div class="collapse fade" id="allCompanies">
       <div repeat.for="company of companiesTheRest">
-        <company is-short.bind="isShort" company.bind="company" index.bind="$index + entireHistoryStartIndex">
+        <company company.bind="company" index.bind="$index + entireHistoryStartIndex">
         </company>
       </div>
     </div>

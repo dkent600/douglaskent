@@ -2,7 +2,6 @@
   <bindable name='profiles'></bindable>
   <bindable name='inline'></bindable>
   <bindable name='basics'></bindable>
-  <bindable name='isShort'></bindable>
   <div>${basics.phone}</div>
   <div>${basics.phone2}</div>
   <div>
@@ -19,24 +18,24 @@
     </a>
   </div>
   <div class="d-none d-print-inline">
-    <div if.bind="!isShort"><a href="https://douglaskent.com/resume/short">One-Page Resume:
+    <div resume-type="complete"><a href="https://douglaskent.com/resume/short">One-Page Resume:
         https://douglaskent.com/resume/short</a>
     </div>
     <!-- <div else><a href="https://douglaskent.com/resume">Complete Resume: https://douglaskent.com/resume</a></div> -->
   </div>
   <div class="d-print-none">
-    <div if.bind="!isShort"><a load="../shortresume">One-Page Resume</a></div>
-    <div else><a load="../resume">Complete Resume</a></div>
+    <div resume-type="complete"><a load="../resume/short">One-Page Resume</a></div>
+    <div resume-type="short"><a load="../resume">Complete Resume</a></div>
   </div>
 </template>
 
-<section class="section section-lg-none" is-short.class="isShort" if.bind="inline">
+<section class="section section-lg-none" if.bind="inline">
   <h3>Contact</h3>
   <!-- 
     <div>${basics.location.address}</div>
     <div>${basics.location.city}, ${basics.location.region} ${basics.location.postalCode}, ${basics.location.countryName}</div>\
   -->
-  <info is-short.bind="isShort" basics.bind="basics" profiles.bind="profiles" inline.bind="true"></info>
+  <info basics.bind="basics" profiles.bind="profiles" inline.bind="true"></info>
 </section>
 
 <aside class="contact-info" else>
@@ -47,7 +46,7 @@
       <div>${basics.location.city}, ${basics.location.region} ${basics.location.postalcode}</div>
       <div>${basics.location.countryName}</div>
     -->
-    <info is-short.bind="isShort" basics.bind="basics" profiles.bind="profiles"></info>
+    <info basics.bind="basics" profiles.bind="profiles"></info>
 
   </div>
   <hr />

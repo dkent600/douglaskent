@@ -8,7 +8,6 @@ import template from "./travel.html";
 export class Travel {
   citizenship!: Array<ICitizenship>;
   languages!: Array<ILanguage>;
-  @bindable isShort = false;
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
     this.citizenship = this.resumeStore.citizenship;
     this.languages = this.resumeStore.languages;

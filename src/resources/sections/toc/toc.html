@@ -5,16 +5,16 @@
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="nav-link" click.trigger="goto('introduction')">Introduction</a>
-    <a class="nav-link" click.trigger="goto('accomplishments')" if.bind="!isShort">Special Accomplishments</a>
-    <a class="nav-link" click.trigger="goto('testimonials')" if.bind="!isShort">Testimonials</a>
-    <a class="nav-link" click.trigger="goto('reasons')" if.bind="!isShort">Me? Really?</a>
-    <a class="nav-link" click.trigger="goto('skills')" if.bind="!isShort">Skills</a>
+    <a class="nav-link" click.trigger="goto('accomplishments')" resume-type="complete">Special Accomplishments</a>
+    <a class="nav-link" click.trigger="goto('testimonials')" resume-type="complete">Testimonials</a>
+    <a class="nav-link" click.trigger="goto('reasons')" resume-type="complete">Me? Really?</a>
+    <a class="nav-link" click.trigger="goto('skills')" resume-type="complete">Skills</a>
     <a class="nav-link" click.trigger="goto('history')">Work History</a>
     <a class="nav-link" click.trigger="goto('travel')">Travel</a>
     <a class="nav-link" click.trigger="goto('education')">Education</a>
-    <!-- <a class="nav-link" click.trigger="goto('languages')" if.bind="!isShort">Languages</a>
-      <a class="nav-link" click.trigger="goto('citizenship')" if.bind="!isShort">Citizenship</a> -->
-    <a class="nav-link" click.trigger="goto('publications')" if.bind="!isShort">Publications</a>
+    <!-- <a class="nav-link" click.trigger="goto('languages')" resume-type="complete">Languages</a>
+      <a class="nav-link" click.trigger="goto('citizenship')" resume-type="complete">Citizenship</a> -->
+    <a class="nav-link" click.trigger="goto('publications')" resume-type="complete">Publications</a>
   </div>
 </div>
 <nav id="TOC" class="navbar" else>
@@ -23,17 +23,17 @@
       <a class="nav-link" click.trigger="goto('introduction')">Introduction</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" click.trigger="goto('accomplishments')" if.bind="!isShort">Special
+      <a class="nav-link" click.trigger="goto('accomplishments')" resume-type="complete">Special
         Accomplishments</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" click.trigger="goto('testimonials')" if.bind="!isShort">Testimonials</a>
+      <a class="nav-link" click.trigger="goto('testimonials')" resume-type="complete">Testimonials</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" click.trigger="goto('reasons')" if.bind="!isShort">Me? Really?</a>
+      <a class="nav-link" click.trigger="goto('reasons')" resume-type="complete">Me? Really?</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" click.trigger="goto('skills')" if.bind="!isShort">Skills</a>
+      <a class="nav-link" click.trigger="goto('skills')" resume-type="complete">Skills</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" click.trigger="goto('history')">Work History</a>
@@ -45,14 +45,14 @@
       <a class="nav-link" click.trigger="goto('education')">Education</a>
     </li>
     <!-- <li class="nav-item">
-      <a class="nav-link" click.trigger="goto('languages')" if.bind="!isShort">Languages</a>
+      <a class="nav-link" click.trigger="goto('languages')" resume-type="complete">Languages</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" click.trigger="goto('citizenship')" if.bind="!isShort">Citizenship</a>
+      <a class="nav-link" click.trigger="goto('citizenship')" resume-type="complete">Citizenship</a>
     </li>  -->
 
     <li class="nav-item">
-      <a class="nav-link" click.trigger="goto('publications')" if.bind="!isShort">Publications</a>
+      <a class="nav-link" click.trigger="goto('publications')" resume-type="complete">Publications</a>
     </li>
   </ul>
 </nav>

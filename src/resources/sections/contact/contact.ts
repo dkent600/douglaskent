@@ -7,7 +7,6 @@ import template from "./contact.html";
 @customElement({ name: "contact", template })
 export class Contact {
   @bindable inline = false;
-  @bindable isShort = false;
   basics!: IBasics;
   profiles!: Array<IProfile>;
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {

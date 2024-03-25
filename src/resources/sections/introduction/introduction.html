@@ -1,6 +1,6 @@
-<section class="section" is-short.class="isShort">
+<section class="section">
   <h3>Introduction</h3>
   <p class="summary" innerhtml.bind="basics.summary1 | sanitizeHTML"></p>
   <p class="summary" innerhtml.bind="basics.summary2 | sanitizeHTML"></p>
-  <p class="summary" if.bind="isShort" innerhtml.bind="basics.summary3 | sanitizeHTML"></p>
+  <p class="summary" resume-type="short" innerhtml.bind="basics.summary3 | sanitizeHTML"></p>
 </section>
