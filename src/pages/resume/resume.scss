@@ -53,12 +53,20 @@ h1 {
   padding-left: 0.1rem;
 }
 
-.section.is-short h3 {
-  font-size: 1.4rem;
+.section.is-short {
+  h3 {
+    font-size: 1.2rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  .see-complete {
+    font-weight: 600;
+  }
 }
 
 h1.is-short {
-  font-size: 1.9rem;
+  font-size: 1.7rem;
 }
 
 @mixin happy-text {
@@ -156,6 +164,7 @@ i.quality-bullet {
 .company-name {
   display: inline-block;
   font-weight: 500;
+  font-size: 1rem;
 }
 
 .company {
