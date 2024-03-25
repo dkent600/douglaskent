@@ -17,6 +17,7 @@ export class WhichResumeOnly {
 
     private showHideElement(): void
     {
+      /** hide if not what is specified */
       if (WhichResumeOnly.isShort && this.which === "complete" || !WhichResumeOnly.isShort && this.which === "short") {
         this.element.style.display = "none";
       }
