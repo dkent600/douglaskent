@@ -20,6 +20,11 @@ export class WhichResumeOnly {
       /** hide if not what is specified */
       if (WhichResumeOnly.isShort && this.which === "complete" || !WhichResumeOnly.isShort && this.which === "short") {
         this.element.style.display = "none";
+        this.element.style.visibility = "hidden";
+        // for use in css
+        this.element.classList.add("hidden-from-resume");
+      } else {
+        this.element.classList.remove("hidden-from-resume");
       }
     }
   }

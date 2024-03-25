@@ -134,10 +134,6 @@ i.quality-bullet {
 
 .sectionContainer {
   display: block;
-}
-
-// to help avoid occurance of extra page when printing
-.sectionContainer:not(:last-child) {
   margin-bottom: 1.5rem;
 }
 
@@ -225,15 +221,13 @@ i.quality-bullet {
     padding-left: 6px;
   }
 }
-
 @media print {
-  // .company .highlights {
-  //   display: none;
-  // }
-
-  // .company .highlights.printing {
-  //   display: block;
-  // }
+  .resume.is-short .sectionContainer:not(.hidden-from-resume) {
+    :last-child {
+      // to help avoid occurance of extra page when printing
+      margin-bottom: 0;
+    }
+  }
 }
 
 .company-summary {
