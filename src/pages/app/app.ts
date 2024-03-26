@@ -9,10 +9,6 @@ import { route } from '@aurelia/router-lite';
       path: ['', 'resume/:short?'],
       component: Resume,
       title: 'Douglas Kent',
-    },
-    {
-      path: ['shortresume'],
-      redirectTo: 'resume/short',
     }
   ]
 })
