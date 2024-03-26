@@ -350,6 +350,17 @@ blockquote.testimonial {
   margin-top: 1rem;
 }
 
+@media print {
+  .resume.is-short blockquote.testimonial {
+    font-size: 0.75rem;
+  }
+
+  .resume.is-short blockquote.testimonial .blockquote-footer {
+    margin-top: 0.7rem;
+    font-size: 0.75rem;
+  }
+}
+
 .resume.is-short blockquote.testimonial .citation::before {
   font-size: 3.1rem;
 }
@@ -411,3 +422,16 @@ blockquote.testimonial .blockquote-footer {
     }
   }
 }
+
+// .travelling-grid-hidden {
+//   display: none;
+// }
+
+// @media print {
+//   .travelling-grid {
+//     display: none;
+//   }
+//   .travelling-grid-hidden {
+//     display: block;
+//   }
+// }
