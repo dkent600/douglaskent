@@ -35,7 +35,15 @@
     <div>${basics.location.address}</div>
     <div>${basics.location.city}, ${basics.location.region} ${basics.location.postalCode}, ${basics.location.countryName}</div>\
   -->
-  <info basics.bind="basics" profiles.bind="profiles" inline.bind="true"></info>
+  <div class="contact-info inline grid-container">
+    <div class="grid-item">
+      <info basics.bind="basics" profiles.bind="profiles" inline.bind="true"></info>
+    </div>
+    <div class="grid-item">
+      <testimonials just-one="true" resume-type="short">
+      </testimonials>
+    </div>
+  </div>
 </section>
 
 <aside class="contact-info" else>
@@ -50,4 +58,6 @@
 
   </div>
   <hr />
+  <testimonials just-one="true" resume-type="short">
+  </testimonials>
 </aside

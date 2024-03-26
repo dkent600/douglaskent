@@ -1,6 +1,6 @@
-<section class="section">
-  <h3 style="margin-bottom: 1.5rem">Testimonials</h3>
-  <blockquote class="testimonial" repeat.for="testimonial of testimonials">
+<template as-custom-element="testimonial">
+  <bindable name='testimonial'></bindable>
+  <blockquote class="testimonial">
     <div class="citation" innerhtml.bind="testimonial.reference | sanitizeHTML"></div>
     <footer class="blockquote-footer">
       <a href.bind="testimonial.website" target="_blank" rel="noopener noreferrer">
@@ -8,4 +8,14 @@
       </a>
     </footer>
   </blockquote>
+</template>
+
+<section class="section">
+  <h3 if.bind="!justOne" style="margin-bottom: 1.5rem">Testimonials</h3>
+  <div if.bind="!justOne">
+    <testimonial repeat.for="testimonial of testimonials" testimonial.bind="testimonial"></testimonial>
+  </div>
+  <div else>
+    <testimonial testimonial.bind="testimonials[0]"></testimonial>
+  </div>
 </section>
