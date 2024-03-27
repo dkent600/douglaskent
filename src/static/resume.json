@@ -24,19 +24,24 @@
     },
     "profiles": [
       {
+        "network": "Email",
+        "url": "mailto:resume@douglaskent.com",
+        "icon": "fa-regular fa-envelope"
+      },
+      {
+        "network": "Website",
+        "url": "https://www.douglaskent.com",
+        "icon": "fa-solid fa-arrow-up-right-from-square"
+      },
+      {
         "network": "LinkedIn",
-        "url": "http://www.linkedin.com/in/doug-kent-760876a",
-        "icon": "linkedin"
+        "url": "https://www.linkedin.com/in/doug-kent-760876a",
+        "icon": "fa-brands fa-linkedin"
       },
       {
         "network": "GitHub",
-        "url": "http://github.com/dkent600",
-        "icon": "github"
-      },
-      {
-        "network": "Chat on Telegram",
-        "url": "https://t.me/dkent",
-        "icon": "telegram"
+        "url": "https://github.com/dkent600",
+        "icon": "fa-brands fa-github"
       }
     ]
   },

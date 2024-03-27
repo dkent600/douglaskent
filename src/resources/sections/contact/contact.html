@@ -1,28 +1,35 @@
+<template as-custom-element="tink">
+  <bindable name='profile'></bindable>
+  <a class="external-link" href.bind="profile.url" target="_blank" rel="noopener noreferrer">
+    <i class="profile-icon ${profile.icon}"></i>
+    <span class="d-none d-print-inline">${profile.url}</span>
+    <span class="d-print-none">${profile.network}</span>
+    <!-- ${profile.network} -->
+  </a>
+</template>
+
 <template as-custom-element="info">
   <bindable name='profiles'></bindable>
   <bindable name='inline'></bindable>
   <bindable name='basics'></bindable>
   <div>${basics.phone}</div>
   <div>${basics.phone2}</div>
-  <div>
+  <!-- <div>
     <a href="mailto:${basics.email}">${basics.email}</a>
-  </div>
-  <div>
+  </div> -->
+  <!-- <div>
     <a href.bind="basics.website" target="_blank" rel="noopener noreferrer">${basics.website}</a>
-  </div>
+  </div> -->
   <div repeat.for="profile of profiles">
-    <a class="external-link" href.bind="profile.url" target="_blank" rel="noopener noreferrer">
-      <i class="profile-icon fa-brands fa-${profile.icon}"></i>
-      <span class="d-none d-print-inline">${profile.url}</span>
-      <span class="d-print-none">${profile.network}</span>
-    </a>
+    <tink profile.bind="profile">
+    </tink>
   </div>
-  <div class="d-none d-print-inline">
+  <!-- <div class="d-none d-print-inline">
     <div resume-type="complete"><a href="https://douglaskent.com/resume/short">One-Page Resume:
         https://douglaskent.com/resume/short</a>
     </div>
-    <!-- <div else><a href="https://douglaskent.com/resume">Complete Resume: https://douglaskent.com/resume</a></div> -->
-  </div>
+    <div else><a href="https://douglaskent.com/resume">Complete Resume: https://douglaskent.com/resume</a></div>
+  </div> -->
   <div class="d-print-none">
     <div resume-type="complete"><a load="../resume/short">One-Page Resume</a></div>
     <div resume-type="short"><a load="../resume">Complete Resume</a></div>
