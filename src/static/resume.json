@@ -72,7 +72,7 @@
       "remote": true,
       "website": "https://www.curvelabs.eu/",
       "startDate": "2023-04",
-      "summary": "Developed an automated \"Oracle\" service maintaining states of <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> regenerative finance (Refi) smart contracts on the <a href=\"https://celo.org/\" target=\"_blank\">Celo</a> (EVM compatible) blockchain",
+      "summary": "Invited back on contract. Developed an automated \"Oracle\" service maintaining states of <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> regenerative finance (Refi) smart contracts on the <a href=\"https://celo.org/\" target=\"_blank\">Celo</a> (EVM compatible) blockchain.",
       "endDate": "2023-05",
       "highlights": [
         "Worked on the <a href=\"https://celo.org/\" target=\"_blank\">Celo blockchain</a> with the tokens kG, kCur and cUSD and a Balancer WeightedPool (kCur <> cUSD) ported to Celo by Symmetric",
@@ -102,7 +102,7 @@
       "remote": true,
       "website": "https://www.curvelabs.eu/",
       "startDate": "2020-08",
-      "summary": "In lead roles, developed the frontends of multiple decentralized applications (dApps), running against the Ethereum blockchain, focused on decentralized (Defi) and regenerative finance (Refi)",
+      "summary": "In lead roles, developed the frontends of multiple decentralized applications (dApps), running against the Ethereum blockchain, focused on decentralized (Defi) and regenerative finance (Refi). Led the development team for a Refi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
       "endDate": "2022-11",
       "highlights": [
         "Lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\" target=\"_blank\">Prime Pools (no longer active)</a>, <a href=\"https://primelock.eth.link/\" target=\"_blank\">Prime Locking For Reputation</a> and the <a href=\"https://primedao.eth.link\" target=\"_blank\">original PrimeDAO Home Page (no longer active)</a>",
@@ -164,7 +164,8 @@
       "remote": true,
       "website": "http://www.daostack.io/",
       "startDate": "2017-09",
-      "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs (decentralized autonomous organizations on the Ethereum blockchain) that are capable of decentralized governance at large scales",
+      "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first DAO designs in the history of DAOs, and unique in addressing the ability to govern at large scales",
+      "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first DAO designs in the history of DAOs.  Used, reviewed and deployed Ethereum smart contracts, wrote a Typescript library to assist dApps in accessing the smart contracts, wrote a test dApp, and significantly contributed to the dApp Alchemy used for working with the DAOs.",
       "endDate": "2020-10",
       "highlights": [
         "One of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
