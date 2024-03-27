@@ -1,12 +1,22 @@
 <section class="section">
   <h3>Education</h3>
   <div class="content">
-    <div class="school-grid-container">
+    <div resume-type="complete" class="school-grid-container">
       <template repeat.for="school of schools">
         <div class="school">
           <h5 class="school-name">${school.institution}</h5>
           <div>${school.studyType}, ${school.area}</div>
-          <div>${school.startDate} to ${school.endDate}</div>
+          <div>${school.startDate}-${school.endDate}</div>
+        </div>
+      </template>
+    </div>
+    <div resume-type="short" class="school-list">
+      <template repeat.for="school of schools">
+        <div class="school">
+          <!-- UNC - Continuing Education, Computer Science - 1985-1987 -->
+          <div><span class="school-name">${school.institution}</span> -
+            ${school.studyType}, ${school.area} -
+            ${school.startDate}-${school.endDate}</div>
         </div>
       </template>
     </div>

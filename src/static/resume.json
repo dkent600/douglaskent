@@ -789,37 +789,37 @@
       "institution": "Duke University",
       "area": "Environment Management",
       "studyType": "Masters",
-      "startDate": "1977-01-01",
+      "startDate": "1977",
       "gpa": "",
       "courses": [],
-      "endDate": "1980-01-01"
+      "endDate": "1980"
     },
     {
       "institution": "University of North Carolina at Chapel Hill",
       "area": "Computer Science",
       "studyType": "Continuing Education",
-      "startDate": "1985-01-01",
+      "startDate": "1985",
       "gpa": "",
       "courses": [],
-      "endDate": "1987-01-01"
+      "endDate": "1987"
     },
     {
       "institution": "Duke University",
       "area": "Public Policy Sciences",
       "studyType": "Master of Arts",
-      "startDate": "1977-01-01",
+      "startDate": "1977",
       "gpa": "",
       "courses": [],
-      "endDate": "1980-01-01"
+      "endDate": "1980"
     },
     {
       "institution": "Miami University",
       "area": "Botany",
       "studyType": "Bachelor of Science",
-      "startDate": "1973-01-01",
+      "startDate": "1973",
       "gpa": "",
       "courses": [],
-      "endDate": "1977-01-01"
+      "endDate": "1977"
     }
   ],
   "skills": [
@@ -2071,10 +2071,6 @@
     {
       "language": "French",
       "fluency": "Professional working proficiency"
-    },
-    {
-      "language": "Spanish",
-      "fluency": "Minimal proficiency"
     }
   ],
   "citizenship": [
