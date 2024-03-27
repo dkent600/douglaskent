@@ -138,10 +138,7 @@ i.quality-bullet {
 }
 
 .company-position,
-.language-name,
-.school-name,
-.language-name,
-.citizenship-name {
+.school-name {
   @include highlight-text;
 }
 
@@ -167,29 +164,29 @@ i.quality-bullet {
   margin-bottom: 1.5rem;
 }
 
-.school-grid-container {
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: auto auto;
+// .school-grid-container {
+//   display: grid;
+//   grid-template-rows: auto auto;
+//   grid-template-columns: auto auto;
 
-  // only 1 and 2 to avoid space at the bottom of the page when printing
-  .school:nth-child(1),
-  .school:nth-child(2) {
-    margin-bottom: 1.5rem;
-  }
+//   // only 1 and 2 to avoid space at the bottom of the page when printing
+//   .school:nth-child(1),
+//   .school:nth-child(2) {
+//     margin-bottom: 1.5rem;
+//   }
 
-  @media screen and (max-width: 1200px) {
-    grid-template-columns: 1fr;
+//   @media screen and (max-width: 1200px) {
+//     grid-template-columns: 1fr;
 
-    // only 1 and 2 to avoid space at the bottom of the page when printing
-    .school:not(:last-child) {
-      margin-bottom: 1.5rem;
-    }
-    .school:last-child {
-      margin-bottom: 0rem;
-    }
-  }
-}
+//     // only 1 and 2 to avoid space at the bottom of the page when printing
+//     .school:not(:last-child) {
+//       margin-bottom: 1.5rem;
+//     }
+//     .school:last-child {
+//       margin-bottom: 0rem;
+//     }
+//   }
+// }
 
 .company .highlights {
   padding-left: 0.5rem;
@@ -423,6 +420,9 @@ blockquote.testimonial .blockquote-footer {
       &:first-child {
         padding-right: 2rem;
       }
+    }
+    th {
+      @include highlight-text;
     }
   }
 }
