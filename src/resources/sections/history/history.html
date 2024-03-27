@@ -10,7 +10,7 @@
     <!-- <span class="separator"><i class="fa fa-angle-double-right"></i></span> -->
     <span class="separator">&bull;</span>
     <span class="company-date">${company.startDate} to ${company.endDate}</span>
-    <span class="company-icons">
+    <!-- <span class="company-icons">
       <span if.bind="company.remote" class="remote">&nbsp;
         <i class="fa-solid fa-phone" data-toggle="tooltip" data-placement="bottom" title="Worked Remotely"></i>
       </span>
@@ -20,7 +20,7 @@
       <span if.bind="company.personal" class="personal">&nbsp;
         <i class="fa-solid fa-user" data-toggle="tooltip" data-placement="bottom" title="Personal Project"></i>
       </span>
-    </span>
+    </span> -->
     <div class="company-summary" innerhtml.bind="company.summary | sanitizeHTML"></div>
 
     <div class="company-skills">
