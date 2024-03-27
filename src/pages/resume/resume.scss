@@ -386,7 +386,10 @@ blockquote.testimonial .blockquote-footer {
   margin-right: 0;
 }
 
-@media print {
+@media screen and (max-width: 800px) {
+  .resume.is-short .contact-info.inline.grid-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 #publications-list {
