@@ -345,7 +345,7 @@ blockquote.testimonial {
 }
 
 .resume.is-short blockquote.testimonial {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-style: italic;
   margin-right: 2.8rem;
   margin-top: 1rem;
@@ -353,7 +353,7 @@ blockquote.testimonial {
 
 @media print {
   .resume.is-short blockquote.testimonial {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
 
   .resume.is-short blockquote.testimonial .blockquote-footer {
