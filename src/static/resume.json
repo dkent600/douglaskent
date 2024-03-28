@@ -102,7 +102,7 @@
       "remote": true,
       "website": "https://www.curvelabs.eu/",
       "startDate": "2020-08",
-      "summary": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (Defi) and regenerative finance (Refi). Among others, led the development team for a Refi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
+      "summary": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (Defi) and regenerative finance (Refi). Among others, led the development team for a Refi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.  Here are couple of sites, but note they have been discontinued: <a href='https://deals.prime.xyz' target='_blank'>Prime Deals</a> and <a href='https://launch.prime.xyz' target='_blank'>Prime Launch</a>.",
       "endDate": "2022-11",
       "highlights": [
         "Lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\" target=\"_blank\">Prime Pools (no longer active)</a>, <a href=\"https://primelock.eth.link/\" target=\"_blank\">Prime Locking For Reputation</a> and the <a href=\"https://primedao.eth.link\" target=\"_blank\">original PrimeDAO Home Page (no longer active)</a>",
@@ -164,7 +164,7 @@
       "remote": true,
       "website": "http://www.daostack.io/",
       "startDate": "2017-09",
-      "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first major DAO designs in the history of DAOs.  Used, reviewed and deployed Ethereum smart contracts, wrote a Typescript library to support dApps in accessing the smart contracts, wrote a test dApp, significantly contributed to the dApp Alchemy used for working with the DAOs, and more...",
+      "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first major DAO designs in the history of DAOs.  Used, reviewed and deployed Solidity smart contracts, wrote a Typescript library to support dApps in accessing the smart contracts, wrote a test dApp, significantly contributed to the dApp Alchemy used for working with the DAOs, and more...",
       "endDate": "2020-10",
       "highlights": [
         "One of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
