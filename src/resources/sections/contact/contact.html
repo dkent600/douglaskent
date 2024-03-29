@@ -2,7 +2,7 @@
   <bindable name='profile'></bindable>
   <a class="external-link" href.bind="profile.url" target="_blank" rel="noopener noreferrer">
     <i class="profile-icon ${profile.icon}"></i>
-    <span class="d-none d-print-inline">${profile.url}</span>
+    <span class="d-none d-print-inline">${profile.url.replace('mailto:', '')}</span>
     <span class="d-print-none">${profile.network}</span>
     <!-- ${profile.network} -->
   </a>
