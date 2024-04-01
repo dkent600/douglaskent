@@ -123,6 +123,12 @@ i.quality-bullet {
   padding-right: 3rem;
 }
 
+@media (max-width: 800px) {
+  .accomplishment-body {
+    padding-right: 0;
+    text-align: center;
+  }
+}
 .accomplishment.list-group-item {
   padding-left: 0 !important;
 }
