@@ -327,6 +327,12 @@ nav#TOC {
 .side-panel {
   position: fixed;
   z-index: 1030;
+  // so will scroll when not enought height to page
+  overflow: auto;
+  height: 100%; /* Fallback for browsers that don't support -webkit-fill-available */
+  height: -moz-available; /* For Mozilla-based browsers */
+  height: -webkit-fill-available; /* For WebKit-based browsers */
+  height: fill-available; /* Standard property, if supported */
 }
 
 blockquote.testimonial .citation::before {
