@@ -327,7 +327,8 @@ nav#TOC {
 .side-panel {
   position: fixed;
   z-index: 1030;
-  // so will scroll when not enought height to page
+  // so will scroll when not enough height to the viewport
+  // unfortunately doesn't produce a scrollbar in Firefox
   overflow: auto;
   height: 100%; /* Fallback for browsers that don't support -webkit-fill-available */
   height: -moz-available; /* For Mozilla-based browsers */
