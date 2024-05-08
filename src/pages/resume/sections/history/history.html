@@ -1,5 +1,6 @@
 <template as-custom-element="company">
   <bindable name="company"></bindable>
+  <bindable name="companySkills"></bindable>
   <bindable name="index"></bindable>
   <div class="company">
     <h5 class="company-position">${company.position}</h5>
@@ -23,7 +24,7 @@
     </span> -->
     <div class="company-summary" innerhtml.bind="company.summary | sanitizeHTML"></div>
 
-    <div class="company-skills">
+    <div resume-type="complete" class="company-skills">
       <span repeat.for="skill of companySkills(company)">
         <span if.bind="skill">
           <span if.bind="skill.url" class="badge badge-pill skill-name">
@@ -49,7 +50,6 @@
         <div class="collapse fade" id="highlights_${index}">
           <ul>
             <li repeat.for="highlight of company.highlights">
-              <!-- <div class="collapsible-header">More...</div> -->
               <div class="collapsible-body">
                 <span innerhtml.bind="highlight | sanitizeHTML"></span>
               </div>
@@ -57,9 +57,6 @@
           </ul>
         </div>
       </div>
-      <!-- <div class="highlights printing">See my dynamic
-        resume (<a class="show-link external-link" href="http://www.douglaskent.com/" target="_blank"
-          rel="noopener noreferrer">http://www.douglaskent.com/</a>) for highlights about this position!</div> -->
     </div>
   </div>
 </template>
@@ -68,7 +65,7 @@
   <h3><span resume-type="short">Recent </span>Work History</h3>
   <div class="content">
     <div repeat.for="company of companiesFirst">
-      <company company.bind="company" index.bind="$index">
+      <company company.bind="company" index.bind="$index" company-skills.bind="companySkills.bind($parent)">
       </company>
     </div>
 
@@ -86,7 +83,8 @@
 
     <div class="collapse fade" id="allCompanies">
       <div repeat.for="company of companiesTheRest">
-        <company company.bind="company" index.bind="$index + entireHistoryStartIndex">
+        <company company.bind="company" index.bind="$index + entireHistoryStartIndex"
+          company-skills.bind="companySkills.bind($parent)">
         </company>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { customElement } from "aurelia";
 
-import { IPublication, IResumeStore } from "../../../stores/resume-store";
+import { IPublication, IResumeStore } from "../../../../stores/resume-store";
 
 import template from "./publications.html";
 

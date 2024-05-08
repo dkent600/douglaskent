@@ -1,6 +1,6 @@
 import { bindable, customElement } from "aurelia";
 
-import { IBasics, ICitizenship, ILanguage, IResumeStore } from "../../../stores/resume-store";
+import { IBasics, ICitizenship, ILanguage, IResumeStore } from "../../../../stores/resume-store";
 
 import template from "./travel.html";
 

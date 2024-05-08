@@ -1,6 +1,6 @@
 import { customElement } from "aurelia";
 
-import { IQuality, IResumeStore } from "../../../stores/resume-store";
+import { IQuality, IResumeStore } from "../../../../stores/resume-store";
 
 import template from "./reasons.html";
 

@@ -1,6 +1,6 @@
 import { bindable, customElement } from "aurelia";
 
-import { IBasics, IResumeStore } from "../../../stores/resume-store";
+import { IBasics, IResumeStore } from "../../../../stores/resume-store";
 
 import template from "./introduction.html";
 @customElement({ name: "introduction", template })

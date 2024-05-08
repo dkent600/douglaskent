@@ -1,6 +1,6 @@
 import { bindable, customElement } from "aurelia";
 
-import { ICategory, IResumeStore, ISkill } from "../../../stores/resume-store";
+import { ICategory, IResumeStore, ISkill } from "../../../../stores/resume-store";
 
 import template from "./skills.html";
 
@@ -12,7 +12,6 @@ export class Skills {
   categoryToSkills = new Map<string, Set<ISkill>>();
   skillCategories!: Array<ICategory>;
   showSkillCategories = false;
-  @bindable skillByName!: Map<string, ISkill>;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
     this.skillCategories = this.resumeStore.skillCategories;

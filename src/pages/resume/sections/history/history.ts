@@ -1,6 +1,6 @@
-import { bindable, customElement } from "aurelia";
+import { customElement } from "aurelia";
 
-import { ICompany, IResumeStore, ISkill } from "../../../stores/resume-store";
+import { ICompany, IResumeStore, ISkill } from "../../../../stores/resume-store";
 
 import template from "./history.html";
 
@@ -9,17 +9,38 @@ export class History {
   companies!: Array<ICompany>;
   showingEntireHistory = false;
   entireHistoryStartIndex = 3;
-  @bindable skillByName!: Map<string, ISkill>;
-
+  skillByName!: Map<string, ISkill>; 
+  
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
     this.companies = this.resumeStore.companies
-      // .sort((a, b) => {
+    // .sort((a, b) => {
       //   return evaluateDateTime(a.endDate, b.endDate, -1);
       // })
       .map((s, _index) => {
         s.showingHighlights = false;
         return s;
       });
+      
+    this.skillByName = new Map<string, ISkill>();
+     /**
+      * Key the skill element by its lowercase name and all its aliases.
+      * If there is a circular reference here between
+      * name and the alias, then what ever is the last one encountered
+      * will be keyed by the duplicated skill name.
+      */
+    for (const skill of this.resumeStore.skills) {
+      // will overwrite dups
+      this.skillByName.set(skill.name.toLowerCase(), skill);
+      const aliases = skill.aliases ?? [];
+      /**
+       * when the alias is referenced in a job, it will be
+       * displayed using this skill.
+       */
+      for (const alias of aliases) {
+        // will overwrite dups
+        this.skillByName.set(alias.toLowerCase(), skill);
+      }
+    }
   }
 
   get companiesFirst(): Array<ICompany> {
@@ -30,7 +51,7 @@ export class History {
     return this.companies.slice(this.entireHistoryStartIndex);
   }
 
-  companySkills(company: ICompany): Array<ISkill> {
+  companySkills(company: ICompany, skillByName: Map<string, ISkill>): Array<ISkill> {
     return company.skills
       .map((name: string) => {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
