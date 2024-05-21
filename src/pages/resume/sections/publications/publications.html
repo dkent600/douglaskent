@@ -8,7 +8,7 @@
         aria-expanded="false" aria-controls="publications-list">${showingPublications ? "&lt;&lt; See Less" : "See More
         &gt;&gt;"}</a>.
     </p>
-    <div class="collapse fade" id="publications-list">
+    <div class="collapse ${expanded ? 'show' : ''} fade" id="publications-list">
       <div repeat.for="publication of publications">
         <p>
           <span class="publication-name">${publication.name}</span>, ${publication.releaseDate},

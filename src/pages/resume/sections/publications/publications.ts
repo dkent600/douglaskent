@@ -1,4 +1,4 @@
-import { customElement } from "aurelia";
+import { bindable, customElement } from "aurelia";
 
 import { IPublication, IResumeStore } from "../../../../stores/resume-store";
 
@@ -8,9 +8,14 @@ import template from "./publications.html";
 export class Publications {
   publications!: Array<IPublication>;
   showingPublications = false;
+  @bindable expanded = false;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
     this.publications = this.resumeStore.publications;
+  }
+
+  binding() {
+    this.showingPublications = this.expanded;
   }
 
   toggleshowingPublications() {

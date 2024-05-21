@@ -11,6 +11,7 @@ export class Skills {
    */
   categoryToSkills = new Map<string, Set<ISkill>>();
   skillCategories!: Array<ICategory>;
+  @bindable expanded = false;
   showSkillCategories = false;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
@@ -18,6 +19,7 @@ export class Skills {
   }
 
   binding() {
+    this.showSkillCategories = this.expanded;
     /**
      * Key skills in a category by the keyword that they have in common.
      * "Hide" means don't show among the categories, but the

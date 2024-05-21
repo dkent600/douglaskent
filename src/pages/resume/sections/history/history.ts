@@ -1,4 +1,4 @@
-import { customElement } from "aurelia";
+import { bindable, customElement } from "aurelia";
 
 import { ICompany, IResumeStore, ISkill } from "../../../../stores/resume-store";
 
@@ -10,6 +10,7 @@ export class History {
   showingEntireHistory = false;
   entireHistoryStartIndex = 3;
   skillByName!: Map<string, ISkill>; 
+  @bindable expanded = false;
   
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
     this.companies = this.resumeStore.companies
@@ -41,6 +42,10 @@ export class History {
         this.skillByName.set(alias.toLowerCase(), skill);
       }
     }
+  }
+
+  binding() {
+    this.showingEntireHistory = this.expanded;
   }
 
   get companiesFirst(): Array<ICompany> {
@@ -90,6 +95,6 @@ export class History {
   }
 
   private toggleHighlights(company: ICompany): void {
-    company.showingHighlights = !company.showingHighlights;
+    company.showingHighlights = !company.showingHighlights ?? false;
   }
 }

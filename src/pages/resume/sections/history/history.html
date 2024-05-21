@@ -2,6 +2,8 @@
   <bindable name="company"></bindable>
   <bindable name="companySkills"></bindable>
   <bindable name="index"></bindable>
+  <bindable name="expanded"></bindable>
+  <bindable name="toggleHighlights"></bindable>
   <div class="company">
     <h5 class="company-position">${company.position}</h5>
     <div class="company-name" if.bind="!company.website">${company.company}</div>
@@ -47,7 +49,7 @@
           </span>
         </a>
 
-        <div class="collapse fade" id="highlights_${index}">
+        <div class="collapse ${expanded ? 'show' : ''} fade" id="highlights_${index}">
           <ul>
             <li repeat.for="highlight of company.highlights">
               <div class="collapsible-body">
@@ -65,7 +67,8 @@
   <h3><span resume-type="short">Recent </span>Work History</h3>
   <div class="content">
     <div repeat.for="company of companiesFirst">
-      <company company.bind="company" index.bind="$index" company-skills.bind="companySkills.bind($parent)">
+      <company company.bind="company" index.bind="$index" company-skills.bind="companySkills.bind($parent)"
+        expanded.bind="expanded" toggle-highlights.bind="toggleHighlights">
       </company>
     </div>
 
@@ -81,10 +84,11 @@
       </h6>
     </div>
 
-    <div class="collapse fade" id="allCompanies">
+    <div class="collapse ${showingEntireHistory ? 'show' : ''} fade" id="allCompanies">
       <div repeat.for="company of companiesTheRest">
         <company company.bind="company" index.bind="$index + entireHistoryStartIndex"
-          company-skills.bind="companySkills.bind($parent)">
+          company-skills.bind="companySkills.bind($parent)" expanded.bind="expanded"
+          toggle-highlights.bind="toggleHighlights">
         </company>
       </div>
     </div>

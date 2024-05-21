@@ -1,7 +1,7 @@
 import { customElement, IContainer } from "aurelia";
-import { IRouteViewModel, Params } from "@aurelia/router-lite";
+import { IRouteViewModel, NavigationInstruction, Params, RouteNode } from "@aurelia/router-lite";
 
-import { IBasics, IResumeStore, ISkill } from "../../stores/resume-store";
+import { IBasics, IResumeStore } from "../../stores/resume-store";
 
 import template from "./resume.html";
 import * as resumeComponents from "./sections";
@@ -21,19 +21,24 @@ export class Resume implements IRouteViewModel {
    * given the name or alias of a skill, return the skill json
    */
   basics!: IBasics;
+  /**
+   * used by CSS
+   */
   isShort = false;
+  expanded = false;
 
   constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
     this.basics = this.resumeStore.basics;
   }
     
-  canLoad(parameters: Params) {
+  canLoad(parameters: Params, next: RouteNode, _current: RouteNode | null): boolean | NavigationInstruction | NavigationInstruction[] | Promise<boolean> {
     /**
      * `this.isShort` is used to set the is-short class at the top of this view
      * WhichResumeOnly.isShort is used by the `resume-type` custom attribute to control what is displayed
      * depending on whether we're showing the short or complete resume
      */
-    WhichResumeOnly.isShort = this.isShort = parameters.short === "short";
+    WhichResumeOnly.isShort = this.isShort = !!parameters.short;
+    this.expanded = Boolean(parseInt(next.queryParams.get("expanded") ?? '0'));
     return true;
   }
 
