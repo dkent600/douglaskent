@@ -1,10 +1,24 @@
-import { au2, rawHtml } from './vite.plugins';
+import au2 from '@aurelia/vite-plugin';
 
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
 import nodePolyfills from 'rollup-plugin-polyfill-node';
 import { visualizer } from 'rollup-plugin-visualizer';
-import { defineConfig, Plugin, splitVendorChunkPlugin } from 'vite';
+import { defineConfig, Plugin } from 'vite';
 import sassGlobImports from 'vite-plugin-sass-glob-import';
+import * as rollupPluginutils from "rollup-pluginutils";
+
+const rawHtml = () => {
+  const filter = rollupPluginutils.createFilter("**/*.ts", undefined);
+  return {
+    name: "raw",
+    transform: function transform(code: string, id: string) {
+      if (!filter(id)) return;
+      if (code.includes("__au2ViewDef")) return;
+      code = code.replaceAll(/(import .* from .*)\.html/g, "$1.html?raw");
+      return { code };
+    },
+  };
+};
 
 export default defineConfig({
   server: {
@@ -22,8 +36,7 @@ export default defineConfig({
     target: 'es2022',
   },
   plugins: [
-    au2({ include: 'src/**/*.ts', pre: true, hmr: true, enableConventions: false }),
-    splitVendorChunkPlugin(),
+    au2({pre: true, hmr: true, enableConventions: false }),
     rawHtml(),
     visualizer({
       emitFile: true,
