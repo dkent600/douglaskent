@@ -6,8 +6,6 @@ export * from "./accomplishments/accomplishments";
 export * from "./skills/skills";
 export * from "./history/history";
 export * from "./education/education";
-export * from "./languages/languages";
-export * from "./citizenship/citizenship";
 export * from "./publications/publications";
 export * from "./toc/toc";
 export * from "./travel/travel";
