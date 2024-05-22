@@ -2,7 +2,7 @@
   "compilerOptions": {
     "noEmit": true,
     "strict": true,
-    "module": "esnext",
+    "module": "es2022",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "target": "es2022",

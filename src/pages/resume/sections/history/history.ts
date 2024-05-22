@@ -1,4 +1,4 @@
-import { bindable, customElement } from "aurelia";
+import { bindable, customElement, resolve } from "aurelia";
 
 import { ICompany, IResumeStore, ISkill } from "../../../../stores/resume-store";
 
@@ -6,24 +6,22 @@ import template from "./history.html";
 
 @customElement({ name: "history", template })
 export class History {
-  companies!: Array<ICompany>;
+  @bindable expanded = false;
   showingEntireHistory = false;
   entireHistoryStartIndex = 3;
-  skillByName!: Map<string, ISkill>; 
-  @bindable expanded = false;
-  
-  constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
-    this.companies = this.resumeStore.companies
+  readonly skillByName: Map<string, ISkill>= new Map<string, ISkill>(); 
+  readonly resumeStore = resolve(IResumeStore);
+  readonly companies: Array<ICompany> = this.resumeStore.companies
     // .sort((a, b) => {
-      //   return evaluateDateTime(a.endDate, b.endDate, -1);
-      // })
-      .map((s, _index) => {
-        s.showingHighlights = false;
-        return s;
-      });
-      
-    this.skillByName = new Map<string, ISkill>();
-     /**
+    //   return evaluateDateTime(a.endDate, b.endDate, -1);
+    // })
+    .map((s, _index) => {
+      s.showingHighlights = false;
+      return s;
+    });
+
+    constructor() {
+      /**
       * Key the skill element by its lowercase name and all its aliases.
       * If there is a circular reference here between
       * name and the alias, then what ever is the last one encountered

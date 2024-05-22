@@ -1,4 +1,4 @@
-import { customElement, IContainer } from "aurelia";
+import { customElement, IContainer, resolve } from "aurelia";
 import { IRouteViewModel, NavigationInstruction, Params, RouteNode } from "@aurelia/router-lite";
 
 import { IBasics, IResumeStore } from "../../stores/resume-store";
@@ -17,17 +17,18 @@ export class ResumeDependencies {
 
 @customElement({ name: "resume", template })
 export class Resume implements IRouteViewModel {
+  readonly resumeStore = resolve(IResumeStore);
   /**
    * given the name or alias of a skill, return the skill json
    */
-  basics!: IBasics;
+  readonly basics: IBasics = this.resumeStore.basics;
   /**
    * used by CSS
    */
   isShort = false;
   expanded = false;
 
-  constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
+  constructor() {
     this.basics = this.resumeStore.basics;
   }
     

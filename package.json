@@ -70,11 +70,12 @@
     "serve-static": "^1.15.0",
     "socket.io": "^4.5.4",
     "tslib": "^2.4.1",
-    "typescript": "5.4.2",
-    "vite": "^4.3.9",
-    "vite-plugin-sass-glob-import": "^2.0.0"
+    "typescript": "5.4.5",
+    "vite": "5.2.11",
+    "vite-plugin-sass-glob-import": "3.0.2"
   },
   "overrides": {
+    "esbuild": "^0.21.3",
     "chokidar": "^3.5.3",
     "glob-stream": "^7.0.0",
     "glob-parent": "^6.0.2",

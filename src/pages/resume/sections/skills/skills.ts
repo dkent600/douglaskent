@@ -1,4 +1,4 @@
-import { bindable, customElement } from "aurelia";
+import { bindable, customElement, resolve } from "aurelia";
 
 import { ICategory, IResumeStore, ISkill } from "../../../../stores/resume-store";
 
@@ -10,13 +10,10 @@ export class Skills {
    * Map a category of skills to a set of skill names.
    */
   categoryToSkills = new Map<string, Set<ISkill>>();
-  skillCategories!: Array<ICategory>;
   @bindable expanded = false;
   showSkillCategories = false;
-
-  constructor(@IResumeStore private readonly resumeStore: IResumeStore) {
-    this.skillCategories = this.resumeStore.skillCategories;
-  }
+  readonly resumeStore = resolve(IResumeStore);
+  readonly skillCategories: Array<ICategory> = this.resumeStore.skillCategories;
 
   binding() {
     this.showSkillCategories = this.expanded;
