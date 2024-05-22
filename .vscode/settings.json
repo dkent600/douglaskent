@@ -1,5 +1,6 @@
 {
   "javascript.format.enable": true,
   "eslint.format.enable": true,
-  "typescript.format.enable": false
+  "typescript.format.enable": false,
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
