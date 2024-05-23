@@ -36,7 +36,7 @@ export default defineConfig({
     target: 'es2022',
   },
   plugins: [
-    au2({pre: true, hmr: true, enableConventions: false }),
+    au2({hmr: true, enableConventions: true }),
     rawHtml(),
     visualizer({
       emitFile: true,
