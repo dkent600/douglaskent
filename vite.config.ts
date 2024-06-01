@@ -25,6 +25,9 @@ export default defineConfig({
     port: 9000,
     strictPort: true,
   },
+  esbuild: {
+    target: "es2022"
+  },
   build: {
     rollupOptions: {
       plugins: [nodePolyfills() as Plugin],
