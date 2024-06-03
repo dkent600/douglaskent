@@ -39,9 +39,20 @@ export class Resume implements IRouteViewModel {
      * depending on whether we're showing the short or complete resume
      */
     WhichResumeOnly.isShort = this.isShort = !!parameters.short;
-    this.expanded = Boolean(parseInt(next.queryParams.get("expanded") ?? '0'));
+    //this.expanded = Boolean(parseInt(instruction..get("expanded") ?? '0'));
     return true;
   }
+    
+    // canLoad(parameters: Parameters, instruction: RoutingInstruction, _navigation: Navigation): boolean {
+  //   /**
+  //    * `this.isShort` is used to set the is-short class at the top of this view
+  //    * WhichResumeOnly.isShort is used by the `resume-type` custom attribute to control what is displayed
+  //    * depending on whether we're showing the short or complete resume
+  //    */
+  //   WhichResumeOnly.isShort = this.isShort = !!parameters.short;
+  //   this.expanded = Boolean(parseInt(instruction..get("expanded") ?? '0'));
+  //   return true;
+  // }
 
   attached() {
     ($("body") as any).bootstrapMaterialDesign();
