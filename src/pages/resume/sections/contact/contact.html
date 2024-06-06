@@ -1,17 +1,17 @@
 <template as-custom-element="tink">
-  <bindable name='profile'></bindable>
+  <bindable name="profile"></bindable>
   <a class="external-link" href.bind="profile.url" target="_blank" rel="noopener noreferrer">
     <i class="profile-icon ${profile.icon}"></i>
-    <span class="d-none d-print-inline">${profile.url.replace('mailto:', '')}</span>
+    <span class="d-none d-print-inline">${profile.url.replace("mailto:", "")}</span>
     <span class="d-print-none">${profile.network}</span>
     <!-- ${profile.network} -->
   </a>
 </template>
 
 <template as-custom-element="info">
-  <bindable name='profiles'></bindable>
-  <bindable name='inline'></bindable>
-  <bindable name='basics'></bindable>
+  <bindable name="profiles"></bindable>
+  <bindable name="inline"></bindable>
+  <bindable name="basics"></bindable>
   <div>${basics.phone}</div>
   <div>${basics.phone2}</div>
   <!-- <div>
@@ -66,4 +66,4 @@
   <hr />
   <testimonials just-one="true" resume-type="short">
   </testimonials>
-</aside
+</aside>
