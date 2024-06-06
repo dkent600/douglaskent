@@ -93,6 +93,6 @@ export class History {
   }
 
   private toggleHighlights(company: ICompany): void {
-    company.showingHighlights = !company.showingHighlights ?? false;
+    company.showingHighlights = !company.showingHighlights;
   }
 }
