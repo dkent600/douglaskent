@@ -1,29 +1,30 @@
 import { customElement } from "aurelia";
-import { route } from "@aurelia/router-lite";
+import { IRouteableComponent, routes } from "@aurelia/router";
 
 import { Resume } from "../resume/resume";
 
 import view from "./app.html";
 
-@route({
-  routes: [
-    {
-      path: ["", "resume/:short?"],
-      component: Resume,
-      title: "Douglas Kent",
-    },
-    {
-      path: ["techresume"],
-      redirectTo: "resume",
-    },
-  ],
-  fallback: "",
-})
+@routes([
+  {
+    path: ["", "resume/:short?"],
+    component: Resume,
+    title: "Douglas Kent",
+  },
+  {
+    path: ["techresume"],
+    redirectTo: "resume",
+  },
+  {
+    path: ["*"],
+    component: Resume,
+  },
+])
 @customElement({
   name: "app",
   template: view,
 })
-export class App {
+export class App implements IRouteableComponent {
   binding() {
     $("#splash").css("display", "none");
   }

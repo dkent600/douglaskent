@@ -22,9 +22,9 @@
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css"
   },
   "dependencies": {
-    "@aurelia/router-lite": "v2.0.0-beta.17",
+    "@aurelia/router": "latest",
     "arrive": "^2.4.1",
-    "aurelia": "v2.0.0-beta.17",
+    "aurelia": "latest",
     "bootstrap": "^4.1.1",
     "bootstrap-material-design": "^4.1.1",
     "dompurify": "^3.0.1",
@@ -34,8 +34,8 @@
     "popper.js": "^1.11.0"
   },
   "devDependencies": {
-    "@aurelia/plugin-gulp": "v2.0.0-beta.17",
-    "@aurelia/vite-plugin": "^2.0.0-beta.17",
+    "@aurelia/plugin-gulp": "latest",
+    "@aurelia/vite-plugin": "latest",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@rollup/plugin-inject": "^5.0.3",
     "@types/bootstrap": "^3.3.36",
@@ -75,6 +75,7 @@
     "tslib": "^2.4.1",
     "typescript": "5.4.5",
     "vite": "^5.2.12",
+    "vite-plugin-node-polyfills": "^0.22.0",
     "vite-plugin-sass-glob-import": "3.0.2"
   },
   "overrides": {

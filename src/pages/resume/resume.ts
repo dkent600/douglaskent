@@ -1,5 +1,5 @@
 import { customElement, IContainer, resolve } from "aurelia";
-import { IRouteViewModel, NavigationInstruction, Params, RouteNode } from "@aurelia/router-lite";
+import { IRouteableComponent, LoadInstruction, Navigation, Parameters, RoutingInstruction } from "@aurelia/router";
 
 import { WhichResumeOnly } from "../../resources/attributes/whichResumeOnly";
 import { IBasics, IResumeStore } from "../../stores/resume-store";
@@ -16,11 +16,11 @@ export class ResumeDependencies {
 }
 
 @customElement({ name: "resume", template })
-export class Resume implements IRouteViewModel {
-  readonly resumeStore = resolve(IResumeStore);
+export class Resume implements IRouteableComponent {
   /**
    * given the name or alias of a skill, return the skill json
    */
+  readonly resumeStore = resolve(IResumeStore);
   readonly basics: IBasics = this.resumeStore.basics;
   /**
    * used by CSS
@@ -31,15 +31,14 @@ export class Resume implements IRouteViewModel {
   constructor() {
     this.basics = this.resumeStore.basics;
   }
-
-  canLoad(parameters: Params, _next: RouteNode, _current: RouteNode | null): boolean | NavigationInstruction | NavigationInstruction[] | Promise<boolean> {
+  canLoad(parameters: Parameters, _instruction: RoutingInstruction, _navigation: Navigation): boolean | LoadInstruction[] | Promise<boolean | LoadInstruction[]> {
     /**
      * `this.isShort` is used to set the is-short class at the top of this view
      * WhichResumeOnly.isShort is used by the `resume-type` custom attribute to control what is displayed
      * depending on whether we're showing the short or complete resume
      */
-    WhichResumeOnly.isShort = this.isShort = !!parameters.short;
-    //this.expanded = Boolean(parseInt(instruction..get("expanded") ?? '0'));
+    WhichResumeOnly.isShort = this.isShort = parameters.short === "short";
+    this.expanded = Boolean(parameters.expanded ?? false);
     return true;
   }
 
@@ -47,7 +46,7 @@ export class Resume implements IRouteViewModel {
   //   /**
   //    * `this.isShort` is used to set the is-short class at the top of this view
   //    * WhichResumeOnly.isShort is used by the `resume-type` custom attribute to control what is displayed
-  //    * depending on whether we're showing the short or complete resume
+  // 1   * depending on whether we're showing the short or complete resume
   //    */
   //   WhichResumeOnly.isShort = this.isShort = !!parameters.short;
   //   this.expanded = Boolean(parseInt(instruction..get("expanded") ?? '0'));

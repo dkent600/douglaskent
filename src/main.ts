@@ -1,5 +1,5 @@
 import Aurelia from "aurelia";
-import { RouterConfiguration } from "@aurelia/router-lite";
+import { RouterConfiguration } from "@aurelia/router";
 
 import "arrive"; // do bmd does it's thing whenever views are attached
 import "node-waves";

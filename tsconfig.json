@@ -15,9 +15,6 @@
     "rootDir": ".",
     "useDefineForClassFields": false,
   },
-  "typeAcquisition": {
-    "enable": true
-  },
   "include": [
     "src",
     "./*.ts",
