@@ -25,8 +25,6 @@ export default defineConfig({
         manualChunks: (id) => {
           if (id.includes("jquery")) {
             return "jquery";
-            // jQuery: ["jQuery"],
-            // aurelia: ["@aurelia"],
           } else if (id.includes("@aurelia")) {
             return "aurelia";
           } else if (id.includes("node_modules")) {
