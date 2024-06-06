@@ -19,6 +19,23 @@ const rawHtml = () => {
 };
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes("jquery")) {
+            return "jquery";
+            // jQuery: ["jQuery"],
+            // aurelia: ["@aurelia"],
+          } else if (id.includes("@aurelia")) {
+            return "aurelia";
+          } else if (id.includes("node_modules")) {
+            return "vendor";
+          }
+        },
+      },
+    },
+  },
   server: {
     open: !process.env.CI,
     port: 9000,
