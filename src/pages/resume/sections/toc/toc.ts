@@ -6,7 +6,7 @@ import template from "./toc.html";
 export class TOC {
   @bindable forDropdownMenu = false;
 
-  goto(where:string) {
+  goto(where: string) {
     const el = document.getElementById(where);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });

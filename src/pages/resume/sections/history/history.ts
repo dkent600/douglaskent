@@ -9,7 +9,7 @@ export class History {
   @bindable expanded = false;
   showingEntireHistory = false;
   entireHistoryStartIndex = 3;
-  readonly skillByName: Map<string, ISkill>= new Map<string, ISkill>(); 
+  readonly skillByName: Map<string, ISkill> = new Map<string, ISkill>();
   readonly resumeStore = resolve(IResumeStore);
   readonly companies: Array<ICompany> = this.resumeStore.companies
     // .sort((a, b) => {
@@ -20,13 +20,13 @@ export class History {
       return s;
     });
 
-    constructor() {
-      /**
-      * Key the skill element by its lowercase name and all its aliases.
-      * If there is a circular reference here between
-      * name and the alias, then what ever is the last one encountered
-      * will be keyed by the duplicated skill name.
-      */
+  constructor() {
+    /**
+     * Key the skill element by its lowercase name and all its aliases.
+     * If there is a circular reference here between
+     * name and the alias, then what ever is the last one encountered
+     * will be keyed by the duplicated skill name.
+     */
     for (const skill of this.resumeStore.skills) {
       // will overwrite dups
       this.skillByName.set(skill.name.toLowerCase(), skill);
@@ -54,7 +54,7 @@ export class History {
     return this.companies.slice(this.entireHistoryStartIndex);
   }
 
-  companySkills(company: ICompany, skillByName: Map<string, ISkill>): Array<ISkill> {
+  companySkills(company: ICompany, _skillByName: Map<string, ISkill>): Array<ISkill> {
     return company.skills
       .map((name: string) => {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

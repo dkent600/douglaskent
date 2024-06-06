@@ -8,5 +8,5 @@ import template from "./testimonials.html";
 export class Testimonials {
   @bindable justOne = false;
   readonly resumeStore = resolve(IResumeStore);
-  readonly testimonials:  Array<ITestimonial> = this.resumeStore.testimonials;
+  readonly testimonials: Array<ITestimonial> = this.resumeStore.testimonials;
 }

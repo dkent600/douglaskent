@@ -1,4 +1,4 @@
-import { bindable, customElement, resolve } from "aurelia";
+import { customElement, resolve } from "aurelia";
 
 import { IBasics, ICitizenship, ILanguage, IResumeStore } from "../../../../stores/resume-store";
 

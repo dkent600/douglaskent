@@ -1,25 +1,27 @@
-import { customElement } from 'aurelia';
-import view from './app.html';
-import { Resume } from '../resume/resume';
-import { route } from '@aurelia/router-lite';
+import { customElement } from "aurelia";
+import { route } from "@aurelia/router-lite";
+
+import { Resume } from "../resume/resume";
+
+import view from "./app.html";
 
 @route({
   routes: [
     {
-      path: ['', 'resume/:short?'],
+      path: ["", "resume/:short?"],
       component: Resume,
-      title: 'Douglas Kent',
+      title: "Douglas Kent",
     },
     {
-      path: ['techresume'],
-      redirectTo: 'resume',
+      path: ["techresume"],
+      redirectTo: "resume",
     },
   ],
-  fallback: '',
+  fallback: "",
 })
 @customElement({
-  name: 'app',
-  template: view
+  name: "app",
+  template: view,
 })
 export class App {
   binding() {

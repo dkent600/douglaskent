@@ -1,13 +1,13 @@
 import { customElement, IContainer, resolve } from "aurelia";
 import { IRouteViewModel, NavigationInstruction, Params, RouteNode } from "@aurelia/router-lite";
 
+import { WhichResumeOnly } from "../../resources/attributes/whichResumeOnly";
 import { IBasics, IResumeStore } from "../../stores/resume-store";
 
 import template from "./resume.html";
 import * as resumeComponents from "./sections";
 
 import "./resume.scss";
-import { WhichResumeOnly } from '../../resources/attributes/whichResumeOnly';
 
 export class ResumeDependencies {
   public static register(container: IContainer): void {
@@ -31,8 +31,8 @@ export class Resume implements IRouteViewModel {
   constructor() {
     this.basics = this.resumeStore.basics;
   }
-    
-  canLoad(parameters: Params, next: RouteNode, _current: RouteNode | null): boolean | NavigationInstruction | NavigationInstruction[] | Promise<boolean> {
+
+  canLoad(parameters: Params, _next: RouteNode, _current: RouteNode | null): boolean | NavigationInstruction | NavigationInstruction[] | Promise<boolean> {
     /**
      * `this.isShort` is used to set the is-short class at the top of this view
      * WhichResumeOnly.isShort is used by the `resume-type` custom attribute to control what is displayed
@@ -42,8 +42,8 @@ export class Resume implements IRouteViewModel {
     //this.expanded = Boolean(parseInt(instruction..get("expanded") ?? '0'));
     return true;
   }
-    
-    // canLoad(parameters: Parameters, instruction: RoutingInstruction, _navigation: Navigation): boolean {
+
+  // canLoad(parameters: Parameters, instruction: RoutingInstruction, _navigation: Navigation): boolean {
   //   /**
   //    * `this.isShort` is used to set the is-short class at the top of this view
   //    * WhichResumeOnly.isShort is used by the `resume-type` custom attribute to control what is displayed
@@ -55,8 +55,8 @@ export class Resume implements IRouteViewModel {
   // }
 
   attached() {
-    ($("body") as any).bootstrapMaterialDesign();
-    
+    ($("body") as HTMLElement).bootstrapMaterialDesign();
+
     const bookmark = window.location.hash;
     if (bookmark) {
       this.scrollToBookmark(bookmark.slice(1));

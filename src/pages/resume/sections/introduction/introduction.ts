@@ -7,5 +7,5 @@ import template from "./introduction.html";
 @customElement({ name: "introduction", template })
 export class Introduction {
   readonly resumeStore = resolve(IResumeStore);
-  readonly basics:IBasics = this.resumeStore.basics;
+  readonly basics: IBasics = this.resumeStore.basics;
 }
