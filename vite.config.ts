@@ -4,7 +4,18 @@ import { visualizer } from "rollup-plugin-visualizer";
 import * as rollupPluginutils from "rollup-pluginutils";
 import { defineConfig } from "vite";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
-
+/**
+ * This is required by the rollup build which will otherwise barf
+ * on this statement in the ts:
+ *
+ *    `import template from "my-view.html"' for use of `template` in the `customElement` decorator.
+ *
+ * One can either change that to:
+ *
+ *    `import template from "my-view.html?raw"`
+ *
+ * or use rawHtml() below to do it globally for you.
+ */
 const rawHtml = () => {
   const filter = rollupPluginutils.createFilter("**/*.ts", undefined);
   return {
