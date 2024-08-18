@@ -9,7 +9,7 @@ import view from "./app.html";
   {
     path: ["", "resume/:short?"],
     component: Resume,
-    title: "Douglas Kent",
+    title: "Resume",
   },
   {
     path: ["techresume"],

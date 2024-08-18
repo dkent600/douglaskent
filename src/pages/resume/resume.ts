@@ -31,7 +31,7 @@ export class Resume implements IRouteableComponent {
   constructor() {
     this.basics = this.resumeStore.basics;
   }
-  canLoad(parameters: Parameters, _instruction: RoutingInstruction, _navigation: Navigation): boolean | LoadInstruction[] | Promise<boolean | LoadInstruction[]> {
+  canLoad(parameters: Parameters, _instruction: RoutingInstruction, navigation: Navigation): boolean | LoadInstruction[] | Promise<boolean | LoadInstruction[]> {
     /**
      * `this.isShort` is used to set the is-short class at the top of this view
      * WhichResumeOnly.isShort is used by the `resume-type` custom attribute to control what is displayed
@@ -39,6 +39,10 @@ export class Resume implements IRouteableComponent {
      */
     WhichResumeOnly.isShort = this.isShort = parameters.short === "short";
     this.expanded = Boolean(parameters.expanded ?? false);
+    /**
+     * Foregoing RouterConfiguration.customize...title for this because I am not sure how to set the title otherwise
+     */
+    navigation.title = this.isShort ? "Douglas Kent - Short Resume" : "Douglas Kent - Resume";
     return true;
   }
 
