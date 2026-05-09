@@ -49,6 +49,7 @@
   "skillCategories": [
     "Website and Application Development",
     "Blockchain",
+    "AI",
     "Software Languages",
     "Markup Languages",
     "Data Stores",
@@ -66,6 +67,64 @@
     "Development Processes"
   ],
   "work": [
+    {
+      "company": "Personal Project",
+      "position": "dApp Designer and Developer",
+      "remote": true,
+      "website": "https://github.com/dkent600/batch-take-profit",
+      "startDate": "2025-06",
+      "summary": "Fully designed and created a sophisticated cryptocurrency portfolio management dApp. Is the frontend component of the Butterfly App Ecosystem, designed to execute scaled take-profit sales across multiple cryptocurrency exchanges.",
+      "endDate": "2025-09",
+      "highlights": [
+        "In development, leveraged the AI coding assistant AI Copilot in VS Code",
+        "Architecture: MVVM SPA app frontend: [ View ] → binds to → [ ViewModel ] → uses → [ Store ] → calls → [ Service ]",
+        "Manages cryptocurrency assets across multiple exchanges",
+        "Executes batch take-profit orders across multiple exchanges, with percentage-based or fixed-amount strategies",
+        "Does real-time price monitoring and balance tracking, tracking order history and status"
+      ],
+      "skills": [
+        "Defi",
+        "AI Coding Assistent",
+        "AI Copilot",
+        "TypeScript",
+        "Aurelia 2",
+        "MVVM",
+        "TailWindCss",
+        "FluentUI Web Components",
+        "Vite",
+        "Axios",
+        "GitHub"
+      ]
+    },
+    {
+      "company": "Personal Project",
+      "position": "Multi-Exchange API Gateway Designer and Developer",
+      "remote": true,
+      "website": "https://github.com/dkent600/butterfly-services",
+      "startDate": "2025-06",
+      "summary": "Fully designed and created a Multi-Exchange REST API Gateway supporting secure cryptocurrency exchange operations, part of the Butterfly App Ecosystem. It  provides a Node.js service hosting REST API endpoints supporting cryptocurrency exchange operations with comprehensive safety mechanisms, testing, and production-ready integration.",
+      "endDate": "2025-09",
+      "highlights": [
+        "In development, leveraged the AI coding assistant AI Copilot in VS Code",
+        "Architecture: Layered Service-Oriented with Dependency Injection: [ API ] -> [ Services ] -> [ Infrastucture]",
+        "Node.js with TypeScript",
+        "Fastify server providing Swagger/OpenAPI documentation",
+        "TSyringe for clean dependency injection architecture for Node.js",
+        "Axios for exchange-API communications"
+      ],
+      "skills": [
+        "Defi",
+        "AI Coding Assistent",
+        "AI Copilot",
+        "Node.js",
+        "TypeScript",
+        "Fastify",
+        "TSyringe",
+        "Vite",
+        "Axios",
+        "GitHub"
+      ]
+    },
     {
       "company": "Curve Labs",
       "position": "Blockchain Oracle Developer",
@@ -823,7 +882,63 @@
   ],
   "skills": [
     {
+      "name": "MVVM",
+      "priority": 1.5,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://learn.microsoft.com/en-us/dotnet/architecture/maui"
+    },
+    {
+      "name": "FluentUI Web Components",
+      "priority": 1.5,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://learn.microsoft.com/en-us/fluent-ui/web-components"
+    },
+    {
+      "name": "Axios",
+      "priority": 1.5,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://axios-http.com/"
+    },
+    {
+      "name": "TailWindCss",
+      "priority": 1.5,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://tailwindcss.com/"
+    },
+    {
+      "name": "AI Coding Assistent",
+      "priority": 1.0,
+      "categories": [
+        "AI"
+      ],
+      "url": "https://www.sonarsource.com/resources/library/ai-coding-assistants"
+    },
+    {
+      "name": "AI Copilot",
+      "priority": 1.0,
+      "categories": [
+        "AI"
+      ],
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot"
+    },
+    {
       "name": "Aurelia",
+      "priority": 1.4,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://docs.aurelia.io/"
+    },
+    {
+      "name": "Aurelia 2",
       "priority": 1.4,
       "categories": [
         "Website and Application Development"
@@ -900,7 +1015,7 @@
     },
     {
       "name": "Defi",
-      "priority": 1.22,
+      "priority": 1,
       "categories": [
         "Blockchain"
       ],
