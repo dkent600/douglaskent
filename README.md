@@ -34,8 +34,59 @@ In rare situation, you might need to run clear-cache after upgrading to new vers
 
 ## App data flow
 
-There is a certain flow in the app in terms of how the UI gets data delivered to it. The views communicate with stores and the stores communicate with services.
+In this **Aurelia** application, data flows through a structured pipeline involving **Views**, **ViewModels**, **Stores**, and **Services**.
 
-- Views are the UI of the app. Stores are injected into the views and the views can call data from the stores. Views are supposed to be in charge of any formatting of data on the UI. (currency, numbers, strings, etc.)
-- Stores are the middle layer between the view (UI) and the services (Backend). Services are injected into stores and stores call the services needed to retrieve the data. Stores are also where the business logic (any data alteration needed) and data caching reside.
-- Services are the back end of the app that actually call the contracts and databases. This is the layer that returns the raw data from external services (contracts/firebase/etc.)
+### 1. Views (`.html`)
+
+* **Role:** The presentation layer of the application.
+* **Interaction:** Views are paired with ViewModels and bind to their public properties and methods using Aurelia’s binding system.
+* **Responsibility:**
+
+  * Handle display logic only.
+  * Apply formatting (e.g., currency, dates, numbers) to data provided by the ViewModel.
+
+### 2. ViewModels (`.ts`)
+
+* **Role:** UI controllers that connect Views to application logic.
+* **Interaction:** ViewModels are paired one-to-one with Views and are responsible for orchestrating UI behavior.
+* **Responsibility:**
+
+  * Inject Stores as needed.
+  * Delegate data retrieval, transformation, and business logic to Stores.
+  * Expose observable properties for the View to bind to.
+  * Handle user interaction and lifecycle events (`binding`, `attached`, etc.).
+
+### 3. Stores (Independent State & Logic Managers)
+
+* **Role:** Centralized modules that manage state, business logic, and coordination of data.
+* **Interaction:** Injected into ViewModels (or other Stores if needed).
+* **Responsibility:**
+
+  * Act as the middle layer between ViewModels and Services.
+  * Call Services to fetch raw data.
+  * Apply business rules and transformations.
+  * Cache and manage shared application state.
+
+### 4. Services (Data Access Layer)
+
+* **Role:** Interface with external resources like APIs, databases, or smart contracts.
+* **Interaction:** Injected into Stores.
+* **Responsibility:**
+
+  * Make HTTP requests or contract calls.
+  * Return raw, unformatted data.
+  * Remain stateless and reusable.
+
+---
+
+### Summary of Flow
+
+```
+[ View ] → binds to → [ ViewModel ] → uses → [ Store ] → calls → [ Service ]
+```
+
+This separation supports:
+
+* **Reusability** of Stores across different ViewModels
+* **Testability** by isolating logic in Stores and Services
+* **Clean UI logic** by keeping ViewModels slim and focused
