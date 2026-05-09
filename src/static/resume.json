@@ -116,7 +116,7 @@
         "Defi",
         "AI Coding Assistent",
         "AI Copilot",
-        "Node.js",
+        "Nodejs",
         "TypeScript",
         "Fastify",
         "TSyringe",
@@ -881,6 +881,22 @@
     }
   ],
   "skills": [
+    {
+      "name": "Fastify",
+      "priority": 1.5,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://fastify.dev/"
+    },
+    {
+      "name": "TSyringe",
+      "priority": 1.5,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://github.com/microsoft/tsyringe"
+    },
     {
       "name": "MVVM",
       "priority": 1.5,
