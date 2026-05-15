@@ -8,7 +8,7 @@
     "resumeFeedbackEmail": "resume-feedback@douglaskent.com",
     "phone": "+1 (512) 402-8735 (US)",
     "phone2": "+506 8591-5302 (CR)",
-    "website": "http://www.douglaskent.com",
+    "website": "https://www.douglaskent.com",
     "summary1": "I am an <b>experienced software engineer</b> and project lead with <b>34+ years</b> of repeated success leading teams and developing sophisticated <b>Web, Web3 (blockchain) and desktop</b> applications.",
     "summary2": "As a coder, team lead or both, I have worn multiple hats in important roles in many types of situations from Microsoft to garage startups.",
     "summary3": "Please see my complete resume at: <a href='https://www.douglaskent.com' target='_blank' rel='noopener noreferrer'>https://www.douglaskent.com</a>.",
@@ -221,7 +221,7 @@
       "company": "DAOstack",
       "position": "Senior Lead Developer",
       "remote": true,
-      "website": "http://www.daostack.io/",
+      "website": "https://www.daostack.io/",
       "startDate": "2017-09",
       "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first major DAO designs in the history of DAOs.  Used, reviewed and deployed Solidity smart contracts, wrote a Typescript library to support dApps in accessing the smart contracts, wrote a test dApp, significantly contributed to the dApp Alchemy used for working with the DAOs, and more...",
       "endDate": "2020-10",
@@ -265,7 +265,7 @@
       "company": "PSP Investments",
       "position": "Sole Senior Lead Web Developer",
       "contract": true,
-      "website": "http://investpsp.ca/",
+      "website": "https://investpsp.ca/",
       "startDate": "2014-05",
       "summary": "As a member of the PSP business intelligence (BI) analytics group, single-handedly developed successful web applications for other departments within PSP",
       "endDate": "2015-12",
@@ -303,7 +303,7 @@
       "position": "Senior Web Developer",
       "remote": true,
       "contract": true,
-      "website": "http://www.revionics.com/",
+      "website": "https://www.revionics.com/",
       "startDate": "2011-11",
       "summary": "Lead an offshore development team and participated in an Agile Scrum environment in the architecture and development of portions of a complex enterprise-scale, customer-facing web application",
       "endDate": "2013-03",
@@ -342,7 +342,7 @@
       "company": "ShiftWise",
       "position": "Senior Lead Web Developer, Manager Partner Integrations",
       "remote": true,
-      "website": "http://www.shiftwise.com/",
+      "website": "https://www.shiftwise.com/",
       "startDate": "2003-08",
       "summary": "Performed a lead role in an Agile Scrum environment in coding a complex enterprise-scale, customer-facing web application and associated automated web service interface",
       "endDate": "2011-07",
@@ -382,7 +382,7 @@
     {
       "company": "Trilogy",
       "position": "Software Engineer (Ford.com)",
-      "website": "http://www.trilogy.com/",
+      "website": "https://www.trilogy.com/",
       "startDate": "2000-09",
       "summary": "Wrote major components of Ford Motor Company's flagship Ford.com website",
       "endDate": "2001-03",
@@ -406,7 +406,7 @@
     {
       "company": "Trilogy",
       "position": "Software Engineer (carOrder.com)",
-      "website": "http://www.trilogy.com/",
+      "website": "https://www.trilogy.com/",
       "startDate": "2000-01",
       "summary": "Enhanced and maintained the lease and loan sales features and Needs Analysis and Car Comparison features of carOrder.com's website",
       "endDate": "2000-08",
@@ -435,7 +435,7 @@
     {
       "company": "Trilogy",
       "position": "Software Engineer (IBM)",
-      "website": "http://www.trilogy.com/",
+      "website": "https://www.trilogy.com/",
       "startDate": "1999-03",
       "summary": "Provided sole development and support for an application critical to an international IBM workflow",
       "endDate": "1999-12",
@@ -462,7 +462,7 @@
       "company": "Microsoft Corporation",
       "position": "Software Engineer",
       "contract": true,
-      "website": "http://www.microsoft.com/",
+      "website": "https://www.microsoft.com/",
       "startDate": "1996-03",
       "summary": "Wrote subsystem to facilitate localization of Encarta `97 into 5 languages",
       "endDate": "1996-06",
@@ -473,7 +473,7 @@
       "company": "Microsoft Corporation",
       "position": "Development Manager, Software Engineer",
       "contract": true,
-      "website": "http://www.microsoft.com/",
+      "website": "https://www.microsoft.com/",
       "startDate": "1995-06",
       "summary": "Managed team of 7 in code development and release to market of the Reader's Digest Complete Do-It-Yourself Guide multimedia CD-ROM title",
       "endDate": "1996-02",
@@ -484,7 +484,7 @@
       "company": "Microsoft Corporation",
       "position": "Software Engineer, Tech Lead",
       "contract": true,
-      "website": "http://www.microsoft.com/",
+      "website": "https://www.microsoft.com/",
       "startDate": "1994-11",
       "summary": "Wrote the core GUI engine for Julia Child's Home Cooking With Master Chefs multimedia CD-ROM title",
       "endDate": "1995-06",
@@ -495,7 +495,7 @@
       "company": "Asymetrix Corporation",
       "position": "Software Engineer",
       "contract": true,
-      "website": "http://home.click2learn.com/showcase",
+      "website": "https://home.click2learn.com/showcase",
       "startDate": "1992-04",
       "summary": "Developed software for Toolbook 3.0 and multimedia screensavers (Jurassic Park, et. al.)",
       "endDate": "1994-10",
@@ -506,7 +506,7 @@
       "company": "Microsoft Corporation",
       "position": "Software Engineer",
       "contract": true,
-      "website": "http://www.microsoft.com",
+      "website": "https://www.microsoft.com",
       "startDate": "1991-01",
       "summary": "On the Windows 3.1 team, developed software for File Manager, Packager, Paintbrush , Cardfile, and others",
       "endDate": "1992-03",
@@ -547,7 +547,7 @@
       "company": "SAS Institute Inc.",
       "position": "Sole Software Engineer",
       "contract": true,
-      "website": "http://www.sas.com/",
+      "website": "https://www.sas.com/",
       "startDate": "1986-12",
       "summary": "Ported Visuals (see UNC below) to the SAS Graphical User Interface System",
       "endDate": "1987-05",
@@ -557,7 +557,7 @@
     {
       "company": "University of North Carolina",
       "position": "Sole Software Engineer",
-      "website": "http://www.unc.edu/",
+      "website": "https://www.unc.edu/",
       "startDate": "1985-05",
       "summary": "Wrote Visuals, an application that uses interactive 3D graphics animation to reveal meaning in multidimensional statistical data",
       "endDate": "1986-11",
@@ -569,7 +569,7 @@
       "remote": true,
       "contract": true,
       "position": "Senior Web Developer",
-      "website": "http://www.dicom.com/",
+      "website": "https://www.dicom.com/",
       "startDate": "2017-02",
       "summary": "Fixed bugs and developed new features for an internal web application used to coordinate trucks, drivers, routes and delivery locations across Québec",
       "endDate": "2017-04",
@@ -638,7 +638,7 @@
       "position": "Sole Web Developer",
       "remote": true,
       "contract": true,
-      "website": "http://vivalia.ca/",
+      "website": "https://vivalia.ca/",
       "startDate": "2016-06",
       "summary": "Developed a website that gives Vivalia and its customers a highly efficient and enjoyable way to place and handle orders",
       "endDate": "2016-10",
@@ -676,7 +676,7 @@
       "position": "Senior Lead Web Developer",
       "remote": true,
       "contract": true,
-      "website": "http://www.gehealthcare.com/",
+      "website": "https://www.gehealthcare.com/",
       "startDate": "2015-03",
       "summary": "Developed automated machine communication enabling two companies to vastly increase the efficiency of their relationship",
       "endDate": "2016-02",
@@ -742,7 +742,7 @@
       "company": "Texas Turnpike Authority",
       "position": "Web Application Developer",
       "contract": true,
-      "website": "http://www.dot.state.tx.us/default.htm",
+      "website": "https://www.dot.state.tx.us/default.htm",
       "startDate": "2003-05",
       "summary": "Using ASP.NET, implemented main 'dashboard' web page and site-wide security code",
       "endDate": "2003-06",
@@ -762,7 +762,7 @@
       "company": "Schlumberger/Cingular Wireless",
       "position": "Application Developer",
       "contract": true,
-      "website": "http://www.schlumberger.com/",
+      "website": "https://www.schlumberger.com/",
       "startDate": "2002-10",
       "summary": "Enhanced a Java Swing application that enables users to display and edit data contained on Smart Cards",
       "endDate": "2003-01",
@@ -815,7 +815,7 @@
     {
       "company": "University of North Carolina",
       "position": "Software Engineer",
-      "website": "http://www.unc.edu/",
+      "website": "https://www.unc.edu/",
       "startDate": "1988-11",
       "summary": "For EGA/VGA graphics hardware, developed code that reproduces PGA 3D and 2D graphics hardware commands",
       "endDate": "1989-12",
@@ -825,7 +825,7 @@
     {
       "company": "University of North Carolina",
       "position": "Software Engineer",
-      "website": "http://www.unc.edu/",
+      "website": "https://www.unc.edu/",
       "startDate": "1986-05",
       "summary": "Assembled a local area network (LAN) and a system to digitize and manipulate video microscopic images for display in medical school classroom lab sessions",
       "endDate": "1986-11",
@@ -968,7 +968,7 @@
         "Website and Application Development",
         "Software Languages"
       ],
-      "url": "http://www.typescriptlang.org"
+      "url": "https://www.typescriptlang.org"
     },
     {
       "name": "Web3",
@@ -1197,7 +1197,7 @@
         "Website and Application Development",
         "Software Languages"
       ],
-      "url": "http://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
+      "url": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
     },
     {
       "name": "MVC",
@@ -1205,7 +1205,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://en.wikipedia.org/wiki/ASP.NET_MVC_Framework"
+      "url": "https://en.wikipedia.org/wiki/ASP.NET_MVC_Framework"
     },
     {
       "name": "WebApi",
@@ -1213,7 +1213,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://msdn.microsoft.com/en-us/library/hh833994(v=vs.108).aspx"
+      "url": "https://msdn.microsoft.com/en-us/library/hh833994(v=vs.108).aspx"
     },
     {
       "name": "HTML",
@@ -1353,7 +1353,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://jquery.com"
+      "url": "https://jquery.com"
     },
     {
       "name": "Ajax",
@@ -1361,7 +1361,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://en.wikipedia.org/wiki/Ajax_(programming)"
+      "url": "https://en.wikipedia.org/wiki/Ajax_(programming)"
     },
     {
       "name": "Bootstrap",
@@ -1369,7 +1369,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://getbootstrap.com"
+      "url": "https://getbootstrap.com"
     },
     {
       "name": "Bootstrap Material Design",
@@ -1381,7 +1381,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://fezvrasta.github.io/bootstrap-material-design/"
+      "url": "https://fezvrasta.github.io/bootstrap-material-design/"
     },
     {
       "name": "RequireJs",
@@ -1390,7 +1390,7 @@
         "Website and Application Development",
         "Module Bundling and Loading"
       ],
-      "url": "http://requirejs.org/"
+      "url": "https://requirejs.org/"
     },
     {
       "name": "ASP.NET Core",
@@ -1398,7 +1398,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://www.microsoft.com/net/core#windows"
+      "url": "https://www.microsoft.com/net/core#windows"
     },
     {
       "name": "ASP.NET",
@@ -1422,7 +1422,7 @@
       "categories": [
         "Data Stores"
       ],
-      "url": "http://ef.readthedocs.io/en/latest"
+      "url": "https://ef.readthedocs.io/en/latest"
     },
     {
       "name": "Entity Framework",
@@ -1431,7 +1431,7 @@
       "categories": [
         "Data Stores"
       ],
-      "url": "http://ef.readthedocs.io/en/latest"
+      "url": "https://ef.readthedocs.io/en/latest"
     },
     {
       "name": "T-SQL",
@@ -1464,7 +1464,7 @@
       "categories": [
         "Data Stores"
       ],
-      "url": "http://en.wikipedia.org/wiki/Microsoft_SQL_Server"
+      "url": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"
     },
     {
       "name": "ASP.NET Identity",
@@ -1486,7 +1486,7 @@
       "categories": [
         "Data Stores"
       ],
-      "url": "http://msdn.microsoft.com/en-us/library/ff648951.aspx"
+      "url": "https://msdn.microsoft.com/en-us/library/ff648951.aspx"
     },
     {
       "name": "Microsoft Extensibility Framework (MEF)",
@@ -1498,7 +1498,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://docs.microsoft.com/en-us/dotnet/framework/mef/"
+      "url": "https://docs.microsoft.com/en-us/dotnet/framework/mef/"
     },
     {
       "name": ".NET System.Security.Cryptography",
@@ -1509,7 +1509,7 @@
       "categories": [
         "Cryptography"
       ],
-      "url": "http://msdn.microsoft.com/en-us/library/system.security.cryptography(v=vs.110).aspx"
+      "url": "https://msdn.microsoft.com/en-us/library/system.security.cryptography(v=vs.110).aspx"
     },
     {
       "name": "crypto-js",
@@ -1517,7 +1517,7 @@
       "categories": [
         "Cryptography"
       ],
-      "url": "http://github.com/brix/crypto-js"
+      "url": "https://github.com/brix/crypto-js"
     },
     {
       "name": "DES",
@@ -1533,7 +1533,7 @@
       "categories": [
         "Cryptography"
       ],
-      "url": "http://en.wikipedia.org/wiki/Data_Encryption_Standard"
+      "url": "https://en.wikipedia.org/wiki/Data_Encryption_Standard"
     },
     {
       "name": "SHA-2",
@@ -1545,7 +1545,7 @@
       "categories": [
         "Cryptography"
       ],
-      "url": "http://en.wikipedia.org/wiki/Data_Encryption_Standard"
+      "url": "https://en.wikipedia.org/wiki/Data_Encryption_Standard"
     },
     {
       "name": "Sql Server Semantic Search",
@@ -1553,7 +1553,7 @@
       "categories": [
         "Semantic Search Frameworks"
       ],
-      "url": "http://docs.microsoft.com/en-us/sql/relational-databases/search/semantic-search-sql-server"
+      "url": "https://docs.microsoft.com/en-us/sql/relational-databases/search/semantic-search-sql-server"
     },
     {
       "name": "Enterprise Scale Web Applications",
@@ -1573,7 +1573,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://durandaljs.com/"
+      "url": "https://durandaljs.com/"
     },
     {
       "name": "KnockoutJs",
@@ -1582,7 +1582,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://knockoutjs.com/"
+      "url": "https://knockoutjs.com/"
     },
     {
       "name": "Responsive UIs",
@@ -1593,7 +1593,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://en.wikipedia.org/wiki/Responsive_web_design"
+      "url": "https://en.wikipedia.org/wiki/Responsive_web_design"
     },
     {
       "name": "ReactJs",
@@ -1601,7 +1601,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://reactjs.org/"
+      "url": "https://reactjs.org/"
     },
     {
       "name": "AngularJs",
@@ -1609,7 +1609,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://angularjs.org/"
+      "url": "https://angularjs.org/"
     },
     {
       "name": "i18Next",
@@ -1617,7 +1617,7 @@
       "categories": [
         "Localization/Globalization"
       ],
-      "url": "http://www.i18next.com/"
+      "url": "https://www.i18next.com/"
     },
     {
       "name": "jQuery Globalization",
@@ -1626,7 +1626,7 @@
       "categories": [
         "Localization/Globalization"
       ],
-      "url": "http://github.com/globalizejs/globalize"
+      "url": "https://github.com/globalizejs/globalize"
     },
     {
       "name": "Service-Oriented Architecture (SOA)",
@@ -1657,7 +1657,7 @@
         "Website and Application Development",
         "Software Languages"
       ],
-      "url": "http://en.wikipedia.org/wiki/C%2B%2B"
+      "url": "https://en.wikipedia.org/wiki/C%2B%2B"
     },
     {
       "name": "D3.js",
@@ -1669,7 +1669,7 @@
         "Website and Application Development",
         "Charting & Graphing Frameworks"
       ],
-      "url": "http://d3js.org/"
+      "url": "https://d3js.org/"
     },
     {
       "name": "Highcharts",
@@ -1678,7 +1678,7 @@
         "Website and Application Development",
         "Charting & Graphing Frameworks"
       ],
-      "url": "http://www.highcharts.com/"
+      "url": "https://www.highcharts.com/"
     },
     {
       "name": "XML",
@@ -1694,7 +1694,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://xerces.apache.org/"
+      "url": "https://xerces.apache.org/"
     },
     {
       "name": "XSLT",
@@ -1708,7 +1708,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://en.wikipedia.org/wiki/XSLT"
+      "url": "https://en.wikipedia.org/wiki/XSLT"
     },
     {
       "name": "XML Schema Definition (XSD)",
@@ -1720,7 +1720,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://en.wikipedia.org/wiki/XML_Schema_(W3C)"
+      "url": "https://en.wikipedia.org/wiki/XML_Schema_(W3C)"
     },
     {
       "name": "WCF",
@@ -1733,7 +1733,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://docs.microsoft.com/en-us/dotnet/framework/wcf/"
+      "url": "https://docs.microsoft.com/en-us/dotnet/framework/wcf/"
     },
     {
       "name": "WWF",
@@ -1746,7 +1746,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://docs.microsoft.com/en-us/dotnet/framework/windows-workflow-foundation/"
+      "url": "https://docs.microsoft.com/en-us/dotnet/framework/windows-workflow-foundation/"
     },
     {
       "name": "Microsoft Extensibility Framework (MEF)",
@@ -1758,7 +1758,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://docs.microsoft.com/en-us/dotnet/framework/mef/"
+      "url": "https://docs.microsoft.com/en-us/dotnet/framework/mef/"
     },
     {
       "name": "Java",
@@ -1775,7 +1775,7 @@
       "categories": [
         "Website and Application Hosting"
       ],
-      "url": "http://www.iis.net/"
+      "url": "https://www.iis.net/"
     },
     {
       "name": "NodeJs",
@@ -1784,7 +1784,7 @@
         "Software Development Platforms",
         "Website and Application Hosting"
       ],
-      "url": "http://nodejs.org/en/"
+      "url": "https://nodejs.org/en/"
     },
     {
       "name": "JRun",
@@ -1793,7 +1793,7 @@
       "categories": [
         "Website and Application Hosting"
       ],
-      "url": "http://en.wikipedia.org/wiki/Adobe_JRun"
+      "url": "https://en.wikipedia.org/wiki/Adobe_JRun"
     },
     {
       "name": "JSP",
@@ -1802,7 +1802,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://en.wikipedia.org/wiki/JavaServer_Pages"
+      "url": "https://en.wikipedia.org/wiki/JavaServer_Pages"
     },
     {
       "name": "JDBC",
@@ -1812,7 +1812,7 @@
         "Website and Application Development",
         "Data Stores"
       ],
-      "url": "http://en.wikipedia.org/wiki/Java_Database_Connectivity"
+      "url": "https://en.wikipedia.org/wiki/Java_Database_Connectivity"
     },
     {
       "name": "DB2",
@@ -1821,7 +1821,7 @@
       "categories": [
         "Data Stores"
       ],
-      "url": "http://www.ibm.com/analytics/us/en/db2/"
+      "url": "https://www.ibm.com/analytics/us/en/db2/"
     },
     {
       "name": "PowerShell",
@@ -1830,7 +1830,7 @@
       "categories": [
         "Scripting"
       ],
-      "url": "http://docs.microsoft.com/en-us/powershell/scripting/powershell-scripting"
+      "url": "https://docs.microsoft.com/en-us/powershell/scripting/powershell-scripting"
     },
     {
       "name": "Windows Batch",
@@ -1839,7 +1839,7 @@
       "categories": [
         "Scripting"
       ],
-      "url": "http://en.wikipedia.org/wiki/Batch_file"
+      "url": "https://en.wikipedia.org/wiki/Batch_file"
     },
     {
       "name": "Perl",
@@ -1848,7 +1848,7 @@
       "categories": [
         "Scripting"
       ],
-      "url": "http://www.perl.org/"
+      "url": "https://www.perl.org/"
     },
     {
       "name": "Flash SWF",
@@ -1857,7 +1857,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://en.wikipedia.org/wiki/SWF"
+      "url": "https://en.wikipedia.org/wiki/SWF"
     },
     {
       "name": "Swing",
@@ -1866,7 +1866,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://en.wikipedia.org/wiki/Swing_(Java)"
+      "url": "https://en.wikipedia.org/wiki/Swing_(Java)"
     },
     {
       "name": "nHibernate",
@@ -1875,7 +1875,7 @@
       "categories": [
         "Data Stores"
       ],
-      "url": "http://nhibernate.info/"
+      "url": "https://nhibernate.info/"
     },
     {
       "name": "CORBA",
@@ -1885,7 +1885,7 @@
         "Website and Application Development",
         "Data Stores"
       ],
-      "url": "http://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture"
+      "url": "https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture"
     },
     {
       "name": "Active-X Data Objects (ADO)",
@@ -1898,7 +1898,7 @@
       "categories": [
         "Data Stores"
       ],
-      "url": "http://en.wikipedia.org/wiki/ADO.NET"
+      "url": "https://en.wikipedia.org/wiki/ADO.NET"
     },
     {
       "name": "LINQ",
@@ -1907,7 +1907,7 @@
       "categories": [
         "Data Stores"
       ],
-      "url": "http://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/"
+      "url": "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/"
     },
     {
       "name": "Visual Studio",
@@ -1915,7 +1915,7 @@
       "categories": [
         "Development Tools"
       ],
-      "url": "http://en.wikipedia.org/wiki/Microsoft_Visual_Studio"
+      "url": "https://en.wikipedia.org/wiki/Microsoft_Visual_Studio"
     },
     {
       "name": "Visual Studio Code",
@@ -1923,7 +1923,7 @@
       "categories": [
         "Development Tools"
       ],
-      "url": "http://code.visualstudio.com"
+      "url": "https://code.visualstudio.com"
     },
     {
       "name": "NPM",
@@ -1931,7 +1931,7 @@
       "categories": [
         "Development Tools"
       ],
-      "url": "http://www.npmjs.com"
+      "url": "https://www.npmjs.com"
     },
     {
       "name": "GitHub",
@@ -1939,7 +1939,7 @@
       "categories": [
         "Development Tools"
       ],
-      "url": "http://github.com"
+      "url": "https://github.com"
     },
     {
       "name": "GitKraken",
@@ -1947,7 +1947,7 @@
       "categories": [
         "Development Tools"
       ],
-      "url": "http://www.gitkraken.com/"
+      "url": "https://www.gitkraken.com/"
     },
     {
       "name": "GitHub Desktop",
@@ -1955,7 +1955,7 @@
       "categories": [
         "Development Tools"
       ],
-      "url": "http://desktop.github.com/"
+      "url": "https://desktop.github.com/"
     },
     {
       "name": "Jira",
@@ -1964,7 +1964,7 @@
       "categories": [
         "Development Tools"
       ],
-      "url": "http://www.atlassian.com/software/jira"
+      "url": "https://www.atlassian.com/software/jira"
     },
     {
       "name": "BitBucket",
@@ -1973,7 +1973,7 @@
       "categories": [
         "Development Tools"
       ],
-      "url": "http://bitbucket.org/product"
+      "url": "https://bitbucket.org/product"
     },
     {
       "name": "NuGet",
@@ -1982,7 +1982,7 @@
       "categories": [
         "Development Tools"
       ],
-      "url": "http://www.nuget.org/"
+      "url": "https://www.nuget.org/"
     },
     {
       "name": "Microsoft Azure",
@@ -1993,7 +1993,7 @@
       "categories": [
         "Cloud Services"
       ],
-      "url": "http://azure.microsoft.com"
+      "url": "https://azure.microsoft.com"
     },
     {
       "name": "Microsoft Windows",
@@ -2001,7 +2001,7 @@
       "categories": [
         "Operating Systems"
       ],
-      "url": "http://www.microsoft.com/windows"
+      "url": "https://www.microsoft.com/windows"
     },
     {
       "name": "Agile Methodologies",
@@ -2012,7 +2012,7 @@
       "categories": [
         "Development Processes"
       ],
-      "url": "http://en.wikipedia.org/wiki/Agile_software_development"
+      "url": "https://en.wikipedia.org/wiki/Agile_software_development"
     },
     {
       "name": "TFS",
@@ -2024,7 +2024,7 @@
         "Development Tools",
         "Development Processes"
       ],
-      "url": "http://en.wikipedia.org/wiki/Team_Foundation_Server"
+      "url": "https://en.wikipedia.org/wiki/Team_Foundation_Server"
     },
     {
       "name": "Waterfall",
@@ -2032,7 +2032,7 @@
       "categories": [
         "Development Processes"
       ],
-      "url": "http://en.wikipedia.org/wiki/Waterfall_model"
+      "url": "https://en.wikipedia.org/wiki/Waterfall_model"
     },
     {
       "name": "Just Get It Done",
@@ -2049,7 +2049,7 @@
         "Website and Application Development",
         "Module Bundling and Loading"
       ],
-      "url": "http://webpack.js.org"
+      "url": "https://webpack.js.org"
     },
     {
       "name": "Vite",
@@ -2077,7 +2077,7 @@
         "Website and Application Development",
         "Module Bundling and Loading"
       ],
-      "url": "http://jspm.io"
+      "url": "https://jspm.io"
     },
     {
       "name": "SystemJs",
@@ -2087,7 +2087,7 @@
         "Website and Application Development",
         "Module Bundling and Loading"
       ],
-      "url": "http://github.com/systemjs/systemjs"
+      "url": "https://github.com/systemjs/systemjs"
     },
     {
       "name": "Unity (Dependency Injection)",
@@ -2101,7 +2101,7 @@
       "categories": [
         "Test Frameworks"
       ],
-      "url": "http://github.com/unitycontainer/unity"
+      "url": "https://github.com/unitycontainer/unity"
     },
     {
       "name": "XUnit.NET",
@@ -2113,7 +2113,7 @@
       "categories": [
         "Test Frameworks"
       ],
-      "url": "http://xunit.github.io/"
+      "url": "https://xunit.github.io/"
     },
     {
       "name": "NUnit",
@@ -2129,7 +2129,7 @@
       "categories": [
         "Test Frameworks"
       ],
-      "url": "http://code.google.com/p/moq"
+      "url": "https://code.google.com/p/moq"
     },
     {
       "name": "Jasmine",
@@ -2158,7 +2158,7 @@
       "categories": [
         "Test Frameworks"
       ],
-      "url": "http://specflow.org/"
+      "url": "https://specflow.org/"
     },
     {
       "name": "MSTest",
@@ -2173,7 +2173,7 @@
       "categories": [
         "Test Frameworks"
       ],
-      "url": "http://github.com/Microsoft/vstest"
+      "url": "https://github.com/Microsoft/vstest"
     },
     {
       "name": "Jest",
@@ -2190,7 +2190,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "http://github.com/unitycontainer/unity"
+      "url": "https://github.com/unitycontainer/unity"
     }
   ],
   "languages": [
@@ -2234,14 +2234,14 @@
       "reference": "It's rare that you come across standout talent like Doug. I hired Doug as an application developer in my analytics team at PSP. He was able to complete the development of complex data products with complex custom visualizations on time. I was particularly impressed by Doug’s ability to precisely understand business requirements effortlessly due to his extensive experience as well as being an amazing team player.",
       "title": "Senior Director of Data Management and Business Intelligence at Ivanhoé Cambridge",
       "company": "PSP Investments",
-      "website": "http://www.linkedin.com/in/ghalem-ben-nouna-2356011/"
+      "website": "https://www.linkedin.com/in/ghalem-ben-nouna-2356011/"
     },
     {
       "name": "Ross Barbieri",
       "reference": "I know Doug Kent both personally and professionally. I have had the great pleasure of working with him on several projects at multiple companies. These include industry changing applications like Shiftwise (healthcare staffing vendor management systems) and at large companies like GE . He is a highly reliable and methodical .NET web developer, and <b><i>the</i></b> best OO developer I've worked with. Doug works well solo and on teams and is an excellent communicator in both settings. On that point, he is an open and honest person and one who is not afraid to speak up (appropriately) when necessary. He is my go to .NET developer for these reasons, and also because he takes full ownership of his work; including peripheral dependencies, and will self manage through to completion.",
       "title": "Serial Entrepreneur, CTO and Software Development Manager",
       "company": "Shiftwise",
-      "website": "http://www.linkedin.com/in/rosshere/"
+      "website": "https://www.linkedin.com/in/rosshere/"
     }
   ],
   "accomplishments": [

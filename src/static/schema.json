@@ -1,6 +1,6 @@
 {
-  "$id": "http://douglaskent.com/schemas/resume",
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "https://douglaskent.com/schemas/resume",
+  "$schema": "https://json-schema.org/draft-04/schema#",
   "title": "Resume Schema",
   "type": "object",
   "additionalProperties": false,
@@ -91,7 +91,7 @@
               },
               "url": {
                 "type": "string",
-                "description": "e.g. http://twitter.example.com/neutralthoughts"
+                "description": "e.g. https://twitter.example.com/neutralthoughts"
               }
             }
           }
@@ -123,7 +123,7 @@
           },
           "url": {
             "type": "string",
-            "description": "e.g. http://facebook.example.com",
+            "description": "e.g. https://facebook.example.com",
             "format": "uri"
           },
           "startDate": {
@@ -169,7 +169,7 @@
           },
           "url": {
             "type": "string",
-            "description": "e.g. http://facebook.example.com",
+            "description": "e.g. https://facebook.example.com",
             "format": "uri"
           },
           "startDate": {
@@ -293,7 +293,7 @@
           },
           "url": {
             "type": "string",
-            "description": "e.g. http://www.computer.org.example.com/csdl/mags/co/1996/10/rx069-abs.html"
+            "description": "e.g. https://www.computer.org.example.com/csdl/mags/co/1996/10/rx069-abs.html"
           },
           "summary": {
             "type": "string",
@@ -437,7 +437,7 @@
           "url": {
             "type": "string",
             "format": "uri",
-            "description": "e.g. http://www.computer.org/csdl/mags/co/1996/10/rx069-abs.html"
+            "description": "e.g. https://www.computer.org/csdl/mags/co/1996/10/rx069-abs.html"
           },
           "roles": {
             "type": "array",
