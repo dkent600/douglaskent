@@ -137,7 +137,7 @@
         "Worked on the <a href=\"https://celo.org/\" target=\"_blank\">Celo blockchain</a> with the tokens kG, kCur and cUSD and a Balancer WeightedPool (kCur <> cUSD) ported to Celo by Symmetric",
         "Leveraged smart contracts MentoReserve and the Balancer WeightedPool to maintain the value of the total supply of kCur in the MentoReserve contract equal to the value of the total supply of the kG token (by changing the total supply of kCur in the MentoReserve)",
         "Leveraged the Balancer WeightedPool to help maintain kCur price stability within an acceptable range in its role of backing up kG",
-        "Leveraged <a href=\"https://defender.openzeppelin.com/\" target=\"_blank\">OpenZeppelin Defender</a> for managing private keys, encrypting secrets, sending transactions, hosting and invoking the service",
+        "Leveraged <a href=\"https://www.openzeppelin.com/news/doubling-down-on-open-source-and-phasing-out-defender\" target=\"_blank\">OpenZeppelin Defender</a> for managing private keys, encrypting secrets, sending transactions, hosting and invoking the service",
         "Reported the prices of cUSD, kCur and kG price to smart contract Oracles"
       ],
       "skills": [
@@ -1119,7 +1119,7 @@
       "aliases": [
         "Defender"
       ],
-      "url": "https://defender.openzeppelin.com/"
+      "url": "https://www.openzeppelin.com/news/doubling-down-on-open-source-and-phasing-out-defender"
     },
     {
       "name": "Mento",
