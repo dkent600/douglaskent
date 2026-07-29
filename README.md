@@ -6,6 +6,10 @@ This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new).
 
     npm start
 
+## Display complete resume with all sections expanded
+
+`www.douglaskent.com/resume?expanded=true`
+
 ## Build the app in production mode
 
     npm run build
