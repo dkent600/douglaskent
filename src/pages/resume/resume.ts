@@ -1,5 +1,5 @@
 import { customElement, IContainer, resolve } from "aurelia";
-import { IRouteableComponent, LoadInstruction, Navigation, Parameters, RoutingInstruction } from "@aurelia/router";
+import { IRouteableComponent, LoadInstruction, Navigation, Parameters, RoutingInstruction } from "@aurelia/router-direct";
 
 import { WhichResumeOnly } from "../../resources/attributes/whichResumeOnly";
 import { IBasics, IResumeStore } from "../../stores/resume-store";

@@ -1,5 +1,5 @@
 import { customElement } from "aurelia";
-import { IRouteableComponent, routes } from "@aurelia/router";
+import { IRouteableComponent, routes } from "@aurelia/router-direct";
 
 import { Resume } from "../resume/resume";
 

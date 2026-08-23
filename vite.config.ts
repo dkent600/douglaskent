@@ -2,7 +2,7 @@ import aurelia from "@aurelia/vite-plugin";
 
 import { visualizer } from "rollup-plugin-visualizer";
 import * as rollupPluginutils from "rollup-pluginutils";
-import { defineConfig } from "vite";
+import { defineConfig, type PluginOption } from "vite";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 /**
  * This is required by the rollup build which will otherwise barf
@@ -29,7 +29,7 @@ const rawHtml = () => {
   };
 };
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
@@ -55,6 +55,13 @@ export default defineConfig({
   plugins: [
     aurelia({
       hmr: true,
+      /**
+       * The plugin's own dev-detection reads `mode` off the user config object, where it is
+       * undefined for a plain `vite build` -- so it defaults to the development export
+       * condition and bundles Aurelia's dev builds (with full error message text) into
+       * production. Pass the real mode explicitly instead.
+       */
+      useDev: mode !== "production",
     }),
     nodePolyfills(),
     rawHtml(),
@@ -62,7 +69,12 @@ export default defineConfig({
       emitFile: true,
       gzipSize: true,
       filename: "stats.html",
-    }) as Plugin,
+      /**
+       * visualizer's types bind to the hoisted rollup 3 (pulled in by leftover devDependencies
+       * from the pre-Vite build); Vite 7 carries its own rollup 4. Same plugin shape, different
+       * type trees.
+       */
+    }) as PluginOption,
   ],
   resolve: {
     alias: [
@@ -73,4 +85,4 @@ export default defineConfig({
       },
     ],
   },
-});
+}));
