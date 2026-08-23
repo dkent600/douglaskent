@@ -70,9 +70,9 @@ export default defineConfig(({ mode }) => ({
       gzipSize: true,
       filename: "stats.html",
       /**
-       * visualizer's types bind to the hoisted rollup 3 (pulled in by leftover devDependencies
-       * from the pre-Vite build); Vite 7 carries its own rollup 4. Same plugin shape, different
-       * type trees.
+       * visualizer's types bind to the hoisted rollup 3 (pulled in transitively by
+       * @rollup/pluginutils and @rollup/plugin-inject); Vite 7 carries its own rollup 4.
+       * Same plugin shape, different type trees.
        */
     }) as PluginOption,
   ],
