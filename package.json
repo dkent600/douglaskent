@@ -22,9 +22,9 @@
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css"
   },
   "dependencies": {
-    "@aurelia/router-direct": "2.0.0-beta.27",
+    "@aurelia/router-direct": "2.0.0-rc.2",
     "arrive": "^2.4.1",
-    "aurelia": "2.0.0-beta.27",
+    "aurelia": "2.0.0-rc.2",
     "bootstrap": "^4.1.1",
     "bootstrap-material-design": "^4.1.1",
     "dompurify": "^3.0.1",
@@ -34,7 +34,7 @@
     "popper.js": "^1.11.0"
   },
   "devDependencies": {
-    "@aurelia/vite-plugin": "2.0.0-beta.27",
+    "@aurelia/vite-plugin": "2.0.0-rc.2",
     "@types/bootstrap": "^3.3.36",
     "@types/dompurify": "^3.0.1",
     "@types/jquery": "^3.2.13",

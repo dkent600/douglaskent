@@ -1,6 +1,11 @@
 import { bindable, customAttribute, INode, resolve } from "aurelia";
 
-@customAttribute({ name: "resume-type" })
+/**
+ * `defaultProperty` is what receives the attribute value when the attribute is written in its
+ * single-value form, as in `resume-type="short"`. It defaults to "value", so it has to name
+ * `which` explicitly -- before Aurelia rc.0 the sole bindable was picked up implicitly.
+ */
+@customAttribute({ name: "resume-type", defaultProperty: "which" })
 export class WhichResumeOnly {
   // initialized in resume.ts
   static isShort = false;
