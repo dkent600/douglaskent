@@ -1,4 +1,4 @@
-import { customElement, IContainer, resolve } from "aurelia";
+import { customElement, IContainer, ILogger, resolve } from "aurelia";
 import { type IRouteViewModel, type NavigationInstruction, type Params, type RouteNode } from "@aurelia/router";
 
 import { WhichResumeOnly } from "../../resources/attributes/whichResumeOnly";
@@ -22,6 +22,7 @@ export class Resume implements IRouteViewModel {
    * given the name or alias of a skill, return the skill json
    */
   readonly resumeStore = resolve(IResumeStore);
+  private readonly log = resolve(ILogger).scopeTo("Resume");
   readonly basics: IBasics = this.resumeStore.basics;
   /**
    * used by CSS
@@ -39,6 +40,7 @@ export class Resume implements IRouteViewModel {
      */
     const option = params.rest;
     if (option !== undefined && option !== "short" && option !== "expanded") {
+      this.log.warn(`"${option}" is not a resume view; redirecting to not-found`);
       NotFound.attemptedPath = window.location.pathname + window.location.search;
       return "not-found";
     }

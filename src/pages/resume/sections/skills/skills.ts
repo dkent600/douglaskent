@@ -38,10 +38,6 @@ export class Skills {
       for (const keyword of skill.categories) {
         let skillCategory = this.categoryToSkills.get(keyword);
         if (!skillCategory) {
-          // if (!this.keywords.find((s) => s === keyword)) {
-          //   // this.categories.push(`${keyword} [not in keywords list!]`);
-          //   console.log(`!!! ${keyword} is not in keywords list!`);
-          // }
           skillCategory = new Set<ISkill>();
           this.categoryToSkills.set(keyword, skillCategory);
         }

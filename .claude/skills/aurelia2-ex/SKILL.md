@@ -1,9 +1,9 @@
 ---
 name: aurelia2-ex
-description: Project-specific Aurelia 2 conventions for Human Lens that EXTEND (not replace) the vendored aurelia2 skill. Use alongside aurelia2 whenever writing or reviewing frontend (@humanlens/frontend) code. Currently covers application logging via ILogger instead of console.log.
+description: Project-specific Aurelia 2 conventions that EXTEND (not replace) the vendored aurelia2 skill. Use alongside aurelia2 whenever writing or reviewing frontend code. Currently covers application logging via ILogger instead of console.log.
 ---
 
-# Aurelia 2 — Human Lens project extensions
+# Aurelia 2 — project extensions
 
 Project-specific deltas layered on top of the **aurelia2** skill. The aurelia2
 skill remains authoritative on framework usage; this skill records only the

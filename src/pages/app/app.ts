@@ -17,7 +17,7 @@ const notFoundTitle = "Douglas Kent - Page Not Found";
 @route({
   routes: [
     {
-      path: ["", "resume"],
+      path: "resume",
       component: Resume,
       title: resumeTitle,
     },

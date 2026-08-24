@@ -6,6 +6,11 @@
 /// <reference types="jquery" />
 
 /**
+ * `import.meta.env` (used in main.ts to pick a log level) is typed by Vite.
+ */
+/// <reference types="vite/client" />
+
+/**
  * bootstrap-material-design is a jQuery plugin that ships no types of its own. It attaches
  * itself to the jQuery prototype when main.ts imports it for its side effects, so declare
  * it onto JQuery rather than casting at the call site.

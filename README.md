@@ -28,7 +28,8 @@ Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 
 | URL | Shows |
 | --- | --- |
-| `/` or `/resume` | The complete resume |
+| `/` | Redirects to `/resume` |
+| `/resume` | The complete resume |
 | `/resume/short` | The condensed resume: anything marked `resume-type="complete"` is hidden, and short-only passages appear instead |
 | `/resume/expanded` | Starts with the collapsible sections already open: skills pills, the full work history, and publications |
 | `/expanded` | Redirects to `/resume/expanded` |
@@ -41,6 +42,10 @@ The canonical link in `index.html` uses `/resume/expanded`. The older
 against the previous canonical URL keep working -- but only on the complete resume. On
 `/resume/short` it is ignored, the same as any other unrecognised query parameter, because
 `short` and `expanded` are mutually exclusive and the query string is not a way around that.
+
+The root path is served by the `default` attribute on `<au-viewport>` rather than by an `""`
+route path, because the router warns (`AUR3176`) on any empty path. The visible effect is that
+`/` normalises to `/resume` in the address bar.
 
 ### Why the resume route uses a star segment
 

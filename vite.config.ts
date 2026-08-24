@@ -3,7 +3,6 @@ import aurelia from "@aurelia/vite-plugin";
 import { visualizer } from "rollup-plugin-visualizer";
 import * as rollupPluginutils from "rollup-pluginutils";
 import { defineConfig, type PluginOption } from "vite";
-import { nodePolyfills } from "vite-plugin-node-polyfills";
 /**
  * This is required by the rollup build which will otherwise barf
  * on this statement in the ts:
@@ -63,7 +62,6 @@ export default defineConfig(({ mode }) => ({
        */
       useDev: mode !== "production",
     }),
-    nodePolyfills(),
     rawHtml(),
     visualizer({
       emitFile: true,
