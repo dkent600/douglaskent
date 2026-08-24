@@ -4,7 +4,7 @@ The data-driven resume behind [www.douglaskent.com](https://www.douglaskent.com)
 `src/static/resume.json` (validated against `src/static/schema.json`); the application is the renderer.
 Aurelia 2 and TypeScript, bundled by Vite.
 
-This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new), updated to Aurelia version rc.2.
+This project was bootstrapped by [aurelia/new](https://github.com/aurelia/new), updated to Aurelia version rc.2.
 
 ## Prerequisites
 
