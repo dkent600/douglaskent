@@ -4,6 +4,13 @@ import { ICompany, IResumeStore, ISkill } from "../../../../stores/resume-store"
 
 import template from "./history.html";
 
+/**
+ * `showingHighlights` is view state rather than resume data, so it has no place in
+ * resume.json -- and ICompany is inferred from that json. Layer it on here, where the
+ * template binds to it.
+ */
+type ICompanyView = ICompany & { showingHighlights: boolean };
+
 @customElement({ name: "history", template })
 export class History {
   @bindable expanded = false;
@@ -11,13 +18,14 @@ export class History {
   entireHistoryStartIndex = 3;
   readonly skillByName: Map<string, ISkill> = new Map<string, ISkill>();
   readonly resumeStore = resolve(IResumeStore);
-  readonly companies: Array<ICompany> = this.resumeStore.companies
+  readonly companies: Array<ICompanyView> = this.resumeStore.companies
     // .sort((a, b) => {
     //   return evaluateDateTime(a.endDate, b.endDate, -1);
     // })
-    .map((s, _index) => {
-      s.showingHighlights = false;
-      return s;
+    .map((s) => {
+      const company = s as ICompanyView;
+      company.showingHighlights = false;
+      return company;
     });
 
   constructor() {
@@ -46,11 +54,11 @@ export class History {
     this.showingEntireHistory = this.expanded;
   }
 
-  get companiesFirst(): Array<ICompany> {
+  get companiesFirst(): Array<ICompanyView> {
     return this.companies.slice(0, this.entireHistoryStartIndex);
   }
 
-  get companiesTheRest(): Array<ICompany> {
+  get companiesTheRest(): Array<ICompanyView> {
     return this.companies.slice(this.entireHistoryStartIndex);
   }
 
@@ -92,7 +100,7 @@ export class History {
     return (a - b) * factor;
   }
 
-  private toggleHighlights(company: ICompany): void {
+  private toggleHighlights(company: ICompanyView): void {
     company.showingHighlights = !company.showingHighlights;
   }
 }

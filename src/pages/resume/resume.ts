@@ -58,7 +58,7 @@ export class Resume implements IRouteableComponent {
   // }
 
   attached() {
-    ($("body") as HTMLElement).bootstrapMaterialDesign();
+    $("body").bootstrapMaterialDesign();
 
     const bookmark = window.location.hash;
     if (bookmark) {
