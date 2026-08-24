@@ -19,7 +19,8 @@
     "lint:js.fix": "eslint src --ext .js,.ts --fix",
     "lint:css": "sass-lint -c .sass-lint.yml \"src/**/*.scss\"",
     "lint:html": "htmlhint -c .htmlhintrc src",
-    "lint": "npm run lint:js && npm run lint:html && npm run lint:css"
+    "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit"
   },
   "dependencies": {
     "@aurelia/router-direct": "2.0.0-rc.2",
