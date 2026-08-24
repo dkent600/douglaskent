@@ -31,13 +31,26 @@ Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 | `/` or `/resume` | The complete resume |
 | `/resume/short` | The condensed resume: anything marked `resume-type="complete"` is hidden, and short-only passages appear instead |
 | `/resume/expanded` | Starts with the collapsible sections already open: skills pills, the full work history, and publications |
+| `/expanded` | Redirects to `/resume/expanded` |
+| `/resume/short/expanded` | Redirects to `/resume/expanded` -- `short` and `expanded` are mutually exclusive |
+| `/techresume` | Redirects to `/resume` |
+| anything else | The not-found page, which reports the address that failed and links to the three real ones |
 
-`short` and `expanded` share the one optional path segment, so they cannot be combined:
-`/resume/short/expanded` is not a route and falls through to the catch-all, which renders the
-plain complete resume. The canonical link in `index.html` uses `/resume/expanded`.
+The canonical link in `index.html` uses `/resume/expanded`. The older
+`?expanded=<anything non-empty>` query string still turns expansion on, so links already indexed
+against the previous canonical URL keep working -- but only on the complete resume. On
+`/resume/short` it is ignored, the same as any other unrecognised query parameter, because
+`short` and `expanded` are mutually exclusive and the query string is not a way around that.
 
-The older `?expanded=<anything non-empty>` query string still turns expansion on, so links already
-indexed against the previous canonical URL keep working.
+### Why the resume route uses a star segment
+
+`resume/*rest` looks heavier than `resume/:option?`, and the difference matters. The router
+matches hierarchically: `resume/:option?` matches `/resume/a/b` as `resume/a` and leaves `b`
+over, which it then tries to resolve as a *child* route of `resume`. `resume.html` has no child
+viewport, so that throws `AUR3401` and renders a blank page -- and it cannot be caught, because
+the router deliberately does not raise a navigation-error event for an unknown route. A star
+segment consumes every trailing segment, so nothing is ever left over, and `Resume.canLoad`
+decides which values are valid and redirects the rest to `not-found`.
 
 The short and complete variants are driven by the `resume-type` custom attribute in
 `src/resources/attributes/whichResumeOnly.ts`.
