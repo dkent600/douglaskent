@@ -37,8 +37,12 @@ export class Resume implements IRouteableComponent {
      * WhichResumeOnly.isShort is used by the `resume-type` custom attribute to control what is displayed
      * depending on whether we're showing the short or complete resume
      */
-    WhichResumeOnly.isShort = this.isShort = parameters.short === "short";
-    this.expanded = Boolean(parameters.expanded ?? false);
+    WhichResumeOnly.isShort = this.isShort = parameters.option === "short";
+    /**
+     * `?expanded=1` was the canonical URL before /resume/expanded replaced it, and it is
+     * still out there in search results, so keep honouring it.
+     */
+    this.expanded = parameters.option === "expanded" || Boolean(parameters.expanded ?? false);
     /**
      * Foregoing RouterConfiguration.customize...title for this because I am not sure how to set the title otherwise
      */

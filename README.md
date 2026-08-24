@@ -30,10 +30,14 @@ Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 | --- | --- |
 | `/` or `/resume` | The complete resume |
 | `/resume/short` | The condensed resume: anything marked `resume-type="complete"` is hidden, and short-only passages appear instead |
-| `?expanded=1` | Starts with the collapsible sections already open: skills pills, the full work history, and publications |
+| `/resume/expanded` | Starts with the collapsible sections already open: skills pills, the full work history, and publications |
 
-`?expanded` is read as `Boolean(parameters.expanded)`, so *any* non-empty value turns it on --
-including `?expanded=false`. The canonical link in `index.html` uses `?expanded=1`.
+`short` and `expanded` share the one optional path segment, so they cannot be combined:
+`/resume/short/expanded` is not a route and falls through to the catch-all, which renders the
+plain complete resume. The canonical link in `index.html` uses `/resume/expanded`.
+
+The older `?expanded=<anything non-empty>` query string still turns expansion on, so links already
+indexed against the previous canonical URL keep working.
 
 The short and complete variants are driven by the `resume-type` custom attribute in
 `src/resources/attributes/whichResumeOnly.ts`.

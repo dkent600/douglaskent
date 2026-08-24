@@ -7,7 +7,12 @@ import view from "./app.html";
 
 @routes([
   {
-    path: ["", "resume/:short?"],
+    /**
+     * The optional segment is either "short" or "expanded". They are mutually
+     * exclusive, so there is no /resume/short/expanded -- that falls through to
+     * the catch-all route below and renders the plain complete resume.
+     */
+    path: ["", "resume/:option?"],
     component: Resume,
     title: "Resume",
   },
