@@ -1,22 +1,53 @@
 # Douglas Kent Resume
 
-This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new).
+The data-driven resume behind [www.douglaskent.com](https://www.douglaskent.com). All content lives in
+`src/static/resume.json` (validated against `src/static/schema.json`); the application is the renderer.
+Aurelia 2 and TypeScript, bundled by Vite.
 
-## Start dev web server
+This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new), updated to Aurelia version rc.2.
 
-    npm start
+## Prerequisites
 
-## Display complete resume with all sections expanded
+Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 
-`www.douglaskent.com/resume?expanded=true`
+## Scripts
 
-## Build the app in production mode
+| Command | Purpose |
+| --- | --- |
+| `npm start` | Dev server on port 9000, opens a browser |
+| `npm run debug` | Same dev server, without opening a browser |
+| `npm run build` | Production build into `dist/` |
+| `npm run preview` | Serve the built `dist/` to check it before deploying |
+| `npm run typecheck` | `tsc --noEmit`, using the TypeScript version this project pins |
+| `npm run lint` | eslint, htmlhint and sass-lint (`lint:js`, `lint:html`, `lint:css` individually) |
+| `npm run lint:js.fix` | eslint with `--fix` |
+| `npm run clean` | Delete `node_modules` and the lockfile, then reinstall |
+| `npm run deploy` | FTP upload driven by `ftpDeploy.txt` |
 
-    npm run build
+## Routes
 
-It builds `dist/*bundle.[hash].js`, updates index.html with hashed js bundle file name.  then the hash will change.  So to deploy to the production server, be sure to copy the generated `index.html` and `dist/*`.  Otherwise those files will not have changed and will need not be redeployed.
+| URL | Shows |
+| --- | --- |
+| `/` or `/resume` | The complete resume |
+| `/resume/short` | The condensed resume: anything marked `resume-type="complete"` is hidden, and short-only passages appear instead |
+| `?expanded=1` | Starts with the collapsible sections already open: skills pills, the full work history, and publications |
 
-To deploy everything, copy to production root folder:
+`?expanded` is read as `Boolean(parameters.expanded)`, so *any* non-empty value turns it on --
+including `?expanded=false`. The canonical link in `index.html` uses `?expanded=1`.
+
+The short and complete variants are driven by the `resume-type` custom attribute in
+`src/resources/attributes/whichResumeOnly.ts`.
+
+## Build output and deploying
+
+`npm run build` writes `dist/index.html` (generated from the root `index.html`) plus hashed bundles in
+`dist/assets/`. It also emits `dist/stats.html`, a bundle size report that does not need deploying.
+
+The asset hashes change whenever their contents change, and `dist/index.html` is what points at them, so
+**always deploy `index.html` together with `dist/assets`** -- shipping one without the other leaves the
+site referencing bundles that are not there.
+
+Copy to the production root folder:
 
 ```
 base.css
@@ -25,16 +56,21 @@ dist/index.html
 dist/assets
 ```
 
+## Dependency notes
 
-## Clear tracing cache
+Aurelia and TypeScript versions are pinned exactly rather than floating on `latest`, so an install cannot
+change the framework version underneath the app.
 
-In rare situation, you might need to run clear-cache after upgrading to new version of dumber bundler.
+Two things worth knowing before changing dependencies:
 
-    npm run clear-cache
-
-## index.html
-
-`dist/index.html` is generated from `index.html` every time `npm run build` runs.
+* **Prefer `npm run clean` over an incremental install when Aurelia versions change.** npm sometimes
+  nests duplicate copies of the `@aurelia/*` packages under individual dependents instead of hoisting
+  one copy. Two copies means two module instances, which breaks dependency injection at runtime while
+  still building successfully.
+* **`vite.config.ts` passes `useDev` to the Aurelia plugin deliberately.** Without it, production builds
+  resolve Aurelia's `development` export condition and bundle the development builds, error message text
+  and all. See [aurelia/aurelia#2463](https://github.com/aurelia/aurelia/issues/2463); the comment in
+  `vite.config.ts` explains it in place.
 
 ## App data flow
 
@@ -94,3 +130,23 @@ This separation supports:
 * **Reusability** of Stores across different ViewModels
 * **Testability** by isolating logic in Stores and Services
 * **Clean UI logic** by keeping ViewModels slim and focused
+
+### Where that lives in this repo
+
+| Layer | Location |
+| --- | --- |
+| Views and ViewModels | `src/pages/`, one folder per section under `src/pages/resume/sections/` |
+| Stores | `src/stores/resume-store.ts` |
+| Services | `src/services/resume-service.ts` |
+| Value converters and custom attributes | `src/resources/` |
+| Content | `src/static/resume.json` |
+
+The model types are derived from the JSON rather than declared by hand: `IResume` is `typeof resumeJson`,
+and the store exposes aliases off it such as `ICompany = IResume["work"][0]`. Adding a field to
+`resume.json` therefore makes it available to the templates with no type changes. Because those types
+describe stored data, view state has no place in them -- see `ICompanyView` in
+`src/pages/resume/sections/history/history.ts` for how that is layered on.
+
+Since the resume is a static JSON import, the Service layer here is a thin one: it imports the JSON and
+re-exports it along with its inferred types. It exists to keep the seam in place should the content ever
+move behind an API.
