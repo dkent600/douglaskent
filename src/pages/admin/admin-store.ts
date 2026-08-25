@@ -53,6 +53,8 @@ export interface IIssue {
 
 const ENDPOINT = "/__resume";
 const MONTH = /^\d{4}-\d{2}$/;
+/** An ongoing role. Valid for `endDate` only -- a start date cannot be "Present". */
+const PRESENT = /^present$/i;
 
 export class AdminStore {
   /**
@@ -230,8 +232,9 @@ export class AdminStore {
          * as text -- and the real resume deliberately carries "2017-09 (intermittent)".
          * Worth flagging for consistency, not worth blocking a save over.
          */
-        if (!MONTH.test(value)) {
-          issues.push({ level: "warning", message: `${label}: ${field} is not YYYY-MM ("${value}")` });
+        const allowsPresent = field === "endDate";
+        if (!MONTH.test(value) && !(allowsPresent && PRESENT.test(value))) {
+          issues.push({ level: "warning", message: `${label}: ${field} is not YYYY-MM${allowsPresent ? ' or "Present"' : ""} ("${value}")` });
         }
       }
       /**

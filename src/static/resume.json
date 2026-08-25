@@ -72,8 +72,8 @@
       "company": "Personal Project",
       "position": "Designer and Developer",
       "startDate": "2026-05",
+      "summary": "Designing and developing a tool that could assist <a href=\"https://www.inclusity.com/\" target=\"_blank\">Inclusity</a> in advising its clients.",
       "endDate": "Present",
-      "summary": "",
       "highlights": [],
       "skills": [
         "AI Coding Assistent"
@@ -106,8 +106,7 @@
         "FluentUI Web Components",
         "Vite",
         "Axios",
-        "GitHub",
-        "Agile Methodologies"
+        "GitHub"
       ],
       "personal": true
     },

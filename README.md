@@ -78,8 +78,12 @@ skill names categories. The editor enforces that. A company that references a sk
 not contain is an **error** and blocks saving, because the resume resolves those names with a
 non-null assertion and would otherwise render nothing for it. Renaming a category cascades into
 every skill that uses it, and a skill or category cannot be deleted while something still
-references it. Softer problems -- a category no skill uses, a name claimed by two skills, a date
-that is not `YYYY-MM` -- are **warnings** and do not block a save.
+references it. Softer problems -- a category no skill uses, a name claimed by two skills, an
+out-of-shape date -- are **warnings** and do not block a save.
+
+Dates are `YYYY-MM`, except `endDate`, which also accepts `Present` (any casing) for an ongoing
+role. Nothing parses either field -- the view interpolates them as text -- so an odd value is
+only ever a warning; the resume carries `2017-09 (intermittent)` quite deliberately.
 
 ### It is dev-only, deliberately
 

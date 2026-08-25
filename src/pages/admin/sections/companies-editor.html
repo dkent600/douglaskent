@@ -39,8 +39,8 @@
           <label>Start (YYYY-MM)
             <input type="text" placeholder="2020-08" value.bind="company.startDate & debounce:150" input.trigger="store.touch()">
           </label>
-          <label>End (YYYY-MM)
-            <input type="text" placeholder="2022-11" value.bind="company.endDate & debounce:150" input.trigger="store.touch()">
+          <label>End (YYYY-MM or Present)
+            <input type="text" placeholder="2022-11 or Present" value.bind="company.endDate & debounce:150" input.trigger="store.touch()">
           </label>
           <label class="wide">Website
             <input type="url" value.bind="company.website & debounce:150" input.trigger="store.touch()">

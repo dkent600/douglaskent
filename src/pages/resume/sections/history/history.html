@@ -43,7 +43,7 @@
     <div resume-type="complete" if.bind="company.highlights.length">
       <div class="highlights">
         <a class="show-link" data-toggle="collapse" external href="#highlights_${index}" aria-expanded="false"
-          aria-controls="highlights-list" click.trigger="toggleHighlights(company)">
+          aria-controls="highlights_${index}" click.trigger="toggleHighlights(company)">
           <span>Highlights
             <i class="fa-solid ${company.showingHighlights ? 'fa-angles-up' : 'fa-angles-down'}"></i>
           </span>
@@ -77,8 +77,15 @@
         href="https://www.douglaskent.com" target="_blank" rel="noopener noreferrer">https://www.douglaskent.com</a>.
     </div>
     <div resume-type="complete">
-      <h6 class="company-position show-entire-history" data-toggle="collapse" external href="#allCompanies" aria-expanded="false"
-        aria-controls="companies-list" click.trigger="showingEntireHistory = !showingEntireHistory">
+      <!--
+        No `data-toggle="collapse"` here, deliberately. `#allCompanies` gets its `show`
+        class from `showingEntireHistory` below, so Aurelia owns this toggle. Letting
+        Bootstrap's collapse drive it too meant both wrote the same class attribute, and
+        Aurelia's re-render clobbered Bootstrap's mid-transition `collapsing` state,
+        leaving the section stuck shut with the label reading "open".
+      -->
+      <h6 class="company-position show-entire-history" aria-expanded.bind="showingEntireHistory ? 'true' : 'false'"
+        aria-controls="allCompanies" click.trigger="showingEntireHistory = !showingEntireHistory">
         ${showingEntireHistory ? "Show only recent history" : "Show the whole history"}
         <i class="fa-solid ${showingEntireHistory ? 'fa-angles-up' : 'fa-angles-down'}"></i>
       </h6>
