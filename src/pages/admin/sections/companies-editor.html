@@ -1,0 +1,109 @@
+<div class="editor">
+  <div class="editor-head">
+    <button type="button" class="primary" click.trigger="add()">Add company</button>
+    <p class="hint">
+      Order is display order. The first three appear above the &ldquo;Show the whole history&rdquo; fold.
+    </p>
+  </div>
+
+  <ol class="rows">
+    <li repeat.for="company of store.companies" class="row ${editing === $index ? 'is-open' : ''} ${$index < 3 ? 'above-fold' : ''}">
+      <div class="row-head">
+        <span class="ordinal">${$index + 1}</span>
+        <button type="button" class="title" click.trigger="toggle($index)">
+          <strong>${company.company || '(unnamed)'}</strong>
+          <span class="meta">${company.position} &middot; ${summarise(company)}</span>
+        </button>
+        <span class="row-tools">
+          <button type="button" title="Move to top" click.trigger="moveToTop($index)" disabled.bind="$index === 0">⤒</button>
+          <button type="button" title="Move up" click.trigger="move($index, -1)" disabled.bind="$index === 0">↑</button>
+          <button type="button" title="Move down" click.trigger="move($index, 1)" disabled.bind="$index === store.companies.length - 1">↓</button>
+          <button type="button" title="Duplicate" click.trigger="duplicate($index)">⧉</button>
+          <button type="button" class="danger" click.trigger="requestDelete($index)">
+            ${confirmingDelete === $index ? 'Cancel' : 'Delete'}
+          </button>
+          <button type="button" class="danger confirm" if.bind="confirmingDelete === $index" click.trigger="confirmDelete($index)">
+            Really delete
+          </button>
+        </span>
+      </div>
+
+      <div class="row-body" if.bind="editing === $index">
+        <div class="grid">
+          <label>Company
+            <input type="text" value.bind="company.company & debounce:150" input.trigger="store.touch()">
+          </label>
+          <label>Position
+            <input type="text" value.bind="company.position & debounce:150" input.trigger="store.touch()">
+          </label>
+          <label>Start (YYYY-MM)
+            <input type="text" placeholder="2020-08" value.bind="company.startDate & debounce:150" input.trigger="store.touch()">
+          </label>
+          <label>End (YYYY-MM)
+            <input type="text" placeholder="2022-11" value.bind="company.endDate & debounce:150" input.trigger="store.touch()">
+          </label>
+          <label class="wide">Website
+            <input type="url" value.bind="company.website & debounce:150" input.trigger="store.touch()">
+          </label>
+        </div>
+
+        <div class="flags">
+          <label><input type="checkbox" checked.bind="company.remote" change.trigger="store.touch()"> Remote</label>
+          <label><input type="checkbox" checked.bind="company.contract" change.trigger="store.touch()"> Contract</label>
+          <label><input type="checkbox" checked.bind="company.personal" change.trigger="store.touch()"> Personal</label>
+        </div>
+
+        <label class="block">Summary <span class="hint">markdown</span>
+          <textarea rows="4" value.bind="company.summary & debounce:150" input.trigger="store.touch()"></textarea>
+        </label>
+
+        <section class="sub">
+          <h4>Highlights <span class="hint">markdown, one per bullet</span></h4>
+          <!--
+            Repeats over an index range, not over the strings. Iterating the array itself
+            means every keystroke replaces the string at that index, the repeater treats
+            it as a changed item, and it destroys and rebuilds the textarea being typed
+            into -- which throws away the focus and the character. Iterating the length
+            keeps the view alive: assigning to `highlights[i]` is an index write, which
+            Aurelia does not observe, while add/remove/reorder go through push/splice and
+            do change the length, so the list still rebuilds when it should.
+          -->
+          <div class="highlight" repeat.for="i of company.highlights.length">
+            <textarea rows="2" value.bind="company.highlights[i] & debounce:150" input.trigger="store.touch()"></textarea>
+            <span class="row-tools">
+              <button type="button" title="Move up" click.trigger="moveHighlight(company, i, -1)" disabled.bind="i === 0">↑</button>
+              <button type="button" title="Move down" click.trigger="moveHighlight(company, i, 1)" disabled.bind="i === company.highlights.length - 1">↓</button>
+              <button type="button" class="danger" click.trigger="removeHighlight(company, i)">✕</button>
+            </span>
+          </div>
+          <button type="button" click.trigger="addHighlight(company)">Add highlight</button>
+        </section>
+
+        <section class="sub">
+          <h4>Skills <span class="hint">chosen from the skills list &mdash; a name that is not on it renders as nothing</span></h4>
+          <!--
+            These read `company.skills` directly rather than calling a view-model method.
+            A method call is only re-evaluated when its *arguments* change -- Aurelia does
+            not track what the method body reads -- so `hasSkill(company, name)` never
+            updated after a click. An array method with a lambda is observed against the
+            array itself, so toggling re-renders. The comparison stays case-insensitive
+            because the data is full of "Javascript"/"JavaScript" style mismatches.
+          -->
+          <div class="unknown" if.bind="company.skills.filter(n => !isKnown(n)).length">
+            <strong>Unresolved:</strong>
+            <button type="button" class="chip danger" repeat.for="name of company.skills.filter(n => !isKnown(n))"
+              click.trigger="removeSkill(company, name)" title="Remove">
+              ${name} ✕
+            </button>
+          </div>
+          <div class="chips">
+            <button type="button" class="chip ${company.skills.some(s => s.toLowerCase() === name.toLowerCase()) ? 'is-on' : ''}"
+              repeat.for="name of store.selectableSkillNames" click.trigger="toggleSkill(company, name)">
+              ${name}
+            </button>
+          </div>
+        </section>
+      </div>
+    </li>
+  </ol>
+</div>

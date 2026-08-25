@@ -16,6 +16,7 @@ Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 | --- | --- |
 | `npm start` | Dev server on port 9000, opens a browser |
 | `npm run debug` | Same dev server, without opening a browser |
+| `npm run admin` | Same dev server, opening the resume editor at `/admin` (see below) |
 | `npm run build` | Production build into `dist/` |
 | `npm run preview` | Serve the built `dist/` to check it before deploying |
 | `npm run typecheck` | `tsc --noEmit`, using the TypeScript version this project pins |
@@ -35,6 +36,7 @@ Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 | `/expanded` | Redirects to `/resume/expanded` |
 | `/resume/short/expanded` | Redirects to `/resume/expanded` -- `short` and `expanded` are mutually exclusive |
 | `/techresume` | Redirects to `/resume` |
+| `/admin` | The resume editor -- dev server only, absent from a build. See [Editing the resume](#editing-the-resume) |
 | anything else | The not-found page, which reports the address that failed and links to the three real ones |
 
 The canonical link in `index.html` uses `/resume/expanded`. The older
@@ -59,6 +61,37 @@ decides which values are valid and redirects the rest to `not-found`.
 
 The short and complete variants are driven by the `resume-type` custom attribute in
 `src/resources/attributes/whichResumeOnly.ts`.
+
+## Editing the resume
+
+`npm run admin` opens a GUI at `/admin` for the work history and the skills it depends on,
+writing changes back to `src/static/resume.json`. Edit, save, then commit the file as usual.
+
+| Tab | Edits |
+| --- | --- |
+| Companies | `work` -- add, duplicate, delete, reorder (order is display order, and the first three sit above the "Show the whole history" fold), plus highlights and per-company skills |
+| Skills | `skills` -- name, priority, url, categories, aliases, hide |
+| Categories | `skillCategories` -- add, rename, reorder, delete |
+
+The three are edited together because they reference each other: a company names skills, and a
+skill names categories. The editor enforces that. A company that references a skill the list does
+not contain is an **error** and blocks saving, because the resume resolves those names with a
+non-null assertion and would otherwise render nothing for it. Renaming a category cascades into
+every skill that uses it, and a skill or category cannot be deleted while something still
+references it. Softer problems -- a category no skill uses, a name claimed by two skills, a date
+that is not `YYYY-MM` -- are **warnings** and do not block a save.
+
+### It is dev-only, deliberately
+
+The site is static files on FTP hosting, so a deployed page has nothing to write to. The write
+endpoint (`GET`/`PUT /__resume`) lives in `resume-api-plugin.ts`, a Vite plugin marked
+`apply: "serve"` that only ever registers through `configureServer`, so it cannot exist in a
+build. The route in `src/pages/app/app.ts` is spread in behind `import.meta.env.DEV` and loads
+its component through a dynamic `import()`, so nothing under `src/pages/admin` is reachable from
+the production bundle. `npm run build` output contains no editor code, symbols, route, or CSS.
+
+Saving rewrites `resume.json`, which is in the module graph, so Vite reloads the page and the
+editor comes back freshly loaded from disk -- whichever row was open closes.
 
 ## Build output and deploying
 

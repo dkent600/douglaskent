@@ -1,0 +1,47 @@
+<div class="admin">
+  <header class="admin-bar">
+    <h1>Resume editor</h1>
+    <nav class="admin-tabs">
+      <button type="button" class="${tab === 'companies' ? 'is-current' : ''}" click.trigger="show('companies')">
+        Companies <span class="count">${store.companies.length}</span>
+      </button>
+      <button type="button" class="${tab === 'skills' ? 'is-current' : ''}" click.trigger="show('skills')">
+        Skills <span class="count">${store.skills.length}</span>
+      </button>
+      <button type="button" class="${tab === 'categories' ? 'is-current' : ''}" click.trigger="show('categories')">
+        Categories <span class="count">${store.categories.length}</span>
+      </button>
+    </nav>
+    <div class="admin-actions">
+      <span class="dirty" if.bind="store.dirty">unsaved changes</span>
+      <span class="status">${store.status}</span>
+      <button type="button" click.trigger="store.load()" disabled.bind="store.busy">Reload</button>
+      <button type="button" class="primary" click.trigger="store.save()"
+        disabled.bind="store.busy || !store.dirty || store.errors.length">
+        Save
+      </button>
+    </div>
+  </header>
+
+  <section class="issues" if.bind="store.errors.length || store.warnings.length">
+    <details open.bind="store.errors.length > 0">
+      <summary>
+        <span class="badge error" if.bind="store.errors.length">${store.errors.length} error(s)</span>
+        <span class="badge warning" if.bind="store.warnings.length">${store.warnings.length} warning(s)</span>
+        <span if.bind="store.errors.length">&mdash; save is blocked until the errors are resolved</span>
+      </summary>
+      <ul>
+        <li repeat.for="issue of store.errors" class="error">${issue.message}</li>
+        <li repeat.for="issue of store.warnings" class="warning">${issue.message}</li>
+      </ul>
+    </details>
+  </section>
+
+  <main if.bind="store.resume">
+    <companies-editor if.bind="tab === 'companies'"></companies-editor>
+    <skills-editor if.bind="tab === 'skills'"></skills-editor>
+    <skill-categories-editor if.bind="tab === 'categories'"></skill-categories-editor>
+  </main>
+
+  <p class="empty" else>Nothing loaded. ${store.status}</p>
+</div>

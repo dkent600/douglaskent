@@ -59,6 +59,7 @@
     "Development Tools",
     "Website and Application Hosting",
     "Cryptography",
+    "Scripting",
     "Localization/Globalization",
     "Charting & Graphing Frameworks",
     "Semantic Search Frameworks",
@@ -69,8 +70,20 @@
   "work": [
     {
       "company": "Personal Project",
+      "position": "Designer and Developer",
+      "startDate": "2026-05",
+      "endDate": "Present",
+      "summary": "",
+      "highlights": [],
+      "skills": [
+        "AI Coding Assistent"
+      ],
+      "personal": true
+    },
+    {
+      "company": "Personal Project",
       "position": "dApp Designer and Developer",
-      "remote": true,
+      "remote": false,
       "website": "https://github.com/dkent600/batch-take-profit",
       "startDate": "2025-06",
       "summary": "Fully designed and created a sophisticated cryptocurrency portfolio management dApp. Is the frontend component of the Butterfly App Ecosystem, designed to execute scaled take-profit sales across multiple cryptocurrency exchanges.",
@@ -93,13 +106,15 @@
         "FluentUI Web Components",
         "Vite",
         "Axios",
-        "GitHub"
-      ]
+        "GitHub",
+        "Agile Methodologies"
+      ],
+      "personal": true
     },
     {
       "company": "Personal Project",
       "position": "Multi-Exchange API Gateway Designer and Developer",
-      "remote": true,
+      "remote": false,
       "website": "https://github.com/dkent600/butterfly-services",
       "startDate": "2025-06",
       "summary": "Fully designed and created a Multi-Exchange REST API Gateway supporting secure cryptocurrency exchange operations, part of the Butterfly App Ecosystem. It  provides a Node.js service hosting REST API endpoints supporting cryptocurrency exchange operations with comprehensive safety mechanisms, testing, and production-ready integration.",
@@ -123,7 +138,8 @@
         "Vite",
         "Axios",
         "GitHub"
-      ]
+      ],
+      "personal": true
     },
     {
       "company": "Curve Labs",
@@ -598,11 +614,11 @@
       "personal": true,
       "website": "",
       "startDate": "2013-08",
-      "summary": "Designed and implemented a personal website using encryption techniques enabling me to access all of my logins/passwords from anywhere without requiring SSL",
-      "endDate": "2017-09 (intermittent)",
+      "summary": "Designed and implemented a personal website using encryption techniques enabling me to access all of my logins/passwords from anywhere without requiring SSL. Received intermittent attention.",
+      "endDate": "2017-09",
       "highlights": [
         "Extensive use of hashing and encryption (both server and client-side), custom server-side authentication and other techniques to achieve data privacy with no SSL",
-        "Been through a couple iterations as technologies have changed.  Was Durandal+KnockoutJs+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core"
+        "Been through a couple iterations as technologies have changed.  Was Durandal+KnockoutJs+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core."
       ],
       "skills": [
         "Aurelia",
@@ -931,7 +947,7 @@
     },
     {
       "name": "AI Coding Assistent",
-      "priority": 1.0,
+      "priority": 1,
       "categories": [
         "AI"
       ],
@@ -939,7 +955,7 @@
     },
     {
       "name": "AI Copilot",
-      "priority": 1.0,
+      "priority": 1,
       "categories": [
         "AI"
       ],

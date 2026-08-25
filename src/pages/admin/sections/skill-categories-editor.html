@@ -1,0 +1,29 @@
+<div class="editor">
+  <div class="editor-head">
+    <label class="search">New category
+      <input type="text" value.bind="added" keydown.trigger="$event.key === 'Enter' && add()">
+    </label>
+    <button type="button" class="primary" click.trigger="add()" disabled.bind="!added.trim()">Add</button>
+    <p class="hint">Order here is the order the skills pills are grouped in.</p>
+  </div>
+
+  <ol class="rows">
+    <li repeat.for="category of store.categories" class="row">
+      <div class="row-head">
+        <span class="ordinal">${$index + 1}</span>
+        <input class="title-input" type="text" value.bind="category"
+          blur.trigger="rename($index, $event.target.value)">
+        <span class="meta">${users(category).length} skill(s)</span>
+        <span class="row-tools">
+          <button type="button" title="Move up" click.trigger="move($index, -1)" disabled.bind="$index === 0">↑</button>
+          <button type="button" title="Move down" click.trigger="move($index, 1)"
+            disabled.bind="$index === store.categories.length - 1">↓</button>
+          <button type="button" class="danger" click.trigger="remove($index)" disabled.bind="users(category).length"
+            title.bind="users(category).length ? 'Used by: ' + users(category).join(', ') : 'Delete'">
+            Delete
+          </button>
+        </span>
+      </div>
+    </li>
+  </ol>
+</div>

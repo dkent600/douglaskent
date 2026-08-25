@@ -1,0 +1,76 @@
+<div class="editor">
+  <div class="editor-head">
+    <button type="button" class="primary" click.trigger="add()">Add skill</button>
+    <label class="search">Filter
+      <input type="search" value.bind="filter & debounce:150" placeholder="name, alias or category">
+    </label>
+    <p class="hint">${visible.length} of ${store.skills.length}</p>
+  </div>
+
+  <ol class="rows">
+    <li repeat.for="skill of visible" class="row ${editing === skill ? 'is-open' : ''}">
+      <div class="row-head">
+        <button type="button" class="title" click.trigger="toggle(skill)">
+          <strong>${skill.name || '(unnamed)'}</strong>
+          <span class="meta">
+            priority ${skill.priority}
+            <template if.bind="skill.categories.length"> &middot; ${skill.categories.join(', ')}</template>
+            <template if.bind="skill.aliases.length"> &middot; aka ${skill.aliases.join(', ')}</template>
+            <template if.bind="skill.hide"> &middot; hidden</template>
+          </span>
+        </button>
+        <span class="row-tools">
+          <button type="button" class="danger" click.trigger="remove(skill)" disabled.bind="blockers(skill).length"
+            title.bind="blockers(skill).length ? 'Used by: ' + blockers(skill).join(', ') : 'Delete'">
+            Delete
+          </button>
+        </span>
+      </div>
+
+      <div class="row-body" if.bind="editing === skill">
+        <div class="grid">
+          <label>Name
+            <input type="text" value.bind="skill.name & debounce:150" input.trigger="store.touch()">
+          </label>
+          <label>Priority
+            <input type="number" step="1" value.bind="skill.priority & debounce:150" input.trigger="store.touch()">
+          </label>
+          <label class="wide">URL
+            <input type="url" value.bind="skill.url & debounce:150" input.trigger="store.touch()">
+          </label>
+        </div>
+
+        <div class="flags">
+          <label><input type="checkbox" checked.bind="skill.hide" change.trigger="store.touch()">
+            Hide from the skills pills (still shown under jobs)</label>
+        </div>
+
+        <section class="sub">
+          <h4>Categories</h4>
+          <div class="chips">
+            <button type="button" class="chip ${skill.categories.includes(category) ? 'is-on' : ''}"
+              repeat.for="category of store.categories" click.trigger="toggleCategory(skill, category)">
+              ${category}
+            </button>
+          </div>
+        </section>
+
+        <section class="sub">
+          <h4>Aliases <span class="hint">other names a job may reference this skill by</span></h4>
+          <!-- Index range rather than the strings themselves; see companies-editor.html. -->
+          <div class="highlight" repeat.for="i of skill.aliases.length">
+            <input type="text" value.bind="skill.aliases[i] & debounce:150" input.trigger="store.touch()">
+            <span class="row-tools">
+              <button type="button" class="danger" click.trigger="removeAlias(skill, i)">✕</button>
+            </span>
+          </div>
+          <button type="button" click.trigger="addAlias(skill)">Add alias</button>
+        </section>
+
+        <p class="hint" if.bind="blockers(skill).length">
+          Referenced by: ${blockers(skill).join(', ')}
+        </p>
+      </div>
+    </li>
+  </ol>
+</div>

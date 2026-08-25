@@ -55,6 +55,22 @@ const notFoundTitle = "Douglas Kent - Page Not Found";
       path: "resume/short/expanded",
       redirectTo: "resume/expanded",
     },
+    /**
+     * The resume editor. Dev-only in two ways: the entry is spread in behind
+     * `import.meta.env.DEV`, and the component is a dynamic `import()` so the build
+     * has no static reference to reach it -- nothing under `src/pages/admin` ends up
+     * in the production bundle. It has no production counterpart to talk to anyway:
+     * the write endpoint lives in a vite dev-server plugin.
+     */
+    ...(import.meta.env.DEV
+      ? [
+          {
+            path: "admin",
+            component: (): Promise<unknown> => import("../admin/admin"),
+            title: "Resume editor",
+          },
+        ]
+      : []),
     {
       path: "not-found",
       component: NotFound,

@@ -1,0 +1,351 @@
+/**
+ * Deliberately standalone rather than built on the resume's bootstrap-material-design
+ * styling: this is a dev-only tool, and pulling in that stylesheet would mean the
+ * editor's look drifts whenever the resume's does.
+ */
+.admin {
+  --line: #d8d8d8;
+  --ink: #222;
+  --muted: #6b6b6b;
+  --accent: #0b5ed7;
+  --danger: #b02a37;
+  --warn: #8a6d00;
+  --surface: #fff;
+  --sunken: #f6f6f6;
+
+  box-sizing: border-box;
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 14px;
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 1rem 1.25rem 4rem;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  button {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    padding: 0.25rem 0.6rem;
+
+    &:hover:not(:disabled) {
+      border-color: var(--muted);
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.4;
+    }
+
+    &.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    &.danger {
+      color: var(--danger);
+    }
+
+    &.danger.confirm {
+      background: var(--danger);
+      border-color: var(--danger);
+      color: #fff;
+    }
+  }
+
+  input,
+  textarea,
+  select {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font: inherit;
+    padding: 0.3rem 0.45rem;
+    width: 100%;
+  }
+
+  textarea {
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+    resize: vertical;
+  }
+
+  .hint {
+    color: var(--muted);
+    font-size: 0.85em;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+.admin-bar {
+  align-items: center;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 0.25rem;
+
+  .is-current {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+  }
+
+  .count {
+    opacity: 0.6;
+  }
+}
+
+.admin-actions {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+
+  .status {
+    color: var(--muted);
+  }
+
+  .dirty {
+    background: #fff3cd;
+    border-radius: 999px;
+    color: var(--warn);
+    padding: 0.15rem 0.6rem;
+  }
+}
+
+.issues {
+  background: var(--sunken);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.75rem;
+
+  summary {
+    cursor: pointer;
+  }
+
+  ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.2rem;
+  }
+
+  .error {
+    color: var(--danger);
+  }
+
+  .warning {
+    color: var(--warn);
+  }
+
+  .badge {
+    border-radius: 999px;
+    font-size: 0.85em;
+    margin-right: 0.4rem;
+    padding: 0.1rem 0.5rem;
+
+    &.error {
+      background: #f8d7da;
+    }
+
+    &.warning {
+      background: #fff3cd;
+    }
+  }
+}
+
+.editor-head {
+  align-items: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+
+  .search {
+    display: grid;
+    font-size: 0.85em;
+    gap: 0.15rem;
+    min-width: 16rem;
+  }
+}
+
+.rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  margin-bottom: 0.4rem;
+
+  &.is-open {
+    border-color: var(--accent);
+  }
+
+  /** The first three companies render above the resume's "show the whole history" fold. */
+  &.above-fold .ordinal {
+    background: var(--accent);
+    color: #fff;
+  }
+}
+
+.row-head {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+}
+
+.ordinal {
+  background: var(--sunken);
+  border-radius: 4px;
+  flex: none;
+  font-size: 0.8em;
+  min-width: 1.9rem;
+  padding: 0.1rem 0.3rem;
+  text-align: center;
+}
+
+/** Scoped under `.admin` so it outranks the `.admin button` base rule above. */
+.admin .title {
+  background: none;
+  border: none;
+  flex: 1;
+  overflow: hidden;
+  padding: 0.1rem 0;
+  text-align: left;
+
+  .meta {
+    color: var(--muted);
+    display: block;
+    font-size: 0.85em;
+  }
+}
+
+.admin .title-input {
+  flex: 1;
+}
+
+.row-tools {
+  display: flex;
+  flex: none;
+  gap: 0.2rem;
+}
+
+.row-body {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+
+  label {
+    display: grid;
+    font-size: 0.85em;
+    gap: 0.15rem;
+  }
+
+  .wide {
+    grid-column: 1 / -1;
+  }
+}
+
+.flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  label {
+    align-items: center;
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  input {
+    width: auto;
+  }
+}
+
+.block {
+  display: grid;
+  font-size: 0.85em;
+  gap: 0.15rem;
+}
+
+.sub {
+  border-top: 1px dashed var(--line);
+  padding-top: 0.6rem;
+
+  h4 {
+    font-size: 0.9rem;
+    margin: 0 0 0.4rem;
+  }
+}
+
+.highlight {
+  align-items: start;
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  max-height: 14rem;
+  overflow-y: auto;
+}
+
+.chip {
+  border-radius: 999px;
+  font-size: 0.85em;
+
+  &.is-on {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+}
+
+.unknown {
+  background: #f8d7da;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0.5rem;
+}
+
+.empty {
+  color: var(--muted);
+}

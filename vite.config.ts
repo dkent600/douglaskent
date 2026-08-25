@@ -3,6 +3,8 @@ import aurelia from "@aurelia/vite-plugin";
 import { visualizer } from "rollup-plugin-visualizer";
 import * as rollupPluginutils from "rollup-pluginutils";
 import { defineConfig, type PluginOption } from "vite";
+
+import { resumeApi } from "./resume-api-plugin";
 /**
  * This is required by the rollup build which will otherwise barf
  * on this statement in the ts:
@@ -63,6 +65,7 @@ export default defineConfig(({ mode }) => ({
       useDev: mode !== "production",
     }),
     rawHtml(),
+    resumeApi(),
     visualizer({
       emitFile: true,
       gzipSize: true,
