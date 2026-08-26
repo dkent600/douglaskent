@@ -73,17 +73,17 @@
       "company": "Personal case study, modeled on a DEI consultancy",
       "position": "Technical Lead & LLM Pipeline Architect",
       "startDate": "2026-05",
-      "summary": "Turned an open-ended qualitative analysis problem into a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and an enforced boundary preventing any stage from unilaterally releasing output to clients.",
+      "summary": "Turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface.",
       "endDate": "present",
       "highlights": [
-        "Self-directed case study: scoped, designed, and built solo in TypeScript, with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing).",
+        "Self-directed case study: scoped, designed, and built solo in TypeScript — Aurelia 2 web application over a Fastify/Node service — with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing).",
         "Ran a hybrid human/AI development process: delegated implementation to a coding agent, routed design decisions through an independent review model, and adjudicated every conflict personally.",
         "Derived functional requirements and the domain model by using an LLM to analyze a DEI consultancy's published materials, translating an external firm's stated methodology into implementable analytic stages.",
         "Guaranteed processing completeness in orchestration code rather than in prompts — every input provably resolves to one of four explicit terminal states, so nothing is silently dropped regardless of model behavior.",
         "Designed a seven-lens analytic architecture running in six ordered waves; three lenses validated against a real model to date, with calibration driven by a purpose-built synthetic evaluation dataset.",
         "Made a non-deterministic system testable: captured real model responses once and replayed them, so runs became reproducible and far cheaper.",
         "Designed test data that measured failure in both directions — what the pipeline missed and what it invented — rather than only rewarding recall.",
-        "Built confidentiality controls with a human in the loop: no finding reaches client-facing output without explicit approval, and automated de-identification holds for review anything it misses."
+        "Built confidentiality controls with a human in the loop: no finding reaches client-facing output without explicit approval, and automated de-identification holds for review anything it misses — with the client-safe boundary enforced by the package structure, so the human-review interface is structurally incapable of holding internal findings."
       ],
       "skills": [
         "TypeScript",
@@ -107,10 +107,9 @@
       "remote": false,
       "website": "https://github.com/dkent600/batch-take-profit",
       "startDate": "2025-06",
-      "summary": "Self-directed and designed: cryptocurrency portfolio management dApp designed to execute scaled take-profit sales across multiple cryptocurrency exchanges. Supported by the Butterfly Crypto Portfolio Management Service.",
+      "summary": "Self-directed: designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges. Supported by the Butterfly Crypto Portfolio Management Service.",
       "endDate": "2025-09",
       "highlights": [
-        "Manages cryptocurrency assets across multiple exchanges",
         "Does real-time price monitoring and balance tracking, tracking order history and status",
         "Executes batch take-profit orders across multiple exchanges, with percentage-based or fixed-amount strategies",
         "Internal architecture: MVVM SPA app frontend",
@@ -137,7 +136,7 @@
       "remote": false,
       "website": "https://github.com/dkent600/butterfly-services",
       "startDate": "2025-06",
-      "summary": "Self-directed and designed: multi-crypto-exchange REST API service supporting secure cryptocurrency exchange operations. Supports the Butterfly Crypto Portfolio Management dApp.",
+      "summary": "Self-directed: designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges. Supports the Butterfly Crypto Portfolio Management dApp.",
       "endDate": "2025-09",
       "highlights": [
         "Provides comprehensive safety mechanisms, testing, dependency injection and production-ready integration",
