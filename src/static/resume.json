@@ -81,9 +81,9 @@
         "Derived functional requirements and the domain model by using an LLM to analyze a DEI consultancy's published materials, translating an external firm's stated methodology into implementable analytic stages.",
         "Guaranteed processing completeness in orchestration code rather than in prompts — every input provably resolves to one of four explicit terminal states, so nothing is silently dropped regardless of model behavior.",
         "Designed a seven-lens analytic architecture running in six ordered waves; three lenses validated against a real model to date, with calibration driven by a purpose-built synthetic evaluation dataset.",
-        "Made a non-deterministic system testable: captured real model responses once and replayed them, so runs became reproducible and far cheaper — plus a no-model path for fast checks of pipeline mechanics.",
+        "Made a non-deterministic system testable: captured real model responses once and replayed them, so runs became reproducible and far cheaper.",
         "Designed test data that measured failure in both directions — what the pipeline missed and what it invented — rather than only rewarding recall.",
-        "Implemented a two-layer output architecture with held-by-default promotion — client-facing output is a strict subset of internal findings, never a rewrite — plus a de-identification gate holding any residual identifying language for human review."
+        "Built confidentiality controls with a human in the loop: no finding reaches client-facing output without explicit approval, and automated de-identification holds for review anything it misses."
       ],
       "skills": [
         "TypeScript",
@@ -94,31 +94,30 @@
         "NPM",
         "HTML5",
         "Fastify",
-        "ChatGpt LLM",
+        "ChatGpt (LLM)",
         "Claude Code for VS Code",
-        "Claude.ai LLM",
+        "Claude.ai (LLM)",
         "AI Coding Assistant"
       ],
       "personal": true
     },
     {
-      "company": "Personal Project, crypto portfolio management dApp",
+      "company": "Butterfly: Crypto Portfolio Management dApp",
       "position": "Technical Lead & Architect",
       "remote": false,
       "website": "https://github.com/dkent600/batch-take-profit",
       "startDate": "2025-06",
-      "summary": "Fully designed and created a sophisticated cryptocurrency portfolio management dApp. Is the frontend component of the Butterfly App Ecosystem, designed to execute scaled take-profit sales across multiple cryptocurrency exchanges.",
+      "summary": "Self-directed and designed: cryptocurrency portfolio management dApp designed to execute scaled take-profit sales across multiple cryptocurrency exchanges. Supported by the Butterfly Crypto Portfolio Management Service.",
       "endDate": "2025-09",
       "highlights": [
-        "In development, leveraged the AI coding assistant AI Copilot in VS Code",
-        "Architecture: MVVM SPA app frontend: [ View ] → binds to → [ ViewModel ] → uses → [ Store ] → calls → [ Service ]",
         "Manages cryptocurrency assets across multiple exchanges",
+        "Does real-time price monitoring and balance tracking, tracking order history and status",
         "Executes batch take-profit orders across multiple exchanges, with percentage-based or fixed-amount strategies",
-        "Does real-time price monitoring and balance tracking, tracking order history and status"
+        "Internal architecture: MVVM SPA app frontend",
+        "Development process utilizing the AI coding assistant GitHub Copilot Chat in VS Code"
       ],
       "skills": [
         "Defi",
-        "AI Copilot",
         "TypeScript",
         "Aurelia 2",
         "MVVM",
@@ -127,29 +126,31 @@
         "Vite",
         "Axios",
         "GitHub",
-        "AI Coding Assistant"
+        "AI Coding Assistant",
+        "GitHub Copilot"
       ],
       "personal": true
     },
     {
-      "company": "Personal Project, crypto portfolio management service",
+      "company": "Butterfly: Crypto Portfolio Management Service",
       "position": "Technical Lead & Architect",
       "remote": false,
       "website": "https://github.com/dkent600/butterfly-services",
       "startDate": "2025-06",
-      "summary": "Fully designed and created a Multi-Exchange REST API Gateway supporting secure cryptocurrency exchange operations, part of the Butterfly App Ecosystem. It  provides a Node.js service hosting REST API endpoints supporting cryptocurrency exchange operations with comprehensive safety mechanisms, testing, and production-ready integration.",
+      "summary": "Self-directed and designed: multi-crypto-exchange REST API service supporting secure cryptocurrency exchange operations. Supports the Butterfly Crypto Portfolio Management dApp.",
       "endDate": "2025-09",
       "highlights": [
-        "In development, leveraged the AI coding assistant AI Copilot in VS Code",
-        "Architecture: Layered Service-Oriented with Dependency Injection: [ API ] -> [ Services ] -> [ Infrastucture]",
-        "Node.js with TypeScript",
+        "Provides comprehensive safety mechanisms, testing, dependency injection and production-ready integration",
+        "Layered, service-oriented code architecture",
+        "Development process utilizing the AI coding assistant GitHub Copilot Chat in VS Code",
         "Fastify server providing Swagger/OpenAPI documentation",
+        "Node.js with TypeScript",
         "TSyringe for clean dependency injection architecture for Node.js",
         "Axios for exchange-API communications"
       ],
       "skills": [
         "Defi",
-        "AI Copilot",
+        "GitHub Copilot",
         "Nodejs",
         "TypeScript",
         "Fastify",
@@ -918,7 +919,7 @@
   ],
   "skills": [
     {
-      "name": "ChatGpt LLM",
+      "name": "ChatGpt (LLM)",
       "priority": 1,
       "categories": [
         "AI",
@@ -927,7 +928,7 @@
       "url": "https://chatgpt.com/"
     },
     {
-      "name": "Claude.ai LLM",
+      "name": "Claude.ai (LLM)",
       "priority": 1,
       "categories": [
         "AI",
@@ -1001,7 +1002,7 @@
       "url": "https://www.sonarsource.com/resources/library/ai-coding-assistants"
     },
     {
-      "name": "AI Copilot",
+      "name": "GitHub Copilot",
       "priority": 1,
       "categories": [
         "AI"
