@@ -97,7 +97,11 @@
         "ChatGpt (LLM)",
         "Claude Code for VS Code",
         "Claude.ai (LLM)",
-        "AI Coding Assistant"
+        "AI Coding Assistant",
+        "Axios",
+        "ViTest",
+        "awilix",
+        "TailWindCss"
       ],
       "personal": true
     },
@@ -917,6 +921,22 @@
     }
   ],
   "skills": [
+    {
+      "name": "awilix",
+      "priority": "1.8",
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://github.com/jeffijoe/awilix"
+    },
+    {
+      "name": "ViTest",
+      "priority": "1.8",
+      "categories": [
+        "Test Frameworks"
+      ],
+      "url": "https://vitest.dev/"
+    },
     {
       "name": "ChatGpt (LLM)",
       "priority": 1,
