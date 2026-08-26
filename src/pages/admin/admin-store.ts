@@ -197,6 +197,44 @@ export class AdminStore {
     return [...new Set(this.skills.flatMap((skill) => [skill.name, ...(skill.aliases ?? [])]))].sort((a, b) => a.localeCompare(b));
   }
 
+  /**
+   * `work[].skills` holds skill *names*, not ids, so renaming a skill without rewriting
+   * those references leaves every company pointing at a name that no longer resolves --
+   * which the resume renders as nothing at all. Matching is case-insensitive because the
+   * data is full of "Javascript"/"JavaScript" style mismatches; the reference is rewritten
+   * to the new canonical spelling either way.
+   *
+   * Used for both a skill's `name` and any of its aliases: `work[].skills` may reference
+   * either, so both need rewriting when they change.
+   */
+  public renameSkillReferences(from: string, to: string): number {
+    const fromKey = from.toLowerCase();
+    let changed = 0;
+    for (const company of this.companies) {
+      const skills = company.skills;
+      if (!skills) {
+        continue;
+      }
+      for (let i = 0; i < skills.length; i++) {
+        if (skills[i].toLowerCase() === fromKey) {
+          // splice rather than `skills[i] = to`: an index write is not observed
+          skills.splice(i, 1, to);
+          changed++;
+        }
+      }
+    }
+    if (changed > 0) {
+      this.touch();
+    }
+    return changed;
+  }
+
+  /** Companies whose `skills` name this exact string, by name or alias. */
+  public companiesUsingName(name: string): Array<string> {
+    const key = name.toLowerCase();
+    return this.companies.filter((company) => (company.skills ?? []).some((existing) => existing.toLowerCase() === key)).map((company) => company.company);
+  }
+
   public companiesUsingSkill(skill: IEditableSkill): Array<string> {
     const keys = new Set([skill.name.toLowerCase(), ...(skill.aliases ?? []).map((alias) => alias.toLowerCase())]);
     return this.companies.filter((company) => (company.skills ?? []).some((name) => keys.has(name.toLowerCase()))).map((company) => company.company);

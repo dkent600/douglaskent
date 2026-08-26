@@ -90,7 +90,8 @@
             because the data is full of "Javascript"/"JavaScript" style mismatches.
           -->
           <div class="unknown" if.bind="company.skills.filter(n => !isKnown(n)).length">
-            <strong>Unresolved:</strong>
+            <strong>Unresolved</strong>
+            <span class="hint">&mdash; not in the skills list, so the resume shows nothing for it. Click to remove.</span>
             <button type="button" class="chip danger" repeat.for="name of company.skills.filter(n => !isKnown(n))"
               click.trigger="removeSkill(company, name)" title="Remove">
               ${name} ✕

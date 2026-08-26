@@ -29,8 +29,9 @@
 
       <div class="row-body" if.bind="editing === skill">
         <div class="grid">
-          <label>Name
-            <input type="text" value.bind="skill.name & debounce:150" input.trigger="store.touch()">
+          <label>Name <span class="hint">renaming updates every company that references it</span>
+            <input type="text" value.bind="skill.name & debounce:150" input.trigger="store.touch()"
+              focus.trigger="beginRename(skill)" blur.trigger="commitRename(skill)">
           </label>
           <label>Priority
             <input type="number" step="1" value.bind="skill.priority & debounce:150" input.trigger="store.touch()">
@@ -56,16 +57,22 @@
         </section>
 
         <section class="sub">
-          <h4>Aliases <span class="hint">other names a job may reference this skill by</span></h4>
+          <h4>Aliases <span class="hint">other names a job may reference this skill by &mdash; renaming one updates those references</span></h4>
           <!-- Index range rather than the strings themselves; see companies-editor.html. -->
           <div class="highlight" repeat.for="i of skill.aliases.length">
-            <input type="text" value.bind="skill.aliases[i] & debounce:150" input.trigger="store.touch()">
+            <input type="text" value.bind="skill.aliases[i] & debounce:150" input.trigger="store.touch()"
+              focus.trigger="beginAliasRename(skill, i)" blur.trigger="commitAliasRename(skill, i)">
             <span class="row-tools">
-              <button type="button" class="danger" click.trigger="removeAlias(skill, i)">✕</button>
+              <button type="button" class="danger" click.trigger="removeAlias(skill, i)"
+                disabled.bind="aliasBlockers(skill, i).length"
+                title.bind="aliasBlockers(skill, i).length ? 'Referenced by: ' + aliasBlockers(skill, i).join(', ') : 'Remove alias'">✕</button>
             </span>
           </div>
           <button type="button" click.trigger="addAlias(skill)">Add alias</button>
         </section>
+
+        <p class="renamed" if.bind="renamedNote">${renamedNote}</p>
+        <p class="unknown" if.bind="blockedNote">${blockedNote}</p>
 
         <p class="hint" if.bind="blockers(skill).length">
           Referenced by: ${blockers(skill).join(', ')}
