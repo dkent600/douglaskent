@@ -69,7 +69,7 @@ export class SkillsEditor {
    * Deleting a skill a company still names would leave that company rendering nothing
    * for it, so the button reports the blockers instead of removing.
    */
-  blockers(skill: IEditableSkill): Array<string> {
+  blockers(skill: IEditableSkill, _revision?: number): Array<string> {
     return this.store.companiesUsingSkill(skill);
   }
 
@@ -120,7 +120,7 @@ export class SkillsEditor {
   }
 
   /** Companies that reference this alias. Removing it would leave them dangling. */
-  aliasBlockers(skill: IEditableSkill, index: number): Array<string> {
+  aliasBlockers(skill: IEditableSkill, index: number, _revision?: number): Array<string> {
     const alias = skill.aliases?.[index];
     return alias === undefined ? [] : this.store.companiesUsingName(alias);
   }

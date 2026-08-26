@@ -20,8 +20,8 @@
           </span>
         </button>
         <span class="row-tools">
-          <button type="button" class="danger" click.trigger="remove(skill)" disabled.bind="blockers(skill).length"
-            title.bind="blockers(skill).length ? 'Used by: ' + blockers(skill).join(', ') : 'Delete'">
+          <button type="button" class="danger" click.trigger="remove(skill)" disabled.bind="blockers(skill, store.revision).length"
+            title.bind="blockers(skill, store.revision).length ? 'Used by: ' + blockers(skill, store.revision).join(', ') : 'Delete'">
             Delete
           </button>
         </span>
@@ -64,8 +64,8 @@
               focus.trigger="beginAliasRename(skill, i)" blur.trigger="commitAliasRename(skill, i)">
             <span class="row-tools">
               <button type="button" class="danger" click.trigger="removeAlias(skill, i)"
-                disabled.bind="aliasBlockers(skill, i).length"
-                title.bind="aliasBlockers(skill, i).length ? 'Referenced by: ' + aliasBlockers(skill, i).join(', ') : 'Remove alias'">✕</button>
+                disabled.bind="aliasBlockers(skill, i, store.revision).length"
+                title.bind="aliasBlockers(skill, i, store.revision).length ? 'Referenced by: ' + aliasBlockers(skill, i, store.revision).join(', ') : 'Remove alias'">✕</button>
             </span>
           </div>
           <button type="button" click.trigger="addAlias(skill)">Add alias</button>
@@ -74,8 +74,8 @@
         <p class="renamed" if.bind="renamedNote">${renamedNote}</p>
         <p class="unknown" if.bind="blockedNote">${blockedNote}</p>
 
-        <p class="hint" if.bind="blockers(skill).length">
-          Referenced by: ${blockers(skill).join(', ')}
+        <p class="hint" if.bind="blockers(skill, store.revision).length">
+          Referenced by: ${blockers(skill, store.revision).join(', ')}
         </p>
       </div>
     </li>

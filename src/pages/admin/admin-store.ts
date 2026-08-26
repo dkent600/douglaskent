@@ -117,8 +117,17 @@ export class AdminStore {
     }
   }
 
+  /**
+   * Bumped by every mutation. Templates pass it into cross-entity lookups like
+   * `users(category, store.revision)` purely so those bindings re-evaluate: Aurelia
+   * re-runs a method call only when its *arguments* change, and it cannot see that a
+   * nested `skill.categories` array was spliced somewhere else on the page.
+   */
+  public revision = 0;
+
   public touch(): void {
     this.dirty = true;
+    this.revision++;
   }
 
   // ---------------------------------------------------------------- companies

@@ -20,27 +20,62 @@ export class SkillCategoriesEditor {
     this.store.touch();
   }
 
+  /** The name as it was when the field gained focus. */
+  private renamingFrom: string | null = null;
+
+  renamedNote = "";
+  blockedNote = "";
+
+  /**
+   * The old name has to be captured on focus, not read at blur. `value.bind="category"`
+   * is two-way over the repeat local, so it writes each keystroke straight into
+   * `store.categories` -- by blur the array already holds the new name, and reading the
+   * "previous" value there just returns the new one.
+   */
+  beginRename(index: number): void {
+    this.renamingFrom = this.store.categories[index];
+    this.renamedNote = "";
+    this.blockedNote = "";
+  }
+
   /**
    * Categories are plain strings that skills reference by value, so a rename has to be
    * applied to every skill that names the old one or those references would dangle.
    */
-  rename(index: number, next: string): void {
-    const previous = this.store.categories[index];
-    const name = next.trim();
-    if (!name || name === previous || this.store.categories.includes(name)) {
+  commitRename(index: number, raw: string): void {
+    const previous = this.renamingFrom;
+    this.renamingFrom = null;
+    const name = raw.trim();
+    if (previous === null || name === previous) {
+      return;
+    }
+    if (!name) {
+      this.store.categories.splice(index, 1, previous);
+      this.blockedNote = "A category cannot be blank; the previous name has been restored.";
+      return;
+    }
+    if (this.store.categories.some((category, at) => at !== index && category === name)) {
+      this.store.categories.splice(index, 1, previous);
+      this.blockedNote = `"${name}" already exists, so the rename was undone. Merge them by moving the skills instead.`;
       return;
     }
     this.store.categories.splice(index, 1, name);
+    let changed = 0;
     for (const skill of this.store.skills) {
-      const at = skill.categories.indexOf(previous);
-      if (at >= 0) {
-        skill.categories.splice(at, 1, name);
+      for (let at = 0; at < skill.categories.length; at++) {
+        if (skill.categories[at] === previous) {
+          // splice rather than an index write, which Aurelia does not observe
+          skill.categories.splice(at, 1, name);
+          changed++;
+        }
       }
     }
     this.store.touch();
+    this.renamedNote = changed > 0 ? `Renamed "${previous}" to "${name}" in ${changed} skill${changed === 1 ? "" : "s"}.` : "";
   }
 
-  users(category: string): Array<string> {
+  /** `_revision` is unused; it exists so the binding re-evaluates. See `AdminStore.revision`. */
+  users(category: string, _revision?: number): Array<string> {
     return this.store.skillsUsingCategory(category);
   }
 
