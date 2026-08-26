@@ -65,24 +65,45 @@
     "Semantic Search Frameworks",
     "Cloud Services",
     "Operating Systems",
-    "Development Processes"
+    "Development Processes",
+    "LLM"
   ],
   "work": [
     {
-      "company": "Personal Project",
-      "position": "Designer and Developer",
+      "company": "Personal case study, modeled on a DEI consultancy",
+      "position": "Technical Lead & LLM Pipeline Architect",
       "startDate": "2026-05",
-      "summary": "Designing and developing a tool that could assist <a href=\"https://www.inclusity.com/\" target=\"_blank\">Inclusity</a> in advising its clients.",
-      "endDate": "Present",
-      "highlights": [],
+      "summary": "Turned an open-ended qualitative analysis problem into a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and an enforced boundary preventing any stage from unilaterally releasing output to clients.",
+      "endDate": "present",
+      "highlights": [
+        "Self-directed case study: scoped, designed, and built solo in TypeScript, with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing).",
+        "Ran a hybrid human/AI development process: delegated implementation to a coding agent, routed design decisions through an independent review model, and adjudicated every conflict personally.",
+        "Derived functional requirements and the domain model by using an LLM to analyze a DEI consultancy's published materials, translating an external firm's stated methodology into implementable analytic stages.",
+        "Guaranteed processing completeness in orchestration code rather than in prompts — every input provably resolves to one of four explicit terminal states, so nothing is silently dropped regardless of model behavior.",
+        "Designed a seven-lens analytic architecture running in six ordered waves; three lenses validated against a real model to date, with calibration driven by a purpose-built synthetic evaluation dataset.",
+        "Made a non-deterministic system testable: captured real model responses once and replayed them, so runs became reproducible and far cheaper — plus a no-model path for fast checks of pipeline mechanics.",
+        "Designed test data that measured failure in both directions — what the pipeline missed and what it invented — rather than only rewarding recall.",
+        "Implemented a two-layer output architecture with held-by-default promotion — client-facing output is a strict subset of internal findings, never a rewrite — plus a de-identification gate holding any residual identifying language for human review."
+      ],
       "skills": [
-        "AI Coding Assistent"
+        "TypeScript",
+        "Visual Studio Code",
+        "Aurelia 2",
+        "Vite",
+        "NodeJs",
+        "NPM",
+        "HTML5",
+        "Fastify",
+        "ChatGpt LLM",
+        "Claude Code for VS Code",
+        "Claude.ai LLM",
+        "AI Coding Assistant"
       ],
       "personal": true
     },
     {
-      "company": "Personal Project",
-      "position": "dApp Designer and Developer",
+      "company": "Personal Project, crypto portfolio management dApp",
+      "position": "Technical Lead & Architect",
       "remote": false,
       "website": "https://github.com/dkent600/batch-take-profit",
       "startDate": "2025-06",
@@ -97,7 +118,6 @@
       ],
       "skills": [
         "Defi",
-        "AI Coding Assistent",
         "AI Copilot",
         "TypeScript",
         "Aurelia 2",
@@ -106,13 +126,14 @@
         "FluentUI Web Components",
         "Vite",
         "Axios",
-        "GitHub"
+        "GitHub",
+        "AI Coding Assistant"
       ],
       "personal": true
     },
     {
-      "company": "Personal Project",
-      "position": "Multi-Exchange API Gateway Designer and Developer",
+      "company": "Personal Project, crypto portfolio management service",
+      "position": "Technical Lead & Architect",
       "remote": false,
       "website": "https://github.com/dkent600/butterfly-services",
       "startDate": "2025-06",
@@ -128,7 +149,6 @@
       ],
       "skills": [
         "Defi",
-        "AI Coding Assistent",
         "AI Copilot",
         "Nodejs",
         "TypeScript",
@@ -136,7 +156,8 @@
         "TSyringe",
         "Vite",
         "Axios",
-        "GitHub"
+        "GitHub",
+        "AI Coding Assistant"
       ],
       "personal": true
     },
@@ -897,6 +918,33 @@
   ],
   "skills": [
     {
+      "name": "ChatGpt LLM",
+      "priority": 1,
+      "categories": [
+        "AI",
+        "LLM"
+      ],
+      "url": "https://chatgpt.com/"
+    },
+    {
+      "name": "Claude.ai LLM",
+      "priority": 1,
+      "categories": [
+        "AI",
+        "LLM"
+      ],
+      "url": "https://claude.ai/"
+    },
+    {
+      "name": "Claude Code for VS Code",
+      "priority": 1,
+      "categories": [
+        "AI",
+        "LLM"
+      ],
+      "url": "https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code"
+    },
+    {
       "name": "Fastify",
       "priority": 1.5,
       "categories": [
@@ -945,7 +993,7 @@
       "url": "https://tailwindcss.com/"
     },
     {
-      "name": "AI Coding Assistent",
+      "name": "AI Coding Assistant",
       "priority": 1,
       "categories": [
         "AI"
