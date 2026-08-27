@@ -2,6 +2,9 @@
   <header class="admin-bar">
     <h1>Resume editor</h1>
     <nav class="admin-tabs">
+      <button type="button" class="${tab === 'basics' ? 'is-current' : ''}" click.trigger="show('basics')">
+        Basics
+      </button>
       <button type="button" class="${tab === 'companies' ? 'is-current' : ''}" click.trigger="show('companies')">
         Companies <span class="count">${store.companies.length}</span>
       </button>
@@ -38,6 +41,7 @@
   </section>
 
   <main if.bind="store.resume">
+    <basics-editor if.bind="tab === 'basics'"></basics-editor>
     <companies-editor if.bind="tab === 'companies'"></companies-editor>
     <skills-editor if.bind="tab === 'skills'"></skills-editor>
     <skill-categories-editor if.bind="tab === 'categories'"></skill-categories-editor>

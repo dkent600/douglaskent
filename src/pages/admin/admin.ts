@@ -1,5 +1,6 @@
 import { customElement, ILogger, resolve } from "aurelia";
 
+import { BasicsEditor } from "./sections/basics-editor";
 import { CompaniesEditor } from "./sections/companies-editor";
 import { SkillCategoriesEditor } from "./sections/skill-categories-editor";
 import { SkillsEditor } from "./sections/skills-editor";
@@ -8,12 +9,12 @@ import { adminStore } from "./admin-store";
 
 import "./admin.scss";
 
-type Tab = "companies" | "skills" | "categories";
+type Tab = "basics" | "companies" | "skills" | "categories";
 
 @customElement({
   name: "admin",
   template,
-  dependencies: [CompaniesEditor, SkillsEditor, SkillCategoriesEditor],
+  dependencies: [BasicsEditor, CompaniesEditor, SkillsEditor, SkillCategoriesEditor],
 })
 export class Admin {
   readonly store = adminStore;

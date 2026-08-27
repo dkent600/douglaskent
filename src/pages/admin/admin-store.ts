@@ -35,11 +35,48 @@ export interface IEditableSkill {
   hide?: boolean;
 }
 
+export interface IEditableProfile {
+  network: string;
+  url: string;
+  icon?: string;
+}
+
+/** Every field is optional: the resume renders these as plain text, blanks included. */
+export interface IEditableLocation {
+  address?: string;
+  postalCode?: string;
+  city?: string;
+  countryCode?: string;
+  region?: string;
+  countryName?: string;
+  [field: string]: unknown;
+}
+
 /**
- * The index signature matters: the editor only touches three sections, but it saves the
+ * The index signature carries the `summary1`..`summaryN` paragraphs, which are numbered
+ * rather than an array because the resume templates name them individually
+ * (`basics.summary4`) and place them in different sections.
+ */
+export interface IEditableBasics {
+  name: string;
+  label?: string;
+  picture?: string;
+  email?: string;
+  resumeFeedbackEmail?: string;
+  phone?: string;
+  phone2?: string;
+  website?: string;
+  location: IEditableLocation;
+  profiles: Array<IEditableProfile>;
+  [field: string]: unknown;
+}
+
+/**
+ * The index signature matters: the editor only touches four sections, but it saves the
  * whole document back, so every other section has to survive the round trip untouched.
  */
 export interface IEditableResume {
+  basics: IEditableBasics;
   work: Array<IEditableCompany>;
   skills: Array<IEditableSkill>;
   skillCategories: Array<string>;
@@ -52,6 +89,10 @@ export interface IIssue {
 }
 
 const ENDPOINT = "/__resume";
+/** Stands in for `resume.basics` before anything is loaded, so the getter never returns null. */
+const NO_BASICS: IEditableBasics = { name: "", location: {}, profiles: [] };
+/** A trailing-dot-free address is still a typo worth flagging, so this only checks the shape. */
+const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const MONTH = /^\d{4}-\d{2}$/;
 /** An ongoing role. Valid for `endDate` only -- a start date cannot be "Present". */
 const PRESENT = /^present$/i;
@@ -80,7 +121,16 @@ export class AdminStore {
       if (!response.ok) {
         throw new Error(`${response.status} ${response.statusText}`);
       }
-      this.resume = (await response.json()) as IEditableResume;
+      const resume = (await response.json()) as IEditableResume;
+      /**
+       * The editor binds two-way straight into these, so they have to exist before the
+       * views do. Only ever adds what is missing, so a normal document round-trips
+       * unchanged.
+       */
+      resume.basics ??= { name: "", location: {}, profiles: [] };
+      resume.basics.location ??= {};
+      resume.basics.profiles ??= [];
+      this.resume = resume;
       this.dirty = false;
       this.status = `loaded ${this.resume.work.length} companies, ${this.resume.skills.length} skills, ${this.resume.skillCategories.length} categories`;
     } catch (error) {
@@ -128,6 +178,37 @@ export class AdminStore {
   public touch(): void {
     this.dirty = true;
     this.revision++;
+  }
+
+  // ------------------------------------------------------------------- basics
+
+  public get basics(): IEditableBasics {
+    return this.resume?.basics ?? NO_BASICS;
+  }
+
+  public get profiles(): Array<IEditableProfile> {
+    return this.basics.profiles;
+  }
+
+  public addProfile(): void {
+    this.profiles.push({ network: "", url: "", icon: "" });
+    this.touch();
+  }
+
+  public deleteProfile(index: number): void {
+    this.profiles.splice(index, 1);
+    this.touch();
+  }
+
+  /** Array order is the order the links are listed under "Contact". */
+  public moveProfile(index: number, delta: number): void {
+    const target = index + delta;
+    if (target < 0 || target >= this.profiles.length) {
+      return;
+    }
+    const [profile] = this.profiles.splice(index, 1);
+    this.profiles.splice(target, 0, profile);
+    this.touch();
   }
 
   // ---------------------------------------------------------------- companies
@@ -261,6 +342,35 @@ export class AdminStore {
     }
     const issues: Array<IIssue> = [];
     const byKey = this.skillsByKey;
+
+    const basics = this.basics;
+    if (!basics.name.trim()) {
+      issues.push({ level: "error", message: "Basics: name is required -- it is the resume's heading" });
+    }
+    for (const [field, value] of [
+      ["email", basics.email],
+      ["resumeFeedbackEmail", basics.resumeFeedbackEmail],
+    ] as const) {
+      if (value && !EMAIL.test(value.trim())) {
+        issues.push({ level: "warning", message: `Basics: ${field} does not look like an address ("${value}")` });
+      }
+    }
+    if (basics.website && !/^https?:\/\//i.test(basics.website.trim())) {
+      issues.push({ level: "warning", message: `Basics: website has no http(s):// prefix, so it will be read as a relative link ("${basics.website}")` });
+    }
+    for (const profile of this.profiles) {
+      const label = profile.network || "(unnamed profile)";
+      /**
+       * A hard error rather than a warning: the contact template calls
+       * `profile.url.replace(...)`, so a missing url throws while rendering.
+       */
+      if (!profile.url?.trim()) {
+        issues.push({ level: "error", message: `Profile "${label}": url is required` });
+      }
+      if (!profile.network.trim()) {
+        issues.push({ level: "warning", message: `A profile has no network name, so its link shows no text on screen ("${profile.url}")` });
+      }
+    }
 
     for (const company of this.companies) {
       const label = company.company || "(unnamed company)";

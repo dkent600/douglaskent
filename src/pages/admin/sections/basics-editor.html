@@ -1,0 +1,134 @@
+<div class="editor">
+  <div class="editor-head">
+    <p class="hint">
+      Everything under <code>basics</code>: the heading, the contact details, the introduction
+      paragraphs and the profile links. There is nothing to add or reorder here except the
+      summaries and the profiles.
+    </p>
+  </div>
+
+  <section class="sub">
+    <h4>Identity</h4>
+    <div class="grid">
+      <label>Name <span class="hint">the resume heading</span>
+        <input type="text" value.bind="store.basics.name & debounce:150" input.trigger="store.touch()">
+      </label>
+      <label>Label
+        <input type="text" value.bind="store.basics.label & debounce:150" input.trigger="store.touch()">
+      </label>
+      <label class="wide">Picture <span class="hint">url</span>
+        <input type="text" value.bind="store.basics.picture & debounce:150" input.trigger="store.touch()">
+      </label>
+    </div>
+  </section>
+
+  <section class="sub">
+    <h4>Contact</h4>
+    <div class="grid">
+      <label>Email
+        <input type="email" value.bind="store.basics.email & debounce:150" input.trigger="store.touch()">
+      </label>
+      <label>Feedback email
+        <input type="email" value.bind="store.basics.resumeFeedbackEmail & debounce:150" input.trigger="store.touch()">
+      </label>
+      <label>Phone
+        <input type="text" value.bind="store.basics.phone & debounce:150" input.trigger="store.touch()">
+      </label>
+      <label>Phone 2
+        <input type="text" value.bind="store.basics.phone2 & debounce:150" input.trigger="store.touch()">
+      </label>
+      <label class="wide">Website
+        <input type="url" value.bind="store.basics.website & debounce:150" input.trigger="store.touch()">
+      </label>
+    </div>
+  </section>
+
+  <section class="sub">
+    <h4>Location</h4>
+    <div class="grid">
+      <label>Address
+        <input type="text" value.bind="store.basics.location.address & debounce:150" input.trigger="store.touch()">
+      </label>
+      <label>City
+        <input type="text" value.bind="store.basics.location.city & debounce:150" input.trigger="store.touch()">
+      </label>
+      <label>Region
+        <input type="text" value.bind="store.basics.location.region & debounce:150" input.trigger="store.touch()">
+      </label>
+      <label>Postal code
+        <input type="text" value.bind="store.basics.location.postalCode & debounce:150" input.trigger="store.touch()">
+      </label>
+      <label>Country code
+        <input type="text" value.bind="store.basics.location.countryCode & debounce:150" input.trigger="store.touch()">
+      </label>
+      <label>Country name
+        <input type="text" value.bind="store.basics.location.countryName & debounce:150" input.trigger="store.touch()">
+      </label>
+    </div>
+  </section>
+
+  <section class="sub">
+    <h4>Summary paragraphs <span class="hint">HTML, sanitised before it is rendered</span></h4>
+    <p class="hint">
+      Numbered, not ordered: the templates pick these out one at a time
+      (<code>basics.summary4</code> is the travel paragraph, for instance), so the number a
+      paragraph carries is what decides where it appears. That is why a slot can only be
+      removed from the end, and only once it is empty.
+    </p>
+    <!--
+      Repeats over the count rather than over the key names so that a keystroke, which
+      bumps `store.revision` and so re-evaluates this expression, does not hand the
+      repeater a new array and cost the textarea its focus. See `summaryCount`.
+    -->
+    <label class="block" repeat.for="i of summaryCount(store.revision)">summary${i + 1}
+      <textarea rows="3" value.bind="store.basics['summary' + (i + 1)] & debounce:150" input.trigger="store.touch()"></textarea>
+    </label>
+    <div class="row-tools">
+      <button type="button" click.trigger="addSummary()">Add paragraph</button>
+      <button type="button" class="danger" click.trigger="removeSummary()"
+        disabled.bind="!canRemoveSummary(store.revision)"
+        title="Only the last paragraph can be removed, and only once it is empty">
+        Remove last
+      </button>
+    </div>
+  </section>
+
+  <section class="sub">
+    <h4>Profiles <span class="hint">the links listed under &ldquo;Contact&rdquo;</span></h4>
+    <p class="hint">
+      Order here is the order they are listed in. The icon is a Font Awesome class, for
+      example <code>fa-brands fa-github</code>.
+    </p>
+
+    <ol class="rows">
+      <li repeat.for="profile of store.profiles" class="row">
+        <div class="row-body">
+          <div class="grid">
+            <label>Network
+              <input type="text" value.bind="profile.network & debounce:150" input.trigger="store.touch()">
+            </label>
+            <label>Icon
+              <input type="text" placeholder="fa-brands fa-github" value.bind="profile.icon & debounce:150" input.trigger="store.touch()">
+            </label>
+            <label class="wide">Url <span class="hint">a full url, or <code>mailto:</code></span>
+              <input type="text" value.bind="profile.url & debounce:150" input.trigger="store.touch()">
+            </label>
+          </div>
+          <span class="row-tools">
+            <span class="ordinal">${$index + 1}</span>
+            <button type="button" title="Move up" click.trigger="store.moveProfile($index, -1)" disabled.bind="$index === 0">↑</button>
+            <button type="button" title="Move down" click.trigger="store.moveProfile($index, 1)"
+              disabled.bind="$index === store.profiles.length - 1">↓</button>
+            <button type="button" class="danger" click.trigger="requestDelete($index)">
+              ${confirmingDelete === $index ? 'Cancel' : 'Delete'}
+            </button>
+            <button type="button" class="danger confirm" if.bind="confirmingDelete === $index" click.trigger="confirmDelete($index)">
+              Really delete
+            </button>
+          </span>
+        </div>
+      </li>
+    </ol>
+    <button type="button" click.trigger="store.addProfile()">Add profile</button>
+  </section>
+</div>
