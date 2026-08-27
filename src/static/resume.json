@@ -70,13 +70,13 @@
   ],
   "work": [
     {
-      "company": "Personal case study, modeled on a DEI consultancy",
+      "company": "Human Lens, AI-native web app · self-directed case study",
       "position": "Technical Lead & LLM Pipeline Architect",
       "startDate": "2026-05",
-      "summary": "Turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface.",
+      "summary": "Modeled on an existing DEI consultancy, turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface.",
       "endDate": "present",
       "highlights": [
-        "Self-directed case study: scoped, designed, and built solo in TypeScript — Aurelia 2 web application over a Fastify/Node service — with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing).",
+        "Scoped, designed, and built in TypeScript — Aurelia 2 web application over a Fastify/Node service — with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing).",
         "Ran a hybrid human/AI development process: delegated implementation to a coding agent, routed design decisions through an independent review model, and adjudicated every conflict personally.",
         "Derived functional requirements and the domain model by using an LLM to analyze a DEI consultancy's published materials, translating an external firm's stated methodology into implementable analytic stages.",
         "Guaranteed processing completeness in orchestration code rather than in prompts — every input provably resolves to one of four explicit terminal states, so nothing is silently dropped regardless of model behavior.",
@@ -99,19 +99,20 @@
         "Claude.ai (LLM)",
         "AI Coding Assistant",
         "Axios",
-        "ViTest",
-        "awilix",
+        "Vitest",
+        "Awilix",
         "TailWindCss"
       ],
-      "personal": true
+      "personal": true,
+      "website": "https://github.com/dkent600/HumanLens"
     },
     {
-      "company": "Butterfly: Crypto Portfolio Management dApp",
-      "position": "Technical Lead & Architect",
+      "company": "Butterfly, Crypto portfolio management dApp · self-directed case study",
+      "position": "Technical Lead & dApp Architect",
       "remote": false,
       "website": "https://github.com/dkent600/batch-take-profit",
       "startDate": "2025-06",
-      "summary": "Self-directed: designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges. Supported by the Butterfly Crypto Portfolio Management Service.",
+      "summary": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges. Supported by the Butterfly Crypto portfolio management service.",
       "endDate": "2025-09",
       "highlights": [
         "Does real-time price monitoring and balance tracking, tracking order history and status",
@@ -135,12 +136,12 @@
       "personal": true
     },
     {
-      "company": "Butterfly: Crypto Portfolio Management Service",
-      "position": "Technical Lead & Architect",
+      "company": "Butterfly, Crypto portfolio management service · self-directed case study",
+      "position": "Technical Lead & dApp Architect",
       "remote": false,
       "website": "https://github.com/dkent600/butterfly-services",
       "startDate": "2025-06",
-      "summary": "Self-directed: designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges. Supports the Butterfly Crypto Portfolio Management dApp.",
+      "summary": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges. Supports the Butterfly Crypto portfolio management dApp.",
       "endDate": "2025-09",
       "highlights": [
         "Provides comprehensive safety mechanisms, testing, dependency injection and production-ready integration",
@@ -922,7 +923,7 @@
   ],
   "skills": [
     {
-      "name": "awilix",
+      "name": "Awilix",
       "priority": "1.8",
       "categories": [
         "Website and Application Development"
@@ -930,7 +931,7 @@
       "url": "https://github.com/jeffijoe/awilix"
     },
     {
-      "name": "ViTest",
+      "name": "Vitest",
       "priority": "1.8",
       "categories": [
         "Test Frameworks"
