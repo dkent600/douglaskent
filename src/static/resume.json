@@ -1660,18 +1660,6 @@
       "url": "https://msdn.microsoft.com/en-us/library/ff648951.aspx"
     },
     {
-      "name": "Microsoft Extensibility Framework (MEF)",
-      "priority": 40,
-      "aliases": [
-        "MEF"
-      ],
-      "hide": true,
-      "categories": [
-        "Website and Application Development"
-      ],
-      "url": "https://docs.microsoft.com/en-us/dotnet/framework/mef/"
-    },
-    {
       "name": ".NET System.Security.Cryptography",
       "priority": 40,
       "aliases": [
