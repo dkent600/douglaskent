@@ -148,6 +148,10 @@
               "type": "string",
               "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
             }
+          },
+          "showOnShort": {
+            "type": "boolean",
+            "description": "SHow be visible on the short resume page"
           }
         }
       }

@@ -1,4 +1,5 @@
 import { bindable, customElement, resolve } from "aurelia";
+import { WhichResumeOnly } from "../../../../resources/attributes/whichResumeOnly";
 
 import { ICompany, IResumeStore, ISkill } from "../../../../stores/resume-store";
 
@@ -15,7 +16,7 @@ type ICompanyView = ICompany & { showingHighlights: boolean };
 export class History {
   @bindable expanded = false;
   showingEntireHistory = false;
-  entireHistoryStartIndex = 3;
+  entireHistoryStartIndex = 7;
   readonly skillByName: Map<string, ISkill> = new Map<string, ISkill>();
   readonly resumeStore = resolve(IResumeStore);
   readonly companies: Array<ICompanyView> = this.resumeStore.companies
@@ -55,7 +56,9 @@ export class History {
   }
 
   get companiesFirst(): Array<ICompanyView> {
-    return this.companies.slice(0, this.entireHistoryStartIndex);
+  return WhichResumeOnly.isShort
+    ? this.companies.filter((c) => c.showOnShort)
+    : this.companies.slice(0, this.entireHistoryStartIndex);
   }
 
   get companiesTheRest(): Array<ICompanyView> {

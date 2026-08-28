@@ -76,14 +76,14 @@
       "summary": "Modeled on an existing DEI consultancy, turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface.",
       "endDate": "present",
       "highlights": [
-        "Scoped, designed, and built in TypeScript — Aurelia 2 web application over a Fastify/Node service — with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing).",
-        "Ran a hybrid human/AI development process: delegated implementation to a coding agent, routed design decisions through an independent review model, and adjudicated every conflict personally.",
-        "Derived functional requirements and the domain model by using an LLM to analyze a DEI consultancy's published materials, translating an external firm's stated methodology into implementable analytic stages.",
-        "Guaranteed processing completeness in orchestration code rather than in prompts — every input provably resolves to one of four explicit terminal states, so nothing is silently dropped regardless of model behavior.",
-        "Designed a seven-lens analytic architecture running in six ordered waves; three lenses validated against a real model to date, with calibration driven by a purpose-built synthetic evaluation dataset.",
-        "Made a non-deterministic system testable: captured real model responses once and replayed them, so runs became reproducible and far cheaper.",
-        "Designed test data that measured failure in both directions — what the pipeline missed and what it invented — rather than only rewarding recall.",
-        "Built confidentiality controls with a human in the loop: no finding reaches client-facing output without explicit approval, and automated de-identification holds for review anything it misses — with the client-safe boundary enforced by the package structure, so the human-review interface is structurally incapable of holding internal findings."
+        "Scoped, designed, and built in TypeScript — Aurelia 2 web application over a Fastify/Node service — with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing)",
+        "Ran a hybrid human/AI development process: delegated implementation to a coding agent, routed design decisions through an independent review model, and adjudicated every conflict personally",
+        "Derived functional requirements and the domain model by using an LLM to analyze a DEI consultancy's published materials, translating an external firm's stated methodology into implementable analytic stages",
+        "Guaranteed processing completeness in orchestration code rather than in prompts — every input provably resolves to one of four explicit terminal states, so nothing is silently dropped regardless of model behavior",
+        "Designed a seven-lens analytic architecture running in six ordered waves; three lenses validated against a real model to date, with calibration driven by a purpose-built synthetic evaluation dataset",
+        "Made a non-deterministic system testable: captured real model responses once and replayed them, so runs became reproducible and far cheaper",
+        "Designed test data that measured failure in both directions — what the pipeline missed and what it invented — rather than only rewarding recall",
+        "Built confidentiality controls with a human in the loop: no finding reaches client-facing output without explicit approval, and automated de-identification holds for review anything it misses — with the client-safe boundary enforced by the package structure, so the human-review interface is structurally incapable of holding internal findings"
       ],
       "skills": [
         "TypeScript",
@@ -104,7 +104,8 @@
         "TailWindCss"
       ],
       "personal": true,
-      "website": "https://github.com/dkent600/HumanLens"
+      "website": "https://github.com/dkent600/HumanLens",
+      "showOnShort": true
     },
     {
       "company": "Butterfly, Crypto portfolio management dApp · self-directed case study",
@@ -133,7 +134,8 @@
         "AI Coding Assistant",
         "GitHub Copilot"
       ],
-      "personal": true
+      "personal": true,
+      "showOnShort": true
     },
     {
       "company": "Butterfly, Crypto portfolio management service · self-directed case study",
@@ -164,7 +166,8 @@
         "GitHub",
         "AI Coding Assistant"
       ],
-      "personal": true
+      "personal": true,
+      "showOnShort": false
     },
     {
       "company": "Curve Labs",
@@ -194,15 +197,17 @@
         "Mento",
         "Celo",
         "GitHub"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "Curve Labs",
       "position": "Development Team Lead and Lead Developer",
       "remote": true,
       "website": "https://www.curvelabs.eu/",
+      "showOnShort": true,
       "startDate": "2020-08",
-      "summary": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (Defi) and regenerative finance (Refi). Among others, led the development team for a Refi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.  Here are couple of sites, but note that some of their functionality has been discontinued: <a href='https://deals.prime.xyz' target='_blank'>Prime Deals</a> and <a href='https://launch.prime.xyz' target='_blank'>Prime Launch</a>.",
+      "summary": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (Defi) and regenerative finance (Refi). Among others, led the development team for a Refi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.  Here are couple of sites: Prime Deals and Prime Launch.",
       "endDate": "2022-11",
       "highlights": [
         "Lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\" target=\"_blank\">Prime Pools (no longer active)</a>, <a href=\"https://primelock.eth.link/\" target=\"_blank\">Prime Locking For Reputation</a> and the <a href=\"https://primedao.eth.link\" target=\"_blank\">original PrimeDAO Home Page (no longer active)</a>",
@@ -264,7 +269,7 @@
       "remote": true,
       "website": "https://www.daostack.io/",
       "startDate": "2017-09",
-      "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first major DAO designs in the history of DAOs.  Used, reviewed and deployed Solidity smart contracts, wrote a Typescript library to support dApps in accessing the smart contracts, wrote a test dApp, significantly contributed to the dApp Alchemy used for working with the DAOs, and more...",
+      "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first major DAO designs in the history of DAOs.  Used, reviewed and deployed Solidity smart contracts, wrote a Typescript library to support dApps in accessing the smart contracts, wrote a test dApp, significantly contributed to the dApp Alchemy used for working with the DAOs.",
       "endDate": "2020-10",
       "highlights": [
         "One of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
@@ -300,7 +305,8 @@
         "SPA",
         "3Box",
         "Wallets"
-      ]
+      ],
+      "showOnShort": true
     },
     {
       "company": "PSP Investments",
@@ -337,7 +343,8 @@
         "Agile",
         "TFS",
         "SPA"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "Revionics",
@@ -377,7 +384,8 @@
         "VSTest",
         "Agile",
         "TFS"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "ShiftWise",
@@ -385,7 +393,7 @@
       "remote": true,
       "website": "https://www.shiftwise.com/",
       "startDate": "2003-08",
-      "summary": "Performed a lead role in an Agile Scrum environment in coding a complex enterprise-scale, customer-facing web application and associated automated web service interface",
+      "summary": "Performed a lead role in an Agile Scrum environment in coding a complex enterprise-scale, customer-facing web application and associated automated web service interface.",
       "endDate": "2011-07",
       "highlights": [
         "Meeting an urgent deadline, virtually single-handedly implemented a system for handling mission-critical incoming and outgoing (SMS) messages to and from cell phones.   The architecture spanned a web site, three web services, two windows services, and two Sql Server databases",
@@ -418,7 +426,8 @@
         "MSTest",
         "Agile",
         "TFS"
-      ]
+      ],
+      "showOnShort": true
     },
     {
       "company": "Trilogy",
@@ -442,7 +451,8 @@
         "Html",
         "JSP",
         "JRun"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "Trilogy",
@@ -471,7 +481,8 @@
         "WCF",
         "DES",
         "Encryption"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "Trilogy",
@@ -497,7 +508,8 @@
         "JDBC",
         "DB2",
         "SQL"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "Microsoft Corporation",
@@ -508,7 +520,8 @@
       "summary": "Wrote subsystem to facilitate localization of Encarta `97 into 5 languages",
       "endDate": "1996-06",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "Microsoft Corporation",
@@ -519,7 +532,8 @@
       "summary": "Managed team of 7 in code development and release to market of the Reader's Digest Complete Do-It-Yourself Guide multimedia CD-ROM title",
       "endDate": "1996-02",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": true
     },
     {
       "company": "Microsoft Corporation",
@@ -530,7 +544,8 @@
       "summary": "Wrote the core GUI engine for Julia Child's Home Cooking With Master Chefs multimedia CD-ROM title",
       "endDate": "1995-06",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "Asymetrix Corporation",
@@ -541,7 +556,8 @@
       "summary": "Developed software for Toolbook 3.0 and multimedia screensavers (Jurassic Park, et. al.)",
       "endDate": "1994-10",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "Microsoft Corporation",
@@ -552,7 +568,8 @@
       "summary": "On the Windows 3.1 team, developed software for File Manager, Packager, Paintbrush , Cardfile, and others",
       "endDate": "1992-03",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": true
     },
     {
       "company": "ConnectSoft",
@@ -562,7 +579,8 @@
       "summary": "Managed all development efforts (see ConnectSoft, below)",
       "endDate": "1990-12",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "ConnectSoft",
@@ -572,7 +590,8 @@
       "summary": "Developed software for Clip-Art Window Shopper, an early electronic clip-art distribution application, and Presto 3D, a 3D CAD application",
       "endDate": "1989-10",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "Dupont Design Technologies, Inc.",
@@ -582,7 +601,8 @@
       "summary": "Developed object-oriented, resolution-independent 2D graphics code, including airbrushes, framebuffer manager, and graphics hardware emulator",
       "endDate": "1988-11",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "SAS Institute Inc.",
@@ -593,7 +613,8 @@
       "summary": "Ported Visuals (see UNC below) to the SAS Graphical User Interface System",
       "endDate": "1987-05",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "University of North Carolina",
@@ -603,7 +624,8 @@
       "summary": "Wrote Visuals, an application that uses interactive 3D graphics animation to reveal meaning in multidimensional statistical data",
       "endDate": "1986-11",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "Dicom Transportation Group",
@@ -630,7 +652,8 @@
         "Jira",
         "BitBucket",
         "Telerik"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "Password Repository",
@@ -672,7 +695,8 @@
         "DES",
         "System.Security.Cryptography",
         "SPA"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "Vivalia Bistro Express",
@@ -710,7 +734,8 @@
         "Responsive",
         "TFS",
         "SPA"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "GE Healthcare",
@@ -741,7 +766,8 @@
         "Azure",
         "TFS",
         "SPA"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "Kill My TV!",
@@ -777,7 +803,8 @@
         "jquery globalization",
         "RequireJs",
         "SPA"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "Texas Turnpike Authority",
@@ -797,7 +824,8 @@
         "HTML",
         "JavaScript",
         "T-SQL"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "Schlumberger/Cingular Wireless",
@@ -817,7 +845,8 @@
         "Swing",
         "XML",
         "Xerces"
-      ]
+      ],
+      "showOnShort": false
     },
     {
       "company": "Imagen Communications, Inc.",
@@ -828,7 +857,8 @@
       "summary": "Designed and developed NT Paymaster, a billing application for ISPs",
       "endDate": "1998-03",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "Biomonitors, Ltd",
@@ -840,7 +870,8 @@
       "summary": "Ported from DOS to Windows 95 MindMirror, an application that displays real-time electroencephalograph data in a GUI application",
       "endDate": "1997-03",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "Mouthing Flowers",
@@ -851,7 +882,8 @@
       "summary": "For the NEXTSTEP platform, designed and wrote <i>TimeFlies</i>, designed and implemented a 3D graphics API, and wrote the <i>SwoopnPrint</i>&nbsp;&nbsp;\"service\" application. TimeFlies received a positive product review from NeXTWorld magazine",
       "endDate": "1999-09",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "University of North Carolina",
@@ -861,7 +893,8 @@
       "summary": "For EGA/VGA graphics hardware, developed code that reproduces PGA 3D and 2D graphics hardware commands",
       "endDate": "1989-12",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "University of North Carolina",
@@ -871,7 +904,8 @@
       "summary": "Assembled a local area network (LAN) and a system to digitize and manipulate video microscopic images for display in medical school classroom lab sessions",
       "endDate": "1986-11",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     },
     {
       "company": "Pacific Environmental Services, Inc",
@@ -880,7 +914,8 @@
       "summary": "Conducted regulatory technical analyses, managed preparation of technical business proposals, managed a waste brokerage program",
       "endDate": "1982-09",
       "highlights": [],
-      "skills": []
+      "skills": [],
+      "showOnShort": false
     }
   ],
   "education": [
