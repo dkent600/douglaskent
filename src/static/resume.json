@@ -1061,6 +1061,62 @@
       "url": "https://www.microsoft.com/en-us/microsoft-copilot"
     },
     {
+      "name": "LLM Pipeline Architecture",
+      "priority": 1,
+      "categories": [
+        "AI"
+      ],
+      "url": ""
+    },
+    {
+      "name": "Prompt Engineering",
+      "priority": 1,
+      "categories": [
+        "AI"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Prompt_engineering"
+    },
+    {
+      "name": "LLM Evaluation",
+      "priority": 1,
+      "categories": [
+        "AI"
+      ],
+      "url": ""
+    },
+    {
+      "name": "Anthropic API",
+      "priority": 1,
+      "categories": [
+        "AI"
+      ],
+      "url": "https://www.anthropic.com/api"
+    },
+    {
+      "name": "Human-in-the-Loop Design",
+      "priority": 1,
+      "categories": [
+        "AI"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Human-in-the-loop"
+    },
+    {
+      "name": "AI-Assisted Development",
+      "priority": 1,
+      "categories": [
+        "AI"
+      ],
+      "url": ""
+    },
+    {
+      "name": "De-identification",
+      "priority": 1,
+      "categories": [
+        "AI"
+      ],
+      "url": "https://en.wikipedia.org/wiki/De-identification"
+    },
+    {
       "name": "Aurelia",
       "priority": 1.4,
       "categories": [
