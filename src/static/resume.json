@@ -65,8 +65,7 @@
     "Semantic Search Frameworks",
     "Cloud Services",
     "Operating Systems",
-    "Development Processes",
-    "LLMs"
+    "Development Processes"
   ],
   "work": [
     {
@@ -94,7 +93,7 @@
         "NPM",
         "HTML5",
         "Fastify",
-        "ChatGpt (LLM)",
+        "ChatGPT (LLM)",
         "Claude Code for VS Code",
         "Claude.ai (LLM)",
         "AI Coding Assistant",
@@ -974,11 +973,10 @@
       "url": "https://vitest.dev/"
     },
     {
-      "name": "ChatGpt (LLM)",
+      "name": "ChatGPT (LLM)",
       "priority": 1,
       "categories": [
-        "AI",
-        "LLMs"
+        "AI"
       ],
       "url": "https://chatgpt.com/"
     },
@@ -986,8 +984,7 @@
       "name": "Claude.ai (LLM)",
       "priority": 1,
       "categories": [
-        "AI",
-        "LLMs"
+        "AI"
       ],
       "url": "https://claude.ai/"
     },
@@ -995,8 +992,7 @@
       "name": "Claude Code for VS Code",
       "priority": 1,
       "categories": [
-        "AI",
-        "LLMs"
+        "AI"
       ],
       "url": "https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code"
     },
