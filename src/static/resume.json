@@ -10,11 +10,12 @@
     "phone2": "+506 8591-5302 (CR)",
     "website": "https://www.douglaskent.com",
     "summary1": "I am a software engineer and architect with 35 years spent leading teams and building sophisticated systems — web applications, blockchain and Web3 platforms, and most recently AI-native applications built on large language models.",
-    "summary2": "I have worn multiple hats in important roles across many kinds of organizations, from Microsoft to garage startups. My recent work is in LLM system architecture and development — building reliable systems on top of subjective inputs and non-deterministic models.",
+    "summary2": "I have worn multiple hats in important roles across many kinds of organizations, from Microsoft to garage startups.",
     "summary3": "Please see my complete resume at: <a href='https://www.douglaskent.com' target='_blank' rel='noopener noreferrer'>https://www.douglaskent.com</a>.",
     "summary4": "Lived and worked for decades in both the U.S. and Canada, now based in Costa Rica. I have worked with distributed teams across Europe, Israel, India, and Australia, including leading offshore development teams in daily coordination.",
     "summary5": "I've worked with the likes of Microsoft, garage startups such as ConnectSoft, to Curve Labs where I led the development of a Refi dApp front end designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
     "summary6": "I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest and please read on!",
+    "summary7": "My recent work is in LLM system architecture and development — building reliable systems on top of subjective inputs and non-deterministic models.",
     "location": {
       "address": "Alegria Village",
       "postalCode": "20401",
@@ -100,7 +101,15 @@
         "Axios",
         "Vitest",
         "Awilix",
-        "TailWindCss"
+        "TailWindCss",
+        "LLM Pipeline Architecture",
+        "Prompt Engineering",
+        "LLM Evaluation",
+        "Human-in-the-Loop Design",
+        "De-identification",
+        "AI-Assisted Development",
+        "LLM APIs",
+        "GitHub Copilot"
       ],
       "personal": true,
       "website": "https://github.com/dkent600/HumanLens",
@@ -1082,15 +1091,22 @@
       "categories": [
         "AI"
       ],
-      "url": ""
+      "url": "",
+      "aliases": [
+        "LLM Testing",
+        ""
+      ]
     },
     {
-      "name": "Anthropic API",
+      "name": "LLM APIs",
       "priority": 1,
       "categories": [
         "AI"
       ],
-      "url": "https://www.anthropic.com/api"
+      "url": "https://www.anthropic.com/api",
+      "aliases": [
+        "Anthropic APIs"
+      ]
     },
     {
       "name": "Human-in-the-Loop Design",
