@@ -9,8 +9,8 @@
     "phone": "+1 (512) 402-8735 (US)",
     "phone2": "+506 8591-5302 (CR)",
     "website": "https://www.douglaskent.com",
-    "summary1": "I am an <b>experienced software engineer</b> and project lead with <b>34+ years</b> of repeated success leading teams and developing sophisticated <b>Web, Web3 (blockchain) and desktop</b> applications.",
-    "summary2": "As a coder, team lead or both, I have worn multiple hats in important roles in many types of situations from Microsoft to garage startups.",
+    "summary1": "I am a software engineer and architect with 35 years spent leading teams and building sophisticated systems — web applications, blockchain and Web3 platforms, and most recently AI-native applications built on large language models.",
+    "summary2": "I have worn multiple hats in important roles across many kinds of organizations, from Microsoft to garage startups. My current work is in LLM system architecture — designing pipelines whose output can be trusted with confidential material.",
     "summary3": "Please see my complete resume at: <a href='https://www.douglaskent.com' target='_blank' rel='noopener noreferrer'>https://www.douglaskent.com</a>.",
     "summary4": "Lived and worked for decades in both the U.S. and Canada, now based in Costa Rica. I have worked with distributed teams across Europe, Israel, India, and Australia, including leading offshore development teams in daily coordination.",
     "summary5": "I've worked with the likes of Microsoft, garage startups such as ConnectSoft, to Curve Labs where I led the development of a Refi dApp front end designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
@@ -2298,11 +2298,11 @@
     },
     {
       "country": "Britain",
-      "status": "Valid Passport"
+      "status": "Full Citizenship"
     },
     {
       "country": "Costa Rica",
-      "status": "Residency"
+      "status": "Tourist Visa"
     }
   ],
   "references": [
@@ -2329,6 +2329,7 @@
     }
   ],
   "accomplishments": [
+    "Working with subjective human voices and non-deterministic AI interpretations, I led the design and development of Human Lens, an AI-native qualitative analysis application that produces findings solid enough for a DEI consultancy to advise its clients with confidence.",
     "With Curve Labs, I coded, delivered and led, in some cases single-handedly, the front-end development of multiple complex Web3 dApps leveraging Ethereum smart contracts in the domains of decentralized finance (Defi) and regeneration (Refi).",
     "With DAOstack, I helped design and develop some of the first-ever decentralized autonomous organization (DAO) Ethereum smart contracts, and helped develop a complex Web3 dApp to use them.",
     "At Microsoft, I led a multi-disciplinary development team of 7 software engineers plus writers and graphic designers to produce a multimedia CD-ROM title for Windows. We delivered on time, meeting all quality goals.",
