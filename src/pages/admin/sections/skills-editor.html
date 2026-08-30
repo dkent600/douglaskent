@@ -33,8 +33,17 @@
             <input type="text" value.bind="skill.name & debounce:150" input.trigger="store.touch()"
               focus.trigger="beginRename(skill)" blur.trigger="commitRename(skill)">
           </label>
-          <label>Priority
-            <input type="number" step="1" value.bind="skill.priority & debounce:150" input.trigger="store.touch()">
+          <label>Priority <span class="hint">lower sorts first; fractions interleave</span>
+            <!--
+              `step="any"` because the priorities in use are fractional (1.201, 1.2102);
+              `step="1"` marked every one of those invalid and made the spinners snap to
+              whole numbers. One-way, with the write done in `setPriority`, so the string
+              the element reports is not what lands in the document. The blur handler puts
+              the model's value back on screen after a field that was emptied and left.
+            -->
+            <input type="number" step="any" value.to-view="skill.priority"
+              input.trigger="setPriority(skill, $event.target.value)"
+              blur.trigger="$event.target.value = skill.priority">
           </label>
           <label class="wide">URL
             <input type="url" value.bind="skill.url & debounce:150" input.trigger="store.touch()">

@@ -58,6 +58,25 @@ export class SkillsEditor {
     this.renamedNote = count > 0 ? `Renamed "${from}" to "${to}" in ${count} company reference${count === 1 ? "" : "s"}.` : "";
   }
 
+  /**
+   * `<input type="number">` still reports `element.value` as a string, and a two-way
+   * `value.bind` writes that string straight through -- which is how two skills came to
+   * carry `"1.8"` rather than `1.8`. The input binds one-way and the write goes through
+   * here instead, so only a number ever reaches the document.
+   *
+   * A blank or half-typed box is left alone rather than coerced. `Number("")` is 0, and 0
+   * is meaningful here -- `evaluateSkillPriority` sorts it last -- so treating an emptied
+   * field as zero would silently demote the skill mid-keystroke.
+   */
+  setPriority(skill: IEditableSkill, raw: string): void {
+    const priority = Number(raw);
+    if (!raw.trim() || Number.isNaN(priority)) {
+      return;
+    }
+    skill.priority = priority;
+    this.store.touch();
+  }
+
   add(): void {
     const skill: IEditableSkill = { name: "", priority: 1, categories: [], url: "" };
     this.store.skills.unshift(skill);
