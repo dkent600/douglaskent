@@ -1495,7 +1495,7 @@
     },
     {
       "name": "Subgraph",
-      "priority": 3.35,
+      "priority": 2.35,
       "categories": [
         "Blockchain"
       ],
@@ -1956,7 +1956,7 @@
     },
     {
       "name": "NodeJs",
-      "priority": 3.1,
+      "priority": 3.089,
       "categories": [
         "Software Development Platforms",
         "Website and Application Hosting",
@@ -2098,7 +2098,7 @@
     },
     {
       "name": "Visual Studio Code",
-      "priority": 0.08,
+      "priority": 4,
       "categories": [
         "Development Tools"
       ],
