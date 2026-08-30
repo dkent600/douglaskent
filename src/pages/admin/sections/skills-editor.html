@@ -37,12 +37,12 @@
             <!--
               `step="any"` because the priorities in use are fractional (1.201, 1.2102);
               `step="1"` marked every one of those invalid and made the spinners snap to
-              whole numbers. One-way, with the write done in `setPriority`, so the string
+              whole numbers. One-way, with the write done in the store, so the string
               the element reports is not what lands in the document. The blur handler puts
               the model's value back on screen after a field that was emptied and left.
             -->
             <input type="number" step="any" value.to-view="skill.priority"
-              input.trigger="setPriority(skill, $event.target.value)"
+              input.trigger="store.setSkillPriority(skill, $event.target.value)"
               blur.trigger="$event.target.value = skill.priority">
           </label>
           <label class="wide">URL

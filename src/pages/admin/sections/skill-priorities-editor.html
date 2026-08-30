@@ -1,0 +1,43 @@
+<div class="editor">
+  <div class="editor-head">
+    <p class="hint">
+      Every skill, as a pill under each category it belongs to, in the order the resume
+      itself puts them: priority ascending, ties alphabetical. Edit a priority and the pill
+      moves when the field loses focus. A skill in several categories has a pill in each,
+      showing the one shared value, so a change lands in all of them at once.
+    </p>
+  </div>
+
+  <section class="sub" repeat.for="category of store.categories">
+    <h4>${category} <span class="hint">${skillsIn(category, sortRevision).length}</span></h4>
+    <div class="pills">
+      <!--
+        Repeats over skill objects rather than an index range: the identities are stable,
+        so the repeater moves the existing views on a re-sort instead of rebuilding them.
+      -->
+      <span class="pill" repeat.for="skill of skillsIn(category, sortRevision)">
+        <span class="pill-name">${skill.name}</span>
+        <!-- One-way, with the write done in the store, so a string never reaches the document. -->
+        <input type="number" step="any" class="pill-priority" value.to-view="skill.priority"
+          input.trigger="store.setSkillPriority(skill, $event.target.value)"
+          blur.trigger="commit(skill, $event.target)">
+      </span>
+    </div>
+  </section>
+
+  <section class="sub" if.bind="uncategorised(sortRevision).length">
+    <h4>Uncategorised <span class="hint">${uncategorised(sortRevision).length}</span></h4>
+    <p class="hint">
+      In no category that is listed under Categories, so the resume shows no pill for these
+      at all.
+    </p>
+    <div class="pills">
+      <span class="pill" repeat.for="skill of uncategorised(sortRevision)">
+        <span class="pill-name">${skill.name}</span>
+        <input type="number" step="any" class="pill-priority" value.to-view="skill.priority"
+          input.trigger="store.setSkillPriority(skill, $event.target.value)"
+          blur.trigger="commit(skill, $event.target)">
+      </span>
+    </div>
+  </section>
+</div>

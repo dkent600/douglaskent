@@ -11,6 +11,9 @@
       <button type="button" class="${tab === 'skills' ? 'is-current' : ''}" click.trigger="show('skills')">
         Skills <span class="count">${store.skills.length}</span>
       </button>
+      <button type="button" class="${tab === 'priorities' ? 'is-current' : ''}" click.trigger="show('priorities')">
+        Priorities
+      </button>
       <button type="button" class="${tab === 'categories' ? 'is-current' : ''}" click.trigger="show('categories')">
         Categories <span class="count">${store.categories.length}</span>
       </button>
@@ -44,6 +47,7 @@
     <basics-editor if.bind="tab === 'basics'"></basics-editor>
     <companies-editor if.bind="tab === 'companies'"></companies-editor>
     <skills-editor if.bind="tab === 'skills'"></skills-editor>
+    <skill-priorities-editor if.bind="tab === 'priorities'"></skill-priorities-editor>
     <skill-categories-editor if.bind="tab === 'categories'"></skill-categories-editor>
   </main>
 

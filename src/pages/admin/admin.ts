@@ -3,18 +3,19 @@ import { customElement, ILogger, resolve } from "aurelia";
 import { BasicsEditor } from "./sections/basics-editor";
 import { CompaniesEditor } from "./sections/companies-editor";
 import { SkillCategoriesEditor } from "./sections/skill-categories-editor";
+import { SkillPrioritiesEditor } from "./sections/skill-priorities-editor";
 import { SkillsEditor } from "./sections/skills-editor";
 import template from "./admin.html";
 import { adminStore } from "./admin-store";
 
 import "./admin.scss";
 
-type Tab = "basics" | "companies" | "skills" | "categories";
+type Tab = "basics" | "companies" | "skills" | "priorities" | "categories";
 
 @customElement({
   name: "admin",
   template,
-  dependencies: [BasicsEditor, CompaniesEditor, SkillsEditor, SkillCategoriesEditor],
+  dependencies: [BasicsEditor, CompaniesEditor, SkillsEditor, SkillPrioritiesEditor, SkillCategoriesEditor],
 })
 export class Admin {
   readonly store = adminStore;

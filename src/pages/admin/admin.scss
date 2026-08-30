@@ -339,6 +339,43 @@
   }
 }
 
+/**
+ * The priorities tab. Not built on `.chip`, which is a button and is scrolled inside a
+ * capped `.chips` box: a pill here is a label plus an editable number, and the lists are
+ * meant to be read whole rather than scrolled.
+ */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.pill {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 0.35rem;
+  padding: 0.1rem 0.15rem 0.1rem 0.6rem;
+}
+
+.pill-name {
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+/** Two class selectors, to outrank the `.admin input` width rule. */
+.admin .pill-priority {
+  background: var(--sunken);
+  border-radius: 999px;
+  font-size: 0.85em;
+  padding: 0.1rem 0.2rem;
+  text-align: center;
+  width: 5.25rem;
+}
+
 .renamed {
   background: #d1e7dd;
   border-radius: 4px;

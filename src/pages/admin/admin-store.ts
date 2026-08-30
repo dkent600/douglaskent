@@ -267,6 +267,25 @@ export class AdminStore {
   }
 
   /**
+   * The one place a priority is written, because it is the one place the number/string
+   * distinction goes wrong. `<input type="number">` still reports `element.value` as a
+   * string, and letting that reach the model is how two skills came to carry `"1.8"`
+   * rather than `1.8` in the document.
+   *
+   * A blank or half-typed box is left alone rather than coerced. `Number("")` is 0, and 0
+   * is meaningful -- the resume sorts a falsy priority last -- so reading an emptied field
+   * as zero would silently demote the skill mid-keystroke.
+   */
+  public setSkillPriority(skill: IEditableSkill, raw: string): void {
+    const priority = Number(raw);
+    if (!raw.trim() || Number.isNaN(priority)) {
+      return;
+    }
+    skill.priority = priority;
+    this.touch();
+  }
+
+  /**
    * Lowercase name *and* alias to skill, mirroring how `History` resolves the names in
    * `work[].skills`. Later entries overwrite earlier ones there, and here, so that the
    * editor reports exactly what the resume would render.
