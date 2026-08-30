@@ -318,6 +318,10 @@
             "type": "string",
             "description": "e.g. Web Development"
           },
+          "priority": {
+            "type": "number",
+            "description": "e.g. Web Development"
+          },
           "level": {
             "type": "string",
             "description": "e.g. Master"
