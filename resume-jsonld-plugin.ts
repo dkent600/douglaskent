@@ -25,7 +25,7 @@ const RESUME_PATH = "src/static/resume.json";
  * priority scale is hand-maintained and irregular (1, 1.2, 1.2101, 200, 400), so no round
  * threshold means anything; a count stays meaningful if the numbering is ever reworked.
  */
-const SKILL_LIMIT = 33;
+const SKILL_LIMIT = 25;
 
 /**
  * O*NET code for Software Developers.
