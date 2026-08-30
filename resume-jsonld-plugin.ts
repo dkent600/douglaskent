@@ -73,41 +73,6 @@ const stripHtml = (value: string): string => value.replace(/<[^>]*>/g, "").trim(
  * entries are strings ("1.8"). Coercing explicitly keeps the sort numeric; anything that
  * will not coerce sorts last rather than poisoning the comparison.
  */
-/**
- * Matches a `studyType` that names an actual degree.
- *
- * This is an allowlist, not an exclusion list, so it fails safe: an entry whose
- * `studyType` is unrecognised is left OUT of `hasCredential` rather than asserted as a
- * credential. `studyType` is free text, and wrongly claiming a degree is a much worse
- * error than omitting one.
- */
-const DEGREE_WORDS = new Set([
-  "bachelor",
-  "bachelors",
-  "master",
-  "masters",
-  "doctorate",
-  "doctorates",
-  "doctoral",
-  "phd",
-  "associate",
-  "associates",
-  "mba",
-  "bsc",
-  "msc",
-  "bs",
-  "ba",
-  "ma",
-  "md",
-  "jd",
-]);
-
-const isDegree = (studyType?: string): boolean =>
-  typeof studyType === "string" &&
-  studyType
-    .toLowerCase()
-    .split(/[^a-z]+/)
-    .some((word) => DEGREE_WORDS.has(word));
 
 const priorityOf = (skill: Skill): number => {
   const value = Number(skill.priority);
@@ -135,11 +100,15 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
 
   const skills: Array<Skill> = Array.isArray(resume.skills) ? resume.skills : [];
   /**
+   * Sourced from `skills` only. Education deliberately feeds nothing here: a degree
+   * subject is a different claim from a skill, and the schooling is already carried by
+   * `alumniOf` and `hasCredential`.
+   *
    * Selection is by `priority` alone. `hide` is deliberately not consulted: it governs
    * only the Skills section's category pills, and the work entries list those skills
    * regardless, so it is not a signal about the page as a whole.
    */
-  const topSkills = [...skills]
+  const knowsAbout = [...skills]
     .filter((skill) => typeof skill.name === "string" && skill.name.trim() !== "")
     .sort((a, b) => priorityOf(a) - priorityOf(b))
     .slice(0, SKILL_LIMIT)
@@ -181,14 +150,14 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
    * institutions, so the two master's degrees Doug earned at Duke simultaneously collapse
    * into a single entry there. `hasCredential` is what keeps both of them visible.
    *
-   * Every `education` entry is mapped as-is; nothing is filtered on the shape of the
-   * `studyType`.
+   * Every `education` entry is mapped, degree or not. What keeps a non-degree entry from
+   * reading as a degree is `credentialCategory`, which carries `studyType` verbatim: the
+   * UNC coursework is published as "Continuing Education", which is what it was. The
+   * honesty of this property therefore rests on `studyType` being accurate in
+   * `resume.json`, not on any filtering here.
    */
   const hasCredential = education
-    .filter(
-      (entry) =>
-        typeof entry.institution === "string" && entry.institution.trim() !== "" && isDegree(entry.studyType),
-    )
+    .filter((entry) => typeof entry.institution === "string" && entry.institution.trim() !== "")
     .map((entry) =>
       compact({
         "@type": "EducationalOccupationalCredential",
@@ -197,20 +166,6 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
         recognizedBy: { "@type": "CollegeOrUniversity", name: entry.institution },
       }),
     );
-
-  /**
-   * Study that did not award a degree is deliberately kept out of `hasCredential` and
-   * surfaced here instead. `knowsAbout` asserts familiarity with a subject and claims no
-   * qualification, which is the honest reading of Doug's Computer Science coursework at
-   * UNC. The institution itself still appears under `alumniOf`, where attendance -- not a
-   * credential -- is what is being stated.
-   */
-  const nonDegreeAreas = education
-    .filter((entry) => !isDegree(entry.studyType))
-    .map((entry) => entry.area)
-    .filter((area): area is string => typeof area === "string" && area.trim() !== "");
-
-  const knowsAbout = [...new Set([...topSkills, ...nonDegreeAreas])];
 
   const languages: Array<Language> = Array.isArray(resume.languages) ? resume.languages : [];
   const knowsLanguage = languages
@@ -238,7 +193,6 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
     "@type": "Person",
     name: basics.name,
     url: basics.website,
-    email: basics.email,
     jobTitle,
     description: typeof basics.summary1 === "string" ? stripHtml(basics.summary1) : undefined,
     sameAs,
