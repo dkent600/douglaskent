@@ -597,7 +597,7 @@
         "Markup Languages"
       ],
       "aliases": [
-        "HTML5"
+        "HTML"
       ]
     },
     {
@@ -1582,7 +1582,7 @@
         "Vite",
         "Node.js",
         "NPM",
-        "HTML5",
+        "HTML",
         "Fastify",
         "ChatGPT (LLM)",
         "Claude Code for VS Code",
@@ -1743,7 +1743,7 @@
         "Web3Modal",
         "Ceramic",
         "Aurelia",
-        "HTML5",
+        "HTML",
         "i18Next",
         "Webpack",
         "Vite",
@@ -1788,7 +1788,7 @@
         "Solidity",
         "Subgraph",
         "Aurelia",
-        "HTML5",
+        "HTML",
         "Webpack",
         "Bootstrap",
         "Bootstrap Material Design",
@@ -1826,7 +1826,7 @@
         "C#",
         "KnockoutJs",
         "JavaScript",
-        "HTML5",
+        "HTML",
         "CSS",
         "Unity",
         "jQuery",
@@ -2141,7 +2141,7 @@
         "ASP.NET",
         "C#",
         "Razor",
-        "HTML5",
+        "HTML",
         "CSS",
         "jQuery",
         "SQL Server",
@@ -2216,7 +2216,7 @@
         "ASP.NET Core",
         "C#",
         "JavaScript",
-        "HTML5",
+        "HTML",
         "WebApi",
         "jQuery",
         "Ajax",

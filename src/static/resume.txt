@@ -81,7 +81,7 @@ Blockchain
 
 Website and Application Development
   TypeScript, Web3, dApps, Aurelia 2, Web Components, Wallets, MVVM, SPA,
-  Fastify, JavaScript, TailWind CSS, Axios, NodeJs, Awilix, TSyringe, Vite,
+  Fastify, JavaScript, TailWind CSS, Axios, Node.js, Awilix, TSyringe, Vite,
   HTML, CSS, Custom (HTML) Elements, Shadow DOM, HTML Templates, Data Binding,
   Observables, Pub/Sub Pattern, RxJS, SASS, Responsive UIs, Service-Oriented
   Architecture (SOA), ReactJs, Aurelia, AngularJs, FluentUI Web Components,
@@ -108,7 +108,7 @@ Module Bundling and Loading
   Vite, Webpack, Rollup, RequireJs, JSPM, SystemJs
 
 Software Development Platforms
-  Aurelia 2, NodeJs, Aurelia, .NET
+  Aurelia 2, Node.js, Aurelia, .NET
 
 Test Frameworks
   Vitest, Jasmine, Jest, Karma, Moq, MSTest, NUnit, Selenium, SpecFlow, Unity
@@ -119,14 +119,14 @@ Development Tools
   BitBucket, Jira, NuGet, TFS
 
 Website and Application Hosting
-  IPFS, NodeJs, JRun, IIS
+  IPFS, Node.js, JRun, IIS
 
 Cryptography
   De-identification, LitProtocol, crypto-js, DES, Encryption, SHA-2, .NET
   System.Security.Cryptography
 
 Scripting
-  NodeJs, Perl, PowerShell, Windows Batch
+  Node.js, Perl, PowerShell, Windows Batch
 
 Localization/Globalization
   i18Next, jQuery Globalization
@@ -190,8 +190,8 @@ Technologies / Skills:
 LLM Pipeline Architecture, LLM Evaluation, TypeScript, Human-in-the-Loop
 Design, Prompt Engineering, AI-Assisted Development, De-identification,
 Aurelia 2, Claude Code for VS Code, LLM APIs, AI Coding Assistant, Claude.ai
-(LLM), GitHub Copilot, ChatGPT (LLM), Fastify, TailWind CSS, Axios, NodeJs,
-Awilix, Vite, HTML5, Visual Studio Code, Vitest, NPM
+(LLM), GitHub Copilot, ChatGPT (LLM), Fastify, TailWind CSS, Axios, Node.js,
+Awilix, Vite, HTML, Visual Studio Code, Vitest, NPM
 
 
 Technical Lead & dApp Architect - Butterfly, Crypto portfolio management dApp
@@ -240,7 +240,7 @@ Highlights:
 
 Technologies / Skills:
 TypeScript, DeFi, AI Coding Assistant, GitHub Copilot, Fastify, Axios,
-TSyringe, Vite, GitHub, Node.js
+Node.js, TSyringe, Vite, GitHub
 
 
 Blockchain Oracle Developer
@@ -270,7 +270,7 @@ Highlights:
 
 Technologies / Skills:
 TypeScript, Solidity, Ethereum, ethers.js, DeFi, Refi, Celo, Balancer
-Liquidity Pools, Defender, Mento, Javascript, GitHub
+Liquidity Pools, Defender, Mento, JavaScript, GitHub
 
 
 Development Team Lead and Lead Developer
@@ -315,8 +315,8 @@ Technologies / Skills:
 TypeScript, Solidity, Ethereum, Web3, dApps, ethers.js, DAOs, DAO Governance
 Systems, DeFi, Wallets, Refi, SPA, IPFS, Subgraph, Liquidity Bootstrapping
 Pools, web3.js, Balancer Liquidity Pools, Gnosis Safe, Defender, Ceramic, ENS,
-LitProtocol, Metamask, WalletConnect, Web3Modal, Javascript, NodeJs, Vite,
-HTML5, CSS, SASS, Responsive, ReactJs, Aurelia, Webpack, Rollup, i18Next,
+LitProtocol, Metamask, WalletConnect, Web3Modal, JavaScript, Node.js, Vite,
+HTML, CSS, SASS, Responsive, ReactJs, Aurelia, Webpack, Rollup, i18Next,
 GitHub
 
 
@@ -327,7 +327,7 @@ https://www.daostack.io/
 Description:
 Performed multiple development roles in the design, creation and use of
 DAOstack DAOs, one of the first major DAO designs in the history of DAOs.
-Used, reviewed and deployed Solidity smart contracts, wrote a Typescript
+Used, reviewed and deployed Solidity smart contracts, wrote a TypeScript
 library to support dApps in accessing the smart contracts, wrote a test dApp,
 significantly contributed to the dApp Alchemy used for working with the DAOs.
 
@@ -357,7 +357,7 @@ Highlights:
 
 Technologies / Skills:
 TypeScript, Solidity, Ethereum, Web3, dApps, DAOs, DAO Governance Systems,
-Wallets, SPA, Subgraph, 3Box, Javascript, NodeJs, HTML5, CSS, SASS,
+Wallets, SPA, Subgraph, 3Box, JavaScript, Node.js, HTML, CSS, SASS,
 Responsive, ReactJs, Aurelia, Webpack, jQuery, Bootstrap, Bootstrap Material
 Design, GitHub
 
@@ -374,7 +374,7 @@ Highlights:
 - Fixed more bugs and added more features than the client planned-for
 
 Technologies / Skills:
-HTML5, CSS, C#, MVC, Razor, jQuery, ASP.NET, Telerik, SQL Server, T-SQL,
+HTML, CSS, C#, MVC, Razor, jQuery, ASP.NET, Telerik, SQL Server, T-SQL,
 BitBucket, Jira
 
 
@@ -393,8 +393,8 @@ Highlights:
 - Well-structured, modular code amenable to future maintenance and enhancement
 
 Technologies / Skills:
-TypeScript, SPA, Javascript, HTML5, CSS, Responsive, Aurelia, C#, ASP.NET
-Core, WebApi, ASP.NET Identity, Ajax, jQuery, Bootstrap, Microsoft SQL Server,
+TypeScript, SPA, JavaScript, HTML, CSS, Responsive, Aurelia, C#, ASP.NET Core,
+WebApi, ASP.NET Identity, Ajax, jQuery, Bootstrap, Microsoft SQL Server,
 T-SQL, Unity, Entity Framework Core, Azure, TFS
 
 
@@ -416,7 +416,7 @@ Highlights:
 - Hosted on Azure
 
 Technologies / Skills:
-Typescript, SPA, AngularJs, C#, WebApi, ASP.NET, SQL Server, T-SQL, Unity,
+TypeScript, SPA, AngularJs, C#, WebApi, ASP.NET, SQL Server, T-SQL, Unity,
 Entity Framework, Azure, TFS
 
 
@@ -441,7 +441,7 @@ Highlights:
   directions for expanding PSP's knowledge-based search capabilities
 
 Technologies / Skills:
-SPA, Javascript, HTML5, CSS, C#, D3, Highcharts, WebApi, Ajax, jQuery,
+SPA, JavaScript, HTML, CSS, C#, D3, Highcharts, WebApi, Ajax, jQuery,
 Bootstrap, RequireJs, KnockoutJs, DurandalJs, Agile, Unity, .NET, Entity
 Framework, TFS
 
@@ -463,8 +463,8 @@ Highlights:
   questions, answers and correlating them with resources
 
 Technologies / Skills:
-SPA, Javascript, HTML, CSS, C#, MVC, WebAPI, Ajax, jQuery, bootstrap,
-RequireJs, KnockoutJs, Durandal, ASP.NET, i18Next, jQuery globalization, Sql
+SPA, JavaScript, HTML, CSS, C#, MVC, WebAPI, Ajax, jQuery, bootstrap,
+RequireJs, KnockoutJs, Durandal, ASP.NET, i18Next, jQuery globalization, SQL
 Server, t-sql, entity framework
 
 
@@ -484,7 +484,7 @@ Highlights:
   Durandal+KnockoutJs+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core.
 
 Technologies / Skills:
-SPA, Javascript, HTML, CSS, Aurelia, webpack, C#, ASP.NET Core, MVC, WebAPI,
+SPA, JavaScript, HTML, CSS, Aurelia, webpack, C#, ASP.NET Core, MVC, WebAPI,
 Identity, Ajax, jQuery, bootstrap, RequireJs, KnockoutJs, SQL Server, t-sql,
 MsTest, XUnit.NET, crypto-js, DES, Encryption, SHA,
 System.Security.Cryptography, entity framework
@@ -520,7 +520,7 @@ Highlights:
   prototype was written against Selenium to drive automated GUI tests
 
 Technologies / Skills:
-Javascript, HTML, CSS, C#, MVC, jQuery, KnockoutJs, ASP.NET, Telerik, MEF,
+JavaScript, HTML, CSS, C#, MVC, jQuery, KnockoutJs, ASP.NET, Telerik, MEF,
 ADO, nHibernate, Agile, Moq, Selenium, SpecFlow, Unity, VSTest, Enterprise
 Framework, TFS
 
@@ -557,7 +557,7 @@ Highlights:
   the development of automated interfaces
 
 Technologies / Skills:
-Javascript, HTML, CSS, C#, xml, MVC, jQuery, ASP.NET, XSLT, XSD, WCF, WWF, Sql
+JavaScript, HTML, CSS, C#, xml, MVC, jQuery, ASP.NET, XSLT, XSD, WCF, WWF, SQL
 Server, t-sql, LINQ, Agile, Moq, MSTest, NUnit, Entity Framework, Enterprise
 Framework, TFS
 
@@ -617,7 +617,7 @@ Highlights:
   documentation
 
 Technologies / Skills:
-Javascript, Html, XML, Java, JSP, Swing, Flash SWF, Xerces, JRun
+JavaScript, Html, XML, Java, JSP, Swing, Flash SWF, Xerces, JRun
 
 
 Software Engineer (carOrder.com)
@@ -642,7 +642,7 @@ Highlights:
   Java
 
 Technologies / Skills:
-Javascript, Html, C++, Java, WCF, JDBC, JSP, CORBA, Xerces, SQL Server, T-Sql,
+JavaScript, Html, C++, Java, WCF, JDBC, JSP, CORBA, Xerces, SQL Server, T-Sql,
 DES, Encryption
 
 
@@ -660,7 +660,7 @@ Highlights:
 - Took the initiative to save this part of the IBM contract for Trilogy
 
 Technologies / Skills:
-Javascript, Html, XML, Java, XSL, JDBC, JSP, Swing, SQL, T-Sql, Perl, DB2
+JavaScript, Html, XML, Java, XSL, JDBC, JSP, Swing, SQL, T-Sql, Perl, DB2
 
 
 Lead Software Engineer
