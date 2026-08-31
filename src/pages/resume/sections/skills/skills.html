@@ -2,7 +2,7 @@
   <!-- Aurelia owns this toggle via `showSkillCategories`; see history.html. -->
   <h3 class="skills-header" aria-expanded.bind="showSkillCategories ? 'true' : 'false'" aria-controls="allSkills"
     click.trigger="showSkillCategories = !showSkillCategories">${showSkillCategories ?
-    "Hide Skills Pills" : "See Skills Pills"}
+    "Hide Skills and Technologies Pills" : "See Skills and Technologies Pills"}
     <i class="fa-solid ${showSkillCategories ? 'fa-angles-up' : 'fa-angles-down'}"></i>
   </h3>
   <div class="content collapse ${showSkillCategories ? 'show' : ''} fade" id="allSkills">

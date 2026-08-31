@@ -238,7 +238,7 @@ function bullet(text: string): Array<string> {
  * behind a marker.
  *
  * The indent is what makes a wrapped line read as a continuation rather than as a new
- * paragraph. Without it a long `Technologies / Skills:` list looks like loose prose from its second
+ * paragraph. Without it a long `Skills / Technologies:` list looks like loose prose from its second
  * line on, which is how the skill categories are set for the same reason.
  */
 function hangingIndent(text: string, marker = ""): Array<string> {
@@ -403,7 +403,7 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
   const skills: Array<Record<string, any>> = Array.isArray(resume.skills) ? resume.skills : [];
   const categories: Array<string> = Array.isArray(resume.skillCategories) ? resume.skillCategories : [];
 
-  doc.section("Skills");
+  doc.section("Skills and Technologies");
 
   const named = skills.filter((skill) => typeof skill.name === "string" && skill.name.trim() !== "");
   const placed = new Set<Record<string, any>>();
@@ -468,7 +468,7 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
     /**
      * The entry as labelled blocks, joined below by one blank line each. A block whose
      * content is absent is never pushed, so its label never appears over nothing -- 16 of
-     * the 35 entries carry no skills and get no "Technologies / Skills:" line at all.
+     * the 35 entries carry no skills and get no "Skills / Technologies:" line at all.
      */
     const blocks: Array<Array<string>> = [];
 
@@ -542,7 +542,7 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
 
     if (technologies.length > 0) {
       technologies.sort((a, b) => a.priority - b.priority || a.text.localeCompare(b.text));
-      blocks.push(["Technologies / Skills:", ...wrap(technologies.map((technology) => technology.text).join(", "))]);
+      blocks.push(["Skills / Technologies:", ...wrap(technologies.map((technology) => technology.text).join(", "))]);
     }
 
     const lines: Array<string> = [];
