@@ -510,8 +510,15 @@
     "accomplishments": {
       "type": "array",
       "items": {
-        "type": "string",
-        "uniqueItems": true
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "showOnShort": {
+            "type": "boolean"
+          }
+        }
       }
     },
     "qualities": {
