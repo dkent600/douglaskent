@@ -279,7 +279,7 @@ const priorityOf = (skill: Record<string, any>): number => {
  * priority of "HTML", which owns that alias, and still prints "HTML5".
  *
  * The lower-cased map is a fallback, not the primary lookup. 17 of the references in
- * `resume.json` differ from the canonical spelling only in case ("Javascript", "JQuery",
+ * `resume.json` differ from the canonical spelling only in case ("Javascript", "jQuery",
  * "T-Sql"), and without it each of those would sort last as though it were unknown, which
  * would be an ordering bug dressed up as missing data. An exact match always wins.
  *

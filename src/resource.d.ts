@@ -13,11 +13,11 @@
 /**
  * bootstrap-material-design is a jQuery plugin that ships no types of its own. It attaches
  * itself to the jQuery prototype when main.ts imports it for its side effects, so declare
- * it onto JQuery rather than casting at the call site.
+ * it onto jQuery rather than casting at the call site.
  */
 // eslint-disable-next-line @typescript-eslint/naming-convention -- the name has to match @types/jquery's interface exactly, or it will not merge
-interface JQuery<TElement = HTMLElement> {
-  bootstrapMaterialDesign(options?: Record<string, unknown>): JQuery<TElement>;
+interface jQuery<TElement = HTMLElement> {
+  bootstrapMaterialDesign(options?: Record<string, unknown>): jQuery<TElement>;
 }
 
 declare module "*.html" {

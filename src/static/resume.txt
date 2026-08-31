@@ -48,7 +48,7 @@ SELECTED ACCOMPLISHMENTS
 - In an enterprise website environment at ShiftWise, while facing an urgent
   deadline, I single-handedly implemented a complete system for handling
   mission-critical SMS messages. The architecture spanned a web site, three
-  web services, two Windows services, and two Sql Server databases.
+  web services, two Windows services, and two SQL Server databases.
 - For Ford Motor Company (via Trilogy) I designed, wrote, and delivered ahead
   of schedule a framework that served content to every page of the company's
   flagship website, Ford.com.
@@ -81,7 +81,7 @@ Blockchain
 
 Website and Application Development
   TypeScript, Web3, dApps, Aurelia 2, Web Components, Wallets, MVVM, SPA,
-  Fastify, JavaScript, TailWindCss, Axios, NodeJs, Awilix, TSyringe, Vite,
+  Fastify, JavaScript, TailWind CSS, Axios, NodeJs, Awilix, TSyringe, Vite,
   HTML, CSS, Custom (HTML) Elements, Shadow DOM, HTML Templates, Data Binding,
   Observables, Pub/Sub Pattern, RxJS, SASS, Responsive UIs, Service-Oriented
   Architecture (SOA), ReactJs, Aurelia, AngularJs, FluentUI Web Components,
@@ -135,7 +135,7 @@ Charting & Graphing Frameworks
   D3.js, Highcharts
 
 Semantic Search Frameworks
-  Sql Server Semantic Search
+  SQL Server Semantic Search
 
 Cloud Services
   Microsoft Azure
@@ -190,7 +190,7 @@ Technologies / Skills:
 LLM Pipeline Architecture, LLM Evaluation, TypeScript, Human-in-the-Loop
 Design, Prompt Engineering, AI-Assisted Development, De-identification,
 Aurelia 2, Claude Code for VS Code, LLM APIs, AI Coding Assistant, Claude.ai
-(LLM), GitHub Copilot, ChatGPT (LLM), Fastify, TailWindCss, Axios, NodeJs,
+(LLM), GitHub Copilot, ChatGPT (LLM), Fastify, TailWind CSS, Axios, NodeJs,
 Awilix, Vite, HTML5, Visual Studio Code, Vitest, NPM
 
 
@@ -214,7 +214,7 @@ Highlights:
 
 Technologies / Skills:
 TypeScript, Aurelia 2, DeFi, MVVM, AI Coding Assistant, GitHub Copilot,
-TailWindCss, Axios, Vite, FluentUI Web Components, GitHub
+TailWind CSS, Axios, Vite, FluentUI Web Components, GitHub
 
 
 Technical Lead & dApp Architect - Butterfly, Crypto portfolio management
@@ -358,7 +358,7 @@ Highlights:
 Technologies / Skills:
 TypeScript, Solidity, Ethereum, Web3, dApps, DAOs, DAO Governance Systems,
 Wallets, SPA, Subgraph, 3Box, Javascript, NodeJs, HTML5, CSS, SASS,
-Responsive, ReactJs, Aurelia, Webpack, JQuery, Bootstrap, Bootstrap Material
+Responsive, ReactJs, Aurelia, Webpack, jQuery, Bootstrap, Bootstrap Material
 Design, GitHub
 
 
@@ -374,7 +374,7 @@ Highlights:
 - Fixed more bugs and added more features than the client planned-for
 
 Technologies / Skills:
-HTML5, CSS, C#, MVC, Razor, JQuery, ASP.NET, Telerik, Sql Server, T-SQL,
+HTML5, CSS, C#, MVC, Razor, jQuery, ASP.NET, Telerik, SQL Server, T-SQL,
 BitBucket, Jira
 
 
@@ -394,7 +394,7 @@ Highlights:
 
 Technologies / Skills:
 TypeScript, SPA, Javascript, HTML5, CSS, Responsive, Aurelia, C#, ASP.NET
-Core, WebApi, ASP.NET Identity, Ajax, JQuery, Bootstrap, Microsoft Sql Server,
+Core, WebApi, ASP.NET Identity, Ajax, jQuery, Bootstrap, Microsoft SQL Server,
 T-SQL, Unity, Entity Framework Core, Azure, TFS
 
 
@@ -412,12 +412,12 @@ Highlights:
   application
 - Created a dynamic, data-driven schema for the exchanged content
 - Integrated lots of moving parts: an AngularJs web application, two external
-  web services, .NET web server, Azure web job, and Sql Server database
+  web services, .NET web server, Azure web job, and SQL Server database
 - Hosted on Azure
 
 Technologies / Skills:
-Typescript, SPA, AngularJs, C#, WebApi, ASP.NET, Sql Server, T-SQL, Unity,
-Entity FrameWork, Azure, TFS
+Typescript, SPA, AngularJs, C#, WebApi, ASP.NET, SQL Server, T-SQL, Unity,
+Entity Framework, Azure, TFS
 
 
 Sole Senior Lead Web Developer
@@ -441,7 +441,7 @@ Highlights:
   directions for expanding PSP's knowledge-based search capabilities
 
 Technologies / Skills:
-SPA, Javascript, HTML5, CSS, C#, D3, Highcharts, WebApi, Ajax, JQuery,
+SPA, Javascript, HTML5, CSS, C#, D3, Highcharts, WebApi, Ajax, jQuery,
 Bootstrap, RequireJs, KnockoutJs, DurandalJs, Agile, Unity, .NET, Entity
 Framework, TFS
 
@@ -463,8 +463,8 @@ Highlights:
   questions, answers and correlating them with resources
 
 Technologies / Skills:
-SPA, Javascript, HTML, CSS, C#, MVC, WebAPI, Ajax, jquery, bootstrap,
-RequireJs, KnockoutJs, Durandal, ASP.NET, i18Next, jquery globalization, Sql
+SPA, Javascript, HTML, CSS, C#, MVC, WebAPI, Ajax, jQuery, bootstrap,
+RequireJs, KnockoutJs, Durandal, ASP.NET, i18Next, jQuery globalization, Sql
 Server, t-sql, entity framework
 
 
@@ -485,7 +485,7 @@ Highlights:
 
 Technologies / Skills:
 SPA, Javascript, HTML, CSS, Aurelia, webpack, C#, ASP.NET Core, MVC, WebAPI,
-Identity, Ajax, jquery, bootstrap, RequireJs, KnockoutJs, Sql Server, t-sql,
+Identity, Ajax, jQuery, bootstrap, RequireJs, KnockoutJs, SQL Server, t-sql,
 MsTest, XUnit.NET, crypto-js, DES, Encryption, SHA,
 System.Security.Cryptography, entity framework
 
@@ -520,7 +520,7 @@ Highlights:
   prototype was written against Selenium to drive automated GUI tests
 
 Technologies / Skills:
-Javascript, HTML, CSS, C#, MVC, jquery, KnockoutJs, ASP.NET, Telerik, MEF,
+Javascript, HTML, CSS, C#, MVC, jQuery, KnockoutJs, ASP.NET, Telerik, MEF,
 ADO, nHibernate, Agile, Moq, Selenium, SpecFlow, Unity, VSTest, Enterprise
 Framework, TFS
 
@@ -538,7 +538,7 @@ Highlights:
 - Meeting an urgent deadline, virtually single-handedly implemented a system
   for handling mission-critical incoming and outgoing (SMS) messages to and
   from cell phones. The architecture spanned a web site, three web services,
-  two windows services, and two Sql Server databases
+  two windows services, and two SQL Server databases
 - Was the Lead Developer on the ShiftWise Vendor Management System (VMS), a
   large and complex web application used by hospital administrators and
   medical staffing agencies to improve the process of hiring and placing
@@ -557,7 +557,7 @@ Highlights:
   the development of automated interfaces
 
 Technologies / Skills:
-Javascript, HTML, CSS, C#, xml, MVC, jquery, ASP.NET, XSLT, XSD, WCF, WWF, Sql
+Javascript, HTML, CSS, C#, xml, MVC, jQuery, ASP.NET, XSLT, XSD, WCF, WWF, Sql
 Server, t-sql, LINQ, Agile, Moq, MSTest, NUnit, Entity Framework, Enterprise
 Framework, TFS
 
@@ -642,7 +642,7 @@ Highlights:
   Java
 
 Technologies / Skills:
-Javascript, Html, C++, Java, WCF, JDBC, JSP, CORBA, Xerces, Sql Server, T-Sql,
+Javascript, Html, C++, Java, WCF, JDBC, JSP, CORBA, Xerces, SQL Server, T-Sql,
 DES, Encryption
 
 
