@@ -3,6 +3,9 @@ import { resolve } from "node:path";
 
 import type { Plugin } from "vite";
 
+import { stripHtml } from "./resume-text";
+import { SUMMARY_KEYS } from "./src/stores/resume-store";
+
 /**
  * Derives a schema.org `Person` block from `src/static/resume.json` and injects it into
  * the `<head>` of `index.html`.
@@ -75,8 +78,6 @@ interface Citizenship {
  * already `url`, so neither belongs here.
  */
 const SAME_AS_NETWORKS = new Set(["LinkedIn", "GitHub"]);
-
-const stripHtml = (value: string): string => value.replace(/<[^>]*>/g, "").trim();
 
 /**
  * `priority` is typed inconsistently in the file -- mostly numbers, but at least two
@@ -188,6 +189,21 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
     .filter((name): name is string => typeof name === "string" && name.trim() !== "")
     .map((name) => ({ "@type": "Country", name }));
 
+  /**
+   * The same summary paragraphs the plain-text resume prints, joined into the single
+   * string `description` is defined to be. One paragraph was too thin a claim for the
+   * property that most machine readers quote back; three still fit comfortably inside what
+   * a description is for.
+   *
+   * `stripHtml` and not the text file's ASCII folding: this is JSON, so the source's
+   * em-dashes and curly quotes are carried through as they are written. Nothing in these
+   * three keys contains markup today, but the strip costs nothing and keeps a future edit
+   * to one of them from putting a tag into the block.
+   */
+  const description = SUMMARY_KEYS.map((key) => (typeof basics[key] === "string" ? stripHtml(basics[key]) : ""))
+    .filter((paragraph) => paragraph !== "")
+    .join(" ");
+
   const jobTitle = typeof basics.label === "string" ? basics.label : undefined;
 
   const hasOccupation = jobTitle
@@ -204,7 +220,7 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
     name: basics.name,
     url: basics.website,
     jobTitle,
-    description: typeof basics.summary1 === "string" ? stripHtml(basics.summary1) : undefined,
+    description,
     sameAs,
     address: Object.keys(address).length > 1 ? address : undefined,
     knowsLanguage,

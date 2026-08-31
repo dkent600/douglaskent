@@ -6,6 +6,7 @@ import { defineConfig, type PluginOption } from "vite";
 
 import { resumeApi } from "./resume-api-plugin";
 import { resumeJsonLd } from "./resume-jsonld-plugin";
+import { resumeTxt } from "./resume-txt-plugin";
 /**
  * This is required by the rollup build which will otherwise barf
  * on this statement in the ts:
@@ -68,6 +69,7 @@ export default defineConfig(({ mode }) => ({
     rawHtml(),
     resumeApi(),
     resumeJsonLd(),
+    resumeTxt(),
     visualizer({
       emitFile: true,
       gzipSize: true,

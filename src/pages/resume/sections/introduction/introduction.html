@@ -1,7 +1,11 @@
 <section class="section">
   <h3>Introduction</h3>
-  <p class="summary" innerhtml.bind="basics.summary1 | sanitizeHTML"></p>
-  <p class="summary" innerhtml.bind="basics.summary2 | sanitizeHTML"></p>
-  <p class="summary" innerhtml.bind="basics.summary7 | sanitizeHTML"></p>
+  <!--
+    Keyed access rather than a precomputed array of paragraph text: the admin editor
+    writes to basics while the page is open, and binding basics[key] keeps each paragraph
+    observed the way naming it directly did.
+  -->
+  <p class="summary" repeat.for="key of summaryKeys" innerhtml.bind="basics[key] | sanitizeHTML"></p>
+  <!-- Not in summaryKeys: short-resume-only furniture, deliberately absent from the derived artifacts. -->
   <p class="summary" resume-type="short" innerhtml.bind="basics.summary3 | sanitizeHTML"></p>
 </section>
