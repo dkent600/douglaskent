@@ -181,6 +181,12 @@ https://github.com/dkent600/HumanLens
   de-identification holds for review anything it misses - with the client-safe
   boundary enforced by the package structure, so the human-review interface is
   structurally incapable of holding internal findings
+Technologies: LLM Pipeline Architecture, LLM Evaluation, TypeScript,
+  Human-in-the-Loop Design, Prompt Engineering, AI-Assisted Development,
+  De-identification, Aurelia 2, Claude Code for VS Code, LLM APIs, AI Coding
+  Assistant, Claude.ai (LLM), GitHub Copilot, ChatGPT (LLM), Fastify,
+  TailWindCss, Axios, NodeJs, Awilix, Vite, HTML5, Visual Studio Code, Vitest,
+  NPM
 
 Technical Lead & dApp Architect - Butterfly, Crypto portfolio management dApp
 Independent Software Developer | 06/2025 - 09/2025
@@ -195,6 +201,8 @@ https://github.com/dkent600/batch-take-profit
 - Internal architecture: MVVM SPA app frontend
 - Development process utilizing the AI coding assistant GitHub Copilot Chat in
   VS Code
+Technologies: TypeScript, Aurelia 2, DeFi, MVVM, AI Coding Assistant, GitHub
+  Copilot, TailWindCss, Axios, Vite, FluentUI Web Components, GitHub
 
 Technical Lead & dApp Architect - Butterfly, Crypto portfolio management
 service
@@ -212,6 +220,8 @@ https://github.com/dkent600/butterfly-services
 - Node.js with TypeScript
 - TSyringe for clean dependency injection architecture for Node.js
 - Axios for exchange-API communications
+Technologies: TypeScript, DeFi, AI Coding Assistant, GitHub Copilot,
+  Fastify, Axios, TSyringe, Vite, GitHub, Node.js
 
 Blockchain Oracle Developer
 Curve Labs | 04/2023 - 05/2023
@@ -233,6 +243,8 @@ https://www.curvelabs.eu/
   for managing private keys, encrypting secrets, sending transactions, hosting
   and invoking the service
 - Reported the prices of cUSD, kCur and kG price to smart contract Oracles
+Technologies: TypeScript, Solidity, Ethereum, ethers.js, DeFi, Refi, Celo,
+  Balancer Liquidity Pools, Defender, Mento, Javascript, GitHub
 
 Development Team Lead and Lead Developer
 Curve Labs | 08/2020 - 11/2022
@@ -267,6 +279,12 @@ https://www.curvelabs.eu/
 - As products, these applications are innovative and impressive. Read more
   about them at Kolektivo (https://www.kolektivo.network/) and The Prime Suite
   (https://www.prime.xyz)
+Technologies: TypeScript, Solidity, Ethereum, Web3, dApps, ethers.js, DAOs,
+  DAO Governance Systems, DeFi, Wallets, Refi, SPA, IPFS, Subgraph, Liquidity
+  Bootstrapping Pools, web3.js, Balancer Liquidity Pools, Gnosis Safe,
+  Defender, Ceramic, ENS, LitProtocol, Metamask, WalletConnect, Web3Modal,
+  Javascript, NodeJs, Vite, HTML5, CSS, SASS, Responsive, ReactJs, Aurelia,
+  Webpack, Rollup, i18Next, GitHub
 
 Senior Lead Developer
 DAOstack | 09/2017 - 10/2020
@@ -298,6 +316,10 @@ https://www.daostack.io/
 - Implemented Vanille (https://github.com/daostack/vanille), open-source
   software that leverage DAOStack Arc (https://github.com/daostack/arc) to
   facilitate the creation of DAOstack DAOs
+Technologies: TypeScript, Solidity, Ethereum, Web3, dApps, DAOs, DAO
+  Governance Systems, Wallets, SPA, Subgraph, 3Box, Javascript, NodeJs, HTML5,
+  CSS, SASS, Responsive, ReactJs, Aurelia, Webpack, JQuery, Bootstrap,
+  Bootstrap Material Design, GitHub
 
 Senior Web Developer
 Dicom Transportation Group | 02/2017 - 04/2017
@@ -305,6 +327,8 @@ Fixed bugs and developed new features for an internal web application used to
 coordinate trucks, drivers, routes and delivery locations across Quebec
 https://www.dicom.com/
 - Fixed more bugs and added more features than the client planned-for
+Technologies: HTML5, CSS, C#, MVC, Razor, JQuery, ASP.NET, Telerik, Sql
+  Server, T-SQL, BitBucket, Jira
 
 Sole Web Developer
 Vivalia Bistro Express | 06/2016 - 10/2016
@@ -315,6 +339,9 @@ https://vivalia.ca/
 - Highly performant, pleasing and intuitive user interface
 - Used all best-available web application technologies
 - Well-structured, modular code amenable to future maintenance and enhancement
+Technologies: TypeScript, SPA, Javascript, HTML5, CSS, Responsive, Aurelia,
+  C#, ASP.NET Core, WebApi, ASP.NET Identity, Ajax, JQuery, Bootstrap,
+  Microsoft Sql Server, T-SQL, Unity, Entity Framework Core, Azure, TFS
 
 Senior Lead Web Developer
 GE Healthcare | 03/2015 - 02/2016
@@ -328,6 +355,8 @@ https://www.gehealthcare.com/
 - Integrated lots of moving parts: an AngularJs web application, two external
   web services, .NET web server, Azure web job, and Sql Server database
 - Hosted on Azure
+Technologies: Typescript, SPA, AngularJs, C#, WebApi, ASP.NET, Sql Server,
+  T-SQL, Unity, Entity FrameWork, Azure, TFS
 
 Sole Senior Lead Web Developer
 PSP Investments | 05/2014 - 12/2015
@@ -344,6 +373,9 @@ https://investpsp.ca/
 - Conducted research on knowledge base and graph and RDF database technologies
   and products, including AllegroGraph, Semaphore and Neo4j, to plot
   directions for expanding PSP's knowledge-based search capabilities
+Technologies: SPA, Javascript, HTML5, CSS, C#, D3, Highcharts, WebApi, Ajax,
+  JQuery, Bootstrap, RequireJs, KnockoutJs, DurandalJs, Agile, Unity, .NET,
+  Entity Framework, TFS
 
 Sole Web Designer and Developer - Kill My TV!
 Independent Software Developer | 12/2013 - 03/2014
@@ -356,6 +388,9 @@ relevant to the implications of watching too much television
 - Users can suggest and submit their own resources
 - Includes an extensive set of administration pages for creating the
   questions, answers and correlating them with resources
+Technologies: SPA, Javascript, HTML, CSS, C#, MVC, WebAPI, Ajax, jquery,
+  bootstrap, RequireJs, KnockoutJs, Durandal, ASP.NET, i18Next, jquery
+  globalization, Sql Server, t-sql, entity framework
 
 Sole Web Designer and Developer - Password Repository
 Independent Software Developer | 08/2013 - 09/2017
@@ -367,6 +402,10 @@ requiring SSL. Received intermittent attention.
   privacy with no SSL
 - Been through a couple iterations as technologies have changed. Was
   Durandal+KnockoutJs+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core.
+Technologies: SPA, Javascript, HTML, CSS, Aurelia, webpack, C#, ASP.NET
+  Core, MVC, WebAPI, Identity, Ajax, jquery, bootstrap, RequireJs, KnockoutJs,
+  Sql Server, t-sql, MsTest, XUnit.NET, crypto-js, DES, Encryption, SHA,
+  System.Security.Cryptography, entity framework
 
 Senior Web Developer
 Revionics | 11/2011 - 03/2013
@@ -392,6 +431,9 @@ https://www.revionics.com/
 - Designed, developed and prototyped a reusable/extensible framework for
   writing SpecFlow integration tests using Unity, Moq and VSTest. The
   prototype was written against Selenium to drive automated GUI tests
+Technologies: Javascript, HTML, CSS, C#, MVC, jquery, KnockoutJs, ASP.NET,
+  Telerik, MEF, ADO, nHibernate, Agile, Moq, Selenium, SpecFlow, Unity,
+  VSTest, Enterprise Framework, TFS
 
 Senior Lead Web Developer, Manager Partner Integrations
 ShiftWise | 08/2003 - 07/2011
@@ -419,6 +461,9 @@ https://www.shiftwise.com/
   engineering process
 - Worked smoothly with ShiftWise clients to plan and coordinate their side of
   the development of automated interfaces
+Technologies: Javascript, HTML, CSS, C#, xml, MVC, jquery, ASP.NET, XSLT,
+  XSD, WCF, WWF, Sql Server, t-sql, LINQ, Agile, Moq, MSTest, NUnit, Entity
+  Framework, Enterprise Framework, TFS
 
 Web Application Developer
 Texas Turnpike Authority | 05/2003 - 06/2003
@@ -429,6 +474,7 @@ https://www.dot.state.tx.us/default.htm
   construction
 - Implemented site-wide forms-based roles authorization and page
   customization, as well as user/groups management pages
+Technologies: JavaScript, HTML, C#, ASP.NET, T-SQL
 
 Application Developer
 Schlumberger/Cingular Wireless | 10/2002 - 01/2003
@@ -442,6 +488,7 @@ https://www.schlumberger.com/
   functionality to both new code and existing code
 - Implemented application configuration files formatted as XML, accessed using
   Xerces
+Technologies: XML, Java, Swing, Xerces
 
 Software Engineer (Ford.com)
 Trilogy | 09/2000 - 03/2001
@@ -453,6 +500,8 @@ https://www.trilogy.com/
   SWF file preprocessor
 - Wrote thorough and professionally-styled User and Developer Guide
   documentation
+Technologies: Javascript, Html, XML, Java, JSP, Swing, Flash SWF, Xerces,
+  JRun
 
 Software Engineer (carOrder.com)
 Trilogy | 01/2000 - 08/2000
@@ -470,6 +519,8 @@ https://www.trilogy.com/
 - Designed and wrote an application to assist in browsing Jato automobile data
 - Ported DES-encryption-based software licensing code (see Imagen) from C++ to
   Java
+Technologies: Javascript, Html, C++, Java, WCF, JDBC, JSP, CORBA, Xerces,
+  Sql Server, T-Sql, DES, Encryption
 
 Software Engineer (IBM)
 Trilogy | 03/1999 - 12/1999
@@ -479,6 +530,8 @@ https://www.trilogy.com/
 - Right off the bat solved a critical issue that had been vexing prior
   developers. IBM was very happy
 - Took the initiative to save this part of the IBM contract for Trilogy
+Technologies: Javascript, Html, XML, Java, XSL, JDBC, JSP, Swing, SQL,
+  T-Sql, Perl, DB2
 
 Lead Software Engineer
 Biomonitors, Ltd | 02/1997 - 03/1997

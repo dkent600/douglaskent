@@ -230,8 +230,20 @@ function wrap(text: string, indent = "", width = WRAP_WIDTH): Array<string> {
  * under the marker.
  */
 function bullet(text: string): Array<string> {
+  return hangingIndent(text, "- ");
+}
+
+/**
+ * Wraps `text` with its continuation lines indented two columns under the first, optionally
+ * behind a marker.
+ *
+ * The indent is what makes a wrapped line read as a continuation rather than as a new
+ * paragraph. Without it a long `Technologies:` list looks like loose prose from its second
+ * line on, which is how the skill categories are set for the same reason.
+ */
+function hangingIndent(text: string, marker = ""): Array<string> {
   const lines = wrap(text, "", WRAP_WIDTH - 2);
-  return lines.map((line, index) => (index === 0 ? `- ${line}` : `  ${line}`));
+  return lines.map((line, index) => (index === 0 ? `${marker}${line}` : `  ${line}`));
 }
 
 /**
@@ -258,6 +270,40 @@ const priorityOf = (skill: Record<string, any>): number => {
   const value = Number(skill.priority);
   return Number.isNaN(value) ? Number.POSITIVE_INFINITY : value;
 };
+
+/**
+ * Every name and alias in `skills[]`, pointing at the skill that owns it.
+ *
+ * This exists only to look up a `priority` for ordering a work entry's technologies. It is
+ * never used to rewrite what the entry says: an entry naming "HTML5" is ordered by the
+ * priority of "HTML", which owns that alias, and still prints "HTML5".
+ *
+ * The lower-cased map is a fallback, not the primary lookup. 17 of the references in
+ * `resume.json` differ from the canonical spelling only in case ("Javascript", "JQuery",
+ * "T-Sql"), and without it each of those would sort last as though it were unknown, which
+ * would be an ordering bug dressed up as missing data. An exact match always wins.
+ *
+ * First writer wins on collision, and blank keys are skipped -- one skill carries an empty
+ * string in its `aliases`, which would otherwise match an empty reference.
+ */
+function indexSkills(skills: Array<Record<string, any>>): {
+  exact: Map<string, Record<string, any>>;
+  lowercased: Map<string, Record<string, any>>;
+} {
+  const exact = new Map<string, Record<string, any>>();
+  const lowercased = new Map<string, Record<string, any>>();
+
+  for (const skill of skills) {
+    const aliases: Array<unknown> = Array.isArray(skill.aliases) ? skill.aliases : [];
+    for (const key of [skill.name, ...aliases]) {
+      if (typeof key !== "string" || key.trim() === "") continue;
+      if (!exact.has(key)) exact.set(key, skill);
+      if (!lowercased.has(key.toLowerCase())) lowercased.set(key.toLowerCase(), skill);
+    }
+  }
+
+  return { exact, lowercased };
+}
 
 /**
  * Accumulates the document, keeping the blank-line rules in one place instead of scattering
@@ -400,6 +446,16 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
 
   doc.section("Professional Experience");
 
+  const skillIndex = indexSkills(named);
+
+  /**
+   * References that matched only after lower-casing. Collected and reported once at the
+   * end rather than one warning apiece, because they are all the same finding -- casing in
+   * the work entries has drifted from casing in `skills[]` -- and 17 near-identical lines
+   * would bury the warnings that are about something else.
+   */
+  const casingVariants = new Set<string>();
+
   for (const { entry, index } of chronological) {
     const lines: Array<string> = [];
 
@@ -429,7 +485,58 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
       if (text !== "") lines.push(...bullet(text));
     }
 
+    /**
+     * The entry's own skills, rendered exactly as the entry writes them rather than as the
+     * canonical name they resolve to. An entry saying "HTML5" prints "HTML5" even though
+     * the skill is "HTML" and HTML5 is one of its aliases: the alias is a keyword a job
+     * posting may use, the work entry is what chose it, and rewriting it to the canonical
+     * name would delete the term a search is looking for.
+     *
+     * `skills[]` is consulted only for a `priority` to order by. A reference resolving to
+     * nothing still prints; it sorts last and is reported.
+     *
+     * This line closes the entry rather than opening it, so the narrative -- what the job
+     * was, then what came of it -- is not interrupted by a keyword list.
+     */
+    const references: Array<unknown> = Array.isArray(entry.skills) ? entry.skills : [];
+    const rendered = new Set<string>();
+    const technologies: Array<{ text: string; priority: number }> = [];
+
+    for (const reference of references) {
+      const raw = typeof reference === "string" ? reference.trim() : "";
+      const text = clean(reference);
+      if (text === "") continue;
+
+      if (rendered.has(text)) {
+        warnings.add(`work[${index}] lists "${text}" more than once; rendered once`);
+        continue;
+      }
+      rendered.add(text);
+
+      const exact = skillIndex.exact.get(raw);
+      const match = exact ?? skillIndex.lowercased.get(raw.toLowerCase());
+
+      if (match === undefined) {
+        warnings.add(`work[${index}] lists "${text}", which matches no name or alias in skills[]; ordered last`);
+      } else if (exact === undefined) {
+        casingVariants.add(`"${raw}" (skills[] spells it "${String(match.name)}")`);
+      }
+
+      technologies.push({ text, priority: match === undefined ? Number.POSITIVE_INFINITY : priorityOf(match) });
+    }
+
+    if (technologies.length > 0) {
+      technologies.sort((a, b) => a.priority - b.priority || a.text.localeCompare(b.text));
+      lines.push(...hangingIndent(`Technologies: ${technologies.map((technology) => technology.text).join(", ")}`));
+    }
+
     doc.block(lines);
+  }
+
+  if (casingVariants.size > 0) {
+    warnings.add(
+      `${casingVariants.size} skill reference(s) in work[] match skills[] only when case is ignored: ${[...casingVariants].join(", ")}`,
+    );
   }
 
   /**
