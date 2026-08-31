@@ -47,6 +47,86 @@
       }
     ]
   },
+  "accomplishments": [
+    {
+      "text": "Working with subjective human voices and non-deterministic AI interpretations, I led the design and development of Human Lens, an AI-native qualitative analysis application that produces findings solid enough for a DEI consultancy to advise its clients with confidence.",
+      "showOnShort": true
+    },
+    {
+      "text": "With Curve Labs, I coded, delivered and led, in some cases single-handedly, the front-end development of multiple complex Web3 dApps leveraging Ethereum smart contracts in the domains of decentralized finance (Defi) and regeneration (Refi).",
+      "showOnShort": true
+    },
+    {
+      "text": "With DAOstack, I helped design and develop some of the first-ever decentralized autonomous organization (DAO) Ethereum smart contracts, and helped develop a complex Web3 dApp to use them.",
+      "showOnShort": true
+    },
+    {
+      "text": "In an enterprise website environment at Revionics, I saved a project in jeopardy of missing its deadline. I took the counter-intuitive and risky step of dropping the assisting team from 7 to 3, but it enabled us to meet our deadline.",
+      "showOnShort": true
+    },
+    {
+      "text": "At Microsoft, I led a multi-disciplinary development team of 7 software engineers plus writers and graphic designers to produce a multimedia CD-ROM title for Windows. We delivered on time, meeting all quality goals.",
+      "showOnShort": true
+    },
+    {
+      "text": "On a Microsoft project whose development lead and content developer each unexpectedly and simultaneously departed, I took the initiative to undertake some of each person's responsibilities, keeping the project on schedule and leading it to a successful market release.",
+      "showOnShort": false
+    },
+    {
+      "text": "In an enterprise website environment at ShiftWise, while facing an urgent deadline, I single-handedly implemented a complete system for handling mission-critical SMS messages. The architecture spanned a web site, three web services, two Windows services, and two Sql Server databases.",
+      "showOnShort": false
+    },
+    {
+      "text": "For Ford Motor Company (via Trilogy) I designed, wrote, and delivered ahead of schedule a framework that served content to every page of the company&#39;s flagship website, Ford.com.",
+      "showOnShort": false
+    },
+    {
+      "text": "At ConnectSoft I led the development of an application that won a <i>Windows 100</i> award from <i>Windows Magazine</i>: <i>Clip-Art Window Shopper</i>, one of the first ever applications for purchasing and downloading clip-art online.",
+      "showOnShort": false
+    },
+    {
+      "text": "At Microsoft, I incorporated the new technology of OLE 1.0 into Windows Write. OLE was a highly visible and strategic initiative of interest at the highest levels in Microsoft.",
+      "showOnShort": false
+    },
+    {
+      "text": "In my very first job as a software engineer, at the University of N. Carolina, I wrote a multi-dimensional data visualization application that was adopted as a product by the SAS Institute, a major statistical software company.",
+      "showOnShort": false
+    }
+  ],
+  "references": [
+    {
+      "name": "Renç Korzay",
+      "reference": "Doug is a brilliant front-end engineer who stands out for his exceptional professionalism, team-player attitude, and a strong sense of ownership. He goes out of his way to ensure that projects are delivered on time and to the highest possible standard. Doug is great at leading other developers and working across disciplines, he's an expert in prioritization and can dissect complex problems. His perfectionism and ability to set a great example for the team have been invaluable. I had the chance to work with Doug on multiple Web3 projects throughout the years and I would always look forward to an opportunity to work with him.",
+      "title": "Web3 Product Manager",
+      "company": "Curve Labs",
+      "website": "https://www.linkedin.com/in/renckorzay/"
+    },
+    {
+      "name": "Ghalem Ben Nouna",
+      "reference": "It's rare that you come across standout talent like Doug. I hired Doug as an application developer in my analytics team at PSP. He was able to complete the development of complex data products with complex custom visualizations on time. I was particularly impressed by Doug’s ability to precisely understand business requirements effortlessly due to his extensive experience as well as being an amazing team player.",
+      "title": "Senior Director of Data Management and Business Intelligence at Ivanhoé Cambridge",
+      "company": "PSP Investments",
+      "website": "https://www.linkedin.com/in/ghalem-ben-nouna-2356011/"
+    },
+    {
+      "name": "Ross Barbieri",
+      "reference": "I know Doug Kent both personally and professionally. I have had the great pleasure of working with him on several projects at multiple companies. These include industry changing applications like Shiftwise (healthcare staffing vendor management systems) and at large companies like GE . He is a highly reliable and methodical .NET web developer, and <b><i>the</i></b> best OO developer I've worked with. Doug works well solo and on teams and is an excellent communicator in both settings. On that point, he is an open and honest person and one who is not afraid to speak up (appropriately) when necessary. He is my go to .NET developer for these reasons, and also because he takes full ownership of his work; including peripheral dependencies, and will self manage through to completion.",
+      "title": "Serial Entrepreneur, CTO and Software Development Manager",
+      "company": "Shiftwise",
+      "website": "https://www.linkedin.com/in/rosshere/"
+    }
+  ],
+  "qualities": [
+    "I have the maturity and experience to design, develop, coordinate, and lead a team from product conception to release.",
+    "I can put AI to work on real implementation while supplying what it lacks — the judgment, earned over decades, to recognize when a plausible-looking design is wrong.",
+    "I have the broad full-stack knowledge and self-starting mentality to single-handedly architect, design, implement, document, test and deploy an entire application.",
+    "I have worked with some of the best programmers and managers at some of the greatest software companies in the world.",
+    "I am a great team player, leader and communicator, fully embracing team diversity and cohesiveness.",
+    "I am creative and love solving challenging problems.",
+    "I enjoy mentoring anyone who seeks it.",
+    "I am reliable and honest: I speak truth to clients and colleagues.",
+    "I try to view situations from your point of view to anticipate your needs and assist you in building your antifragility."
+  ],
   "skillCategories": [
     "AI",
     "Blockchain",
@@ -67,902 +147,6 @@
     "Cloud Services",
     "Operating Systems",
     "Development Processes"
-  ],
-  "work": [
-    {
-      "company": "Human Lens, AI-native web app · self-directed case study",
-      "position": "Technical Lead & LLM Pipeline Architect",
-      "startDate": "2026-05",
-      "summary": "Modeled on an existing DEI consultancy, turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface.",
-      "endDate": "present",
-      "highlights": [
-        "Scoped, designed, and built in TypeScript — Aurelia 2 web application over a Fastify/Node service — with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing)",
-        "Ran a hybrid human/AI development process: delegated implementation to a coding agent, routed design decisions through an independent review model, and adjudicated every conflict personally",
-        "Derived functional requirements and the domain model by using an LLM to analyze a DEI consultancy's published materials, translating an external firm's stated methodology into implementable analytic stages",
-        "Guaranteed processing completeness in orchestration code rather than in prompts — every input provably resolves to one of four explicit terminal states, so nothing is silently dropped regardless of model behavior",
-        "Designed a seven-lens analytic architecture running in six ordered waves; three lenses validated against a real model to date, with calibration driven by a purpose-built synthetic evaluation dataset",
-        "Made a non-deterministic system testable: captured real model responses once and replayed them, so runs became reproducible and far cheaper",
-        "Designed test data that measured failure in both directions — what the pipeline missed and what it invented — rather than only rewarding recall",
-        "Built confidentiality controls with a human in the loop: no finding reaches client-facing output without explicit approval, and automated de-identification holds for review anything it misses — with the client-safe boundary enforced by the package structure, so the human-review interface is structurally incapable of holding internal findings"
-      ],
-      "skills": [
-        "TypeScript",
-        "Visual Studio Code",
-        "Aurelia 2",
-        "Vite",
-        "NodeJs",
-        "NPM",
-        "HTML5",
-        "Fastify",
-        "ChatGPT (LLM)",
-        "Claude Code for VS Code",
-        "Claude.ai (LLM)",
-        "AI Coding Assistant",
-        "Axios",
-        "Vitest",
-        "Awilix",
-        "TailWindCss",
-        "LLM Pipeline Architecture",
-        "Prompt Engineering",
-        "LLM Evaluation",
-        "Human-in-the-Loop Design",
-        "De-identification",
-        "AI-Assisted Development",
-        "LLM APIs",
-        "GitHub Copilot"
-      ],
-      "personal": true,
-      "website": "https://github.com/dkent600/HumanLens",
-      "showOnShort": true
-    },
-    {
-      "company": "Butterfly, Crypto portfolio management dApp · self-directed case study",
-      "position": "Technical Lead & dApp Architect",
-      "remote": false,
-      "website": "https://github.com/dkent600/batch-take-profit",
-      "startDate": "2025-06",
-      "summary": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges. Supported by the Butterfly Crypto portfolio management service.",
-      "endDate": "2025-09",
-      "highlights": [
-        "Does real-time price monitoring and balance tracking, tracking order history and status",
-        "Executes batch take-profit orders across multiple exchanges, with percentage-based or fixed-amount strategies",
-        "Internal architecture: MVVM SPA app frontend",
-        "Development process utilizing the AI coding assistant GitHub Copilot Chat in VS Code"
-      ],
-      "skills": [
-        "Defi",
-        "TypeScript",
-        "Aurelia 2",
-        "MVVM",
-        "TailWindCss",
-        "FluentUI Web Components",
-        "Vite",
-        "Axios",
-        "GitHub",
-        "AI Coding Assistant",
-        "GitHub Copilot"
-      ],
-      "personal": true,
-      "showOnShort": true
-    },
-    {
-      "company": "Butterfly, Crypto portfolio management service · self-directed case study",
-      "position": "Technical Lead & dApp Architect",
-      "remote": false,
-      "website": "https://github.com/dkent600/butterfly-services",
-      "startDate": "2025-06",
-      "summary": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges. Supports the Butterfly Crypto portfolio management dApp.",
-      "endDate": "2025-09",
-      "highlights": [
-        "Provides comprehensive safety mechanisms, testing, dependency injection and production-ready integration",
-        "Layered, service-oriented code architecture",
-        "Development process utilizing the AI coding assistant GitHub Copilot Chat in VS Code",
-        "Fastify server providing Swagger/OpenAPI documentation",
-        "Node.js with TypeScript",
-        "TSyringe for clean dependency injection architecture for Node.js",
-        "Axios for exchange-API communications"
-      ],
-      "skills": [
-        "Defi",
-        "GitHub Copilot",
-        "Nodejs",
-        "TypeScript",
-        "Fastify",
-        "TSyringe",
-        "Vite",
-        "Axios",
-        "GitHub",
-        "AI Coding Assistant"
-      ],
-      "personal": true,
-      "showOnShort": false
-    },
-    {
-      "company": "Curve Labs",
-      "position": "Blockchain Oracle Developer",
-      "remote": true,
-      "website": "https://www.curvelabs.eu/",
-      "startDate": "2023-04",
-      "summary": "Invited back on contract. Developed an automated \"Oracle\" service maintaining states of <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> regenerative finance (Refi) smart contracts on the <a href=\"https://celo.org/\" target=\"_blank\">Celo</a> (EVM compatible) blockchain.",
-      "endDate": "2023-05",
-      "highlights": [
-        "Worked on the <a href=\"https://celo.org/\" target=\"_blank\">Celo blockchain</a> with the tokens kG, kCur and cUSD and a Balancer WeightedPool (kCur <> cUSD) ported to Celo by Symmetric",
-        "Leveraged smart contracts MentoReserve and the Balancer WeightedPool to maintain the value of the total supply of kCur in the MentoReserve contract equal to the value of the total supply of the kG token (by changing the total supply of kCur in the MentoReserve)",
-        "Leveraged the Balancer WeightedPool to help maintain kCur price stability within an acceptable range in its role of backing up kG",
-        "Leveraged <a href=\"https://www.openzeppelin.com/news/doubling-down-on-open-source-and-phasing-out-defender\" target=\"_blank\">OpenZeppelin Defender</a> for managing private keys, encrypting secrets, sending transactions, hosting and invoking the service",
-        "Reported the prices of cUSD, kCur and kG price to smart contract Oracles"
-      ],
-      "skills": [
-        "Ethereum",
-        "Defender",
-        "Refi",
-        "Defi",
-        "TypeScript",
-        "Javascript",
-        "Solidity",
-        "ethers.js",
-        "Balancer Liquidity Pools",
-        "Mento",
-        "Celo",
-        "GitHub"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "Curve Labs",
-      "position": "Development Team Lead and Lead Developer",
-      "remote": true,
-      "website": "https://www.curvelabs.eu/",
-      "showOnShort": true,
-      "startDate": "2020-08",
-      "summary": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (Defi) and regenerative finance (Refi). Among others, led the development team for a Refi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.  Here are couple of sites: Prime Deals and Prime Launch.",
-      "endDate": "2022-11",
-      "highlights": [
-        "Lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\" target=\"_blank\">Prime Pools (no longer active)</a>, <a href=\"https://primelock.eth.link/\" target=\"_blank\">Prime Locking For Reputation</a> and the <a href=\"https://primedao.eth.link\" target=\"_blank\">original PrimeDAO Home Page (no longer active)</a>",
-        "Coordinated a team of two and did the majority of coding of the dApp frontend of <a href=\"https://launch.prime.xyz/\"target=\"_blank\">Prime Launch</a>",
-        "Coordinated a team of five and did much of the coding of the dApp frontend of <a href=\"https://deals.prime.xyz/\"target=\"_blank\">Prime Deals</a>",
-        "Coordinated a team of two and participated in the coding of the dApp frontend of <a href=\"https://github.com/Kolektivo/kolektivo-dapp\" target=\"_blank\">Kolektivo (not currently active)</a>",
-        "With the exception of the PrimeDAO Home Page, which uses React.js, the dApps were all implemented using the <a href=\"https://aurelia.io/\" target=\"_blank\">Aurelia</a> framework",
-        "Leveraged many Ethereum smart contracts developed by CurveLabs, reviewing solidity for code quality, bugs and security, proposing accepted improvements and bug fixes",
-        "Leveraged <a href=\"https://balancer.fi/\" target=\"_blank\">Balancer Liquidity Pools</a>, smart contracts that implement decentralized automated market makers",
-        "Leveraged GnosisSafe API, for governance purposes",
-        "Leveraged CoinGecko for token prices",
-        "Interviewed applicants for developer and project lead positions",
-        "As products, these applications are innovative and impressive. Read more about them at <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> and <a href=\"https://www.prime.xyz\" target=\"_blank\">The Prime Suite</a> "
-      ],
-      "skills": [
-        "dApps",
-        "Ethereum",
-        "DAOs",
-        "DAO Governance Systems",
-        "Defender",
-        "Web3",
-        "Refi",
-        "Defi",
-        "TypeScript",
-        "Javascript",
-        "Solidity",
-        "ethers.js",
-        "web3.js",
-        "Metamask",
-        "WalletConnect",
-        "Gnosis Safe",
-        "Subgraph",
-        "Balancer Liquidity Pools",
-        "Liquidity Bootstrapping Pools",
-        "LitProtocol",
-        "Web3Modal",
-        "Ceramic",
-        "Aurelia",
-        "HTML5",
-        "i18Next",
-        "Webpack",
-        "Vite",
-        "Rollup",
-        "CSS",
-        "SASS",
-        "Responsive",
-        "IPFS",
-        "ENS",
-        "NodeJs",
-        "GitHub",
-        "ReactJs",
-        "SPA",
-        "Wallets"
-      ]
-    },
-    {
-      "company": "DAOstack",
-      "position": "Senior Lead Developer",
-      "remote": true,
-      "website": "https://www.daostack.io/",
-      "startDate": "2017-09",
-      "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first major DAO designs in the history of DAOs.  Used, reviewed and deployed Solidity smart contracts, wrote a Typescript library to support dApps in accessing the smart contracts, wrote a test dApp, significantly contributed to the dApp Alchemy used for working with the DAOs.",
-      "endDate": "2020-10",
-      "highlights": [
-        "One of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
-        "One and a half years coding with React.js in Alchemy",
-        "Leveraged <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> Solidity smart contracts, reviewing Solidity for code quality, bugs and security, proposing accepted improvements and bug fixes",
-        "Responsible for deploying <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> smart contracts to Ethereum",
-        "Implemented and helped to design the <a href=\"https://github.com/daostack/dutchx-bootstrapper-ui\" target=\"_blank\">dxDAO Vote Staking Interface</a>, a website for initializing reputation in the dxDAO, a new decentralized autonomous organization (DAO) that governs the DutchX, a permissionless trading protocol for ERC20 tokens on the Ethereum blockchain. (The UI will disappear on 2019-06-28 when the dxDAO initialization period ends, but you can see walkthroughs <a href=\"https://twitter.com/_dx_dao/status/1138824722211311616\" target=\"_blank\">here</a> and <a href=\"https://blog.gnosis.pm/step-by-step-guide-to-earn-reputation-for-the-dxdao-with-the-gnosis-safe-cc54f3a93f3e\" target=\"_blank\">here</a>.)",
-        "Designed and implemented a well-reviewed architecture for the original version of <a href=\"https://github.com/daostack/arc.js_legacy\" target=\"_blank\">DAOstack Arc.js</a>",
-        "Implemented <a href=\"https://github.com/daostack/vanille\" target=\"_blank\">Vanille</a>, open-source software that leverage <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOStack Arc</a> to facilitate the creation of DAOstack DAOs"
-      ],
-      "skills": [
-        "dApps",
-        "Ethereum",
-        "DAOs",
-        "DAO Governance Systems",
-        "Web3",
-        "TypeScript",
-        "Javascript",
-        "Solidity",
-        "Subgraph",
-        "Aurelia",
-        "HTML5",
-        "Webpack",
-        "Bootstrap",
-        "Bootstrap Material Design",
-        "JQuery",
-        "CSS",
-        "SASS",
-        "Responsive",
-        "NodeJs",
-        "GitHub",
-        "ReactJs",
-        "SPA",
-        "3Box",
-        "Wallets"
-      ],
-      "showOnShort": true
-    },
-    {
-      "company": "PSP Investments",
-      "position": "Sole Senior Lead Web Developer",
-      "contract": true,
-      "website": "https://investpsp.ca/",
-      "startDate": "2014-05",
-      "summary": "As a member of the PSP business intelligence (BI) analytics group, single-handedly developed successful web applications for other departments within PSP",
-      "endDate": "2015-12",
-      "highlights": [
-        "Many commented that these websites were the most performant and usable ever internally developed at PSP",
-        "One web application enabled users to search unstructured documents using a google-like interface and semantic search technologies",
-        "Another website reported data in charts, graphs and tables to assist PSP's executive portfolio rebalancing committee",
-        "Conducted research on knowledge base and graph and RDF database technologies and products, including AllegroGraph, Semaphore and Neo4j, to plot directions for expanding PSP's knowledge-based search capabilities"
-      ],
-      "skills": [
-        "DurandalJs",
-        ".NET",
-        "WebApi",
-        "C#",
-        "KnockoutJs",
-        "Javascript",
-        "HTML5",
-        "CSS",
-        "Unity",
-        "JQuery",
-        "Ajax",
-        "Bootstrap",
-        "Ajax",
-        "Entity Framework",
-        "RequireJs",
-        "D3",
-        "Highcharts",
-        "Agile",
-        "TFS",
-        "SPA"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "Revionics",
-      "position": "Senior Web Developer",
-      "remote": true,
-      "contract": true,
-      "website": "https://www.revionics.com/",
-      "startDate": "2011-11",
-      "summary": "Lead an offshore development team and participated in an Agile Scrum environment in the architecture and development of portions of a complex enterprise-scale, customer-facing web application",
-      "endDate": "2013-03",
-      "highlights": [
-        "In daily scrums, coordinated and helped train a team of seven developers located in India.  Training was primarily on Agile, development processes, and in the standards of code development quality upheld at Revionics",
-        "Led a team three developers in India in the architecture and development of a web GUI for managing security rights in the Revionics web application.  Responsible for the entire architecture, quality of the result, coordination of the entire team, and timely delivery.  Did half the coding myself",
-        "Saved the security rights project, in jeopardy of missing its deadline, by dropping the size of the assisting team from 7 to 3 (sad but necessary)",
-        "Helped port a complex web GUI from ASP.NET to MVC.NET 3.0.  Designed the server-side architecture for the team.  Wrote most of the server-side code and assisted with client-side",
-        "Developed an unobtrusive framework for logging web application activity using dependency injection and API interception using Unity and a plugin architecture using the Managed Extensibility Framework (MEF)",
-        "Designed, developed and prototyped a reusable/extensible framework for writing SpecFlow integration tests using Unity, Moq and VSTest.  The prototype was written against Selenium to drive automated GUI tests"
-      ],
-      "skills": [
-        "ASP.NET",
-        "C#",
-        "MVC",
-        "Javascript",
-        "HTML",
-        "CSS",
-        "KnockoutJs",
-        "jquery",
-        "Telerik",
-        "ADO",
-        "MEF",
-        "Enterprise Framework",
-        "nHibernate",
-        "Moq",
-        "Unity",
-        "Selenium",
-        "SpecFlow",
-        "VSTest",
-        "Agile",
-        "TFS"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "ShiftWise",
-      "position": "Senior Lead Web Developer, Manager Partner Integrations",
-      "remote": true,
-      "website": "https://www.shiftwise.com/",
-      "startDate": "2003-08",
-      "summary": "Performed a lead role in an Agile Scrum environment in coding a complex enterprise-scale, customer-facing web application and associated automated web service interface.",
-      "endDate": "2011-07",
-      "highlights": [
-        "Meeting an urgent deadline, virtually single-handedly implemented a system for handling mission-critical incoming and outgoing (SMS) messages to and from cell phones.   The architecture spanned a web site, three web services, two windows services, and two Sql Server databases",
-        "Was the Lead Developer on the ShiftWise Vendor Management System (VMS), a large and complex web application used by hospital administrators and medical staffing agencies to improve the process of hiring and placing temporary medical staff in hospitals",
-        "Was Manager and Lead Developer of ShiftWise Partner Integrations (PI), a set of web services and Windows applications enabling automated integrations between the ShiftWise VMS application and ShiftWise' customers' backoffice systems",
-        "Was the Senior Developer of ShiftWise TextConnect, enabling nurses to interact with the ShiftWise VMS using cell phone text messaging (SMS)",
-        "As Interim Development Team Manager and the most experienced .NET developer on the team, coordinated and set priorities for the team; helped raise the skills of the developers and improve the quality of output of the software engineering process",
-        "Worked smoothly with ShiftWise clients to plan and coordinate their side of the development of automated interfaces"
-      ],
-      "skills": [
-        "ASP.NET",
-        "C#",
-        "Javascript",
-        "MVC",
-        "Enterprise Framework",
-        "HTML",
-        "CSS",
-        "jquery",
-        "xml",
-        "XSLT",
-        "XSD",
-        "Entity Framework",
-        "LINQ",
-        "Sql Server",
-        "t-sql",
-        "WCF",
-        "WWF",
-        "Moq",
-        "NUnit",
-        "MSTest",
-        "Agile",
-        "TFS"
-      ],
-      "showOnShort": true
-    },
-    {
-      "company": "Trilogy",
-      "position": "Software Engineer (Ford.com)",
-      "website": "https://www.trilogy.com/",
-      "startDate": "2000-09",
-      "summary": "Wrote major components of Ford Motor Company's flagship Ford.com website",
-      "endDate": "2001-03",
-      "highlights": [
-        "The Ford.com code was virtually flawless on first release",
-        "Wrote JSP and Java components, a Java/Swing applet that enabled administrators to edit the XML content using a browser, and a Flash binary SWF file preprocessor",
-        "Wrote thorough and professionally-styled User and Developer Guide documentation"
-      ],
-      "skills": [
-        "Java",
-        "XML",
-        "Xerces",
-        "Swing",
-        "Flash SWF",
-        "Javascript",
-        "Html",
-        "JSP",
-        "JRun"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "Trilogy",
-      "position": "Software Engineer (carOrder.com)",
-      "website": "https://www.trilogy.com/",
-      "startDate": "2000-01",
-      "summary": "Enhanced and maintained the lease and loan sales features and Needs Analysis and Car Comparison features of carOrder.com's website",
-      "endDate": "2000-08",
-      "highlights": [
-        "Took the initiative to write a 'Developer's Reference' web page for carOrder developers.  This document vastly reduced  the time required to bring new developers up to speed, as well as served as an ongoing reference for all developers on the team",
-        "Repaired broken Needs Analysis and Car Comparison features, fixed both the front end web GUI and the back-end scripts that generate the supporting data. Reduced to zero the flood of customer complaints about bad data and broken features",
-        "Designed and wrote an application to assist in browsing Jato automobile data",
-        "Ported DES-encryption-based software licensing code (see Imagen) from C++ to Java"
-      ],
-      "skills": [
-        "Java",
-        "C++",
-        "JSP",
-        "Xerces",
-        "Javascript",
-        "Html",
-        "T-Sql",
-        "Sql Server",
-        "JDBC",
-        "CORBA",
-        "WCF",
-        "DES",
-        "Encryption"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "Trilogy",
-      "position": "Software Engineer (IBM)",
-      "website": "https://www.trilogy.com/",
-      "startDate": "1999-03",
-      "summary": "Provided sole development and support for an application critical to an international IBM workflow",
-      "endDate": "1999-12",
-      "highlights": [
-        "Right off the bat solved a critical issue that had been vexing prior developers. IBM was very happy",
-        "Took the initiative to save this part of the IBM contract for Trilogy"
-      ],
-      "skills": [
-        "Java",
-        "JSP",
-        "XML",
-        "XSL",
-        "Swing",
-        "Javascript",
-        "Html",
-        "T-Sql",
-        "Perl",
-        "JDBC",
-        "DB2",
-        "SQL"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "Microsoft Corporation",
-      "position": "Software Engineer",
-      "contract": true,
-      "website": "https://www.microsoft.com/",
-      "startDate": "1996-03",
-      "summary": "Wrote subsystem to facilitate localization of Encarta `97 into 5 languages",
-      "endDate": "1996-06",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "Microsoft Corporation",
-      "position": "Development Manager, Software Engineer",
-      "contract": true,
-      "website": "https://www.microsoft.com/",
-      "startDate": "1995-06",
-      "summary": "Managed team of 7 in code development and release to market of the Reader's Digest Complete Do-It-Yourself Guide multimedia CD-ROM title",
-      "endDate": "1996-02",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": true
-    },
-    {
-      "company": "Microsoft Corporation",
-      "position": "Software Engineer, Tech Lead",
-      "contract": true,
-      "website": "https://www.microsoft.com/",
-      "startDate": "1994-11",
-      "summary": "Wrote the core GUI engine for Julia Child's Home Cooking With Master Chefs multimedia CD-ROM title",
-      "endDate": "1995-06",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "Asymetrix Corporation",
-      "position": "Software Engineer",
-      "contract": true,
-      "website": "https://home.click2learn.com/showcase",
-      "startDate": "1992-04",
-      "summary": "Developed software for Toolbook 3.0 and multimedia screensavers (Jurassic Park, et. al.)",
-      "endDate": "1994-10",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "Microsoft Corporation",
-      "position": "Software Engineer",
-      "contract": true,
-      "website": "https://www.microsoft.com",
-      "startDate": "1991-01",
-      "summary": "On the Windows 3.1 team, developed software for File Manager, Packager, Paintbrush , Cardfile, and others",
-      "endDate": "1992-03",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": true
-    },
-    {
-      "company": "ConnectSoft",
-      "position": "VP Applications Development",
-      "website": "",
-      "startDate": "1989-10",
-      "summary": "Managed all development efforts (see ConnectSoft, below)",
-      "endDate": "1990-12",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "ConnectSoft",
-      "position": "Software Engineer",
-      "website": "",
-      "startDate": "1988-12",
-      "summary": "Developed software for Clip-Art Window Shopper, an early electronic clip-art distribution application, and Presto 3D, a 3D CAD application",
-      "endDate": "1989-10",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "Dupont Design Technologies, Inc.",
-      "position": "Software Engineer",
-      "website": "",
-      "startDate": "1988-03",
-      "summary": "Developed object-oriented, resolution-independent 2D graphics code, including airbrushes, framebuffer manager, and graphics hardware emulator",
-      "endDate": "1988-11",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "SAS Institute Inc.",
-      "position": "Sole Software Engineer",
-      "contract": true,
-      "website": "https://www.sas.com/",
-      "startDate": "1986-12",
-      "summary": "Ported Visuals (see UNC below) to the SAS Graphical User Interface System",
-      "endDate": "1987-05",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "University of North Carolina",
-      "position": "Sole Software Engineer",
-      "website": "https://www.unc.edu/",
-      "startDate": "1985-05",
-      "summary": "Wrote Visuals, an application that uses interactive 3D graphics animation to reveal meaning in multidimensional statistical data",
-      "endDate": "1986-11",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "Dicom Transportation Group",
-      "remote": true,
-      "contract": true,
-      "position": "Senior Web Developer",
-      "website": "https://www.dicom.com/",
-      "startDate": "2017-02",
-      "summary": "Fixed bugs and developed new features for an internal web application used to coordinate trucks, drivers, routes and delivery locations across Québec",
-      "endDate": "2017-04",
-      "highlights": [
-        "Fixed more bugs and added more features than the client planned-for"
-      ],
-      "skills": [
-        "MVC",
-        "ASP.NET",
-        "C#",
-        "Razor",
-        "HTML5",
-        "CSS",
-        "JQuery",
-        "Sql Server",
-        "T-SQL",
-        "Jira",
-        "BitBucket",
-        "Telerik"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "Password Repository",
-      "position": "Sole Web Designer and Developer",
-      "remote": true,
-      "personal": true,
-      "website": "",
-      "startDate": "2013-08",
-      "summary": "Designed and implemented a personal website using encryption techniques enabling me to access all of my logins/passwords from anywhere without requiring SSL. Received intermittent attention.",
-      "endDate": "2017-09",
-      "highlights": [
-        "Extensive use of hashing and encryption (both server and client-side), custom server-side authentication and other techniques to achieve data privacy with no SSL",
-        "Been through a couple iterations as technologies have changed.  Was Durandal+KnockoutJs+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core."
-      ],
-      "skills": [
-        "Aurelia",
-        "ASP.NET Core",
-        "C#",
-        "Javascript",
-        "HTML",
-        "CSS",
-        "MVC",
-        "KnockoutJs",
-        "WebAPI",
-        "Ajax",
-        "jquery",
-        "bootstrap",
-        "Identity",
-        "entity framework",
-        "Sql Server",
-        "t-sql",
-        "webpack",
-        "RequireJs",
-        "XUnit.NET",
-        "MsTest",
-        "crypto-js",
-        "Encryption",
-        "SHA",
-        "DES",
-        "System.Security.Cryptography",
-        "SPA"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "Vivalia Bistro Express",
-      "position": "Sole Web Developer",
-      "remote": true,
-      "contract": true,
-      "website": "https://vivalia.ca/",
-      "startDate": "2016-06",
-      "summary": "Developed a website that gives Vivalia and its customers a highly efficient and enjoyable way to place and handle orders",
-      "endDate": "2016-10",
-      "highlights": [
-        "Designed and created the entire website and database myself",
-        "Highly performant, pleasing and intuitive user interface",
-        "Used all best-available web application technologies",
-        "Well-structured, modular code amenable to future maintenance and enhancement"
-      ],
-      "skills": [
-        "Aurelia",
-        "TypeScript",
-        "ASP.NET Core",
-        "C#",
-        "Javascript",
-        "HTML5",
-        "WebApi",
-        "JQuery",
-        "Ajax",
-        "Bootstrap",
-        "Entity Framework Core",
-        "ASP.NET Identity",
-        "Microsoft Sql Server",
-        "T-SQL",
-        "Unity",
-        "Azure",
-        "CSS",
-        "Responsive",
-        "TFS",
-        "SPA"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "GE Healthcare",
-      "position": "Senior Lead Web Developer",
-      "remote": true,
-      "contract": true,
-      "website": "https://www.gehealthcare.com/",
-      "startDate": "2015-03",
-      "summary": "Developed automated machine communication enabling two companies to vastly increase the efficiency of their relationship",
-      "endDate": "2016-02",
-      "highlights": [
-        "Designed the whole thing, end-to-end",
-        "The only part I didn't write entirely myself was the AngularJs web application",
-        "Created a dynamic, data-driven schema for the exchanged content",
-        "Integrated lots of moving parts: an AngularJs web application, two external web services, .NET web server, Azure web job, and Sql Server database",
-        "Hosted on Azure"
-      ],
-      "skills": [
-        "ASP.NET",
-        "C#",
-        "Sql Server",
-        "T-SQL",
-        "Entity FrameWork",
-        "Unity",
-        "AngularJs",
-        "Typescript",
-        "WebApi",
-        "Azure",
-        "TFS",
-        "SPA"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "Kill My TV!",
-      "position": "Sole Web Designer and Developer",
-      "remote": true,
-      "personal": true,
-      "startDate": "2013-12",
-      "summary": "Designed and implemented a web application to intelligently exchange resources relevant to the implications of watching too much television",
-      "endDate": "2014-03",
-      "highlights": [
-        "Presented in French and English with instantaneous transition when switching between the two -- no postback",
-        "Takes users through a series of questions and customizes a set of resources according to their answers",
-        "Users can suggest and submit their own resources",
-        "Includes an extensive set of administration pages for creating the questions, answers and correlating them with resources"
-      ],
-      "skills": [
-        "ASP.NET",
-        "MVC",
-        "C#",
-        "Durandal",
-        "KnockoutJs",
-        "Javascript",
-        "HTML",
-        "CSS",
-        "WebAPI",
-        "jquery",
-        "Ajax",
-        "bootstrap",
-        "Sql Server",
-        "entity framework",
-        "t-sql",
-        "i18Next",
-        "jquery globalization",
-        "RequireJs",
-        "SPA"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "Texas Turnpike Authority",
-      "position": "Web Application Developer",
-      "contract": true,
-      "website": "https://www.dot.state.tx.us/default.htm",
-      "startDate": "2003-05",
-      "summary": "Using ASP.NET, implemented main 'dashboard' web page and site-wide security code",
-      "endDate": "2003-06",
-      "highlights": [
-        "Created web-based workflow involving inspections and tests of Texas turnpike construction",
-        "Implemented site-wide forms-based roles authorization and page customization, as well as user/groups management pages"
-      ],
-      "skills": [
-        "ASP.NET",
-        "C#",
-        "HTML",
-        "JavaScript",
-        "T-SQL"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "Schlumberger/Cingular Wireless",
-      "position": "Application Developer",
-      "contract": true,
-      "website": "https://www.schlumberger.com/",
-      "startDate": "2002-10",
-      "summary": "Enhanced a Java Swing application that enables users to display and edit data contained on Smart Cards",
-      "endDate": "2003-01",
-      "highlights": [
-        "Enhanced a Java Swing application that enables users to display and edit data contained on Smart Cards",
-        "Designed and implemented a user-friendly panel system.  By integrating it snugly and efficiently into the existing code, provided enhanced functionality to both new code and existing code",
-        "Implemented application configuration files formatted as XML, accessed using Xerces"
-      ],
-      "skills": [
-        "Java",
-        "Swing",
-        "XML",
-        "Xerces"
-      ],
-      "showOnShort": false
-    },
-    {
-      "company": "Imagen Communications, Inc.",
-      "position": "Sole Software Engineer",
-      "remote": true,
-      "website": "",
-      "startDate": "1996-10",
-      "summary": "Designed and developed NT Paymaster, a billing application for ISPs",
-      "endDate": "1998-03",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "Biomonitors, Ltd",
-      "position": "Lead Software Engineer",
-      "remote": true,
-      "contract": true,
-      "website": "",
-      "startDate": "1997-02",
-      "summary": "Ported from DOS to Windows 95 MindMirror, an application that displays real-time electroencephalograph data in a GUI application",
-      "endDate": "1997-03",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "Mouthing Flowers",
-      "position": "President, CEO, Director of Development, and Chief Programmer",
-      "website": "",
-      "personal": true,
-      "startDate": "1995-02",
-      "summary": "For the NEXTSTEP platform, designed and wrote <i>TimeFlies</i>, designed and implemented a 3D graphics API, and wrote the <i>SwoopnPrint</i>&nbsp;&nbsp;\"service\" application. TimeFlies received a positive product review from NeXTWorld magazine",
-      "endDate": "1999-09",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "University of North Carolina",
-      "position": "Software Engineer",
-      "website": "https://www.unc.edu/",
-      "startDate": "1988-11",
-      "summary": "For EGA/VGA graphics hardware, developed code that reproduces PGA 3D and 2D graphics hardware commands",
-      "endDate": "1989-12",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "University of North Carolina",
-      "position": "Software Engineer",
-      "website": "https://www.unc.edu/",
-      "startDate": "1986-05",
-      "summary": "Assembled a local area network (LAN) and a system to digitize and manipulate video microscopic images for display in medical school classroom lab sessions",
-      "endDate": "1986-11",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "Pacific Environmental Services, Inc",
-      "position": "Associate Public Policy Analyst ",
-      "startDate": "1980-01",
-      "summary": "Conducted regulatory technical analyses, managed preparation of technical business proposals, managed a waste brokerage program",
-      "endDate": "1982-09",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    }
-  ],
-  "education": [
-    {
-      "institution": "Duke University",
-      "area": "Environment Management",
-      "studyType": "Masters",
-      "startDate": "1977",
-      "gpa": "",
-      "courses": [],
-      "endDate": "1980"
-    },
-    {
-      "institution": "University of North Carolina at Chapel Hill",
-      "area": "Computer Science",
-      "studyType": "Continuing Education",
-      "startDate": "1985",
-      "gpa": "",
-      "courses": [],
-      "endDate": "1987"
-    },
-    {
-      "institution": "Duke University",
-      "area": "Public Policy Sciences",
-      "studyType": "Master of Arts",
-      "startDate": "1977",
-      "gpa": "",
-      "courses": [],
-      "endDate": "1980"
-    },
-    {
-      "institution": "Miami University",
-      "area": "Botany",
-      "studyType": "Bachelor of Science",
-      "startDate": "1973",
-      "gpa": "",
-      "courses": [],
-      "endDate": "1977"
-    }
   ],
   "skills": [
     {
@@ -2373,6 +1557,864 @@
       "url": "https://github.com/unitycontainer/unity"
     }
   ],
+  "work": [
+    {
+      "company": "Human Lens, AI-native web app · self-directed case study",
+      "position": "Technical Lead & LLM Pipeline Architect",
+      "startDate": "2026-05",
+      "summary": "Modeled on an existing DEI consultancy, turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface.",
+      "endDate": "present",
+      "highlights": [
+        "Scoped, designed, and built in TypeScript — Aurelia 2 web application over a Fastify/Node service — with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing)",
+        "Ran a hybrid human/AI development process: delegated implementation to a coding agent, routed design decisions through an independent review model, and adjudicated every conflict personally",
+        "Derived functional requirements and the domain model by using an LLM to analyze a DEI consultancy's published materials, translating an external firm's stated methodology into implementable analytic stages",
+        "Guaranteed processing completeness in orchestration code rather than in prompts — every input provably resolves to one of four explicit terminal states, so nothing is silently dropped regardless of model behavior",
+        "Designed a seven-lens analytic architecture running in six ordered waves; three lenses validated against a real model to date, with calibration driven by a purpose-built synthetic evaluation dataset",
+        "Made a non-deterministic system testable: captured real model responses once and replayed them, so runs became reproducible and far cheaper",
+        "Designed test data that measured failure in both directions — what the pipeline missed and what it invented — rather than only rewarding recall",
+        "Built confidentiality controls with a human in the loop: no finding reaches client-facing output without explicit approval, and automated de-identification holds for review anything it misses — with the client-safe boundary enforced by the package structure, so the human-review interface is structurally incapable of holding internal findings"
+      ],
+      "skills": [
+        "TypeScript",
+        "Visual Studio Code",
+        "Aurelia 2",
+        "Vite",
+        "NodeJs",
+        "NPM",
+        "HTML5",
+        "Fastify",
+        "ChatGPT (LLM)",
+        "Claude Code for VS Code",
+        "Claude.ai (LLM)",
+        "AI Coding Assistant",
+        "Axios",
+        "Vitest",
+        "Awilix",
+        "TailWindCss",
+        "LLM Pipeline Architecture",
+        "Prompt Engineering",
+        "LLM Evaluation",
+        "Human-in-the-Loop Design",
+        "De-identification",
+        "AI-Assisted Development",
+        "LLM APIs",
+        "GitHub Copilot"
+      ],
+      "personal": true,
+      "website": "https://github.com/dkent600/HumanLens",
+      "showOnShort": true
+    },
+    {
+      "company": "Butterfly, Crypto portfolio management dApp · self-directed case study",
+      "position": "Technical Lead & dApp Architect",
+      "remote": false,
+      "website": "https://github.com/dkent600/batch-take-profit",
+      "startDate": "2025-06",
+      "summary": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges. Supported by the Butterfly Crypto portfolio management service.",
+      "endDate": "2025-09",
+      "highlights": [
+        "Does real-time price monitoring and balance tracking, tracking order history and status",
+        "Executes batch take-profit orders across multiple exchanges, with percentage-based or fixed-amount strategies",
+        "Internal architecture: MVVM SPA app frontend",
+        "Development process utilizing the AI coding assistant GitHub Copilot Chat in VS Code"
+      ],
+      "skills": [
+        "Defi",
+        "TypeScript",
+        "Aurelia 2",
+        "MVVM",
+        "TailWindCss",
+        "FluentUI Web Components",
+        "Vite",
+        "Axios",
+        "GitHub",
+        "AI Coding Assistant",
+        "GitHub Copilot"
+      ],
+      "personal": true,
+      "showOnShort": true
+    },
+    {
+      "company": "Butterfly, Crypto portfolio management service · self-directed case study",
+      "position": "Technical Lead & dApp Architect",
+      "remote": false,
+      "website": "https://github.com/dkent600/butterfly-services",
+      "startDate": "2025-06",
+      "summary": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges. Supports the Butterfly Crypto portfolio management dApp.",
+      "endDate": "2025-09",
+      "highlights": [
+        "Provides comprehensive safety mechanisms, testing, dependency injection and production-ready integration",
+        "Layered, service-oriented code architecture",
+        "Development process utilizing the AI coding assistant GitHub Copilot Chat in VS Code",
+        "Fastify server providing Swagger/OpenAPI documentation",
+        "Node.js with TypeScript",
+        "TSyringe for clean dependency injection architecture for Node.js",
+        "Axios for exchange-API communications"
+      ],
+      "skills": [
+        "Defi",
+        "GitHub Copilot",
+        "Nodejs",
+        "TypeScript",
+        "Fastify",
+        "TSyringe",
+        "Vite",
+        "Axios",
+        "GitHub",
+        "AI Coding Assistant"
+      ],
+      "personal": true,
+      "showOnShort": false
+    },
+    {
+      "company": "Curve Labs",
+      "position": "Blockchain Oracle Developer",
+      "remote": true,
+      "website": "https://www.curvelabs.eu/",
+      "startDate": "2023-04",
+      "summary": "Invited back on contract. Developed an automated \"Oracle\" service maintaining states of <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> regenerative finance (Refi) smart contracts on the <a href=\"https://celo.org/\" target=\"_blank\">Celo</a> (EVM compatible) blockchain.",
+      "endDate": "2023-05",
+      "highlights": [
+        "Worked on the <a href=\"https://celo.org/\" target=\"_blank\">Celo blockchain</a> with the tokens kG, kCur and cUSD and a Balancer WeightedPool (kCur <> cUSD) ported to Celo by Symmetric",
+        "Leveraged smart contracts MentoReserve and the Balancer WeightedPool to maintain the value of the total supply of kCur in the MentoReserve contract equal to the value of the total supply of the kG token (by changing the total supply of kCur in the MentoReserve)",
+        "Leveraged the Balancer WeightedPool to help maintain kCur price stability within an acceptable range in its role of backing up kG",
+        "Leveraged <a href=\"https://www.openzeppelin.com/news/doubling-down-on-open-source-and-phasing-out-defender\" target=\"_blank\">OpenZeppelin Defender</a> for managing private keys, encrypting secrets, sending transactions, hosting and invoking the service",
+        "Reported the prices of cUSD, kCur and kG price to smart contract Oracles"
+      ],
+      "skills": [
+        "Ethereum",
+        "Defender",
+        "Refi",
+        "Defi",
+        "TypeScript",
+        "Javascript",
+        "Solidity",
+        "ethers.js",
+        "Balancer Liquidity Pools",
+        "Mento",
+        "Celo",
+        "GitHub"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "Curve Labs",
+      "position": "Development Team Lead and Lead Developer",
+      "remote": true,
+      "website": "https://www.curvelabs.eu/",
+      "showOnShort": true,
+      "startDate": "2020-08",
+      "summary": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (Defi) and regenerative finance (Refi). Among others, led the development team for a Refi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.  Here are couple of sites: Prime Deals and Prime Launch.",
+      "endDate": "2022-11",
+      "highlights": [
+        "Lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\" target=\"_blank\">Prime Pools (no longer active)</a>, <a href=\"https://primelock.eth.link/\" target=\"_blank\">Prime Locking For Reputation</a> and the <a href=\"https://primedao.eth.link\" target=\"_blank\">original PrimeDAO Home Page (no longer active)</a>",
+        "Coordinated a team of two and did the majority of coding of the dApp frontend of <a href=\"https://launch.prime.xyz/\"target=\"_blank\">Prime Launch</a>",
+        "Coordinated a team of five and did much of the coding of the dApp frontend of <a href=\"https://deals.prime.xyz/\"target=\"_blank\">Prime Deals</a>",
+        "Coordinated a team of two and participated in the coding of the dApp frontend of <a href=\"https://github.com/Kolektivo/kolektivo-dapp\" target=\"_blank\">Kolektivo (not currently active)</a>",
+        "With the exception of the PrimeDAO Home Page, which uses React.js, the dApps were all implemented using the <a href=\"https://aurelia.io/\" target=\"_blank\">Aurelia</a> framework",
+        "Leveraged many Ethereum smart contracts developed by CurveLabs, reviewing solidity for code quality, bugs and security, proposing accepted improvements and bug fixes",
+        "Leveraged <a href=\"https://balancer.fi/\" target=\"_blank\">Balancer Liquidity Pools</a>, smart contracts that implement decentralized automated market makers",
+        "Leveraged GnosisSafe API, for governance purposes",
+        "Leveraged CoinGecko for token prices",
+        "Interviewed applicants for developer and project lead positions",
+        "As products, these applications are innovative and impressive. Read more about them at <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> and <a href=\"https://www.prime.xyz\" target=\"_blank\">The Prime Suite</a> "
+      ],
+      "skills": [
+        "dApps",
+        "Ethereum",
+        "DAOs",
+        "DAO Governance Systems",
+        "Defender",
+        "Web3",
+        "Refi",
+        "Defi",
+        "TypeScript",
+        "Javascript",
+        "Solidity",
+        "ethers.js",
+        "web3.js",
+        "Metamask",
+        "WalletConnect",
+        "Gnosis Safe",
+        "Subgraph",
+        "Balancer Liquidity Pools",
+        "Liquidity Bootstrapping Pools",
+        "LitProtocol",
+        "Web3Modal",
+        "Ceramic",
+        "Aurelia",
+        "HTML5",
+        "i18Next",
+        "Webpack",
+        "Vite",
+        "Rollup",
+        "CSS",
+        "SASS",
+        "Responsive",
+        "IPFS",
+        "ENS",
+        "NodeJs",
+        "GitHub",
+        "ReactJs",
+        "SPA",
+        "Wallets"
+      ]
+    },
+    {
+      "company": "DAOstack",
+      "position": "Senior Lead Developer",
+      "remote": true,
+      "website": "https://www.daostack.io/",
+      "startDate": "2017-09",
+      "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first major DAO designs in the history of DAOs.  Used, reviewed and deployed Solidity smart contracts, wrote a Typescript library to support dApps in accessing the smart contracts, wrote a test dApp, significantly contributed to the dApp Alchemy used for working with the DAOs.",
+      "endDate": "2020-10",
+      "highlights": [
+        "One of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",
+        "One and a half years coding with React.js in Alchemy",
+        "Leveraged <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> Solidity smart contracts, reviewing Solidity for code quality, bugs and security, proposing accepted improvements and bug fixes",
+        "Responsible for deploying <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOstack Arc</a> smart contracts to Ethereum",
+        "Implemented and helped to design the <a href=\"https://github.com/daostack/dutchx-bootstrapper-ui\" target=\"_blank\">dxDAO Vote Staking Interface</a>, a website for initializing reputation in the dxDAO, a new decentralized autonomous organization (DAO) that governs the DutchX, a permissionless trading protocol for ERC20 tokens on the Ethereum blockchain. (The UI will disappear on 2019-06-28 when the dxDAO initialization period ends, but you can see walkthroughs <a href=\"https://twitter.com/_dx_dao/status/1138824722211311616\" target=\"_blank\">here</a> and <a href=\"https://blog.gnosis.pm/step-by-step-guide-to-earn-reputation-for-the-dxdao-with-the-gnosis-safe-cc54f3a93f3e\" target=\"_blank\">here</a>.)",
+        "Designed and implemented a well-reviewed architecture for the original version of <a href=\"https://github.com/daostack/arc.js_legacy\" target=\"_blank\">DAOstack Arc.js</a>",
+        "Implemented <a href=\"https://github.com/daostack/vanille\" target=\"_blank\">Vanille</a>, open-source software that leverage <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOStack Arc</a> to facilitate the creation of DAOstack DAOs"
+      ],
+      "skills": [
+        "dApps",
+        "Ethereum",
+        "DAOs",
+        "DAO Governance Systems",
+        "Web3",
+        "TypeScript",
+        "Javascript",
+        "Solidity",
+        "Subgraph",
+        "Aurelia",
+        "HTML5",
+        "Webpack",
+        "Bootstrap",
+        "Bootstrap Material Design",
+        "JQuery",
+        "CSS",
+        "SASS",
+        "Responsive",
+        "NodeJs",
+        "GitHub",
+        "ReactJs",
+        "SPA",
+        "3Box",
+        "Wallets"
+      ],
+      "showOnShort": true
+    },
+    {
+      "company": "PSP Investments",
+      "position": "Sole Senior Lead Web Developer",
+      "contract": true,
+      "website": "https://investpsp.ca/",
+      "startDate": "2014-05",
+      "summary": "As a member of the PSP business intelligence (BI) analytics group, single-handedly developed successful web applications for other departments within PSP",
+      "endDate": "2015-12",
+      "highlights": [
+        "Many commented that these websites were the most performant and usable ever internally developed at PSP",
+        "One web application enabled users to search unstructured documents using a google-like interface and semantic search technologies",
+        "Another website reported data in charts, graphs and tables to assist PSP's executive portfolio rebalancing committee",
+        "Conducted research on knowledge base and graph and RDF database technologies and products, including AllegroGraph, Semaphore and Neo4j, to plot directions for expanding PSP's knowledge-based search capabilities"
+      ],
+      "skills": [
+        "DurandalJs",
+        ".NET",
+        "WebApi",
+        "C#",
+        "KnockoutJs",
+        "Javascript",
+        "HTML5",
+        "CSS",
+        "Unity",
+        "JQuery",
+        "Ajax",
+        "Bootstrap",
+        "Ajax",
+        "Entity Framework",
+        "RequireJs",
+        "D3",
+        "Highcharts",
+        "Agile",
+        "TFS",
+        "SPA"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "Revionics",
+      "position": "Senior Web Developer",
+      "remote": true,
+      "contract": true,
+      "website": "https://www.revionics.com/",
+      "startDate": "2011-11",
+      "summary": "Lead an offshore development team and participated in an Agile Scrum environment in the architecture and development of portions of a complex enterprise-scale, customer-facing web application",
+      "endDate": "2013-03",
+      "highlights": [
+        "In daily scrums, coordinated and helped train a team of seven developers located in India.  Training was primarily on Agile, development processes, and in the standards of code development quality upheld at Revionics",
+        "Led a team three developers in India in the architecture and development of a web GUI for managing security rights in the Revionics web application.  Responsible for the entire architecture, quality of the result, coordination of the entire team, and timely delivery.  Did half the coding myself",
+        "Saved the security rights project, in jeopardy of missing its deadline, by dropping the size of the assisting team from 7 to 3 (sad but necessary)",
+        "Helped port a complex web GUI from ASP.NET to MVC.NET 3.0.  Designed the server-side architecture for the team.  Wrote most of the server-side code and assisted with client-side",
+        "Developed an unobtrusive framework for logging web application activity using dependency injection and API interception using Unity and a plugin architecture using the Managed Extensibility Framework (MEF)",
+        "Designed, developed and prototyped a reusable/extensible framework for writing SpecFlow integration tests using Unity, Moq and VSTest.  The prototype was written against Selenium to drive automated GUI tests"
+      ],
+      "skills": [
+        "ASP.NET",
+        "C#",
+        "MVC",
+        "Javascript",
+        "HTML",
+        "CSS",
+        "KnockoutJs",
+        "jquery",
+        "Telerik",
+        "ADO",
+        "MEF",
+        "Enterprise Framework",
+        "nHibernate",
+        "Moq",
+        "Unity",
+        "Selenium",
+        "SpecFlow",
+        "VSTest",
+        "Agile",
+        "TFS"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "ShiftWise",
+      "position": "Senior Lead Web Developer, Manager Partner Integrations",
+      "remote": true,
+      "website": "https://www.shiftwise.com/",
+      "startDate": "2003-08",
+      "summary": "Performed a lead role in an Agile Scrum environment in coding a complex enterprise-scale, customer-facing web application and associated automated web service interface.",
+      "endDate": "2011-07",
+      "highlights": [
+        "Meeting an urgent deadline, virtually single-handedly implemented a system for handling mission-critical incoming and outgoing (SMS) messages to and from cell phones.   The architecture spanned a web site, three web services, two windows services, and two Sql Server databases",
+        "Was the Lead Developer on the ShiftWise Vendor Management System (VMS), a large and complex web application used by hospital administrators and medical staffing agencies to improve the process of hiring and placing temporary medical staff in hospitals",
+        "Was Manager and Lead Developer of ShiftWise Partner Integrations (PI), a set of web services and Windows applications enabling automated integrations between the ShiftWise VMS application and ShiftWise' customers' backoffice systems",
+        "Was the Senior Developer of ShiftWise TextConnect, enabling nurses to interact with the ShiftWise VMS using cell phone text messaging (SMS)",
+        "As Interim Development Team Manager and the most experienced .NET developer on the team, coordinated and set priorities for the team; helped raise the skills of the developers and improve the quality of output of the software engineering process",
+        "Worked smoothly with ShiftWise clients to plan and coordinate their side of the development of automated interfaces"
+      ],
+      "skills": [
+        "ASP.NET",
+        "C#",
+        "Javascript",
+        "MVC",
+        "Enterprise Framework",
+        "HTML",
+        "CSS",
+        "jquery",
+        "xml",
+        "XSLT",
+        "XSD",
+        "Entity Framework",
+        "LINQ",
+        "Sql Server",
+        "t-sql",
+        "WCF",
+        "WWF",
+        "Moq",
+        "NUnit",
+        "MSTest",
+        "Agile",
+        "TFS"
+      ],
+      "showOnShort": true
+    },
+    {
+      "company": "Trilogy",
+      "position": "Software Engineer (Ford.com)",
+      "website": "https://www.trilogy.com/",
+      "startDate": "2000-09",
+      "summary": "Wrote major components of Ford Motor Company's flagship Ford.com website",
+      "endDate": "2001-03",
+      "highlights": [
+        "The Ford.com code was virtually flawless on first release",
+        "Wrote JSP and Java components, a Java/Swing applet that enabled administrators to edit the XML content using a browser, and a Flash binary SWF file preprocessor",
+        "Wrote thorough and professionally-styled User and Developer Guide documentation"
+      ],
+      "skills": [
+        "Java",
+        "XML",
+        "Xerces",
+        "Swing",
+        "Flash SWF",
+        "Javascript",
+        "Html",
+        "JSP",
+        "JRun"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "Trilogy",
+      "position": "Software Engineer (carOrder.com)",
+      "website": "https://www.trilogy.com/",
+      "startDate": "2000-01",
+      "summary": "Enhanced and maintained the lease and loan sales features and Needs Analysis and Car Comparison features of carOrder.com's website",
+      "endDate": "2000-08",
+      "highlights": [
+        "Took the initiative to write a 'Developer's Reference' web page for carOrder developers.  This document vastly reduced  the time required to bring new developers up to speed, as well as served as an ongoing reference for all developers on the team",
+        "Repaired broken Needs Analysis and Car Comparison features, fixed both the front end web GUI and the back-end scripts that generate the supporting data. Reduced to zero the flood of customer complaints about bad data and broken features",
+        "Designed and wrote an application to assist in browsing Jato automobile data",
+        "Ported DES-encryption-based software licensing code (see Imagen) from C++ to Java"
+      ],
+      "skills": [
+        "Java",
+        "C++",
+        "JSP",
+        "Xerces",
+        "Javascript",
+        "Html",
+        "T-Sql",
+        "Sql Server",
+        "JDBC",
+        "CORBA",
+        "WCF",
+        "DES",
+        "Encryption"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "Trilogy",
+      "position": "Software Engineer (IBM)",
+      "website": "https://www.trilogy.com/",
+      "startDate": "1999-03",
+      "summary": "Provided sole development and support for an application critical to an international IBM workflow",
+      "endDate": "1999-12",
+      "highlights": [
+        "Right off the bat solved a critical issue that had been vexing prior developers. IBM was very happy",
+        "Took the initiative to save this part of the IBM contract for Trilogy"
+      ],
+      "skills": [
+        "Java",
+        "JSP",
+        "XML",
+        "XSL",
+        "Swing",
+        "Javascript",
+        "Html",
+        "T-Sql",
+        "Perl",
+        "JDBC",
+        "DB2",
+        "SQL"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "Microsoft Corporation",
+      "position": "Software Engineer",
+      "contract": true,
+      "website": "https://www.microsoft.com/",
+      "startDate": "1996-03",
+      "summary": "Wrote subsystem to facilitate localization of Encarta `97 into 5 languages",
+      "endDate": "1996-06",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "Microsoft Corporation",
+      "position": "Development Manager, Software Engineer",
+      "contract": true,
+      "website": "https://www.microsoft.com/",
+      "startDate": "1995-06",
+      "summary": "Managed team of 7 in code development and release to market of the Reader's Digest Complete Do-It-Yourself Guide multimedia CD-ROM title",
+      "endDate": "1996-02",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": true
+    },
+    {
+      "company": "Microsoft Corporation",
+      "position": "Software Engineer, Tech Lead",
+      "contract": true,
+      "website": "https://www.microsoft.com/",
+      "startDate": "1994-11",
+      "summary": "Wrote the core GUI engine for Julia Child's Home Cooking With Master Chefs multimedia CD-ROM title",
+      "endDate": "1995-06",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "Asymetrix Corporation",
+      "position": "Software Engineer",
+      "contract": true,
+      "website": "https://home.click2learn.com/showcase",
+      "startDate": "1992-04",
+      "summary": "Developed software for Toolbook 3.0 and multimedia screensavers (Jurassic Park, et. al.)",
+      "endDate": "1994-10",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "Microsoft Corporation",
+      "position": "Software Engineer",
+      "contract": true,
+      "website": "https://www.microsoft.com",
+      "startDate": "1991-01",
+      "summary": "On the Windows 3.1 team, developed software for File Manager, Packager, Paintbrush , Cardfile, and others",
+      "endDate": "1992-03",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": true
+    },
+    {
+      "company": "ConnectSoft",
+      "position": "VP Applications Development",
+      "website": "",
+      "startDate": "1989-10",
+      "summary": "Managed all development efforts (see ConnectSoft, below)",
+      "endDate": "1990-12",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "ConnectSoft",
+      "position": "Software Engineer",
+      "website": "",
+      "startDate": "1988-12",
+      "summary": "Developed software for Clip-Art Window Shopper, an early electronic clip-art distribution application, and Presto 3D, a 3D CAD application",
+      "endDate": "1989-10",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "Dupont Design Technologies, Inc.",
+      "position": "Software Engineer",
+      "website": "",
+      "startDate": "1988-03",
+      "summary": "Developed object-oriented, resolution-independent 2D graphics code, including airbrushes, framebuffer manager, and graphics hardware emulator",
+      "endDate": "1988-11",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "SAS Institute Inc.",
+      "position": "Sole Software Engineer",
+      "contract": true,
+      "website": "https://www.sas.com/",
+      "startDate": "1986-12",
+      "summary": "Ported Visuals (see UNC below) to the SAS Graphical User Interface System",
+      "endDate": "1987-05",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "University of North Carolina",
+      "position": "Sole Software Engineer",
+      "website": "https://www.unc.edu/",
+      "startDate": "1985-05",
+      "summary": "Wrote Visuals, an application that uses interactive 3D graphics animation to reveal meaning in multidimensional statistical data",
+      "endDate": "1986-11",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "Dicom Transportation Group",
+      "remote": true,
+      "contract": true,
+      "position": "Senior Web Developer",
+      "website": "https://www.dicom.com/",
+      "startDate": "2017-02",
+      "summary": "Fixed bugs and developed new features for an internal web application used to coordinate trucks, drivers, routes and delivery locations across Québec",
+      "endDate": "2017-04",
+      "highlights": [
+        "Fixed more bugs and added more features than the client planned-for"
+      ],
+      "skills": [
+        "MVC",
+        "ASP.NET",
+        "C#",
+        "Razor",
+        "HTML5",
+        "CSS",
+        "JQuery",
+        "Sql Server",
+        "T-SQL",
+        "Jira",
+        "BitBucket",
+        "Telerik"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "Password Repository",
+      "position": "Sole Web Designer and Developer",
+      "remote": true,
+      "personal": true,
+      "website": "",
+      "startDate": "2013-08",
+      "summary": "Designed and implemented a personal website using encryption techniques enabling me to access all of my logins/passwords from anywhere without requiring SSL. Received intermittent attention.",
+      "endDate": "2017-09",
+      "highlights": [
+        "Extensive use of hashing and encryption (both server and client-side), custom server-side authentication and other techniques to achieve data privacy with no SSL",
+        "Been through a couple iterations as technologies have changed.  Was Durandal+KnockoutJs+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core."
+      ],
+      "skills": [
+        "Aurelia",
+        "ASP.NET Core",
+        "C#",
+        "Javascript",
+        "HTML",
+        "CSS",
+        "MVC",
+        "KnockoutJs",
+        "WebAPI",
+        "Ajax",
+        "jquery",
+        "bootstrap",
+        "Identity",
+        "entity framework",
+        "Sql Server",
+        "t-sql",
+        "webpack",
+        "RequireJs",
+        "XUnit.NET",
+        "MsTest",
+        "crypto-js",
+        "Encryption",
+        "SHA",
+        "DES",
+        "System.Security.Cryptography",
+        "SPA"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "Vivalia Bistro Express",
+      "position": "Sole Web Developer",
+      "remote": true,
+      "contract": true,
+      "website": "https://vivalia.ca/",
+      "startDate": "2016-06",
+      "summary": "Developed a website that gives Vivalia and its customers a highly efficient and enjoyable way to place and handle orders",
+      "endDate": "2016-10",
+      "highlights": [
+        "Designed and created the entire website and database myself",
+        "Highly performant, pleasing and intuitive user interface",
+        "Used all best-available web application technologies",
+        "Well-structured, modular code amenable to future maintenance and enhancement"
+      ],
+      "skills": [
+        "Aurelia",
+        "TypeScript",
+        "ASP.NET Core",
+        "C#",
+        "Javascript",
+        "HTML5",
+        "WebApi",
+        "JQuery",
+        "Ajax",
+        "Bootstrap",
+        "Entity Framework Core",
+        "ASP.NET Identity",
+        "Microsoft Sql Server",
+        "T-SQL",
+        "Unity",
+        "Azure",
+        "CSS",
+        "Responsive",
+        "TFS",
+        "SPA"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "GE Healthcare",
+      "position": "Senior Lead Web Developer",
+      "remote": true,
+      "contract": true,
+      "website": "https://www.gehealthcare.com/",
+      "startDate": "2015-03",
+      "summary": "Developed automated machine communication enabling two companies to vastly increase the efficiency of their relationship",
+      "endDate": "2016-02",
+      "highlights": [
+        "Designed the whole thing, end-to-end",
+        "The only part I didn't write entirely myself was the AngularJs web application",
+        "Created a dynamic, data-driven schema for the exchanged content",
+        "Integrated lots of moving parts: an AngularJs web application, two external web services, .NET web server, Azure web job, and Sql Server database",
+        "Hosted on Azure"
+      ],
+      "skills": [
+        "ASP.NET",
+        "C#",
+        "Sql Server",
+        "T-SQL",
+        "Entity FrameWork",
+        "Unity",
+        "AngularJs",
+        "Typescript",
+        "WebApi",
+        "Azure",
+        "TFS",
+        "SPA"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "Kill My TV!",
+      "position": "Sole Web Designer and Developer",
+      "remote": true,
+      "personal": true,
+      "startDate": "2013-12",
+      "summary": "Designed and implemented a web application to intelligently exchange resources relevant to the implications of watching too much television",
+      "endDate": "2014-03",
+      "highlights": [
+        "Presented in French and English with instantaneous transition when switching between the two -- no postback",
+        "Takes users through a series of questions and customizes a set of resources according to their answers",
+        "Users can suggest and submit their own resources",
+        "Includes an extensive set of administration pages for creating the questions, answers and correlating them with resources"
+      ],
+      "skills": [
+        "ASP.NET",
+        "MVC",
+        "C#",
+        "Durandal",
+        "KnockoutJs",
+        "Javascript",
+        "HTML",
+        "CSS",
+        "WebAPI",
+        "jquery",
+        "Ajax",
+        "bootstrap",
+        "Sql Server",
+        "entity framework",
+        "t-sql",
+        "i18Next",
+        "jquery globalization",
+        "RequireJs",
+        "SPA"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "Texas Turnpike Authority",
+      "position": "Web Application Developer",
+      "contract": true,
+      "website": "https://www.dot.state.tx.us/default.htm",
+      "startDate": "2003-05",
+      "summary": "Using ASP.NET, implemented main 'dashboard' web page and site-wide security code",
+      "endDate": "2003-06",
+      "highlights": [
+        "Created web-based workflow involving inspections and tests of Texas turnpike construction",
+        "Implemented site-wide forms-based roles authorization and page customization, as well as user/groups management pages"
+      ],
+      "skills": [
+        "ASP.NET",
+        "C#",
+        "HTML",
+        "JavaScript",
+        "T-SQL"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "Schlumberger/Cingular Wireless",
+      "position": "Application Developer",
+      "contract": true,
+      "website": "https://www.schlumberger.com/",
+      "startDate": "2002-10",
+      "summary": "Enhanced a Java Swing application that enables users to display and edit data contained on Smart Cards",
+      "endDate": "2003-01",
+      "highlights": [
+        "Enhanced a Java Swing application that enables users to display and edit data contained on Smart Cards",
+        "Designed and implemented a user-friendly panel system.  By integrating it snugly and efficiently into the existing code, provided enhanced functionality to both new code and existing code",
+        "Implemented application configuration files formatted as XML, accessed using Xerces"
+      ],
+      "skills": [
+        "Java",
+        "Swing",
+        "XML",
+        "Xerces"
+      ],
+      "showOnShort": false
+    },
+    {
+      "company": "Imagen Communications, Inc.",
+      "position": "Sole Software Engineer",
+      "remote": true,
+      "website": "",
+      "startDate": "1996-10",
+      "summary": "Designed and developed NT Paymaster, a billing application for ISPs",
+      "endDate": "1998-03",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "Biomonitors, Ltd",
+      "position": "Lead Software Engineer",
+      "remote": true,
+      "contract": true,
+      "website": "",
+      "startDate": "1997-02",
+      "summary": "Ported from DOS to Windows 95 MindMirror, an application that displays real-time electroencephalograph data in a GUI application",
+      "endDate": "1997-03",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "Mouthing Flowers",
+      "position": "President, CEO, Director of Development, and Chief Programmer",
+      "website": "",
+      "personal": true,
+      "startDate": "1995-02",
+      "summary": "For the NEXTSTEP platform, designed and wrote <i>TimeFlies</i>, designed and implemented a 3D graphics API, and wrote the <i>SwoopnPrint</i>&nbsp;&nbsp;\"service\" application. TimeFlies received a positive product review from NeXTWorld magazine",
+      "endDate": "1999-09",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "University of North Carolina",
+      "position": "Software Engineer",
+      "website": "https://www.unc.edu/",
+      "startDate": "1988-11",
+      "summary": "For EGA/VGA graphics hardware, developed code that reproduces PGA 3D and 2D graphics hardware commands",
+      "endDate": "1989-12",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "University of North Carolina",
+      "position": "Software Engineer",
+      "website": "https://www.unc.edu/",
+      "startDate": "1986-05",
+      "summary": "Assembled a local area network (LAN) and a system to digitize and manipulate video microscopic images for display in medical school classroom lab sessions",
+      "endDate": "1986-11",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "Pacific Environmental Services, Inc",
+      "position": "Associate Public Policy Analyst ",
+      "startDate": "1980-01",
+      "summary": "Conducted regulatory technical analyses, managed preparation of technical business proposals, managed a waste brokerage program",
+      "endDate": "1982-09",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    }
+  ],
   "languages": [
     {
       "language": "English",
@@ -2381,6 +2423,44 @@
     {
       "language": "French",
       "fluency": "Professional working proficiency"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Duke University",
+      "area": "Environment Management",
+      "studyType": "Masters",
+      "startDate": "1977",
+      "gpa": "",
+      "courses": [],
+      "endDate": "1980"
+    },
+    {
+      "institution": "University of North Carolina at Chapel Hill",
+      "area": "Computer Science",
+      "studyType": "Continuing Education",
+      "startDate": "1985",
+      "gpa": "",
+      "courses": [],
+      "endDate": "1987"
+    },
+    {
+      "institution": "Duke University",
+      "area": "Public Policy Sciences",
+      "studyType": "Master of Arts",
+      "startDate": "1977",
+      "gpa": "",
+      "courses": [],
+      "endDate": "1980"
+    },
+    {
+      "institution": "Miami University",
+      "area": "Botany",
+      "studyType": "Bachelor of Science",
+      "startDate": "1973",
+      "gpa": "",
+      "courses": [],
+      "endDate": "1977"
     }
   ],
   "citizenship": [
@@ -2396,86 +2476,6 @@
       "country": "United Kingdom",
       "status": "Full Citizenship"
     }
-  ],
-  "references": [
-    {
-      "name": "Renç Korzay",
-      "reference": "Doug is a brilliant front-end engineer who stands out for his exceptional professionalism, team-player attitude, and a strong sense of ownership. He goes out of his way to ensure that projects are delivered on time and to the highest possible standard. Doug is great at leading other developers and working across disciplines, he's an expert in prioritization and can dissect complex problems. His perfectionism and ability to set a great example for the team have been invaluable. I had the chance to work with Doug on multiple Web3 projects throughout the years and I would always look forward to an opportunity to work with him.",
-      "title": "Web3 Product Manager",
-      "company": "Curve Labs",
-      "website": "https://www.linkedin.com/in/renckorzay/"
-    },
-    {
-      "name": "Ghalem Ben Nouna",
-      "reference": "It's rare that you come across standout talent like Doug. I hired Doug as an application developer in my analytics team at PSP. He was able to complete the development of complex data products with complex custom visualizations on time. I was particularly impressed by Doug’s ability to precisely understand business requirements effortlessly due to his extensive experience as well as being an amazing team player.",
-      "title": "Senior Director of Data Management and Business Intelligence at Ivanhoé Cambridge",
-      "company": "PSP Investments",
-      "website": "https://www.linkedin.com/in/ghalem-ben-nouna-2356011/"
-    },
-    {
-      "name": "Ross Barbieri",
-      "reference": "I know Doug Kent both personally and professionally. I have had the great pleasure of working with him on several projects at multiple companies. These include industry changing applications like Shiftwise (healthcare staffing vendor management systems) and at large companies like GE . He is a highly reliable and methodical .NET web developer, and <b><i>the</i></b> best OO developer I've worked with. Doug works well solo and on teams and is an excellent communicator in both settings. On that point, he is an open and honest person and one who is not afraid to speak up (appropriately) when necessary. He is my go to .NET developer for these reasons, and also because he takes full ownership of his work; including peripheral dependencies, and will self manage through to completion.",
-      "title": "Serial Entrepreneur, CTO and Software Development Manager",
-      "company": "Shiftwise",
-      "website": "https://www.linkedin.com/in/rosshere/"
-    }
-  ],
-  "accomplishments": [
-    {
-      "text": "Working with subjective human voices and non-deterministic AI interpretations, I led the design and development of Human Lens, an AI-native qualitative analysis application that produces findings solid enough for a DEI consultancy to advise its clients with confidence.",
-      "showOnShort": true
-    },
-    {
-      "text": "With Curve Labs, I coded, delivered and led, in some cases single-handedly, the front-end development of multiple complex Web3 dApps leveraging Ethereum smart contracts in the domains of decentralized finance (Defi) and regeneration (Refi).",
-      "showOnShort": true
-    },
-    {
-      "text": "With DAOstack, I helped design and develop some of the first-ever decentralized autonomous organization (DAO) Ethereum smart contracts, and helped develop a complex Web3 dApp to use them.",
-      "showOnShort": true
-    },
-    {
-      "text": "In an enterprise website environment at Revionics, I saved a project in jeopardy of missing its deadline. I took the counter-intuitive and risky step of dropping the assisting team from 7 to 3, but it enabled us to meet our deadline.",
-      "showOnShort": true
-    },
-    {
-      "text": "At Microsoft, I led a multi-disciplinary development team of 7 software engineers plus writers and graphic designers to produce a multimedia CD-ROM title for Windows. We delivered on time, meeting all quality goals.",
-      "showOnShort": true
-    },
-    {
-      "text": "On a Microsoft project whose development lead and content developer each unexpectedly and simultaneously departed, I took the initiative to undertake some of each person's responsibilities, keeping the project on schedule and leading it to a successful market release.",
-      "showOnShort": false
-    },
-    {
-      "text": "In an enterprise website environment at ShiftWise, while facing an urgent deadline, I single-handedly implemented a complete system for handling mission-critical SMS messages. The architecture spanned a web site, three web services, two Windows services, and two Sql Server databases.",
-      "showOnShort": false
-    },
-    {
-      "text": "For Ford Motor Company (via Trilogy) I designed, wrote, and delivered ahead of schedule a framework that served content to every page of the company&#39;s flagship website, Ford.com.",
-      "showOnShort": false
-    },
-    {
-      "text": "At ConnectSoft I led the development of an application that won a <i>Windows 100</i> award from <i>Windows Magazine</i>: <i>Clip-Art Window Shopper</i>, one of the first ever applications for purchasing and downloading clip-art online.",
-      "showOnShort": false
-    },
-    {
-      "text": "At Microsoft, I incorporated the new technology of OLE 1.0 into Windows Write. OLE was a highly visible and strategic initiative of interest at the highest levels in Microsoft.",
-      "showOnShort": false
-    },
-    {
-      "text": "In my very first job as a software engineer, at the University of N. Carolina, I wrote a multi-dimensional data visualization application that was adopted as a product by the SAS Institute, a major statistical software company.",
-      "showOnShort": false
-    }
-  ],
-  "qualities": [
-    "I have the maturity and experience to design, develop, coordinate, and lead a team from product conception to release.",
-    "I can put AI to work on real implementation while supplying what it lacks — the judgment, earned over decades, to recognize when a plausible-looking design is wrong.",
-    "I have the broad full-stack knowledge and self-starting mentality to single-handedly architect, design, implement, document, test and deploy an entire application.",
-    "I have worked with some of the best programmers and managers at some of the greatest software companies in the world.",
-    "I am a great team player, leader and communicator, fully embracing team diversity and cohesiveness.",
-    "I am creative and love solving challenging problems.",
-    "I enjoy mentoring anyone who seeks it.",
-    "I am reliable and honest: I speak truth to clients and colleagues.",
-    "I try to view situations from your point of view to anticipate your needs and assist you in building your antifragility."
   ],
   "publications": [
     {
