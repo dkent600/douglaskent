@@ -376,6 +376,15 @@
   width: 5.25rem;
 }
 
+/** The filter box has been retyped but not yet blurred, so the list below is still stale. */
+.pending {
+  background: #fff3cd;
+  border-radius: 999px;
+  color: var(--warn);
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
+}
+
 .renamed {
   background: #d1e7dd;
   border-radius: 4px;

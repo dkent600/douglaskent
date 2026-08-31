@@ -2,13 +2,18 @@
   <div class="editor-head">
     <button type="button" class="primary" click.trigger="add()">Add skill</button>
     <label class="search">Filter
-      <input type="search" value.bind="filter & debounce:150" placeholder="name, alias or category">
+      <!-- Applied on blur, not as you type; see `applyFilter`. Enter blurs, so it applies too. -->
+      <input type="search" value.bind="filter" placeholder="name, alias or category"
+        blur.trigger="applyFilter()" keydown.trigger="$event.key === 'Enter' && $event.target.blur()">
     </label>
-    <p class="hint">${visible.length} of ${store.skills.length}</p>
+    <p class="hint">
+      ${visible(applyRevision).length} of ${store.skills.length}
+      <span class="pending" if.bind="filter.trim().toLowerCase() !== applied">not applied &mdash; press Enter or click away</span>
+    </p>
   </div>
 
   <ol class="rows">
-    <li repeat.for="skill of visible" class="row ${editing === skill ? 'is-open' : ''}">
+    <li repeat.for="skill of visible(applyRevision)" class="row ${editing === skill ? 'is-open' : ''}">
       <div class="row-head">
         <button type="button" class="title" click.trigger="toggle(skill)">
           <strong>${skill.name || '(unnamed)'}</strong>
