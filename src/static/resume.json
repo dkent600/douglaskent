@@ -1,5 +1,5 @@
 {
-  "$schema": "./schema-resume.json",
+  "$schema": "./schema.json",
   "basics": {
     "name": "Douglas Kent",
     "label": "Full-stack Software Engineer & Architect · AI & Blockchain",
