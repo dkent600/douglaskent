@@ -186,7 +186,7 @@ Highlights:
   boundary enforced by the package structure, so the human-review interface is
   structurally incapable of holding internal findings
 
-Technologies:
+Technologies / Skills:
 LLM Pipeline Architecture, LLM Evaluation, TypeScript, Human-in-the-Loop
 Design, Prompt Engineering, AI-Assisted Development, De-identification,
 Aurelia 2, Claude Code for VS Code, LLM APIs, AI Coding Assistant, Claude.ai
@@ -212,7 +212,7 @@ Highlights:
 - Development process utilizing the AI coding assistant GitHub Copilot Chat in
   VS Code
 
-Technologies:
+Technologies / Skills:
 TypeScript, Aurelia 2, DeFi, MVVM, AI Coding Assistant, GitHub Copilot,
 TailWindCss, Axios, Vite, FluentUI Web Components, GitHub
 
@@ -238,7 +238,7 @@ Highlights:
 - TSyringe for clean dependency injection architecture for Node.js
 - Axios for exchange-API communications
 
-Technologies:
+Technologies / Skills:
 TypeScript, DeFi, AI Coding Assistant, GitHub Copilot, Fastify, Axios,
 TSyringe, Vite, GitHub, Node.js
 
@@ -268,7 +268,7 @@ Highlights:
   and invoking the service
 - Reported the prices of cUSD, kCur and kG price to smart contract Oracles
 
-Technologies:
+Technologies / Skills:
 TypeScript, Solidity, Ethereum, ethers.js, DeFi, Refi, Celo, Balancer
 Liquidity Pools, Defender, Mento, Javascript, GitHub
 
@@ -311,7 +311,7 @@ Highlights:
   about them at Kolektivo (https://www.kolektivo.network/) and The Prime Suite
   (https://www.prime.xyz)
 
-Technologies:
+Technologies / Skills:
 TypeScript, Solidity, Ethereum, Web3, dApps, ethers.js, DAOs, DAO Governance
 Systems, DeFi, Wallets, Refi, SPA, IPFS, Subgraph, Liquidity Bootstrapping
 Pools, web3.js, Balancer Liquidity Pools, Gnosis Safe, Defender, Ceramic, ENS,
@@ -355,7 +355,7 @@ Highlights:
   software that leverage DAOStack Arc (https://github.com/daostack/arc) to
   facilitate the creation of DAOstack DAOs
 
-Technologies:
+Technologies / Skills:
 TypeScript, Solidity, Ethereum, Web3, dApps, DAOs, DAO Governance Systems,
 Wallets, SPA, Subgraph, 3Box, Javascript, NodeJs, HTML5, CSS, SASS,
 Responsive, ReactJs, Aurelia, Webpack, JQuery, Bootstrap, Bootstrap Material
@@ -373,7 +373,7 @@ coordinate trucks, drivers, routes and delivery locations across Quebec
 Highlights:
 - Fixed more bugs and added more features than the client planned-for
 
-Technologies:
+Technologies / Skills:
 HTML5, CSS, C#, MVC, Razor, JQuery, ASP.NET, Telerik, Sql Server, T-SQL,
 BitBucket, Jira
 
@@ -392,7 +392,7 @@ Highlights:
 - Used all best-available web application technologies
 - Well-structured, modular code amenable to future maintenance and enhancement
 
-Technologies:
+Technologies / Skills:
 TypeScript, SPA, Javascript, HTML5, CSS, Responsive, Aurelia, C#, ASP.NET
 Core, WebApi, ASP.NET Identity, Ajax, JQuery, Bootstrap, Microsoft Sql Server,
 T-SQL, Unity, Entity Framework Core, Azure, TFS
@@ -415,7 +415,7 @@ Highlights:
   web services, .NET web server, Azure web job, and Sql Server database
 - Hosted on Azure
 
-Technologies:
+Technologies / Skills:
 Typescript, SPA, AngularJs, C#, WebApi, ASP.NET, Sql Server, T-SQL, Unity,
 Entity FrameWork, Azure, TFS
 
@@ -440,7 +440,7 @@ Highlights:
   and products, including AllegroGraph, Semaphore and Neo4j, to plot
   directions for expanding PSP's knowledge-based search capabilities
 
-Technologies:
+Technologies / Skills:
 SPA, Javascript, HTML5, CSS, C#, D3, Highcharts, WebApi, Ajax, JQuery,
 Bootstrap, RequireJs, KnockoutJs, DurandalJs, Agile, Unity, .NET, Entity
 Framework, TFS
@@ -462,7 +462,7 @@ Highlights:
 - Includes an extensive set of administration pages for creating the
   questions, answers and correlating them with resources
 
-Technologies:
+Technologies / Skills:
 SPA, Javascript, HTML, CSS, C#, MVC, WebAPI, Ajax, jquery, bootstrap,
 RequireJs, KnockoutJs, Durandal, ASP.NET, i18Next, jquery globalization, Sql
 Server, t-sql, entity framework
@@ -483,7 +483,7 @@ Highlights:
 - Been through a couple iterations as technologies have changed. Was
   Durandal+KnockoutJs+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core.
 
-Technologies:
+Technologies / Skills:
 SPA, Javascript, HTML, CSS, Aurelia, webpack, C#, ASP.NET Core, MVC, WebAPI,
 Identity, Ajax, jquery, bootstrap, RequireJs, KnockoutJs, Sql Server, t-sql,
 MsTest, XUnit.NET, crypto-js, DES, Encryption, SHA,
@@ -519,7 +519,7 @@ Highlights:
   writing SpecFlow integration tests using Unity, Moq and VSTest. The
   prototype was written against Selenium to drive automated GUI tests
 
-Technologies:
+Technologies / Skills:
 Javascript, HTML, CSS, C#, MVC, jquery, KnockoutJs, ASP.NET, Telerik, MEF,
 ADO, nHibernate, Agile, Moq, Selenium, SpecFlow, Unity, VSTest, Enterprise
 Framework, TFS
@@ -556,7 +556,7 @@ Highlights:
 - Worked smoothly with ShiftWise clients to plan and coordinate their side of
   the development of automated interfaces
 
-Technologies:
+Technologies / Skills:
 Javascript, HTML, CSS, C#, xml, MVC, jquery, ASP.NET, XSLT, XSD, WCF, WWF, Sql
 Server, t-sql, LINQ, Agile, Moq, MSTest, NUnit, Entity Framework, Enterprise
 Framework, TFS
@@ -576,7 +576,7 @@ Highlights:
 - Implemented site-wide forms-based roles authorization and page
   customization, as well as user/groups management pages
 
-Technologies:
+Technologies / Skills:
 JavaScript, HTML, C#, ASP.NET, T-SQL
 
 
@@ -597,7 +597,7 @@ Highlights:
 - Implemented application configuration files formatted as XML, accessed using
   Xerces
 
-Technologies:
+Technologies / Skills:
 XML, Java, Swing, Xerces
 
 
@@ -616,7 +616,7 @@ Highlights:
 - Wrote thorough and professionally-styled User and Developer Guide
   documentation
 
-Technologies:
+Technologies / Skills:
 Javascript, Html, XML, Java, JSP, Swing, Flash SWF, Xerces, JRun
 
 
@@ -641,7 +641,7 @@ Highlights:
 - Ported DES-encryption-based software licensing code (see Imagen) from C++ to
   Java
 
-Technologies:
+Technologies / Skills:
 Javascript, Html, C++, Java, WCF, JDBC, JSP, CORBA, Xerces, Sql Server, T-Sql,
 DES, Encryption
 
@@ -659,7 +659,7 @@ Highlights:
   developers. IBM was very happy
 - Took the initiative to save this part of the IBM contract for Trilogy
 
-Technologies:
+Technologies / Skills:
 Javascript, Html, XML, Java, XSL, JDBC, JSP, Swing, SQL, T-Sql, Perl, DB2
 
 
