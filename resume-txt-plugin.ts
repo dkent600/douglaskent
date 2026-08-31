@@ -433,6 +433,56 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
   }
 
   /**
+   * `summary4` is the travel paragraph, and it is deliberately not in `SUMMARY_KEYS`:
+   * that list is the introduction's share of the numbered paragraphs, and the page puts
+   * this one in a travel section of its own rather than in the introduction. The text
+   * resume has no travel section, so it opens this one instead, where it sets the scene
+   * for the two facts that follow.
+   */
+  doc.section("Location, Languages & Citizenship");
+
+  const travel = clean(basics.summary4);
+  if (travel === "") {
+    warnings.add("basics.summary4 is missing or empty; omitted from LOCATION, LANGUAGES & CITIZENSHIP");
+  } else {
+    doc.block(wrap(travel));
+  }
+
+  /**
+   * Fluency is lower-cased into the parenthetical because it reads as part of the
+   * sentence there, not as a heading -- `resume.json` capitalises it for the page, which
+   * renders it in a column of its own.
+   */
+  const languages: Array<Record<string, any>> = Array.isArray(resume.languages) ? resume.languages : [];
+  const spoken = languages
+    .map((entry) => {
+      const name = clean(entry.language);
+      const fluency = clean(entry.fluency).toLowerCase();
+      if (name === "") return "";
+      return fluency === "" ? name : `${name} (${fluency})`;
+    })
+    .filter((entry) => entry !== "");
+  if (spoken.length > 0) doc.block(wrap(`Languages: ${spoken.join(", ")}`));
+
+  const citizenship: Array<Record<string, any>> = Array.isArray(resume.citizenship) ? resume.citizenship : [];
+
+  /**
+   * Country names only. Every entry is "Full Citizenship" today, so the status adds
+   * nothing a reader does not already infer from the word "Citizenship". An entry saying
+   * anything else would be misrepresented by that omission rather than merely abbreviated,
+   * so it is reported instead of being quietly flattened.
+   */
+  for (const entry of citizenship) {
+    const status = clean(entry.status);
+    if (status !== "" && status.toLowerCase() !== "full citizenship") {
+      warnings.add(`citizenship "${clean(entry.country)}" has status "${status}", which this format does not render`);
+    }
+  }
+
+  const countries = citizenship.map((entry) => clean(entry.country)).filter((entry) => entry !== "");
+  if (countries.length > 0) doc.block(wrap(`Citizenship: ${countries.join(", ")}`));
+
+  /**
    * Every education entry, in file order and without deduplication. Two of them are Duke,
    * 1977-1980: those are two master's degrees earned simultaneously in different subjects,
    * not one record entered twice, and collapsing them would erase a degree.
@@ -465,7 +515,25 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
     doc.block(lines);
   }
 
-  return { text: doc.toString(), warnings: warnings.list };
+  const text = doc.toString();
+
+  /**
+   * The wrap is a hard requirement of the format, and `wrap` breaks it on purpose in one
+   * case: a single token longer than the column budget -- a URL, in practice -- goes on
+   * its own line and overruns rather than being split, because a broken URL cannot be
+   * clicked or copied. Two lines do that today, both links spelled out by `renderAnchors`.
+   *
+   * Reported rather than left to be noticed. The exception is deliberate, but it is still
+   * an exception, and a third one appearing should show up in the build log rather than in
+   * whatever happens to read the file next.
+   */
+  for (const [index, line] of text.split("\n").entries()) {
+    if (line.length > WRAP_WIDTH) {
+      warnings.add(`line ${index + 1} is ${line.length} columns, over the ${WRAP_WIDTH}-column wrap (unbreakable token): ${line.trim()}`);
+    }
+  }
+
+  return { text, warnings: warnings.list };
 }
 
 export function resumeTxt(): Plugin {
