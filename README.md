@@ -100,20 +100,53 @@ editor comes back freshly loaded from disk -- whichever row was open closes.
 ## Build output and deploying
 
 `npm run build` writes `dist/index.html` (generated from the root `index.html`) plus hashed bundles in
-`dist/assets/`. It also emits `dist/stats.html`, a bundle size report that does not need deploying.
+`dist/assets/`. It also emits `dist/stats.html`, a bundle size report that is not deployed.
+
+The root `index.html` is a build input and is never served. `dist/index.html` differs from it in three
+ways: the `src/main.ts` script tag becomes the hashed bundles, `base.css` is folded into
+`dist/assets/*.css` along with the component SCSS (so it is not deployed as a separate file), and a
+schema.org JSON-LD block is injected into `<head>` by `resume-jsonld-plugin.ts`, generated from
+`resume.json` on every build.
 
 The asset hashes change whenever their contents change, and `dist/index.html` is what points at them, so
 **always deploy `index.html` together with `dist/assets`** -- shipping one without the other leaves the
 site referencing bundles that are not there.
 
-Copy to the production root folder:
+### `npm run deploy`
 
-```
-base.css
-favicon.ico
-dist/index.html
-dist/assets
-```
+Runs `ftp -i -s:ftpDeploy.txt`: Windows `ftp.exe` driven by a script file, uploading into `/douglask`
+on the server, which is the site root.
+
+`ftpDeploy.txt` is **gitignored**, because it holds the FTP password in plain text. A fresh clone
+therefore has no deploy script and cannot deploy until one is recreated.
+
+The script names every file individually. There is no "upload `dist/`" step, and its only wildcard,
+`mput *.js *.css`, runs after both ends have changed into `assets/`, so it covers nothing at the root.
+**A new file is not deployed until a line is added for it** -- it will build correctly and silently
+never go live. `dist/stats.html` is the standing example: emitted every build, deliberately never
+uploaded.
+
+What goes up, and from where:
+
+| Local | Remote | |
+| --- | --- | --- |
+| `favicon.ico` | `/favicon.ico` | repo root, not `dist/` |
+| `src/static/resume.json` | `/resume.json` | the source file itself -- see below |
+| `dist/index.html` | `/index.html` | |
+| `dist/robots.txt` | `/robots.txt` | copied into `dist/` from `public/` by the build |
+| `dist/assets/*.js`, `*.css` | `/assets/` | |
+
+Order matters. The `resume.json` line runs while the local directory is still the repo root, before
+`lcd dist`; moving it below that line breaks the path. `favicon.ico` is uploaded from the repo root for
+the same reason -- unlike `robots.txt`, it does not live in `public/` and so never reaches `dist/`.
+
+`/resume.json` publishes `src/static/resume.json` **verbatim**. It is the source file, not a filtered
+export: every field is public, including `basics.email`, `resumeFeedbackEmail`, both phone numbers and
+the street address, and every skill flagged `hide`. The JSON-LD block in `index.html` is the opposite --
+derived, and deliberately carrying no contact details.
+
+FTP uploads but never deletes, so a file dropped from the script stays on the server until it is removed
+by hand. `base.css` is one: it was deployed separately before it was bundled.
 
 ## Dependency notes
 
