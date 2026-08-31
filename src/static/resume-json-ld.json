@@ -1,0 +1,119 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Douglas Kent",
+  "url": "https://www.douglaskent.com",
+  "jobTitle": "Full-stack Software Engineer & Architect · AI & Blockchain",
+  "description": "I am a software engineer and architect with 35 years spent leading teams and building sophisticated systems — web applications, blockchain and Web3 platforms, and most recently AI-native applications built on large language models.",
+  "sameAs": [
+    "https://www.linkedin.com/in/douglas-kent-760876a/",
+    "https://github.com/dkent600"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CR",
+    "addressRegion": "Alajuela"
+  },
+  "knowsLanguage": [
+    "English",
+    "French"
+  ],
+  "nationality": [
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    {
+      "@type": "Country",
+      "name": "Canada"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Duke University"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of North Carolina at Chapel Hill"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Miami University"
+    }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Masters",
+      "about": "Environment Management",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "Duke University"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Continuing Education",
+      "about": "Computer Science",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of North Carolina at Chapel Hill"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Master of Arts",
+      "about": "Public Policy Sciences",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "Duke University"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Bachelor of Science",
+      "about": "Botany",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "Miami University"
+      }
+    }
+  ],
+  "knowsAbout": [
+    "LLM Pipeline Architecture",
+    "LLM Evaluation",
+    "TypeScript",
+    "Human-in-the-Loop Design",
+    "Prompt Engineering",
+    "Solidity",
+    "Ethereum",
+    "AI-Assisted Development",
+    "Web3",
+    "De-identification",
+    "dApps",
+    "ethers.js",
+    "Aurelia 2",
+    "DAOs",
+    "DAO Governance Systems",
+    "Defi",
+    "Web Components",
+    "Wallets",
+    "MVVM",
+    "Refi",
+    "SPA",
+    "IPFS",
+    "Claude Code for VS Code",
+    "Subgraph",
+    "Liquidity Bootstrapping Pools"
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Full-stack Software Engineer & Architect · AI & Blockchain",
+    "occupationalCategory": "15-1252.00"
+  }
+}

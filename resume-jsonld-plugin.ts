@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import type { Plugin } from "vite";
@@ -12,10 +12,20 @@ import type { Plugin } from "vite";
  * invisible to readers that do not execute JavaScript -- which is most of the AI crawlers
  * this is aimed at. The block has to be in the HTML as served.
  *
- * `resume.json` is the only source of truth. Nothing here is written to disk: the block is
- * regenerated on every build, so there is no generated artifact to drift or to commit.
+ * `resume.json` is the only source of truth. The block is regenerated on every build, both
+ * into the page and, so it can be fetched on its own, into the file named by `OUTPUT_PATH`.
+ * That file is build output that happens to live in `src/static` because the FTP script
+ * uploads from there -- it is never authored by hand, and editing it achieves nothing.
  */
 const RESUME_PATH = "src/static/resume.json";
+
+/**
+ * The same block written as a standalone file, so it can be deployed and fetched on its
+ * own rather than only read out of the page. It sits beside `resume.json` because the FTP
+ * script uploads from there; it is still generated, not authored, so it is regenerated on
+ * every build and should never be hand-edited.
+ */
+const OUTPUT_PATH = "src/static/resume-json-ld.json";
 
 /**
  * How many skills reach `knowsAbout`.
@@ -207,17 +217,25 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
 }
 
 export function resumeJsonLd(): Plugin {
+  const generate = async (): Promise<string> => {
+    const resume = JSON.parse(await readFile(resolve(process.cwd(), RESUME_PATH), "utf8"));
+    return JSON.stringify(buildPersonJsonLd(resume), null, 2);
+  };
+
   return {
     name: "resume-jsonld",
-    async transformIndexHtml() {
-      const file = resolve(process.cwd(), RESUME_PATH);
-      const resume = JSON.parse(await readFile(file, "utf8"));
 
+    async transformIndexHtml() {
       /**
-       * `<` is escaped so a stray `</script>` anywhere in the resume text cannot close the
-       * tag early. The escape is invisible to a JSON parser.
+       * `<` is escaped so a stray `</script>` anywhere in the resume text cannot close
+       * the tag early. The escape is invisible to a JSON parser, and it applies only to
+       * this copy -- the standalone file is not embedded in HTML and needs no such guard.
+       *
+       * The backslash is doubled deliberately. A single one makes the replacement a
+       * Unicode escape that JavaScript resolves back to `<` while parsing this file, so
+       * the call becomes a silent no-op that still looks correct.
        */
-      const json = JSON.stringify(buildPersonJsonLd(resume), null, 2).replaceAll("<", "\u003c");
+      const json = (await generate()).replaceAll("<", "\\u003c");
 
       return [
         {
@@ -227,6 +245,14 @@ export function resumeJsonLd(): Plugin {
           injectTo: "head" as const,
         },
       ];
+    },
+
+    /**
+     * Build only. `writeBundle` does not run under `vite dev`, so saving from the admin
+     * editor does not rewrite a file in `src/static` on every keystroke.
+     */
+    async writeBundle() {
+      await writeFile(resolve(process.cwd(), OUTPUT_PATH), `${await generate()}\n`, "utf8");
     },
   };
 }
