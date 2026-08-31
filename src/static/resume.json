@@ -1559,8 +1559,9 @@
   ],
   "work": [
     {
-      "company": "Human Lens, AI-native web app · self-directed case study",
-      "position": "Technical Lead & LLM Pipeline Architect",
+      "company": "Independent Software Developer",
+      "position": "Technical Lead & LLM Pipeline Architect — Human Lens, AI-native web app",
+      "website": "https://github.com/dkent600/HumanLens",
       "startDate": "2026-05",
       "summary": "Modeled on an existing DEI consultancy, turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface.",
       "endDate": "present",
@@ -1601,12 +1602,11 @@
         "GitHub Copilot"
       ],
       "personal": true,
-      "website": "https://github.com/dkent600/HumanLens",
       "showOnShort": true
     },
     {
-      "company": "Butterfly, Crypto portfolio management dApp · self-directed case study",
-      "position": "Technical Lead & dApp Architect",
+      "company": "Independent Software Developer",
+      "position": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management dApp",
       "remote": false,
       "website": "https://github.com/dkent600/batch-take-profit",
       "startDate": "2025-06",
@@ -1635,8 +1635,8 @@
       "showOnShort": true
     },
     {
-      "company": "Butterfly, Crypto portfolio management service · self-directed case study",
-      "position": "Technical Lead & dApp Architect",
+      "company": "Independent Software Developer",
+      "position": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management service",
       "remote": false,
       "website": "https://github.com/dkent600/butterfly-services",
       "startDate": "2025-06",
@@ -2153,8 +2153,8 @@
       "showOnShort": false
     },
     {
-      "company": "Password Repository",
-      "position": "Sole Web Designer and Developer",
+      "company": "Independent Software Developer",
+      "position": "Sole Web Designer and Developer — Password Repository",
       "remote": true,
       "personal": true,
       "website": "",
@@ -2267,8 +2267,9 @@
       "showOnShort": false
     },
     {
-      "company": "Kill My TV!",
-      "position": "Sole Web Designer and Developer",
+      "company": "Independent Software Developer",
+      "position": "Sole Web Designer and Developer — Kill My TV!",
+      "website": "",
       "remote": true,
       "personal": true,
       "startDate": "2013-12",
@@ -2371,14 +2372,16 @@
       "showOnShort": false
     },
     {
-      "company": "Mouthing Flowers",
-      "position": "President, CEO, Director of Development, and Chief Programmer",
+      "company": "Independent Software Developer",
+      "position": "Founder & Developer — Mouthing Flowers",
       "website": "",
       "personal": true,
       "startDate": "1995-02",
-      "summary": "For the NEXTSTEP platform, designed and wrote <i>TimeFlies</i>, designed and implemented a 3D graphics API, and wrote the <i>SwoopnPrint</i>&nbsp;&nbsp;\"service\" application. TimeFlies received a positive product review from NeXTWorld magazine",
+      "summary": "For the NEXTSTEP platform, designed and wrote <i>TimeFlies</i>, designed and implemented a 3D graphics API, and wrote the <i>SwoopnPrint</i>&nbsp;&nbsp;\"service\" application.",
       "endDate": "1999-09",
-      "highlights": [],
+      "highlights": [
+        "TimeFlies received a positive product review from NeXTWorld magazine"
+      ],
       "skills": [],
       "showOnShort": false
     },
@@ -2407,6 +2410,7 @@
     {
       "company": "Pacific Environmental Services, Inc",
       "position": "Associate Public Policy Analyst ",
+      "website": "",
       "startDate": "1980-01",
       "summary": "Conducted regulatory technical analyses, managed preparation of technical business proposals, managed a waste brokerage program",
       "endDate": "1982-09",
