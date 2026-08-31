@@ -44,7 +44,7 @@ export class SkillsEditor {
   }
 
   /**
-   * Runs on blur rather than on every keystroke: mid-typing values like "Defi" -> "Def"
+   * Runs on blur rather than on every keystroke: mid-typing values like "DeFi" -> "Def"
    * would otherwise each cascade in turn and scramble the references.
    */
   commitRename(skill: IEditableSkill): void {

@@ -398,7 +398,7 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
       return left < right ? 1 : -1;
     });
 
-  doc.section("Work Experience");
+  doc.section("Professional Experience");
 
   for (const { entry, index } of chronological) {
     const lines: Array<string> = [];

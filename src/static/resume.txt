@@ -29,7 +29,7 @@ SELECTED ACCOMPLISHMENTS
   enough for a DEI consultancy to advise its clients with confidence.
 - With Curve Labs, I coded, delivered and led, in some cases single-handedly,
   the front-end development of multiple complex Web3 dApps leveraging Ethereum
-  smart contracts in the domains of decentralized finance (Defi) and
+  smart contracts in the domains of decentralized finance (DeFi) and
   regeneration (Refi).
 - With DAOstack, I helped design and develop some of the first-ever
   decentralized autonomous organization (DAO) Ethereum smart contracts, and
@@ -74,7 +74,7 @@ AI
 
 Blockchain
   Solidity, Ethereum, Web3, dApps, ethers.js, DAOs, DAO Governance Systems,
-  Defi, Wallets, Refi, IPFS, Subgraph, Liquidity Bootstrapping Pools, web3.js,
+  DeFi, Wallets, Refi, IPFS, Subgraph, Liquidity Bootstrapping Pools, web3.js,
   Celo, Arbitrum, Balancer Liquidity Pools, Gnosis Safe, OpenZeppelin
   Defender, Ceramic, 3Box, ENS, Mento, LitProtocol, Metamask, WalletConnect,
   Web3Modal
@@ -147,7 +147,7 @@ Development Processes
   Agile Methodologies, Just Get It Done, Waterfall, TFS
 
 
-WORK EXPERIENCE
+PROFESSIONAL EXPERIENCE
 
 Technical Lead & LLM Pipeline Architect - Human Lens, AI-native web app
 Independent Software Developer | 05/2026 - Present
@@ -237,7 +237,7 @@ https://www.curvelabs.eu/
 Development Team Lead and Lead Developer
 Curve Labs | 08/2020 - 11/2022
 Led teams of 2-5 in the development of the frontends of multiple dApps running
-against the Ethereum blockchain focused on decentralized (Defi) and
+against the Ethereum blockchain focused on decentralized (DeFi) and
 regenerative finance (Refi). Among others, led the development team for a Refi
 dApp designed to emerge a regenerative, decentralized economic system for the
 sovereign island nation of Curacao. Here are couple of sites: Prime Deals and

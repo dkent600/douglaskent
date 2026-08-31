@@ -32,7 +32,7 @@ Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 | `/` | Redirects to `/resume` |
 | `/resume` | The complete resume |
 | `/resume/short` | The condensed resume: anything marked `resume-type="complete"` is hidden, and short-only passages appear instead |
-| `/resume/expanded` | Starts with the collapsible sections already open: skills pills, the full work history, and publications |
+| `/resume/expanded` | Starts with the collapsible sections already open: skills pills, the full Professional Experience, and publications |
 | `/expanded` | Redirects to `/resume/expanded` |
 | `/resume/short/expanded` | Redirects to `/resume/expanded` -- `short` and `expanded` are mutually exclusive |
 | `/techresume` | Redirects to `/resume` |
@@ -64,7 +64,7 @@ The short and complete variants are driven by the `resume-type` custom attribute
 
 ## Editing the resume
 
-`npm run admin` opens a GUI at `/admin` for the work history and the skills it depends on,
+`npm run admin` opens a GUI at `/admin` for the Professional Experience and the skills it depends on,
 writing changes back to `src/static/resume.json`. Edit, save, then commit the file as usual.
 
 | Tab | Edits |
