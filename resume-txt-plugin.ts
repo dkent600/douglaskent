@@ -320,14 +320,22 @@ class Document {
   }
 
   /**
-   * A block of lines, separated from whatever precedes it in the same section by a single
-   * blank line. Empty blocks are dropped so a missing field cannot leave a stray gap.
+   * A block of lines, separated from whatever precedes it in the same section by `gap`
+   * blank lines. Empty blocks are dropped so a missing field cannot leave a stray gap.
+   *
+   * The separation is topped up to `gap` rather than appended, so a block landing straight
+   * after a heading -- which already leaves one blank line behind it -- does not open with
+   * a wider gap than the heading intends.
    */
-  block(lines: Array<string>): void {
+  block(lines: Array<string>, gap = 1): void {
     if (lines.length === 0) return;
-    if (this.lines.length > 0 && this.lines[this.lines.length - 1] !== "") {
-      this.lines.push("");
+
+    if (this.lines.length > 0) {
+      let blanks = 0;
+      while (blanks < this.lines.length && this.lines[this.lines.length - 1 - blanks] === "") blanks++;
+      for (let index = blanks; index < gap; index++) this.lines.push("");
     }
+
     this.lines.push(...lines);
   }
 
@@ -456,34 +464,41 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
    */
   const casingVariants = new Set<string>();
 
-  for (const { entry, index } of chronological) {
-    const lines: Array<string> = [];
+  for (const [ordinal, { entry, index }] of chronological.entries()) {
+    /**
+     * The entry as labelled blocks, joined below by one blank line each. A block whose
+     * content is absent is never pushed, so its label never appears over nothing -- 16 of
+     * the 35 entries carry no skills and get no "Technologies:" line at all.
+     */
+    const blocks: Array<Array<string>> = [];
 
     const position = clean(entry.position);
     if (position === "") warnings.add(`work[${index}] has no position`);
-    lines.push(...wrap(position));
 
     const start = typeof entry.startDate === "string" ? formatMonth(entry.startDate, `work[${index}].startDate`, warnings) : "";
     const end = isOpenEnded(entry.endDate) ? "Present" : formatMonth(String(entry.endDate), `work[${index}].endDate`, warnings);
     const company = clean(entry.company);
-    lines.push(...wrap(`${company} | ${start} - ${end}`));
-
-    const summary = clean(entry.summary);
-    if (summary !== "") lines.push(...wrap(summary));
 
     /**
-     * `website` is absent on some entries and an empty string on others. Both mean the
-     * same thing to a reader, so both are treated the same and neither is reported --
-     * an optional field is allowed to be optional.
+     * The unlabelled head of the entry: who and when, then where to read more. `website`
+     * is absent on some entries and an empty string on others; both mean the same thing to
+     * a reader, so both are treated the same and neither is reported -- an optional field
+     * is allowed to be optional.
      */
+    const head = [...wrap(position), ...wrap(`${company} | ${start} - ${end}`)];
     const website = clean(entry.website);
-    if (website !== "") lines.push(website);
+    if (website !== "") head.push(website);
+    blocks.push(head);
+
+    const summary = clean(entry.summary);
+    if (summary !== "") blocks.push(["Description:", ...wrap(summary)]);
 
     const highlights: Array<string> = Array.isArray(entry.highlights) ? entry.highlights : [];
-    for (const highlight of highlights) {
+    const bullets = highlights.flatMap((highlight) => {
       const text = clean(highlight);
-      if (text !== "") lines.push(...bullet(text));
-    }
+      return text === "" ? [] : bullet(text);
+    });
+    if (bullets.length > 0) blocks.push(["Highlights:", ...bullets]);
 
     /**
      * The entry's own skills, rendered exactly as the entry writes them rather than as the
@@ -495,7 +510,7 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
      * `skills[]` is consulted only for a `priority` to order by. A reference resolving to
      * nothing still prints; it sorts last and is reported.
      *
-     * This line closes the entry rather than opening it, so the narrative -- what the job
+     * This block closes the entry rather than opening it, so the narrative -- what the job
      * was, then what came of it -- is not interrupted by a keyword list.
      */
     const references: Array<unknown> = Array.isArray(entry.skills) ? entry.skills : [];
@@ -527,10 +542,21 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
 
     if (technologies.length > 0) {
       technologies.sort((a, b) => a.priority - b.priority || a.text.localeCompare(b.text));
-      lines.push(...hangingIndent(`Technologies: ${technologies.map((technology) => technology.text).join(", ")}`));
+      blocks.push(["Technologies:", ...wrap(technologies.map((technology) => technology.text).join(", "))]);
     }
 
-    doc.block(lines);
+    const lines: Array<string> = [];
+    for (const block of blocks) {
+      if (lines.length > 0) lines.push("");
+      lines.push(...block);
+    }
+
+    /**
+     * Two blank lines between entries, so the gap between one job and the next is wider
+     * than the gaps between the labelled blocks inside them. The first entry takes one,
+     * which is what the section heading has already left behind it.
+     */
+    doc.block(lines, ordinal === 0 ? 1 : 2);
   }
 
   if (casingVariants.size > 0) {
