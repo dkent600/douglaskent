@@ -36,7 +36,7 @@ export const initializeMarkdown = () => {
 };
 
 /**
- * Html Sanitizer to prevent script injection.
+ * HTML Sanitizer to prevent script injection.
  */
 @valueConverter("sanitizeHTML")
 export class sanitizeHTMLValueConverter {

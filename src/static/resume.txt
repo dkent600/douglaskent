@@ -465,7 +465,7 @@ Highlights:
 Skills / Technologies:
 SPA, JavaScript, HTML, CSS, C#, MVC, WebAPI, Ajax, jQuery, bootstrap,
 RequireJs, KnockoutJs, Durandal, ASP.NET, i18Next, jQuery globalization, SQL
-Server, t-sql, entity framework
+Server, T-SQL, entity framework
 
 
 Sole Web Designer and Developer - Password Repository
@@ -484,8 +484,8 @@ Highlights:
   Durandal+KnockoutJs+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core.
 
 Skills / Technologies:
-SPA, JavaScript, HTML, CSS, Aurelia, webpack, C#, ASP.NET Core, MVC, WebAPI,
-Identity, Ajax, jQuery, bootstrap, RequireJs, KnockoutJs, SQL Server, t-sql,
+SPA, JavaScript, HTML, CSS, Aurelia, Webpack, C#, ASP.NET Core, MVC, WebAPI,
+Identity, Ajax, jQuery, Bootstrap, RequireJs, KnockoutJs, SQL Server, T-SQL,
 MsTest, XUnit.NET, crypto-js, DES, Encryption, SHA,
 System.Security.Cryptography, entity framework
 
@@ -558,7 +558,7 @@ Highlights:
 
 Skills / Technologies:
 JavaScript, HTML, CSS, C#, xml, MVC, jQuery, ASP.NET, XSLT, XSD, WCF, WWF, SQL
-Server, t-sql, LINQ, Agile, Moq, MSTest, NUnit, Entity Framework, Enterprise
+Server, T-SQL, LINQ, Agile, Moq, MSTest, NUnit, Entity Framework, Enterprise
 Framework, TFS
 
 
@@ -617,7 +617,7 @@ Highlights:
   documentation
 
 Skills / Technologies:
-JavaScript, Html, XML, Java, JSP, Swing, Flash SWF, Xerces, JRun
+JavaScript, HTML, XML, Java, JSP, Swing, Flash SWF, Xerces, JRun
 
 
 Software Engineer (carOrder.com)
@@ -642,7 +642,7 @@ Highlights:
   Java
 
 Skills / Technologies:
-JavaScript, Html, C++, Java, WCF, JDBC, JSP, CORBA, Xerces, SQL Server, T-Sql,
+JavaScript, HTML, C++, Java, WCF, JDBC, JSP, CORBA, Xerces, SQL Server, T-SQL,
 DES, Encryption
 
 
@@ -660,7 +660,7 @@ Highlights:
 - Took the initiative to save this part of the IBM contract for Trilogy
 
 Skills / Technologies:
-JavaScript, Html, XML, Java, XSL, JDBC, JSP, Swing, SQL, T-Sql, Perl, DB2
+JavaScript, HTML, XML, Java, XSL, JDBC, JSP, Swing, SQL, T-SQL, Perl, DB2
 
 
 Lead Software Engineer

@@ -98,6 +98,12 @@
         }
       }
     },
+    "areasOfExpertise": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "work": {
       "type": "array",
       "additionalItems": false,
