@@ -109,17 +109,32 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
   const basics = resume.basics ?? {};
   const location = basics.location ?? {};
 
-  const skills: Array<Skill> = Array.isArray(resume.skills) ? resume.skills : [];
   /**
-   * Sourced from `skills` only. Education deliberately feeds nothing here: a degree
-   * subject is a different claim from a skill, and the schooling is already carried by
-   * `alumniOf` and `hasCredential`.
+   * `knowsAbout` is defined as the subject areas a person knows about, and that is what
+   * `areasOfExpertise` holds. The skill list never fit: "LLM Pipeline Architecture" is a
+   * subject, "Claude Code for VS Code" is a product, and a property meant for the former
+   * was being filled with the latter. The skills now appear under `hasOccupation.skills`,
+   * which is the property that actually means them -- so the block carries both the
+   * subject-level claim and the concrete keyword surface, and nothing is lost.
    *
-   * Selection is by `priority` alone. `hide` is deliberately not consulted: it governs
-   * only the Skills section's category pills, and the work entries list those skills
-   * regardless, so it is not a signal about the page as a whole.
+   * Emitted in source order, unsorted and uncapped: the ordering of `areasOfExpertise` is
+   * deliberate positioning rather than an artefact, so re-sorting it would discard the
+   * one thing the list encodes.
+   *
+   * There is deliberately no fallback to `skills` when the field is missing. `compact`
+   * then drops `knowsAbout` entirely, which is loud; quietly substituting the old source
+   * would disguise the field having gone away.
    */
-  const knowsAbout = [...skills]
+  const areas: Array<unknown> = Array.isArray(resume.areasOfExpertise) ? resume.areasOfExpertise : [];
+  const knowsAbout = areas.filter((area): area is string => typeof area === "string" && area.trim() !== "");
+
+  /**
+   * The skill names, selected by `priority` alone. `hide` is deliberately not consulted:
+   * it governs only the Skills section's category pills, and the work entries list those
+   * skills regardless, so it is not a signal about the page as a whole.
+   */
+  const skills: Array<Skill> = Array.isArray(resume.skills) ? resume.skills : [];
+  const topSkills = [...skills]
     .filter((skill) => typeof skill.name === "string" && skill.name.trim() !== "")
     .sort((a, b) => priorityOf(a) - priorityOf(b))
     .slice(0, SKILL_LIMIT)
@@ -207,11 +222,12 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
   const jobTitle = typeof basics.label === "string" ? basics.label : undefined;
 
   const hasOccupation = jobTitle
-    ? {
+    ? compact({
         "@type": "Occupation",
         name: jobTitle,
         occupationalCategory: OCCUPATION_CODE,
-      }
+        skills: topSkills,
+      })
     : undefined;
 
   return compact({
