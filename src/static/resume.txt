@@ -21,6 +21,24 @@ My recent work is in LLM system architecture and development - building
 reliable systems on top of subjective inputs and non-deterministic models.
 
 
+AREAS OF EXPERTISE
+
+LLM Pipeline Architecture
+AI System Evaluation and Testing
+Human-in-the-Loop System Design
+AI-Assisted Software Development
+Blockchain and Web3 Architecture
+Smart Contract and dApp Development
+DAO Governance Systems
+DeFi and ReFi
+Distributed and Offshore Team Leadership
+Enterprise-Scale Web Applications
+Service-Oriented Architecture
+Full-Stack Web Application Development
+Software Architecture
+Technical Leadership
+
+
 SELECTED ACCOMPLISHMENTS
 
 - Working with subjective human voices and non-deterministic AI

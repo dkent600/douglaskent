@@ -385,6 +385,34 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
   }
 
   /**
+   * Rendered in array order and never sorted. The order in `resume.json` is deliberate
+   * positioning -- what the resume leads with -- and re-sorting would throw away the only
+   * thing the array says beyond its contents.
+   *
+   * One entry per line, single column. The page sets these in two columns and this format
+   * deliberately does not: column alignment in plain text depends on the reader's font and
+   * collapses under any reflow, and an ATS parser reading two entries on one line is
+   * liable to take them for a single token.
+   *
+   * Each entry still goes through `wrap`, so an entry longer than the column budget breaks
+   * the way every other line does rather than being a special case. The longest today is
+   * 40 characters, so none of them wrap.
+   *
+   * The section is omitted entirely -- heading included -- when there is nothing to put in
+   * it, so a missing or empty array cannot leave a heading standing over nothing.
+   */
+  const expertise: Array<unknown> = Array.isArray(resume.areasOfExpertise) ? resume.areasOfExpertise : [];
+  const areas = expertise.flatMap((area) => {
+    const text = clean(area);
+    return text === "" ? [] : wrap(text);
+  });
+
+  if (areas.length > 0) {
+    doc.section("Areas of Expertise");
+    doc.block(areas);
+  }
+
+  /**
    * Every accomplishment, not the short list. `showOnShort` selects what the page's
    * condensed view shows and has no bearing on a full-text resume.
    */
