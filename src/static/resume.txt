@@ -113,7 +113,7 @@ https://www.linkedin.com/in/ghalem-ben-nouna-2356011/
 "I know Doug Kent both personally and professionally. I have had the great
 pleasure of working with him on several projects at multiple companies. These
 include industry changing applications like ShiftWise (healthcare staffing
-vendor management systems) and at large companies like GE . He is a highly
+vendor management systems) and at large companies like GE. He is a highly
 reliable and methodical .NET web developer, and the best OO developer I've
 worked with. Doug works well solo and on teams and is an excellent
 communicator in both settings. On that point, he is an open and honest person
