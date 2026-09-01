@@ -287,12 +287,15 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
 
     for (const [ordinal, entry] of section.entries.entries()) {
       /**
-       * Two blank lines between work entries, so the gap between one job and the next is
-       * wider than the gaps between the labelled blocks inside them. The first entry takes
-       * one, which is what the section heading has already left behind it. Everywhere else
-       * an entry is a couple of lines and one blank is enough.
+       * Two blank lines between work entries and between testimonials, so the gap between
+       * one of them and the next is wider than the gaps inside them -- between a job's
+       * labelled blocks, or between a quotation and the attribution under it. Without that
+       * contrast a testimonial's attribution reads as the opening of the next quotation. The
+       * first entry takes one, which is what the section heading has already left behind it.
+       * Everywhere else an entry is a couple of lines and one blank is enough.
        */
-      doc.block(renderEntry(entry), section.id === "experience" && ordinal > 0 ? 2 : 1);
+      const spaced = section.id === "experience" || section.id === "testimonials";
+      doc.block(renderEntry(entry), spaced && ordinal > 0 ? 2 : 1);
     }
   }
 

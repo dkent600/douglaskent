@@ -226,6 +226,8 @@ export type SectionId =
   | "accomplishments"
   | "skills"
   | "experience"
+  | "testimonials"
+  | "approach"
   | "location"
   | "education"
   | "publications";
@@ -563,6 +565,70 @@ export function buildResumeContent(
       `${casingVariants.size} skill reference(s) in work[] match skills[] only when case is ignored: ${[...casingVariants].join(", ")}`,
     );
   }
+
+  /**
+   * Endorsements, placed after the work history so the reader meets the evidence before the
+   * testimony to it.
+   *
+   * Headed TESTIMONIALS rather than REFERENCES. "References" promises contact details to be
+   * supplied on request, which is not what these are: they are statements already given, in
+   * full, by named people who can be found at the URL under each one.
+   *
+   * Each is quoted text followed by one attribution line. The quotation marks are added here
+   * rather than by each transformer because marking words as someone else's is a fact about
+   * the content that both documents have to state, not a typographic choice either of them
+   * gets to make differently.
+   *
+   * The company is bracketed rather than joined with a comma. `references[1]` gives a title
+   * ending "at Ivanhoé Cambridge" alongside a company of "PSP Investments" -- two different
+   * firms, the second being where the work with Doug happened -- and a plain comma list
+   * would read as a mistake rather than as two true things.
+   */
+  const references: Array<Record<string, any>> = Array.isArray(resume.references) ? resume.references : [];
+  const testimonials: Array<Entry> = [];
+
+  for (const [index, reference] of references.entries()) {
+    const quote = clean(reference.reference);
+    if (quote === "") {
+      warnings.add(`references[${index}] has no reference text; omitted from TESTIMONIALS`);
+      continue;
+    }
+
+    const name = clean(reference.name);
+    if (name === "") warnings.add(`references[${index}] has no name; its testimonial is unattributed`);
+
+    const who = [name, clean(reference.title)].filter((part) => part !== "").join(", ");
+    const company = clean(reference.company);
+    const attribution = who === "" ? company : company === "" ? who : `${who} (${company})`;
+
+    const website = clean(reference.website);
+    testimonials.push({
+      blocks: [
+        { content: { kind: "paragraphs", paragraphs: [`"${quote}"`] } },
+        { content: { kind: "title", title: attribution, subtitles: website === "" ? [] : [website] } },
+      ],
+    });
+  }
+
+  sections.push({ id: "testimonials", heading: "Testimonials", entries: testimonials });
+
+  /**
+   * The `qualities` array, in the order it is written and never sorted -- the order is what
+   * Doug leads with, and re-sorting would discard the only thing the array says beyond its
+   * contents.
+   *
+   * Headed PROFESSIONAL APPROACH. The page calls this "Me? Really?", which works there
+   * because the site has established a tone by the time a reader reaches it; a document
+   * opened cold by a recruiter has established nothing, and the joke lands as a misfile.
+   */
+  const qualities: Array<unknown> = Array.isArray(resume.qualities) ? resume.qualities : [];
+  const approach = qualities.map((quality) => clean(quality)).filter((quality) => quality !== "");
+
+  sections.push({
+    id: "approach",
+    heading: "Professional Approach",
+    entries: [{ blocks: [{ content: { kind: "bullets", bullets: approach } }] }],
+  });
 
   /**
    * `summary4` is the travel paragraph, and it is deliberately not in `SUMMARY_KEYS`:

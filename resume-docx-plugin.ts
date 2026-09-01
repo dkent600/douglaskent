@@ -291,7 +291,18 @@ const supporting = (text: string, options: IParagraphOptions = {}): Paragraph =>
  * `keepNext` on a caption stops Word stranding "Highlights:" alone at the foot of a page
  * with its list on the next one.
  */
-function renderBlock(block: Block, section: Section, lastInEntry: boolean): Array<Paragraph> {
+interface Placement {
+  firstInEntry: boolean;
+  lastInEntry: boolean;
+  /**
+   * Whether the entry opens its section. An entry that does not needs separating from the
+   * one above it; the first takes what the section heading has already left.
+   */
+  opensSection: boolean;
+}
+
+function renderBlock(block: Block, section: Section, at: Placement): Array<Paragraph> {
+  const { lastInEntry } = at;
   const paragraphs: Array<Paragraph> = [];
 
   if (block.label !== undefined) {
@@ -366,8 +377,21 @@ function renderBlock(block: Block, section: Section, lastInEntry: boolean): Arra
       }
       break;
 
+    /**
+     * An entry that opens with flowing prose rather than with a heading -- a testimonial,
+     * whose quotation comes before the attribution -- has nothing carrying entry separation
+     * for it. A work entry opens with a `Heading2` and an education entry with a bold line,
+     * and both take their space from those; a bare paragraph takes none, which would leave
+     * one testimonial's closing URL hard against the next one's opening quotation mark and
+     * the gap inside an entry wider than the gap between two.
+     *
+     * Only from the second entry on. The first has the section heading above it.
+     */
     case "paragraphs":
-      for (const paragraph of content.paragraphs) paragraphs.push(body(paragraph));
+      for (const [index, paragraph] of content.paragraphs.entries()) {
+        const opensEntry = at.firstInEntry && index === 0 && !at.opensSection;
+        paragraphs.push(opensEntry ? body(paragraph, { spacing: { before: SPACE.beforeEntry, after: SPACE.afterBody } }) : body(paragraph));
+      }
       break;
 
     case "lines":
@@ -406,7 +430,7 @@ function renderBlock(block: Block, section: Section, lastInEntry: boolean): Arra
  * A sub-heading here is a skill category, and it takes Word's built-in `Heading2` -- it is a
  * genuine subdivision of the section above it, which is exactly what the style means.
  */
-function renderEntry(entry: Entry, section: Section): Array<Paragraph> {
+function renderEntry(entry: Entry, section: Section, opensSection: boolean): Array<Paragraph> {
   const paragraphs: Array<Paragraph> = [];
 
   if (entry.heading !== undefined) {
@@ -416,7 +440,13 @@ function renderEntry(entry: Entry, section: Section): Array<Paragraph> {
   }
 
   for (const [index, block] of entry.blocks.entries()) {
-    paragraphs.push(...renderBlock(block, section, index === entry.blocks.length - 1));
+    paragraphs.push(
+      ...renderBlock(block, section, {
+        firstInEntry: index === 0,
+        lastInEntry: index === entry.blocks.length - 1,
+        opensSection,
+      }),
+    );
   }
 
   return paragraphs;
@@ -447,7 +477,9 @@ export async function buildResumeDocx(
       );
     }
 
-    for (const entry of section.entries) children.push(...renderEntry(entry, section));
+    for (const [ordinal, entry] of section.entries.entries()) {
+      children.push(...renderEntry(entry, section, ordinal === 0));
+    }
   }
 
   const basics = resume.basics ?? {};
