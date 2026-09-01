@@ -13,7 +13,7 @@
     "summary2": "I have worn multiple hats in important roles across many kinds of organizations, from Microsoft to garage startups — enough to recognize most problems before they become expensive.",
     "summary3": "Please see my complete resume at: <a href='https://www.douglaskent.com' target='_blank' rel='noopener noreferrer'>https://www.douglaskent.com</a>.",
     "summary4": "Lived and worked for decades in both the U.S. and Canada, now based in Costa Rica. I have worked with distributed teams across Europe, Israel, India, and Australia, including leading offshore development teams in daily coordination.",
-    "summary5": "I've worked with the likes of Microsoft, garage startups such as ConnectSoft, to Curve Labs where I led the development of a Refi dApp front end designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
+    "summary5": "I've worked with the likes of Microsoft, garage startups such as ConnectSoft, to Curve Labs where I led the development of a ReFi dApp front end designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
     "summary6": "I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest and please read on!",
     "summary7": "My recent work is in LLM system architecture and development — building reliable systems on top of subjective inputs and non-deterministic models.",
     "location": {
@@ -69,7 +69,7 @@
       "showOnShort": true
     },
     {
-      "text": "With Curve Labs, I coded, delivered and led, in some cases single-handedly, the front-end development of multiple complex Web3 dApps leveraging Ethereum smart contracts in the domains of decentralized finance (DeFi) and regeneration (Refi).",
+      "text": "With Curve Labs, I coded, delivered and led, in some cases single-handedly, the front-end development of multiple complex Web3 dApps leveraging Ethereum smart contracts in the domains of decentralized finance (DeFi) and regeneration (ReFi).",
       "showOnShort": true
     },
     {
@@ -293,8 +293,7 @@
       ],
       "url": "https://www.anthropic.com/engineering/building-effective-agents",
       "aliases": [
-        "LLM Testing",
-        ""
+        "LLM Testing"
       ]
     },
     {
@@ -412,7 +411,7 @@
       "url": "https://ethereum.org/en/"
     },
     {
-      "name": "Refi",
+      "name": "ReFi",
       "priority": 0.28,
       "categories": [
         "Blockchain"
@@ -612,9 +611,7 @@
         "Website and Application Development",
         "Markup Languages"
       ],
-      "aliases": [
-        "HTML"
-      ]
+      "aliases": []
     },
     {
       "name": "Razor",
@@ -743,7 +740,7 @@
       "categories": [
         "Website and Application Development"
       ],
-      "url": "https://jQuery.com"
+      "url": "https://jquery.com"
     },
     {
       "name": "Ajax",
@@ -1688,7 +1685,7 @@
       "remote": true,
       "website": "https://www.curvelabs.eu/",
       "startDate": "2023-04",
-      "summary": "Invited back on contract. Developed an automated \"Oracle\" service maintaining states of <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> regenerative finance (Refi) smart contracts on the <a href=\"https://celo.org/\" target=\"_blank\">Celo</a> (EVM compatible) blockchain.",
+      "summary": "Invited back on contract. Developed an automated \"Oracle\" service maintaining states of <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> regenerative finance (ReFi) smart contracts on the <a href=\"https://celo.org/\" target=\"_blank\">Celo</a> (EVM compatible) blockchain.",
       "endDate": "2023-05",
       "highlights": [
         "Worked on the <a href=\"https://celo.org/\" target=\"_blank\">Celo blockchain</a> with the tokens kG, kCur and cUSD and a Balancer WeightedPool (kCur <> cUSD) ported to Celo by Symmetric",
@@ -1700,7 +1697,7 @@
       "skills": [
         "Ethereum",
         "Defender",
-        "Refi",
+        "ReFi",
         "DeFi",
         "TypeScript",
         "JavaScript",
@@ -1720,7 +1717,7 @@
       "website": "https://www.curvelabs.eu/",
       "showOnShort": true,
       "startDate": "2020-08",
-      "summary": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (DeFi) and regenerative finance (Refi). Among others, led the development team for a Refi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.  Here are couple of sites: Prime Deals and Prime Launch.",
+      "summary": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (DeFi) and regenerative finance (ReFi). Among others, led the development team for a ReFi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.  Here are couple of sites: Prime Deals and Prime Launch.",
       "endDate": "2022-11",
       "highlights": [
         "Lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\" target=\"_blank\">Prime Pools (no longer active)</a>, <a href=\"https://primelock.eth.link/\" target=\"_blank\">Prime Locking For Reputation</a> and the <a href=\"https://primedao.eth.link\" target=\"_blank\">original PrimeDAO Home Page (no longer active)</a>",
@@ -1742,7 +1739,7 @@
         "DAO Governance Systems",
         "Defender",
         "Web3",
-        "Refi",
+        "ReFi",
         "DeFi",
         "TypeScript",
         "JavaScript",

@@ -48,7 +48,7 @@ SELECTED ACCOMPLISHMENTS
 - With Curve Labs, I coded, delivered and led, in some cases single-handedly,
   the front-end development of multiple complex Web3 dApps leveraging Ethereum
   smart contracts in the domains of decentralized finance (DeFi) and
-  regeneration (Refi).
+  regeneration (ReFi).
 - With DAOstack, I helped design and develop some of the first-ever
   decentralized autonomous organization (DAO) Ethereum smart contracts, and
   helped develop a complex Web3 dApp to use them.
@@ -92,7 +92,7 @@ AI
 
 Blockchain
   Solidity, Ethereum, Web3, dApps, ethers.js, DAOs, DAO Governance Systems,
-  DeFi, Wallets, Refi, IPFS, Subgraph, Liquidity Bootstrapping Pools, web3.js,
+  DeFi, Wallets, ReFi, IPFS, Subgraph, Liquidity Bootstrapping Pools, web3.js,
   Celo, Arbitrum, Balancer Liquidity Pools, Gnosis Safe, OpenZeppelin
   Defender, Ceramic, 3Box, ENS, Mento, LitProtocol, Metamask, WalletConnect,
   Web3Modal
@@ -268,7 +268,7 @@ https://www.curvelabs.eu/
 Description:
 Invited back on contract. Developed an automated "Oracle" service maintaining
 states of Kolektivo (https://www.kolektivo.network/) regenerative finance
-(Refi) smart contracts on the Celo (https://celo.org/) (EVM compatible)
+(ReFi) smart contracts on the Celo (https://celo.org/) (EVM compatible)
 blockchain.
 
 Highlights:
@@ -287,7 +287,7 @@ Highlights:
 - Reported the prices of cUSD, kCur and kG price to smart contract Oracles
 
 Skills / Technologies:
-TypeScript, Solidity, Ethereum, ethers.js, DeFi, Refi, Celo, Balancer
+TypeScript, Solidity, Ethereum, ethers.js, DeFi, ReFi, Celo, Balancer
 Liquidity Pools, Defender, Mento, JavaScript, GitHub
 
 
@@ -298,7 +298,7 @@ https://www.curvelabs.eu/
 Description:
 Led teams of 2-5 in the development of the frontends of multiple dApps running
 against the Ethereum blockchain focused on decentralized (DeFi) and
-regenerative finance (Refi). Among others, led the development team for a Refi
+regenerative finance (ReFi). Among others, led the development team for a ReFi
 dApp designed to emerge a regenerative, decentralized economic system for the
 sovereign island nation of Curacao. Here are couple of sites: Prime Deals and
 Prime Launch.
@@ -331,7 +331,7 @@ Highlights:
 
 Skills / Technologies:
 TypeScript, Solidity, Ethereum, Web3, dApps, ethers.js, DAOs, DAO Governance
-Systems, DeFi, Wallets, Refi, SPA, IPFS, Subgraph, Liquidity Bootstrapping
+Systems, DeFi, Wallets, ReFi, SPA, IPFS, Subgraph, Liquidity Bootstrapping
 Pools, web3.js, Balancer Liquidity Pools, Gnosis Safe, Defender, Ceramic, ENS,
 LitProtocol, Metamask, WalletConnect, Web3Modal, JavaScript, Node.js, Vite,
 HTML, CSS, SASS, Responsive, ReactJs, Aurelia, Webpack, Rollup, i18Next,
