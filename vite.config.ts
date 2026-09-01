@@ -5,6 +5,7 @@ import * as rollupPluginutils from "rollup-pluginutils";
 import { defineConfig, type PluginOption } from "vite";
 
 import { resumeApi } from "./resume-api-plugin";
+import { resumeDocx } from "./resume-docx-plugin";
 import { resumeJsonLd } from "./resume-jsonld-plugin";
 import { resumeTxt } from "./resume-txt-plugin";
 /**
@@ -70,6 +71,7 @@ export default defineConfig(({ mode }) => ({
     resumeApi(),
     resumeJsonLd(),
     resumeTxt(),
+    resumeDocx(),
     visualizer({
       emitFile: true,
       gzipSize: true,

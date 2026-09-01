@@ -195,7 +195,18 @@ export interface Block {
   content: Content;
 }
 
+/**
+ * An entry, optionally naming itself.
+ *
+ * `heading` is a sub-heading over the entry -- the name of a skill category, which comes
+ * from the `skillCategories` taxonomy rather than from the entry's own fields. It is
+ * deliberately distinct from a `Block.label`, which is a caption on one run of content
+ * inside an entry ("Description:", "Highlights:"), and from a `title` content, which is a
+ * field of the entry itself (a job's position). A format with a heading hierarchy needs all
+ * three kept apart; one that has only line breaks can flatten them.
+ */
 export interface Entry {
+  heading?: string;
   blocks: Array<Block>;
 }
 
@@ -412,7 +423,8 @@ export function buildResumeContent(
       (a, b) => priorityOf(a) - priorityOf(b) || String(a.name).localeCompare(String(b.name)),
     );
     grouped.push({
-      blocks: [{ label: heading, content: { kind: "inline", text: sorted.map((skill) => clean(skill.name)).join(", ") } }],
+      heading,
+      blocks: [{ content: { kind: "inline", text: sorted.map((skill) => clean(skill.name)).join(", ") } }],
     });
   };
 

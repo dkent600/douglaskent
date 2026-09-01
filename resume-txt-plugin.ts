@@ -10,7 +10,6 @@ import {
   createWarnings,
   type Entry,
   plainText,
-  type SectionId,
   type Warnings,
 } from "./resume-content";
 
@@ -48,8 +47,8 @@ const WRAP_WIDTH = 78;
  * `resume.json` keeps its em-dashes and curly quotes because the page renders them
  * correctly; this map is how the plain-text format renders them, and it is deliberately not
  * shared -- the Word file is UTF-8 and keeps the typography as authored, because folding
- * "Renc" out of "Renç" misspells a name in a document a human reads. Only a pure-ASCII byte
- * stream has to make this trade.
+ * "Curacao" out of "Curaçao" misspells a place in a document a human reads. Only a
+ * pure-ASCII byte stream has to make this trade.
  *
  * The em-dash becomes a spaced hyphen rather than a bare one so that "Architect - Human
  * Lens" still reads as a break rather than as a hyphenated word; the surrounding whitespace
@@ -209,12 +208,13 @@ class Document {
  * A block as lines. The label, when there is one, takes a line of its own and the content
  * follows underneath.
  *
- * Only the skill categories indent their list under the label. That is what tells a reader
- * scanning the section that a run of comma-separated names belongs to the category above it
- * rather than being a new one; a work entry's `Skills / Technologies:` list has no such
- * ambiguity, because the label is on the line directly above and nothing follows it.
+ * `indent` is applied only to a joined list, and only under a sub-heading. It is what tells
+ * a reader scanning the skills section that a run of comma-separated names belongs to the
+ * category named above it rather than being a new category; a work entry's
+ * `Skills / Technologies:` list has no such ambiguity, because its caption is on the line
+ * directly above and nothing follows it.
  */
-function renderBlock(block: Block, section: SectionId): Array<string> {
+function renderBlock(block: Block, indent: string): Array<string> {
   const lines: Array<string> = [];
   if (block.label !== undefined) lines.push(block.label);
 
@@ -237,7 +237,7 @@ function renderBlock(block: Block, section: SectionId): Array<string> {
       for (const item of content.bullets) lines.push(...bullet(item));
       break;
     case "inline":
-      lines.push(...wrap(content.text, section === "skills" ? "  " : ""));
+      lines.push(...wrap(content.text, indent));
       break;
   }
 
@@ -245,16 +245,28 @@ function renderBlock(block: Block, section: SectionId): Array<string> {
 }
 
 /**
- * An entry as lines, its blocks separated by one blank line each.
+ * An entry as lines: its sub-heading, if it has one, then its blocks separated by one blank
+ * line each. Plain text has no heading hierarchy, so a sub-heading is simply a line of its
+ * own with the entry's content indented beneath it.
  */
-function renderEntry(entry: Entry, section: SectionId): Array<string> {
+function renderEntry(entry: Entry): Array<string> {
   const lines: Array<string> = [];
+  const indent = entry.heading === undefined ? "" : "  ";
+
+  /**
+   * The sub-heading sits directly on top of the content it names, with no blank line -- the
+   * indent below it is what separates them. Only the blocks are spaced apart, which is why
+   * this counts blocks rather than lines.
+   */
+  if (entry.heading !== undefined) lines.push(entry.heading);
+  let emitted = 0;
 
   for (const block of entry.blocks) {
-    const rendered = renderBlock(block, section);
+    const rendered = renderBlock(block, indent);
     if (rendered.length === 0) continue;
-    if (lines.length > 0) lines.push("");
+    if (emitted > 0) lines.push("");
     lines.push(...rendered);
+    emitted++;
   }
 
   return lines;
@@ -280,7 +292,7 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
        * one, which is what the section heading has already left behind it. Everywhere else
        * an entry is a couple of lines and one blank is enough.
        */
-      doc.block(renderEntry(entry, section.id), section.id === "experience" && ordinal > 0 ? 2 : 1);
+      doc.block(renderEntry(entry), section.id === "experience" && ordinal > 0 ? 2 : 1);
     }
   }
 
