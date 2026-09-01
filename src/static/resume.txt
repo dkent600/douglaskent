@@ -82,6 +82,72 @@ SELECTED ACCOMPLISHMENTS
   company.
 
 
+TESTIMONIALS
+
+"Doug is a brilliant front-end engineer who stands out for his exceptional
+professionalism, team-player attitude, and a strong sense of ownership. He
+goes out of his way to ensure that projects are delivered on time and to the
+highest possible standard. Doug is great at leading other developers and
+working across disciplines, he's an expert in prioritization and can dissect
+complex problems. His perfectionism and ability to set a great example for the
+team have been invaluable. I had the chance to work with Doug on multiple Web3
+projects throughout the years and I would always look forward to an
+opportunity to work with him."
+
+Renc Korzay, Web3 Product Manager (Curve Labs)
+https://www.linkedin.com/in/renckorzay/
+
+
+"It's rare that you come across standout talent like Doug. I hired Doug as an
+application developer in my analytics team at PSP. He was able to complete the
+development of complex data products with complex custom visualizations on
+time. I was particularly impressed by Doug's ability to precisely understand
+business requirements effortlessly due to his extensive experience as well as
+being an amazing team player."
+
+Ghalem Ben Nouna, Senior Director of Data Management and Business Intelligence
+at Ivanhoe Cambridge (PSP Investments)
+https://www.linkedin.com/in/ghalem-ben-nouna-2356011/
+
+
+"I know Doug Kent both personally and professionally. I have had the great
+pleasure of working with him on several projects at multiple companies. These
+include industry changing applications like Shiftwise (healthcare staffing
+vendor management systems) and at large companies like GE . He is a highly
+reliable and methodical .NET web developer, and the best OO developer I've
+worked with. Doug works well solo and on teams and is an excellent
+communicator in both settings. On that point, he is an open and honest person
+and one who is not afraid to speak up (appropriately) when necessary. He is my
+go to .NET developer for these reasons, and also because he takes full
+ownership of his work; including peripheral dependencies, and will self manage
+through to completion."
+
+Ross Barbieri, Serial Entrepreneur, CTO and Software Development Manager
+(Shiftwise)
+https://www.linkedin.com/in/rosshere/
+
+
+WHAT YOU CAN EXPECT FROM ME
+
+- I have the maturity and experience to design, develop, coordinate, and lead
+  a team from product conception to release.
+- I can put AI to work on real implementation while supplying what it lacks -
+  the judgment, earned over decades, to recognize when a plausible-looking
+  design is wrong.
+- I have the broad full-stack knowledge and self-starting mentality to
+  single-handedly architect, design, implement, document, test and deploy an
+  entire application.
+- I have worked with some of the best programmers and managers at some of the
+  greatest software companies in the world.
+- I am a great team player, leader and communicator, fully embracing team
+  diversity and cohesiveness.
+- I am creative and love solving challenging problems.
+- I enjoy mentoring anyone who seeks it.
+- I am reliable and honest: I speak truth to clients and colleagues.
+- I try to view situations from your point of view to anticipate your needs
+  and assist you in building your antifragility.
+
+
 SKILLS AND TECHNOLOGIES
 
 AI
@@ -816,72 +882,6 @@ Pacific Environmental Services, Inc | 01/1980 - 09/1982
 Description:
 Conducted regulatory technical analyses, managed preparation of technical
 business proposals, managed a waste brokerage program
-
-
-TESTIMONIALS
-
-"Doug is a brilliant front-end engineer who stands out for his exceptional
-professionalism, team-player attitude, and a strong sense of ownership. He
-goes out of his way to ensure that projects are delivered on time and to the
-highest possible standard. Doug is great at leading other developers and
-working across disciplines, he's an expert in prioritization and can dissect
-complex problems. His perfectionism and ability to set a great example for the
-team have been invaluable. I had the chance to work with Doug on multiple Web3
-projects throughout the years and I would always look forward to an
-opportunity to work with him."
-
-Renc Korzay, Web3 Product Manager (Curve Labs)
-https://www.linkedin.com/in/renckorzay/
-
-
-"It's rare that you come across standout talent like Doug. I hired Doug as an
-application developer in my analytics team at PSP. He was able to complete the
-development of complex data products with complex custom visualizations on
-time. I was particularly impressed by Doug's ability to precisely understand
-business requirements effortlessly due to his extensive experience as well as
-being an amazing team player."
-
-Ghalem Ben Nouna, Senior Director of Data Management and Business Intelligence
-at Ivanhoe Cambridge (PSP Investments)
-https://www.linkedin.com/in/ghalem-ben-nouna-2356011/
-
-
-"I know Doug Kent both personally and professionally. I have had the great
-pleasure of working with him on several projects at multiple companies. These
-include industry changing applications like Shiftwise (healthcare staffing
-vendor management systems) and at large companies like GE . He is a highly
-reliable and methodical .NET web developer, and the best OO developer I've
-worked with. Doug works well solo and on teams and is an excellent
-communicator in both settings. On that point, he is an open and honest person
-and one who is not afraid to speak up (appropriately) when necessary. He is my
-go to .NET developer for these reasons, and also because he takes full
-ownership of his work; including peripheral dependencies, and will self manage
-through to completion."
-
-Ross Barbieri, Serial Entrepreneur, CTO and Software Development Manager
-(Shiftwise)
-https://www.linkedin.com/in/rosshere/
-
-
-WHAT YOU CAN EXPECT FROM ME
-
-- I have the maturity and experience to design, develop, coordinate, and lead
-  a team from product conception to release.
-- I can put AI to work on real implementation while supplying what it lacks -
-  the judgment, earned over decades, to recognize when a plausible-looking
-  design is wrong.
-- I have the broad full-stack knowledge and self-starting mentality to
-  single-handedly architect, design, implement, document, test and deploy an
-  entire application.
-- I have worked with some of the best programmers and managers at some of the
-  greatest software companies in the world.
-- I am a great team player, leader and communicator, fully embracing team
-  diversity and cohesiveness.
-- I am creative and love solving challenging problems.
-- I enjoy mentoring anyone who seeks it.
-- I am reliable and honest: I speak truth to clients and colleagues.
-- I try to view situations from your point of view to anticipate your needs
-  and assist you in building your antifragility.
 
 
 LOCATION, LANGUAGES & CITIZENSHIP
