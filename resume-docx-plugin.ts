@@ -2,7 +2,7 @@ import { readFile, stat, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import {
-  AlignmentType,
+  BorderStyle,
   Document,
   ExternalHyperlink,
   HeadingLevel,
@@ -68,8 +68,19 @@ const OUTPUT_PATH = "src/static/resume.docx";
  */
 const FONT = "Calibri";
 const BODY_SIZE = 22;
-const HEADING_SIZE = 24;
-const NAME_SIZE = 32;
+
+/**
+ * Heading sizes, chosen so that scanning a page tells you what you are looking at.
+ *
+ * A `Heading2` set at body size is a heading only to a parser: on the page it is
+ * indistinguishable from a bold "Highlights:" label, which is the one thing an entry heading
+ * has to be told apart from. Each level therefore steps up, and the field labels stay at
+ * body size so the gap between "the heading of an entry" and "a label inside one" is
+ * visible rather than notional.
+ */
+const HEADING1_SIZE = 28;
+const HEADING2_SIZE = 26;
+const NAME_SIZE = 36;
 
 /**
  * Three quarters of an inch on all four sides. Inside the range every printer can manage,
@@ -88,10 +99,25 @@ const SPACE = {
   afterBody: 100,
   afterTight: 0,
   afterBullet: 60,
-  beforeSection: 320,
+  /**
+   * The heading levels' spacing lives only in the styles that use it -- no paragraph repeats
+   * these values, so changing one here changes the document.
+   */
+  beforeSection: 360,
   afterSection: 140,
-  beforeCategory: 180,
-  afterCategory: 60,
+  beforeHeading2: 280,
+  /**
+   * Nothing under a `Heading2`. A job's position line and the company and dates beneath it
+   * are one identifying unit, and a gap between them reads the second line as body text that
+   * happens to follow rather than as the rest of the header. The same holds for a skill
+   * category and the list it names. The space above is what separates one entry from the
+   * last; the space below would only separate a heading from its own content.
+   */
+  afterHeading2: 0,
+  /**
+   * Education and publication entries open with a bold run rather than a heading, so their
+   * separation is the paragraph's own business and has no style to inherit it from.
+   */
   beforeEntry: 260,
   beforeLabel: 140,
   afterLabel: 40,
@@ -310,21 +336,13 @@ function renderBlock(block: Block, section: Section, lastInEntry: boolean): Arra
      */
     case "title":
       if (section.id === "contact") {
-        paragraphs.push(
-          new Paragraph({
-            heading: HeadingLevel.TITLE,
-            alignment: AlignmentType.LEFT,
-            spacing: { after: SPACE.afterTight },
-            children: [new TextRun({ text: content.title, bold: true, size: NAME_SIZE })],
-          }),
-        );
+        paragraphs.push(new Paragraph({ heading: HeadingLevel.TITLE, children: [new TextRun(content.title)] }));
       } else if (section.id === "experience") {
         paragraphs.push(
           new Paragraph({
             heading: HeadingLevel.HEADING_2,
             keepNext: true,
             keepLines: true,
-            spacing: { before: SPACE.beforeEntry, after: SPACE.afterTight },
             children: [new TextRun(content.title)],
           }),
         );
@@ -393,12 +411,7 @@ function renderEntry(entry: Entry, section: Section): Array<Paragraph> {
 
   if (entry.heading !== undefined) {
     paragraphs.push(
-      new Paragraph({
-        heading: HeadingLevel.HEADING_2,
-        keepNext: true,
-        spacing: { before: SPACE.beforeCategory, after: SPACE.afterCategory },
-        children: [new TextRun(entry.heading)],
-      }),
+      new Paragraph({ heading: HeadingLevel.HEADING_2, keepNext: true, children: [new TextRun(entry.heading)] }),
     );
   }
 
@@ -429,7 +442,6 @@ export async function buildResumeDocx(
         new Paragraph({
           heading: HeadingLevel.HEADING_1,
           keepNext: true,
-          spacing: { before: SPACE.beforeSection, after: SPACE.afterSection },
           children: [new TextRun(section.heading.toUpperCase())],
         }),
       );
@@ -473,12 +485,22 @@ export async function buildResumeDocx(
          * feature that makes a 17-page document navigable, and saying it costs a line.
          */
         heading1: {
-          run: { font: FONT, size: HEADING_SIZE, bold: true, color: "000000" },
-          paragraph: { outlineLevel: 0, spacing: { before: SPACE.beforeSection, after: SPACE.afterSection } },
+          run: { font: FONT, size: HEADING1_SIZE, bold: true, color: "000000" },
+          paragraph: {
+            outlineLevel: 0,
+            spacing: { before: SPACE.beforeSection, after: SPACE.afterSection },
+            /**
+             * A rule under each section heading. It is a paragraph border, not a table and
+             * not a drawing -- it adds a line to the page and nothing to the text, so it
+             * costs a parser nothing while giving a reader scanning 16 pages an obvious
+             * marker for where one section ends and the next begins.
+             */
+            border: { bottom: { style: BorderStyle.SINGLE, size: 6, space: 4, color: "000000" } },
+          },
         },
         heading2: {
-          run: { font: FONT, size: BODY_SIZE, bold: true, color: "000000" },
-          paragraph: { outlineLevel: 1, spacing: { before: SPACE.beforeCategory, after: SPACE.afterCategory } },
+          run: { font: FONT, size: HEADING2_SIZE, bold: true, color: "000000" },
+          paragraph: { outlineLevel: 1, spacing: { before: SPACE.beforeHeading2, after: SPACE.afterHeading2 } },
         },
         /**
          * Defined rather than left to Word's default so the one font holds here too. Blue
