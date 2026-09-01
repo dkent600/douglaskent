@@ -617,16 +617,23 @@ export function buildResumeContent(
    * Doug leads with, and re-sorting would discard the only thing the array says beyond its
    * contents.
    *
-   * Headed PROFESSIONAL APPROACH. The page calls this "Me? Really?", which works there
-   * because the site has established a tone by the time a reader reaches it; a document
-   * opened cold by a recruiter has established nothing, and the joke lands as a misfile.
+   * Headed WHAT YOU CAN EXPECT FROM ME, which frames nine first-person statements as
+   * commitments rather than as self-assessment. The page calls this "Me? Really?", which
+   * works there because the site has established a tone by the time a reader reaches it; a
+   * document opened cold by a recruiter has established nothing, and the joke lands as a
+   * misfile.
+   *
+   * A heading shaped like a sentence costs nothing in either format. The Word file is parsed
+   * by its `Heading1` style and outline level, not by the wording, and in the text file an
+   * upper-cased line standing between blank lines is a positional signal whatever its
+   * length.
    */
   const qualities: Array<unknown> = Array.isArray(resume.qualities) ? resume.qualities : [];
   const approach = qualities.map((quality) => clean(quality)).filter((quality) => quality !== "");
 
   sections.push({
     id: "approach",
-    heading: "Professional Approach",
+    heading: "What You Can Expect From Me",
     entries: [{ blocks: [{ content: { kind: "bullets", bullets: approach } }] }],
   });
 
