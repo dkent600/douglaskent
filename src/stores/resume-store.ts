@@ -22,6 +22,7 @@ export type IAccomplishment = IResume["accomplishments"][0];
 export type IQuality = IResume["qualities"][0];
 export type IPublication = IResume["publications"][0];
 export type ICategory = IResume["skillCategories"][0];
+export type IAreasOfExpertise = IResume["areasOfExpertise"][0];
 
 /**
  * The `basics` keys that carry the introduction's prose, in reading order.
@@ -66,6 +67,10 @@ export class ResumeStore {
 
   public get basics(): IBasics {
     return this.resumeJson.basics;
+  }
+
+    public get areasOfExpertise(): Array<IAreasOfExpertise> {
+    return this.resumeJson.areasOfExpertise;
   }
 
   public get languages(): Array<ILanguage> {
