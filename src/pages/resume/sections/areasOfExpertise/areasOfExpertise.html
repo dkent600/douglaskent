@@ -1,0 +1,10 @@
+<section class="section">
+  <h3>Areas of Expertise</h3>
+  <!--
+    The order of `areasOfExpertise` in resume.json is deliberate, so `repeat.for` renders it
+    as-is and the grid's default row flow lays it out left to right across each row.
+  -->
+  <div class="content areas-of-expertise">
+    <div repeat.for="area of areasOfExpertise" class="area-of-expertise">${area}</div>
+  </div>
+</section>

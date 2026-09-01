@@ -267,6 +267,30 @@ i.quality-bullet {
   color: $grey-900;
 }
 
+// Two columns on the grid's default row flow, so reading left to right across each row
+// follows resume.json's array order. `minmax(0, 1fr)` rather than plain `1fr` so a long
+// entry wraps inside its column instead of forcing the track wider than half the width.
+.areas-of-expertise {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 16px;
+  row-gap: 2px;
+  max-width: 42rem;
+}
+
+// One column when there is no room for two.
+@media screen and (max-width: 800px) {
+  .areas-of-expertise {
+    grid-template-columns: 1fr;
+  }
+}
+
+.area-of-expertise {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $grey-900;
+}
+
 .skills-header {
   cursor: pointer;
 

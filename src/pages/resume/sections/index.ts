@@ -1,3 +1,4 @@
+export * from "./areasOfExpertise/areasOfExpertise";
 export * from "./accomplishments/accomplishments";
 export * from "./contact/contact";
 export * from "./education/education";
@@ -10,5 +11,3 @@ export * from "./testimonials/testimonials";
 export * from "./skills/skills";
 export * from "./toc/toc";
 export * from "./travel/travel";
-// export * from "./accomplishments/accomplishments";
-// export * from "./citizenship/citizenship";
