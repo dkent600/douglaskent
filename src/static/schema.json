@@ -326,7 +326,7 @@
           },
           "priority": {
             "type": "number",
-            "description": "e.g. Web Development"
+            "description": "controls display/sort order"
           },
           "level": {
             "type": "string",
