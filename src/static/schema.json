@@ -109,38 +109,33 @@
       "additionalItems": false,
       "items": {
         "type": "object",
-        "additionalProperties": true,
+        "additionalProperties": false,
         "properties": {
-          "name": {
+          "company": {
             "type": "string",
             "description": "e.g. Facebook"
           },
           "location": {
             "type": "string",
-            "description": "e.g. Menlo Park, CA"
-          },
-          "description": {
-            "type": "string",
-            "description": "e.g. Social Media Company"
+            "description": "e.g. Menlo Park, CA. Currently unused, reserved for future entries."
           },
           "position": {
             "type": "string",
             "description": "e.g. Software Engineer"
           },
-          "url": {
+          "website": {
             "type": "string",
-            "description": "e.g. https://facebook.example.com",
-            "format": "uri"
+            "description": "e.g. https://facebook.example.com. Deliberately not constrained to format uri: several entries store the empty string."
           },
           "startDate": {
             "type": "string",
-            "description": "resume.json uses the ISO 8601 date standard e.g. 2014-06-29",
-            "format": "date"
+            "description": "Month the role began, YYYY-MM. e.g. 2026-05",
+            "pattern": "^\\d{4}-\\d{2}$"
           },
           "endDate": {
             "type": "string",
-            "description": "e.g. 2012-06-29",
-            "format": "date"
+            "description": "Month the role ended, YYYY-MM, or the literal \"present\" for a current role.",
+            "pattern": "^(\\d{4}-\\d{2}|present)$"
           },
           "summary": {
             "type": "string",
@@ -158,6 +153,27 @@
           "showOnShort": {
             "type": "boolean",
             "description": "SHow be visible on the short resume page"
+          },
+          "skills": {
+            "type": "array",
+            "description": "Skill names exercised in this role",
+            "additionalItems": false,
+            "items": {
+              "type": "string",
+              "description": "e.g. TypeScript"
+            }
+          },
+          "personal": {
+            "type": "boolean",
+            "description": "Personal project rather than an engagement for an employer or client"
+          },
+          "contract": {
+            "type": "boolean",
+            "description": "Contract or consulting engagement rather than direct employment"
+          },
+          "remote": {
+            "type": "boolean",
+            "description": "Work was performed remotely"
           }
         }
       }
@@ -229,13 +245,13 @@
           },
           "startDate": {
             "type": "string",
-            "description": "e.g. 2014-06-29",
-            "format": "date"
+            "description": "Year study began, YYYY. e.g. 1977",
+            "pattern": "^\\d{4}$"
           },
           "endDate": {
             "type": "string",
-            "description": "e.g. 2012-06-29",
-            "format": "date"
+            "description": "Year study ended, YYYY. e.g. 1980",
+            "pattern": "^\\d{4}$"
           },
           "gpa": {
             "type": "string",
@@ -318,7 +334,7 @@
       "additionalItems": false,
       "items": {
         "type": "object",
-        "additionalProperties": true,
+        "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string",
@@ -330,7 +346,7 @@
           },
           "level": {
             "type": "string",
-            "description": "e.g. Master"
+            "description": "e.g. Master. Currently unused; retained as JSON Resume vocabulary."
           },
           "categories": {
             "type": "array",
@@ -340,6 +356,28 @@
               "type": "string",
               "description": "e.g. HTML"
             }
+          },
+          "aliases": {
+            "type": "array",
+            "description": "Alternate names matched when linking work entries to this skill",
+            "additionalItems": false,
+            "items": {
+              "type": "string",
+              "description": "e.g. JS"
+            }
+          },
+          "fullname": {
+            "type": "string",
+            "description": "Expanded name shown in place of the short name, e.g. Cascading Style Sheets"
+          },
+          "url": {
+            "type": "string",
+            "description": "Reference link for this skill, e.g. https://www.typescriptlang.org",
+            "format": "uri"
+          },
+          "hide": {
+            "type": "boolean",
+            "description": "Omit this skill from display"
           }
         }
       }
