@@ -13,6 +13,7 @@
     "start": "vite --open",
     "admin": "vite --open /admin",
     "build": "cross-env NODE_ENV=production vite build",
+    "predeploy": "powershell -NoProfile -ExecutionPolicy Bypass -File validate-web-config.ps1",
     "deploy": "ftp -i -s:ftpDeploy.txt",
     "preview": "vite preview --open",
     "clean": "npx -y rimraf node_modules package-lock.json && npm i",
