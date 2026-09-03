@@ -37,8 +37,18 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
+        /**
+         * jQuery, Popper and the shim that publishes them as globals share a chunk, and
+         * that chunk must not depend on `vendor`: `vendor` holds the jQuery plugins
+         * (bootstrap-material-design, arrive) that read those globals as they evaluate,
+         * and an imported chunk always runs before the body of the chunk importing it.
+         */
         manualChunks: (id) => {
-          if (id.includes("jquery")) {
+          if (
+            id.includes("node_modules/jquery") ||
+            id.includes("node_modules/popper.js") ||
+            id.includes("src/jquery-global")
+          ) {
             return "jquery";
           } else if (id.includes("@aurelia")) {
             return "aurelia";

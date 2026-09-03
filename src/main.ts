@@ -1,9 +1,7 @@
 import Aurelia, { ConsoleSink, LoggerConfiguration, LogLevel } from "aurelia";
 import { RouterConfiguration } from "@aurelia/router";
 
-import "arrive"; // do bmd does it's thing whenever views are attached
-import "node-waves";
-import "bootstrap-material-design";
+import "./vendor-globals";
 
 import { App } from "./pages/app/app";
 import { ResumeDependencies } from "./pages/resume/resume";
