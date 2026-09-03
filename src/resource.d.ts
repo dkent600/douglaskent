@@ -25,12 +25,16 @@ interface Window {
 
 /**
  * bootstrap-material-design is a jQuery plugin that ships no types of its own. It attaches
- * itself to the jQuery prototype when vendor-globals.ts imports it for its side effects, so declare
- * it onto jQuery rather than casting at the call site.
+ * itself to the jQuery prototype when vendor-globals.ts imports it for its side effects, so
+ * declare it onto jQuery rather than casting at the call site.
+ *
+ * The interface is `JQuery` -- @types/jquery's name for an *instance* (what `$(...)` returns),
+ * as against `JQueryStatic` for `$` itself. The type parameter list has to match its
+ * declaration exactly too, or this is a separate interface rather than a merge.
  */
-// eslint-disable-next-line @typescript-eslint/naming-convention -- the name has to match @types/jquery's interface exactly, or it will not merge
-interface jQuery<TElement = HTMLElement> {
-  bootstrapMaterialDesign(options?: Record<string, unknown>): jQuery<TElement>;
+// eslint-disable-next-line @typescript-eslint/naming-convention -- merging into @types/jquery's interface, so the name is not ours to choose
+interface JQuery<TElement = HTMLElement> {
+  bootstrapMaterialDesign(options?: Record<string, unknown>): JQuery<TElement>;
 }
 
 declare module "*.html" {
