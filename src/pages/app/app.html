@@ -1,5 +1,7 @@
 <template>
-  <!-- `default` rather than an "" route path: the router warns (AUR3176) on any empty
-       path, and names this attribute as the alternative. -->
-  <au-viewport default="resume"></au-viewport>
+  <!-- No `default`. It used to carry `default="resume"`, which renders the resume at the
+       site root but also rewrites the address to /resume, because a viewport default is
+       an instruction the router writes back into the URL. The resume route now lists ""
+       among its paths instead, so / matches directly and stays /. -->
+  <au-viewport></au-viewport>
 </template>

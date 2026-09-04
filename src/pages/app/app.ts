@@ -65,7 +65,25 @@ const notFoundTitle = "Douglas Kent - Page Not Found";
 @route({
   routes: [
     {
-      path: "resume",
+      /**
+       * The empty path is the site root, and it stays the site root: `/` renders the
+       * resume without the address changing. It used to be the `default` attribute on
+       * the `au-viewport` instead, which reaches the same component but rewrites the
+       * address to `/resume` on the way -- a default is an instruction the router
+       * serialises back into the URL, whereas a matched empty path serialises to
+       * nothing (`ViewportInstruction.toUrlComponent` uses the path that was actually
+       * recognised).
+       *
+       * `resume` is first in the array so that it, not `""`, becomes the route's `id`
+       * -- the id defaults to `path[0]`, and `load="route: resume"` in
+       * `not-found.html` addresses the route by that id. Order has no bearing on which
+       * URL the router publishes; that follows whichever path matched.
+       *
+       * The router logs AUR3176 for any empty path, advising `default` instead. It is
+       * dev-only noise -- the warning does not exist in the production router build --
+       * and the advice is exactly the behaviour being avoided here.
+       */
+      path: ["resume", ""],
       component: Resume,
       title: resumeTitle,
     },
