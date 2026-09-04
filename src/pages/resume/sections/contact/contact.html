@@ -33,6 +33,23 @@
     <div resume-type="complete"><a load="../resume/short">Short Resume</a></div>
     <div resume-type="short"><a load="../resume">Complete Resume</a></div>
   </div>
+  <!--
+    A copy of the resume someone can forward or upload, for a human reader. It is not a
+    discoverability measure: this is an Aurelia template, so the link does not exist until the
+    app boots and no crawler that declines to run JavaScript will ever see it. What actually
+    signposts the machine-readable artifacts is sitemap.xml and the rel="alternate" link,
+    both emitted into the served HTML by resume-head-plugin.ts.
+
+    Only the .docx is linked. resume.txt and resume.json are for machines, and the two
+    mechanisms above already cover them.
+
+    No resume-type, deliberately: the offer stands on the short resume and the complete one
+    alike. Hidden in print, because a link on a sheet of paper is not one anybody can follow:
+    hidden-print, which base.css defines and resume.html and toc.html already use, rather than
+    Bootstrap's d-print-none on the block above. Both classes are real and both work; this one
+    is the app's own, and it hides descendants as well as the element.
+  -->
+  <div class="hidden-print"><a href="/resume.docx">Word version</a></div>
 </template>
 
 <section class="section section-lg-none" if.bind="inline">

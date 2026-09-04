@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import type { Plugin } from "vite";
@@ -18,10 +18,24 @@ import { stripHtml } from "./resume-text";
  * served.
  *
  * `resume.json` is the only source of truth, and the tags are regenerated on every build.
- * Unlike the JSON-LD plugin there is no `writeBundle` hook, because there is no standalone
- * file to emit -- head tags only mean anything inside the document.
+ *
+ * The plugin also emits `dist/sitemap.xml` from `writeBundle`. That is not a head tag, but it
+ * belongs here rather than in `public/`: the sitemap's first entry is the canonical URL, which
+ * is already the constant `CANONICAL_PATH` below, and a hand-written sitemap would put that
+ * address in two places. There is an open question about whether the canonical should move
+ * from `/resume/expanded` to the bare domain; generating the sitemap means it follows that
+ * decision automatically instead of silently disagreeing with the head after it is made.
  */
 const RESUME_PATH = "src/static/resume.json";
+
+/**
+ * Where the generated sitemap lands. `dist` rather than `src/static` because, unlike the
+ * standalone JSON-LD file, nothing but the deploy reads it, and `dist` is where the FTP
+ * script's `lcd dist` already points. `ftpDeploy.txt` names every file individually, so a
+ * line for `sitemap.xml` is what makes this reach the server -- without it the file builds
+ * correctly and never goes live.
+ */
+const SITEMAP_PATH = "dist/sitemap.xml";
 
 /**
  * The site origin, defined once. It appears in both the canonical link and `og:url`, and
@@ -37,6 +51,20 @@ const SITE_ORIGIN = "https://www.douglaskent.com";
  * used to hardcode; that link has been removed in favour of this plugin owning it.
  */
 const CANONICAL_PATH = "/resume/expanded";
+
+/**
+ * The canonical address itself, at module scope so the head tags and `sitemap.xml` are
+ * literally the same string rather than two constructions of it. The sitemap's `<loc>` and
+ * the `href` on `<link rel="canonical">` have to agree byte for byte -- a sitemap that
+ * submits an address the page does not claim as canonical is the same mixed signal the
+ * canonical link exists to remove.
+ */
+const canonical = `${SITE_ORIGIN}${CANONICAL_PATH}`;
+
+/**
+ * The plain-text resume, listed in the sitemap and linked as `rel="alternate"`.
+ */
+const PLAIN_TEXT_PATH = "/resume.txt";
 
 /**
  * Search engines truncate a description around this length. The cap only ever applies to
@@ -119,8 +147,6 @@ export function resumeHead(): Plugin {
         this.warn(`basics.metaDescription is missing or empty; falling back to a truncation of basics.summary1`);
       }
 
-      const canonical = `${SITE_ORIGIN}${CANONICAL_PATH}`;
-
       /**
        * No `og:image`. `basics.picture` is empty, so there is nothing to point at, and an
        * `og:image` naming a file that does not exist is worse than none: an unfurler that
@@ -132,13 +158,81 @@ export function resumeHead(): Plugin {
       return [
         { tag: "title", children: escapeText(title), injectTo: "head" as const },
         { tag: "meta", attrs: { name: "description", content: description }, injectTo: "head" as const },
+        /**
+         * LinkedIn's Post Inspector reports "No author found" without this. The rendered
+         * card does not display an author either way, so the tag is for other consumers
+         * rather than for LinkedIn itself.
+         *
+         * Deliberately no `article:published_time` or `article:modified_time` alongside it.
+         * A resume has no publication date, and the `article:*` namespace contradicts the
+         * `og:type` of `profile` below -- adding them would assert something false in order
+         * to satisfy a classifier that has already mistyped the page as an Article.
+         */
+        { tag: "meta", attrs: { name: "author", content: basics.name }, injectTo: "head" as const },
         { tag: "link", attrs: { rel: "canonical", href: canonical }, injectTo: "head" as const },
+        /**
+         * A hint, not a mechanism. No major crawler documents following `rel="alternate"`
+         * to a plain-text variant, and Google's documented uses of the relation are hreflang
+         * and media variants, neither of which this is. It costs one line and it is the
+         * conventional way to say "the same document, in this other format", so it is worth
+         * having -- but `sitemap.xml`, emitted below, is what actually gets `/resume.txt`
+         * fetched. Do not mistake this tag for the load-bearing part.
+         *
+         * There is deliberately no second and third alternate for `/resume.json` and
+         * `/resume-json-ld.json`. The JSON-LD is already inlined in this same head, so
+         * linking a second copy of it is redundant, and nothing looks for a JSON Resume
+         * document at a linked path.
+         */
+        {
+          tag: "link",
+          attrs: { rel: "alternate", type: "text/plain", href: PLAIN_TEXT_PATH, title: "Plain-text resume" },
+          injectTo: "head" as const,
+        },
         { tag: "meta", attrs: { property: "og:type", content: "profile" }, injectTo: "head" as const },
         { tag: "meta", attrs: { property: "og:title", content: title }, injectTo: "head" as const },
         { tag: "meta", attrs: { property: "og:description", content: description }, injectTo: "head" as const },
         { tag: "meta", attrs: { property: "og:url", content: canonical }, injectTo: "head" as const },
         { tag: "meta", attrs: { name: "twitter:card", content: "summary" }, injectTo: "head" as const },
       ];
+    },
+
+    /**
+     * Emits `sitemap.xml`. Build only, for the same reason `resume-jsonld-plugin.ts` writes
+     * its standalone file from `writeBundle`: the hook does not run under `vite dev`, so
+     * editing the resume in the admin UI does not rewrite a file on every keystroke.
+     *
+     * Two entries, and only two. `/resume` and `/resume/short` are deliberately absent: both
+     * declare `/resume/expanded` canonical, so listing them would submit addresses the pages
+     * themselves disclaim.
+     */
+    async writeBundle() {
+      const resume = JSON.parse(await readFile(resolve(process.cwd(), RESUME_PATH), "utf8"));
+
+      /**
+       * `lastUpdated` is a top-level field, not one under `basics`, and it is already an ISO
+       * date -- which is exactly what `lastmod` is defined to take. It is deliberately not a
+       * build timestamp: `lastmod` means when the content last changed, and stamping every
+       * build would tell a crawler the page changed each time the bundle was rebuilt, which
+       * is the fastest way to have the field ignored entirely. A missing field therefore
+       * omits `lastmod` rather than substituting `Date.now()`.
+       */
+      const lastUpdated = typeof resume.lastUpdated === "string" ? resume.lastUpdated.trim() : "";
+      if (lastUpdated === "") {
+        this.warn(`lastUpdated is missing or empty; sitemap.xml will carry no lastmod`);
+      }
+      const lastmod = lastUpdated === "" ? "" : `\n    <lastmod>${lastUpdated}</lastmod>`;
+
+      const urls = [canonical, `${SITE_ORIGIN}${PLAIN_TEXT_PATH}`]
+        .map((loc) => `  <url>\n    <loc>${loc}</loc>${lastmod}\n  </url>`)
+        .join("\n");
+
+      const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>
+`;
+
+      await writeFile(resolve(process.cwd(), SITEMAP_PATH), xml, "utf8");
     },
   };
 }
