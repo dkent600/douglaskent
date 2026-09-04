@@ -1,5 +1,6 @@
 {
   "$schema": "./schema.json",
+  "lastUpdated": "2026-09-04",
   "basics": {
     "name": "Douglas Kent",
     "label": "Full-stack Software Engineer & Architect · LLM Systems, Blockchain",

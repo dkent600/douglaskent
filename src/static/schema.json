@@ -8,6 +8,11 @@
     "$schema": {
       "type": "string"
     },
+    "lastUpdated": {
+      "type": "string",
+      "description": "The date the resume was last revised, YYYY-MM-DD. Set deliberately, not by tooling. It dates the Word document's properties and fixes every timestamp inside the .docx package, so two builds of the same resume produce identical bytes. Do not remove it: resume-docx-plugin.ts fails the build without it rather than falling back to the file's mtime, which is not preserved by git.",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
     "basics": {
       "type": "object",
       "additionalProperties": true,

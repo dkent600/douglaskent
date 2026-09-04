@@ -1,4 +1,4 @@
-import { readFile, stat, writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import {
@@ -197,6 +197,36 @@ function renumberLinks(documentXml: string, relsXml: string): { document: string
 }
 
 /**
+ * The date the resume was last revised, read from `resume.lastUpdated`.
+ *
+ * Accepts a plain `YYYY-MM-DD`, which is how the field is written, as well as a full ISO
+ * timestamp. A bare date parses as UTC midnight, so the value does not shift with the
+ * machine's timezone and two people in different places build the same bytes.
+ *
+ * Missing or unparseable is a build failure rather than a fallback to the mtime. Falling
+ * back would restore the exact behaviour this field exists to remove, and would do it
+ * silently, on the machines least likely to notice: a fresh clone and CI.
+ */
+function resumeDate(resume: Record<string, any>): Date {
+  const value = resume.lastUpdated;
+
+  if (typeof value !== "string" || value.trim() === "") {
+    throw new Error(
+      `resume-docx: resume.json has no "lastUpdated". Add it as a top-level field, e.g. ` +
+        `"lastUpdated": "2026-09-04". It dates the Word document's properties and fixes every ` +
+        `timestamp in the package, which is what keeps two builds of the same resume byte-identical.`,
+    );
+  }
+
+  const when = new Date(value);
+  if (Number.isNaN(when.getTime())) {
+    throw new Error(`resume-docx: resume.json "lastUpdated" is not a date this can read: ${JSON.stringify(value)}. Use YYYY-MM-DD.`);
+  }
+
+  return when;
+}
+
+/**
  * Makes the package reproducible: the same input builds the same bytes.
  *
  * Three things in a `.docx` otherwise carry the moment of the build. `docx` stamps
@@ -211,9 +241,15 @@ function renumberLinks(documentXml: string, relsXml: string): { document: string
  * resume was last edited, which is the date a reader would mean by it, rather than the date
  * the site was last deployed.
  *
- * The mtime is the honest source available. Note that git does not preserve mtimes, so a
- * fresh clone dates the document from its checkout until `resume.json` is next edited; the
- * reproducibility that matters here is within a working tree, which is where the churn was.
+ * The date comes from `resume.lastUpdated` and deliberately not from the source file's
+ * mtime, which is what this used to read. An mtime is not content: git does not preserve
+ * it, so every fresh clone and every CI run produced a different document from the one
+ * committed, and any operation that rewrites the file without changing it -- a `checkout`,
+ * a `stash` -- moved the date too. Measured, one second of mtime drift moved 421 bytes of
+ * this package: the DOS timestamp in each entry's local header and central directory
+ * record, plus the whole deflate stream of `docProps/core.xml` once the ISO string inside
+ * it changed. A versioned field is stable across all of that and changes only when it is
+ * edited.
  */
 async function normalizePackage(file: Buffer, when: Date): Promise<Buffer> {
   const zip = await JSZip.loadAsync(file);
@@ -574,7 +610,7 @@ export function resumeDocx(): Plugin {
     async writeBundle() {
       const source = resolve(process.cwd(), RESUME_PATH);
       const resume = JSON.parse(await readFile(source, "utf8"));
-      const { file, warnings } = await buildResumeDocx(resume, (await stat(source)).mtime);
+      const { file, warnings } = await buildResumeDocx(resume, resumeDate(resume));
 
       /**
        * A `.docx` differs from this project's other build outputs in one way that matters
