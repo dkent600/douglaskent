@@ -26,11 +26,20 @@ void Aurelia
     }),
   )
   .register(
+    /**
+     * No global `title` template. It used to sit here commented out as
+     * `"Douglas Kent${appTitleSeparator}${componentTitles}"`, above a note pointing at
+     * `App.canLoad` -- a method that does not exist and never has; the hook it meant is
+     * `Resume.canLoad`, which decides which `resume/*rest` values are valid and has
+     * nothing to do with titles.
+     *
+     * The option is moot now regardless. The route titles in `src/pages/app/app.ts` are
+     * built from `basics.metaTitle`, which already begins with the name, so prefixing it
+     * again would publish "Douglas Kent - Douglas Kent — ...".
+     */
     RouterConfiguration.customize({
       useUrlFragmentHash: false,
       useHref: false,
-      // see App.canLoad for this
-      //   title: "Douglas Kent${appTitleSeparator}${componentTitles}",
     }),
   )
   .register(resources)

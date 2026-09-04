@@ -1,12 +1,53 @@
 import { customElement } from "aurelia";
 import { route, type RouteNode } from "@aurelia/router";
 
+import { IResumeStore } from "../../stores/resume-store";
 import { NotFound } from "../not-found/not-found";
 import { Resume } from "../resume/resume";
 
 import view from "./app.html";
 
-const resumeTitle = (node: RouteNode): string => (node.params.rest === "short" ? "Douglas Kent - Short Resume" : "Douglas Kent - Resume");
+/**
+ * The title the resume routes publish, resolved per navigation.
+ *
+ * The router overwrites `document.title` once it navigates, so whatever this returns is
+ * the title Googlebot records -- it renders before it indexes. Left hardcoded, the served
+ * HTML carried `basics.metaTitle` for non-rendering crawlers while Google saw a weaker
+ * string, which is precisely backwards. This keeps the two in agreement.
+ *
+ * It must not drift from `resume-head-plugin.ts`. That plugin writes the static `<title>`
+ * at build time from the same two fields with the same preference order, and the point is
+ * that the runtime title and the served one are the same string. A change to either
+ * belongs in both.
+ *
+ * A `title` function is handed a `RouteNode` rather than a container, but that is not the
+ * obstacle it looks like: `RouteNode.context` is the node's `IRouteContext`, which exposes
+ * a public `container`. So this reads `basics` through `IResumeStore` like any other
+ * consumer, and no state has to be pushed in from a lifecycle hook to make it work.
+ *
+ * `App` itself could not do that pushing anyway. Routing hooks are invoked by a
+ * `ComponentAgent`, and agents are only ever created for a component activated *into* a
+ * viewport (`viewport-agent.ts`). `App` hosts the viewport rather than occupying one, so
+ * it never gets an agent and never receives `loaded`.
+ *
+ * No escaping. `document.title` takes text rather than markup, so the `&` in `label` is
+ * correct as it stands; the plugin escapes only because it writes into an HTML string.
+ */
+const resumeTitle = (node: RouteNode): string => {
+  const basics = node.context.container.get(IResumeStore).basics;
+  const baseTitle = basics.metaTitle ? basics.metaTitle : `${basics.name} — ${basics.label}`;
+  /**
+   * Suffixed rather than replaced with a different string. The keywords are at the front
+   * of `baseTitle`, and a browser tab truncates from the end, so appending keeps them
+   * readable on the short resume too.
+   */
+  return node.params.rest === "short" ? `${baseTitle} (Short)` : baseTitle;
+};
+
+/**
+ * Left hardcoded, and it must stay that way. `not-found` is not a page anyone should reach
+ * from a search result, so it deliberately carries no resume keywords.
+ */
 const notFoundTitle = "Douglas Kent - Page Not Found";
 
 /**
