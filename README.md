@@ -39,7 +39,7 @@ Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 | `/admin` | The resume editor -- dev server only, absent from a build. See [Editing the resume](#editing-the-resume) |
 | anything else | The not-found page, which reports the address that failed and links to the three real ones |
 
-The canonical link in `index.html` uses `/resume/expanded`. The older
+The canonical link, injected into the served HTML by `resume-head-plugin.ts`, uses `/resume/expanded`. The older
 `?expanded=<anything non-empty>` query string still turns expansion on, so links already indexed
 against the previous canonical URL keep working -- but only on the complete resume. On
 `/resume/short` it is ignored, the same as any other unrecognised query parameter, because
@@ -102,11 +102,17 @@ editor comes back freshly loaded from disk -- whichever row was open closes.
 `npm run build` writes `dist/index.html` (generated from the root `index.html`) plus hashed bundles in
 `dist/assets/`. It also emits `dist/stats.html`, a bundle size report that is not deployed.
 
-The root `index.html` is a build input and is never served. `dist/index.html` differs from it in three
+The root `index.html` is a build input and is never served. `dist/index.html` differs from it in four
 ways: the `src/main.ts` script tag becomes the hashed bundles, `base.css` is folded into
-`dist/assets/*.css` along with the component SCSS (so it is not deployed as a separate file), and a
-schema.org JSON-LD block is injected into `<head>` by `resume-jsonld-plugin.ts`, generated from
-`resume.json` on every build.
+`dist/assets/*.css` along with the component SCSS (so it is not deployed as a separate file), a
+schema.org JSON-LD block is injected into `<head>` by `resume-jsonld-plugin.ts`, and the head SEO tags
+-- `<title>`, `<meta name="description">`, the canonical link and the Open Graph and Twitter card tags
+-- are injected by `resume-head-plugin.ts`. Both sets are generated from `resume.json` on every build.
+
+None of those head tags is authored in `index.html`, the canonical link included: the router sets the
+title at runtime, which is invisible to anything that does not run JavaScript, so the served HTML has
+to carry them. `resume-head-plugin.ts` owns them, and hand-adding one to `index.html` would only
+duplicate it.
 
 The asset hashes change whenever their contents change, and `dist/index.html` is what points at them, so
 **always deploy `index.html` together with `dist/assets`** -- shipping one without the other leaves the

@@ -6,6 +6,7 @@ import { defineConfig, type PluginOption } from "vite";
 
 import { resumeApi } from "./resume-api-plugin";
 import { resumeDocx } from "./resume-docx-plugin";
+import { resumeHead } from "./resume-head-plugin";
 import { resumeJsonLd } from "./resume-jsonld-plugin";
 import { resumeTxt } from "./resume-txt-plugin";
 /**
@@ -80,6 +81,7 @@ export default defineConfig(({ mode }) => ({
     rawHtml(),
     resumeApi(),
     resumeJsonLd(),
+    resumeHead(),
     resumeTxt(),
     resumeDocx(),
     visualizer({

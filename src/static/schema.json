@@ -19,9 +19,13 @@
           "type": "string",
           "description": "e.g. Web Developer"
         },
+        "metaTitle": {
+          "type": "string",
+          "description": "The served page's <title> and og:title. Kept under 60 characters because search results truncate there, so it is deliberately shorter than `label`."
+        },
         "metaDescription": {
           "type": "string",
-          "description": "e.g. Web Developer"
+          "description": "The served page's <meta name=\"description\">. Kept under 160 characters because search results truncate there."
         },
         "image": {
           "type": "string",
