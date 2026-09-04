@@ -36,35 +36,26 @@ Do not introduce it.
 ## Logging
 
 Already configured — `LoggerConfiguration` is registered in `src/main.ts` with
-verbosity keyed off `import.meta.env.PROD`. Per `aurelia2-ex`, use `ILogger`
-with `scopeTo(...)` and never `console.*`. `src/` currently contains zero
-`console.` calls; keep it that way.
+verbosity keyed off `import.meta.env.PROD`. Use `ILogger` with `scopeTo(...)`
+and never `console.*`. `src/` currently contains zero `console.` calls; keep it
+that way.
 
-Import from the `aurelia` meta-package, **not** `@aurelia/kernel`:
+`@aurelia/kernel` is not a direct dependency. Import the logging API from the
+`aurelia` meta-package, which re-exports it:
 
 ```typescript
 import { ILogger, resolve } from "aurelia";
 ```
 
-`@aurelia/kernel` is not a direct dependency of this project. The `aurelia2-ex`
-examples import from it, which is wrong here — follow `src/main.ts` instead.
+## Conventions
 
-## Structure
+Follow the existing page/section shape when adding components: routed pages live
+in `src/pages/<page>/` as `.ts` / `.html` / optional `.scss`, with child
+components under `sections/` registered through a local `index.ts`. Do not
+introduce a different scaffold layout.
 
-- `src/pages/<page>/` — routed pages (`app`, `resume`, `admin`, `not-found`),
-  each with `.ts` / `.html` / optional `.scss`
-- `src/pages/<page>/sections/` — child components, registered through a local
-  `index.ts`
-- `src/services/`, `src/stores/` — `ResumeService`, `ResumeStore`, registered in
-  `src/main.ts`
-- `src/resources/` — value converters and custom attributes, registered as a
-  namespace import
-- `src/static/` — generated resume artifacts (`.json`, `.docx`, `.txt`, JSON-LD)
-- `resume-*-plugin.ts` at the repo root — custom Vite plugins that emit those
-  artifacts during build
-
-Follow the existing page/section shape when adding components. Do not introduce
-a different scaffold layout.
+Generated resume artifacts in `src/static/` are emitted at build time by the
+`resume-*-plugin.ts` Vite plugins at the repo root. Do not hand-edit them.
 
 ## Commands
 
@@ -80,10 +71,13 @@ After any Aurelia change, run `npm run typecheck` **and** `npm run build`.
 Template binding errors surface at runtime, not during typecheck, so a clean
 typecheck alone does not mean the change works.
 
-Deployment (`npm run deploy`) is FTP-based and depends on `web.config` plus a
-PowerShell validation step. Do not run or modify it without being asked.
+## Deployment
+
+`npm run deploy` is FTP-based and depends on `web.config` plus a PowerShell
+validation step. Do not run or modify it without being asked.
 
 The `deploy` script reads its FTP session commands from `ftpDeploy.txt` at the
-repo root. That file is listed in `.gitignore` because it contains credentials,
-so it will not be present in a fresh clone and must never be committed. Do not
-create, edit, or read it back into a response without explicit approval.
+repo root. That file is gitignored because it contains credentials, so it will
+not be present in a fresh clone. Reading it is fine. Do not edit it, do not
+recreate it if it is missing, and never commit it or paste its contents into a
+file that would be committed.
