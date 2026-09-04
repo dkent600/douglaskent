@@ -19,6 +19,10 @@
           "type": "string",
           "description": "e.g. Web Developer"
         },
+        "metaDescription": {
+          "type": "string",
+          "description": "e.g. Web Developer"
+        },
         "image": {
           "type": "string",
           "description": "URL (as per RFC 3986) to a image in JPEG or PNG format"
