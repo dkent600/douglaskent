@@ -20,8 +20,7 @@ standard.)
 Configure logging once in `src/main.ts` with `LoggerConfiguration`:
 
 ```typescript
-import Aurelia from 'aurelia';
-import { LoggerConfiguration, LogLevel, ConsoleSink } from '@aurelia/kernel';
+import Aurelia, { LoggerConfiguration, LogLevel, ConsoleSink } from 'aurelia';
 import { MyApp } from './my-app';
 
 Aurelia
@@ -39,8 +38,7 @@ Resolve it as a class field, and prefer a scoped child logger per component or
 service so output is attributable:
 
 ```typescript
-import { resolve } from 'aurelia';
-import { ILogger } from '@aurelia/kernel';
+import { ILogger, resolve } from 'aurelia';
 
 export class IntakeForm {
   private readonly log = resolve(ILogger).scopeTo('IntakeForm');
