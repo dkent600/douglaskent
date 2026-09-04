@@ -320,6 +320,47 @@ export function buildResumeText(resume: Record<string, any>): { text: string; wa
   return { text, warnings: warnings.list };
 }
 
+/**
+ * Fails the build if the emitted text is not pure ASCII.
+ *
+ * `toAscii` above already folds everything and replaces anything it cannot spell with `?`,
+ * so on today's data this can never fire. That is the point: it is here to keep the claim
+ * true rather than to catch a bug in the folding. A field added to the transformer that
+ * bypasses `toAscii`, or a relaxation of the folding itself, would put multi-byte
+ * characters into this file with nothing to notice.
+ *
+ * What rests on it is in `web.config`. The `.html` entry under `staticContent` explains
+ * that `.txt` is served without a charset problem because this file is pure ASCII, which is
+ * a UTF-8 subset and an ISO-8859-1 subset alike, so no client can misread it whichever
+ * default it falls back to. That is an assertion about this plugin's output, and this is
+ * where it is enforced. If this check is ever removed, the `.txt` mimeMap in `web.config`
+ * becomes load-bearing rather than belt-and-braces.
+ *
+ * The offset is reported alongside the character because the character itself may well be
+ * invisible, which is exactly how the non-breaking space in `resume.json` survived so long.
+ */
+function assertAscii(text: string): void {
+  for (let i = 0; i < text.length; i++) {
+    const code = text.charCodeAt(i);
+    if (code <= 0x7f) continue;
+
+    const point = `U+${(text.codePointAt(i) ?? 0).toString(16).toUpperCase().padStart(4, "0")}`;
+    const line = text.slice(0, i).split("\n").length;
+    const column = i - text.lastIndexOf("\n", i - 1);
+    const context = text.slice(Math.max(0, i - 40), i + 41).replace(/\n/g, "\\n");
+
+    throw new Error(
+      `resume-txt: emitted ${OUTPUT_PATH} is not pure ASCII.\n` +
+        `  ${point} at offset ${i} (line ${line}, column ${column})\n` +
+        `  ...${context}...\n\n` +
+        `Every published byte of this file has to be ASCII: web.config serves .txt without ` +
+        `relying on a charset, and the plain-text resume is the artifact most likely to be ` +
+        `read by a machine. Either fold this character in the TYPOGRAPHY map above, or route ` +
+        `the field that produced it through toAscii.`,
+    );
+  }
+}
+
 export function resumeTxt(): Plugin {
   return {
     name: "resume-txt",
@@ -332,6 +373,7 @@ export function resumeTxt(): Plugin {
     async writeBundle() {
       const resume = JSON.parse(await readFile(resolve(process.cwd(), RESUME_PATH), "utf8"));
       const { text, warnings } = buildResumeText(resume);
+      assertAscii(text);
       await writeFile(resolve(process.cwd(), OUTPUT_PATH), text, "utf8");
 
       /**

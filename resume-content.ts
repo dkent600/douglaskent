@@ -150,6 +150,107 @@ export function createWarnings(): Warnings & { list: Array<string> } {
 }
 
 /**
+ * Characters that are either invisible in an editor or indistinguishable from an ASCII
+ * character that is not what they are, mapped to their Unicode names.
+ *
+ * None of these has a legitimate use anywhere in `resume.json`. Every one arrives the same
+ * way -- a paste out of a word processor, a browser, or a PDF -- and none of them can be
+ * caught by reading the file, which is the entire problem. A non-breaking space had been
+ * sitting in a `work` summary for an unknown length of time and was found only by counting
+ * bytes.
+ *
+ * The soft hyphen and the non-breaking hyphen are here for a second reason: they are not
+ * merely invisible but actively misleading. A soft hyphen shows as nothing until a line
+ * breaks on it, and a non-breaking hyphen is drawn identically to `-`, so both read as
+ * correct in every editor and pass every review.
+ */
+const FORBIDDEN_CHARACTERS: Record<string, string> = {
+  "\u00a0": "NO-BREAK SPACE",
+  "\u00ad": "SOFT HYPHEN",
+  "\u200b": "ZERO WIDTH SPACE",
+  "\u200c": "ZERO WIDTH NON-JOINER",
+  "\u200d": "ZERO WIDTH JOINER",
+  "\u2011": "NON-BREAKING HYPHEN",
+  "\ufeff": "ZERO WIDTH NO-BREAK SPACE",
+};
+
+/**
+ * How much of the offending string to quote either side of the character.
+ *
+ * Enough to find the line by eye or by search, short enough that a long `summary` does not
+ * fill the terminal.
+ */
+const CONTEXT_RADIUS = 40;
+
+const codepointOf = (character: string): string =>
+  `U+${(character.codePointAt(0) ?? 0).toString(16).toUpperCase().padStart(4, "0")}`;
+
+/**
+ * Quotes the text around the offending character with the character itself replaced by its
+ * codepoint in guillemets.
+ *
+ * Printing the raw string would reproduce the exact problem the message exists to solve:
+ * the reader would be shown something that looks correct. Substituting a visible token is
+ * what makes the position legible.
+ */
+function excerpt(value: string, index: number): string {
+  const start = Math.max(0, index - CONTEXT_RADIUS);
+  const end = Math.min(value.length, index + CONTEXT_RADIUS + 1);
+  const marked = `${value.slice(start, index)}«${codepointOf(value[index])}»${value.slice(index + 1, end)}`;
+  return `${start > 0 ? "..." : ""}${marked}${end < value.length ? "..." : ""}`;
+}
+
+/**
+ * Fails the build if any string in `resume.json` contains a character from
+ * `FORBIDDEN_CHARACTERS`.
+ *
+ * A throw rather than a warning, deliberately. Both transformers already emit a stream of
+ * data warnings about `resume.json` -- duplicated skills, case mismatches, over-long lines
+ * -- and a warning about a character nobody can see would be one more line in a stream
+ * that is skimmed at best. There is also nothing to weigh: unlike the warnings, which
+ * describe judgement calls the output survives, every character here is unambiguously a
+ * mistake, and the correct response is always the same.
+ *
+ * Called from `buildResumeContent` rather than from each plugin, so both the text and Word
+ * builds are covered by one call site and a third transformer cannot forget it.
+ */
+export function assertNoInvisibleCharacters(resume: unknown): void {
+  const findings: Array<string> = [];
+
+  const walk = (value: unknown, path: string): void => {
+    if (typeof value === "string") {
+      for (let i = 0; i < value.length; i++) {
+        const name = FORBIDDEN_CHARACTERS[value[i]];
+        if (name === undefined) continue;
+        findings.push(`  ${path}\n    ${codepointOf(value[i])} ${name}\n    ${excerpt(value, i)}`);
+      }
+      return;
+    }
+    if (Array.isArray(value)) {
+      value.forEach((item, index) => walk(item, `${path}[${index}]`));
+      return;
+    }
+    if (value !== null && typeof value === "object") {
+      for (const [key, item] of Object.entries(value)) {
+        walk(item, path === "" ? key : `${path}.${key}`);
+      }
+    }
+  };
+
+  walk(resume, "");
+
+  if (findings.length === 0) return;
+
+  const count = findings.length === 1 ? "1 invisible or lookalike character" : `${findings.length} invisible or lookalike characters`;
+  throw new Error(
+    `resume.json contains ${count}.\n\n${findings.join("\n\n")}\n\n` +
+      `These are not typeable by accident; each one arrived in a paste. Replace it with its ` +
+      `ASCII equivalent (a normal space, a normal hyphen) or delete it. The build will not ` +
+      `emit a resume document until it is gone.`,
+  );
+}
+
+/**
  * How a transformer turns one source field into the characters it will publish.
  *
  * Passed in rather than fixed here because the two documents disagree about exactly one
@@ -318,6 +419,13 @@ export function buildResumeContent(
   normalize: Normalizer,
   warnings: Warnings,
 ): ResumeContent {
+  /**
+   * Before anything is resolved, because the point is to reject the source rather than to
+   * render around it. Both published documents come through here, so this one call covers
+   * the text and Word builds and any transformer added later.
+   */
+  assertNoInvisibleCharacters(resume);
+
   const clean = (value: unknown): string => normalize(value, warnings);
 
   const sections: Array<Section> = [];
