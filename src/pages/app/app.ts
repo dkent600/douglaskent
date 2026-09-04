@@ -37,11 +37,18 @@ const resumeTitle = (node: RouteNode): string => {
   const basics = node.context.container.get(IResumeStore).basics;
   const baseTitle = basics.metaTitle ? basics.metaTitle : `${basics.name} — ${basics.label}`;
   /**
-   * Suffixed rather than replaced with a different string. The keywords are at the front
-   * of `baseTitle`, and a browser tab truncates from the end, so appending keeps them
-   * readable on the short resume too.
+   * Every resume route publishes the same string, the short variant included. Suffixing
+   * the short one -- `node.params.rest === "short" ? `${baseTitle} (Short)` : baseTitle`
+   * -- was tried and dropped: `metaTitle` is already 57 characters against a SERP headline
+   * that Google truncates around 60, so the suffix would spend the very budget the field
+   * exists to stay inside, and push the tail of the keywords out of view rather than add
+   * to it.
+   *
+   * The duplication costs nothing. `/resume/short` is not separately indexed -- the
+   * canonical link `resume-head-plugin.ts` injects points every variant at
+   * `/resume/expanded`.
    */
-  return node.params.rest === "short" ? `${baseTitle} (Short)` : baseTitle;
+  return baseTitle;
 };
 
 /**
