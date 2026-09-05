@@ -235,7 +235,7 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
     "@type": "Person",
     name: basics.name,
     url: basics.website,
-    image: basics.picture,
+    image: basics.image,
     jobTitle,
     description,
     sameAs,

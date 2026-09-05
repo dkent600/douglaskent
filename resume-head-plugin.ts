@@ -162,7 +162,7 @@ export function resumeHead(): Plugin {
       }
 
       /**
-       * `basics.picture` is the JSON Resume field for exactly this, and the app renders it
+       * `basics.image` is the JSON Resume field for exactly this, and the app renders it
        * nowhere -- it appears only as an editable input in `/admin`. So one value drives
        * both the card image here and `image` in the JSON-LD block, with no effect on the
        * visible page and no need for a field invented to avoid one.
@@ -173,7 +173,7 @@ export function resumeHead(): Plugin {
        * broken image may render a blank card instead of falling back to the text, and the
        * large-image card is a promise there is an image to fill it.
        */
-      const image = typeof basics.picture === "string" ? basics.picture.trim() : "";
+      const image = typeof basics.image === "string" ? basics.image.trim() : "";
 
       const tags: Array<HtmlTagDescriptor> = [
         { tag: "title", children: escapeText(title), injectTo: "head" as const },

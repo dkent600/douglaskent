@@ -60,7 +60,7 @@ export interface IEditableLocation {
 export interface IEditableBasics {
   name: string;
   label?: string;
-  picture?: string;
+  image?: string;
   email?: string;
   resumeFeedbackEmail?: string;
   phone?: string;
