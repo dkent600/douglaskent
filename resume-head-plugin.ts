@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-import type { Plugin } from "vite";
+import type { HtmlTagDescriptor, Plugin } from "vite";
 
 import { stripHtml } from "./resume-text";
 
@@ -71,6 +71,20 @@ const PLAIN_TEXT_PATH = "/resume.txt";
  * the fallback -- `basics.metaDescription` is hand-written to fit.
  */
 const DESCRIPTION_LIMIT = 160;
+
+/**
+ * Intrinsic size of `public/og-preview.png`. Declaring it lets an unfurler lay the card
+ * out on the first scrape rather than deferring until it has fetched the image itself,
+ * which is the difference between a card that renders immediately and one that appears
+ * on the second share.
+ *
+ * Constants rather than measured from the file: the plugin has no image decoder, and
+ * adding a dependency to learn two numbers that change only when the card is redrawn is
+ * not worth it. The cost is that swapping in a differently-sized card silently makes
+ * these wrong, so the size belongs in the same commit as the file.
+ */
+const IMAGE_WIDTH = "1200";
+const IMAGE_HEIGHT = "630";
 
 /**
  * Escapes text that Vite will insert verbatim.
@@ -148,14 +162,20 @@ export function resumeHead(): Plugin {
       }
 
       /**
-       * No `og:image`. `basics.picture` is empty, so there is nothing to point at, and an
-       * `og:image` naming a file that does not exist is worse than none: an unfurler that
-       * finds a broken image may render a blank card rather than fall back to the text.
+       * `basics.picture` is the JSON Resume field for exactly this, and the app renders it
+       * nowhere -- it appears only as an editable input in `/admin`. So one value drives
+       * both the card image here and `image` in the JSON-LD block, with no effect on the
+       * visible page and no need for a field invented to avoid one.
        *
-       * `twitter:card` is `summary` and not `summary_large_image` for the same reason --
-       * the large-image card has nothing to fill it with.
+       * Empty remains a supported state, and it degrades rather than lies: the image tags
+       * are omitted entirely and `twitter:card` falls back to `summary`. An `og:image`
+       * naming a file that is not there is worse than none -- an unfurler that fetches a
+       * broken image may render a blank card instead of falling back to the text, and the
+       * large-image card is a promise there is an image to fill it.
        */
-      return [
+      const image = typeof basics.picture === "string" ? basics.picture.trim() : "";
+
+      const tags: Array<HtmlTagDescriptor> = [
         { tag: "title", children: escapeText(title), injectTo: "head" as const },
         { tag: "meta", attrs: { name: "description", content: description }, injectTo: "head" as const },
         /**
@@ -192,8 +212,32 @@ export function resumeHead(): Plugin {
         { tag: "meta", attrs: { property: "og:title", content: title }, injectTo: "head" as const },
         { tag: "meta", attrs: { property: "og:description", content: description }, injectTo: "head" as const },
         { tag: "meta", attrs: { property: "og:url", content: canonical }, injectTo: "head" as const },
-        { tag: "meta", attrs: { name: "twitter:card", content: "summary" }, injectTo: "head" as const },
       ];
+
+      /**
+       * Appended rather than written into the literal above so the `og:` properties stay
+       * contiguous and in the order an unfurler reads them.
+       */
+      if (image !== "") {
+        tags.push(
+          { tag: "meta", attrs: { property: "og:image", content: image }, injectTo: "head" },
+          { tag: "meta", attrs: { property: "og:image:width", content: IMAGE_WIDTH }, injectTo: "head" },
+          { tag: "meta", attrs: { property: "og:image:height", content: IMAGE_HEIGHT }, injectTo: "head" },
+          /**
+           * The card renders this same name and role, so the title is a literal description
+           * of the image rather than a restatement of the page.
+           */
+          { tag: "meta", attrs: { property: "og:image:alt", content: title }, injectTo: "head" },
+        );
+      }
+
+      tags.push({
+        tag: "meta",
+        attrs: { name: "twitter:card", content: image === "" ? "summary" : "summary_large_image" },
+        injectTo: "head",
+      });
+
+      return tags;
     },
 
     /**
