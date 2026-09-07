@@ -1,5 +1,4 @@
 import { bindable, customElement, resolve } from "aurelia";
-import { WhichResumeOnly } from "../../../../resources/attributes/whichResumeOnly";
 
 import { ICompany, IResumeStore, ISkill } from "../../../../stores/resume-store";
 
@@ -16,7 +15,11 @@ type ICompanyView = ICompany & { showingHighlights: boolean };
 export class History {
   @bindable expanded = false;
   showingEntireHistory = false;
-  entireHistoryStartIndex = 7;
+  /**
+   * How far down the open list the toggle sits. Purely the link's placement -- it says
+   * nothing about which companies are recent history; `showOnShort` does that.
+   */
+  readonly toggleAfterIndex = 7;
   readonly skillByName: Map<string, ISkill> = new Map<string, ISkill>();
   readonly resumeStore = resolve(IResumeStore);
   readonly companies: Array<ICompanyView> = this.resumeStore.companies
@@ -55,14 +58,34 @@ export class History {
     this.showingEntireHistory = this.expanded;
   }
 
-  get companiesFirst(): Array<ICompanyView> {
-  return WhichResumeOnly.isShort
-    ? this.companies.filter((c) => c.showOnShort)
-    : this.companies.slice(0, this.entireHistoryStartIndex);
+  /**
+   * The companies above the "Show the whole history" toggle.
+   *
+   * Closed, that is the recent-history selection, `showOnShort` -- the same selection the
+   * short resume makes, so the complete resume opens on the same companies the short one
+   * shows. Open, it is the first `toggleAfterIndex` companies, which is what keeps the
+   * toggle where it has always sat: partway down rather than below the whole history,
+   * where collapsing again would mean scrolling past all of it.
+   *
+   * The two cannot be the same rule. `showOnShort` is a filter over the full list, not a
+   * prefix of it, so once every company is on the page the recent ones are scattered
+   * through it and there is no one position that follows them. Splitting the open list by
+   * the flag instead would put the toggle after the recent seven, but only by reordering
+   * the history around it, which is a worse trade than a positional cut.
+   *
+   * `WhichResumeOnly.isShort` is not consulted here: the short resume never shows the
+   * toggle, so `showingEntireHistory` stays false there and it gets the closed list.
+   */
+  get companiesAboveToggle(): Array<ICompanyView> {
+    return this.showingEntireHistory ? this.companies.slice(0, this.toggleAfterIndex) : this.companies.filter((c) => c.showOnShort);
   }
 
-  get companiesTheRest(): Array<ICompanyView> {
-    return this.companies.slice(this.entireHistoryStartIndex);
+  /**
+   * Empty when closed, so the companies the page is not showing are not in the DOM at all
+   * rather than present and hidden by a collapse.
+   */
+  get companiesBelowToggle(): Array<ICompanyView> {
+    return this.showingEntireHistory ? this.companies.slice(this.toggleAfterIndex) : [];
   }
 
   companySkills(company: ICompany, _skillByName: Map<string, ISkill>): Array<ISkill> {

@@ -66,7 +66,7 @@
 <section class="section">
   <h3><span resume-type="short">Selected </span>Professional Experience</h3>
   <div class="content">
-    <div repeat.for="company of companiesFirst">
+    <div repeat.for="company of companiesAboveToggle">
       <company company.bind="company" index.bind="$index" company-skills.bind="companySkills.bind($parent)"
         expanded.bind="expanded" toggle-highlights.bind="toggleHighlights">
       </company>
@@ -78,11 +78,10 @@
     </div>
     <div resume-type="complete">
       <!--
-        No `data-toggle="collapse"` here, deliberately. `#allCompanies` gets its `show`
-        class from `showingEntireHistory` below, so Aurelia owns this toggle. Letting
-        Bootstrap's collapse drive it too meant both wrote the same class attribute, and
-        Aurelia's re-render clobbered Bootstrap's mid-transition `collapsing` state,
-        leaving the section stuck shut with the label reading "open".
+        Not a Bootstrap collapse. The companies past the toggle are added to and removed
+        from the list by `companiesBelowToggle`, so there is nothing here for Bootstrap to
+        show and hide, and no `data-toggle="collapse"` to write a `show` class that
+        Aurelia's re-render would then clobber mid-transition.
       -->
       <h6 class="company-position show-entire-history" aria-expanded.bind="showingEntireHistory ? 'true' : 'false'"
         aria-controls="allCompanies" click.trigger="showingEntireHistory = !showingEntireHistory">
@@ -91,9 +90,9 @@
       </h6>
     </div>
 
-    <div class="collapse ${showingEntireHistory ? 'show' : ''} fade" id="allCompanies">
-      <div repeat.for="company of companiesTheRest">
-        <company company.bind="company" index.bind="$index + entireHistoryStartIndex"
+    <div id="allCompanies">
+      <div repeat.for="company of companiesBelowToggle">
+        <company company.bind="company" index.bind="$index + toggleAfterIndex"
           company-skills.bind="companySkills.bind($parent)" expanded.bind="expanded"
           toggle-highlights.bind="toggleHighlights">
         </company>
