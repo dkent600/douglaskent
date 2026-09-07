@@ -39,15 +39,19 @@ Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 | `/admin` | The resume editor -- dev server only, absent from a build. See [Editing the resume](#editing-the-resume) |
 | anything else | The not-found page, which reports the address that failed and links to the three real ones |
 
-The canonical link, injected into the served HTML by `resume-head-plugin.ts`, uses `/resume/expanded`. The older
-`?expanded=<anything non-empty>` query string still turns expansion on, so links already indexed
-against the previous canonical URL keep working -- but only on the complete resume. On
-`/resume/short` it is ignored, the same as any other unrecognised query parameter, because
-`short` and `expanded` are mutually exclusive and the query string is not a way around that.
+The canonical link, injected into the served HTML by `resume-head-plugin.ts`, is the apex,
+`https://www.douglaskent.com/`. Every route points at it; none of them is separately indexed.
+The canonical was `/resume/expanded` before that, and `?expanded=<anything non-empty>` before
+that -- the query string still turns expansion on, so links indexed against either earlier
+address keep working, but only on the complete resume. On `/resume/short` it is ignored, the
+same as any other unrecognised query parameter, because `short` and `expanded` are mutually
+exclusive and the query string is not a way around that.
 
-The root path is served by the `default` attribute on `<au-viewport>` rather than by an `""`
-route path, because the router warns (`AUR3176`) on any empty path. The visible effect is that
-`/` normalises to `/resume` in the address bar.
+The root path is served by listing `""` among the resume route's `path` array rather than by a
+`default` attribute on `<au-viewport>`. A viewport default is an instruction the router
+serialises back into the URL, so it rewrote `/` to `/resume`; a matched empty path serialises
+to nothing, so `/` stays `/`. The router logs `AUR3176` for an empty path, but the warning is
+dev-only and its advice is exactly the behaviour being avoided.
 
 ### Why the resume route uses a star segment
 

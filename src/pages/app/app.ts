@@ -44,9 +44,9 @@ const resumeTitle = (node: RouteNode): string => {
    * exists to stay inside, and push the tail of the keywords out of view rather than add
    * to it.
    *
-   * The duplication costs nothing. `/resume/short` is not separately indexed -- the
-   * canonical link `resume-head-plugin.ts` injects points every variant at
-   * `/resume/expanded`.
+   * The duplication costs nothing. No resume route is separately indexed -- the canonical
+   * link `resume-head-plugin.ts` injects points every variant at the apex,
+   * `https://www.douglaskent.com/`.
    */
   return baseTitle;
 };
