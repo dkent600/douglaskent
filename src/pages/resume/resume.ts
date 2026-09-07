@@ -51,11 +51,12 @@ export class Resume implements IRouteViewModel {
      */
     WhichResumeOnly.isShort = this.isShort = option === "short";
     /**
-     * `?expanded=1` was the canonical URL before /resume/expanded replaced it, and it is
-     * still out there in search results, so keep honouring it -- but only on the complete
-     * resume. `short` and `expanded` are mutually exclusive in the path, and the query
-     * string is not a way around that: on the short resume it is ignored, the same as any
-     * other query parameter the app does not know about.
+     * `?expanded=1` was the canonical URL two changes ago: `/resume/expanded` replaced it,
+     * and the apex, `https://www.douglaskent.com/`, has since replaced that. Links against
+     * the old query string are still out there in search results, so keep honouring it --
+     * but only on the complete resume. `short` and `expanded` are mutually exclusive in the
+     * path, and the query string is not a way around that: on the short resume it is
+     * ignored, the same as any other query parameter the app does not know about.
      */
     this.expanded = option === "expanded" || (!this.isShort && Boolean(next.queryParams.get("expanded")));
     return true;
