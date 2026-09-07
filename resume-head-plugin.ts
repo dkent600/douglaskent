@@ -22,9 +22,9 @@ import { stripHtml } from "./resume-text";
  * The plugin also emits `dist/sitemap.xml` from `writeBundle`. That is not a head tag, but it
  * belongs here rather than in `public/`: the sitemap's first entry is the canonical URL, which
  * is already the constant `CANONICAL_PATH` below, and a hand-written sitemap would put that
- * address in two places. There is an open question about whether the canonical should move
- * from `/resume/expanded` to the bare domain; generating the sitemap means it follows that
- * decision automatically instead of silently disagreeing with the head after it is made.
+ * address in two places. The canonical has since moved from `/resume/expanded` to the bare
+ * domain; because the sitemap is generated from the same constant, it followed that decision
+ * automatically instead of silently disagreeing with the head after it was made.
  */
 const RESUME_PATH = "src/static/resume.json";
 
@@ -45,12 +45,16 @@ const SITEMAP_PATH = "dist/sitemap.xml";
 const SITE_ORIGIN = "https://www.douglaskent.com";
 
 /**
- * The address the whole site canonicalizes to. `/resume/expanded` rather than `/resume`
- * because the expanded variant is the one that renders every collapsible section, so it
- * is the copy with the most text for a crawler to read. This matches what `index.html`
- * used to hardcode; that link has been removed in favour of this plugin owning it.
+ * The address the whole site canonicalizes to: the apex, not a route beneath it. It was
+ * `/resume/expanded` on the reasoning that the expanded variant renders every collapsible
+ * section and so is the copy with the most text for a crawler to read -- but canonicalizing
+ * the site to a sub-route means the address people link and share is not the one the site
+ * claims, and consolidates nothing onto the domain itself.
+ *
+ * `SITE_ORIGIN` carries no trailing slash, so this supplies the one that makes the composed
+ * value `https://www.douglaskent.com/` rather than a bare origin.
  */
-const CANONICAL_PATH = "/resume/expanded";
+const CANONICAL_PATH = "/";
 
 /**
  * The canonical address itself, at module scope so the head tags and `sitemap.xml` are
