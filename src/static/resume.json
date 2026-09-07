@@ -1821,6 +1821,34 @@
       "showOnShort": true
     },
     {
+      "company": "Dicom Transportation Group",
+      "remote": true,
+      "contract": true,
+      "position": "Senior Web Developer",
+      "website": "https://www.dicom.com/",
+      "startDate": "2017-02",
+      "summary": "Fixed bugs and developed new features for an internal web application used to coordinate trucks, drivers, routes and delivery locations across Québec",
+      "endDate": "2017-04",
+      "highlights": [
+        "Fixed more bugs and added more features than the client planned-for"
+      ],
+      "skills": [
+        "MVC",
+        "ASP.NET",
+        "C#",
+        "Razor",
+        "HTML",
+        "CSS",
+        "jQuery",
+        "SQL Server",
+        "T-SQL",
+        "Jira",
+        "BitBucket",
+        "Telerik"
+      ],
+      "showOnShort": false
+    },
+    {
       "company": "PSP Investments",
       "position": "Sole Senior Lead Web Developer",
       "contract": true,
@@ -2024,6 +2052,45 @@
       "showOnShort": false
     },
     {
+      "company": "Imagen Communications, Inc.",
+      "position": "Sole Software Engineer",
+      "remote": true,
+      "website": "",
+      "startDate": "1996-10",
+      "summary": "Designed and developed NT Paymaster, a billing application for ISPs",
+      "endDate": "1998-03",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "Biomonitors, Ltd",
+      "position": "Lead Software Engineer",
+      "remote": true,
+      "contract": true,
+      "website": "",
+      "startDate": "1997-02",
+      "summary": "Ported from DOS to Windows 95 MindMirror, an application that displays real-time electroencephalograph data in a GUI application",
+      "endDate": "1997-03",
+      "highlights": [],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
+      "company": "Independent Software Developer",
+      "position": "Founder & Developer — Mouthing Flowers",
+      "website": "",
+      "personal": true,
+      "startDate": "1995-02",
+      "summary": "For the NEXTSTEP platform, designed and wrote <i>TimeFlies</i>, designed and implemented a 3D graphics API, and wrote the <i>SwoopnPrint</i>&nbsp;&nbsp;\"service\" application.",
+      "endDate": "1999-09",
+      "highlights": [
+        "TimeFlies received a positive product review from NeXTWorld magazine"
+      ],
+      "skills": [],
+      "showOnShort": false
+    },
+    {
       "company": "Microsoft Corporation",
       "position": "Software Engineer",
       "contract": true,
@@ -2137,34 +2204,6 @@
       "endDate": "1986-11",
       "highlights": [],
       "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "Dicom Transportation Group",
-      "remote": true,
-      "contract": true,
-      "position": "Senior Web Developer",
-      "website": "https://www.dicom.com/",
-      "startDate": "2017-02",
-      "summary": "Fixed bugs and developed new features for an internal web application used to coordinate trucks, drivers, routes and delivery locations across Québec",
-      "endDate": "2017-04",
-      "highlights": [
-        "Fixed more bugs and added more features than the client planned-for"
-      ],
-      "skills": [
-        "MVC",
-        "ASP.NET",
-        "C#",
-        "Razor",
-        "HTML",
-        "CSS",
-        "jQuery",
-        "SQL Server",
-        "T-SQL",
-        "Jira",
-        "BitBucket",
-        "Telerik"
-      ],
       "showOnShort": false
     },
     {
@@ -2359,45 +2398,6 @@
         "XML",
         "Xerces"
       ],
-      "showOnShort": false
-    },
-    {
-      "company": "Imagen Communications, Inc.",
-      "position": "Sole Software Engineer",
-      "remote": true,
-      "website": "",
-      "startDate": "1996-10",
-      "summary": "Designed and developed NT Paymaster, a billing application for ISPs",
-      "endDate": "1998-03",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "Biomonitors, Ltd",
-      "position": "Lead Software Engineer",
-      "remote": true,
-      "contract": true,
-      "website": "",
-      "startDate": "1997-02",
-      "summary": "Ported from DOS to Windows 95 MindMirror, an application that displays real-time electroencephalograph data in a GUI application",
-      "endDate": "1997-03",
-      "highlights": [],
-      "skills": [],
-      "showOnShort": false
-    },
-    {
-      "company": "Independent Software Developer",
-      "position": "Founder & Developer — Mouthing Flowers",
-      "website": "",
-      "personal": true,
-      "startDate": "1995-02",
-      "summary": "For the NEXTSTEP platform, designed and wrote <i>TimeFlies</i>, designed and implemented a 3D graphics API, and wrote the <i>SwoopnPrint</i>&nbsp;&nbsp;\"service\" application.",
-      "endDate": "1999-09",
-      "highlights": [
-        "TimeFlies received a positive product review from NeXTWorld magazine"
-      ],
-      "skills": [],
       "showOnShort": false
     },
     {
