@@ -1621,6 +1621,7 @@
         "GitHub Copilot"
       ],
       "personal": true,
+      "notable": true,
       "showOnShort": true
     },
     {
@@ -1651,6 +1652,7 @@
         "GitHub Copilot"
       ],
       "personal": true,
+      "notable": true,
       "showOnShort": true
     },
     {
@@ -1683,6 +1685,7 @@
         "AI Coding Assistant"
       ],
       "personal": true,
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -1714,6 +1717,7 @@
         "Celo",
         "GitHub"
       ],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -1721,6 +1725,7 @@
       "position": "Development Team Lead and Lead Developer",
       "remote": true,
       "website": "https://www.curvelabs.eu/",
+      "notable": true,
       "showOnShort": true,
       "startDate": "2020-08",
       "summary": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (DeFi) and regenerative finance (ReFi). Among others, led the development team for a ReFi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.  Here are couple of sites: Prime Deals and Prime Launch.",
@@ -1822,6 +1827,7 @@
         "3Box",
         "Wallets"
       ],
+      "notable": true,
       "showOnShort": true
     },
     {
@@ -1850,6 +1856,7 @@
         "BitBucket",
         "Telerik"
       ],
+      "notable": false,
       "showOnShort": false
     },
     {
@@ -1888,6 +1895,7 @@
         "TFS",
         "SPA"
       ],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -1929,6 +1937,7 @@
         "Agile",
         "TFS"
       ],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -1971,6 +1980,7 @@
         "Agile",
         "TFS"
       ],
+      "notable": true,
       "showOnShort": true
     },
     {
@@ -1996,6 +2006,7 @@
         "JSP",
         "JRun"
       ],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2026,6 +2037,7 @@
         "DES",
         "Encryption"
       ],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2053,6 +2065,7 @@
         "DB2",
         "SQL"
       ],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2065,6 +2078,7 @@
       "endDate": "1998-03",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2078,6 +2092,7 @@
       "endDate": "1997-03",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2092,6 +2107,7 @@
         "TimeFlies received a positive product review from NeXTWorld magazine"
       ],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2104,6 +2120,7 @@
       "endDate": "1996-06",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2116,6 +2133,7 @@
       "endDate": "1996-02",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": true
     },
     {
@@ -2128,6 +2146,7 @@
       "endDate": "1995-06",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2140,6 +2159,7 @@
       "endDate": "1994-10",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2152,6 +2172,7 @@
       "endDate": "1992-03",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": true
     },
     {
@@ -2163,6 +2184,7 @@
       "endDate": "1990-12",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2174,6 +2196,7 @@
       "endDate": "1989-10",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2185,6 +2208,7 @@
       "endDate": "1988-11",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2197,6 +2221,7 @@
       "endDate": "1987-05",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2208,6 +2233,7 @@
       "endDate": "1986-11",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2251,6 +2277,7 @@
         "System.Security.Cryptography",
         "SPA"
       ],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2290,6 +2317,7 @@
         "TFS",
         "SPA"
       ],
+      "notable": false,
       "showOnShort": false
     },
     {
@@ -2322,6 +2350,7 @@
         "TFS",
         "SPA"
       ],
+      "notable": false,
       "showOnShort": false
     },
     {
@@ -2360,6 +2389,7 @@
         "RequireJs",
         "SPA"
       ],
+      "notable": false,
       "showOnShort": false
     },
     {
@@ -2381,6 +2411,7 @@
         "JavaScript",
         "T-SQL"
       ],
+      "notable": false,
       "showOnShort": false
     },
     {
@@ -2402,6 +2433,7 @@
         "XML",
         "Xerces"
       ],
+      "notable": false,
       "showOnShort": false
     },
     {
@@ -2413,6 +2445,7 @@
       "endDate": "1989-12",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2424,6 +2457,7 @@
       "endDate": "1986-11",
       "highlights": [],
       "skills": [],
+      "notable": false,
       "showOnShort": false
     },
     {
@@ -2435,6 +2469,7 @@
       "endDate": "1982-09",
       "highlights": [],
       "skills": [],
+      "notable": true,
       "showOnShort": false
     }
   ],

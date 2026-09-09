@@ -59,6 +59,8 @@ SELECTED ACCOMPLISHMENTS
 - At Microsoft, I led a multi-disciplinary development team of 7 software
   engineers plus writers and graphic designers to produce a multimedia CD-ROM
   title for Windows. We delivered on time, meeting all quality goals.
+- Throughout my career, I have applied my expertise in decision and risk
+  analysis to promote efficient, risk-aware, and antifragile decision-making.
 - On a Microsoft project whose development lead and content developer each
   unexpectedly and simultaneously departed, I took the initiative to undertake
   some of each person's responsibilities, keeping the project on schedule and

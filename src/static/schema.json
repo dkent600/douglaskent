@@ -165,7 +165,11 @@
           },
           "showOnShort": {
             "type": "boolean",
-            "description": "SHow be visible on the short resume page"
+            "description": "SHow be visible when the resume is not extended"
+          },
+          "notable": {
+            "type": "boolean",
+            "description": "SHow be visible in the JSON-LD"
           },
           "skills": {
             "type": "array",
