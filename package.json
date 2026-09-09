@@ -16,7 +16,7 @@
     "prerender:create": "node prerender-capture.mjs",
     "prerender:insert": "node prerender-insert.mjs",
     "prerender": "npm run prerender:create && npm run prerender:insert",
-    "predeploy": "npm run prerender && powershell -NoProfile -ExecutionPolicy Bypass -File validate-web-config.ps1",
+    "predeploy": "powershell -NoProfile -ExecutionPolicy Bypass -File validate-web-config.ps1",
     "deploy": "ftp -i -s:ftpDeploy.txt",
     "preview": "vite preview --open",
     "clean": "npx -y rimraf node_modules package-lock.json && npm i",

@@ -188,15 +188,26 @@ npm run deploy      # 3. upload
 a stale build publishes the previous build's resume. `build` deliberately does not trigger the
 prerender: it stays a plain Aurelia build, usable on its own.
 
-`npm run deploy` runs `predeploy` first, which is `npm run prerender` followed by the `web.config`
-validation. So step 2 runs again on the way out, and that is the safety net -- a deploy cannot ship a
-shell whose marker was never consumed.
+**Nothing enforces the sequence.** `npm run deploy` runs only the `web.config` validation in its
+`predeploy` hook; it does not prerender. A `build` followed straight by a `deploy` uploads the shell
+with its `<!-- prerender:insert -->` marker unconsumed and no resume markup in it. The site still works
+for anyone running JavaScript, so nothing looks wrong -- it just carries nothing for the readers the
+snapshot exists for. Run step 2 every time.
 
-It also means **`dist/index.html` must not already be prerendered when you deploy.**
-`prerender:insert` throws on a shell that already carries `id="prerendered-resume"`, and that aborts the
-deploy before anything is uploaded. The guard is there because a second insert would append a second
-copy of the resume. If you have already run `prerender` by hand, run `npm run build` again before
-deploying.
+To confirm before uploading, count the verification markers in the built shell:
+
+```bash
+grep -o "data-work-entry" dist/index.html | wc -l
+```
+
+That prints 0 on a shell that was never prerendered, and otherwise one per entry in `resume.json`'s
+`work[]`. Note `grep -o ... | wc -l` rather than `grep -c`: the inserted markup is almost entirely one
+line, and `grep -c` counts matching lines, so it reports 1 for any prerendered shell however many
+entries it holds.
+
+**Prerender once per build.** `prerender:insert` throws on a shell that already carries
+`id="prerendered-resume"`, because a second insert would append a second copy of the resume. To
+prerender again, run `npm run build` first for a clean shell.
 
 `index-prerender.html` is written as a whole document, with a `<head>` carrying the built stylesheet, so
 it can be opened in a browser and checked. That head is scaffolding for viewing only; the insert step
@@ -212,8 +223,9 @@ takes just the body.
 - **`href` is kept**, so links remain links.
 - **Every other attribute is stripped**, ids included, along with every HTML comment.
 - **`data-work-entry`** is added to each work entry. It is a verification marker and nothing more:
-  `grep -c 'data-work-entry'` against the served HTML confirms every entry survived the capture. It has
-  no runtime purpose and nothing in the app reads it.
+  counting it in the served HTML confirms every entry survived the capture (see the command above). It
+  has no runtime purpose, nothing in the app reads it, and it is gone from the live DOM the moment the
+  app boots and removes the block.
 - **Content hidden by CSS is removed.** A crawler does not apply stylesheets, so anything left in the
   DOM under `display: none` would be read as ordinary text -- the short-resume variants and the
   sidebar's duplicate contact block among them.

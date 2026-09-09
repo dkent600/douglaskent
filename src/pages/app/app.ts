@@ -156,6 +156,19 @@ const notFoundTitle = "Douglas Kent - Page Not Found";
 export class App {
   binding() {
     // $("#splash").css("display", "none");
-    $("#prerendered-resume").css("display", "none");
+    /**
+     * The prerendered resume is removed from the document rather than hidden. Hiding it
+     * leaves a second, stale copy of the whole resume in the DOM for the life of the
+     * page -- reachable by find-in-page, by assistive technology that ignores
+     * `display: none` inconsistently, and by anything walking the tree -- and it stays
+     * there while the app renders its own copy below it.
+     *
+     * `remove()` on an empty jQuery set is a no-op, so this is safe when the block is
+     * absent, which is every `vite dev` run and any build whose insert step has not run.
+     */
+    // $("#prerendered-resume").css("display", "none");
+    // slow: $("#prerendered-resume").remove();
+    // native remove: no cleanData walk, is faster
+    document.getElementById("prerendered-resume")?.remove();
   }
 }
