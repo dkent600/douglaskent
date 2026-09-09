@@ -18,6 +18,7 @@
     "prerender": "npm run prerender:create && npm run prerender:insert",
     "predeploy": "powershell -NoProfile -ExecutionPolicy Bypass -File validate-web-config.ps1",
     "deploy": "ftp -i -s:ftpDeploy.txt",
+    "release": "npm run build && npm run prerender && npm run deploy",
     "preview": "vite preview --open",
     "clean": "npx -y rimraf node_modules package-lock.json && npm i",
     "lint:js": "eslint src --ext .js,.ts",
