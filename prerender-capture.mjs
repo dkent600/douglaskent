@@ -302,7 +302,18 @@ try {
      * The cost is carrier divs and template indentation in the output. That is inert
      * for the readers this fragment exists for, and cheaper than being wrong.
      */
-    return app.innerHTML;
+    /**
+     * Taken from inside `au-viewport` rather than from `<app>`. The viewport is the
+     * router's mount point: it means something to a running app and nothing to a static
+     * copy, no rule in the stylesheet refers to it, and in the served page this block
+     * sits outside `<app>` altogether. Carrying the element across would preserve a
+     * wrapper that no longer stands for anything.
+     */
+    const viewport = app.querySelector("au-viewport");
+    if (!viewport) {
+      throw new Error("no au-viewport found in the rendered app; the router did not mount");
+    }
+    return viewport.innerHTML;
   }, KEEP_ATTRIBUTES);
 
   /**

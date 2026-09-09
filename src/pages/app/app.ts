@@ -155,6 +155,7 @@ const notFoundTitle = "Douglas Kent - Page Not Found";
 })
 export class App {
   binding() {
-    $("#splash").css("display", "none");
+    // $("#splash").css("display", "none");
+    $("#prerendered-resume").css("display", "none");
   }
 }
