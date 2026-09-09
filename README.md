@@ -22,7 +22,9 @@ Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 | `npm run typecheck` | `tsc --noEmit`, using the TypeScript version this project pins |
 | `npm run lint` | eslint, htmlhint and sass-lint (`lint:js`, `lint:html`, `lint:css` individually) |
 | `npm run lint:js.fix` | eslint with `--fix` |
-| `npm run prerender` | Capture a JavaScript-free copy of the resume into `index-prerender.html` (see below) |
+| `npm run prerender:create` | Capture a JavaScript-free copy of the resume into `index-prerender.html` (see below) |
+| `npm run prerender:insert` | Splice that copy into the built `dist/index.html` |
+| `npm run prerender` | Both of the above, in order |
 | `npm run clean` | Delete `node_modules` and the lockfile, then reinstall |
 | `npm run deploy` | FTP upload driven by `ftpDeploy.txt` |
 
@@ -123,38 +125,6 @@ The asset hashes change whenever their contents change, and `dist/index.html` is
 **always deploy `index.html` together with `dist/assets`** -- shipping one without the other leaves the
 site referencing bundles that are not there.
 
-## The prerendered snapshot
-
-`npm run prerender` runs `prerender-capture.mjs`, which serves the built `dist/`, loads
-`/resume/expanded` in headless Chromium, strips the rendered DOM and writes `index-prerender.html`.
-
-It exists for readers that do not execute JavaScript. This is a client-rendered SPA, so such a reader
-receives an empty shell and none of the resume -- and that audience is most of the crawlers the site
-cares about, including the AI crawlers `web.config` opts back in. The snapshot is a complete,
-JavaScript-free copy of the full resume for them to read.
-
-Run it after `npm run build`, never before: it captures whatever is currently in `dist/`. `build` does
-not trigger it, so the two are always run separately.
-
-`index-prerender.html` is written as a whole document, with a `<head>` carrying the built stylesheet, so
-it can be opened in a browser and checked. That head is scaffolding for viewing only; the insertion step
-takes just the body.
-
-What the capture keeps and what it removes:
-
-- **`class` is kept.** The block is styled by the same stylesheet as the app, so it renders acceptably
-  for a reader who sees it without JavaScript rather than as unstyled markup.
-- **`href` is kept**, so links remain links.
-- **Every other attribute is stripped**, ids included, along with every HTML comment.
-- **`data-work-entry`** is added to each work entry. It is a verification marker and nothing more:
-  `grep -c 'data-work-entry'` against the served HTML confirms every entry survived the capture. It has
-  no runtime purpose and nothing in the app reads it.
-- **Content hidden by CSS is removed.** A crawler does not apply stylesheets, so anything left in the
-  DOM under `display: none` would be read as ordinary text -- the short-resume variants and the
-  sidebar's duplicate contact block among them.
-- **The table of contents is excluded, deliberately.** Every entry navigates through
-  `click.trigger="goto(...)"` with no `href`, so none of it is usable without JavaScript.
-
 ### `npm run deploy`
 
 Runs `ftp -i -s:ftpDeploy.txt`: Windows `ftp.exe` driven by a script file, uploading into `/douglask`
@@ -190,6 +160,65 @@ derived, and deliberately carrying no contact details.
 
 FTP uploads but never deletes, so a file dropped from the script stays on the server until it is removed
 by hand. `base.css` is one: it was deployed separately before it was bundled.
+
+## The prerendered snapshot
+
+This is a client-rendered SPA, so a reader that does not execute JavaScript receives an empty shell and
+none of the resume. That is most of the crawlers the site cares about, the AI crawlers `web.config` opts
+back in included. The snapshot gives them a complete, JavaScript-free copy of the full resume, spliced
+into the served `dist/index.html`.
+
+Two scripts, each doing one thing, and a third that composes them:
+
+| Command | Does |
+| --- | --- |
+| `npm run prerender:create` | `prerender-capture.mjs` serves the built `dist/`, loads `/resume/expanded` in headless Chromium, strips the rendered DOM and writes `index-prerender.html` |
+| `npm run prerender:insert` | `prerender-insert.mjs` takes the body of `index-prerender.html` and splices it into `dist/index.html` at the `<!-- prerender:insert -->` marker |
+| `npm run prerender` | Both, in that order |
+
+### Building, prerendering and deploying
+
+```bash
+npm run build       # 1. build the Aurelia app into dist/
+npm run prerender   # 2. capture from dist/, splice back into dist/index.html
+npm run deploy      # 3. upload
+```
+
+**The build must come first.** The capture reads whatever is currently in `dist/`, so running it against
+a stale build publishes the previous build's resume. `build` deliberately does not trigger the
+prerender: it stays a plain Aurelia build, usable on its own.
+
+`npm run deploy` runs `predeploy` first, which is `npm run prerender` followed by the `web.config`
+validation. So step 2 runs again on the way out, and that is the safety net -- a deploy cannot ship a
+shell whose marker was never consumed.
+
+It also means **`dist/index.html` must not already be prerendered when you deploy.**
+`prerender:insert` throws on a shell that already carries `id="prerendered-resume"`, and that aborts the
+deploy before anything is uploaded. The guard is there because a second insert would append a second
+copy of the resume. If you have already run `prerender` by hand, run `npm run build` again before
+deploying.
+
+`index-prerender.html` is written as a whole document, with a `<head>` carrying the built stylesheet, so
+it can be opened in a browser and checked. That head is scaffolding for viewing only; the insert step
+takes just the body.
+
+### What the capture keeps and removes
+
+- **`class` is kept**, and the classes are the same ones the running app's own markup carries -- the
+  snapshot is that markup, captured. `dist/index.html` links the stylesheet whether or not JavaScript
+  runs, so those classes resolve against exactly the rules the app would have used. A reader without
+  JavaScript therefore sees a page presented very much like the real one, rather than unstyled markup.
+  This is why `class` survives a pass that strips almost every other attribute.
+- **`href` is kept**, so links remain links.
+- **Every other attribute is stripped**, ids included, along with every HTML comment.
+- **`data-work-entry`** is added to each work entry. It is a verification marker and nothing more:
+  `grep -c 'data-work-entry'` against the served HTML confirms every entry survived the capture. It has
+  no runtime purpose and nothing in the app reads it.
+- **Content hidden by CSS is removed.** A crawler does not apply stylesheets, so anything left in the
+  DOM under `display: none` would be read as ordinary text -- the short-resume variants and the
+  sidebar's duplicate contact block among them.
+- **The table of contents is excluded, deliberately.** Every entry navigates through
+  `click.trigger="goto(...)"` with no `href`, so none of it is usable without JavaScript.
 
 ## Dependency notes
 
