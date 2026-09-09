@@ -359,7 +359,7 @@ function formatMonth(value: string, label: string, warnings: Warnings): string {
   return value.trim();
 }
 
-const isOpenEnded = (value: unknown): boolean =>
+export const isOpenEnded = (value: unknown): boolean =>
   typeof value !== "string" || value.trim() === "" || OPEN_ENDED.has(value.trim().toLowerCase());
 
 /**

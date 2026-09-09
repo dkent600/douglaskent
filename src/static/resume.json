@@ -1895,7 +1895,7 @@
         "TFS",
         "SPA"
       ],
-      "notable": true,
+      "notable": false,
       "showOnShort": false
     },
     {
@@ -1981,6 +1981,7 @@
         "TFS"
       ],
       "notable": true,
+      "contract": true,
       "showOnShort": true
     },
     {
@@ -2072,6 +2073,7 @@
       "company": "Imagen Communications, Inc.",
       "position": "Sole Software Engineer",
       "remote": true,
+      "contract": true,
       "website": "",
       "startDate": "1996-10",
       "summary": "Designed and developed NT Paymaster, a billing application for ISPs",
@@ -2114,7 +2116,7 @@
       "company": "Microsoft Corporation",
       "position": "Software Engineer",
       "contract": true,
-      "website": "https://www.microsoft.com/",
+      "website": "https://www.microsoft.com",
       "startDate": "1996-03",
       "summary": "Wrote subsystem to facilitate localization of Encarta `97 into 5 languages",
       "endDate": "1996-06",
@@ -2127,7 +2129,7 @@
       "company": "Microsoft Corporation",
       "position": "Development Manager, Software Engineer",
       "contract": true,
-      "website": "https://www.microsoft.com/",
+      "website": "https://www.microsoft.com",
       "startDate": "1995-06",
       "summary": "Managed team of 7 in code development and release to market of the Reader's Digest Complete Do-It-Yourself Guide multimedia CD-ROM title",
       "endDate": "1996-02",
@@ -2140,7 +2142,7 @@
       "company": "Microsoft Corporation",
       "position": "Software Engineer, Tech Lead",
       "contract": true,
-      "website": "https://www.microsoft.com/",
+      "website": "https://www.microsoft.com",
       "startDate": "1994-11",
       "summary": "Wrote the core GUI engine for Julia Child's Home Cooking With Master Chefs multimedia CD-ROM title",
       "endDate": "1995-06",

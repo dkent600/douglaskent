@@ -766,7 +766,7 @@ Designed and developed NT Paymaster, a billing application for ISPs
 
 Software Engineer
 Microsoft Corporation | 03/1996 - 06/1996
-https://www.microsoft.com/
+https://www.microsoft.com
 
 Description:
 Wrote subsystem to facilitate localization of Encarta `97 into 5 languages
@@ -774,7 +774,7 @@ Wrote subsystem to facilitate localization of Encarta `97 into 5 languages
 
 Development Manager, Software Engineer
 Microsoft Corporation | 06/1995 - 02/1996
-https://www.microsoft.com/
+https://www.microsoft.com
 
 Description:
 Managed team of 7 in code development and release to market of the Reader's
@@ -795,7 +795,7 @@ Highlights:
 
 Software Engineer, Tech Lead
 Microsoft Corporation | 11/1994 - 06/1995
-https://www.microsoft.com/
+https://www.microsoft.com
 
 Description:
 Wrote the core GUI engine for Julia Child's Home Cooking With Master Chefs

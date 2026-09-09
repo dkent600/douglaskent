@@ -132,5 +132,295 @@
       "Subgraph",
       "Liquidity Bootstrapping Pools"
     ]
-  }
+  },
+  "worksFor": [
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Technical Lead & LLM Pipeline Architect — Human Lens, AI-native web app",
+      "startDate": "2026-05",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent Software Developer",
+        "url": "https://github.com/dkent600/HumanLens"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management dApp",
+      "startDate": "2025-06",
+      "endDate": "2025-09",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent Software Developer",
+        "url": "https://github.com/dkent600/batch-take-profit"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management service",
+      "startDate": "2025-06",
+      "endDate": "2025-09",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent Software Developer",
+        "url": "https://github.com/dkent600/butterfly-services"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Blockchain Oracle Developer",
+      "startDate": "2023-04",
+      "endDate": "2023-05",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Curve Labs",
+        "url": "https://www.curvelabs.eu/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Development Team Lead and Lead Developer",
+      "startDate": "2020-08",
+      "endDate": "2022-11",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Curve Labs",
+        "url": "https://www.curvelabs.eu/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Senior Lead Developer",
+      "startDate": "2017-09",
+      "endDate": "2020-10",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "DAOstack",
+        "url": "https://www.daostack.io/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Sole Web Designer and Developer — Password Repository",
+      "startDate": "2013-08",
+      "endDate": "2017-09",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent Software Developer"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Senior Web Developer",
+      "startDate": "2011-11",
+      "endDate": "2013-03",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Revionics",
+        "url": "https://www.revionics.com/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Senior Lead Web Developer, Manager Partner Integrations",
+      "startDate": "2003-08",
+      "endDate": "2011-07",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "ShiftWise",
+        "url": "https://www.shiftwise.com/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Software Engineer (Ford.com)",
+      "startDate": "2000-09",
+      "endDate": "2001-03",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Trilogy",
+        "url": "https://www.trilogy.com/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Software Engineer (carOrder.com)",
+      "startDate": "2000-01",
+      "endDate": "2000-08",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Trilogy",
+        "url": "https://www.trilogy.com/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Software Engineer (IBM)",
+      "startDate": "1999-03",
+      "endDate": "1999-12",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Trilogy",
+        "url": "https://www.trilogy.com/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Lead Software Engineer",
+      "startDate": "1997-02",
+      "endDate": "1997-03",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Biomonitors, Ltd"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Sole Software Engineer",
+      "startDate": "1996-10",
+      "endDate": "1998-03",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Imagen Communications, Inc."
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Software Engineer",
+      "startDate": "1996-03",
+      "endDate": "1996-06",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Microsoft Corporation",
+        "url": "https://www.microsoft.com"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Development Manager, Software Engineer",
+      "startDate": "1995-06",
+      "endDate": "1996-02",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Microsoft Corporation",
+        "url": "https://www.microsoft.com"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Founder & Developer — Mouthing Flowers",
+      "startDate": "1995-02",
+      "endDate": "1999-09",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent Software Developer"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Software Engineer, Tech Lead",
+      "startDate": "1994-11",
+      "endDate": "1995-06",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Microsoft Corporation",
+        "url": "https://www.microsoft.com"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Software Engineer",
+      "startDate": "1992-04",
+      "endDate": "1994-10",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Asymetrix Corporation",
+        "url": "https://home.click2learn.com/showcase"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Software Engineer",
+      "startDate": "1991-01",
+      "endDate": "1992-03",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Microsoft Corporation",
+        "url": "https://www.microsoft.com"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "VP Applications Development",
+      "startDate": "1989-10",
+      "endDate": "1990-12",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "ConnectSoft"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Software Engineer",
+      "startDate": "1988-12",
+      "endDate": "1989-10",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "ConnectSoft"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Software Engineer",
+      "startDate": "1988-11",
+      "endDate": "1989-12",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "University of North Carolina",
+        "url": "https://www.unc.edu/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Software Engineer",
+      "startDate": "1988-03",
+      "endDate": "1988-11",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Dupont Design Technologies, Inc."
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Sole Software Engineer",
+      "startDate": "1986-12",
+      "endDate": "1987-05",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "SAS Institute Inc.",
+        "url": "https://www.sas.com/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Sole Software Engineer",
+      "startDate": "1985-05",
+      "endDate": "1986-11",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "University of North Carolina",
+        "url": "https://www.unc.edu/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Associate Public Policy Analyst",
+      "startDate": "1980-01",
+      "endDate": "1982-09",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Pacific Environmental Services, Inc"
+      }
+    }
+  ]
 }

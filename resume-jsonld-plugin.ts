@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 
 import type { Plugin } from "vite";
 
+import { isOpenEnded } from "./resume-content";
 import { stripHtml } from "./resume-text";
 import { SUMMARY_KEYS } from "./src/stores/resume-store";
 
@@ -59,6 +60,15 @@ interface Education {
   institution?: string;
   area?: string;
   studyType?: string;
+}
+
+interface Work {
+  company?: string;
+  position?: string;
+  website?: string;
+  startDate?: string;
+  endDate?: string;
+  notable?: boolean;
 }
 
 interface Language {
@@ -193,6 +203,57 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
       }),
     );
 
+  /**
+   * The employment history, as `OrganizationRole` rather than a bare `Organization`.
+   *
+   * `worksFor: Organization` names a *current* employer and has nowhere to put dates, so a
+   * list of them would claim Doug works at every one of these places simultaneously.
+   * `OrganizationRole` is the wrapper schema.org provides for exactly this: the role, when
+   * it was held, and the organization it was held at.
+   *
+   * The property is here for entity disambiguation. Several findable people share this
+   * name, and an organization that already has a public identity is a strong separating
+   * signal -- which is what `url` carries. An entry without one contributes a bare string
+   * and little else, which is why the field is worth keeping populated in `resume.json`.
+   *
+   * Repeats are deliberate and must not be merged. Four Microsoft roles are four entries;
+   * collapsing them would invent a single continuous tenure that did not happen, and the
+   * dates -- the thing this property exists to carry -- would have nowhere to go.
+   *
+   * Ordered the way the resume documents order the same entries: start date descending,
+   * source order breaking ties. The array in `resume.json` is the page's display grouping
+   * -- professional work, then personal projects -- so it is not chronological and the
+   * sort is required rather than cosmetic.
+   */
+  const work: Array<Work> = Array.isArray(resume.work) ? resume.work : [];
+  const worksFor = work
+    .map((entry, index) => ({ entry, index }))
+    .filter(({ entry }) => entry.notable === true)
+    .sort((a, b) => {
+      const left = String(a.entry.startDate ?? "");
+      const right = String(b.entry.startDate ?? "");
+      if (left === right) return a.index - b.index;
+      return left < right ? 1 : -1;
+    })
+    .map(({ entry }) =>
+      compact({
+        "@type": "OrganizationRole",
+        roleName: entry.position,
+        startDate: entry.startDate,
+        /**
+         * An open-ended entry gets no `endDate` at all. Emitting "present" would be a
+         * malformed date, and emitting today's date would assert an end that has not
+         * happened; absence is how schema.org says a role is still held.
+         */
+        endDate: isOpenEnded(entry.endDate) ? undefined : entry.endDate,
+        worksFor: compact({
+          "@type": "Organization",
+          name: entry.company,
+          url: entry.website,
+        }),
+      }),
+    );
+
   const languages: Array<Language> = Array.isArray(resume.languages) ? resume.languages : [];
   const knowsLanguage = languages
     .map((entry) => entry.language)
@@ -246,6 +307,7 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
     hasCredential,
     knowsAbout,
     hasOccupation,
+    worksFor,
   });
 }
 
