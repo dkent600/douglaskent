@@ -13,7 +13,6 @@
     "start": "vite --open",
     "admin": "vite --open /admin",
     "build": "cross-env NODE_ENV=production vite build",
-    "postbuild": "npm run prerender && npm run prerender:insert",
     "prerender": "node prerender-capture.mjs",
     "prerender:insert": "node prerender-insert.mjs",
     "predeploy": "powershell -NoProfile -ExecutionPolicy Bypass -File validate-web-config.ps1",

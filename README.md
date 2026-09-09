@@ -22,6 +22,7 @@ Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 | `npm run typecheck` | `tsc --noEmit`, using the TypeScript version this project pins |
 | `npm run lint` | eslint, htmlhint and sass-lint (`lint:js`, `lint:html`, `lint:css` individually) |
 | `npm run lint:js.fix` | eslint with `--fix` |
+| `npm run prerender` | Capture a JavaScript-free copy of the resume into `index-prerender.html` (see below) |
 | `npm run clean` | Delete `node_modules` and the lockfile, then reinstall |
 | `npm run deploy` | FTP upload driven by `ftpDeploy.txt` |
 
@@ -121,6 +122,38 @@ duplicate it.
 The asset hashes change whenever their contents change, and `dist/index.html` is what points at them, so
 **always deploy `index.html` together with `dist/assets`** -- shipping one without the other leaves the
 site referencing bundles that are not there.
+
+## The prerendered snapshot
+
+`npm run prerender` runs `prerender-capture.mjs`, which serves the built `dist/`, loads
+`/resume/expanded` in headless Chromium, strips the rendered DOM and writes `index-prerender.html`.
+
+It exists for readers that do not execute JavaScript. This is a client-rendered SPA, so such a reader
+receives an empty shell and none of the resume -- and that audience is most of the crawlers the site
+cares about, including the AI crawlers `web.config` opts back in. The snapshot is a complete,
+JavaScript-free copy of the full resume for them to read.
+
+Run it after `npm run build`, never before: it captures whatever is currently in `dist/`. `build` does
+not trigger it, so the two are always run separately.
+
+`index-prerender.html` is written as a whole document, with a `<head>` carrying the built stylesheet, so
+it can be opened in a browser and checked. That head is scaffolding for viewing only; the insertion step
+takes just the body.
+
+What the capture keeps and what it removes:
+
+- **`class` is kept.** The block is styled by the same stylesheet as the app, so it renders acceptably
+  for a reader who sees it without JavaScript rather than as unstyled markup.
+- **`href` is kept**, so links remain links.
+- **Every other attribute is stripped**, ids included, along with every HTML comment.
+- **`data-work-entry`** is added to each work entry. It is a verification marker and nothing more:
+  `grep -c 'data-work-entry'` against the served HTML confirms every entry survived the capture. It has
+  no runtime purpose and nothing in the app reads it.
+- **Content hidden by CSS is removed.** A crawler does not apply stylesheets, so anything left in the
+  DOM under `display: none` would be read as ordinary text -- the short-resume variants and the
+  sidebar's duplicate contact block among them.
+- **The table of contents is excluded, deliberately.** Every entry navigates through
+  `click.trigger="goto(...)"` with no `href`, so none of it is usable without JavaScript.
 
 ### `npm run deploy`
 
