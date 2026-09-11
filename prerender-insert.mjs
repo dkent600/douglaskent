@@ -73,6 +73,30 @@ if (bytes < MINIMUM_BYTES) {
   throw new Error(`prerendered markup is ${bytes} bytes, below the ${MINIMUM_BYTES} byte minimum`);
 }
 
+/**
+ * No loopback address may reach the served markup.
+ *
+ * This shipped. `prerender-capture.mjs` runs against `vite preview` on an ephemeral port,
+ * and the router's link attributes write the *runtime* origin into the `href` attribute, so
+ * a capture baked `http://localhost:53198/resume/short` and `.../resume.docx` into the
+ * block and the apex served them. The readers this block exists for are the ones that do not
+ * run JavaScript, so they got two links pointing at a loopback address on their own machine
+ * and nothing to replace them -- and because a browser hydrates over the block, no human
+ * ever saw it. The links are root-relative at the source now; this is what makes the class
+ * of failure unshippable rather than merely fixed once.
+ *
+ * A byte floor and a work-entry count already guard this file. This is the same kind of
+ * check: cheap, total, and specific about what it found.
+ */
+const loopback = /localhost|127\.0\.0\.1|0\.0\.0\.0/.exec(markup);
+if (loopback) {
+  const from = Math.max(0, loopback.index - 80);
+  throw new Error(
+    `prerendered markup contains the loopback address "${loopback[0]}", which means the capture ` +
+      `recorded its own preview server's origin:\n  ...${markup.slice(from, loopback.index + 80)}...`,
+  );
+}
+
 const entries = (markup.match(/data-work-entry/g) || []).length;
 if (entries !== expected) {
   throw new Error(`prerendered markup has ${entries} work entries, expected ${expected}`);

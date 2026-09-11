@@ -29,9 +29,25 @@
     </div>
   </div> -->
   <!-- <div><a href="https://douglaskent.com/resume">Complete Resume: https://douglaskent.com/resume</a></div> -->
+  <!--
+    `external` plus a root-relative href, not `load`.
+
+    The router's link attributes rewrite the `href` *attribute* to an origin-absolute URL
+    built from the runtime origin. That is invisible in a browser and wrong in the
+    prerender: `prerender-capture.mjs` runs against `vite preview` on an ephemeral port, so
+    the capture baked "http://localhost:53198/resume/short" into the markup and shipped it.
+    Readers of that block are the ones who do not run JavaScript, so they got a link to a
+    loopback address on their own machine, with nothing to replace it.
+
+    `external` makes the router leave the attribute alone. The cost is that this is now a
+    full page load rather than a soft route change -- web.config rewrites /resume/short to
+    index.html, so it works, it just reloads. That cost is smaller than it looks: `useHref`
+    is false in `src/main.ts`, so a plain `href` was never intercepted for soft navigation
+    anyway; `load` was the only thing buying it, and `load` is what produced the bad URL.
+  -->
   <div class="d-print-none">
-    <div resume-type="complete"><a load="../resume/short">Short Resume</a></div>
-    <div resume-type="short"><a load="../resume">Complete Resume</a></div>
+    <div resume-type="complete"><a external href="/resume/short">Short Resume</a></div>
+    <div resume-type="short"><a external href="/resume">Complete Resume</a></div>
   </div>
   <!--
     A copy of the resume someone can forward or upload, for a human reader. It is not a
@@ -49,7 +65,7 @@
     Bootstrap's d-print-none on the block above. Both classes are real and both work; this one
     is the app's own, and it hides descendants as well as the element.
   -->
-  <div class="hidden-print"><a href="/resume.docx">Word version</a></div>
+  <div class="hidden-print"><a external href="/resume.docx">Word version</a></div>
 </template>
 
 <section class="section section-lg-none" if.bind="inline">

@@ -101,6 +101,32 @@ interface Citizenship {
 const SAME_AS_NETWORKS = new Set(["LinkedIn", "GitHub"]);
 
 /**
+ * Escapes the block for embedding in a `<script>` element.
+ *
+ * `<` is escaped so a stray `</script` anywhere in the resume text cannot close the tag
+ * early. Only that sequence can break out of the element -- `application/ld+json` is a data
+ * block, not executable JavaScript -- so escaping `<` covers it, and U+2028/U+2029 and the
+ * rest are deliberately left alone: `JSON.parse` handles them, and widening the escape set
+ * without a reason is how a working normalizer acquires cases nobody can justify later.
+ *
+ * The escape is invisible to a JSON parser, so this changes the bytes without changing the
+ * data. It applies only to the inlined copy; the standalone file is not embedded in HTML
+ * and needs no such guard.
+ *
+ * The backslash is doubled deliberately. A single one makes the replacement a Unicode
+ * escape that JavaScript resolves back to `<` while parsing this file, so the call becomes
+ * a silent no-op that still looks correct.
+ *
+ * Exported so it can be tested. The real `resume.json` contains no `<` at all, which means
+ * the inlined copy contains no `<` either and no assertion against real data can tell
+ * a working escaper from a deleted one. The test drives this function with a synthetic
+ * fixture instead -- see `check-jsonld.test.mjs`.
+ */
+export function escapeForScript(json: string): string {
+  return json.replaceAll("<", "\\u003c");
+}
+
+/**
  * Drops properties whose source field was absent or empty, so the block never carries an
  * empty string, an empty array or a null.
  */
@@ -536,16 +562,7 @@ export function resumeJsonLd(): Plugin {
     name: "resume-jsonld",
 
     async transformIndexHtml() {
-      /**
-       * `<` is escaped so a stray `</script>` anywhere in the resume text cannot close
-       * the tag early. The escape is invisible to a JSON parser, and it applies only to
-       * this copy -- the standalone file is not embedded in HTML and needs no such guard.
-       *
-       * The backslash is doubled deliberately. A single one makes the replacement a
-       * Unicode escape that JavaScript resolves back to `<` while parsing this file, so
-       * the call becomes a silent no-op that still looks correct.
-       */
-      const json = (await generate((message) => this.warn(message))).replaceAll("<", "\\u003c");
+      const json = escapeForScript(await generate((message) => this.warn(message)));
 
       return [
         {

@@ -31,6 +31,7 @@ let resume;
 let block;
 let graph;
 let buildPersonJsonLd;
+let escapeForScript;
 
 const nodesOfType = (type) => graph.filter((node) => node["@type"] === type);
 const single = (type) => {
@@ -49,7 +50,7 @@ const publishedEntries = () => (resume.work ?? []).filter((entry) => entry.showO
 before(async () => {
   const server = await createServer({ configFile: false, server: { middlewareMode: true }, appType: "custom" });
   try {
-    ({ buildPersonJsonLd } = await server.ssrLoadModule("/resume-jsonld-plugin.ts"));
+    ({ buildPersonJsonLd, escapeForScript } = await server.ssrLoadModule("/resume-jsonld-plugin.ts"));
   } finally {
     await server.close();
   }
@@ -188,5 +189,68 @@ describe("emitted copies", () => {
     const inline = found[1];
     assert.ok(!inline.includes("</script"), "the inlined copy must not be able to close its own tag");
     assert.deepEqual(JSON.parse(inline), block);
+  });
+});
+
+/**
+ * The escaper, driven by a synthetic fixture rather than by `resume.json`.
+ *
+ * This exists because the real resume contains no `<` anywhere, so the inlined copy contains
+ * no `<` either and the assertion above is satisfied vacuously -- delete the escaping
+ * from the plugin and it still passes. Real data cannot exercise this path, so the fixture
+ * supplies content that needs escaping and asserts the escaper actually fires.
+ *
+ * Two routes in, because they are not equally guarded. `basics.bio` is run through
+ * `stripHtml`, which removes a well-formed `</script>` before it ever reaches the block --
+ * but `stripHtml` is `/<[^>]*>/g`, so an *unclosed* `</script` has no closing `>` to match
+ * and passes through untouched. HTML needs only `</script` followed by whitespace, `/` or
+ * `>` to end the element, so that is the dangerous case and `stripHtml` is not a defence
+ * against it. `basics.label` reaches `jobTitle` and `hasOccupation.name` with no stripping
+ * at all, so it carries the complete sequence. The escaper is the only thing covering both.
+ *
+ * The fixture is an in-memory clone. Nothing here writes to `src/static/resume.json`.
+ */
+describe("script escaping", () => {
+  const HAZARDS = {
+    /** Survives `stripHtml` because it has no closing `>`; still ends the element in HTML. */
+    bio: "Reliable systems on top of 3 < 4 inputs. </script and then some more prose.",
+    /** Reaches the block unstripped, so it carries the fully-formed sequence. */
+    label: 'Engineer </script><script>alert("xss")</script>',
+  };
+
+  const fixture = () => {
+    const clone = structuredClone(resume);
+    clone.basics.bio = HAZARDS.bio;
+    clone.basics.label = HAZARDS.label;
+    return clone;
+  };
+
+  test("the fixture actually reaches the block unescaped", () => {
+    const standalone = JSON.stringify(buildPersonJsonLd(fixture()), null, 2);
+    assert.ok(standalone.includes("</script"), "fixture was filtered out before the block; it tests nothing");
+    assert.ok(standalone.includes("3 < 4"), "a bare < should survive stripHtml");
+  });
+
+  test("escaping leaves no raw < in the inlined copy", () => {
+    const inline = escapeForScript(JSON.stringify(buildPersonJsonLd(fixture()), null, 2));
+    assert.ok(!inline.includes("<"), "a raw < survived into the inlined copy");
+    assert.ok(!inline.includes("</script"), "the inlined copy can close its own tag");
+    assert.ok(inline.includes("\\u003c"), "the escape was never applied");
+  });
+
+  test("escaping changes the bytes without changing the data", () => {
+    const standalone = JSON.stringify(buildPersonJsonLd(fixture()), null, 2);
+    const inline = escapeForScript(standalone);
+
+    assert.notEqual(inline, standalone, "the fixture should have forced a difference");
+    assert.deepEqual(JSON.parse(inline), JSON.parse(standalone));
+  });
+
+  test("the hazardous text round-trips intact through the escaping", () => {
+    const inline = escapeForScript(JSON.stringify(buildPersonJsonLd(fixture()), null, 2));
+    const person = JSON.parse(inline)["@graph"].find((node) => node["@type"] === "Person");
+
+    assert.equal(person.jobTitle, HAZARDS.label, "escaping must not alter what the data says");
+    assert.ok(person.description.includes("</script"), "the unclosed tag should reach the parsed data intact");
   });
 });
