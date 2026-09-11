@@ -23,6 +23,7 @@ import {
   type Entry,
   type Normalizer,
   plainText,
+  resumeLastUpdated,
   type Section,
 } from "./resume-content";
 
@@ -197,30 +198,33 @@ function renumberLinks(documentXml: string, relsXml: string): { document: string
 }
 
 /**
- * The date the resume was last revised, read from `resume.lastUpdated`.
+ * The date the resume was last revised, as a `Date`.
  *
- * Accepts a plain `YYYY-MM-DD`, which is how the field is written, as well as a full ISO
- * timestamp. A bare date parses as UTC midnight, so the value does not shift with the
- * machine's timezone and two people in different places build the same bytes.
+ * The string comes from `resumeLastUpdated()`, which reads the commit date of the last
+ * commit that touched `resume.json`. It used to be the hand-maintained `lastUpdated` field,
+ * which failed the way manual fields do; the reasoning for a commit date over a build
+ * timestamp or an mtime lives with that helper.
  *
- * Missing or unparseable is a build failure rather than a fallback to the mtime. Falling
- * back would restore the exact behaviour this field exists to remove, and would do it
- * silently, on the machines least likely to notice: a fresh clone and CI.
+ * Accepts the `YYYY-MM-DD` the helper guarantees, as well as a full ISO timestamp. A bare
+ * date parses as UTC midnight, so the value does not shift with the machine's timezone and
+ * two people in different places build the same bytes.
+ *
+ * Unparseable is a build failure rather than a fallback to the mtime. Falling back would
+ * restore the exact behaviour this exists to remove, and would do it silently, on the
+ * machines least likely to notice: a fresh clone and CI.
  */
-function resumeDate(resume: Record<string, any>): Date {
-  const value = resume.lastUpdated;
-
+function resumeDate(value: string): Date {
   if (typeof value !== "string" || value.trim() === "") {
     throw new Error(
-      `resume-docx: resume.json has no "lastUpdated". Add it as a top-level field, e.g. ` +
-        `"lastUpdated": "2026-09-04". It dates the Word document's properties and fixes every ` +
-        `timestamp in the package, which is what keeps two builds of the same resume byte-identical.`,
+      `resume-docx: no last-updated date was available. It dates the Word document's ` +
+        `properties and fixes every timestamp in the package, which is what keeps two builds ` +
+        `of the same resume byte-identical.`,
     );
   }
 
   const when = new Date(value);
   if (Number.isNaN(when.getTime())) {
-    throw new Error(`resume-docx: resume.json "lastUpdated" is not a date this can read: ${JSON.stringify(value)}. Use YYYY-MM-DD.`);
+    throw new Error(`resume-docx: the last-updated date is not one this can read: ${JSON.stringify(value)}. Use YYYY-MM-DD.`);
   }
 
   return when;
@@ -610,7 +614,7 @@ export function resumeDocx(): Plugin {
     async writeBundle() {
       const source = resolve(process.cwd(), RESUME_PATH);
       const resume = JSON.parse(await readFile(source, "utf8"));
-      const { file, warnings } = await buildResumeDocx(resume, resumeDate(resume));
+      const { file, warnings } = await buildResumeDocx(resume, resumeDate(resumeLastUpdated()));
 
       /**
        * A `.docx` differs from this project's other build outputs in one way that matters

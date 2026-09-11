@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 import type { Plugin } from "vite";
 
-import { isOpenEnded, plainText } from "./resume-content";
+import { isOpenEnded, plainText, resumeLastUpdated } from "./resume-content";
 import { stripHtml } from "./resume-text";
 import { SUMMARY_KEYS } from "./src/stores/resume-store";
 
@@ -115,7 +115,15 @@ function compact(source: Record<string, unknown>): Record<string, unknown> {
   return result;
 }
 
-export function buildPersonJsonLd(resume: Record<string, any>): Record<string, unknown> {
+/**
+ * `warn` is optional so the function stays pure and callable outside a build -- the test
+ * exercises it directly, and Vite's `this.warn` exists only inside a plugin hook. Omitting
+ * it discards warnings rather than routing them somewhere nothing reads.
+ */
+export function buildPersonJsonLd(
+  resume: Record<string, any>,
+  warn?: (message: string) => void,
+): Record<string, unknown> {
   const basics = resume.basics ?? {};
   const location = basics.location ?? {};
 
@@ -292,20 +300,27 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
   );
 
   /**
-   * `description` belongs to the role, not to the organization. The summary says what Doug
-   * did; on the `Organization` it would assert that ShiftWise *is* "a lead role in an Agile
-   * Scrum environment". The same reasoning puts it on the `Role` wrapper for projects.
+   * `description` goes on whichever node is Doug's. That is the rule, and the two branches
+   * apply it to different nodes rather than disagreeing: for employment the description
+   * belongs to the *role*, because the company is not his -- put on the `Organization` it
+   * would assert that ShiftWise *is* "a lead role in an Agile Scrum environment". For a
+   * project it belongs to the *software itself*, because the software is his, which is why
+   * the applications below carry `description` on the node and not on their `author` Role.
    *
    * `summary` is normalized rather than passed through. These fields are authored as HTML
    * for the page -- one writes its project names in `<i>` and separates them with `&nbsp;`
    * -- and `description` is defined as text. `plainText` is the normalizer the plain-text
    * and Word documents run on the same fields, so all three agree on what the prose says.
    *
-   * A role's own `skills` have nowhere to go. `keywords` is a `CreativeWork` property and
-   * `Role` is not a `CreativeWork`, so an employment entry's skill list survives only inside
-   * the Person-level union below, without attribution to the job that earned it. That is a
-   * limit of the vocabulary rather than a decision made here, and there is no property to
-   * "fix" it with.
+   * A role's own `skills` have nowhere to go, and this was checked against schema.org rather
+   * than assumed: `keywords` is used on CreativeWork, Event, Organization, Place and Product;
+   * `skills` on JobPosting, Occupation, Organization and Person. Neither lists `Role`. Both
+   * are legal on `Organization`, but hanging a job's skill list there would assert they are
+   * the *company's* specializations rather than Doug's, which is worse than omitting them.
+   * An employment entry's skills therefore survive only inside the Person-level union below,
+   * without attribution to the job that earned them. That is a limit of the vocabulary, not
+   * a decision made here, and there is no property that would fix it -- please do not
+   * re-open it looking for one.
    */
   const worksFor = employment.map(({ entry }) =>
     compact({
@@ -326,10 +341,19 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
   /**
    * The personal projects, as software rather than as employment.
    *
-   * `name` is `company`, the same mapping the employment branch uses. On these entries that
-   * field reads "Independent Software Developer" rather than the project's name, so both
-   * nodes carry that string and are told apart only by `@id` and `url`. Doug chose this over
-   * changing `company` or adding a field, on the grounds that `resume.json` stays as it is.
+   * `name` is `company`, the same mapping the employment branch uses, and that is a decision
+   * with a known cost rather than a neutral mapping.
+   *
+   * The reason: `company` is the string a human reader sees on the resume site under each
+   * personal entry, and the block should carry what the page shows. The cost Doug accepted
+   * knowingly: `company` on these entries reads "Independent Software Developer", so both
+   * `SoftwareApplication` nodes are named that, and the graph contains the words "Human Lens"
+   * and "Butterfly" in no `name` at all -- only inside the `roleName` prose below. Two nodes
+   * with one name are told apart solely by `@id` and `url`.
+   *
+   * The alternatives were putting the project name in `company` (which changes what the page,
+   * `resume.txt` and the Word file display) and adding a `project` field (which changes the
+   * resume schema). Both were considered and declined.
    *
    * `roleName` takes `position` whole and nothing splits it. That string carries two facts
    * at once -- "Technical Lead & LLM Pipeline Architect - Human Lens, AI-native web app" --
@@ -386,19 +410,41 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
     .map((name) => ({ "@type": "Country", name }));
 
   /**
-   * The same summary paragraphs the plain-text resume prints, joined into the single
-   * string `description` is defined to be. One paragraph was too thin a claim for the
-   * property that most machine readers quote back; three still fit comfortably inside what
-   * a description is for.
+   * `bio` is the third-person long-form description, written for this property and for
+   * nothing else.
+   *
+   * The page speaks in the first person -- "I am a software engineer and architect with 35
+   * years..." -- which is right for a person's own site and wrong for a metadata field a
+   * machine reader will quote back about him. `metaDescription` is not the substitute: it
+   * is capped at 160 characters because it feeds `<meta name="description">` and
+   * `og:description`, and the graph has room for the longer prose.
+   *
+   * ACCEPTED COST: `bio` restates the facts in `summary1`, `summary2` and `summary7` in a
+   * different voice, and nothing can check that the two stay in agreement. Editing one and
+   * not the other leaves the page and the graph saying different things about the same
+   * career, silently. That is the price of the page being first person and the graph third,
+   * and it is paid deliberately -- the alternative is publishing "I am..." to readers that
+   * are quoting rather than listening.
+   *
+   * The fallback keeps the build working before the field exists and warns rather than
+   * degrading quietly, matching how `resume-head-plugin.ts` treats its own missing fields.
    *
    * `stripHtml` and not the text file's ASCII folding: this is JSON, so the source's
-   * em-dashes and curly quotes are carried through as they are written. Nothing in these
-   * three keys contains markup today, but the strip costs nothing and keeps a future edit
-   * to one of them from putting a tag into the block.
+   * em-dashes and curly quotes are carried through as they are written. `bio` should hold
+   * no markup, but the strip costs nothing, and the `summary*` fields it replaces do carry
+   * anchors.
    */
-  const description = SUMMARY_KEYS.map((key) => (typeof basics[key] === "string" ? stripHtml(basics[key]) : ""))
-    .filter((paragraph) => paragraph !== "")
-    .join(" ");
+  const bio = typeof basics.bio === "string" ? stripHtml(basics.bio).trim() : "";
+  let description = bio;
+  if (description === "") {
+    description = SUMMARY_KEYS.map((key) => (typeof basics[key] === "string" ? stripHtml(basics[key]) : ""))
+      .filter((paragraph) => paragraph !== "")
+      .join(" ");
+    warn?.(
+      `basics.bio is missing or empty; Person.description falls back to the first-person ` +
+        `${SUMMARY_KEYS.join(", ")} paragraphs, which read as the page rather than as metadata`,
+    );
+  }
 
   const jobTitle = typeof basics.label === "string" ? basics.label : undefined;
 
@@ -456,7 +502,13 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
     url: PAGE_URL,
     name: basics.metaTitle,
     description: basics.metaDescription,
-    dateModified: resume.lastUpdated,
+    /**
+     * The commit date of the last commit that touched `resume.json`, not a build timestamp
+     * and not the file's mtime -- `resumeLastUpdated()` carries the reasoning for both
+     * exclusions. `dateModified` is a claim about when the content changed, so a value that
+     * moved on every rebuild would be worse than no value at all.
+     */
+    dateModified: resumeLastUpdated(),
     mainEntity: { "@id": PERSON_ID },
     hasPart: projects.map(({ entry }) => ({ "@id": entry.website })),
   });
@@ -475,9 +527,9 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
 }
 
 export function resumeJsonLd(): Plugin {
-  const generate = async (): Promise<string> => {
+  const generate = async (warn: (message: string) => void): Promise<string> => {
     const resume = JSON.parse(await readFile(resolve(process.cwd(), RESUME_PATH), "utf8"));
-    return JSON.stringify(buildPersonJsonLd(resume), null, 2);
+    return JSON.stringify(buildPersonJsonLd(resume, warn), null, 2);
   };
 
   return {
@@ -493,7 +545,7 @@ export function resumeJsonLd(): Plugin {
        * Unicode escape that JavaScript resolves back to `<` while parsing this file, so
        * the call becomes a silent no-op that still looks correct.
        */
-      const json = (await generate()).replaceAll("<", "\\u003c");
+      const json = (await generate((message) => this.warn(message))).replaceAll("<", "\\u003c");
 
       return [
         {
@@ -510,7 +562,7 @@ export function resumeJsonLd(): Plugin {
      * editor does not rewrite a file in `src/static` on every keystroke.
      */
     async writeBundle() {
-      await writeFile(resolve(process.cwd(), OUTPUT_PATH), `${await generate()}\n`, "utf8");
+      await writeFile(resolve(process.cwd(), OUTPUT_PATH), `${await generate((message) => this.warn(message))}\n`, "utf8");
     },
   };
 }

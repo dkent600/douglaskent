@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 
 import type { HtmlTagDescriptor, Plugin } from "vite";
 
+import { resumeLastUpdated } from "./resume-content";
 import { stripHtml } from "./resume-text";
 
 /**
@@ -254,21 +255,23 @@ export function resumeHead(): Plugin {
      * themselves disclaim.
      */
     async writeBundle() {
-      const resume = JSON.parse(await readFile(resolve(process.cwd(), RESUME_PATH), "utf8"));
-
       /**
-       * `lastUpdated` is a top-level field, not one under `basics`, and it is already an ISO
-       * date -- which is exactly what `lastmod` is defined to take. It is deliberately not a
-       * build timestamp: `lastmod` means when the content last changed, and stamping every
-       * build would tell a crawler the page changed each time the bundle was rebuilt, which
-       * is the fastest way to have the field ignored entirely. A missing field therefore
-       * omits `lastmod` rather than substituting `Date.now()`.
+       * `resumeLastUpdated()` returns the commit date of the last commit that touched
+       * `resume.json`, already in the ISO form `lastmod` is defined to take.
+       *
+       * It is deliberately not a build timestamp. `lastmod` means when the content last
+       * changed, and stamping every build would tell a crawler the page changed each time
+       * the bundle was rebuilt, which is the fastest way to have the field ignored
+       * entirely. It is equally deliberately not the file's mtime, which git does not
+       * preserve, so a fresh clone or CI would publish a different date from the machine
+       * the resume was written on. A commit date is neither: it describes a change to the
+       * content and is identical everywhere.
+       *
+       * This used to read a hand-maintained field and omit `lastmod` with a warning when it
+       * was missing. There is nothing to omit now -- the helper throws if git cannot answer,
+       * because a sitemap quietly published without `lastmod` is the failure nobody notices.
        */
-      const lastUpdated = typeof resume.lastUpdated === "string" ? resume.lastUpdated.trim() : "";
-      if (lastUpdated === "") {
-        this.warn(`lastUpdated is missing or empty; sitemap.xml will carry no lastmod`);
-      }
-      const lastmod = lastUpdated === "" ? "" : `\n    <lastmod>${lastUpdated}</lastmod>`;
+      const lastmod = `\n    <lastmod>${resumeLastUpdated()}</lastmod>`;
 
       const urls = [canonical, `${SITE_ORIGIN}${PLAIN_TEXT_PATH}`]
         .map((loc) => `  <url>\n    <loc>${loc}</loc>${lastmod}\n  </url>`)

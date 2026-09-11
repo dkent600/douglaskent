@@ -8,11 +8,6 @@
     "$schema": {
       "type": "string"
     },
-    "lastUpdated": {
-      "type": "string",
-      "description": "The date the resume was last revised, YYYY-MM-DD. Set deliberately, not by tooling. It dates the Word document's properties and fixes every timestamp inside the .docx package, so two builds of the same resume produce identical bytes. Do not remove it: resume-docx-plugin.ts fails the build without it rather than falling back to the file's mtime, which is not preserved by git.",
-      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-    },
     "basics": {
       "type": "object",
       "additionalProperties": true,
@@ -31,6 +26,10 @@
         "metaDescription": {
           "type": "string",
           "description": "The served page's <meta name=\"description\">. Kept under 160 characters because search results truncate there."
+        },
+        "bio": {
+          "type": "string",
+          "description": "Third-person long-form description of Douglas, used for Person.description in the JSON-LD graph and nowhere else. Deliberately distinct from the first-person summary1/summary2/summary7 paragraphs the page renders, which read as the site speaking rather than as metadata about its subject, and from metaDescription, which is capped near 160 characters because search results truncate there. Uncapped: the graph has room for the full prose. It necessarily restates the same facts as the summary fields in a different voice and nothing verifies the two agree, so edit them together. If absent, resume-jsonld-plugin.ts falls back to the summary paragraphs and warns."
         },
         "image": {
           "type": "string",

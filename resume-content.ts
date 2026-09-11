@@ -1,5 +1,90 @@
+import { execFileSync } from "node:child_process";
+
 import { stripHtml } from "./resume-text";
 import { SUMMARY_KEYS } from "./src/stores/resume-store";
+
+/**
+ * The file whose history dates the resume. Named here rather than taken as an argument
+ * because the answer is a property of the repository, not of any one caller.
+ */
+const RESUME_SOURCE = "src/static/resume.json";
+
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+/**
+ * Memoized for the process. Three plugins ask, and the answer cannot change mid-build.
+ */
+let lastUpdated: string | undefined;
+
+/**
+ * The date `src/static/resume.json` last changed, as `YYYY-MM-DD`: the committer date of
+ * the most recent commit that touched it.
+ *
+ * This replaces a hand-maintained `lastUpdated` field, which failed the way manual fields
+ * do -- the resume was edited and the date was not. Three consumers depend on it: the Word
+ * document's properties and every timestamp in its zip package, `<lastmod>` in
+ * `sitemap.xml`, and `ProfilePage.dateModified` in the JSON-LD graph.
+ *
+ * The two obvious automations are both wrong, and the reasons are worth keeping:
+ *
+ * A *build timestamp* would tell a crawler the content changed on every rebuild, which is
+ * the fastest way to have `lastmod` ignored altogether, and it would destroy byte-identical
+ * `.docx` builds -- one second of drift moves 421 bytes of that package.
+ *
+ * The file's *mtime* is not content. Git does not preserve it, so a fresh clone and CI each
+ * produce a different date from the machine the resume was written on, and any operation
+ * that rewrites the file without changing it -- a `checkout`, a `stash` -- moves it too.
+ *
+ * A commit date has neither problem: it describes a change to the content, it is stable for
+ * a given commit so two builds agree, and it is the same on every machine because it
+ * travels in the history rather than in the filesystem.
+ *
+ * KNOWN CONSEQUENCE: the date advances when `resume.json` is *committed*, not when it is
+ * edited. A release built from a dirty working tree publishes content newer than the date
+ * claims. That is the right trade for a field that means "when did the published content
+ * change", but it is a real behaviour change from a field that could be set by hand, and
+ * the fix is to commit before releasing rather than to reintroduce a manual field.
+ *
+ * Empty or unparseable output fails the build. A fallback would restore exactly the
+ * behaviour this exists to remove, silently, on the machines least likely to notice.
+ */
+export function resumeLastUpdated(): string {
+  if (lastUpdated !== undefined) return lastUpdated;
+
+  let output: string;
+  try {
+    output = execFileSync("git", ["log", "-1", "--format=%cs", "--", RESUME_SOURCE], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+  } catch (error) {
+    /**
+     * `git` missing from PATH and "not a git repository" both land here, and the caller
+     * cannot tell them apart from the exit code alone, so the message names both.
+     */
+    throw new Error(
+      `resume-content: could not read the last-changed date of ${RESUME_SOURCE} from git ` +
+        `(${(error as Error).message.trim()}). This needs \`git\` on PATH and a repository ` +
+        `with history -- a source download without \`.git\` cannot build.`,
+    );
+  }
+
+  const date = output.trim();
+
+  if (date === "") {
+    throw new Error(
+      `resume-content: no commit in this repository touches ${RESUME_SOURCE}, so it has no ` +
+        `last-changed date. Commit the file before building.`,
+    );
+  }
+
+  if (!ISO_DATE.test(date)) {
+    throw new Error(`resume-content: git returned ${JSON.stringify(date)} for ${RESUME_SOURCE}; expected YYYY-MM-DD.`);
+  }
+
+  lastUpdated = date;
+  return date;
+}
 
 /**
  * The content of the published resume documents, resolved but not formatted.
