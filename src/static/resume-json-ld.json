@@ -1,372 +1,374 @@
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Douglas Kent",
-  "url": "https://www.douglaskent.com",
-  "image": "https://www.douglaskent.com/og-preview.png",
-  "jobTitle": "Full-stack Software Engineer & Architect · LLM Systems, Blockchain",
-  "description": "I am a software engineer and architect with 35 years spent leading teams and building sophisticated systems — web applications, blockchain and Web3 platforms, and most recently AI-native applications built on large language models. I have worn multiple hats in important roles across many kinds of organizations, from Microsoft to garage startups — enough to recognize most problems before they become expensive. My recent work is in LLM system architecture and development — building reliable systems on top of subjective inputs and non-deterministic models.",
-  "sameAs": [
-    "https://www.linkedin.com/in/douglas-kent-760876a/",
-    "https://github.com/dkent600"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "CR",
-    "addressRegion": "Alajuela"
-  },
-  "knowsLanguage": [
-    "English",
-    "French"
-  ],
-  "nationality": [
+  "@graph": [
     {
-      "@type": "Country",
-      "name": "United States"
+      "@type": "ProfilePage",
+      "@id": "https://www.douglaskent.com/#page",
+      "url": "https://www.douglaskent.com/",
+      "name": "Douglas Kent — Software Engineer, LLM Systems, Blockchain",
+      "description": "Full-stack software engineer and architect, 35 years. LLM system architecture, blockchain and Web3 platforms, web applications.",
+      "dateModified": "2026-09-04",
+      "mainEntity": {
+        "@id": "https://www.douglaskent.com/#douglas-kent"
+      },
+      "hasPart": [
+        {
+          "@id": "https://github.com/dkent600/HumanLens"
+        },
+        {
+          "@id": "https://github.com/dkent600/batch-take-profit"
+        }
+      ]
     },
     {
-      "@type": "Country",
-      "name": "Canada"
+      "@type": "Person",
+      "@id": "https://www.douglaskent.com/#douglas-kent",
+      "mainEntityOfPage": {
+        "@id": "https://www.douglaskent.com/#page"
+      },
+      "name": "Douglas Kent",
+      "url": "https://www.douglaskent.com",
+      "image": "https://www.douglaskent.com/og-preview.png",
+      "jobTitle": "Full-stack Software Engineer & Architect · LLM Systems, Blockchain",
+      "description": "I am a software engineer and architect with 35 years spent leading teams and building sophisticated systems — web applications, blockchain and Web3 platforms, and most recently AI-native applications built on large language models. I have worn multiple hats in important roles across many kinds of organizations, from Microsoft to garage startups — enough to recognize most problems before they become expensive. My recent work is in LLM system architecture and development — building reliable systems on top of subjective inputs and non-deterministic models.",
+      "sameAs": [
+        "https://www.linkedin.com/in/douglas-kent-760876a/",
+        "https://github.com/dkent600"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CR",
+        "addressRegion": "Alajuela"
+      },
+      "knowsLanguage": [
+        "English",
+        "French"
+      ],
+      "nationality": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        }
+      ],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Duke University"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of North Carolina at Chapel Hill"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Miami University"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Masters",
+          "about": "Environment Management",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "Duke University"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Continuing Education",
+          "about": "Computer Science",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of North Carolina at Chapel Hill"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Master of Arts",
+          "about": "Public Policy Sciences",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "Duke University"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Bachelor of Science",
+          "about": "Botany",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "Miami University"
+          }
+        }
+      ],
+      "knowsAbout": [
+        "LLM Pipeline Architecture",
+        "AI System Evaluation and Testing",
+        "Human-in-the-Loop System Design",
+        "AI-Assisted Software Development",
+        "Blockchain and Web3 Architecture",
+        "Smart Contract and dApp Development",
+        "DAO Governance Systems",
+        "DeFi and ReFi",
+        "Distributed and Offshore Team Leadership",
+        "Enterprise-Scale Web Applications",
+        "Service-Oriented Architecture",
+        "Full-Stack Web Application Development",
+        "Software Architecture",
+        "Technical Leadership"
+      ],
+      "skills": [
+        "TypeScript",
+        "Visual Studio Code",
+        "Aurelia 2",
+        "Vite",
+        "Node.js",
+        "NPM",
+        "HTML",
+        "Fastify",
+        "ChatGPT (LLM)",
+        "Claude Code for VS Code",
+        "Claude.ai (LLM)",
+        "AI Coding Assistant",
+        "Axios",
+        "Vitest",
+        "Awilix",
+        "TailWind CSS",
+        "LLM Pipeline Architecture",
+        "Prompt Engineering",
+        "LLM Evaluation",
+        "Human-in-the-Loop Design",
+        "De-identification",
+        "AI-Assisted Development",
+        "LLM APIs",
+        "GitHub Copilot",
+        "DeFi",
+        "MVVM",
+        "FluentUI Web Components",
+        "GitHub",
+        "dApps",
+        "Ethereum",
+        "DAOs",
+        "DAO Governance Systems",
+        "Defender",
+        "Web3",
+        "ReFi",
+        "JavaScript",
+        "Solidity",
+        "ethers.js",
+        "web3.js",
+        "Metamask",
+        "WalletConnect",
+        "Gnosis Safe",
+        "Subgraph",
+        "Balancer Liquidity Pools",
+        "Liquidity Bootstrapping Pools",
+        "LitProtocol",
+        "Web3Modal",
+        "Ceramic",
+        "Aurelia",
+        "i18Next",
+        "Webpack",
+        "Rollup",
+        "CSS",
+        "SASS",
+        "Responsive",
+        "IPFS",
+        "ENS",
+        "ReactJs",
+        "SPA",
+        "Wallets",
+        "Bootstrap",
+        "Bootstrap Material Design",
+        "jQuery",
+        "3Box",
+        "ASP.NET",
+        "C#",
+        "MVC",
+        "Enterprise Framework",
+        "xml",
+        "XSLT",
+        "XSD",
+        "Entity Framework",
+        "LINQ",
+        "SQL Server",
+        "T-SQL",
+        "WCF",
+        "WWF",
+        "Moq",
+        "NUnit",
+        "MSTest",
+        "Agile",
+        "TFS"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Full-stack Software Engineer & Architect · LLM Systems, Blockchain",
+        "occupationalCategory": "15-1252.00"
+      },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Development Team Lead and Lead Developer",
+          "description": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (DeFi) and regenerative finance (ReFi). Among others, led the development team for a ReFi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
+          "startDate": "2020-08",
+          "endDate": "2022-11",
+          "worksFor": {
+            "@id": "https://www.curvelabs.eu/"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Lead Developer",
+          "description": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first major DAO designs in the history of DAOs. Used, reviewed and deployed Solidity smart contracts, wrote a TypeScript library to support dApps in accessing the smart contracts, wrote a test dApp, significantly contributed to the dApp Alchemy used for working with the DAOs.",
+          "startDate": "2017-09",
+          "endDate": "2020-10",
+          "worksFor": {
+            "@id": "https://www.daostack.io/"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Lead Web Developer, Manager Partner Integrations",
+          "description": "Performed a lead role in an Agile Scrum environment in coding a complex enterprise-scale, customer-facing web application and associated automated web service interface.",
+          "startDate": "2003-08",
+          "endDate": "2011-07",
+          "worksFor": {
+            "@id": "https://www.shiftwise.com/"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Development Manager, Software Engineer",
+          "description": "Managed team of 7 in code development and release to market of the Reader's Digest Complete Do-It-Yourself Guide multimedia CD-ROM title",
+          "startDate": "1995-06",
+          "endDate": "1996-02",
+          "worksFor": {
+            "@id": "https://www.microsoft.com"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Software Engineer",
+          "description": "On the Windows 3.1 team, developed software for File Manager, Packager, Paintbrush, Cardfile, and others",
+          "startDate": "1991-01",
+          "endDate": "1992-03",
+          "worksFor": {
+            "@id": "https://www.microsoft.com"
+          }
+        }
+      ],
+      "owns": [
+        {
+          "@id": "https://github.com/dkent600/HumanLens"
+        },
+        {
+          "@id": "https://github.com/dkent600/batch-take-profit"
+        }
+      ]
     },
     {
-      "@type": "Country",
-      "name": "United Kingdom"
-    }
-  ],
-  "alumniOf": [
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "Duke University"
+      "@type": "Organization",
+      "@id": "https://www.curvelabs.eu/",
+      "url": "https://www.curvelabs.eu/",
+      "name": "Curve Labs"
     },
     {
-      "@type": "CollegeOrUniversity",
-      "name": "University of North Carolina at Chapel Hill"
+      "@type": "Organization",
+      "@id": "https://www.daostack.io/",
+      "url": "https://www.daostack.io/",
+      "name": "DAOstack"
     },
     {
-      "@type": "CollegeOrUniversity",
-      "name": "Miami University"
-    }
-  ],
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "Masters",
-      "about": "Environment Management",
-      "recognizedBy": {
-        "@type": "CollegeOrUniversity",
-        "name": "Duke University"
-      }
+      "@type": "Organization",
+      "@id": "https://www.shiftwise.com/",
+      "url": "https://www.shiftwise.com/",
+      "name": "ShiftWise"
     },
     {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "Continuing Education",
-      "about": "Computer Science",
-      "recognizedBy": {
-        "@type": "CollegeOrUniversity",
-        "name": "University of North Carolina at Chapel Hill"
-      }
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "Master of Arts",
-      "about": "Public Policy Sciences",
-      "recognizedBy": {
-        "@type": "CollegeOrUniversity",
-        "name": "Duke University"
-      }
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "Bachelor of Science",
-      "about": "Botany",
-      "recognizedBy": {
-        "@type": "CollegeOrUniversity",
-        "name": "Miami University"
-      }
-    }
-  ],
-  "knowsAbout": [
-    "LLM Pipeline Architecture",
-    "AI System Evaluation and Testing",
-    "Human-in-the-Loop System Design",
-    "AI-Assisted Software Development",
-    "Blockchain and Web3 Architecture",
-    "Smart Contract and dApp Development",
-    "DAO Governance Systems",
-    "DeFi and ReFi",
-    "Distributed and Offshore Team Leadership",
-    "Enterprise-Scale Web Applications",
-    "Service-Oriented Architecture",
-    "Full-Stack Web Application Development",
-    "Software Architecture",
-    "Technical Leadership"
-  ],
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Full-stack Software Engineer & Architect · LLM Systems, Blockchain",
-    "occupationalCategory": "15-1252.00",
-    "skills": [
-      "LLM Pipeline Architecture",
-      "AI System Evaluation and Testing",
-      "Human-in-the-Loop System Design",
-      "AI-Assisted Software Development",
-      "Blockchain and Web3 Architecture",
-      "Smart Contract and dApp Development",
-      "DAO Governance Systems",
-      "DeFi and ReFi",
-      "Distributed and Offshore Team Leadership",
-      "Enterprise-Scale Web Applications",
-      "Service-Oriented Architecture",
-      "Full-Stack Web Application Development",
-      "Software Architecture",
-      "Technical Leadership"
-    ]
-  },
-  "worksFor": [
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Blockchain Oracle Developer",
-      "startDate": "2023-04",
-      "endDate": "2023-05",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Curve Labs",
-        "url": "https://www.curvelabs.eu/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Development Team Lead and Lead Developer",
-      "startDate": "2020-08",
-      "endDate": "2022-11",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Curve Labs",
-        "url": "https://www.curvelabs.eu/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Senior Lead Developer",
-      "startDate": "2017-09",
-      "endDate": "2020-10",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "DAOstack",
-        "url": "https://www.daostack.io/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Senior Lead Web Developer",
-      "startDate": "2015-03",
-      "endDate": "2016-02",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "GE Healthcare",
-        "url": "https://www.gehealthcare.com/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Sole Senior Lead Web Developer",
-      "startDate": "2014-05",
-      "endDate": "2015-12",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "PSP Investments",
-        "url": "https://investpsp.ca/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Senior Web Developer",
-      "startDate": "2011-11",
-      "endDate": "2013-03",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Revionics",
-        "url": "https://www.revionics.com/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Senior Lead Web Developer, Manager Partner Integrations",
-      "startDate": "2003-08",
-      "endDate": "2011-07",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "ShiftWise",
-        "url": "https://www.shiftwise.com/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Software Engineer (Ford.com)",
-      "startDate": "2000-09",
-      "endDate": "2001-03",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Trilogy",
-        "url": "https://www.trilogy.com/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Software Engineer (carOrder.com)",
-      "startDate": "2000-01",
-      "endDate": "2000-08",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Trilogy",
-        "url": "https://www.trilogy.com/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Software Engineer (IBM)",
-      "startDate": "1999-03",
-      "endDate": "1999-12",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Trilogy",
-        "url": "https://www.trilogy.com/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Software Engineer",
-      "startDate": "1996-03",
-      "endDate": "1996-06",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Microsoft Corporation",
-        "url": "https://www.microsoft.com"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Development Manager, Software Engineer",
-      "startDate": "1995-06",
-      "endDate": "1996-02",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Microsoft Corporation",
-        "url": "https://www.microsoft.com"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Software Engineer, Tech Lead",
-      "startDate": "1994-11",
-      "endDate": "1995-06",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Microsoft Corporation",
-        "url": "https://www.microsoft.com"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Software Engineer",
-      "startDate": "1992-04",
-      "endDate": "1994-10",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Asymetrix Corporation",
-        "url": "https://home.click2learn.com/showcase"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Software Engineer",
-      "startDate": "1991-01",
-      "endDate": "1992-03",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Microsoft Corporation",
-        "url": "https://www.microsoft.com"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "VP Applications Development",
-      "startDate": "1989-10",
-      "endDate": "1990-12",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "ConnectSoft"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Software Engineer",
-      "startDate": "1988-12",
-      "endDate": "1989-10",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "ConnectSoft"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Software Engineer",
-      "startDate": "1988-11",
-      "endDate": "1989-12",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "University of North Carolina",
-        "url": "https://www.unc.edu/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Sole Software Engineer",
-      "startDate": "1986-12",
-      "endDate": "1987-05",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "SAS Institute Inc.",
-        "url": "https://www.sas.com/"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Sole Software Engineer",
-      "startDate": "1985-05",
-      "endDate": "1986-11",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "University of North Carolina",
-        "url": "https://www.unc.edu/"
-      }
-    }
-  ],
-  "hasCreated": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "Technical Lead & LLM Pipeline Architect — Human Lens, AI-native web app",
-      "description": "Modeled on an existing DEI consultancy, turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface."
+      "@type": "Organization",
+      "@id": "https://www.microsoft.com",
+      "url": "https://www.microsoft.com",
+      "name": "Microsoft Corporation"
     },
     {
       "@type": "SoftwareApplication",
-      "name": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management dApp",
-      "description": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges. Supported by the Butterfly Crypto portfolio management service."
+      "@id": "https://github.com/dkent600/HumanLens",
+      "url": "https://github.com/dkent600/HumanLens",
+      "name": "Independent Software Developer",
+      "description": "Modeled on an existing DEI consultancy, turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface.",
+      "keywords": [
+        "TypeScript",
+        "Visual Studio Code",
+        "Aurelia 2",
+        "Vite",
+        "Node.js",
+        "NPM",
+        "HTML",
+        "Fastify",
+        "ChatGPT (LLM)",
+        "Claude Code for VS Code",
+        "Claude.ai (LLM)",
+        "AI Coding Assistant",
+        "Axios",
+        "Vitest",
+        "Awilix",
+        "TailWind CSS",
+        "LLM Pipeline Architecture",
+        "Prompt Engineering",
+        "LLM Evaluation",
+        "Human-in-the-Loop Design",
+        "De-identification",
+        "AI-Assisted Development",
+        "LLM APIs",
+        "GitHub Copilot"
+      ],
+      "author": {
+        "@type": "Role",
+        "roleName": "Technical Lead & LLM Pipeline Architect — Human Lens, AI-native web app",
+        "startDate": "2026-05",
+        "author": {
+          "@id": "https://www.douglaskent.com/#douglas-kent"
+        }
+      }
     },
     {
       "@type": "SoftwareApplication",
-      "name": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management service",
-      "description": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges. Supports the Butterfly Crypto portfolio management dApp."
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Sole Web Designer and Developer — Password Repository",
-      "description": "Designed and implemented a personal website using encryption techniques enabling me to access all of my logins/passwords from anywhere without requiring SSL. Received intermittent attention."
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Founder & Developer — Mouthing Flowers",
-      "description": "For the NEXTSTEP platform, designed and wrote TimeFlies, designed and implemented a 3D graphics API, and wrote the SwoopnPrint \"service\" application."
+      "@id": "https://github.com/dkent600/batch-take-profit",
+      "url": "https://github.com/dkent600/batch-take-profit",
+      "name": "Independent Software Developer",
+      "description": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges. Supported by the Butterfly Crypto portfolio management service.",
+      "keywords": [
+        "DeFi",
+        "TypeScript",
+        "Aurelia 2",
+        "MVVM",
+        "TailWind CSS",
+        "FluentUI Web Components",
+        "Vite",
+        "Axios",
+        "GitHub",
+        "AI Coding Assistant",
+        "GitHub Copilot"
+      ],
+      "author": {
+        "@type": "Role",
+        "roleName": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management dApp",
+        "startDate": "2025-06",
+        "endDate": "2025-09",
+        "author": {
+          "@id": "https://www.douglaskent.com/#douglas-kent"
+        }
+      }
     }
   ]
 }

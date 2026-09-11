@@ -8,8 +8,14 @@ import { stripHtml } from "./resume-text";
 import { SUMMARY_KEYS } from "./src/stores/resume-store";
 
 /**
- * Derives a schema.org `Person` block from `src/static/resume.json` and injects it into
- * the `<head>` of `index.html`.
+ * Derives a schema.org `@graph` from `src/static/resume.json` and injects it into the
+ * `<head>` of `index.html`.
+ *
+ * The graph is a `ProfilePage` whose `mainEntity` is a `Person`, plus one node per employer
+ * and one per personal project. Nodes carry `@id` and refer to each other by it, so an
+ * employer named by two roles exists once, and a project can be a part of the page, owned by
+ * the Person, and name that same Person as its author -- none of which an anonymous nested
+ * object can express, because nothing can point at it.
  *
  * This runs in `transformIndexHtml` rather than in the app because the audience is
  * crawlers. Aurelia boots after the document is served, so anything the app injects is
@@ -36,6 +42,23 @@ const OUTPUT_PATH = "src/static/resume-json-ld.json";
  */
 const OCCUPATION_CODE = "15-1252.00";
 
+/**
+ * The `@id` values every reference in the graph is resolved against.
+ *
+ * Absolute, never bare fragments. The same block is served on four routes and again as a
+ * standalone file at a fifth URL; a relative `#douglas-kent` resolves against whatever
+ * document it is read from, so the five copies would describe five different people. The
+ * origin matches `resume-head-plugin.ts`, which publishes the apex as canonical.
+ *
+ * These are identifiers, not addresses -- nothing needs to be fetchable at the fragment.
+ * The Person and the page get constants; every other node is identified by a URL that is
+ * already in `resume.json`, so no identifier is ever slugged, parsed or invented here.
+ */
+const SITE_ORIGIN = "https://www.douglaskent.com";
+const PAGE_URL = `${SITE_ORIGIN}/`;
+const PAGE_ID = `${SITE_ORIGIN}/#page`;
+const PERSON_ID = `${SITE_ORIGIN}/#douglas-kent`;
+
 interface Profile {
   network?: string;
   url?: string;
@@ -54,7 +77,8 @@ interface Work {
   website?: string;
   startDate?: string;
   endDate?: string;
-  notable?: boolean;
+  skills?: Array<string>;
+  showOnShort?: boolean;
   personal?: boolean;
 }
 
@@ -96,19 +120,17 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
   const location = basics.location ?? {};
 
   /**
-   * `areasOfExpertise` is the only source of subject matter the block publishes, and it
-   * feeds two properties. `knowsAbout` is defined as the subject areas a person knows
-   * about, which is exactly what the list holds; `hasOccupation.skills` is defined as the
-   * competencies an occupation is practised with, and the same entries answer that too.
-   * Naming them under both is redundant rather than contradictory, and each property is
-   * true read on its own.
+   * `knowsAbout` is defined as the subject areas a person knows about, and `areasOfExpertise`
+   * is exactly that list. It has one home: this property and no other. It used to be repeated
+   * under `hasOccupation.skills`, which asserted the same fourteen strings twice under two
+   * names and told a reader nothing the first copy had not.
    *
-   * `skills[]` deliberately reaches neither. The list is 156 entries of mixed altitude --
-   * "LLM Pipeline Architecture" is a subject, "Claude Code for VS Code" is a product --
-   * and an undifferentiated list that long carries less weight than a short curated one.
-   * `areasOfExpertise` is the curated one, so the block publishes it and stops. The page
-   * still renders `skills[]` in full; it just does not make a machine-readable claim out
-   * of it.
+   * The top-level `skills[]` array reaches neither property. It is 156 entries of mixed
+   * altitude -- "LLM Pipeline Architecture" is a subject, "Claude Code for VS Code" is a
+   * product -- and an undifferentiated list that long carries less weight than a short
+   * curated one. What `Person.skills` publishes instead is the union of the *published work
+   * entries'* own skill lists, which is both shorter and attributable: every name in it was
+   * earned on a job or a project the graph also describes.
    *
    * Emitted in source order, unsorted and uncapped: the ordering of `areasOfExpertise` is
    * deliberate positioning rather than an artefact, so re-sorting it would discard the
@@ -175,21 +197,18 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
     );
 
   /**
-   * The employment history, as `OrganizationRole` rather than a bare `Organization`.
+   * The work history, which becomes two kinds of node.
    *
-   * `worksFor: Organization` names a *current* employer and has nowhere to put dates, so a
-   * list of them would claim Doug works at every one of these places simultaneously.
-   * `OrganizationRole` is the wrapper schema.org provides for exactly this: the role, when
-   * it was held, and the organization it was held at.
+   * Employment is an `OrganizationRole` rather than a bare `Organization`: `worksFor` names
+   * a *current* employer and has nowhere to put dates, so a plain list of organizations
+   * would claim Doug works at all of them simultaneously. The `Role` wrapper is what schema
+   * .org provides for exactly this -- the role, when it was held, and a reference to the
+   * organization it was held at.
    *
-   * The property is here for entity disambiguation. Several findable people share this
-   * name, and an organization that already has a public identity is a strong separating
-   * signal -- which is what `url` carries. An entry without one contributes a bare string
-   * and little else, which is why the field is worth keeping populated in `resume.json`.
-   *
-   * Repeats are deliberate and must not be merged. Four Microsoft roles are four entries;
-   * collapsing them would invent a single continuous tenure that did not happen, and the
-   * dates -- the thing this property exists to carry -- would have nowhere to go.
+   * The employment side is here for entity disambiguation. Several findable people share
+   * this name, and an organization that already has a public identity is a strong
+   * separating signal -- which is what the organization's URL carries, and why it doubles
+   * as that node's `@id`.
    *
    * Ordered the way the resume documents order the same entries: start date descending,
    * source order breaking ties. The array in `resume.json` is the page's display grouping
@@ -199,13 +218,15 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
   const work: Array<Work> = Array.isArray(resume.work) ? resume.work : [];
 
   /**
-   * `notable` selects what reaches the block at all; `personal` then decides which property
-   * it reaches. The two selections are disjoint by construction, so no entry is published
-   * twice and every published entry makes exactly one kind of claim.
+   * `showOnShort` selects what reaches the graph, and it is the page's own selector rather
+   * than one invented here. The canonical URL is the apex, which renders the short history;
+   * structured data that claimed thirty-five roles while the page it describes shows seven
+   * would be describing a different document. `personal` then decides which kind of node an
+   * entry becomes. The two branches are disjoint, so nothing is published twice.
    */
   const published = work
     .map((entry, index) => ({ entry, index }))
-    .filter(({ entry }) => entry.notable === true)
+    .filter(({ entry }) => entry.showOnShort === true)
     .sort((a, b) => {
       const left = String(a.entry.startDate ?? "");
       const right = String(b.entry.startDate ?? "");
@@ -213,60 +234,145 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
       return left < right ? 1 : -1;
     });
 
-  const worksFor = published
-    .filter(({ entry }) => entry.personal !== true)
-    .map(({ entry }) =>
-      compact({
-        "@type": "OrganizationRole",
-        roleName: entry.position,
-        startDate: entry.startDate,
-        /**
-         * An open-ended entry gets no `endDate` at all. Emitting "present" would be a
-         * malformed date, and emitting today's date would assert an end that has not
-         * happened; absence is how schema.org says a role is still held.
-         */
-        endDate: isOpenEnded(entry.endDate) ? undefined : entry.endDate,
-        worksFor: compact({
-          "@type": "Organization",
-          name: entry.company,
-          url: entry.website,
-        }),
-      }),
-    );
+  const employment = published.filter(({ entry }) => entry.personal !== true);
+  const projects = published.filter(({ entry }) => entry.personal === true);
 
   /**
-   * The personal projects, kept out of `worksFor` entirely.
-   *
-   * `hasCreated` is Doug's choice and is not a schema.org property -- the vocabulary defines
-   * no forward "made this" property on `Person`, only the inverse (`author` / `creator`, on
-   * the work, pointing back). A processor expanding this document against the schema.org
-   * context therefore has no term to map the key to and will drop the whole array. It is
-   * kept because it reads correctly to anything parsing the JSON directly, which is much of
-   * the intended audience; if the array should survive strict expansion, the change is to
-   * emit these as top-level `SoftwareApplication` nodes carrying `author` back to the
-   * `Person`, not to rename this key to something else that also does not exist.
-   *
-   * They were never employment: `company` reads "Independent Software Developer", which is
-   * a description of how Doug was working rather than a body he worked for, and publishing
-   * it as an `Organization` asserted that such an organization exists. The open-ended entry
-   * made it worse -- a role with no `endDate` is a role still held, so the block claimed a
-   * current employer. Neither claim survives the move.
+   * Every published entry is identified by its own `website`, so an entry without one has
+   * no identity and cannot be referenced. Emitting it anyway would put a node in the graph
+   * that `worksFor` or `owns` points at with nothing to point to -- the dangling reference
+   * this whole shape exists to prevent -- so the build stops instead. Both projects have
+   * repositories today; this guards the day one without a repository is promoted.
+   */
+  for (const { entry, index } of published) {
+    if (typeof entry.website !== "string" || entry.website.trim() === "") {
+      throw new Error(
+        `resume-jsonld: work[${index}] ("${entry.company ?? ""}") is showOnShort but has no website, so it has no @id`,
+      );
+    }
+  }
+
+  /**
+   * Organizations are identified by `website` and nothing else, so two roles at one company
+   * collapse to a single node only when the two URL strings match exactly. Both Microsoft
+   * entries read `https://www.microsoft.com` today; adding a trailing slash to one of them
+   * later would quietly split Microsoft into two organizations that no longer look like the
+   * same employer. The name is the thing a reader would notice was wrong, so the name is
+   * what the check keys on: one company name must resolve to exactly one URL.
+   */
+  const websitesByCompany = new Map<string, Set<string>>();
+  for (const { entry } of employment) {
+    const name = entry.company ?? "";
+    const bucket = websitesByCompany.get(name) ?? new Set<string>();
+    bucket.add(entry.website as string);
+    websitesByCompany.set(name, bucket);
+  }
+  for (const [name, urls] of websitesByCompany) {
+    if (urls.size > 1) {
+      throw new Error(
+        `resume-jsonld: "${name}" is published with ${urls.size} different website values ` +
+          `(${[...urls].join(", ")}), so it would become that many separate organizations`,
+      );
+    }
+  }
+
+  /**
+   * One node per distinct employer, in first-published order. Roles are never merged: two
+   * Microsoft roles remain two `OrganizationRole` objects, both pointing at the one
+   * Microsoft node. Collapsing them would invent a continuous tenure that did not happen.
+   */
+  const organizations = [...new Map(employment.map(({ entry }) => [entry.website as string, entry])).values()].map(
+    (entry) =>
+      compact({
+        "@type": "Organization",
+        "@id": entry.website,
+        url: entry.website,
+        name: entry.company,
+      }),
+  );
+
+  /**
+   * `description` belongs to the role, not to the organization. The summary says what Doug
+   * did; on the `Organization` it would assert that ShiftWise *is* "a lead role in an Agile
+   * Scrum environment". The same reasoning puts it on the `Role` wrapper for projects.
    *
    * `summary` is normalized rather than passed through. These fields are authored as HTML
-   * for the page -- one of them writes its project names in `<i>` and separates them with
-   * `&nbsp;` -- and `description` is defined as text. `plainText` is the same normalizer
-   * the plain-text and Word documents run on the same fields, so all three agree on what
-   * the prose says.
+   * for the page -- one writes its project names in `<i>` and separates them with `&nbsp;`
+   * -- and `description` is defined as text. `plainText` is the normalizer the plain-text
+   * and Word documents run on the same fields, so all three agree on what the prose says.
+   *
+   * A role's own `skills` have nowhere to go. `keywords` is a `CreativeWork` property and
+   * `Role` is not a `CreativeWork`, so an employment entry's skill list survives only inside
+   * the Person-level union below, without attribution to the job that earned it. That is a
+   * limit of the vocabulary rather than a decision made here, and there is no property to
+   * "fix" it with.
    */
-  const hasCreated = published
-    .filter(({ entry }) => entry.personal === true)
-    .map(({ entry }) =>
-      compact({
-        "@type": "SoftwareApplication",
-        name: entry.position,
-        description: typeof entry.summary === "string" ? plainText(entry.summary) : undefined,
+  const worksFor = employment.map(({ entry }) =>
+    compact({
+      "@type": "OrganizationRole",
+      roleName: entry.position,
+      description: typeof entry.summary === "string" ? plainText(entry.summary) : undefined,
+      startDate: entry.startDate,
+      /**
+       * An open-ended entry gets no `endDate` at all. Emitting "present" would be a
+       * malformed date, and emitting today's date would assert an end that has not
+       * happened; absence is how schema.org says a role is still held.
+       */
+      endDate: isOpenEnded(entry.endDate) ? undefined : entry.endDate,
+      worksFor: { "@id": entry.website },
+    }),
+  );
+
+  /**
+   * The personal projects, as software rather than as employment.
+   *
+   * `name` is `company`, the same mapping the employment branch uses. On these entries that
+   * field reads "Independent Software Developer" rather than the project's name, so both
+   * nodes carry that string and are told apart only by `@id` and `url`. Doug chose this over
+   * changing `company` or adding a field, on the grounds that `resume.json` stays as it is.
+   *
+   * `roleName` takes `position` whole and nothing splits it. That string carries two facts
+   * at once -- "Technical Lead & LLM Pipeline Architect - Human Lens, AI-native web app" --
+   * which is true of a role and would be false as the name of a piece of software. The Role
+   * wrapper is what lets the dates travel with the authorship instead of attaching to the
+   * software, which has no dates of its own here.
+   */
+  const applications = projects.map(({ entry }) =>
+    compact({
+      "@type": "SoftwareApplication",
+      "@id": entry.website,
+      url: entry.website,
+      name: entry.company,
+      description: typeof entry.summary === "string" ? plainText(entry.summary) : undefined,
+      keywords: Array.isArray(entry.skills) ? entry.skills : undefined,
+      author: compact({
+        "@type": "Role",
+        roleName: entry.position,
+        startDate: entry.startDate,
+        endDate: isOpenEnded(entry.endDate) ? undefined : entry.endDate,
+        author: { "@id": PERSON_ID },
       }),
-    );
+    }),
+  );
+
+  /**
+   * The union of the published entries' own skill lists, deduped on first appearance so the
+   * order still reflects the resume's ordering rather than an alphabet.
+   *
+   * `skills` and not `knowsAbout`: schema.org defines `skills` as "knowledge, skill, ability,
+   * task or any other assertion expressing a competency", which a named tool satisfies, while
+   * `knowsAbout` means a topic known about, which "Visual Studio Code" is not. That is the
+   * same distinction that keeps `areasOfExpertise` in `knowsAbout` and out of here.
+   */
+  const publishedSkills: Array<string> = [];
+  const seenSkills = new Set<string>();
+  for (const { entry } of published) {
+    for (const skill of entry.skills ?? []) {
+      if (typeof skill !== "string" || skill.trim() === "" || seenSkills.has(skill)) continue;
+      seenSkills.add(skill);
+      publishedSkills.push(skill);
+    }
+  }
 
   const languages: Array<Language> = Array.isArray(resume.languages) ? resume.languages : [];
   const knowsLanguage = languages
@@ -296,18 +402,23 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
 
   const jobTitle = typeof basics.label === "string" ? basics.label : undefined;
 
+  /**
+   * No `skills` here. It used to repeat `areasOfExpertise`, which `knowsAbout` already
+   * carries -- the same list asserted twice under two names. `areasOfExpertise` now has one
+   * home, and the concrete tool names live in `Person.skills` instead.
+   */
   const hasOccupation = jobTitle
     ? compact({
         "@type": "Occupation",
         name: jobTitle,
         occupationalCategory: OCCUPATION_CODE,
-        skills: knowsAbout,
       })
     : undefined;
 
-  return compact({
-    "@context": "https://schema.org",
+  const person = compact({
     "@type": "Person",
+    "@id": PERSON_ID,
+    mainEntityOfPage: { "@id": PAGE_ID },
     name: basics.name,
     url: basics.website,
     image: basics.image,
@@ -320,10 +431,47 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
     alumniOf,
     hasCredential,
     knowsAbout,
+    skills: publishedSkills,
     hasOccupation,
     worksFor,
-    hasCreated,
+    /**
+     * `owns` rather than a forward "created" property, because schema.org defines no such
+     * property on `Person` -- only the inverse, which is why each application carries
+     * `author` back to this node. The reference here is a pointer to that node, so the
+     * relationship is stated once in a term the vocabulary knows and once in a term that
+     * reads naturally, and neither is invented.
+     */
+    owns: projects.map(({ entry }) => ({ "@id": entry.website })),
   });
+
+  /**
+   * The page node, which is what the document actually describes. Until now the block was a
+   * bare `Person`: it described a man, with no statement that this URL is his profile page.
+   * `ProfilePage` plus `mainEntity` makes the page a first-class node and the Person the
+   * subject of it, which is the pairing a reader looks for to decide what a URL *is*.
+   */
+  const page = compact({
+    "@type": "ProfilePage",
+    "@id": PAGE_ID,
+    url: PAGE_URL,
+    name: basics.metaTitle,
+    description: basics.metaDescription,
+    dateModified: resume.lastUpdated,
+    mainEntity: { "@id": PERSON_ID },
+    hasPart: projects.map(({ entry }) => ({ "@id": entry.website })),
+  });
+
+  /**
+   * A `@graph` rather than one nested object, so every node that is referred to more than
+   * once exists exactly once and is referred to by `@id`. Microsoft is one node with two
+   * roles pointing at it; each project is one node that the page lists as a part, the Person
+   * owns, and which names the Person as its author. Nesting could express none of that --
+   * an anonymous node cannot be pointed at.
+   */
+  return {
+    "@context": "https://schema.org",
+    "@graph": [page, person, ...organizations, ...applications],
+  };
 }
 
 export function resumeJsonLd(): Plugin {

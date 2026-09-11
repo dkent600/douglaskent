@@ -368,8 +368,7 @@ Led teams of 2-5 in the development of the frontends of multiple dApps running
 against the Ethereum blockchain focused on decentralized (DeFi) and
 regenerative finance (ReFi). Among others, led the development team for a ReFi
 dApp designed to emerge a regenerative, decentralized economic system for the
-sovereign island nation of Curacao. Here are couple of sites: Prime Deals and
-Prime Launch.
+sovereign island nation of Curacao.
 
 Highlights:
 - Lead and sole coder of the dApp frontends of Prime Pools (no longer active)
@@ -377,9 +376,9 @@ Highlights:
   (https://primelock.eth.link/) and the original PrimeDAO Home Page (no longer
   active) (https://primedao.eth.link)
 - Coordinated a team of two and did the majority of coding of the dApp
-  frontend of Prime Launch (https://launch.prime.xyz/)
+  frontend of Prime Launch (was https://launch.prime.xyz)
 - Coordinated a team of five and did much of the coding of the dApp frontend
-  of Prime Deals (https://deals.prime.xyz/)
+  of Prime Deals (was https://deals.prime.xyz)
 - Coordinated a team of two and participated in the coding of the dApp
   frontend of Kolektivo (not currently active)
   (https://github.com/Kolektivo/kolektivo-dapp)
@@ -817,7 +816,7 @@ https://www.microsoft.com
 
 Description:
 On the Windows 3.1 team, developed software for File Manager, Packager,
-Paintbrush , Cardfile, and others
+Paintbrush, Cardfile, and others
 
 
 VP Applications Development
