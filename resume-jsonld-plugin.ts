@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 import type { Plugin } from "vite";
 
-import { isOpenEnded } from "./resume-content";
+import { isOpenEnded, plainText } from "./resume-content";
 import { stripHtml } from "./resume-text";
 import { SUMMARY_KEYS } from "./src/stores/resume-store";
 
@@ -32,16 +32,6 @@ const RESUME_PATH = "src/static/resume.json";
 const OUTPUT_PATH = "src/static/resume-json-ld.json";
 
 /**
- * How many skills reach `knowsAbout`.
- *
- * All 156 would be noise -- an undifferentiated list of that length carries less weight
- * than a short one. The knob is a count rather than a priority threshold because the
- * priority scale is hand-maintained and irregular (1, 1.2, 1.2101, 200, 400), so no round
- * threshold means anything; a count stays meaningful if the numbering is ever reworked.
- */
-const SKILL_LIMIT = 25;
-
-/**
  * O*NET code for Software Developers.
  */
 const OCCUPATION_CODE = "15-1252.00";
@@ -49,11 +39,6 @@ const OCCUPATION_CODE = "15-1252.00";
 interface Profile {
   network?: string;
   url?: string;
-}
-
-interface Skill {
-  name?: string;
-  priority?: number | string;
 }
 
 interface Education {
@@ -65,10 +50,12 @@ interface Education {
 interface Work {
   company?: string;
   position?: string;
+  summary?: string;
   website?: string;
   startDate?: string;
   endDate?: string;
   notable?: boolean;
+  personal?: boolean;
 }
 
 interface Language {
@@ -90,17 +77,6 @@ interface Citizenship {
 const SAME_AS_NETWORKS = new Set(["LinkedIn", "GitHub"]);
 
 /**
- * `priority` is typed inconsistently in the file -- mostly numbers, but at least two
- * entries are strings ("1.8"). Coercing explicitly keeps the sort numeric; anything that
- * will not coerce sorts last rather than poisoning the comparison.
- */
-
-const priorityOf = (skill: Skill): number => {
-  const value = Number(skill.priority);
-  return Number.isNaN(value) ? Number.POSITIVE_INFINITY : value;
-};
-
-/**
  * Drops properties whose source field was absent or empty, so the block never carries an
  * empty string, an empty array or a null.
  */
@@ -120,35 +96,30 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
   const location = basics.location ?? {};
 
   /**
-   * `knowsAbout` is defined as the subject areas a person knows about, and that is what
-   * `areasOfExpertise` holds. The skill list never fit: "LLM Pipeline Architecture" is a
-   * subject, "Claude Code for VS Code" is a product, and a property meant for the former
-   * was being filled with the latter. The skills now appear under `hasOccupation.skills`,
-   * which is the property that actually means them -- so the block carries both the
-   * subject-level claim and the concrete keyword surface, and nothing is lost.
+   * `areasOfExpertise` is the only source of subject matter the block publishes, and it
+   * feeds two properties. `knowsAbout` is defined as the subject areas a person knows
+   * about, which is exactly what the list holds; `hasOccupation.skills` is defined as the
+   * competencies an occupation is practised with, and the same entries answer that too.
+   * Naming them under both is redundant rather than contradictory, and each property is
+   * true read on its own.
+   *
+   * `skills[]` deliberately reaches neither. The list is 156 entries of mixed altitude --
+   * "LLM Pipeline Architecture" is a subject, "Claude Code for VS Code" is a product --
+   * and an undifferentiated list that long carries less weight than a short curated one.
+   * `areasOfExpertise` is the curated one, so the block publishes it and stops. The page
+   * still renders `skills[]` in full; it just does not make a machine-readable claim out
+   * of it.
    *
    * Emitted in source order, unsorted and uncapped: the ordering of `areasOfExpertise` is
    * deliberate positioning rather than an artefact, so re-sorting it would discard the
    * one thing the list encodes.
    *
    * There is deliberately no fallback to `skills` when the field is missing. `compact`
-   * then drops `knowsAbout` entirely, which is loud; quietly substituting the old source
-   * would disguise the field having gone away.
+   * then drops both properties, which is loud; quietly substituting the old source would
+   * disguise the field having gone away.
    */
   const areas: Array<unknown> = Array.isArray(resume.areasOfExpertise) ? resume.areasOfExpertise : [];
   const knowsAbout = areas.filter((area): area is string => typeof area === "string" && area.trim() !== "");
-
-  /**
-   * The skill names, selected by `priority` alone. `hide` is deliberately not consulted:
-   * it governs only the Skills section's category pills, and the work entries list those
-   * skills regardless, so it is not a signal about the page as a whole.
-   */
-  const skills: Array<Skill> = Array.isArray(resume.skills) ? resume.skills : [];
-  const topSkills = [...skills]
-    .filter((skill) => typeof skill.name === "string" && skill.name.trim() !== "")
-    .sort((a, b) => priorityOf(a) - priorityOf(b))
-    .slice(0, SKILL_LIMIT)
-    .map((skill) => skill.name as string);
 
   const profiles: Array<Profile> = Array.isArray(basics.profiles) ? basics.profiles : [];
   const sameAs = profiles
@@ -226,7 +197,13 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
    * sort is required rather than cosmetic.
    */
   const work: Array<Work> = Array.isArray(resume.work) ? resume.work : [];
-  const worksFor = work
+
+  /**
+   * `notable` selects what reaches the block at all; `personal` then decides which property
+   * it reaches. The two selections are disjoint by construction, so no entry is published
+   * twice and every published entry makes exactly one kind of claim.
+   */
+  const published = work
     .map((entry, index) => ({ entry, index }))
     .filter(({ entry }) => entry.notable === true)
     .sort((a, b) => {
@@ -234,7 +211,10 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
       const right = String(b.entry.startDate ?? "");
       if (left === right) return a.index - b.index;
       return left < right ? 1 : -1;
-    })
+    });
+
+  const worksFor = published
+    .filter(({ entry }) => entry.personal !== true)
     .map(({ entry }) =>
       compact({
         "@type": "OrganizationRole",
@@ -251,6 +231,40 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
           name: entry.company,
           url: entry.website,
         }),
+      }),
+    );
+
+  /**
+   * The personal projects, kept out of `worksFor` entirely.
+   *
+   * `hasCreated` is Doug's choice and is not a schema.org property -- the vocabulary defines
+   * no forward "made this" property on `Person`, only the inverse (`author` / `creator`, on
+   * the work, pointing back). A processor expanding this document against the schema.org
+   * context therefore has no term to map the key to and will drop the whole array. It is
+   * kept because it reads correctly to anything parsing the JSON directly, which is much of
+   * the intended audience; if the array should survive strict expansion, the change is to
+   * emit these as top-level `SoftwareApplication` nodes carrying `author` back to the
+   * `Person`, not to rename this key to something else that also does not exist.
+   *
+   * They were never employment: `company` reads "Independent Software Developer", which is
+   * a description of how Doug was working rather than a body he worked for, and publishing
+   * it as an `Organization` asserted that such an organization exists. The open-ended entry
+   * made it worse -- a role with no `endDate` is a role still held, so the block claimed a
+   * current employer. Neither claim survives the move.
+   *
+   * `summary` is normalized rather than passed through. These fields are authored as HTML
+   * for the page -- one of them writes its project names in `<i>` and separates them with
+   * `&nbsp;` -- and `description` is defined as text. `plainText` is the same normalizer
+   * the plain-text and Word documents run on the same fields, so all three agree on what
+   * the prose says.
+   */
+  const hasCreated = published
+    .filter(({ entry }) => entry.personal === true)
+    .map(({ entry }) =>
+      compact({
+        "@type": "SoftwareApplication",
+        name: entry.position,
+        description: typeof entry.summary === "string" ? plainText(entry.summary) : undefined,
       }),
     );
 
@@ -287,7 +301,7 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
         "@type": "Occupation",
         name: jobTitle,
         occupationalCategory: OCCUPATION_CODE,
-        skills: topSkills,
+        skills: knowsAbout,
       })
     : undefined;
 
@@ -308,6 +322,7 @@ export function buildPersonJsonLd(resume: Record<string, any>): Record<string, u
     knowsAbout,
     hasOccupation,
     worksFor,
+    hasCreated,
   });
 }
 

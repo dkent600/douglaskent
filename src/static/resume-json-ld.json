@@ -107,65 +107,22 @@
     "occupationalCategory": "15-1252.00",
     "skills": [
       "LLM Pipeline Architecture",
-      "LLM Evaluation",
-      "TypeScript",
-      "Human-in-the-Loop Design",
-      "Prompt Engineering",
-      "Solidity",
-      "Ethereum",
-      "AI-Assisted Development",
-      "Web3",
-      "De-identification",
-      "dApps",
-      "ethers.js",
-      "Aurelia 2",
-      "DAOs",
+      "AI System Evaluation and Testing",
+      "Human-in-the-Loop System Design",
+      "AI-Assisted Software Development",
+      "Blockchain and Web3 Architecture",
+      "Smart Contract and dApp Development",
       "DAO Governance Systems",
-      "DeFi",
-      "Web Components",
-      "Wallets",
-      "MVVM",
-      "ReFi",
-      "SPA",
-      "IPFS",
-      "Claude Code for VS Code",
-      "Subgraph",
-      "Liquidity Bootstrapping Pools"
+      "DeFi and ReFi",
+      "Distributed and Offshore Team Leadership",
+      "Enterprise-Scale Web Applications",
+      "Service-Oriented Architecture",
+      "Full-Stack Web Application Development",
+      "Software Architecture",
+      "Technical Leadership"
     ]
   },
   "worksFor": [
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Technical Lead & LLM Pipeline Architect — Human Lens, AI-native web app",
-      "startDate": "2026-05",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Independent Software Developer",
-        "url": "https://github.com/dkent600/HumanLens"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management dApp",
-      "startDate": "2025-06",
-      "endDate": "2025-09",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Independent Software Developer",
-        "url": "https://github.com/dkent600/batch-take-profit"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management service",
-      "startDate": "2025-06",
-      "endDate": "2025-09",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Independent Software Developer",
-        "url": "https://github.com/dkent600/butterfly-services"
-      }
-    },
     {
       "@type": "OrganizationRole",
       "roleName": "Blockchain Oracle Developer",
@@ -201,12 +158,24 @@
     },
     {
       "@type": "OrganizationRole",
-      "roleName": "Sole Web Designer and Developer — Password Repository",
-      "startDate": "2013-08",
-      "endDate": "2017-09",
+      "roleName": "Senior Lead Web Developer",
+      "startDate": "2015-03",
+      "endDate": "2016-02",
       "worksFor": {
         "@type": "Organization",
-        "name": "Independent Software Developer"
+        "name": "GE Healthcare",
+        "url": "https://www.gehealthcare.com/"
+      }
+    },
+    {
+      "@type": "OrganizationRole",
+      "roleName": "Sole Senior Lead Web Developer",
+      "startDate": "2014-05",
+      "endDate": "2015-12",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "PSP Investments",
+        "url": "https://investpsp.ca/"
       }
     },
     {
@@ -266,26 +235,6 @@
     },
     {
       "@type": "OrganizationRole",
-      "roleName": "Lead Software Engineer",
-      "startDate": "1997-02",
-      "endDate": "1997-03",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Biomonitors, Ltd"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Sole Software Engineer",
-      "startDate": "1996-10",
-      "endDate": "1998-03",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Imagen Communications, Inc."
-      }
-    },
-    {
-      "@type": "OrganizationRole",
       "roleName": "Software Engineer",
       "startDate": "1996-03",
       "endDate": "1996-06",
@@ -304,16 +253,6 @@
         "@type": "Organization",
         "name": "Microsoft Corporation",
         "url": "https://www.microsoft.com"
-      }
-    },
-    {
-      "@type": "OrganizationRole",
-      "roleName": "Founder & Developer — Mouthing Flowers",
-      "startDate": "1995-02",
-      "endDate": "1999-09",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Independent Software Developer"
       }
     },
     {
@@ -382,16 +321,6 @@
     },
     {
       "@type": "OrganizationRole",
-      "roleName": "Software Engineer",
-      "startDate": "1988-03",
-      "endDate": "1988-11",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Dupont Design Technologies, Inc."
-      }
-    },
-    {
-      "@type": "OrganizationRole",
       "roleName": "Sole Software Engineer",
       "startDate": "1986-12",
       "endDate": "1987-05",
@@ -411,16 +340,33 @@
         "name": "University of North Carolina",
         "url": "https://www.unc.edu/"
       }
+    }
+  ],
+  "hasCreated": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Technical Lead & LLM Pipeline Architect — Human Lens, AI-native web app",
+      "description": "Modeled on an existing DEI consultancy, turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface."
     },
     {
-      "@type": "OrganizationRole",
-      "roleName": "Associate Public Policy Analyst",
-      "startDate": "1980-01",
-      "endDate": "1982-09",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Pacific Environmental Services, Inc"
-      }
+      "@type": "SoftwareApplication",
+      "name": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management dApp",
+      "description": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges. Supported by the Butterfly Crypto portfolio management service."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management service",
+      "description": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges. Supports the Butterfly Crypto portfolio management dApp."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Sole Web Designer and Developer — Password Repository",
+      "description": "Designed and implemented a personal website using encryption techniques enabling me to access all of my logins/passwords from anywhere without requiring SSL. Received intermittent attention."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Founder & Developer — Mouthing Flowers",
+      "description": "For the NEXTSTEP platform, designed and wrote TimeFlies, designed and implemented a 3D graphics API, and wrote the SwoopnPrint \"service\" application."
     }
   ]
 }
