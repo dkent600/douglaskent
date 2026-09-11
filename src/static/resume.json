@@ -1895,7 +1895,7 @@
         "TFS",
         "SPA"
       ],
-      "notable": false,
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2080,7 +2080,7 @@
       "endDate": "1998-03",
       "highlights": [],
       "skills": [],
-      "notable": true,
+      "notable": false,
       "showOnShort": false
     },
     {
@@ -2094,7 +2094,7 @@
       "endDate": "1997-03",
       "highlights": [],
       "skills": [],
-      "notable": true,
+      "notable": false,
       "showOnShort": false
     },
     {
@@ -2210,7 +2210,7 @@
       "endDate": "1988-11",
       "highlights": [],
       "skills": [],
-      "notable": true,
+      "notable": false,
       "showOnShort": false
     },
     {
@@ -2352,7 +2352,7 @@
         "TFS",
         "SPA"
       ],
-      "notable": false,
+      "notable": true,
       "showOnShort": false
     },
     {
@@ -2471,7 +2471,7 @@
       "endDate": "1982-09",
       "highlights": [],
       "skills": [],
-      "notable": true,
+      "notable": false,
       "showOnShort": false
     }
   ],
