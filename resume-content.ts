@@ -17,8 +17,8 @@ const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 let lastUpdated: string | undefined;
 
 /**
- * The date `src/static/resume.json` last changed, as `YYYY-MM-DD`: the committer date of
- * the most recent commit that touched it.
+ * The date `src/static/resume.json` last changed, as `YYYY-MM-DD`: the *author* date of the
+ * most recent commit that touched it.
  *
  * This replaces a hand-maintained `lastUpdated` field, which failed the way manual fields
  * do -- the resume was edited and the date was not. Three consumers depend on it: the Word
@@ -39,6 +39,22 @@ let lastUpdated: string | undefined;
  * a given commit so two builds agree, and it is the same on every machine because it
  * travels in the history rather than in the filesystem.
  *
+ * `%as` IS NOT A TYPO FOR `%cs`. Git records two dates per commit and they answer different
+ * questions. The *committer* date (`%cs`) is when the commit object was written, and it is
+ * rewritten by `rebase`, `commit --amend` and `cherry-pick` -- so a rebase, which replays
+ * every commit it touches including ones that never went near `resume.json`, would move the
+ * published "last changed" date with no content having changed. That is the same failure a
+ * build timestamp causes, reached by a different route. The *author* date (`%as`) is when
+ * the change was originally made and survives all three operations, which is what makes it
+ * mean "when the content last changed" rather than "when the history was last rewritten".
+ *
+ * The one case the committer date would read better: a `cherry-pick` of a resume edit from
+ * another branch carries the original author date forward, so the content lands today while
+ * this reports the day it was first written. Rarer here than rebasing, so author date wins.
+ *
+ * Both placeholders yield `YYYY-MM-DD` and both have existed since Git 2.21, so there is no
+ * version risk in preferring one over the other.
+ *
  * KNOWN CONSEQUENCE: the date advances when `resume.json` is *committed*, not when it is
  * edited. A release built from a dirty working tree publishes content newer than the date
  * claims. That is the right trade for a field that means "when did the published content
@@ -53,7 +69,7 @@ export function resumeLastUpdated(): string {
 
   let output: string;
   try {
-    output = execFileSync("git", ["log", "-1", "--format=%cs", "--", RESUME_SOURCE], {
+    output = execFileSync("git", ["log", "-1", "--format=%as", "--", RESUME_SOURCE], {
       encoding: "utf8",
       stdio: ["ignore", "pipe", "pipe"],
     });
