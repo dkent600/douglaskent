@@ -50,12 +50,12 @@
     anyway; `load` was the only thing buying it, and `load` is what produced the bad URL.
   -->
   <div class="d-print-none">
-    <div resume-type="complete"><a external href="/resume/short">Short Resume</a></div>
-    <div resume-type="short"><a external href="/resume">Complete Resume</a></div>
+    <div resume-type="complete"><a load="/resume/short">Short Resume</a></div>
+    <div resume-type="short"><a load="/resume">Complete Resume</a></div>
     <div resume-type="complete">
-      <a if.bind="expanded" external href="/resume/" data-toggle="tooltip" data-placement="bottom"
+      <a if.bind="expanded" load="/resume/" data-toggle="tooltip" data-placement="bottom"
         title="Hide all except selected professional experiences">Show Selected Career</a>
-      <a else external href="/resume/expanded" data-toggle="tooltip" data-placement="bottom"
+      <a else load="/resume/expanded" data-toggle="tooltip" data-placement="bottom"
         title="Reveal entire career of professional experiences">Show Entire Career</a>
     </div>
   </div>

@@ -210,6 +210,43 @@ try {
       el.classList.remove("d-lg-none");
     }
 
+    /**
+     * Put same-origin links back to root-relative, and do it here rather than in the
+     * templates.
+     *
+     * The router's link attributes synthesise an `href` from the origin the app is running
+     * on. `load="/resume/short"` reaches the browser as
+     * "http://localhost:<whatever port preview got>/resume/short". That is correct in a
+     * running app and useless in this file: the capture runs against `vite preview` on port
+     * 0, so the origin is a loopback address on a port that will not exist again, and
+     * `href` is one of the three attributes the pass below keeps. Left alone it ships, and
+     * the readers of this fragment are exactly the ones with no JavaScript to repair it.
+     *
+     * The templates used to avoid this by marking the links `external`, which suppresses
+     * the rewrite -- at the price of making them full page loads, since `external` also
+     * tells the router not to intercept the click. That traded away the client-side
+     * navigation to fix a build artifact. Fixing the build artifact in the build is the
+     * cheaper side of that trade: the app keeps soft navigation and this file gets the
+     * durable URL.
+     *
+     * Deliberately narrow: it rewrites only hrefs that are *already* absolute against this
+     * origin, which is exactly the set the router synthesised. Everything else is left
+     * byte-for-byte alone.
+     *
+     * Resolving every href against `location.href` instead would be the tidier-looking
+     * loop and it is wrong here. The collapse toggles in history.html are bare fragments,
+     * `href="#highlights_9"`, and resolving those yields
+     * "/resume/expanded#highlights_9" -- a rewrite of links that were never broken, and a
+     * diff in this file that has nothing to do with the problem being fixed. Cross-origin
+     * links and `mailto:` fall out of the check for free.
+     */
+    for (const el of app.querySelectorAll("a[href]")) {
+      const raw = el.getAttribute("href");
+      if (!raw.startsWith(location.origin)) continue;
+      const url = new URL(raw);
+      el.setAttribute("href", `${url.pathname}${url.search}${url.hash}`);
+    }
+
     const keep = new Set(keepAttributes);
     for (const el of app.querySelectorAll("*")) {
       for (const name of [...el.getAttributeNames()]) {
