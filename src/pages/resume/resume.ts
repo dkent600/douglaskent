@@ -74,12 +74,35 @@ export class Resume implements IRouteViewModel {
      * 4.3.1's tooltip.js, and it finds the `Popper` tooltips require on the global that
      * jquery-global.ts publishes.
      *
-     * A sweep, so it only covers what is in the DOM when the page attaches. That is enough
-     * for the markup that uses it: the Expand/Retract links in contact.html are marked
-     * `external`, which means following one is a full page load rather than a soft route
-     * change, so this runs again over the new DOM. Anything added later by a binding would
+     * A sweep, so it covers what is in the DOM when the page attaches, and `detaching`
+     * below undoes exactly the same set. Both halves are needed because the career links in
+     * contact.html use `load`, which navigates client-side: the component is detached and
+     * reattached around each of those, rather than the page being thrown away and rebuilt.
+     * Anything added to the DOM later by a binding, rather than by a navigation, would still
      * need its own call.
      */
+    /**
+     * Sweep up any tooltip stranded by the navigation that brought us here.
+     *
+     * Bootstrap renders a tooltip as its own element and, with the default `container` of
+     * `false`, appends it to `document.body` -- outside the component tree, which is the
+     * whole of the problem. Removing the anchor does not take it along, and the anchor is
+     * always removed out from under an open tooltip: the pointer has to rest on the link to
+     * click it, so every click leaves one behind. They accumulated for the life of the page,
+     * one visible orphan per navigation.
+     *
+     * Cleaning them here, rather than disposing them as the old view goes away, because the
+     * anchors are already gone by the time this component's `detaching` runs -- a `dispose`
+     * sweep there finds nothing to dispose and the orphan survives it. That was measured,
+     * not assumed. Attach is the hook that reliably runs after the previous view has been
+     * dismantled, whichever order the router swaps the two components in.
+     *
+     * `body > .tooltip` and not `.tooltip`: only the ones bootstrap parked on the body are
+     * orphans. A tooltip belonging to a live element sits wherever its `container` put it,
+     * and none of those exist at this point anyway, since the sweep below has not run yet.
+     */
+    $("body > .tooltip").remove();
+
     $('[data-toggle="tooltip"]').tooltip();
 
     const bookmark = window.location.hash;
