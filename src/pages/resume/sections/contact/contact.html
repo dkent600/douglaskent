@@ -12,6 +12,7 @@
   <bindable name="profiles"></bindable>
   <bindable name="inline"></bindable>
   <bindable name="basics"></bindable>
+  <bindable name="expanded"></bindable>
   <div>${basics.phone}</div>
   <div>${basics.phone2}</div>
   <!-- <div>
@@ -48,6 +49,12 @@
   <div class="d-print-none">
     <div resume-type="complete"><a external href="/resume/short">Short Resume</a></div>
     <div resume-type="short"><a external href="/resume">Complete Resume</a></div>
+    <div resume-type="complete">
+      <a if.bind="expanded" external href="/resume/" data-toggle="tooltip" data-placement="bottom"
+        title="Collapse every collapsable section: skills, publications, professional experience and highlights">Retract View</a>
+      <a else external href="/resume/expanded" data-toggle="tooltip" data-placement="bottom"
+        title="Fully expand every collapsable section: skills, publications, professional experience work highlights">Expand View</a>
+    </div>
   </div>
   <!--
     A copy of the resume someone can forward or upload, for a human reader. It is not a
@@ -76,7 +83,7 @@
   -->
   <div class="contact-info inline grid-container">
     <div class="grid-item">
-      <info basics.bind="basics" profiles.bind="profiles" inline.bind="true"></info>
+      <info basics.bind="basics" profiles.bind="profiles" inline.bind="true" expanded.bind="expanded"></info>
     </div>
     <div class="grid-item">
       <testimonials just-one="true" resume-type="short">
@@ -93,7 +100,7 @@
       <div>${basics.location.city}, ${basics.location.region} ${basics.location.postalcode}</div>
       <div>${basics.location.countryName}</div>
     -->
-    <info basics.bind="basics" profiles.bind="profiles"></info>
+    <info basics.bind="basics" profiles.bind="profiles" expanded.bind="expanded"></info>
 
   </div>
   <hr />

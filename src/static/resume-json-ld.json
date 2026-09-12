@@ -7,7 +7,7 @@
       "url": "https://www.douglaskent.com/",
       "name": "Douglas Kent — Software Engineer, LLM Systems, Blockchain",
       "description": "Full-stack software engineer and architect, 35 years. LLM system architecture, blockchain and Web3 platforms, web applications.",
-      "dateModified": "2026-09-11",
+      "dateModified": "2026-09-12",
       "mainEntity": {
         "@id": "https://www.douglaskent.com/#douglas-kent"
       },
@@ -17,6 +17,9 @@
         },
         {
           "@id": "https://github.com/dkent600/batch-take-profit"
+        },
+        {
+          "@id": "https://github.com/dkent600/butterfly-services"
         }
       ]
     },
@@ -155,6 +158,7 @@
         "MVVM",
         "FluentUI Web Components",
         "GitHub",
+        "TSyringe",
         "dApps",
         "Ethereum",
         "DAOs",
@@ -273,6 +277,9 @@
         },
         {
           "@id": "https://github.com/dkent600/batch-take-profit"
+        },
+        {
+          "@id": "https://github.com/dkent600/butterfly-services"
         }
       ]
     },
@@ -363,6 +370,34 @@
       "author": {
         "@type": "Role",
         "roleName": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management dApp",
+        "startDate": "2025-06",
+        "endDate": "2025-09",
+        "author": {
+          "@id": "https://www.douglaskent.com/#douglas-kent"
+        }
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://github.com/dkent600/butterfly-services",
+      "url": "https://github.com/dkent600/butterfly-services",
+      "name": "Independent Software Developer",
+      "description": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges. Supports the Butterfly Crypto portfolio management dApp.",
+      "keywords": [
+        "DeFi",
+        "GitHub Copilot",
+        "Node.js",
+        "TypeScript",
+        "Fastify",
+        "TSyringe",
+        "Vite",
+        "Axios",
+        "GitHub",
+        "AI Coding Assistant"
+      ],
+      "author": {
+        "@type": "Role",
+        "roleName": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management service",
         "startDate": "2025-06",
         "endDate": "2025-09",
         "author": {

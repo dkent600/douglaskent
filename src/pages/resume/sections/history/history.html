@@ -64,7 +64,10 @@
 </template>
 
 <section class="section">
-  <h3><span resume-type="short">Selected </span>Professional Experience</h3>
+  <h3>
+    <span if.bind="expanded || showingEntireHistory">Entire </span>
+    <span else>Selected </span>Professional Experience
+  </h3>
   <div class="content">
     <div repeat.for="company of companiesAboveToggle">
       <company company.bind="company" index.bind="$index" company-skills.bind="companySkills.bind($parent)"

@@ -35,6 +35,21 @@ interface Window {
 // eslint-disable-next-line @typescript-eslint/naming-convention -- merging into @types/jquery's interface, so the name is not ours to choose
 interface JQuery<TElement = HTMLElement> {
   bootstrapMaterialDesign(options?: Record<string, unknown>): JQuery<TElement>;
+
+  /**
+   * bootstrap's own tooltip plugin, which reaches the prototype by the same route: the
+   * bootstrap-material-design dist vendor-globals.ts imports bundles bootstrap 4.3.1's
+   * tooltip.js.
+   *
+   * Declared here rather than taken from `@types/bootstrap`, which is installed but
+   * contributes nothing to this: it is pinned at 3.x, and TypeScript is not picking it up
+   * regardless -- without this line `$(...).tooltip` does not exist on the type at all.
+   *
+   * No parameters, because the one call site in `src/` passes none. resume.ts sweeps
+   * `[data-toggle="tooltip"]` and every option comes off the markup, the way bootstrap
+   * reads `data-placement` and `title`.
+   */
+  tooltip(): JQuery<TElement>;
 }
 
 declare module "*.html" {

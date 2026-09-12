@@ -65,6 +65,23 @@ export class Resume implements IRouteViewModel {
   attached() {
     $("body").bootstrapMaterialDesign();
 
+    /**
+     * Bootstrap's tooltips are opt-in and nothing above turns them on: the call over this
+     * one instantiates a fixed list -- ripples, checkbox, checkboxInline, collapseInline,
+     * drawer, radio, radioInline, switch, text, textarea, select, autofill -- and tooltip
+     * is not in it. So `data-toggle="tooltip"` needs this sweep to become a tooltip at all.
+     * The plugin itself is already here: bootstrap-material-design's dist bundles bootstrap
+     * 4.3.1's tooltip.js, and it finds the `Popper` tooltips require on the global that
+     * jquery-global.ts publishes.
+     *
+     * A sweep, so it only covers what is in the DOM when the page attaches. That is enough
+     * for the markup that uses it: the Expand/Retract links in contact.html are marked
+     * `external`, which means following one is a full page load rather than a soft route
+     * change, so this runs again over the new DOM. Anything added later by a binding would
+     * need its own call.
+     */
+    $('[data-toggle="tooltip"]').tooltip();
+
     const bookmark = window.location.hash;
     if (bookmark) {
       this.scrollToBookmark(bookmark.slice(1));
