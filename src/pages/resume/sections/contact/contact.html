@@ -35,10 +35,13 @@
 
     The router's link attributes rewrite the `href` *attribute* to an origin-absolute URL
     built from the runtime origin. That is invisible in a browser and wrong in the
-    prerender: `prerender-capture.mjs` runs against `vite preview` on an ephemeral port, so
-    the capture baked "http://localhost:53198/resume/short" into the markup and shipped it.
-    Readers of that block are the ones who do not run JavaScript, so they got a link to a
-    loopback address on their own machine, with nothing to replace it.
+    prerender: `prerender-capture.mjs` runs against `vite preview`, which it asks for on
+    port 0, so the origin is a loopback address on a port that differs every run. Whatever
+    that port happened to be got baked into the markup and shipped -- the run that caught
+    it produced "http://localhost:53198/resume/short", but the number is incidental and no
+    part of this depends on it. Readers of that block are the ones who do not run
+    JavaScript, so they got a link to a loopback address on their own machine, with nothing
+    to replace it.
 
     `external` makes the router leave the attribute alone. The cost is that this is now a
     full page load rather than a soft route change -- web.config rewrites /resume/short to
