@@ -254,8 +254,8 @@ export function buildPersonJsonLd(
   /**
    * `showOnShort` selects what reaches the graph, and it is the page's own selector rather
    * than one invented here. The canonical URL is the apex, which renders the short history;
-   * structured data that claimed thirty-five roles while the page it describes shows seven
-   * would be describing a different document. `personal` then decides which kind of node an
+   * structured data that claimed thirty-five roles while the page it describes shows the top
+   * priority ones would be describing a different document. `personal` then decides which kind of node an
    * entry becomes. The two branches are disjoint, so nothing is published twice.
    */
   const published = work

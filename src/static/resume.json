@@ -1686,7 +1686,7 @@
       ],
       "personal": true,
       "notable": true,
-      "showOnShort": false
+      "showOnShort": true
     },
     {
       "company": "Curve Labs",

@@ -70,7 +70,7 @@ export class History {
    * The two cannot be the same rule. `showOnShort` is a filter over the full list, not a
    * prefix of it, so once every company is on the page the recent ones are scattered
    * through it and there is no one position that follows them. Splitting the open list by
-   * the flag instead would put the toggle after the recent seven, but only by reordering
+   * the flag instead would put the toggle after the highest priorty, but only by reordering
    * the history around it, which is a worse trade than a positional cut.
    *
    * `WhichResumeOnly.isShort` is not consulted here: the short resume never shows the
