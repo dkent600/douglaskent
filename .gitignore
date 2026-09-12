@@ -38,3 +38,5 @@ node_modules
 # contains FTP credentials - never commit
 ftpDeploy.txt
 ~$resume.docx
+~$resume-linkedin.md
+
