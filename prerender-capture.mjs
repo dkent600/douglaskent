@@ -367,6 +367,12 @@ try {
    * a CORS check that an opaque origin cannot pass and the stylesheet is fetched and then
    * discarded.
    *
+   * Both rewrites are for reading this file off the disk, which is the only way it is ever
+   * read. It is deliberately not deployed: it is the same resume at a second address, and
+   * publishing it would put a near-duplicate of the site root in front of search engines
+   * for no reader's benefit. So there is no second form of this path to keep correct, and
+   * nothing here has to survive an upload.
+   *
    * None of this head reaches production. `prerender-insert.mjs` takes only what is
    * between the body tags, so the rewritten paths exist purely to make this file
    * viewable and are discarded at the point of insertion.
