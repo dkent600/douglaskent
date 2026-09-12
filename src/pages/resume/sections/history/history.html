@@ -88,7 +88,7 @@
       -->
       <h6 class="company-position show-entire-history" aria-expanded.bind="showingEntireHistory ? 'true' : 'false'"
         aria-controls="allCompanies" click.trigger="showingEntireHistory = !showingEntireHistory">
-        ${showingEntireHistory ? "Show only recent history" : "Show the whole history"}
+        ${showingEntireHistory && !expanded ? "Show only selected experience" : "Show entire career"}
         <i class="fa-solid ${showingEntireHistory ? 'fa-angles-up' : 'fa-angles-down'}"></i>
       </h6>
     </div>
