@@ -13,6 +13,17 @@
 import type { ILogger } from "aurelia";
 
 export interface IEditableCompany {
+  /**
+   * Permanent, opaque and not editable. Minted by `newWorkId` when the entry is created and
+   * never touched again: it identifies the entry, so correcting a company name or a date
+   * must not disturb it.
+   *
+   * Optional on the type only because an entry added to `resume.json` by hand arrives
+   * without one. `issues` reports that as an error rather than quietly minting one, because
+   * anything already referring to that entry by id is broken either way and a silent fix
+   * would hide it.
+   */
+  id?: string;
   company: string;
   position: string;
   startDate: string;
@@ -96,6 +107,46 @@ const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const MONTH = /^\d{4}-\d{2}$/;
 /** An ongoing role. Valid for `endDate` only -- a start date cannot be "Present". */
 const PRESENT = /^present$/i;
+
+/** The `work[].id` alphabet and length, matching the `^[a-z0-9]{8}$` the schema enforces. */
+const ID_ALPHABET = "abcdefghijklmnopqrstuvwxyz0123456789";
+const ID_LENGTH = 8;
+/**
+ * Rejection threshold for unbiased sampling. 256 % 36 is 4, so mapping a raw byte straight
+ * through `% 36` would make the first four letters about 1.6% likelier than the rest.
+ * Discarding the four values above 251 costs one comparison and removes the skew.
+ */
+const ID_LIMIT = 256 - (256 % ID_ALPHABET.length);
+
+/**
+ * A new opaque id for a work entry.
+ *
+ * Deliberately carries nothing -- not the company, not a date, not a counter. An id derived
+ * from the entry has to be either kept in step with it or allowed to go stale; one derived
+ * from nothing has neither problem, which is the whole reason these are random.
+ *
+ * `crypto.getRandomValues` rather than `Math.random`: the ids are served publicly at
+ * douglaskent.com/resume.json, and a generator whose output is guessable from previous
+ * output is not worth the nothing it saves here.
+ */
+export function newWorkId(): string {
+  let id = "";
+  /** Oversized so the common case is a single draw even after a few rejections. */
+  const bytes = new Uint8Array(ID_LENGTH * 2);
+  while (id.length < ID_LENGTH) {
+    crypto.getRandomValues(bytes);
+    for (const byte of bytes) {
+      if (byte >= ID_LIMIT) {
+        continue;
+      }
+      id += ID_ALPHABET[byte % ID_ALPHABET.length];
+      if (id.length === ID_LENGTH) {
+        break;
+      }
+    }
+  }
+  return id;
+}
 
 export class AdminStore {
   /**
@@ -217,16 +268,27 @@ export class AdminStore {
     return this.resume?.work ?? [];
   }
 
+  /**
+   * The id is minted here, at creation, rather than on save: an entry without one is an
+   * error, and there is no later moment guaranteed to happen. Nothing about the blank entry
+   * feeds into it, so minting this early costs nothing.
+   */
   public addCompany(): IEditableCompany {
-    const company: IEditableCompany = { company: "", position: "", startDate: "", endDate: "", summary: "", highlights: [], skills: [] };
+    const company: IEditableCompany = { id: newWorkId(), company: "", position: "", startDate: "", endDate: "", summary: "", highlights: [], skills: [] };
     this.companies.unshift(company);
     this.touch();
     return company;
   }
 
+  /**
+   * The copy is a new entry and gets a new id. `structuredClone` would otherwise carry the
+   * original's across, which is the one way the editor could manufacture the duplicate that
+   * `issues` exists to catch.
+   */
   public duplicateCompany(index: number): void {
     const copy = structuredClone(this.companies[index]);
     copy.company = `${copy.company} (copy)`;
+    copy.id = newWorkId();
     this.companies.splice(index + 1, 0, copy);
     this.touch();
   }
@@ -391,10 +453,32 @@ export class AdminStore {
       }
     }
 
+    /**
+     * Counted up front so both entries in a colliding pair are reported, rather than only
+     * whichever one is reached second.
+     */
+    const idCounts = new Map<string, number>();
+    for (const company of this.companies) {
+      if (company.id) {
+        idCounts.set(company.id, (idCounts.get(company.id) ?? 0) + 1);
+      }
+    }
+
     for (const company of this.companies) {
       const label = company.company || "(unnamed company)";
       if (!company.company.trim()) {
         issues.push({ level: "error", message: `A company has no name` });
+      }
+      /**
+       * Both hard errors. An id is a permanent reference: a missing one leaves the entry
+       * unaddressable, and a shared one silently points two references at the same place.
+       * Neither is repairable from the editor -- the id is not editable -- so a save that
+       * carried either forward would write a document the schema rejects.
+       */
+      if (!company.id?.trim()) {
+        issues.push({ level: "error", message: `${label}: has no id` });
+      } else if ((idCounts.get(company.id) ?? 0) > 1) {
+        issues.push({ level: "error", message: `${label}: shares its id "${company.id}" with another entry` });
       }
       if (!company.position.trim()) {
         issues.push({ level: "error", message: `${label}: position is required` });

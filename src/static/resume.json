@@ -1578,6 +1578,7 @@
   ],
   "work": [
     {
+      "id": "0gzqostf",
       "company": "Independent Software Developer",
       "position": "Technical Lead & LLM Pipeline Architect — Human Lens, AI-native web app",
       "website": "https://github.com/dkent600/HumanLens",
@@ -1625,6 +1626,7 @@
       "showOnShort": true
     },
     {
+      "id": "hedo001x",
       "company": "Independent Software Developer",
       "position": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management dApp",
       "remote": false,
@@ -1656,6 +1658,7 @@
       "showOnShort": true
     },
     {
+      "id": "l1rl4agb",
       "company": "Independent Software Developer",
       "position": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management service",
       "remote": false,
@@ -1689,6 +1692,7 @@
       "showOnShort": true
     },
     {
+      "id": "2347xgkq",
       "company": "Curve Labs",
       "position": "Blockchain Oracle Developer",
       "remote": true,
@@ -1721,6 +1725,7 @@
       "showOnShort": false
     },
     {
+      "id": "9ep9ym6f",
       "company": "Curve Labs",
       "position": "Development Team Lead and Lead Developer",
       "remote": true,
@@ -1785,6 +1790,7 @@
       ]
     },
     {
+      "id": "nuz75rja",
       "company": "DAOstack",
       "position": "Senior Lead Developer",
       "remote": true,
@@ -1831,6 +1837,7 @@
       "showOnShort": true
     },
     {
+      "id": "9aptaoc9",
       "company": "Dicom Transportation Group",
       "remote": true,
       "contract": true,
@@ -1860,6 +1867,7 @@
       "showOnShort": false
     },
     {
+      "id": "ek07bo4k",
       "company": "PSP Investments",
       "position": "Sole Senior Lead Web Developer",
       "contract": true,
@@ -1899,6 +1907,7 @@
       "showOnShort": false
     },
     {
+      "id": "9pv4ovhd",
       "company": "Revionics",
       "position": "Senior Web Developer",
       "remote": true,
@@ -1941,6 +1950,7 @@
       "showOnShort": false
     },
     {
+      "id": "f7fcnas1",
       "company": "ShiftWise",
       "position": "Senior Lead Web Developer, Manager Partner Integrations",
       "remote": true,
@@ -1985,6 +1995,7 @@
       "showOnShort": true
     },
     {
+      "id": "fe4ve8pq",
       "company": "Trilogy",
       "position": "Software Engineer (Ford.com)",
       "website": "https://www.trilogy.com/",
@@ -2011,6 +2022,7 @@
       "showOnShort": false
     },
     {
+      "id": "7n2u1ewh",
       "company": "Trilogy",
       "position": "Software Engineer (carOrder.com)",
       "website": "https://www.trilogy.com/",
@@ -2042,6 +2054,7 @@
       "showOnShort": false
     },
     {
+      "id": "b7n5l3i4",
       "company": "Trilogy",
       "position": "Software Engineer (IBM)",
       "website": "https://www.trilogy.com/",
@@ -2070,6 +2083,7 @@
       "showOnShort": false
     },
     {
+      "id": "3qjdxm4s",
       "company": "Imagen Communications, Inc.",
       "position": "Sole Software Engineer",
       "remote": true,
@@ -2084,6 +2098,7 @@
       "showOnShort": false
     },
     {
+      "id": "yvjjapjq",
       "company": "Biomonitors, Ltd",
       "position": "Lead Software Engineer",
       "remote": true,
@@ -2098,6 +2113,7 @@
       "showOnShort": false
     },
     {
+      "id": "dvj9fxlj",
       "company": "Independent Software Developer",
       "position": "Founder & Developer — Mouthing Flowers",
       "website": "",
@@ -2113,6 +2129,7 @@
       "showOnShort": false
     },
     {
+      "id": "59mle44g",
       "company": "Microsoft Corporation",
       "position": "Software Engineer",
       "contract": true,
@@ -2126,6 +2143,7 @@
       "showOnShort": false
     },
     {
+      "id": "omtxc6ci",
       "company": "Microsoft Corporation",
       "position": "Development Manager, Software Engineer",
       "contract": true,
@@ -2139,6 +2157,7 @@
       "showOnShort": true
     },
     {
+      "id": "9ixybgs8",
       "company": "Microsoft Corporation",
       "position": "Software Engineer, Tech Lead",
       "contract": true,
@@ -2152,6 +2171,7 @@
       "showOnShort": false
     },
     {
+      "id": "k3cy5ys1",
       "company": "Asymetrix Corporation",
       "position": "Software Engineer",
       "contract": true,
@@ -2165,6 +2185,7 @@
       "showOnShort": false
     },
     {
+      "id": "sz3qf0u2",
       "company": "Microsoft Corporation",
       "position": "Software Engineer",
       "contract": true,
@@ -2178,6 +2199,7 @@
       "showOnShort": true
     },
     {
+      "id": "jcqo0i6g",
       "company": "ConnectSoft",
       "position": "VP Applications Development",
       "website": "",
@@ -2190,6 +2212,7 @@
       "showOnShort": false
     },
     {
+      "id": "2f06lc3q",
       "company": "ConnectSoft",
       "position": "Software Engineer",
       "website": "",
@@ -2202,6 +2225,7 @@
       "showOnShort": false
     },
     {
+      "id": "tibwz57b",
       "company": "Dupont Design Technologies, Inc.",
       "position": "Software Engineer",
       "website": "",
@@ -2214,6 +2238,7 @@
       "showOnShort": false
     },
     {
+      "id": "yx11uhkm",
       "company": "SAS Institute Inc.",
       "position": "Sole Software Engineer",
       "contract": true,
@@ -2227,6 +2252,7 @@
       "showOnShort": false
     },
     {
+      "id": "jgyb9ele",
       "company": "University of North Carolina",
       "position": "Sole Software Engineer",
       "website": "https://www.unc.edu/",
@@ -2239,6 +2265,7 @@
       "showOnShort": false
     },
     {
+      "id": "h3loz9yy",
       "company": "Independent Software Developer",
       "position": "Sole Web Designer and Developer — Password Repository",
       "remote": true,
@@ -2283,6 +2310,7 @@
       "showOnShort": false
     },
     {
+      "id": "n49u0qqk",
       "company": "Vivalia Bistro Express",
       "position": "Sole Web Developer",
       "remote": true,
@@ -2323,6 +2351,7 @@
       "showOnShort": false
     },
     {
+      "id": "4w1mfwb7",
       "company": "GE Healthcare",
       "position": "Senior Lead Web Developer",
       "remote": true,
@@ -2356,6 +2385,7 @@
       "showOnShort": false
     },
     {
+      "id": "pxm8hr50",
       "company": "Independent Software Developer",
       "position": "Sole Web Designer and Developer — Kill My TV!",
       "website": "",
@@ -2395,6 +2425,7 @@
       "showOnShort": false
     },
     {
+      "id": "z73pbu9z",
       "company": "Texas Turnpike Authority",
       "position": "Web Application Developer",
       "contract": true,
@@ -2417,6 +2448,7 @@
       "showOnShort": false
     },
     {
+      "id": "67ren263",
       "company": "Schlumberger/Cingular Wireless",
       "position": "Application Developer",
       "contract": true,
@@ -2439,6 +2471,7 @@
       "showOnShort": false
     },
     {
+      "id": "vy886tr0",
       "company": "University of North Carolina",
       "position": "Software Engineer",
       "website": "https://www.unc.edu/",
@@ -2451,6 +2484,7 @@
       "showOnShort": false
     },
     {
+      "id": "60akrg0u",
       "company": "University of North Carolina",
       "position": "Software Engineer",
       "website": "https://www.unc.edu/",
@@ -2463,6 +2497,7 @@
       "showOnShort": false
     },
     {
+      "id": "8gg5qenx",
       "company": "Pacific Environmental Services, Inc",
       "position": "Associate Public Policy Analyst",
       "website": "",

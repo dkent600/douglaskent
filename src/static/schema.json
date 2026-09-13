@@ -122,7 +122,13 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
+        "required": ["id"],
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "Permanent opaque identifier. Assigned once at creation and never changed. Carries no information about the entry and must never be parsed, sorted on, or regenerated.",
+            "pattern": "^[a-z0-9]{8}$"
+          },
           "company": {
             "type": "string",
             "description": "e.g. Facebook"

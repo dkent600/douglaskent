@@ -29,6 +29,13 @@
       </div>
 
       <div class="row-body" if.bind="editing === $index">
+        <!--
+          Shown, never edited. The id is a permanent reference to this entry and means
+          nothing on its own, so there is deliberately no input for it: there is no value a
+          person could usefully type here, and changing one would break whatever refers to it.
+        -->
+        <p class="hint">id: <code>${company.id || '(none)'}</code></p>
+
         <div class="grid">
           <label>Company
             <input type="text" value.bind="company.company & debounce:150" input.trigger="store.touch()">
