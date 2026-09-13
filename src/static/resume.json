@@ -985,7 +985,7 @@
       "url": "https://reactjs.org/"
     },
     {
-      "name": "AngularJs",
+      "name": "AngularJS",
       "priority": 3.28,
       "categories": [
         "Website and Application Development"
@@ -2364,7 +2364,7 @@
         "Designed the whole thing, end-to-end",
         "The only part I didn't write entirely myself was the AngularJS web application",
         "Created a dynamic, data-driven schema for the exchanged content",
-        "Integrated lots of moving parts: an AngularJs web application, two external web services, a .NET web server, Azure web job, and SQL Server database",
+        "Integrated lots of moving parts: an AngularJS web application, two external web services, a .NET web server, Azure web job, and SQL Server database",
         "Hosted on Azure"
       ],
       "skills": [
@@ -2374,7 +2374,7 @@
         "T-SQL",
         "Entity Framework",
         "Unity",
-        "AngularJs",
+        "AngularJS",
         "TypeScript",
         "WebApi",
         "Azure",
