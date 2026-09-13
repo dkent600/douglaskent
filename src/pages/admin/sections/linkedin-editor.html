@@ -35,6 +35,14 @@
 
   <p class="hint" if.bind="store.notes.length">${store.notes.join(' · ')}</p>
 
+  <!-- Account settings for the session, from the config's `_settingsChecklist`. Read-only; not field data. -->
+  <details class="checklist" if.bind="store.settingsChecklist.length">
+    <summary>Settings checklist <span class="hint">${store.settingsChecklist.length} items &mdash; before and after entering content</span></summary>
+    <ol>
+      <li repeat.for="item of store.settingsChecklist">${item}</li>
+    </ol>
+  </details>
+
   <section class="sub" repeat.for="entry of store.entries">
     <h4>
       ${entry}
@@ -77,6 +85,16 @@
           ${field.hasOverride ? 'Keep override' : 'Approve'}
         </button>
       </div>
+
+      <!--
+        Reference only: collapsed so it neither pushes the control nor competes with the
+        value, and absent entirely when the field has none. Interpolated as text, so the
+        `[unverified: ...]` notes come through verbatim, unparsed.
+      -->
+      <details class="guidance" if.bind="field.guidance">
+        <summary>Guidance</summary>
+        <p>${field.guidance}</p>
+      </details>
 
       <details class="diff" if.bind="!field.approved && field.outputChanged">
         <summary>Output diff &mdash; what would change on LinkedIn</summary>

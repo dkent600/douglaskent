@@ -515,6 +515,39 @@
   }
 }
 
+/** A field's reference note: one muted line when closed, small muted prose when open. */
+.guidance {
+  color: var(--muted);
+  font-size: 0.85em;
+
+  summary {
+    cursor: pointer;
+  }
+
+  p {
+    margin: 0.3rem 0 0;
+    max-width: 70em;
+  }
+}
+
+/** The account-settings list, once, above the panes. */
+.checklist {
+  background: var(--sunken);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  padding: 0.4rem 0.75rem;
+
+  summary {
+    cursor: pointer;
+  }
+
+  ol {
+    margin: 0.4rem 0 0.2rem;
+    padding-left: 1.4rem;
+  }
+}
+
 .diff-text {
   margin: 0.4rem 0 0;
   white-space: pre-wrap;

@@ -51,6 +51,8 @@ export interface ILinkedInField {
   label: string;
   entry: string;
   requiresOverride: boolean;
+  /** From the config, read-only; never part of a value, buffer, draft or state. */
+  guidance?: string;
 
   currentDefault: FieldValue;
   storedDefault?: FieldValue;
@@ -174,6 +176,12 @@ export class LinkedInStore {
   public entries: Array<string> = [];
   public orphans: Array<IOrphanField> = [];
   public notes: Array<string> = [];
+  /**
+   * `_settingsChecklist` from the config: account settings to handle before and after a
+   * transfer session. Not field data and not validated -- read straight off the raw file,
+   * the way `validateConfig` ignores it -- and shown once at the top, read-only.
+   */
+  public settingsChecklist: Array<string> = [];
   public loaded = false;
   public busy = false;
   public status = "";
@@ -222,6 +230,8 @@ export class LinkedInStore {
     this.draftLoadedAt = bootstrap.draft ? (bootstrap.draft.savedAt ?? "(no timestamp)") : null;
     this.draftSavedAt = null;
     this.draftPending = false;
+    const checklist = (bootstrap.config as { _settingsChecklist?: unknown } | null)?._settingsChecklist;
+    this.settingsChecklist = Array.isArray(checklist) ? checklist.filter((item): item is string => typeof item === "string") : [];
 
     let computed: Array<IComputedField>;
     try {
@@ -280,6 +290,7 @@ export class LinkedInStore {
       label: computed.label,
       entry: computed.entry,
       requiresOverride: computed.requiresOverride,
+      ...(computed.guidance !== undefined ? { guidance: computed.guidance } : {}),
       currentDefault: computed.default,
       storedDefault: stored?.default,
       storedOverride: storedHasOverride ? stored?.override : undefined,
