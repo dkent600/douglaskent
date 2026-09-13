@@ -1975,7 +1975,7 @@
         "HTML",
         "CSS",
         "jQuery",
-        "xml",
+        "XML",
         "XSLT",
         "XSD",
         "Entity Framework",
@@ -2177,7 +2177,7 @@
       "contract": true,
       "website": "https://home.click2learn.com/showcase",
       "startDate": "1992-04",
-      "summary": "Developed software for Toolbook 3.0 and multimedia screensavers (Jurassic Park, et. al.)",
+      "summary": "Developed software for Toolbook 3.0 and multimedia screensavers (Jurassic Park, et al.)",
       "endDate": "1994-10",
       "highlights": [],
       "skills": [],
@@ -2362,9 +2362,9 @@
       "endDate": "2016-02",
       "highlights": [
         "Designed the whole thing, end-to-end",
-        "The only part I didn't write entirely myself was the AngularJs web application",
+        "The only part I didn't write entirely myself was the AngularJS web application",
         "Created a dynamic, data-driven schema for the exchanged content",
-        "Integrated lots of moving parts: an AngularJs web application, two external web services, .NET web server, Azure web job, and SQL Server database",
+        "Integrated lots of moving parts: an AngularJs web application, two external web services, a .NET web server, Azure web job, and SQL Server database",
         "Hosted on Azure"
       ],
       "skills": [
