@@ -40,3 +40,10 @@ ftpDeploy.txt
 ~$resume.docx
 resume-linkedin.md
 
+# LinkedIn transfer tool: rules, approved record and autosaved work in progress
+linkedin.config.json
+linkedin.state.json
+linkedin.draft.json
+linkedin.draft.json.bak
+linkedin.defaults.json
+
