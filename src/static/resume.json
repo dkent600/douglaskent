@@ -777,13 +777,13 @@
       "url": "https://fezvrasta.github.io/bootstrap-material-design/"
     },
     {
-      "name": "RequireJs",
+      "name": "RequireJS",
       "priority": 3.46,
       "categories": [
         "Website and Application Development",
         "Module Bundling and Loading"
       ],
-      "url": "https://requirejs.org/"
+      "url": "https://RequireJS.org/"
     },
     {
       "name": "ASP.NET Core",
@@ -957,7 +957,7 @@
       "url": "https://durandaljs.com/"
     },
     {
-      "name": "KnockoutJs",
+      "name": "KnockoutJS",
       "priority": 3.49,
       "hide": true,
       "categories": [
@@ -977,12 +977,12 @@
       "url": "https://en.wikipedia.org/wiki/Responsive_web_design"
     },
     {
-      "name": "ReactJs",
+      "name": "React",
       "priority": 3.26,
       "categories": [
         "Website and Application Development"
       ],
-      "url": "https://reactjs.org/"
+      "url": "https://react.dev/"
     },
     {
       "name": "AngularJS",
@@ -1463,7 +1463,7 @@
       "url": "https://jspm.io"
     },
     {
-      "name": "SystemJs",
+      "name": "SystemJS",
       "priority": 3.58,
       "hide": true,
       "categories": [
@@ -1784,7 +1784,7 @@
         "ENS",
         "Node.js",
         "GitHub",
-        "ReactJs",
+        "React",
         "SPA",
         "Wallets"
       ]
@@ -1828,7 +1828,7 @@
         "Responsive",
         "Node.js",
         "GitHub",
-        "ReactJs",
+        "React",
         "SPA",
         "3Box",
         "Wallets"
@@ -1886,7 +1886,7 @@
         ".NET",
         "WebApi",
         "C#",
-        "KnockoutJs",
+        "KnockoutJS",
         "JavaScript",
         "HTML",
         "CSS",
@@ -1896,7 +1896,7 @@
         "Bootstrap",
         "Ajax",
         "Entity Framework",
-        "RequireJs",
+        "RequireJS",
         "D3",
         "Highcharts",
         "Agile",
@@ -1931,7 +1931,7 @@
         "JavaScript",
         "HTML",
         "CSS",
-        "KnockoutJs",
+        "KnockoutJS",
         "jQuery",
         "Telerik",
         "ADO",
@@ -2276,7 +2276,7 @@
       "endDate": "2017-09",
       "highlights": [
         "Extensive use of hashing and encryption (both server and client-side), custom server-side authentication and other techniques to achieve data privacy with no SSL",
-        "Been through a couple iterations as technologies have changed.  Was Durandal+KnockoutJs+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core."
+        "Been through a couple iterations as technologies have changed.  Was Durandal+KnockoutJS+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core."
       ],
       "skills": [
         "Aurelia",
@@ -2286,7 +2286,7 @@
         "HTML",
         "CSS",
         "MVC",
-        "KnockoutJs",
+        "KnockoutJS",
         "WebAPI",
         "Ajax",
         "jQuery",
@@ -2296,7 +2296,7 @@
         "SQL Server",
         "T-SQL",
         "Webpack",
-        "RequireJs",
+        "RequireJS",
         "XUnit.NET",
         "MsTest",
         "crypto-js",
@@ -2405,7 +2405,7 @@
         "MVC",
         "C#",
         "Durandal",
-        "KnockoutJs",
+        "KnockoutJS",
         "JavaScript",
         "HTML",
         "CSS",
@@ -2418,7 +2418,7 @@
         "T-SQL",
         "i18Next",
         "jQuery globalization",
-        "RequireJs",
+        "RequireJS",
         "SPA"
       ],
       "notable": false,
