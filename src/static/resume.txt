@@ -642,7 +642,7 @@ Highlights:
   the development of automated interfaces
 
 Skills / Technologies:
-JavaScript, HTML, CSS, C#, xml, MVC, jQuery, ASP.NET, XSLT, XSD, WCF, WWF, SQL
+JavaScript, HTML, CSS, C#, XML, MVC, jQuery, ASP.NET, XSLT, XSD, WCF, WWF, SQL
 Server, T-SQL, LINQ, Agile, Moq, MSTest, NUnit, Entity Framework, Enterprise
 Framework, TFS
 

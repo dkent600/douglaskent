@@ -402,3 +402,123 @@
 .empty {
   color: var(--muted);
 }
+
+/**
+ * The LinkedIn tab. Its own action bar rather than the page header's: the header's Save
+ * writes resume.json, and this tab writes a different file behind a different gate.
+ */
+.linkedin-bar {
+  align-items: center;
+  background: var(--sunken);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  position: sticky;
+  top: 3.4rem;
+  z-index: 4;
+}
+
+.linkedin-draft {
+  min-width: 8rem;
+}
+
+.pane {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.6rem;
+
+  &.is-flagged {
+    border-color: var(--warn);
+  }
+
+  &.is-over {
+    border-color: var(--danger);
+  }
+
+  textarea {
+    font-family: inherit;
+  }
+}
+
+.pane-head {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  .badge {
+    background: var(--sunken);
+    border-radius: 999px;
+    font-size: 0.85em;
+    padding: 0.1rem 0.5rem;
+
+    &.warning {
+      background: #fff3cd;
+      color: var(--warn);
+    }
+
+    &.error {
+      background: #f8d7da;
+      color: var(--danger);
+    }
+  }
+}
+
+.pane-label {
+  font-weight: 600;
+}
+
+.pane-id {
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+.pane-head .count {
+  color: var(--muted);
+  font-size: 0.85em;
+  margin-left: auto;
+  white-space: nowrap;
+
+  &.is-over {
+    color: var(--danger);
+    font-weight: 600;
+  }
+}
+
+.pane-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.diff {
+  background: var(--sunken);
+  border-radius: 4px;
+  font-size: 0.9em;
+  padding: 0.3rem 0.5rem;
+
+  summary {
+    cursor: pointer;
+  }
+}
+
+.diff-text {
+  margin: 0.4rem 0 0;
+  white-space: pre-wrap;
+}
+
+.diff-ins {
+  background: #d1e7dd;
+}
+
+.diff-del {
+  background: #f8d7da;
+  text-decoration: line-through;
+}

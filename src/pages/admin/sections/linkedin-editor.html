@@ -1,0 +1,92 @@
+<div class="editor linkedin">
+  <div class="linkedin-bar">
+    <div class="linkedin-gate">
+      <strong if.bind="store.loaded && !store.generatorError">${store.fields.length - store.unapprovedCount} of ${store.fields.length} approved</strong>
+      <span class="hint" if.bind="store.stateSavedAt">&middot; state saved ${local(store.stateSavedAt)}</span>
+      <span class="hint" else>&middot; no state file yet &mdash; first run, every field needs a review</span>
+    </div>
+    <div class="linkedin-draft">
+      <span class="pending" if.bind="store.draftPending">draft unsaved</span>
+      <span class="hint" if.bind="!store.draftPending && store.draftSavedAt">draft saved ${ago(store.draftSavedAt, now)}</span>
+    </div>
+    <div class="admin-actions">
+      <span class="status">${store.status}</span>
+      <button type="button" click.trigger="store.load()" disabled.bind="store.busy">Reload</button>
+      <button type="button" click.trigger="store.acceptAll()" disabled.bind="store.busy || !store.loaded || store.unapprovedCount === 0"
+        title="Approve every flagged field's current computed default. For deliberate resume.json changes.">
+        Accept all
+      </button>
+      <button type="button" class="primary" click.trigger="store.save()" disabled.bind="!store.canSave"
+        title.bind="store.canSave ? 'Write linkedin.state.json' : 'Blocked: ' + store.saveBlockedBy">
+        Save${store.saveBlockedBy ? ' (' + store.saveBlockedBy + ')' : ''}
+      </button>
+    </div>
+  </div>
+
+  <div class="renamed" if.bind="store.draftLoadedAt">
+    <strong>Draft loaded</strong> from linkedin.draft.json, saved ${local(store.draftLoadedAt)}. What is on screen includes unsaved
+    edits, not only the approved state.
+  </div>
+
+  <div class="unknown" if.bind="store.generatorError">
+    <strong>Generator failed</strong> &mdash; ${store.generatorError}
+  </div>
+
+  <p class="hint" if.bind="store.notes.length">${store.notes.join(' · ')}</p>
+
+  <section class="sub" repeat.for="entry of store.entries">
+    <h4>
+      ${entry}
+      <span class="badge warning" if.bind="unapprovedIn(entry, store.revision)">${unapprovedIn(entry, store.revision)} to review</span>
+    </h4>
+
+    <div class="pane ${field.approved ? '' : 'is-flagged'} ${field.over ? 'is-over' : ''}" repeat.for="field of fieldsOf(entry, store.revision)">
+      <div class="pane-head">
+        <span class="pane-label">${field.label}</span>
+        <code class="pane-id">${field.id}</code>
+        <span class="badge warning" if.bind="!field.approved && field.isNew">new &mdash; not yet reviewed</span>
+        <span class="badge warning" if.bind="!field.approved && !field.isNew">default changed</span>
+        <span class="badge" if.bind="field.hasOverride">override</span>
+        <span class="badge error" if.bind="field.requiresOverride && !field.hasOverride">needs an override</span>
+        <span class="count ${field.over ? 'is-over' : ''}" if.bind="field.limit !== undefined">
+          ${field.length} / ${field.limit}${field.kind === 'list' ? ' items' : ''}
+        </span>
+      </div>
+
+      <!--
+        One-way in, with the write done in the store so every keystroke is recorded as an
+        override explicitly. `input` schedules the debounced draft write; `blur` forces it.
+      -->
+      <textarea rows.bind="rows(field)" value.to-view="field.buffer" spellcheck="false"
+        placeholder="${field.kind === 'list' ? 'one item per line' : ''}"
+        input.trigger="store.edit(field, $event.target.value)"
+        blur.trigger="store.flushDraft()"></textarea>
+
+      <div class="pane-tools">
+        <button type="button" click.trigger="store.copy(field)">Copy</button>
+        <button type="button" click.trigger="store.resetToOverride(field)" disabled.bind="!field.storedHasOverride"
+          title="Discard unsaved typing and return to the override in linkedin.state.json">
+          Reset to saved override
+        </button>
+        <button type="button" click.trigger="store.resetToDefault(field)" disabled.bind="!store.canResetToDefault(field)"
+          title="Drop the override and take the default as computed now from resume.json and the config">
+          Reset to current default
+        </button>
+        <button type="button" class="primary" if.bind="!field.approved" click.trigger="store.approve(field)">
+          ${field.hasOverride ? 'Keep override' : 'Approve'}
+        </button>
+      </div>
+
+      <details class="diff" if.bind="!field.approved && field.outputChanged">
+        <summary>Output diff &mdash; what would change on LinkedIn</summary>
+        <p class="diff-text"><span repeat.for="segment of field.outputDiff" class="diff-${segment.kind}">${segment.text}</span></p>
+      </details>
+      <details class="diff" if.bind="!field.approved && field.defaultChanged">
+        <summary>
+          Default diff${field.hasOverride ? ' — advisory: the override stands, but the source it was written from has moved' : ''}
+        </summary>
+        <p class="diff-text"><span repeat.for="segment of field.defaultDiff" class="diff-${segment.kind}">${segment.text}</span></p>
+      </details>
+    </div>
+  </section>
+</div>

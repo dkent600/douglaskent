@@ -4,6 +4,7 @@ import { visualizer } from "rollup-plugin-visualizer";
 import * as rollupPluginutils from "rollup-pluginutils";
 import { defineConfig, type PluginOption } from "vite";
 
+import { linkedinApi } from "./linkedin-api-plugin";
 import { resumeApi } from "./resume-api-plugin";
 import { resumeDocx } from "./resume-docx-plugin";
 import { resumeHead } from "./resume-head-plugin";
@@ -63,6 +64,18 @@ export default defineConfig(({ mode }) => ({
   server: {
     open: !process.env.CI,
     port: 9000,
+    watch: {
+      /**
+       * The LinkedIn tab autosaves its draft into the project root about a second after
+       * typing stops. Left watched, that write would reload the page, which discards the
+       * in-memory store and re-reads the draft it just wrote -- a loop, and precisely the
+       * state loss the autosave exists to prevent. The state file is written by the same
+       * tab and wants the same treatment; `.tmp` covers the write-then-rename siblings.
+       * `linkedin.config.json` is deliberately not listed: it is hand-edited, and a reload
+       * on save is the cheapest way to pick the edit up.
+       */
+      ignored: ["**/linkedin.draft.json", "**/linkedin.draft.json.bak", "**/linkedin.state.json", "**/linkedin.draft.json.tmp", "**/linkedin.state.json.tmp"],
+    },
   },
   esbuild: {
     target: "es2022",
@@ -80,6 +93,7 @@ export default defineConfig(({ mode }) => ({
     }),
     rawHtml(),
     resumeApi(),
+    linkedinApi(),
     resumeJsonLd(),
     resumeHead(),
     resumeTxt(),

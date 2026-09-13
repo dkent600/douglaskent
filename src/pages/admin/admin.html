@@ -17,6 +17,9 @@
       <button type="button" class="${tab === 'categories' ? 'is-current' : ''}" click.trigger="show('categories')">
         Categories <span class="count">${store.categories.length}</span>
       </button>
+      <button type="button" class="${tab === 'linkedin' ? 'is-current' : ''}" click.trigger="show('linkedin')">
+        LinkedIn
+      </button>
     </nav>
     <div class="admin-actions">
       <span class="dirty" if.bind="store.dirty">unsaved changes</span>
@@ -49,6 +52,7 @@
     <skills-editor if.bind="tab === 'skills'"></skills-editor>
     <skill-priorities-editor if.bind="tab === 'priorities'"></skill-priorities-editor>
     <skill-categories-editor if.bind="tab === 'categories'"></skill-categories-editor>
+    <linkedin-editor if.bind="tab === 'linkedin'"></linkedin-editor>
   </main>
 
   <p class="empty" else>Nothing loaded. ${store.status}</p>
