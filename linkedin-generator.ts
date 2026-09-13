@@ -35,11 +35,19 @@ export interface ILinkedInGroup {
 
 export interface ILinkedInConfig {
   experience: {
-    /** Entries whose `endDate` sorts at or after this (`present` always qualifies). */
-    minEndDate: string;
-    /** `work[].id` values to leave out regardless of date. */
-    exclude: Array<string>;
+    /**
+     * `notable` is the only rule: every `work` entry with `notable: true`. The profile lists
+     * good work rather than a continuous timeline -- `notable: false` is the record that an
+     * entry was judged not worth listing, and the gaps that leaves are deliberate. There is
+     * no date threshold and no exclusion list; the key is required so the rule stays legible
+     * in the config rather than implied by the code.
+     */
+    selectBy: "notable";
   };
+  /**
+   * Several roles at one employer merged into one entry, because they read as churn rather
+   * than tenure when listed separately. Nothing to do with era. Membership is explicit.
+   */
   groups: Array<ILinkedInGroup>;
   personal: {
     company: string;
@@ -82,6 +90,12 @@ export interface ILinkedInConfig {
   };
   /** Field-id patterns (`*` matches one segment) that have no computable default. */
   requireOverride: Array<string>;
+  /**
+   * Prose about how LinkedIn uses a field and what a good value looks like, keyed by field
+   * id or by a pattern (`*` matches one segment); an exact id wins over a pattern. Read into
+   * the field data and not rendered anywhere yet. Every entry is optional; the map is not.
+   */
+  guidance: Record<string, string>;
 }
 
 /**
@@ -116,6 +130,8 @@ export interface IComputedField {
   entry: string;
   default: FieldValue;
   requiresOverride: boolean;
+  /** From `config.guidance`, when a key matches. */
+  guidance?: string;
 }
 
 /**
@@ -148,6 +164,13 @@ export interface IStateField {
    */
   hasOverride: boolean;
   approvedAt: string;
+  /**
+   * Set when the field left the output -- its entry stopped being notable, or a group no
+   * longer lists it -- and cleared if it comes back. An orphan is kept, override and all,
+   * until a person discards it: the override is the expensive artifact, the default is free.
+   * It sits outside the gate, so it neither blocks Save nor needs approving.
+   */
+  orphanedAt?: string;
 }
 
 export interface ILinkedInState {
@@ -195,6 +218,8 @@ const isNumber = (value: unknown): value is number => typeof value === "number" 
 const isBoolean = (value: unknown): value is boolean => typeof value === "boolean";
 const isStringArray = (value: unknown): value is Array<string> => Array.isArray(value) && value.every(isString);
 const isObject = (value: unknown): value is Json => typeof value === "object" && value !== null && !Array.isArray(value);
+const isStringMap = (value: unknown): value is Record<string, string> => isObject(value) && Object.values(value).every(isString);
+const isNotableRule = (value: unknown): value is "notable" => value === "notable";
 const isGroupArray = (value: unknown): value is Array<ILinkedInGroup> =>
   Array.isArray(value) && value.every((group) => isObject(group) && isString(group.id) && isStringArray(group.members) && (group.render === "detailed" || group.render === "line"));
 
@@ -205,8 +230,7 @@ export function validateConfig(raw: unknown): ILinkedInConfig {
   }
   return {
     experience: {
-      minEndDate: requireKey(raw, "experience.minEndDate", isString),
-      exclude: requireKey(raw, "experience.exclude", isStringArray),
+      selectBy: requireKey(raw, "experience.selectBy", isNotableRule),
     },
     groups: requireKey(raw, "groups", isGroupArray),
     personal: {
@@ -244,6 +268,7 @@ export function validateConfig(raw: unknown): ILinkedInConfig {
       stripParentheticals: requireKey(raw, "description.stripParentheticals", isStringArray),
     },
     requireOverride: requireKey(raw, "requireOverride", isStringArray),
+    guidance: requireKey(raw, "guidance", isStringMap),
   };
 }
 
@@ -279,6 +304,12 @@ const PARENTHETICAL = /\s*\(([^()]*)\)/g;
  * stays), entities decoded, the configured parentheticals dropped, any URL still standing
  * dropped -- LinkedIn does not linkify a description, so a URL there is dead weight --
  * and runs of blanks collapsed. Newlines are preserved: composition adds them deliberately.
+ *
+ * Nothing here touches punctuation. A tidy that closed the gap before `.`, `,`, `;` and `:`
+ * used to sit after the whitespace collapse and turned ", .NET" into ",.NET" -- any token
+ * that begins with a period loses its space to a rule like that. It was redundant anyway:
+ * both removals above consume the whitespace ahead of what they remove, so no gap is left
+ * to close.
  */
 export function cleanText(value: string, config: ILinkedInConfig): string {
   const patterns = config.description.stripParentheticals.map((pattern) => new RegExp(pattern, "i"));
@@ -286,7 +317,6 @@ export function cleanText(value: string, config: ILinkedInConfig): string {
     .replace(PARENTHETICAL, (match, inner: string) => (patterns.some((pattern) => pattern.test(inner.trim())) ? "" : match))
     .replace(URL, "")
     .replace(/[ \t\u00a0]+/g, " ")
-    .replace(/ +([,.;:])/g, "$1")
     .trim();
 }
 
@@ -519,33 +549,37 @@ export function generate(resume: Json, rawConfig: unknown): IGenerated {
       grouped.set(member, group.id);
     }
   }
-  for (const id of config.experience.exclude) {
-    if (!byId.has(id)) notes.push(`experience.exclude names "${id}", which is not in resume.json`);
-  }
+  const isNotable = (entry: Json): boolean => entry.notable === true;
+  /** Standalone entries: notable and not claimed by a group. Latest first, as LinkedIn lists them. */
+  const selected = work.filter((entry) => isNotable(entry) && !grouped.has(entry.id as string)).sort(latestFirst);
 
-  const excluded = new Set(config.experience.exclude);
-  const selected = work
-    .filter((entry) => isOpenEnded(entry.endDate) || String(entry.endDate) >= config.experience.minEndDate)
-    .filter((entry) => !excluded.has(entry.id as string))
-    .sort(latestFirst);
-  for (const entry of selected) {
-    const owner = grouped.get(entry.id as string);
-    if (owner !== undefined) throw new Error(`work id "${entry.id}" is selected by date and is also a member of group "${owner}"`);
+  /**
+   * Group membership is explicit and is not filtered by `notable` at run time. A listed
+   * member that is not notable is left out of the composed entry and named in the notes, and
+   * the run continues: one flag flip must not stop a tool whose other entries are fine, and
+   * the consequence surfaces anyway -- the group's description default moves, so that field
+   * is flagged for review with a diff. A member id that names no entry at all is a broken
+   * config and fails above.
+   */
+  const groups: Array<{ group: ILinkedInGroup; members: Array<Json> }> = [];
+  for (const group of config.groups) {
+    const members = group.members.map((id) => byId.get(id) as Json);
+    for (const member of members.filter((entry) => !isNotable(entry))) {
+      notes.push(`warning: group "${group.id}" lists ${String(member.id)} (${String(member.company)}, ${String(member.startDate)} – ${String(member.endDate)}), which is not notable; left out`);
+    }
+    const kept = members.filter(isNotable);
+    if (kept.length === 0) {
+      notes.push(`warning: group "${group.id}" has no notable members; no entry produced`);
+      continue;
+    }
+    groups.push({ group, members: kept });
   }
 
   const experiences: Array<IExperience> = [
     ...selected.map((entry) => singleExperience(entry, config, profile, index)),
-    ...config.groups.map((group) =>
-      groupExperience(
-        group,
-        group.members.map((id) => byId.get(id) as Json),
-        config,
-        profile,
-        index,
-      ),
-    ),
+    ...groups.map(({ group, members }) => groupExperience(group, members, config, profile, index)),
   ];
-  notes.push(`${selected.length} experience entries selected by date, plus ${config.groups.length} groups`);
+  notes.push(`${work.filter(isNotable).length} notable work entries → ${selected.length} standalone + ${groups.length} groups = ${experiences.length} output entries`);
   notes.push(`${profile.length} profile skills`);
 
   // ---- profile-level fields
@@ -589,9 +623,12 @@ export function generate(resume: Json, rawConfig: unknown): IGenerated {
   // ---- fields
 
   const requireOverride = config.requireOverride.map(patternToRegExp);
+  const guidance = Object.entries(config.guidance).map(([key, text]) => ({ key, pattern: patternToRegExp(key), text }));
+  const guidanceFor = (id: string): string | undefined => (guidance.find((entry) => entry.key === id) ?? guidance.find((entry) => entry.pattern.test(id)))?.text;
   const field = (id: string, kind: FieldKind, label: string, entry: string, value: FieldValue, limit?: number): IComputedField => {
     const requiresOverride = requireOverride.some((pattern) => pattern.test(id));
-    return { id, kind, limit, label, entry, default: requiresOverride ? (kind === "list" ? [] : "") : value, requiresOverride };
+    const text = guidanceFor(id);
+    return { id, kind, limit, label, entry, default: requiresOverride ? (kind === "list" ? [] : "") : value, requiresOverride, ...(text !== undefined ? { guidance: text } : {}) };
   };
 
   const fields: Array<IComputedField> = [
@@ -622,7 +659,7 @@ export function generate(resume: Json, rawConfig: unknown): IGenerated {
     }
     return picked;
   };
-  const involved = [...selected, ...config.groups.flatMap((group) => group.members.map((id) => byId.get(id) as Json))];
+  const involved = [...selected, ...groups.flatMap(({ members }) => members)];
   const inputSnapshot: IInputSnapshot = {
     basics: pick(basics, ["label", "location", ...config.about.paragraphs]),
     citizenship,
@@ -657,14 +694,13 @@ export const outputOf = (field: { default: FieldValue; override?: FieldValue; ha
  * dev server before it writes and by the browser to decide whether Save is offered, so the
  * two can never disagree about what "approved" means. Returns the reasons it is not; empty
  * means it may be saved.
+ *
+ * The gate covers what is in the output. A stored field that no longer computes is an
+ * orphan, not an error: it is retained by `markOrphans` and never judged here.
  */
 export function gateErrors(fields: unknown, computed: Array<IComputedField>): Array<string> {
   if (!isObject(fields)) return ["fields is not an object"];
   const errors: Array<string> = [];
-  const ids = new Set(computed.map((field) => field.id));
-  for (const id of Object.keys(fields)) {
-    if (!ids.has(id)) errors.push(`${id}: no such field any more`);
-  }
   for (const field of computed) {
     const stored = fields[field.id] as unknown;
     if (!isObject(stored)) {
@@ -691,4 +727,25 @@ export function gateErrors(fields: unknown, computed: Array<IComputedField>): Ar
     }
   }
   return errors;
+}
+
+/**
+ * Stamps `orphanedAt` on every stored field that is not in the output and clears it from
+ * every one that is. Nothing is deleted: a field leaves the state only when a person
+ * discards it in the tab. An entry that returns -- the flag flipped back, a member re-added
+ * -- finds its override waiting, exactly, because the id is the work entry's and never
+ * changes. The stamp already on an orphan is kept, so it records when the field first left.
+ */
+export function markOrphans(fields: Record<string, IStateField>, computed: Array<IComputedField>, now: string): Record<string, IStateField> {
+  const live = new Set(computed.map((field) => field.id));
+  const marked: Record<string, IStateField> = {};
+  for (const [id, field] of Object.entries(fields)) {
+    if (live.has(id)) {
+      const { orphanedAt: _orphanedAt, ...rest } = field;
+      marked[id] = rest;
+    } else {
+      marked[id] = { ...field, orphanedAt: field.orphanedAt ?? now };
+    }
+  }
+  return marked;
 }

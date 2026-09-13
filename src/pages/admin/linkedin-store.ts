@@ -30,6 +30,7 @@ import {
   type ILinkedInDraft,
   type ILinkedInState,
   type IStateField,
+  outputOf,
   sameValue,
   valueLength,
 } from "../../../linkedin-generator";
@@ -76,6 +77,23 @@ export interface ILinkedInField {
   defaultChanged: boolean;
   outputDiff: Array<IDiffSegment>;
   defaultDiff: Array<IDiffSegment>;
+}
+
+/**
+ * A field that the state or the draft still carries but the output no longer computes --
+ * its entry stopped being notable, or a group dropped it. Kept whole, shown read-only, and
+ * removed only by an explicit discard. Outside the gate.
+ */
+export interface IOrphanField {
+  id: string;
+  /** What is preserved: the draft buffer if there is one, else the state's output. */
+  text: string;
+  hasOverride: boolean;
+  orphanedAt: string | null;
+  /** Carried through Save untouched (the server re-stamps it). */
+  state?: IStateField;
+  /** Carried through every draft write untouched. */
+  draft?: IDraftField;
 }
 
 interface IBootstrap {
@@ -154,6 +172,7 @@ export class LinkedInStore {
   public fields: Array<ILinkedInField> = [];
   /** Entry labels in display order, for grouping the panes. */
   public entries: Array<string> = [];
+  public orphans: Array<IOrphanField> = [];
   public notes: Array<string> = [];
   public loaded = false;
   public busy = false;
@@ -213,6 +232,7 @@ export class LinkedInStore {
       this.generatorError = (error as Error).message;
       this.fields = [];
       this.entries = [];
+      this.orphans = [];
       this.notes = [];
       this.revision++;
       return;
@@ -222,6 +242,26 @@ export class LinkedInStore {
     const draftFields = bootstrap.draft?.fields ?? {};
     this.fields = computed.map((field) => this.build(field, stateFields[field.id], draftFields[field.id]));
     this.entries = [...new Set(this.fields.map((field) => field.entry))];
+
+    /**
+     * Anything stored or drafted under an id the output no longer has. Both files are
+     * consulted: a seed can name an entry that is not in the output today, and that text is
+     * as much worth keeping as an override in the state.
+     */
+    const live = new Set(computed.map((field) => field.id));
+    const orphanIds = [...new Set([...Object.keys(stateFields), ...Object.keys(draftFields)])].filter((id) => !live.has(id));
+    this.orphans = orphanIds.map((id) => {
+      const state = stateFields[id];
+      const draft = draftFields[id];
+      return {
+        id,
+        text: toText(draft?.buffer ?? (state ? outputOf(state) : undefined)),
+        hasOverride: draft?.hasOverride ?? (draft?.buffer !== undefined || state?.hasOverride === true),
+        orphanedAt: state?.orphanedAt ?? null,
+        ...(state ? { state } : {}),
+        ...(draft ? { draft } : {}),
+      };
+    });
     this.revision++;
   }
 
@@ -344,14 +384,33 @@ export class LinkedInStore {
     return field.hasOverride || field.buffer !== toText(field.currentDefault);
   }
 
-  public async copy(field: ILinkedInField): Promise<void> {
+  public copy(field: ILinkedInField): Promise<void> {
+    return this.copyText(field.buffer, `${field.entry} › ${field.label}`);
+  }
+
+  public async copyText(text: string, label: string): Promise<void> {
     try {
-      await navigator.clipboard.writeText(field.buffer);
-      this.status = `copied ${field.entry} › ${field.label}`;
+      await navigator.clipboard.writeText(text);
+      this.status = `copied ${label}`;
     } catch (error) {
       this.status = `copy failed: ${(error as Error).message}`;
       this.log?.error("copy failed", error);
     }
+  }
+
+  /**
+   * The one way an orphan leaves the files. Explicit, per field, and confirmed in the tab;
+   * the tool never discards on its own. Takes effect in the draft at once and in the state
+   * at the next Save.
+   */
+  public discardOrphan(id: string): void {
+    const at = this.orphans.findIndex((orphan) => orphan.id === id);
+    if (at < 0) {
+      return;
+    }
+    this.orphans.splice(at, 1);
+    this.revision++;
+    void this.flushDraft();
   }
 
   // ------------------------------------------------------------------------------- gate
@@ -402,6 +461,20 @@ export class LinkedInStore {
           approvedAt: field.approvedAt ?? field.storedApprovedAt ?? new Date().toISOString(),
         };
       }
+      /**
+       * Orphans ride along so the state keeps them. One that exists only in the draft has no
+       * stored default to carry; it is written as an override over an empty default, so that
+       * the text survives the draft being cleared and, should the entry return, is flagged
+       * for review rather than silently taken as approved.
+       */
+      for (const orphan of this.orphans) {
+        fields[orphan.id] = orphan.state ?? {
+          default: "",
+          override: orphan.draft?.buffer ?? orphan.text,
+          hasOverride: true,
+          approvedAt: new Date().toISOString(),
+        };
+      }
       const response = await fetch(`${ENDPOINT}/state`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
@@ -420,6 +493,12 @@ export class LinkedInStore {
         field.storedApprovedAt = stored.approvedAt;
         field.approvedDefault = stored.default;
         this.refresh(field);
+      }
+      for (const orphan of this.orphans) {
+        const stored = body.fields[orphan.id];
+        orphan.state = stored;
+        orphan.orphanedAt = stored.orphanedAt ?? null;
+        orphan.draft = undefined;
       }
       this.stateSavedAt = body.savedAt;
       await this.clearDraft();
@@ -470,6 +549,12 @@ export class LinkedInStore {
         ...(field.approvedDefault !== undefined ? { approvedDefault: field.approvedDefault } : {}),
         ...(field.approvedAt !== undefined ? { approvedAt: field.approvedAt } : {}),
       };
+    }
+    /** Orphans the draft already carried are written back as they were, until discarded. */
+    for (const orphan of this.orphans) {
+      if (orphan.draft) {
+        draft.fields[orphan.id] = orphan.draft;
+      }
     }
     try {
       const response = await fetch(`${ENDPOINT}/draft`, {

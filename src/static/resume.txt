@@ -170,12 +170,12 @@ Website and Application Development
   Fastify, JavaScript, TailWind CSS, Axios, Node.js, Awilix, TSyringe, Vite,
   HTML, CSS, Custom (HTML) Elements, Shadow DOM, HTML Templates, Data Binding,
   Observables, Pub/Sub Pattern, RxJS, SASS, Responsive UIs, Service-Oriented
-  Architecture (SOA), ReactJs, Aurelia, AngularJs, FluentUI Web Components,
+  Architecture (SOA), React, Aurelia, AngularJS, FluentUI Web Components,
   Webpack, Rollup, C#, Markdown, XML, D3.js, Highcharts, ASP.NET Core, MVC,
-  WebApi, ASP.NET Identity, Razor, Ajax, jQuery, Bootstrap, RequireJs, C++,
-  Java, KnockoutJs, DurandalJs, ASP.NET, Enterprise Scale Web Applications,
+  WebApi, ASP.NET Identity, Razor, Ajax, jQuery, Bootstrap, RequireJS, C++,
+  Java, KnockoutJS, DurandalJs, ASP.NET, Enterprise Scale Web Applications,
   Telerik, Bootstrap Material Design, XSLT, XML Schema Definition (XSD), JSPM,
-  SystemJs, WCF, WWF, Microsoft Extensibility Framework (MEF), JDBC, JSP,
+  SystemJS, WCF, WWF, Microsoft Extensibility Framework (MEF), JDBC, JSP,
   Swing, CORBA, Flash SWF, Xerces
 
 Software Languages
@@ -191,7 +191,7 @@ Data Stores
   Framework Core, Microsoft Enterprise Library
 
 Module Bundling and Loading
-  Vite, Webpack, Rollup, RequireJs, JSPM, SystemJs
+  Vite, Webpack, Rollup, RequireJS, JSPM, SystemJS
 
 Software Development Platforms
   Aurelia 2, Node.js, Aurelia, .NET
@@ -401,8 +401,7 @@ TypeScript, Solidity, Ethereum, Web3, dApps, ethers.js, DAOs, DAO Governance
 Systems, DeFi, Wallets, ReFi, SPA, IPFS, Subgraph, Liquidity Bootstrapping
 Pools, web3.js, Balancer Liquidity Pools, Gnosis Safe, Defender, Ceramic, ENS,
 LitProtocol, Metamask, WalletConnect, Web3Modal, JavaScript, Node.js, Vite,
-HTML, CSS, SASS, Responsive, ReactJs, Aurelia, Webpack, Rollup, i18Next,
-GitHub
+HTML, CSS, SASS, Responsive, React, Aurelia, Webpack, Rollup, i18Next, GitHub
 
 
 Senior Lead Developer
@@ -443,7 +442,7 @@ Highlights:
 Skills / Technologies:
 TypeScript, Solidity, Ethereum, Web3, dApps, DAOs, DAO Governance Systems,
 Wallets, SPA, Subgraph, 3Box, JavaScript, Node.js, HTML, CSS, SASS,
-Responsive, ReactJs, Aurelia, Webpack, jQuery, Bootstrap, Bootstrap Material
+Responsive, React, Aurelia, Webpack, jQuery, Bootstrap, Bootstrap Material
 Design, GitHub
 
 
@@ -493,15 +492,15 @@ increase the efficiency of their relationship
 
 Highlights:
 - Designed the whole thing, end-to-end
-- The only part I didn't write entirely myself was the AngularJs web
+- The only part I didn't write entirely myself was the AngularJS web
   application
 - Created a dynamic, data-driven schema for the exchanged content
-- Integrated lots of moving parts: an AngularJs web application, two external
-  web services, .NET web server, Azure web job, and SQL Server database
+- Integrated lots of moving parts: an AngularJS web application, two external
+  web services, a .NET web server, Azure web job, and SQL Server database
 - Hosted on Azure
 
 Skills / Technologies:
-TypeScript, SPA, AngularJs, C#, WebApi, ASP.NET, SQL Server, T-SQL, Unity,
+TypeScript, SPA, AngularJS, C#, WebApi, ASP.NET, SQL Server, T-SQL, Unity,
 Entity Framework, Azure, TFS
 
 
@@ -527,7 +526,7 @@ Highlights:
 
 Skills / Technologies:
 SPA, JavaScript, HTML, CSS, C#, D3, Highcharts, WebApi, Ajax, jQuery,
-Bootstrap, RequireJs, KnockoutJs, DurandalJs, Agile, Unity, .NET, Entity
+Bootstrap, RequireJS, KnockoutJS, DurandalJs, Agile, Unity, .NET, Entity
 Framework, TFS
 
 
@@ -549,7 +548,7 @@ Highlights:
 
 Skills / Technologies:
 SPA, JavaScript, HTML, CSS, C#, MVC, WebAPI, Ajax, jQuery, bootstrap,
-RequireJs, KnockoutJs, Durandal, ASP.NET, i18Next, jQuery globalization, SQL
+RequireJS, KnockoutJS, Durandal, ASP.NET, i18Next, jQuery globalization, SQL
 Server, T-SQL, entity framework
 
 
@@ -566,11 +565,11 @@ Highlights:
   custom server-side authentication and other techniques to achieve data
   privacy with no SSL
 - Been through a couple iterations as technologies have changed. Was
-  Durandal+KnockoutJs+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core.
+  Durandal+KnockoutJS+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core.
 
 Skills / Technologies:
 SPA, JavaScript, HTML, CSS, Aurelia, Webpack, C#, ASP.NET Core, MVC, WebAPI,
-Identity, Ajax, jQuery, Bootstrap, RequireJs, KnockoutJs, SQL Server, T-SQL,
+Identity, Ajax, jQuery, Bootstrap, RequireJS, KnockoutJS, SQL Server, T-SQL,
 MsTest, XUnit.NET, crypto-js, DES, Encryption, SHA,
 System.Security.Cryptography, entity framework
 
@@ -605,7 +604,7 @@ Highlights:
   prototype was written against Selenium to drive automated GUI tests
 
 Skills / Technologies:
-JavaScript, HTML, CSS, C#, MVC, jQuery, KnockoutJs, ASP.NET, Telerik, MEF,
+JavaScript, HTML, CSS, C#, MVC, jQuery, KnockoutJS, ASP.NET, Telerik, MEF,
 ADO, nHibernate, Agile, Moq, Selenium, SpecFlow, Unity, VSTest, Enterprise
 Framework, TFS
 
@@ -807,7 +806,7 @@ https://home.click2learn.com/showcase
 
 Description:
 Developed software for Toolbook 3.0 and multimedia screensavers (Jurassic
-Park, et. al.)
+Park, et al.)
 
 
 Software Engineer
@@ -823,7 +822,7 @@ VP Applications Development
 ConnectSoft | 10/1989 - 12/1990
 
 Description:
-Managed all development efforts (see ConnectSoft, below)
+Managed all ConnectSoft development efforts
 
 
 Software Engineer

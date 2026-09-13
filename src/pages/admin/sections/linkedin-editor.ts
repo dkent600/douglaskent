@@ -1,4 +1,4 @@
-import { customElement, ILogger, resolve } from "aurelia";
+import { customElement, ILogger, INode, resolve } from "aurelia";
 
 import { type ILinkedInField, linkedInStore } from "../linkedin-store";
 
@@ -18,8 +18,30 @@ export class LinkedInEditor {
   now = Date.now();
   private clock: ReturnType<typeof setInterval> | null = null;
 
+  /** Second click confirms an orphan discard, so there is no modal to build. */
+  confirmingDiscard: string | null = null;
+
+  private readonly host = resolve(INode) as HTMLElement;
+
   constructor() {
     this.store.useLogger(resolve(ILogger).scopeTo("LinkedInEditor"));
+  }
+
+  /**
+   * The tab's action bar is sticky below the page's sticky header, and the header's height
+   * is not a constant -- six tabs plus a status line wrap to two rows at ordinary widths.
+   * A fixed offset left the Save button underneath it once the page was scrolled, so the
+   * real height is measured and handed to the stylesheet as a custom property.
+   */
+  private placeBar(): void {
+    const header = this.host.closest(".admin")?.querySelector<HTMLElement>(".admin-bar");
+    if (header) {
+      this.host.style.setProperty("--admin-bar-height", `${header.offsetHeight}px`);
+    }
+  }
+
+  handleEvent(): void {
+    this.placeBar();
   }
 
   /**
@@ -37,6 +59,8 @@ export class LinkedInEditor {
     this.clock = setInterval(() => {
       this.now = Date.now();
     }, CLOCK_MS);
+    this.placeBar();
+    window.addEventListener("resize", this);
   }
 
   detaching(): void {
@@ -44,6 +68,7 @@ export class LinkedInEditor {
       clearInterval(this.clock);
       this.clock = null;
     }
+    window.removeEventListener("resize", this);
   }
 
   fieldsOf(entry: string, _revision?: number): Array<ILinkedInField> {
@@ -52,6 +77,15 @@ export class LinkedInEditor {
 
   unapprovedIn(entry: string, _revision?: number): number {
     return this.fieldsOf(entry).filter((field) => !field.approved).length;
+  }
+
+  requestDiscard(id: string): void {
+    this.confirmingDiscard = this.confirmingDiscard === id ? null : id;
+  }
+
+  confirmDiscard(id: string): void {
+    this.store.discardOrphan(id);
+    this.confirmingDiscard = null;
   }
 
   rows(field: ILinkedInField): number {

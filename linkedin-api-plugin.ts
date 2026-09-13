@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 import type { Plugin } from "vite";
 
-import { gateErrors, generate, type ILinkedInState } from "./linkedin-generator";
+import { gateErrors, generate, type ILinkedInState, markOrphans } from "./linkedin-generator";
 
 /**
  * Serves and writes the files behind the admin page's LinkedIn tab.
@@ -147,11 +147,13 @@ export function linkedinApi(): Plugin {
                   send(409, { error: `${errors.length} field(s) not approved; nothing written`, errors });
                   return;
                 }
+                const savedAt = new Date().toISOString();
                 const state: ILinkedInState = {
-                  savedAt: new Date().toISOString(),
+                  savedAt,
                   inputSnapshot: generated.inputSnapshot,
                   configSnapshot: config as ILinkedInState["configSnapshot"],
-                  fields: body.fields as ILinkedInState["fields"],
+                  /** Fields outside the output are kept and stamped, never dropped -- see `markOrphans`. */
+                  fields: markOrphans(body.fields as ILinkedInState["fields"], generated.fields, savedAt),
                 };
                 await serialised(() => writeAtomically(paths.state, stringify(state)));
                 log(`wrote ${STATE_PATH}`);

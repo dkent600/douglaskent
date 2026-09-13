@@ -4,6 +4,7 @@
       <strong if.bind="store.loaded && !store.generatorError">${store.fields.length - store.unapprovedCount} of ${store.fields.length} approved</strong>
       <span class="hint" if.bind="store.stateSavedAt">&middot; state saved ${local(store.stateSavedAt)}</span>
       <span class="hint" else>&middot; no state file yet &mdash; first run, every field needs a review</span>
+      <span class="hint" if.bind="store.orphans.length">&middot; ${store.orphans.length} orphaned</span>
     </div>
     <div class="linkedin-draft">
       <span class="pending" if.bind="store.draftPending">draft unsaved</span>
@@ -87,6 +88,41 @@
         </summary>
         <p class="diff-text"><span repeat.for="segment of field.defaultDiff" class="diff-${segment.kind}">${segment.text}</span></p>
       </details>
+    </div>
+  </section>
+
+  <!--
+    A separate category from changed and new fields. These are not unapproved; they are
+    outside the output, so they neither block Save nor take an approval. They stay in the
+    files until discarded here, and reattach by themselves if their entry returns.
+  -->
+  <section class="sub orphans" if.bind="store.orphans.length">
+    <h4>
+      ${store.orphans.length} field${store.orphans.length === 1 ? ' is' : 's are'} no longer in the output; their overrides are preserved
+    </h4>
+    <p class="hint">
+      The entry is no longer notable, or a group no longer lists it. Nothing here blocks Save.
+      Flip the entry back and the text below reattaches to its field. Discard removes it from
+      linkedin.state.json and the draft &mdash; nothing else does.
+    </p>
+    <div class="pane is-orphan" repeat.for="orphan of store.orphans">
+      <div class="pane-head">
+        <code class="pane-id">${orphan.id}</code>
+        <span class="badge" if.bind="orphan.hasOverride">override</span>
+        <span class="badge" else>default only</span>
+        <span class="hint" if.bind="orphan.orphanedAt">orphaned ${local(orphan.orphanedAt)}</span>
+        <span class="hint" else>not yet saved as orphaned</span>
+      </div>
+      <textarea rows="4" readonly value.to-view="orphan.text"></textarea>
+      <div class="pane-tools">
+        <button type="button" click.trigger="store.copyText(orphan.text, orphan.id)">Copy</button>
+        <button type="button" class="danger" click.trigger="requestDiscard(orphan.id)">
+          ${confirmingDiscard === orphan.id ? 'Cancel' : 'Discard'}
+        </button>
+        <button type="button" class="danger confirm" if.bind="confirmingDiscard === orphan.id" click.trigger="confirmDiscard(orphan.id)">
+          Really discard
+        </button>
+      </div>
     </div>
   </section>
 </div>

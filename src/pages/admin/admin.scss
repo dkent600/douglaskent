@@ -418,7 +418,8 @@
   margin-bottom: 0.75rem;
   padding: 0.5rem 0.75rem;
   position: sticky;
-  top: 3.4rem;
+  /** Set by `LinkedInEditor.placeBar` from the header's measured height; the fallback is one row. */
+  top: var(--admin-bar-height, 3.4rem);
   z-index: 4;
 }
 
@@ -440,6 +441,11 @@
 
   &.is-over {
     border-color: var(--danger);
+  }
+
+  &.is-orphan {
+    background: var(--sunken);
+    border-style: dashed;
   }
 
   textarea {
