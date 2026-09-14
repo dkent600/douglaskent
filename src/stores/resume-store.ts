@@ -43,7 +43,7 @@ export type IAreasOfExpertise = IResume["areasOfExpertise"][0];
  * them separate, the JSON-LD joins them into the single string `description` is defined
  * to be.
  */
-export const SUMMARY_KEYS = ["summary1", "summary2", "summary7"];
+export const SUMMARY_KEYS = ["summary1", "summary2", "summary7", "summary8"];
 
 export type IResumeStore = ResumeStore;
 export const IResumeStore = DI.createInterface<IResumeStore>();
