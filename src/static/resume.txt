@@ -8,10 +8,10 @@ https://github.com/dkent600
 
 PROFESSIONAL SUMMARY
 
-I am a software engineer and architect with 35 years spent leading teams and
-building sophisticated systems - web applications, blockchain and Web3
-platforms, and most recently AI-native applications built on large language
-models.
+I am a software engineer and architect who has been building software
+professionally since 1985 - leading teams and building sophisticated systems
+across web applications, blockchain and Web3 platforms, and most recently
+AI-native applications built on large language models.
 
 I have worn multiple hats in important roles across many kinds of
 organizations, from Microsoft to garage startups - enough to recognize most
@@ -19,6 +19,10 @@ problems before they become expensive.
 
 My recent work is in LLM system architecture and development - building
 reliable systems on top of subjective inputs and non-deterministic models.
+
+I'm looking for a senior engineering or architecture role where a long and
+varied track record is an asset. I work remotely from Costa Rica, which
+overlaps well with US business hours, and am happy to travel as needed.
 
 
 AREAS OF EXPERTISE
@@ -74,7 +78,8 @@ SELECTED ACCOMPLISHMENTS
   flagship website, Ford.com.
 - At ConnectSoft I led the development of an application that won a Windows
   100 award from Windows Magazine: Clip-Art Window Shopper, one of the first
-  ever applications for purchasing and downloading clip-art online.
+  ever applications for purchasing and downloading clip-art online - in the
+  early 1990s, before the commercial web existed.
 - At Microsoft, I incorporated the new technology of OLE 1.0 into Windows
   Write. OLE was a highly visible and strategic initiative of interest at the
   highest levels in Microsoft.
