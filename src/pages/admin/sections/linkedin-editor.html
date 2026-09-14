@@ -17,11 +17,15 @@
         title="Approve every flagged field's current computed default. For deliberate resume.json changes.">
         Accept all
       </button>
-      <button type="button" class="primary" click.trigger="store.save()" disabled.bind="!store.canSave"
+      <!-- Enabled while blocked so a click can say why; `store.save` refuses and reports. -->
+      <button type="button" class="primary" click.trigger="store.save()" disabled.bind="store.busy || !store.loaded"
         title.bind="store.canSave ? 'Write linkedin.state.json' : 'Blocked: ' + store.saveBlockedBy">
         Save${store.saveBlockedBy ? ' (' + store.saveBlockedBy + ')' : ''}
       </button>
     </div>
+    <p class="blocked" if.bind="store.loaded && !store.generatorError && store.saveBlockers.length">
+      Save is blocked &mdash; ${store.saveBlockers.join('; ')}
+    </p>
   </div>
 
   <div class="renamed" if.bind="store.draftLoadedAt">

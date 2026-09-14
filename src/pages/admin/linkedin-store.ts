@@ -352,11 +352,13 @@ export class LinkedInStore {
       field.buffer = toText(field.currentDefault);
     }
     this.refresh(field);
+    this.status = `${this.unapprovedCount} unapproved`;
     void this.flushDraft();
   }
 
   public acceptAll(): void {
     const now = new Date().toISOString();
+    let accepted = 0;
     for (const field of this.fields) {
       if (field.approved) continue;
       field.approvedDefault = field.currentDefault;
@@ -365,7 +367,9 @@ export class LinkedInStore {
         field.buffer = toText(field.currentDefault);
       }
       this.refresh(field);
+      accepted++;
     }
+    this.status = `accepted ${accepted} in the draft; Save writes the state file`;
     void this.flushDraft();
   }
 
@@ -448,12 +452,33 @@ export class LinkedInStore {
     return reasons.join(", ");
   }
 
+  /**
+   * The blockers by field, for the bar and for the status line when a blocked Save is
+   * clicked. Unapproved fields are a count -- they are flagged in place and may be many --
+   * but a limit or a missing override is named, since there is one specific pane to go to.
+   */
+  public get saveBlockers(): Array<string> {
+    const blockers: Array<string> = [];
+    if (this.unapprovedCount > 0) blockers.push(`${this.unapprovedCount} unapproved`);
+    for (const field of this.fields) {
+      if (field.over) blockers.push(`${field.id} is ${field.length} / ${field.limit}`);
+      if (field.requiresOverride && !field.hasOverride) blockers.push(`${field.id} needs an override`);
+    }
+    return blockers;
+  }
+
   public get canSave(): boolean {
     return this.saveBlockedBy === "" && !this.busy;
   }
 
+  /**
+   * Clickable while blocked, on purpose: a disabled button gives no feedback, and the one
+   * time it was tried the reason sat in a tooltip nobody hovered. A blocked click writes
+   * nothing and says so, naming the field.
+   */
   public async save(): Promise<void> {
     if (!this.canSave) {
+      this.status = this.busy ? "busy" : `not saved: ${this.saveBlockers.join("; ")}`;
       return;
     }
     if (this.draftTimer) {

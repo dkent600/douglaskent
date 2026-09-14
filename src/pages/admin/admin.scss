@@ -427,6 +427,13 @@
   min-width: 8rem;
 }
 
+/** Why Save will refuse, by field. Its own row under the bar's controls. */
+.linkedin-bar .blocked {
+  color: var(--danger);
+  flex-basis: 100%;
+  margin: 0;
+}
+
 .pane {
   border: 1px solid var(--line);
   border-radius: 6px;
