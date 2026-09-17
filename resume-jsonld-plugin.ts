@@ -533,8 +533,22 @@ export function buildPersonJsonLd(
      * and not the file's mtime -- `resumeLastUpdated()` carries the reasoning for both
      * exclusions. `dateModified` is a claim about when the content changed, so a value that
      * moved on every rebuild would be worse than no value at all.
+     *
+     * Widened to a full ISO 8601 datetime *here and nowhere else*. Google's ProfilePage
+     * validator rejects a bare `YYYY-MM-DD` on this property ("Invalid datetime value"),
+     * and rejects a datetime without an offset for the complementary reason ("missing a
+     * timezone"), so only date + time + offset clears both. The shared
+     * `resumeLastUpdated()` stays a bare date because its other two consumers want one:
+     * `<lastmod>` in `sitemap.xml`, where a plain date is valid, and the `.docx` package,
+     * whose byte-identical builds depend on the bare date parsing as UTC midnight.
+     *
+     * The time component is hardcoded rather than read from a clock. A build timestamp
+     * would make this derived artefact differ between builds of unchanged input, and it
+     * would also be a lie: `dateModified` on a ProfilePage says when the profile was
+     * edited, not when the bundle was compiled. `Z` rather than a local offset so this
+     * reading of `lastUpdated` matches the one the `.docx` path already uses.
      */
-    dateModified: resumeLastUpdated(),
+    dateModified: `${resumeLastUpdated()}T00:00:00Z`,
     mainEntity: { "@id": PERSON_ID },
     hasPart: projects.map(({ entry }) => ({ "@id": entry.website })),
   });
