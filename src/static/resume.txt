@@ -401,6 +401,11 @@ Highlights:
 - As products, these applications are innovative and impressive. Read more
   about them at Kolektivo (https://www.kolektivo.network/) and The Prime Suite
   (https://www.prime.xyz)
+- Sole coder of the dApp frontend of HyperDAO
+  (https://github.com/Curve-Labs/hyperdao), built in three days with the Curve
+  Labs team at the ETHLisbon 2021 hackathon and awarded a prize; the frontend
+  created DAOs and submitted proposals against a Gnosis Safe acting as a
+  minimal viable DAO, turning Telegram groups into functioning DAOs
 
 Skills / Technologies:
 TypeScript, Blockchain, Cryptocurrencies, Solidity, Ethereum, Web3, dApps,
