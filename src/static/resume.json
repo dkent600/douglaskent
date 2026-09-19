@@ -1761,14 +1761,14 @@
         "Coordinated a team of two and did the majority of coding of the dApp frontend of Prime Launch (was https://launch.prime.xyz)",
         "Coordinated a team of five and did much of the coding of the dApp frontend of Prime Deals (was https://deals.prime.xyz)",
         "Coordinated a team of two and participated in the coding of the dApp frontend of <a href=\"https://github.com/Kolektivo/kolektivo-dapp\" target=\"_blank\">Kolektivo (not currently active)</a>",
+        "Sole coder of the dApp frontend of <a href='https://github.com/Curve-Labs/hyperdao' target='_blank'>HyperDAO</a>, built in three days with the Curve Labs team at the ETHLisbon 2021 hackathon and awarded a prize; the frontend created DAOs and submitted proposals against a Gnosis Safe acting as a minimal viable DAO, turning Telegram groups into functioning DAOs",
         "With the exception of the PrimeDAO Home Page, which uses React.js, the dApps were all implemented using the <a href=\"https://aurelia.io/\" target=\"_blank\">Aurelia</a> framework",
         "Leveraged many Ethereum smart contracts developed by CurveLabs, reviewing solidity for code quality, bugs and security, proposing accepted improvements and bug fixes",
         "Leveraged <a href=\"https://balancer.fi/\" target=\"_blank\">Balancer Liquidity Pools</a>, smart contracts that implement decentralized automated market makers",
         "Leveraged GnosisSafe API, for governance purposes",
         "Leveraged CoinGecko for token prices",
         "Interviewed applicants for developer and project lead positions",
-        "As products, these applications are innovative and impressive. Read more about them at <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> and <a href=\"https://www.prime.xyz\" target=\"_blank\">The Prime Suite</a> ",
-        "Sole coder of the dApp frontend of <a href='https://github.com/Curve-Labs/hyperdao' target='_blank'>HyperDAO</a>, built in three days with the Curve Labs team at the ETHLisbon 2021 hackathon and awarded a prize; the frontend created DAOs and submitted proposals against a Gnosis Safe acting as a minimal viable DAO, turning Telegram groups into functioning DAOs"
+        "As products, these applications are innovative and impressive. Read more about them at <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> and <a href=\"https://www.prime.xyz\" target=\"_blank\">The Prime Suite</a> "
       ],
       "skills": [
         "dApps",
