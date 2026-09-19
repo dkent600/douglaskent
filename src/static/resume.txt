@@ -164,11 +164,11 @@ AI
   ChatGPT (LLM)
 
 Blockchain
-  Solidity, Ethereum, Web3, dApps, ethers.js, DAOs, DAO Governance Systems,
-  DeFi, Wallets, ReFi, IPFS, Subgraph, Liquidity Bootstrapping Pools, web3.js,
-  Celo, Arbitrum, Balancer Liquidity Pools, Gnosis Safe, OpenZeppelin
-  Defender, Ceramic, 3Box, ENS, Mento, LitProtocol, Metamask, WalletConnect,
-  Web3Modal
+  Blockchain, Cryptocurrencies, Solidity, Ethereum, Web3, dApps, ethers.js,
+  DAOs, DAO Governance Systems, DeFi, Wallets, ReFi, IPFS, Subgraph, Liquidity
+  Bootstrapping Pools, web3.js, Celo, Arbitrum, Balancer Liquidity Pools,
+  Gnosis Safe, OpenZeppelin Defender, Ceramic, 3Box, ENS, Mento, LitProtocol,
+  Metamask, WalletConnect, Web3Modal
 
 Website and Application Development
   TypeScript, Web3, dApps, Aurelia 2, Web Components, Wallets, MVVM, SPA,
@@ -304,8 +304,9 @@ Highlights:
   VS Code
 
 Skills / Technologies:
-TypeScript, Aurelia 2, DeFi, MVVM, AI Coding Assistant, GitHub Copilot,
-TailWind CSS, Axios, Vite, FluentUI Web Components, GitHub
+TypeScript, Blockchain, Cryptocurrencies, Aurelia 2, DeFi, MVVM, AI Coding
+Assistant, GitHub Copilot, TailWind CSS, Axios, Vite, FluentUI Web Components,
+GitHub
 
 
 Technical Lead & dApp Architect - Butterfly, Crypto portfolio management
@@ -330,8 +331,8 @@ Highlights:
 - Axios for exchange-API communications
 
 Skills / Technologies:
-TypeScript, DeFi, AI Coding Assistant, GitHub Copilot, Fastify, Axios,
-Node.js, TSyringe, Vite, GitHub
+TypeScript, Blockchain, Cryptocurrencies, DeFi, AI Coding Assistant, GitHub
+Copilot, Fastify, Axios, Node.js, TSyringe, Vite, GitHub
 
 
 Blockchain Oracle Developer
@@ -402,11 +403,12 @@ Highlights:
   (https://www.prime.xyz)
 
 Skills / Technologies:
-TypeScript, Solidity, Ethereum, Web3, dApps, ethers.js, DAOs, DAO Governance
-Systems, DeFi, Wallets, ReFi, SPA, IPFS, Subgraph, Liquidity Bootstrapping
-Pools, web3.js, Balancer Liquidity Pools, Gnosis Safe, Defender, Ceramic, ENS,
-LitProtocol, Metamask, WalletConnect, Web3Modal, JavaScript, Node.js, Vite,
-HTML, CSS, SASS, Responsive, React, Aurelia, Webpack, Rollup, i18Next, GitHub
+TypeScript, Blockchain, Cryptocurrencies, Solidity, Ethereum, Web3, dApps,
+ethers.js, DAOs, DAO Governance Systems, DeFi, Wallets, ReFi, SPA, IPFS,
+Subgraph, Liquidity Bootstrapping Pools, web3.js, Balancer Liquidity Pools,
+Gnosis Safe, Defender, Ceramic, ENS, LitProtocol, Metamask, WalletConnect,
+Web3Modal, JavaScript, Node.js, Vite, HTML, CSS, SASS, Responsive, React,
+Aurelia, Webpack, Rollup, i18Next, GitHub
 
 
 Senior Lead Developer
@@ -445,8 +447,8 @@ Highlights:
   facilitate the creation of DAOstack DAOs
 
 Skills / Technologies:
-TypeScript, Solidity, Ethereum, Web3, dApps, DAOs, DAO Governance Systems,
-Wallets, SPA, Subgraph, 3Box, JavaScript, Node.js, HTML, CSS, SASS,
+TypeScript, Blockchain, Solidity, Ethereum, Web3, dApps, DAOs, DAO Governance
+Systems, Wallets, SPA, Subgraph, 3Box, JavaScript, Node.js, HTML, CSS, SASS,
 Responsive, React, Aurelia, Webpack, jQuery, Bootstrap, Bootstrap Material
 Design, GitHub
 

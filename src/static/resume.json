@@ -1767,7 +1767,8 @@
         "Leveraged GnosisSafe API, for governance purposes",
         "Leveraged CoinGecko for token prices",
         "Interviewed applicants for developer and project lead positions",
-        "As products, these applications are innovative and impressive. Read more about them at <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> and <a href=\"https://www.prime.xyz\" target=\"_blank\">The Prime Suite</a> "
+        "As products, these applications are innovative and impressive. Read more about them at <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> and <a href=\"https://www.prime.xyz\" target=\"_blank\">The Prime Suite</a> ",
+        "Sole coder of the dApp frontend of <a href=\\\"https://github.com/Curve-Labs/hyperdao\\\" target=\\\"_blank\\\">HyperDAO</a>, built in three days with the Curve Labs team at the ETHLisbon 2021 hackathon and awarded a prize; the frontend created DAOs and submitted proposals against a Gnosis Safe acting as a minimal viable DAO, turning Telegram groups into functioning DAOs"
       ],
       "skills": [
         "dApps",

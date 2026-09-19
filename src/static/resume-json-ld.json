@@ -7,7 +7,7 @@
       "url": "https://www.douglaskent.com/",
       "name": "Douglas Kent — Software Engineer, LLM Systems, Blockchain",
       "description": "Full-stack software engineer and architect since 1985. LLM system architecture, blockchain and Web3 platforms, web applications.",
-      "dateModified": "2026-09-14T00:00:00Z",
+      "dateModified": "2026-09-17T00:00:00Z",
       "mainEntity": {
         "@id": "https://www.douglaskent.com/#douglas-kent"
       },
@@ -158,6 +158,8 @@
         "MVVM",
         "FluentUI Web Components",
         "GitHub",
+        "Blockchain",
+        "Cryptocurrencies",
         "TSyringe",
         "dApps",
         "Ethereum",
@@ -365,7 +367,9 @@
         "Axios",
         "GitHub",
         "AI Coding Assistant",
-        "GitHub Copilot"
+        "GitHub Copilot",
+        "Blockchain",
+        "Cryptocurrencies"
       ],
       "author": {
         "@type": "Role",
@@ -393,7 +397,9 @@
         "Vite",
         "Axios",
         "GitHub",
-        "AI Coding Assistant"
+        "AI Coding Assistant",
+        "Blockchain",
+        "Cryptocurrencies"
       ],
       "author": {
         "@type": "Role",
