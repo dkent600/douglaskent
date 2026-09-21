@@ -245,11 +245,11 @@ Independent Software Developer | 05/2026 - Present
 https://github.com/dkent600/HumanLens
 
 Description:
-Modeled on an existing DEI consultancy, turned an open-ended qualitative
-analysis problem into a full-stack web application wrapping a bounded,
-testable LLM pipeline: staged contracts between components, empirical
-calibration to reduce output variance, and a client-safe boundary enforced
-from the pipeline through to the human-review interface.
+Turned an open-ended qualitative analysis problem into a full-stack web
+application wrapping a bounded, testable LLM pipeline: staged contracts
+between components, empirical calibration to reduce output variance, and a
+client-safe boundary enforced from the pipeline through to the human-review
+interface. Modeled on the practice of an existing DEI consultancy.
 
 Highlights:
 - Scoped, designed, and built in TypeScript - Aurelia 2 web application over a
@@ -389,7 +389,7 @@ Highlights:
   frontend of Kolektivo (not currently active)
   (https://github.com/Kolektivo/kolektivo-dapp)
 - Sole coder of the dApp frontend of HyperDAO
-  (https://github.com/Curve-Labs/hyperdao), built in three days with the Curve
+  (https://github.com/Curve-Labs/hyperdao), built in two days with the Curve
   Labs team at the ETHLisbon 2021 hackathon and awarded a prize; the frontend
   created DAOs and submitted proposals against a Gnosis Safe acting as a
   minimal viable DAO, turning Telegram groups into functioning DAOs

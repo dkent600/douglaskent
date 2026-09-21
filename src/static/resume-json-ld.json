@@ -7,7 +7,7 @@
       "url": "https://www.douglaskent.com/",
       "name": "Douglas Kent — Software Engineer, LLM Systems, Blockchain",
       "description": "Full-stack software engineer and architect since 1985. LLM system architecture, blockchain and Web3 platforms, web applications.",
-      "dateModified": "2026-09-19T00:00:00Z",
+      "dateModified": "2026-09-21T00:00:00Z",
       "mainEntity": {
         "@id": "https://www.douglaskent.com/#douglas-kent"
       },
@@ -314,7 +314,7 @@
       "@id": "https://github.com/dkent600/HumanLens",
       "url": "https://github.com/dkent600/HumanLens",
       "name": "Independent Software Developer",
-      "description": "Modeled on an existing DEI consultancy, turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface.",
+      "description": "Turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Modeled on the practice of an existing DEI consultancy.",
       "keywords": [
         "TypeScript",
         "Visual Studio Code",
