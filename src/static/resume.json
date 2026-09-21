@@ -2599,9 +2599,9 @@
   ],
   "publications": [
     {
-      "authors": "Young, Forest W., D.P. Kent, W.F. Kuhfeld",
+      "authors": "Young, Forrest W., D.P. Kent, W.F. Kuhfeld",
       "name": "Dynamic Graphics for Exploring Multivariate Data. Chapter 8, Dynamic Graphics for Statistics",
-      "publisher": "Cleveland, W.S. and McGill, M. eds., Wadsworth",
+      "publisher": "Cleveland, W.S. and McGill, M.E. eds., Wadsworth",
       "releaseDate": "1988"
     },
     {
@@ -2648,7 +2648,7 @@
     },
     {
       "authors": "Douglas Kent",
-      "name": "U.S. Environmental Protection Agency, OANR: AOQPS. Benzene Fugitive Emissions - Background Information for Promulgated Standards: EIS. EPA-450/3-80-032b. Chapters 2.1, 2.2, 2.5, 2.7, 2.8.6, Appendix C",
+      "name": "U.S. Environmental Protection Agency, OANR: OAQPS. Benzene Fugitive Emissions - Background Information for Promulgated Standards: EIS. EPA-450/3-80-032b. Chapters 2.1, 2.2, 2.5, 2.7, 2.8.6, Appendix C",
       "publisher": "U.S. Environmental Protection Agency",
       "releaseDate": "1980"
     },
@@ -2671,7 +2671,7 @@
       "releaseDate": "1979"
     },
     {
-      "authors": "",
+      "authors": "Kent, D.P.",
       "name": "Air Quality Plan for Mobile Sources. Appendix II-12, Baseline Data on Attainment Status Designations for Areawide Air Pollutants",
       "publisher": "Toledo Metropolitan Area Council of Governments",
       "releaseDate": "1978"
