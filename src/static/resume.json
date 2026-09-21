@@ -2600,8 +2600,8 @@
   "publications": [
     {
       "authors": "Young, Forrest W., D.P. Kent, W.F. Kuhfeld",
-      "name": "Dynamic Graphics for Exploring Multivariate Data. Chapter 8, Dynamic Graphics for Statistics",
-      "publisher": "Cleveland, W.S. and McGill, M.E. eds., Wadsworth",
+      "name": "Dynamic Graphics for Exploring Multivariate Data",
+      "publisher": "W.S. Cleveland and M.E. McGill (eds.), Dynamic Graphics for Statistics, pp. 391-424. Pacific Grove, CA: Wadsworth & Brooks/Cole",
       "releaseDate": "1988"
     },
     {
@@ -2625,6 +2625,12 @@
     {
       "authors": "Young, Forrest W., D.P. Kent, T.C. Edds, W.F. Kuhfeld",
       "name": "Visual Exploratory Data Analysis: PROC VISUALS, A User-Written Experimental SAS Procedure",
+      "publisher": "Proceedings of the Eleventh Annual SAS Users Group International Conference, Atlanta, Georgia",
+      "releaseDate": "1986"
+    },
+    {
+      "authors": "Young, Forrest W., D.P. Kent, T.C. Edds, W.F. Kuhfeld",
+      "name": "New Developments in Alternating Least-Squares SAS Procedures",
       "publisher": "Proceedings of the Eleventh Annual SAS Users Group International Conference, Atlanta, Georgia",
       "releaseDate": "1986"
     },

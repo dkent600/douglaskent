@@ -925,10 +925,10 @@ Bachelor of Science, Botany | 1973-1977
 
 PUBLICATIONS
 
-Dynamic Graphics for Exploring Multivariate Data. Chapter 8, Dynamic Graphics
-for Statistics
-Young, Forest W., D.P. Kent, W.F. Kuhfeld
-Cleveland, W.S. and McGill, M. eds., Wadsworth
+Dynamic Graphics for Exploring Multivariate Data
+Young, Forrest W., D.P. Kent, W.F. Kuhfeld
+W.S. Cleveland and M.E. McGill (eds.), Dynamic Graphics for Statistics, pp.
+391-424. Pacific Grove, CA: Wadsworth & Brooks/Cole
 
 Visual Exploratory Data Analysis and the VISUALS System for Dynamic
 Hyper-Dimensional Graphics
@@ -954,6 +954,11 @@ Young, Forrest W., D.P. Kent, T.C. Edds, W.F. Kuhfeld
 Proceedings of the Eleventh Annual SAS Users Group International Conference,
 Atlanta, Georgia
 
+New Developments in Alternating Least-Squares SAS Procedures
+Young, Forrest W., D.P. Kent, T.C. Edds, W.F. Kuhfeld
+Proceedings of the Eleventh Annual SAS Users Group International Conference,
+Atlanta, Georgia
+
 Visual Exploratory Data Analysis: A Preliminary Report in Classification As A
 Tool Of Research, Gaul, W. and Schader, M. editors
 Young, Forrest W., T. Edds, D.P. Kent, W.F. Kuhfeld
@@ -969,7 +974,7 @@ Standards: Draft EIS. EPA-450-3-81-008a. Chapters 1, 3, 4 and 7
 McAdams, M.T., D.P. Kent
 U.S. Environmental Protection Agency, OANR:OAQPS
 
-U.S. Environmental Protection Agency, OANR: AOQPS. Benzene Fugitive Emissions
+U.S. Environmental Protection Agency, OANR: OAQPS. Benzene Fugitive Emissions
 - Background Information for Promulgated Standards: EIS. EPA-450/3-80-032b.
 Chapters 2.1, 2.2, 2.5, 2.7, 2.8.6, Appendix C
 Douglas Kent
@@ -994,4 +999,5 @@ Research Triangle Institute Contract #AID/ta-CA-1
 
 Air Quality Plan for Mobile Sources. Appendix II-12, Baseline Data on
 Attainment Status Designations for Areawide Air Pollutants
+Kent, D.P.
 Toledo Metropolitan Area Council of Governments
