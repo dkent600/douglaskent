@@ -1600,7 +1600,7 @@
       "position": "Technical Lead & LLM Pipeline Architect — Human Lens, AI-native web app",
       "website": "https://github.com/dkent600/HumanLens",
       "startDate": "2026-05",
-      "summary": "Modeled on an existing DEI consultancy, turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface.",
+      "summary": "Turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Modeled on the practice of an existing DEI consultancy.",
       "endDate": "present",
       "highlights": [
         "Scoped, designed, and built in TypeScript — Aurelia 2 web application over a Fastify/Node service — with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing)",
