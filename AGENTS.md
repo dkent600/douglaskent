@@ -3,6 +3,31 @@
 Data-driven resume site. Aurelia 2 (`2.0.0-rc.2`) + Vite 7 SPA in TypeScript,
 deployed to IIS over FTP.
 
+## How it fits together
+
+`src/static/resume.json` is the only place resume content is written (schema:
+`src/static/schema.json`). Everything else renders it or is generated from it on
+every build:
+
+| Output | Produced by |
+|---|---|
+| The SPA: `/resume`, `/resume/short`, `/resume/expanded` | `src/pages/` |
+| Head SEO tags and `dist/sitemap.xml` | `resume-head-plugin.ts` |
+| JSON-LD in `<head>`, plus `src/static/resume-json-ld.json` | `resume-jsonld-plugin.ts` |
+| `src/static/resume.txt` and `resume.docx` | `resume-txt-plugin.ts`, `resume-docx-plugin.ts`, sharing `resume-content.ts` |
+| Prerendered snapshot in `dist/index.html` | `prerender-capture.mjs`, `prerender-insert.mjs` |
+
+The head tags, JSON-LD and snapshot are for readers that don't run JavaScript:
+search and AI crawlers, and link previewers. `web.config` lets three crawlers
+back in past the host's server-level block list.
+
+`npm run admin` opens `/admin`, a dev-server-only editor for `resume.json` plus a
+LinkedIn field generator. None of it reaches a build.
+
+Ship with `npm run release` (build, prerender, deploy). `README.md` has the detail
+on routes, deployment and the snapshot. The source comments are thorough and
+explain why things are done as they are; read them before changing anything.
+
 ## Skills
 
 Frontend work here is covered by two skills in `.agents/skills/`:
