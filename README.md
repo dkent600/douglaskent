@@ -22,11 +22,13 @@ Node `^20.19.0 || >=22.12.0`, as required by Vite 7.
 | `npm run typecheck` | `tsc --noEmit`, using the TypeScript version this project pins |
 | `npm run lint` | eslint, htmlhint and sass-lint (`lint:js`, `lint:html`, `lint:css` individually) |
 | `npm run lint:js.fix` | eslint with `--fix` |
+| `npm test` | `node --test`, Node's built-in runner, over `check-jsonld.test.mjs`. One test reads `dist/index.html`, so build first |
 | `npm run prerender:create` | Capture a JavaScript-free copy of the resume into `index-prerender.html` (see below) |
 | `npm run prerender:insert` | Splice that copy into the built `dist/index.html` |
 | `npm run prerender` | Both of the above, in order |
 | `npm run clean` | Delete `node_modules` and the lockfile, then reinstall |
 | `npm run deploy` | FTP upload driven by `ftpDeploy.txt` |
+| `npm run release` | `build`, `prerender` and `deploy`, in that order (see below) |
 
 ## Routes
 
@@ -188,11 +190,12 @@ npm run deploy      # 3. upload
 a stale build publishes the previous build's resume. `build` deliberately does not trigger the
 prerender: it stays a plain Aurelia build, usable on its own.
 
-**Nothing enforces the sequence.** `npm run deploy` runs only the `web.config` validation in its
-`predeploy` hook; it does not prerender. A `build` followed straight by a `deploy` uploads the shell
-with its `<!-- prerender:insert -->` marker unconsumed and no resume markup in it. The site still works
-for anyone running JavaScript, so nothing looks wrong -- it just carries nothing for the readers the
-snapshot exists for. Run step 2 every time.
+**`npm run release` runs all three in that order**, and is the safe way to ship. Running the steps
+by hand is where the sequence can break: `npm run deploy` on its own runs only the `web.config`
+validation in its `predeploy` hook; it does not prerender. A `build` followed straight by a `deploy`
+uploads the shell with its `<!-- prerender:insert -->` marker unconsumed and no resume markup in it.
+The site still works for anyone running JavaScript, so nothing looks wrong -- it just carries nothing
+for the readers the snapshot exists for. When deploying by hand, run step 2 every time.
 
 To confirm before uploading, count the verification markers in the built shell:
 

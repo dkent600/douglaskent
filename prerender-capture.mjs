@@ -13,8 +13,8 @@ import { preview } from "vite";
  * to keep correct.
  *
  * What comes out is a fragment for a reader that will not run JavaScript, so everything
- * that only matters to a running app -- classes, bindings, ids, the collapse machinery --
- * is stripped.
+ * that only matters to a running app -- bindings, ids, the collapse machinery -- is
+ * stripped. Classes are the exception and are kept; `KEEP_ATTRIBUTES` below says why.
  */
 
 const OUTPUT_PATH = "index-prerender.html";

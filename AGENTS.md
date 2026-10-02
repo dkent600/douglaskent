@@ -5,21 +5,30 @@ deployed to IIS over FTP.
 
 ## Skills
 
-Frontend work here is covered by two skills in `.Codex/skills/`:
+Frontend work here is covered by two skills in `.agents/skills/`:
 
 - **`aurelia2`** — authoritative on Aurelia 2 framework usage.
 - **`aurelia2-ex`** — project-specific conventions that override it.
 
-**Always load both.** `aurelia2-ex` exists specifically to correct `aurelia2`,
-so working from the base skill alone will produce code that violates this
-project's conventions.
+**Always load both.** If they are not offered as skills, read
+`.agents/skills/<name>/SKILL.md` directly. `aurelia2-ex` exists specifically to
+correct `aurelia2`, so working from the base skill alone will produce code that
+violates this project's conventions.
 
 ## No SSR
 
 This is a client-rendered SPA and will stay one. Ignore the "Server-Side
 Rendering and Prerendering" section of the `aurelia2` skill, do not read
-`references/ssr.md`, and do not propose `aurelia2-ssr`, prerendering, or
+`references/ssr.md`, and do not propose `aurelia2-ssr`, server rendering, or
 hydration.
+
+That does not rule out the prerendered snapshot the project already has, which
+is a deliberate part of it. `prerender-capture.mjs` loads the built
+`/resume/expanded` in headless Chromium and writes a JavaScript-free copy to
+`index-prerender.html`; `prerender-insert.mjs` splices that into
+`dist/index.html`, so crawlers that do not run JavaScript still get the resume.
+The app removes the block when it boots — nothing hydrates it. Maintain it as
+it is; see "The prerendered snapshot" in `README.md`.
 
 ## Stack — do not substitute
 
@@ -30,8 +39,11 @@ Do not introduce it.
 - **jQuery is a real dependency.** jQuery, `arrive`, `node-waves`, and
   `popper.js` are loaded through `src/vendor-globals.ts` and required by
   bootstrap-material-design. Do not remove them or treat them as legacy cruft.
-- **There is no test framework.** No Vitest, Playwright, or Storybook. Do not
-  add one without asking.
+- **There is no test framework.** No Vitest, Playwright Test, or Storybook. Do
+  not add one without asking. `npm test` runs Node's built-in runner
+  (`node --test`) over `check-jsonld.test.mjs`. The `playwright` package is a
+  dev dependency only to drive headless Chromium for the prerender capture; it
+  is not a licence to write Playwright tests.
 
 ## Logging
 
@@ -65,6 +77,9 @@ npm run admin      # dev server at /admin
 npm run build      # production build
 npm run typecheck  # tsc --noEmit
 npm run lint       # eslint + htmlhint + sass-lint
+npm test           # node --test: JSON-LD checks
+npm run prerender  # capture + splice the snapshot into dist/; run after build
+npm run release    # build + prerender + deploy (deploys: see Deployment)
 ```
 
 After any Aurelia change, run `npm run typecheck` **and** `npm run build`.
@@ -74,7 +89,8 @@ typecheck alone does not mean the change works.
 ## Deployment
 
 `npm run deploy` is FTP-based and depends on `web.config` plus a PowerShell
-validation step. Do not run or modify it without being asked.
+validation step. Do not run or modify it without being asked. The same goes for
+`npm run release`, which ends in it.
 
 The `deploy` script reads its FTP session commands from `ftpDeploy.txt` at the
 repo root. That file is gitignored because it contains credentials, so it will

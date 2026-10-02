@@ -29,12 +29,13 @@ const MARKER = "<!-- prerender:insert -->";
 /**
  * The wrapper element's attributes.
  *
- * Whether this block should be visible or hidden to a reader without JavaScript is an
- * open decision. It ships visible: adding `hidden` to this constant is the one change
- * that makes it invisible.
+ * Visibility is not decided here. `index.html` hides `#prerendered-resume` with an inline
+ * style and shows it again inside `<noscript>`, so a browser running JavaScript does not
+ * paint it before the app removes it, a browser without JavaScript shows it, and a
+ * crawler, which applies no CSS, reads it either way. Change those rules, not this.
  *
- * The id is also the guard against inserting twice, so it has to stay in whatever this
- * becomes.
+ * The id is what those rules select on, and it is also the guard against inserting
+ * twice, so it has to stay in whatever this becomes.
  */
 const WRAPPER_ATTRS = 'id="prerendered-resume"';
 
