@@ -35,7 +35,9 @@ Frontend work here is covered by two skills in `.agents/skills/`:
 - **`aurelia2`** — authoritative on Aurelia 2 framework usage.
 - **`aurelia2-ex`** — project-specific conventions that override it.
 
-**Always load both.** If they are not offered as skills, read
+**Read both before editing `index.html` or any file under `src/` other than
+`src/static/`.** This holds however small the edit is or however unrelated to
+Aurelia it seems. If they are not offered as skills, read
 `.agents/skills/<name>/SKILL.md` directly. `aurelia2-ex` exists specifically to
 correct `aurelia2`, so working from the base skill alone will produce code that
 violates this project's conventions.
