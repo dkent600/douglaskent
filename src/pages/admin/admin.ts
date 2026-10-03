@@ -1,23 +1,25 @@
 import { customElement, ILogger, resolve } from "aurelia";
 
-import { BasicsEditor } from "./sections/basics-editor";
-import { CompaniesEditor } from "./sections/companies-editor";
-import { LinkedInEditor } from "./sections/linkedin-editor";
-import { SkillCategoriesEditor } from "./sections/skill-categories-editor";
-import { SkillPrioritiesEditor } from "./sections/skill-priorities-editor";
-import { SkillsEditor } from "./sections/skills-editor";
 import template from "./admin.html";
 import { adminStore } from "./admin-store";
 import { linkedInStore } from "./linkedin-store";
+import * as adminComponents from "./sections";
 
 import "./admin.scss";
 
 type Tab = "basics" | "companies" | "skills" | "priorities" | "categories" | "linkedin";
 
+/**
+ * The editors are local `dependencies`, not registered in `main.ts` the way the resume
+ * sections are. Aurelia registers these into the Admin element's own container when an
+ * Admin is created, so nothing happens until `/admin` is first browsed to -- and since
+ * this module is reached only through the route's dynamic `import()`, registering them
+ * from `main.ts` would also pull them into the production bundle.
+ */
 @customElement({
   name: "admin",
   template,
-  dependencies: [BasicsEditor, CompaniesEditor, SkillsEditor, SkillPrioritiesEditor, SkillCategoriesEditor, LinkedInEditor],
+  dependencies: [adminComponents],
 })
 export class Admin {
   readonly store = adminStore;
