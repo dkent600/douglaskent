@@ -1,5 +1,5 @@
 import { customElement } from "aurelia";
-import { route, type RouteNode } from "@aurelia/router";
+import { NavigationStrategy, route, type RouteNode } from "@aurelia/router";
 
 import { IResumeStore } from "../../stores/resume-store";
 import { NotFound } from "../not-found/not-found";
@@ -127,12 +127,18 @@ const notFoundTitle = "Douglas Kent - Page Not Found";
      * has no static reference to reach it -- nothing under `src/pages/admin` ends up
      * in the production bundle. It has no production counterpart to talk to anyway:
      * the write endpoint lives in a vite dev-server plugin.
+     *
+     * A `NavigationStrategy` rather than a bare `() => import(...)`, so that the editor
+     * is fetched when `/admin` is navigated to and not when the app starts. The router
+     * calls a plain function `component` while it processes this route table, which
+     * starts the import immediately; a navigation strategy is left unresolved until a
+     * navigation actually matches the route.
      */
     ...(import.meta.env.DEV
       ? [
           {
             path: "admin",
-            component: (): Promise<unknown> => import("../admin/admin"),
+            component: new NavigationStrategy(() => import("../admin/admin")),
             title: "Resume editor",
           },
         ]
