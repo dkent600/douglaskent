@@ -121,8 +121,15 @@ validation step. Do not run or modify it without being asked. The same goes for
 
 The `deploy` script reads its FTP session commands from `ftpDeploy.txt` at the
 repo root. That file is gitignored because it contains credentials, so it will
-not be present in a fresh clone. Read it only when a task needs its upload
-list, and never repeat its first three lines (host, user name, password) in
-output. A code review never needs to open it. Do not edit it, do not recreate
-it if it is missing, and never commit it or paste its contents into a file that
-would be committed.
+not be present in a fresh clone. Do not read it, edit it, or recreate it if it
+is missing, and never commit it. Whatever an agent reads is sent to its model
+provider, and the first three lines are the host, user name and password.
+Claude Code enforces this through deny rules in `.claude/settings.json`; other
+agents are on their honour.
+
+The file uploads an explicit list of files rather than mirroring `dist/`, so
+anything new that Vite emits to the site root, including everything added
+under `public/`, needs its own `put`/`mput` line or it builds correctly and
+never goes live. Maintaining that list is the owner's job: when a change adds
+such a file, say so in the report and name the file, rather than opening
+`ftpDeploy.txt` to check.
