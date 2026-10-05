@@ -121,6 +121,8 @@ validation step. Do not run or modify it without being asked. The same goes for
 
 The `deploy` script reads its FTP session commands from `ftpDeploy.txt` at the
 repo root. That file is gitignored because it contains credentials, so it will
-not be present in a fresh clone. Reading it is fine. Do not edit it, do not
-recreate it if it is missing, and never commit it or paste its contents into a
-file that would be committed.
+not be present in a fresh clone. Read it only when a task needs its upload
+list, and never repeat its first three lines (host, user name, password) in
+output. A code review never needs to open it. Do not edit it, do not recreate
+it if it is missing, and never commit it or paste its contents into a file that
+would be committed.
