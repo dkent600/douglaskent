@@ -278,14 +278,6 @@
       "url": "https://tailwindcss.com/"
     },
     {
-      "name": "AI Coding Assistant",
-      "priority": 1.08,
-      "categories": [
-        "AI"
-      ],
-      "url": "https://www.sonarsource.com/resources/library/ai-coding-assistants"
-    },
-    {
       "name": "GitHub Copilot",
       "priority": 1.11,
       "categories": [
@@ -340,10 +332,25 @@
       "url": "https://en.wikipedia.org/wiki/Human-in-the-loop"
     },
     {
+      "name": "Agentic Software Development",
+      "priority": 0.165,
+      "categories": [
+        "AI"
+      ],
+      "aliases": [
+        "Agentic Coding",
+        "AI Coding Agents"
+      ]
+    },
+    {
       "name": "AI-Assisted Development",
       "priority": 0.17,
       "categories": [
         "AI"
+      ],
+      "url": "https://www.sonarsource.com/resources/library/ai-coding-assistants",
+      "aliases": [
+        "AI Coding Assistant"
       ]
     },
     {
@@ -1624,7 +1631,6 @@
         "ChatGPT (LLM)",
         "Claude Code for VS Code",
         "Claude.ai (LLM)",
-        "AI Coding Assistant",
         "Axios",
         "Vitest",
         "Awilix",
@@ -1634,7 +1640,7 @@
         "LLM Evaluation",
         "Human-in-the-Loop Design",
         "De-identification",
-        "AI-Assisted Development",
+        "Agentic Software Development",
         "LLM APIs",
         "GitHub Copilot"
       ],
@@ -1667,7 +1673,7 @@
         "Vite",
         "Axios",
         "GitHub",
-        "AI Coding Assistant",
+        "AI-Assisted Development",
         "GitHub Copilot",
         "Blockchain",
         "Cryptocurrencies"
@@ -1704,7 +1710,7 @@
         "Vite",
         "Axios",
         "GitHub",
-        "AI Coding Assistant",
+        "AI-Assisted Development",
         "Blockchain",
         "Cryptocurrencies"
       ],

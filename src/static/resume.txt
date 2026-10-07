@@ -159,9 +159,9 @@ SKILLS AND TECHNOLOGIES
 
 AI
   LLM Pipeline Architecture, LLM Evaluation, Human-in-the-Loop Design, Prompt
-  Engineering, AI-Assisted Development, De-identification, Claude Code for VS
-  Code, LLM APIs, AI Coding Assistant, Claude.ai (LLM), GitHub Copilot,
-  ChatGPT (LLM)
+  Engineering, Agentic Software Development, AI-Assisted Development,
+  De-identification, Claude Code for VS Code, LLM APIs, Claude.ai (LLM),
+  GitHub Copilot, ChatGPT (LLM)
 
 Blockchain
   Blockchain, Cryptocurrencies, Solidity, Ethereum, Web3, dApps, ethers.js,
@@ -280,10 +280,10 @@ Highlights:
 
 Skills / Technologies:
 LLM Pipeline Architecture, LLM Evaluation, TypeScript, Human-in-the-Loop
-Design, Prompt Engineering, AI-Assisted Development, De-identification,
-Aurelia 2, Claude Code for VS Code, LLM APIs, AI Coding Assistant, Claude.ai
-(LLM), GitHub Copilot, ChatGPT (LLM), Fastify, TailWind CSS, Axios, Node.js,
-Awilix, Vite, HTML, Visual Studio Code, Vitest, NPM
+Design, Prompt Engineering, Agentic Software Development, De-identification,
+Aurelia 2, Claude Code for VS Code, LLM APIs, Claude.ai (LLM), GitHub Copilot,
+ChatGPT (LLM), Fastify, TailWind CSS, Axios, Node.js, Awilix, Vite, HTML,
+Visual Studio Code, Vitest, NPM
 
 
 Product Engineer & Architect - Butterfly, crypto portfolio management dApp
@@ -306,9 +306,9 @@ Highlights:
   VS Code
 
 Skills / Technologies:
-TypeScript, Blockchain, Cryptocurrencies, Aurelia 2, DeFi, MVVM, AI Coding
-Assistant, GitHub Copilot, TailWind CSS, Axios, Vite, FluentUI Web Components,
-GitHub
+TypeScript, Blockchain, Cryptocurrencies, AI-Assisted Development, Aurelia 2,
+DeFi, MVVM, GitHub Copilot, TailWind CSS, Axios, Vite, FluentUI Web
+Components, GitHub
 
 
 Product Engineer & Architect - Butterfly, crypto portfolio management service
@@ -333,8 +333,8 @@ Highlights:
 - Axios for exchange-API communications
 
 Skills / Technologies:
-TypeScript, Blockchain, Cryptocurrencies, DeFi, AI Coding Assistant, GitHub
-Copilot, Fastify, Axios, Node.js, TSyringe, Vite, GitHub
+TypeScript, Blockchain, Cryptocurrencies, AI-Assisted Development, DeFi,
+GitHub Copilot, Fastify, Axios, Node.js, TSyringe, Vite, GitHub
 
 
 Blockchain Oracle Developer
