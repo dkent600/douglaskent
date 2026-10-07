@@ -240,7 +240,8 @@ Development Processes
 
 PROFESSIONAL EXPERIENCE
 
-Technical Lead & LLM Pipeline Architect - Human Lens, AI-native web app
+Applied AI Engineer & Architect - Human Lens, AI-native qualitative analysis
+app
 Independent Software Developer | 05/2026 - Present
 https://github.com/dkent600/HumanLens
 
@@ -285,7 +286,7 @@ Aurelia 2, Claude Code for VS Code, LLM APIs, AI Coding Assistant, Claude.ai
 Awilix, Vite, HTML, Visual Studio Code, Vitest, NPM
 
 
-Technical Lead & dApp Architect - Butterfly, Crypto portfolio management dApp
+Product Engineer & Architect - Butterfly, crypto portfolio management dApp
 Independent Software Developer | 06/2025 - 09/2025
 https://github.com/dkent600/batch-take-profit
 
@@ -309,8 +310,7 @@ Assistant, GitHub Copilot, TailWind CSS, Axios, Vite, FluentUI Web Components,
 GitHub
 
 
-Technical Lead & dApp Architect - Butterfly, Crypto portfolio management
-service
+Product Engineer & Architect - Butterfly, crypto portfolio management service
 Independent Software Developer | 06/2025 - 09/2025
 https://github.com/dkent600/butterfly-services
 

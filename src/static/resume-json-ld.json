@@ -343,7 +343,7 @@
       ],
       "author": {
         "@type": "Role",
-        "roleName": "Technical Lead & LLM Pipeline Architect — Human Lens, AI-native web app",
+        "roleName": "Applied AI Engineer & Architect — Human Lens, AI-native qualitative analysis app",
         "startDate": "2026-05",
         "author": {
           "@id": "https://www.douglaskent.com/#douglas-kent"
@@ -373,7 +373,7 @@
       ],
       "author": {
         "@type": "Role",
-        "roleName": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management dApp",
+        "roleName": "Product Engineer & Architect — Butterfly, crypto portfolio management dApp",
         "startDate": "2025-06",
         "endDate": "2025-09",
         "author": {
@@ -403,7 +403,7 @@
       ],
       "author": {
         "@type": "Role",
-        "roleName": "Technical Lead & dApp Architect — Butterfly, Crypto portfolio management service",
+        "roleName": "Product Engineer & Architect — Butterfly, crypto portfolio management service",
         "startDate": "2025-06",
         "endDate": "2025-09",
         "author": {
