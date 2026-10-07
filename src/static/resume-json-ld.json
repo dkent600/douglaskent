@@ -225,7 +225,7 @@
         {
           "@type": "OrganizationRole",
           "roleName": "Development Team Lead and Lead Developer",
-          "description": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (DeFi) and regenerative finance (ReFi). Among others, led the development team for a ReFi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
+          "description": "First front-end engineer at Curve Labs, owning design, architecture, implementation, and QA end to end for the frontends of multiple dApps on the Ethereum blockchain focused on decentralized (DeFi) and regenerative finance (ReFi), while leading teams of 2-5 developers. Among others, led the development team for a ReFi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
           "startDate": "2020-08",
           "endDate": "2022-11",
           "worksFor": {
@@ -235,7 +235,7 @@
         {
           "@type": "OrganizationRole",
           "roleName": "Senior Lead Developer",
-          "description": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first major DAO designs in the history of DAOs. Used, reviewed and deployed Solidity smart contracts, wrote a TypeScript library to support dApps in accessing the smart contracts, wrote a test dApp, significantly contributed to the dApp Alchemy used for working with the DAOs.",
+          "description": "First front-end engineer at DAOstack, one of the first major DAO designs in the history of DAOs, owning design, architecture, implementation, and QA end to end across multiple roles: used, reviewed and deployed Solidity smart contracts, wrote a TypeScript library to support dApps in accessing the smart contracts, wrote a test dApp, and significantly contributed to Alchemy, the dApp used for working with the DAOs.",
           "startDate": "2017-09",
           "endDate": "2020-10",
           "worksFor": {
@@ -314,7 +314,7 @@
       "@id": "https://github.com/dkent600/HumanLens",
       "url": "https://github.com/dkent600/HumanLens",
       "name": "Independent Software Developer",
-      "description": "Turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Modeled on the practice of an existing DEI consultancy.",
+      "description": "Translated a firm's manual qualitative analysis practice into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Owned design, architecture, implementation, and QA end to end. Modeled on the practice of an existing DEI consultancy.",
       "keywords": [
         "TypeScript",
         "Visual Studio Code",
@@ -355,7 +355,7 @@
       "@id": "https://github.com/dkent600/batch-take-profit",
       "url": "https://github.com/dkent600/batch-take-profit",
       "name": "Independent Software Developer",
-      "description": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges. Supported by the Butterfly Crypto portfolio management service.",
+      "description": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supported by the Butterfly Crypto portfolio management service.",
       "keywords": [
         "DeFi",
         "TypeScript",
@@ -386,7 +386,7 @@
       "@id": "https://github.com/dkent600/butterfly-services",
       "url": "https://github.com/dkent600/butterfly-services",
       "name": "Independent Software Developer",
-      "description": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges. Supports the Butterfly Crypto portfolio management dApp.",
+      "description": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supports the Butterfly Crypto portfolio management dApp.",
       "keywords": [
         "DeFi",
         "GitHub Copilot",

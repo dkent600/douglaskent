@@ -1600,7 +1600,7 @@
       "position": "Applied AI Engineer & Architect — Human Lens, AI-native analysis app",
       "website": "https://github.com/dkent600/HumanLens",
       "startDate": "2026-05",
-      "summary": "Turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Modeled on the practice of an existing DEI consultancy.",
+      "summary": "Translated a firm's manual qualitative analysis practice into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Owned design, architecture, implementation, and QA end to end. Modeled on the practice of an existing DEI consultancy.",
       "endDate": "present",
       "highlights": [
         "Scoped, designed, and built in TypeScript — Aurelia 2 web application over a Fastify/Node service — with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing)",
@@ -1649,7 +1649,7 @@
       "remote": false,
       "website": "https://github.com/dkent600/batch-take-profit",
       "startDate": "2025-06",
-      "summary": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges. Supported by the Butterfly Crypto portfolio management service.",
+      "summary": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supported by the Butterfly Crypto portfolio management service.",
       "endDate": "2025-09",
       "highlights": [
         "Does real-time price monitoring and balance tracking, tracking order history and status",
@@ -1683,7 +1683,7 @@
       "remote": false,
       "website": "https://github.com/dkent600/butterfly-services",
       "startDate": "2025-06",
-      "summary": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges. Supports the Butterfly Crypto portfolio management dApp.",
+      "summary": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supports the Butterfly Crypto portfolio management dApp.",
       "endDate": "2025-09",
       "highlights": [
         "Provides comprehensive safety mechanisms, testing, dependency injection and production-ready integration",
@@ -1754,7 +1754,7 @@
       "notable": true,
       "showOnShort": true,
       "startDate": "2020-08",
-      "summary": "Led teams of 2-5 in the development of the frontends of multiple dApps running against the Ethereum blockchain focused on decentralized (DeFi) and regenerative finance (ReFi). Among others, led the development team for a ReFi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
+      "summary": "First front-end engineer at Curve Labs, owning design, architecture, implementation, and QA end to end for the frontends of multiple dApps on the Ethereum blockchain focused on decentralized (DeFi) and regenerative finance (ReFi), while leading teams of 2-5 developers. Among others, led the development team for a ReFi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
       "endDate": "2022-11",
       "highlights": [
         "Lead and sole coder of the dApp frontends of <a href=\"https://github.com/PrimeDAO/prime-pool-dapp\" target=\"_blank\">Prime Pools (no longer active)</a>, <a href=\"https://primelock.eth.link/\" target=\"_blank\">Prime Locking For Reputation</a> and the <a href=\"https://primedao.eth.link\" target=\"_blank\">original PrimeDAO Home Page (no longer active)</a>",
@@ -1820,7 +1820,7 @@
       "remote": true,
       "website": "https://www.daostack.io/",
       "startDate": "2017-09",
-      "summary": "Performed multiple development roles in the design, creation and use of DAOstack DAOs, one of the first major DAO designs in the history of DAOs.  Used, reviewed and deployed Solidity smart contracts, wrote a TypeScript library to support dApps in accessing the smart contracts, wrote a test dApp, significantly contributed to the dApp Alchemy used for working with the DAOs.",
+      "summary": "First front-end engineer at DAOstack, one of the first major DAO designs in the history of DAOs, owning design, architecture, implementation, and QA end to end across multiple roles: used, reviewed and deployed Solidity smart contracts, wrote a TypeScript library to support dApps in accessing the smart contracts, wrote a test dApp, and significantly contributed to Alchemy, the dApp used for working with the DAOs.",
       "endDate": "2020-10",
       "highlights": [
         "One of the primary later developers of <a href=\"https://v1.alchemy.do/\" target=\"_blank\">Alchemy</a>, the DAOstack website enabling anyone to participate in DAOstack DAOs",

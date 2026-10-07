@@ -245,11 +245,12 @@ Independent Software Developer | 05/2026 - Present
 https://github.com/dkent600/HumanLens
 
 Description:
-Turned an open-ended qualitative analysis problem into a full-stack web
+Translated a firm's manual qualitative analysis practice into a full-stack web
 application wrapping a bounded, testable LLM pipeline: staged contracts
 between components, empirical calibration to reduce output variance, and a
 client-safe boundary enforced from the pipeline through to the human-review
-interface. Modeled on the practice of an existing DEI consultancy.
+interface. Owned design, architecture, implementation, and QA end to end.
+Modeled on the practice of an existing DEI consultancy.
 
 Highlights:
 - Scoped, designed, and built in TypeScript - Aurelia 2 web application over a
@@ -291,7 +292,8 @@ https://github.com/dkent600/batch-take-profit
 
 Description:
 Designed and built a cryptocurrency portfolio management dApp that executes
-scaled take-profit sales across multiple exchanges. Supported by the Butterfly
+scaled take-profit sales across multiple exchanges, owning design,
+architecture, implementation, and QA end to end. Supported by the Butterfly
 Crypto portfolio management service.
 
 Highlights:
@@ -315,8 +317,9 @@ https://github.com/dkent600/butterfly-services
 
 Description:
 Designed and built a REST API service supporting secure cryptocurrency
-exchange operations across multiple exchanges. Supports the Butterfly Crypto
-portfolio management dApp.
+exchange operations across multiple exchanges, owning design, architecture,
+implementation, and QA end to end. Supports the Butterfly Crypto portfolio
+management dApp.
 
 Highlights:
 - Provides comprehensive safety mechanisms, testing, dependency injection and
@@ -369,11 +372,12 @@ Curve Labs | 08/2020 - 11/2022
 https://www.curvelabs.eu/
 
 Description:
-Led teams of 2-5 in the development of the frontends of multiple dApps running
-against the Ethereum blockchain focused on decentralized (DeFi) and
-regenerative finance (ReFi). Among others, led the development team for a ReFi
-dApp designed to emerge a regenerative, decentralized economic system for the
-sovereign island nation of Curacao.
+First front-end engineer at Curve Labs, owning design, architecture,
+implementation, and QA end to end for the frontends of multiple dApps on the
+Ethereum blockchain focused on decentralized (DeFi) and regenerative finance
+(ReFi), while leading teams of 2-5 developers. Among others, led the
+development team for a ReFi dApp designed to emerge a regenerative,
+decentralized economic system for the sovereign island nation of Curacao.
 
 Highlights:
 - Lead and sole coder of the dApp frontends of Prime Pools (no longer active)
@@ -420,11 +424,12 @@ DAOstack | 09/2017 - 10/2020
 https://www.daostack.io/
 
 Description:
-Performed multiple development roles in the design, creation and use of
-DAOstack DAOs, one of the first major DAO designs in the history of DAOs.
-Used, reviewed and deployed Solidity smart contracts, wrote a TypeScript
-library to support dApps in accessing the smart contracts, wrote a test dApp,
-significantly contributed to the dApp Alchemy used for working with the DAOs.
+First front-end engineer at DAOstack, one of the first major DAO designs in
+the history of DAOs, owning design, architecture, implementation, and QA end
+to end across multiple roles: used, reviewed and deployed Solidity smart
+contracts, wrote a TypeScript library to support dApps in accessing the smart
+contracts, wrote a test dApp, and significantly contributed to Alchemy, the
+dApp used for working with the DAOs.
 
 Highlights:
 - One of the primary later developers of Alchemy (https://v1.alchemy.do/), the
