@@ -382,7 +382,7 @@ export function buildPersonJsonLd(
    * resume schema). Both were considered and declined.
    *
    * `roleName` takes `position` whole and nothing splits it. That string carries two facts
-   * at once -- "Applied AI Engineer & Architect - Human Lens, AI-native qualitative analysis app" --
+   * at once -- "Applied AI Engineer & Architect - Human Lens, AI-native analysis app" --
    * which is true of a role and would be false as the name of a piece of software. The Role
    * wrapper is what lets the dates travel with the authorship instead of attaching to the
    * software, which has no dates of its own here.

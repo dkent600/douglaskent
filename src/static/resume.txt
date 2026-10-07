@@ -240,8 +240,7 @@ Development Processes
 
 PROFESSIONAL EXPERIENCE
 
-Applied AI Engineer & Architect - Human Lens, AI-native qualitative analysis
-app
+Applied AI Engineer & Architect - Human Lens, AI-native analysis app
 Independent Software Developer | 05/2026 - Present
 https://github.com/dkent600/HumanLens
 

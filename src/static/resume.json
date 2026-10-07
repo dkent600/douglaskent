@@ -1597,7 +1597,7 @@
     {
       "id": "0gzqostf",
       "company": "Independent Software Developer",
-      "position": "Applied AI Engineer & Architect — Human Lens, AI-native qualitative analysis app",
+      "position": "Applied AI Engineer & Architect — Human Lens, AI-native analysis app",
       "website": "https://github.com/dkent600/HumanLens",
       "startDate": "2026-05",
       "summary": "Turned an open-ended qualitative analysis problem into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Modeled on the practice of an existing DEI consultancy.",

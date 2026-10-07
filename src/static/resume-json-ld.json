@@ -7,7 +7,7 @@
       "url": "https://www.douglaskent.com/",
       "name": "Douglas Kent — Software Engineer, LLM Systems, Blockchain",
       "description": "Full-stack software engineer and architect since 1985. LLM system architecture, blockchain and Web3 platforms, web applications.",
-      "dateModified": "2026-09-21T00:00:00Z",
+      "dateModified": "2026-10-07T00:00:00Z",
       "mainEntity": {
         "@id": "https://www.douglaskent.com/#douglas-kent"
       },
@@ -343,7 +343,7 @@
       ],
       "author": {
         "@type": "Role",
-        "roleName": "Applied AI Engineer & Architect — Human Lens, AI-native qualitative analysis app",
+        "roleName": "Applied AI Engineer & Architect — Human Lens, AI-native analysis app",
         "startDate": "2026-05",
         "author": {
           "@id": "https://www.douglaskent.com/#douglas-kent"

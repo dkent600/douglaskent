@@ -393,9 +393,11 @@
             "description": "Expanded name shown in place of the short name, e.g. Cascading Style Sheets"
           },
           "url": {
-            "type": "string",
-            "description": "Reference link for this skill, e.g. https://www.typescriptlang.org",
-            "format": "uri"
+            "description": "Reference link for this skill, e.g. https://www.typescriptlang.org. Empty string means no link.",
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string", "maxLength": 0 }
+            ]
           },
           "hide": {
             "type": "boolean",

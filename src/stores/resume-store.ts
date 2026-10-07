@@ -69,7 +69,7 @@ export class ResumeStore {
     return this.resumeJson.basics;
   }
 
-    public get areasOfExpertise(): Array<IAreasOfExpertise> {
+  public get areasOfExpertise(): Array<IAreasOfExpertise> {
     return this.resumeJson.areasOfExpertise;
   }
 

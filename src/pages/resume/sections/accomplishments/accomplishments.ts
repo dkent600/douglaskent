@@ -1,6 +1,7 @@
 import { customElement, resolve } from "aurelia";
-import { IAccomplishment, IResumeStore } from "../../../../stores/resume-store";
+
 import { WhichResumeOnly } from "../../../../resources/attributes/whichResumeOnly";
+import { IAccomplishment, IResumeStore } from "../../../../stores/resume-store";
 
 import template from "./accomplishments.html";
 @customElement({ name: "accomplishments", template })
