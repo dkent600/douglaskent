@@ -1,5 +1,5 @@
 Douglas Kent
-Full-stack Software Engineer & Architect - LLM Systems, Blockchain
+Applied AI Engineer & Software Architect - LLM Systems, Full-Stack, Blockchain
 San Mateo, Alajuela, Costa Rica
 https://www.douglaskent.com
 https://www.linkedin.com/in/douglas-kent-760876a/
@@ -8,20 +8,29 @@ https://github.com/dkent600
 
 PROFESSIONAL SUMMARY
 
-I am a software engineer and architect who has been building software
-professionally since 1985 - leading teams and building sophisticated systems
-across web applications, blockchain and Web3 platforms, and most recently
-AI-native applications built on large language models.
+I am a software engineer and architect who takes a project across all its
+dimensions: the people it serves, the context it has to work in, its design
+and architecture, the build, and the proof that it works. Startups have
+repeatedly brought me in as their first engineer, and I have been building
+software professionally since 1985, across web applications, blockchain and
+Web3 platforms, and AI-native applications.
 
 I have worn multiple hats in important roles across many kinds of
 organizations, from Microsoft to garage startups - enough to recognize most
-problems before they become expensive.
+problems before they become expensive. I have managed teams, but I do my best
+work as a hands-on technical lead, including mentoring the developers around
+me.
 
-My recent work is in LLM system architecture and development - building
-reliable systems on top of subjective inputs and non-deterministic models.
+My recent work is applied AI: AI-native applications in which language models
+do the core work, built to be reliable on top of subjective inputs and
+non-deterministic models. That means evaluation that measures what a model
+invents as well as what it misses, and a person approving anything that
+reaches a client.
 
-I'm looking for a senior engineering or architecture role where a long and
-varied track record is an asset. I work remotely from Costa Rica, which
+I'm looking for a senior individual-contributor role in applied or
+forward-deployed AI, architecture, or staff-level engineering, where I can own
+a problem end to end, whether at an established company bringing AI into its
+products or at an AI-native one. I work remotely from Costa Rica, which
 overlaps well with US business hours, and am happy to travel as needed.
 
 
@@ -419,6 +428,8 @@ Highlights:
 - Leveraged GnosisSafe API, for governance purposes
 - Leveraged CoinGecko for token prices
 - Interviewed applicants for developer and project lead positions
+- Mentored junior developers on the dApp teams, both in coding and in working
+  as a professional developer more broadly
 - As products, these applications are innovative and impressive. Read more
   about them at Kolektivo (https://www.kolektivo.network/) and The Prime Suite
   (https://www.prime.xyz)
@@ -427,11 +438,11 @@ Skills / Technologies:
 TypeScript, Blockchain, Cryptocurrencies, Solidity, Ethereum, Web3, dApps,
 End-to-End Product Ownership, Technical Leadership, ethers.js, DAOs, DAO
 Governance Systems, DeFi, Wallets, ReFi, SPA, IPFS, Subgraph, Liquidity
-Bootstrapping Pools, Technical Interviewing, Code Review, Smart Contract
-Security Review, web3.js, Balancer Liquidity Pools, Gnosis Safe, Defender,
-Ceramic, ENS, LitProtocol, Metamask, WalletConnect, Web3Modal, JavaScript,
-Node.js, Vite, HTML, CSS, SASS, Responsive, React, Aurelia, Webpack, Rollup,
-i18Next, GitHub
+Bootstrapping Pools, Mentoring, Technical Interviewing, Code Review, Smart
+Contract Security Review, web3.js, Balancer Liquidity Pools, Gnosis Safe,
+Defender, Ceramic, ENS, LitProtocol, Metamask, WalletConnect, Web3Modal,
+JavaScript, Node.js, Vite, HTML, CSS, SASS, Responsive, React, Aurelia,
+Webpack, Rollup, i18Next, GitHub
 
 
 Senior Lead Developer

@@ -439,8 +439,8 @@ export function buildPersonJsonLd(
    * `bio` is the third-person long-form description, written for this property and for
    * nothing else.
    *
-   * The page speaks in the first person -- "I am a software engineer and architect with 35
-   * years..." -- which is right for a person's own site and wrong for a metadata field a
+   * The page speaks in the first person -- "I am a software engineer and architect who takes
+   * a project..." -- which is right for a person's own site and wrong for a metadata field a
    * machine reader will quote back about him. `metaDescription` is not the substitute: it
    * is capped at 160 characters because it feeds `<meta name="description">` and
    * `og:description`, and the graph has room for the longer prose.

@@ -5,9 +5,9 @@
       "@type": "ProfilePage",
       "@id": "https://www.douglaskent.com/#page",
       "url": "https://www.douglaskent.com/",
-      "name": "Douglas Kent — Software Engineer, LLM Systems, Blockchain",
-      "description": "Full-stack software engineer and architect since 1985. LLM system architecture, blockchain and Web3 platforms, web applications.",
-      "dateModified": "2026-10-07T00:00:00Z",
+      "name": "Douglas Kent — Applied AI & Blockchain Software Engineer",
+      "description": "Software engineer and architect who owns projects end to end: applied AI and LLM systems, blockchain and Web3 platforms, and full-stack web applications.",
+      "dateModified": "2026-10-08T00:00:00Z",
       "mainEntity": {
         "@id": "https://www.douglaskent.com/#douglas-kent"
       },
@@ -32,8 +32,8 @@
       "name": "Douglas Kent",
       "url": "https://www.douglaskent.com",
       "image": "https://www.douglaskent.com/og-preview.png",
-      "jobTitle": "Full-stack Software Engineer & Architect · LLM Systems, Blockchain",
-      "description": "Douglas Kent is a software engineer and architect who since 1985 has led teams and built sophisticated systems — web applications, blockchain and Web3 platforms, and most recently AI-native applications built on large language models. He has worn multiple hats in important roles across many kinds of organizations, from Microsoft to garage startups — enough to recognize most problems before they become expensive. His recent work is in LLM system architecture and development — building reliable systems on top of subjective inputs and non-deterministic models.",
+      "jobTitle": "Applied AI Engineer & Software Architect · LLM Systems, Full-Stack, Blockchain",
+      "description": "Douglas Kent is a software engineer and architect who takes projects across all their dimensions: the people they serve, the context they have to work in, their design and architecture, the build, and the proof that they work. Startups have repeatedly brought him in as their first engineer, and he has been building software professionally since 1985, across web applications, blockchain and Web3 platforms, and AI-native applications. His recent work is applied AI: applications in which language models do the core work, built to be reliable on top of subjective inputs and non-deterministic models.",
       "sameAs": [
         "https://www.linkedin.com/in/douglas-kent-760876a/",
         "https://github.com/dkent600"
@@ -209,6 +209,7 @@
         "Code Review",
         "Smart Contract Security Review",
         "Technical Interviewing",
+        "Mentoring",
         "Bootstrap",
         "Bootstrap Material Design",
         "jQuery",
@@ -234,14 +235,13 @@
         "MSTest",
         "Agile",
         "TFS",
-        "Mentoring",
         "Systems Integration",
         "Client Integration",
         "Team Leadership"
       ],
       "hasOccupation": {
         "@type": "Occupation",
-        "name": "Full-stack Software Engineer & Architect · LLM Systems, Blockchain",
+        "name": "Applied AI Engineer & Software Architect · LLM Systems, Full-Stack, Blockchain",
         "occupationalCategory": "15-1252.00"
       },
       "worksFor": [

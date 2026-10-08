@@ -2,24 +2,24 @@
   "$schema": "./schema.json",
   "basics": {
     "name": "Douglas Kent",
-    "label": "Full-stack Software Engineer & Architect · LLM Systems, Blockchain",
-    "metaTitle": "Douglas Kent — Software Engineer, LLM Systems, Blockchain",
-    "metaDescription": "Full-stack software engineer and architect since 1985. LLM system architecture, blockchain and Web3 platforms, web applications.",
-    "bio": "Douglas Kent is a software engineer and architect who since 1985 has led teams and built sophisticated systems — web applications, blockchain and Web3 platforms, and most recently AI-native applications built on large language models. He has worn multiple hats in important roles across many kinds of organizations, from Microsoft to garage startups — enough to recognize most problems before they become expensive. His recent work is in LLM system architecture and development — building reliable systems on top of subjective inputs and non-deterministic models.",
+    "label": "Applied AI Engineer & Software Architect · LLM Systems, Full-Stack, Blockchain",
+    "metaTitle": "Douglas Kent — Applied AI & Blockchain Software Engineer",
+    "metaDescription": "Software engineer and architect who owns projects end to end: applied AI and LLM systems, blockchain and Web3 platforms, and full-stack web applications.",
+    "bio": "Douglas Kent is a software engineer and architect who takes projects across all their dimensions: the people they serve, the context they have to work in, their design and architecture, the build, and the proof that they work. Startups have repeatedly brought him in as their first engineer, and he has been building software professionally since 1985, across web applications, blockchain and Web3 platforms, and AI-native applications. His recent work is applied AI: applications in which language models do the core work, built to be reliable on top of subjective inputs and non-deterministic models.",
     "image": "https://www.douglaskent.com/og-preview.png",
     "email": "resume@douglaskent.com",
     "resumeFeedbackEmail": "resume-feedback@douglaskent.com",
     "phone": "+1 (512) 402-8735 (US)",
     "phone2": "+506 8591-5302 (CR)",
     "website": "https://www.douglaskent.com",
-    "summary1": "I am a software engineer and architect who has been building software professionally since 1985 — leading teams and building sophisticated systems across web applications, blockchain and Web3 platforms, and most recently AI-native applications built on large language models.",
-    "summary2": "I have worn multiple hats in important roles across many kinds of organizations, from Microsoft to garage startups — enough to recognize most problems before they become expensive.",
+    "summary1": "I am a software engineer and architect who takes a project across all its dimensions: the people it serves, the context it has to work in, its design and architecture, the build, and the proof that it works. Startups have repeatedly brought me in as their first engineer, and I have been building software professionally since 1985, across web applications, blockchain and Web3 platforms, and AI-native applications.",
+    "summary2": "I have worn multiple hats in important roles across many kinds of organizations, from Microsoft to garage startups — enough to recognize most problems before they become expensive. I have managed teams, but I do my best work as a hands-on technical lead, including mentoring the developers around me.",
     "summary3": "Please see my complete resume at: <a href='https://www.douglaskent.com' target='_blank' rel='noopener noreferrer'>https://www.douglaskent.com</a>.",
     "summary4": "Lived and worked for decades in both the U.S. and Canada, now based in Costa Rica. I have worked with distributed teams across Europe, Israel, India, and Australia, including leading offshore development teams in daily coordination.",
     "summary5": "I've worked with the likes of Microsoft, garage startups such as ConnectSoft, to Curve Labs where I led the development of a ReFi dApp front end designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
     "summary6": "I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest and please read on!",
-    "summary7": "My recent work is in LLM system architecture and development — building reliable systems on top of subjective inputs and non-deterministic models.",
-    "summary8": "I'm looking for a senior engineering or architecture role where a long and varied track record is an asset. I work remotely from Costa Rica, which overlaps well with US business hours, and am happy to travel as needed.",
+    "summary7": "My recent work is applied AI: AI-native applications in which language models do the core work, built to be reliable on top of subjective inputs and non-deterministic models. That means evaluation that measures what a model invents as well as what it misses, and a person approving anything that reaches a client.",
+    "summary8": "I'm looking for a senior individual-contributor role in applied or forward-deployed AI, architecture, or staff-level engineering, where I can own a problem end to end, whether at an established company bringing AI into its products or at an AI-native one. I work remotely from Costa Rica, which overlaps well with US business hours, and am happy to travel as needed.",
     "location": {
       "address": "Alegria Village",
       "postalCode": "20401",
@@ -1951,6 +1951,7 @@
         "Leveraged GnosisSafe API, for governance purposes",
         "Leveraged CoinGecko for token prices",
         "Interviewed applicants for developer and project lead positions",
+        "Mentored junior developers on the dApp teams, both in coding and in working as a professional developer more broadly",
         "As products, these applications are innovative and impressive. Read more about them at <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> and <a href=\"https://www.prime.xyz\" target=\"_blank\">The Prime Suite</a> "
       ],
       "skills": [
@@ -1998,7 +1999,8 @@
         "End-to-End Product Ownership",
         "Code Review",
         "Smart Contract Security Review",
-        "Technical Interviewing"
+        "Technical Interviewing",
+        "Mentoring"
       ]
     },
     {
