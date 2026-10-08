@@ -114,20 +114,22 @@
         }
       ],
       "knowsAbout": [
+        "Applied AI and AI-Native Products",
         "LLM Pipeline Architecture",
         "AI System Evaluation and Testing",
         "Human-in-the-Loop System Design",
-        "AI-Assisted Software Development",
+        "AI-Assisted and Agentic Development",
+        "End-to-End Product Engineering",
+        "Software Architecture",
+        "Technical Leadership and Mentoring",
         "Blockchain and Web3 Architecture",
         "Smart Contract and dApp Development",
         "DAO Governance Systems",
         "DeFi and ReFi",
-        "Distributed and Offshore Team Leadership",
+        "Full-Stack Web Application Development",
         "Enterprise-Scale Web Applications",
         "Service-Oriented Architecture",
-        "Full-Stack Web Application Development",
-        "Software Architecture",
-        "Technical Leadership"
+        "Distributed and Offshore Team Leadership"
       ],
       "skills": [
         "TypeScript",

@@ -159,12 +159,12 @@ export function buildPersonJsonLd(
    * under `hasOccupation.skills`, which asserted the same fourteen strings twice under two
    * names and told a reader nothing the first copy had not.
    *
-   * The top-level `skills[]` array reaches neither property. It is 156 entries of mixed
-   * altitude -- "LLM Pipeline Architecture" is a subject, "Claude Code for VS Code" is a
-   * product -- and an undifferentiated list that long carries less weight than a short
-   * curated one. What `Person.skills` publishes instead is the union of the *published work
-   * entries'* own skill lists, which is both shorter and attributable: every name in it was
-   * earned on a job or a project the graph also describes.
+   * The top-level `skills[]` array reaches neither property. It is well over a hundred
+   * entries of mixed altitude -- "LLM Pipeline Architecture" is a subject, "Claude Code for
+   * VS Code" is a product -- and an undifferentiated list that long carries less weight than
+   * a short curated one. What `Person.skills` publishes instead is the union of the
+   * *published work entries'* own skill lists, which is both shorter and attributable: every
+   * name in it was earned on a job or a project the graph also describes.
    *
    * Emitted in source order, unsorted and uncapped: the ordering of `areasOfExpertise` is
    * deliberate positioning rather than an artefact, so re-sorting it would discard the
