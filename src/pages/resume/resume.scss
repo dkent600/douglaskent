@@ -267,25 +267,30 @@ i.quality-bullet {
   color: $grey-900;
 }
 
-// Two columns on the grid's default row flow, so reading left to right across each row
-// follows resume.json's array order. `minmax(0, 1fr)` rather than plain `1fr` so a long
-// entry wraps inside its column instead of forcing the track wider than half the width.
+// Two columns that fill top to bottom, so reading down the left column and then the right
+// follows resume.json's array order. Multi-column rather than grid because each column
+// flows on its own: an entry that wraps lengthens only its own column instead of opening a
+// gap beside it in the other, which a shared grid row would do. Balancing puts the extra
+// entry of an odd count in the left column. It balances by height rather than by count, so
+// should an entry wrap, the split can move by one -- the entries are kept short enough that
+// none does at desktop widths.
 .areas-of-expertise {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  columns: 2;
   column-gap: 16px;
-  row-gap: 2px;
   max-width: 42rem;
 }
 
 // One column when there is no room for two.
 @media screen and (max-width: 800px) {
   .areas-of-expertise {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
 }
 
+// `break-inside` keeps a wrapped entry in one piece rather than split across the columns.
 .area-of-expertise {
+  break-inside: avoid;
+  margin-bottom: 2px;
   font-size: 1rem;
   line-height: 1.5;
   color: $grey-900;

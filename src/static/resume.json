@@ -19,7 +19,7 @@
     "summary5": "I've worked with the likes of Microsoft, garage startups such as ConnectSoft, to Curve Labs where I led the development of a ReFi dApp front end designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
     "summary6": "I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest and please read on!",
     "summary7": "My recent work is applied AI: AI-native applications in which language models do the core work, built to be reliable on top of subjective inputs and non-deterministic models. That means evaluation that measures what a model invents as well as what it misses, and a person approving anything that reaches a client.",
-    "summary8": "I'm looking for a senior individual-contributor role in applied or forward-deployed AI, architecture, or staff-level engineering, where I can own a problem end to end, whether at an established company bringing AI into its products or at an AI-native one. I work remotely from Costa Rica, which overlaps well with US business hours, and am happy to travel as needed.",
+    "summary8": "I'm looking for a senior, hands-on technical role in applied or forward-deployed AI, architecture, or staff-level engineering, where I can own a problem end to end, whether at an established company bringing AI into its products or at an AI-native one. I work remotely from Costa Rica, which overlaps well with US business hours, and am happy to travel as needed.",
     "location": {
       "address": "Alegria Village",
       "postalCode": "20401",
@@ -52,22 +52,18 @@
     ]
   },
   "areasOfExpertise": [
-    "Applied AI and AI-Native Products",
-    "LLM Pipeline Architecture",
-    "AI System Evaluation and Testing",
-    "Human-in-the-Loop System Design",
-    "AI-Assisted and Agentic Development",
-    "End-to-End Product Engineering",
-    "Software Architecture",
-    "Technical Leadership and Mentoring",
-    "Blockchain and Web3 Architecture",
-    "Smart Contract and dApp Development",
+    "Applied AI and LLM Applications",
+    "AI-Assisted and Agentic Engineering",
+    "Blockchain dApps and Smart Contracts",
     "DAO Governance Systems",
+    "End-to-End Product Engineering",
+    "Technical Leadership and Mentoring",
+    "Human-in-the-Loop Systems",
+    "AI System Evaluation and Testing",
+    "Enterprise APIs and Systems Integration",
     "DeFi and ReFi",
-    "Full-Stack Web Application Development",
-    "Enterprise-Scale Web Applications",
-    "Service-Oriented Architecture",
-    "Distributed and Offshore Team Leadership"
+    "Software Project Management",
+    "Decision and Risk Analysis"
   ],
   "accomplishments": [
     {

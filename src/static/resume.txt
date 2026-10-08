@@ -27,7 +27,7 @@ non-deterministic models. That means evaluation that measures what a model
 invents as well as what it misses, and a person approving anything that
 reaches a client.
 
-I'm looking for a senior individual-contributor role in applied or
+I'm looking for a senior, hands-on technical role in applied or
 forward-deployed AI, architecture, or staff-level engineering, where I can own
 a problem end to end, whether at an established company bringing AI into its
 products or at an AI-native one. I work remotely from Costa Rica, which
@@ -36,22 +36,18 @@ overlaps well with US business hours, and am happy to travel as needed.
 
 AREAS OF EXPERTISE
 
-Applied AI and AI-Native Products
-LLM Pipeline Architecture
-AI System Evaluation and Testing
-Human-in-the-Loop System Design
-AI-Assisted and Agentic Development
-End-to-End Product Engineering
-Software Architecture
-Technical Leadership and Mentoring
-Blockchain and Web3 Architecture
-Smart Contract and dApp Development
+Applied AI and LLM Applications
+AI-Assisted and Agentic Engineering
+Blockchain dApps and Smart Contracts
 DAO Governance Systems
+End-to-End Product Engineering
+Technical Leadership and Mentoring
+Human-in-the-Loop Systems
+AI System Evaluation and Testing
+Enterprise APIs and Systems Integration
 DeFi and ReFi
-Full-Stack Web Application Development
-Enterprise-Scale Web Applications
-Service-Oriented Architecture
-Distributed and Offshore Team Leadership
+Software Project Management
+Decision and Risk Analysis
 
 
 SELECTED ACCOMPLISHMENTS
