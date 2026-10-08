@@ -54,8 +54,8 @@ SELECTED ACCOMPLISHMENTS
 
 - Working with subjective human voices and non-deterministic AI
   interpretations, I led the design and development of Human Lens, an
-  AI-native qualitative analysis application that produces findings solid
-  enough for a DEI consultancy to advise its clients with confidence.
+  AI-native qualitative analysis application designed to produce findings
+  solid enough for a DEI consultancy to advise its clients with confidence.
 - With Curve Labs, I coded, delivered and led, in some cases single-handedly,
   the front-end development of multiple complex Web3 dApps leveraging Ethereum
   smart contracts in the domains of decentralized finance (DeFi) and
@@ -261,8 +261,8 @@ Independent Software Developer | 05/2026 - Present
 https://github.com/dkent600/HumanLens
 
 Description:
-Translated a firm's manual qualitative analysis practice into a full-stack web
-application wrapping a bounded, testable LLM pipeline: staged contracts
+Translated a firm's published qualitative analysis practice into a full-stack
+web application wrapping a bounded, testable LLM pipeline: staged contracts
 between components, empirical calibration to reduce output variance, and a
 client-safe boundary enforced from the pipeline through to the human-review
 interface. Owned design, architecture, implementation, and QA end to end.

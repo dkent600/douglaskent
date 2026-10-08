@@ -335,7 +335,7 @@
       "@id": "https://github.com/dkent600/HumanLens",
       "url": "https://github.com/dkent600/HumanLens",
       "name": "Independent Software Developer",
-      "description": "Translated a firm's manual qualitative analysis practice into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Owned design, architecture, implementation, and QA end to end. Modeled on the practice of an existing DEI consultancy.",
+      "description": "Translated a firm's published qualitative analysis practice into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Owned design, architecture, implementation, and QA end to end. Modeled on the practice of an existing DEI consultancy.",
       "keywords": [
         "TypeScript",
         "Visual Studio Code",

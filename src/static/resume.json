@@ -67,7 +67,7 @@
   ],
   "accomplishments": [
     {
-      "text": "Working with subjective human voices and non-deterministic AI interpretations, I led the design and development of Human Lens, an AI-native qualitative analysis application that produces findings solid enough for a DEI consultancy to advise its clients with confidence.",
+      "text": "Working with subjective human voices and non-deterministic AI interpretations, I led the design and development of Human Lens, an AI-native qualitative analysis application designed to produce findings solid enough for a DEI consultancy to advise its clients with confidence.",
       "showOnShort": true
     },
     {
@@ -1768,7 +1768,7 @@
       "position": "Applied AI Engineer & Architect — Human Lens, AI-native analysis app",
       "website": "https://github.com/dkent600/HumanLens",
       "startDate": "2026-05",
-      "summary": "Translated a firm's manual qualitative analysis practice into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Owned design, architecture, implementation, and QA end to end. Modeled on the practice of an existing DEI consultancy.",
+      "summary": "Translated a firm's published qualitative analysis practice into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Owned design, architecture, implementation, and QA end to end. Modeled on the practice of an existing DEI consultancy.",
       "endDate": "present",
       "highlights": [
         "Scoped, designed, and built in TypeScript — Aurelia 2 web application over a Fastify/Node service — with sole authority over every architectural decision; 129 tests green across backend and frontend (at this writing)",
