@@ -153,6 +153,15 @@
         "Agentic Software Development",
         "LLM APIs",
         "GitHub Copilot",
+        "Applied AI",
+        "AI Product Development",
+        "LLM Orchestration",
+        "Synthetic Data Generation",
+        "Non-Deterministic System Testing",
+        "Responsible AI",
+        "Requirements Analysis",
+        "Domain Modeling",
+        "End-to-End Product Ownership",
         "DeFi",
         "MVVM",
         "FluentUI Web Components",
@@ -161,6 +170,9 @@
         "Blockchain",
         "Cryptocurrencies",
         "TSyringe",
+        "API Design",
+        "OpenAPI",
+        "Exchange API Integration",
         "dApps",
         "Ethereum",
         "DAOs",
@@ -193,10 +205,17 @@
         "React",
         "SPA",
         "Wallets",
+        "Technical Leadership",
+        "Code Review",
+        "Smart Contract Security Review",
+        "Technical Interviewing",
         "Bootstrap",
         "Bootstrap Material Design",
         "jQuery",
         "3Box",
+        "SDK/Library Design",
+        "Smart Contract Deployment",
+        "Prototyping",
         "ASP.NET",
         "C#",
         "MVC",
@@ -214,7 +233,11 @@
         "NUnit",
         "MSTest",
         "Agile",
-        "TFS"
+        "TFS",
+        "Mentoring",
+        "Systems Integration",
+        "Client Integration",
+        "Team Leadership"
       ],
       "hasOccupation": {
         "@type": "Occupation",
@@ -338,7 +361,16 @@
         "De-identification",
         "Agentic Software Development",
         "LLM APIs",
-        "GitHub Copilot"
+        "GitHub Copilot",
+        "Applied AI",
+        "AI Product Development",
+        "LLM Orchestration",
+        "Synthetic Data Generation",
+        "Non-Deterministic System Testing",
+        "Responsible AI",
+        "Requirements Analysis",
+        "Domain Modeling",
+        "End-to-End Product Ownership"
       ],
       "author": {
         "@type": "Role",
@@ -368,7 +400,8 @@
         "AI-Assisted Development",
         "GitHub Copilot",
         "Blockchain",
-        "Cryptocurrencies"
+        "Cryptocurrencies",
+        "End-to-End Product Ownership"
       ],
       "author": {
         "@type": "Role",
@@ -398,7 +431,11 @@
         "GitHub",
         "AI-Assisted Development",
         "Blockchain",
-        "Cryptocurrencies"
+        "Cryptocurrencies",
+        "End-to-End Product Ownership",
+        "API Design",
+        "OpenAPI",
+        "Exchange API Integration"
       ],
       "author": {
         "@type": "Role",

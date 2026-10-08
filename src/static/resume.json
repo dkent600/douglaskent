@@ -153,6 +153,7 @@
   ],
   "skillCategories": [
     "AI",
+    "Engineering Practice & Leadership",
     "Blockchain",
     "Website and Application Development",
     "Software Languages",
@@ -361,6 +362,118 @@
         "Cryptography"
       ],
       "url": "https://en.wikipedia.org/wiki/De-identification"
+    },
+    {
+      "name": "Applied AI",
+      "priority": 0.115,
+      "categories": [
+        "AI"
+      ]
+    },
+    {
+      "name": "LLM Orchestration",
+      "priority": 1.01,
+      "categories": [
+        "AI"
+      ]
+    },
+    {
+      "name": "AI Product Development",
+      "priority": 1.02,
+      "categories": [
+        "AI"
+      ]
+    },
+    {
+      "name": "Non-Deterministic System Testing",
+      "priority": 1.03,
+      "categories": [
+        "AI"
+      ]
+    },
+    {
+      "name": "Synthetic Data Generation",
+      "priority": 1.04,
+      "categories": [
+        "AI"
+      ]
+    },
+    {
+      "name": "Responsible AI",
+      "priority": 1.05,
+      "categories": [
+        "AI"
+      ]
+    },
+    {
+      "name": "End-to-End Product Ownership",
+      "priority": 0.203,
+      "categories": [
+        "Engineering Practice & Leadership"
+      ]
+    },
+    {
+      "name": "Technical Leadership",
+      "priority": 0.206,
+      "categories": [
+        "Engineering Practice & Leadership"
+      ]
+    },
+    {
+      "name": "Team Leadership",
+      "priority": 1.5,
+      "categories": [
+        "Engineering Practice & Leadership"
+      ]
+    },
+    {
+      "name": "Mentoring",
+      "priority": 1.51,
+      "categories": [
+        "Engineering Practice & Leadership"
+      ]
+    },
+    {
+      "name": "Technical Interviewing",
+      "priority": 1.52,
+      "categories": [
+        "Engineering Practice & Leadership"
+      ]
+    },
+    {
+      "name": "Requirements Analysis",
+      "priority": 1.53,
+      "categories": [
+        "Engineering Practice & Leadership"
+      ]
+    },
+    {
+      "name": "Domain Modeling",
+      "priority": 1.54,
+      "categories": [
+        "Engineering Practice & Leadership"
+      ]
+    },
+    {
+      "name": "Code Review",
+      "priority": 1.55,
+      "categories": [
+        "Engineering Practice & Leadership"
+      ]
+    },
+    {
+      "name": "Prototyping",
+      "priority": 1.56,
+      "categories": [
+        "Engineering Practice & Leadership"
+      ]
+    },
+    {
+      "name": "Client Integration",
+      "priority": 1.57,
+      "categories": [
+        "Engineering Practice & Leadership"
+      ]
     },
     {
       "name": "Aurelia",
@@ -610,6 +723,20 @@
       "url": "https://app.ens.domains/"
     },
     {
+      "name": "Smart Contract Security Review",
+      "priority": 2.05,
+      "categories": [
+        "Blockchain"
+      ]
+    },
+    {
+      "name": "Smart Contract Deployment",
+      "priority": 2.06,
+      "categories": [
+        "Blockchain"
+      ]
+    },
+    {
       "name": "C#",
       "priority": 3.32,
       "categories": [
@@ -633,6 +760,42 @@
         "Website and Application Development"
       ],
       "url": "https://msdn.microsoft.com/en-us/library/hh833994(v=vs.108).aspx"
+    },
+    {
+      "name": "API Design",
+      "priority": 3,
+      "categories": [
+        "Website and Application Development"
+      ]
+    },
+    {
+      "name": "SDK/Library Design",
+      "priority": 3.01,
+      "categories": [
+        "Website and Application Development"
+      ]
+    },
+    {
+      "name": "Systems Integration",
+      "priority": 3.02,
+      "categories": [
+        "Website and Application Development"
+      ]
+    },
+    {
+      "name": "OpenAPI",
+      "priority": 3.025,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": "https://spec.openapis.org/oas/latest.html"
+    },
+    {
+      "name": "Exchange API Integration",
+      "priority": 3.03,
+      "categories": [
+        "Website and Application Development"
+      ]
     },
     {
       "name": "HTML",
@@ -1642,7 +1805,16 @@
         "De-identification",
         "Agentic Software Development",
         "LLM APIs",
-        "GitHub Copilot"
+        "GitHub Copilot",
+        "Applied AI",
+        "AI Product Development",
+        "LLM Orchestration",
+        "Synthetic Data Generation",
+        "Non-Deterministic System Testing",
+        "Responsible AI",
+        "Requirements Analysis",
+        "Domain Modeling",
+        "End-to-End Product Ownership"
       ],
       "personal": true,
       "notable": true,
@@ -1676,7 +1848,8 @@
         "AI-Assisted Development",
         "GitHub Copilot",
         "Blockchain",
-        "Cryptocurrencies"
+        "Cryptocurrencies",
+        "End-to-End Product Ownership"
       ],
       "personal": true,
       "notable": true,
@@ -1712,7 +1885,11 @@
         "GitHub",
         "AI-Assisted Development",
         "Blockchain",
-        "Cryptocurrencies"
+        "Cryptocurrencies",
+        "End-to-End Product Ownership",
+        "API Design",
+        "OpenAPI",
+        "Exchange API Integration"
       ],
       "personal": true,
       "notable": true,
@@ -1816,7 +1993,12 @@
         "SPA",
         "Wallets",
         "Blockchain",
-        "Cryptocurrencies"
+        "Cryptocurrencies",
+        "Technical Leadership",
+        "End-to-End Product Ownership",
+        "Code Review",
+        "Smart Contract Security Review",
+        "Technical Interviewing"
       ]
     },
     {
@@ -1862,7 +2044,11 @@
         "SPA",
         "3Box",
         "Wallets",
-        "Blockchain"
+        "Blockchain",
+        "End-to-End Product Ownership",
+        "SDK/Library Design",
+        "Smart Contract Deployment",
+        "Prototyping"
       ],
       "notable": true,
       "showOnShort": true
@@ -2019,7 +2205,11 @@
         "NUnit",
         "MSTest",
         "Agile",
-        "TFS"
+        "TFS",
+        "Mentoring",
+        "Systems Integration",
+        "Client Integration",
+        "Team Leadership"
       ],
       "notable": true,
       "contract": true,
