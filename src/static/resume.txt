@@ -166,16 +166,15 @@ SKILLS AND TECHNOLOGIES
 
 AI
   LLM Pipeline Architecture, LLM Evaluation, Applied AI, Human-in-the-Loop
-  Design, Prompt Engineering, Agentic Software Development, AI-Assisted
-  Development, De-identification, Claude Code for VS Code, LLM Orchestration,
-  AI Product Development, Non-Deterministic System Testing, Synthetic Data
-  Generation, Responsible AI, LLM APIs, Claude.ai (LLM), GitHub Copilot,
-  ChatGPT (LLM)
+  Design, Prompt Engineering, Agent/AI-assisted Development,
+  De-identification, Claude Code for VS Code, LLM Orchestration, AI Product
+  Development, Non-Deterministic System Testing, Synthetic Data Generation,
+  Responsible AI, LLM APIs, Claude.ai (LLM), GitHub Copilot, ChatGPT (LLM)
 
 Engineering Practice & Leadership
-  End-to-End Product Ownership, Technical Leadership, Team Leadership,
-  Mentoring, Technical Interviewing, Requirements Analysis, Domain Modeling,
-  Code Review, Prototyping, Client Integration
+  End-to-End Product Ownership, Technical Leadership, Software Project
+  Management, Team Leadership, Mentoring, Technical Interviewing, Requirements
+  Analysis, Domain Modeling, Code Review, Prototyping, Client Integration
 
 Blockchain
   Blockchain, Cryptocurrencies, Solidity, Ethereum, Web3, dApps, ethers.js,
@@ -296,7 +295,7 @@ Highlights:
 
 Skills / Technologies:
 LLM Pipeline Architecture, LLM Evaluation, Applied AI, TypeScript,
-Human-in-the-Loop Design, Prompt Engineering, Agentic Software Development,
+Human-in-the-Loop Design, Prompt Engineering, Agent/AI-assisted Development,
 De-identification, End-to-End Product Ownership, Aurelia 2, Claude Code for VS
 Code, LLM Orchestration, AI Product Development, Non-Deterministic System
 Testing, Synthetic Data Generation, Responsible AI, LLM APIs, Claude.ai (LLM),
@@ -325,9 +324,9 @@ Highlights:
   VS Code
 
 Skills / Technologies:
-TypeScript, Blockchain, Cryptocurrencies, AI-Assisted Development, End-to-End
-Product Ownership, Aurelia 2, DeFi, MVVM, GitHub Copilot, TailWind CSS, Axios,
-Vite, FluentUI Web Components, GitHub
+TypeScript, Blockchain, Cryptocurrencies, Agent/AI-assisted Development,
+End-to-End Product Ownership, Aurelia 2, DeFi, MVVM, GitHub Copilot, TailWind
+CSS, Axios, Vite, FluentUI Web Components, GitHub
 
 
 Product Engineer & Architect - Butterfly, crypto portfolio management service
@@ -352,9 +351,9 @@ Highlights:
 - Axios for exchange-API communications
 
 Skills / Technologies:
-TypeScript, Blockchain, Cryptocurrencies, AI-Assisted Development, End-to-End
-Product Ownership, DeFi, GitHub Copilot, API Design, OpenAPI, Exchange API
-Integration, Fastify, Axios, Node.js, TSyringe, Vite, GitHub
+TypeScript, Blockchain, Cryptocurrencies, Agent/AI-assisted Development,
+End-to-End Product Ownership, DeFi, GitHub Copilot, API Design, OpenAPI,
+Exchange API Integration, Fastify, Axios, Node.js, TSyringe, Vite, GitHub
 
 
 Blockchain Oracle Developer

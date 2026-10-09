@@ -173,6 +173,23 @@
   ],
   "skills": [
     {
+      "name": "Decision and Risk Analysis",
+      "priority": 1,
+      "categories": [
+        "Engineering Practice & Leadership",
+        "Development Processes"
+      ],
+      "url": ""
+    },
+    {
+      "name": "Software Project Management",
+      "priority": 1,
+      "categories": [
+        "Engineering Practice & Leadership"
+      ],
+      "url": ""
+    },
+    {
       "name": "Cryptocurrencies",
       "priority": 0.1495,
       "categories": [
@@ -331,25 +348,14 @@
       "url": "https://en.wikipedia.org/wiki/Human-in-the-loop"
     },
     {
-      "name": "Agentic Software Development",
-      "priority": 0.165,
-      "categories": [
-        "AI"
-      ],
-      "aliases": [
-        "Agentic Coding",
-        "AI Coding Agents"
-      ]
-    },
-    {
-      "name": "AI-Assisted Development",
+      "name": "Agent/AI-assisted Development",
       "priority": 0.17,
       "categories": [
         "AI"
       ],
       "url": "https://www.sonarsource.com/resources/library/ai-coding-assistants",
       "aliases": [
-        "AI Coding Assistant"
+        "Agentic Software Development"
       ]
     },
     {
@@ -1801,7 +1807,6 @@
         "LLM Evaluation",
         "Human-in-the-Loop Design",
         "De-identification",
-        "Agentic Software Development",
         "LLM APIs",
         "GitHub Copilot",
         "Applied AI",
@@ -1812,7 +1817,8 @@
         "Responsible AI",
         "Requirements Analysis",
         "Domain Modeling",
-        "End-to-End Product Ownership"
+        "End-to-End Product Ownership",
+        "Agent/AI-assisted Development"
       ],
       "personal": true,
       "notable": true,
@@ -1843,7 +1849,7 @@
         "Vite",
         "Axios",
         "GitHub",
-        "AI-Assisted Development",
+        "Agent/AI-assisted Development",
         "GitHub Copilot",
         "Blockchain",
         "Cryptocurrencies",
@@ -1881,7 +1887,7 @@
         "Vite",
         "Axios",
         "GitHub",
-        "AI-Assisted Development",
+        "Agent/AI-assisted Development",
         "Blockchain",
         "Cryptocurrencies",
         "End-to-End Product Ownership",
