@@ -3,12 +3,13 @@
     <button type="button" class="primary" click.trigger="add()">Add skill</button>
     <label class="search">Filter
       <!-- Applied on blur, not as you type; see `applyFilter`. Enter blurs, so it applies too. -->
-      <input type="search" value.bind="filter" placeholder="name, alias or category"
+      <input type="search" value.bind="filter" placeholder="skill name"
         blur.trigger="applyFilter()" keydown.trigger="$event.key === 'Enter' && $event.target.blur()">
     </label>
+    <label class="case"><input type="checkbox" checked.bind="caseSensitive" change.trigger="applyFilter()"> Case sensitive</label>
     <p class="hint">
       ${visible(applyRevision).length} of ${store.skills.length}
-      <span class="pending" if.bind="filter.trim().toLowerCase() !== applied">not applied &mdash; press Enter or click away</span>
+      <span class="pending" if.bind="filter.trim() !== applied">not applied &mdash; press Enter or click away</span>
     </p>
   </div>
 

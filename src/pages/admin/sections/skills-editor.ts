@@ -11,8 +11,14 @@ export class SkillsEditor {
   /** What is typed in the box, which is not necessarily what is being filtered on. */
   filter = "";
 
-  /** The filter actually in force. Only `applyFilter` changes it. */
+  /** The box's checkbox, which is likewise not necessarily what is in force. */
+  caseSensitive = false;
+
+  /** The filter actually in force, trimmed but with its case kept. Only `applyFilter` changes it. */
   applied = "";
+
+  /** Whether `applied` is matched case-sensitively. Only `applyFilter` changes it. */
+  appliedCaseSensitive = false;
 
   /**
    * Bumped only when `applied` changes, and passed to `visible` as an argument -- which is
@@ -29,14 +35,15 @@ export class SkillsEditor {
   /**
    * Deliberately not called as you type. The list is the thing being edited in, so
    * re-filtering under the cursor destroys the open row; this runs on blur, and Enter
-   * blurs the box so that applies too.
+   * blurs the box so that applies too. Toggling case sensitivity applies at once.
    */
   applyFilter(): void {
-    const applied = this.filter.trim().toLowerCase();
-    if (applied === this.applied) {
+    const applied = this.filter.trim();
+    if (applied === this.applied && this.caseSensitive === this.appliedCaseSensitive) {
       return;
     }
     this.applied = applied;
+    this.appliedCaseSensitive = this.caseSensitive;
     this.applyRevision++;
   }
 
@@ -45,6 +52,10 @@ export class SkillsEditor {
    * observes the array and an add or delete shows up without an apply. Filtered, it is a
    * snapshot -- which is why `add` and `remove` bump `applyRevision` themselves.
    *
+   * Only the name is matched. Aliases and categories used to be too, and "AI" then pulled
+   * in every skill in the AI and Blockchain categories, and Unity by way of
+   * "Unity.Container" -- results whose names did not contain the text at all.
+   *
    * `_applyRevision` is unused; it exists so the binding re-evaluates. See `applyRevision`.
    */
   visible(_applyRevision?: number): Array<IEditableSkill> {
@@ -52,12 +63,11 @@ export class SkillsEditor {
     if (!needle) {
       return this.store.skills;
     }
-    return this.store.skills.filter(
-      (skill) =>
-        skill.name.toLowerCase().includes(needle) ||
-        (skill.aliases ?? []).some((alias) => alias.toLowerCase().includes(needle)) ||
-        skill.categories.some((category) => category.toLowerCase().includes(needle)),
-    );
+    if (this.appliedCaseSensitive) {
+      return this.store.skills.filter((skill) => skill.name.includes(needle));
+    }
+    const lowered = needle.toLowerCase();
+    return this.store.skills.filter((skill) => skill.name.toLowerCase().includes(lowered));
   }
 
   /** The name as it was when the field gained focus, so a rename knows what to cascade. */
