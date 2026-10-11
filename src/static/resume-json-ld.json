@@ -333,7 +333,7 @@
       "@type": "SoftwareApplication",
       "@id": "https://github.com/dkent600/HumanLens",
       "url": "https://github.com/dkent600/HumanLens",
-      "name": "Independent Software Developer",
+      "name": "Independent Project (Human Lens)",
       "description": "Translated a firm's published qualitative analysis practice into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Owned design, architecture, implementation, and QA end to end. Modeled on the practice of an existing DEI consultancy.",
       "keywords": [
         "TypeScript",
@@ -371,7 +371,7 @@
       ],
       "author": {
         "@type": "Role",
-        "roleName": "Applied AI Engineer & Architect — Human Lens, AI-native analysis app",
+        "roleName": "Applied AI Software Engineer & Architect",
         "startDate": "2026-05",
         "author": {
           "@id": "https://www.douglaskent.com/#douglas-kent"
@@ -382,8 +382,8 @@
       "@type": "SoftwareApplication",
       "@id": "https://github.com/dkent600/batch-take-profit",
       "url": "https://github.com/dkent600/batch-take-profit",
-      "name": "Independent Software Developer",
-      "description": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supported by the Butterfly Crypto portfolio management service.",
+      "name": "Independent Project (Butterfly)",
+      "description": "Designed and built a cryptocurrency portfolio management web app that executes scaled take-profit sales across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supported by the Butterfly Crypto portfolio management service.",
       "keywords": [
         "DeFi",
         "TypeScript",
@@ -402,7 +402,7 @@
       ],
       "author": {
         "@type": "Role",
-        "roleName": "Product Engineer & Architect — Butterfly, crypto portfolio management dApp",
+        "roleName": "Applied Blockchain Software Architect and Engineer",
         "startDate": "2025-06",
         "endDate": "2025-09",
         "author": {
@@ -414,8 +414,8 @@
       "@type": "SoftwareApplication",
       "@id": "https://github.com/dkent600/butterfly-services",
       "url": "https://github.com/dkent600/butterfly-services",
-      "name": "Independent Software Developer",
-      "description": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supports the Butterfly Crypto portfolio management dApp.",
+      "name": "Independent Project (Butterfly)",
+      "description": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supports the Butterfly Crypto portfolio management web app.",
       "keywords": [
         "DeFi",
         "GitHub Copilot",
@@ -436,7 +436,7 @@
       ],
       "author": {
         "@type": "Role",
-        "roleName": "Product Engineer & Architect — Butterfly, crypto portfolio management service",
+        "roleName": "Applied Blockchain Software Architect and Engineer",
         "startDate": "2025-06",
         "endDate": "2025-09",
         "author": {

@@ -258,8 +258,8 @@ Development Processes
 
 PROFESSIONAL EXPERIENCE
 
-Applied AI Engineer & Architect - Human Lens, AI-native analysis app
-Independent Software Developer | 05/2026 - Present
+Applied AI Software Engineer & Architect
+Independent Project (Human Lens) | 05/2026 - Present
 https://github.com/dkent600/HumanLens
 
 Description:
@@ -307,12 +307,12 @@ Fastify, TailWind CSS, Axios, Node.js, Awilix, Vite, HTML, Visual Studio Code,
 Vitest, NPM
 
 
-Product Engineer & Architect - Butterfly, crypto portfolio management dApp
-Independent Software Developer | 06/2025 - 09/2025
+Applied Blockchain Software Architect and Engineer
+Independent Project (Butterfly) | 06/2025 - 09/2025
 https://github.com/dkent600/batch-take-profit
 
 Description:
-Designed and built a cryptocurrency portfolio management dApp that executes
+Designed and built a cryptocurrency portfolio management web app that executes
 scaled take-profit sales across multiple exchanges, owning design,
 architecture, implementation, and QA end to end. Supported by the Butterfly
 Crypto portfolio management service.
@@ -332,15 +332,15 @@ End-to-End Product Ownership, Aurelia 2, DeFi, MVVM, GitHub Copilot, TailWind
 CSS, Axios, Vite, FluentUI Web Components, GitHub
 
 
-Product Engineer & Architect - Butterfly, crypto portfolio management service
-Independent Software Developer | 06/2025 - 09/2025
+Applied Blockchain Software Architect and Engineer
+Independent Project (Butterfly) | 06/2025 - 09/2025
 https://github.com/dkent600/butterfly-services
 
 Description:
 Designed and built a REST API service supporting secure cryptocurrency
 exchange operations across multiple exchanges, owning design, architecture,
 implementation, and QA end to end. Supports the Butterfly Crypto portfolio
-management dApp.
+management web app.
 
 Highlights:
 - Provides comprehensive safety mechanisms, testing, dependency injection and

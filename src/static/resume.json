@@ -1770,8 +1770,8 @@
   "work": [
     {
       "id": "0gzqostf",
-      "company": "Independent Software Developer",
-      "position": "Applied AI Engineer & Architect — Human Lens, AI-native analysis app",
+      "company": "Independent Project (Human Lens)",
+      "position": "Applied AI Software Engineer & Architect",
       "website": "https://github.com/dkent600/HumanLens",
       "startDate": "2026-05",
       "summary": "Translated a firm's published qualitative analysis practice into a full-stack web application wrapping a bounded, testable LLM pipeline: staged contracts between components, empirical calibration to reduce output variance, and a client-safe boundary enforced from the pipeline through to the human-review interface. Owned design, architecture, implementation, and QA end to end. Modeled on the practice of an existing DEI consultancy.",
@@ -1826,12 +1826,12 @@
     },
     {
       "id": "hedo001x",
-      "company": "Independent Software Developer",
-      "position": "Product Engineer & Architect — Butterfly, crypto portfolio management dApp",
+      "company": "Independent Project (Butterfly)",
+      "position": "Applied Blockchain Software Architect and Engineer",
       "remote": false,
       "website": "https://github.com/dkent600/batch-take-profit",
       "startDate": "2025-06",
-      "summary": "Designed and built a cryptocurrency portfolio management dApp that executes scaled take-profit sales across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supported by the Butterfly Crypto portfolio management service.",
+      "summary": "Designed and built a cryptocurrency portfolio management web app that executes scaled take-profit sales across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supported by the Butterfly Crypto portfolio management service.",
       "endDate": "2025-09",
       "highlights": [
         "Does real-time price monitoring and balance tracking, tracking order history and status",
@@ -1861,12 +1861,12 @@
     },
     {
       "id": "l1rl4agb",
-      "company": "Independent Software Developer",
-      "position": "Product Engineer & Architect — Butterfly, crypto portfolio management service",
+      "company": "Independent Project (Butterfly)",
+      "position": "Applied Blockchain Software Architect and Engineer",
       "remote": false,
       "website": "https://github.com/dkent600/butterfly-services",
       "startDate": "2025-06",
-      "summary": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supports the Butterfly Crypto portfolio management dApp.",
+      "summary": "Designed and built a REST API service supporting secure cryptocurrency exchange operations across multiple exchanges, owning design, architecture, implementation, and QA end to end. Supports the Butterfly Crypto portfolio management web app.",
       "endDate": "2025-09",
       "highlights": [
         "Provides comprehensive safety mechanisms, testing, dependency injection and production-ready integration",
