@@ -371,21 +371,23 @@ export function buildPersonJsonLd(
    * with a known cost rather than a neutral mapping.
    *
    * The reason: `company` is the string a human reader sees on the resume site under each
-   * personal entry, and the block should carry what the page shows. The cost Doug accepted
-   * knowingly: `company` on these entries reads "Independent Software Developer", so both
-   * `SoftwareApplication` nodes are named that, and the graph contains the words "Human Lens"
-   * and "Butterfly" in no `name` at all -- only inside the `roleName` prose below. Two nodes
-   * with one name are told apart solely by `@id` and `url`.
+   * personal entry, and the block should carry what the page shows. These entries now put the
+   * project there -- "Independent Project (Human Lens)", "Independent Project (Butterfly)" --
+   * so the project names do reach a `name`. They used to read "Independent Software
+   * Developer", with the project named only inside `position`.
    *
-   * The alternatives were putting the project name in `company` (which changes what the page,
-   * `resume.txt` and the Word file display) and adding a `project` field (which changes the
-   * resume schema). Both were considered and declined.
+   * The cost, accepted knowingly: the name carries the engagement's framing as well as the
+   * project, so the software is named "Independent Project (Human Lens)" rather than "Human
+   * Lens". Deriving the bare project name would mean parsing `company`, and nothing in this
+   * file parses an identifier out of prose. And the two Butterfly entries -- the dApp and the
+   * service behind it -- share one `company`, so two nodes with one name are told apart
+   * solely by `@id` and `url`. A separate `project` field would fix both, at the price of a
+   * resume schema change; that has not been made.
    *
-   * `roleName` takes `position` whole and nothing splits it. That string carries two facts
-   * at once -- "Applied AI Engineer & Architect - Human Lens, AI-native analysis app" --
-   * which is true of a role and would be false as the name of a piece of software. The Role
-   * wrapper is what lets the dates travel with the authorship instead of attaching to the
-   * software, which has no dates of its own here.
+   * `roleName` takes `position` whole -- "Applied AI Software Engineer & Architect" -- which
+   * describes a role and would be false as the name of a piece of software. The Role wrapper
+   * is what lets the dates travel with the authorship instead of attaching to the software,
+   * which has no dates of its own here.
    */
   const applications = projects.map(({ entry }) =>
     compact({
