@@ -307,7 +307,7 @@ Fastify, TailWind CSS, Axios, Node.js, Awilix, Vite, HTML, Visual Studio Code,
 Vitest, NPM
 
 
-Applied Blockchain Software Architect and Engineer
+Applied Blockchain Software Engineer & Architect
 Independent Project (Butterfly) | 06/2025 - 09/2025
 https://github.com/dkent600/batch-take-profit
 
@@ -332,7 +332,7 @@ End-to-End Product Ownership, Aurelia 2, DeFi, MVVM, GitHub Copilot, TailWind
 CSS, Axios, Vite, FluentUI Web Components, GitHub
 
 
-Applied Blockchain Software Architect and Engineer
+Applied Blockchain Software Engineer & Architect
 Independent Project (Butterfly) | 06/2025 - 09/2025
 https://github.com/dkent600/butterfly-services
 
