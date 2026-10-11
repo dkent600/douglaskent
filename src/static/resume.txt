@@ -282,7 +282,7 @@ Highlights:
   firm's stated methodology into implementable analytic stages
 - Guaranteed processing completeness in orchestration code rather than in
   prompts - every input provably resolves to one of four explicit terminal
-  states, so nothing is silently dropped regardless of model behavior
+  states, so nothing is silently dropped
 - Designed a seven-lens analytic architecture running in six ordered waves;
   three lenses validated against a real model to date, with calibration driven
   by a purpose-built synthetic evaluation dataset
