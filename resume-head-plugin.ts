@@ -126,8 +126,9 @@ export function resumeHead(): Plugin {
       /**
        * `metaTitle` exists because the SERP headline has a length budget that nothing
        * else derived from `resume.json` has to live within. Google truncates around 60
-       * characters, and `${name} — ${label}` is 93, so the part that gets cut is
-       * "LLM Systems, Full-Stack, Blockchain" -- the specialization the page is aimed at.
+       * characters, and `${name} — ${label}` is 116, so the part that gets cut is
+       * "End-to-End Product Engineer · Technical Leader and Mentor" -- half of what the
+       * headline says.
        *
        * Shortening `label` is not the fix. The JSON-LD block reads it for `jobTitle` and
        * `hasOccupation.name`, where there is no length budget and the long form is the
@@ -136,7 +137,7 @@ export function resumeHead(): Plugin {
        * reconciled.
        *
        * The fallback keeps the page titled if the field is ever emptied, and warns for
-       * the same reason the description fallback does: degrading quietly to a 93-character
+       * the same reason the description fallback does: degrading quietly to a 116-character
        * title would look like nothing had happened.
        *
        * `stripHtml` for the same reason the JSON-LD plugin uses it: nothing in these

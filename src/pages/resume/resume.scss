@@ -81,6 +81,35 @@ h2 {
   margin-bottom: 1.6rem;
 }
 
+// The headline breaks only between its phrases: each phrase, with the separator that follows
+// it, is unbreakable, and the plain space between phrase spans is the break opportunity.
+.headline-phrase {
+  white-space: nowrap;
+}
+
+// On a phone the phrases stack one per line and the separators are hidden visually but kept
+// in the DOM, so the heading's text still reads as the whole label. `normal` lets a phrase
+// wider than the screen wrap inside itself rather than overflow it, and the hanging indent
+// (padding with an equal negative text-indent) sets a wrapped line in under its phrase so it
+// does not read as a phrase of its own, while every first line stays flush with the name.
+@media screen and (max-width: 800px) {
+  .headline-phrase {
+    display: block;
+    white-space: normal;
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+
+  .headline-separator {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}
+
 @mixin happy-text {
   color: $orange-a700;
 }

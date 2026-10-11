@@ -1,5 +1,6 @@
 Douglas Kent
-Applied AI Engineer & Software Architect - LLM Systems, Full-Stack, Blockchain
+Applied AI & Blockchain Software Engineer - End-to-End Product Engineer -
+Technical Leader and Mentor
 San Mateo, Alajuela, Costa Rica
 https://www.douglaskent.com
 https://www.linkedin.com/in/douglas-kent-760876a/
@@ -172,9 +173,10 @@ AI
   Responsible AI, LLM APIs, Claude.ai (LLM), GitHub Copilot, ChatGPT (LLM)
 
 Engineering Practice & Leadership
-  End-to-End Product Ownership, Technical Leadership, Software Project
-  Management, Team Leadership, Mentoring, Technical Interviewing, Requirements
-  Analysis, Domain Modeling, Code Review, Prototyping, Client Integration
+  End-to-End Product Ownership, Technical Leadership, Decision and Risk
+  Analysis, Software Project Management, Team Leadership, Mentoring, Technical
+  Interviewing, Requirements Analysis, Domain Modeling, Code Review,
+  Prototyping, Client Integration
 
 Blockchain
   Blockchain, Cryptocurrencies, Solidity, Ethereum, Web3, dApps, ethers.js,
@@ -250,7 +252,8 @@ Operating Systems
   Microsoft Windows
 
 Development Processes
-  Agile Methodologies, Just Get It Done, Waterfall, TFS
+  Decision and Risk Analysis, Agile Methodologies, Just Get It Done,
+  Waterfall, TFS
 
 
 PROFESSIONAL EXPERIENCE

@@ -3,7 +3,13 @@
   <div class="row">
     <div class="col-xs-12 col-lg-8 col-xl-9">
       <h1>${basics.name}</h1>
-      <h2>${basics.label}</h2>
+      <!--
+        One span per " · "-separated phrase so the headline breaks only between phrases. The
+        separator rides inside the phrase before it, so no line starts with "·", and the
+        plain space after each span is the only break opportunity. The text content is still
+        the label exactly, which is what crawlers and the prerendered snapshot read.
+      -->
+      <h2><template repeat.for="phrase of basics.label | split:' · '"><span class="headline-phrase">${phrase}<span class="headline-separator" if.bind="!$last"> ·</span></span>${$last ? "" : " "}</template></h2>
       <div>
         <contact id="contact" expanded.bind="expanded" inline.bind="true" class="d-lg-none sectionContainer">
         </contact>
