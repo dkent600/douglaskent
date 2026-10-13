@@ -39,7 +39,7 @@ h1 {
 
 h2 {
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 1.8rem;
 }
 
@@ -92,7 +92,13 @@ h2 {
 // wider than the screen wrap inside itself rather than overflow it, and the hanging indent
 // (padding with an equal negative text-indent) sets a wrapped line in under its phrase so it
 // does not read as a phrase of its own, while every first line stays flush with the name.
+// Stacked, the headline also drops to the short resume's size, so three full-size lines do
+// not outweigh the name above them.
 @media screen and (max-width: 800px) {
+  .resume h2 {
+    font-size: 1.2rem;
+  }
+
   .headline-phrase {
     display: block;
     white-space: normal;
