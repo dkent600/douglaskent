@@ -47,3 +47,6 @@ linkedin.draft.json
 linkedin.draft.json.bak
 linkedin.defaults.json
 
+# Roboto TTFs downloaded for og-preview.py; see the script's docstring for where to get them
+/fonts/
+
