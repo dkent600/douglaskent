@@ -398,8 +398,8 @@ First front-end engineer at Curve Labs, owning design, architecture,
 implementation, and QA end to end for the frontends of multiple dApps on the
 Ethereum blockchain focused on decentralized (DeFi) and regenerative finance
 (ReFi), while leading teams of 2-5 developers. Among others, led the
-development team for a ReFi dApp designed to emerge a regenerative,
-decentralized economic system for the sovereign island nation of Curacao.
+development team for ReFi dApp for a regenerative economic system proposed for
+Curacao.
 
 Highlights:
 - Lead and sole coder of the dApp frontends of Prime Pools (no longer active)

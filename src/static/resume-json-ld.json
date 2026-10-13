@@ -245,7 +245,7 @@
         {
           "@type": "OrganizationRole",
           "roleName": "Development Team Lead and Lead Developer",
-          "description": "First front-end engineer at Curve Labs, owning design, architecture, implementation, and QA end to end for the frontends of multiple dApps on the Ethereum blockchain focused on decentralized (DeFi) and regenerative finance (ReFi), while leading teams of 2-5 developers. Among others, led the development team for a ReFi dApp designed to emerge a regenerative, decentralized economic system for the sovereign island nation of Curaçao.",
+          "description": "First front-end engineer at Curve Labs, owning design, architecture, implementation, and QA end to end for the frontends of multiple dApps on the Ethereum blockchain focused on decentralized (DeFi) and regenerative finance (ReFi), while leading teams of 2-5 developers. Among others, led the development team for ReFi dApp for a regenerative economic system proposed for Curaçao.",
           "startDate": "2020-08",
           "endDate": "2022-11",
           "worksFor": {
