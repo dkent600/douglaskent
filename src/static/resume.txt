@@ -9,30 +9,27 @@ https://github.com/dkent600
 
 PROFESSIONAL SUMMARY
 
-I am a software engineer and architect who takes a project across all its
-dimensions: the people it serves, the context it has to work in, its design
-and architecture, the build, and the proof that it works. Startups have
-repeatedly brought me in as their first engineer, and I have been building
-software professionally since 1985, across web applications, blockchain and
-Web3 platforms, and AI-native applications.
+I am an applied AI and blockchain software engineer who builds products end to
+end. My recent work is AI-native applications in which language models do the
+core work, built to be reliable despite non-deterministic models.
 
-I have worn multiple hats in important roles across many kinds of
-organizations, from Microsoft to garage startups - enough to recognize most
-problems before they become expensive. I have managed teams, but I do my best
-work as a hands-on technical lead, including mentoring the developers around
-me.
+I take a project across all its dimensions: the people it serves, the context
+it has to work in, its design and architecture, the build, and the proof that
+it works. I have worn enough hats, from Microsoft to garage startups, to
+recognize most problems before they become expensive. I have managed teams,
+but I do my best work as a hands-on technical lead and mentor.
 
-My recent work is applied AI: AI-native applications in which language models
-do the core work, built to be reliable on top of subjective inputs and
-non-deterministic models. That means evaluation that measures what a model
-invents as well as what it misses, and a person approving anything that
-reaches a client.
+I have adopted major technologies while they were still new: rendering 3D
+graphics on early PCs, creating some of the first multimedia CD products,
+writing early applications for the internet and the World Wide Web, developing
+dApps and DAOs on the blockchain, and now building AI-native applications.
+Several startups brought me in as their first software or front-end engineer,
+and I have been building software professionally since 1985.
 
 I'm looking for a senior, hands-on technical role in applied or
-forward-deployed AI, architecture, or staff-level engineering, where I can own
-a problem end to end, whether at an established company bringing AI into its
-products or at an AI-native one. I work remotely from Costa Rica, which
-overlaps well with US business hours, and am happy to travel as needed.
+forward-deployed AI, architecture, or staff-level engineering, where I can
+continue learning and doing things that matter. I work remotely from Costa
+Rica, which overlaps well with US business hours, and am happy to travel.
 
 
 AREAS OF EXPERTISE
