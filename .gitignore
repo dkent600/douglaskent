@@ -50,3 +50,6 @@ linkedin.defaults.json
 # Roboto TTFs downloaded for og-preview.py; see the script's docstring for where to get them
 /fonts/
 
+# Dev-server config the Claude desktop app's preview pane writes for itself
+/.claude/launch.json
+

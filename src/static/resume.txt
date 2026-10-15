@@ -163,11 +163,12 @@ WHAT YOU CAN EXPECT FROM ME
 SKILLS AND TECHNOLOGIES
 
 AI
-  LLM Pipeline Architecture, LLM Evaluation, Applied AI, Human-in-the-Loop
-  Design, Prompt Engineering, Agent/AI-assisted Development,
-  De-identification, Claude Code for VS Code, LLM Orchestration, AI Product
-  Development, Non-Deterministic System Testing, Synthetic Data Generation,
-  Responsible AI, LLM APIs, Claude.ai (LLM), GitHub Copilot, ChatGPT (LLM)
+  LLM Pipeline Architecture, LLM Evaluation, Applied AI, Large Language Models
+  (LLMs), Human-in-the-Loop Design, Prompt Engineering, Agent/AI-assisted
+  Development, De-identification, Claude Code for VS Code, LLM Orchestration,
+  AI Product Development, Non-Deterministic System Testing, Synthetic Data
+  Generation, Responsible AI, LLM APIs, Claude.ai (LLM), GitHub Copilot,
+  ChatGPT (LLM)
 
 Engineering Practice & Leadership
   End-to-End Product Ownership, Technical Leadership, Decision and Risk
@@ -294,14 +295,14 @@ Highlights:
   structurally incapable of holding internal findings
 
 Skills / Technologies:
-LLM Pipeline Architecture, LLM Evaluation, Applied AI, TypeScript,
-Human-in-the-Loop Design, Prompt Engineering, Agent/AI-assisted Development,
-De-identification, End-to-End Product Ownership, Aurelia 2, Claude Code for VS
-Code, LLM Orchestration, AI Product Development, Non-Deterministic System
-Testing, Synthetic Data Generation, Responsible AI, LLM APIs, Claude.ai (LLM),
-GitHub Copilot, ChatGPT (LLM), Requirements Analysis, Domain Modeling,
-Fastify, TailWind CSS, Axios, Node.js, Awilix, Vite, HTML, Visual Studio Code,
-Vitest, NPM
+LLM Pipeline Architecture, LLM Evaluation, Applied AI, Large Language Models
+(LLMs), TypeScript, Human-in-the-Loop Design, Prompt Engineering,
+Agent/AI-assisted Development, De-identification, End-to-End Product
+Ownership, Aurelia 2, Claude Code for VS Code, LLM Orchestration, AI Product
+Development, Non-Deterministic System Testing, Synthetic Data Generation,
+Responsible AI, LLM APIs, Claude.ai (LLM), GitHub Copilot, ChatGPT (LLM),
+Requirements Analysis, Domain Modeling, Fastify, TailWind CSS, Axios, Node.js,
+Awilix, Vite, HTML, Visual Studio Code, Vitest, NPM
 
 
 Applied Blockchain Software Engineer & Architect
@@ -386,7 +387,7 @@ TypeScript, Solidity, Ethereum, ethers.js, DeFi, ReFi, Celo, Balancer
 Liquidity Pools, Defender, Mento, JavaScript, GitHub
 
 
-Development Team Lead and Lead Developer
+Senior Web3 Application Developer, Software Development Team Lead
 Curve Labs | 08/2020 - 11/2022
 https://www.curvelabs.eu/
 
@@ -442,7 +443,7 @@ JavaScript, Node.js, Vite, HTML, CSS, SASS, Responsive, React, Aurelia,
 Webpack, Rollup, i18Next, GitHub
 
 
-Senior Lead Developer
+Senior Web3 Application Developer
 DAOstack | 09/2017 - 10/2020
 https://www.daostack.io/
 
@@ -614,7 +615,7 @@ MsTest, XUnit.NET, crypto-js, DES, Encryption, SHA,
 System.Security.Cryptography, entity framework
 
 
-Senior Web Developer
+Senior Web Application Developer
 Revionics | 11/2011 - 03/2013
 https://www.revionics.com/
 

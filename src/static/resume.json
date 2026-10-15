@@ -173,6 +173,17 @@
   ],
   "skills": [
     {
+      "name": "Large Language Models (LLMs)",
+      "priority": 0.116,
+      "categories": [
+        "AI"
+      ],
+      "url": "",
+      "aliases": [
+        "LLMs"
+      ]
+    },
+    {
       "name": "Decision and Risk Analysis",
       "priority": 1,
       "categories": [
@@ -1818,7 +1829,8 @@
         "Requirements Analysis",
         "Domain Modeling",
         "End-to-End Product Ownership",
-        "Agent/AI-assisted Development"
+        "Agent/AI-assisted Development",
+        "Large Language Models (LLMs)"
       ],
       "personal": true,
       "notable": true,
@@ -1935,7 +1947,7 @@
     {
       "id": "9ep9ym6f",
       "company": "Curve Labs",
-      "position": "Development Team Lead and Lead Developer",
+      "position": "Senior Web3 Application Developer, Software Development Team Lead",
       "remote": true,
       "website": "https://www.curvelabs.eu/",
       "notable": true,
@@ -2010,7 +2022,7 @@
     {
       "id": "nuz75rja",
       "company": "DAOstack",
-      "position": "Senior Lead Developer",
+      "position": "Senior Web3 Application Developer",
       "remote": true,
       "website": "https://www.daostack.io/",
       "startDate": "2017-09",
@@ -2132,7 +2144,7 @@
     {
       "id": "9pv4ovhd",
       "company": "Revionics",
-      "position": "Senior Web Developer",
+      "position": "Senior Web Application Developer",
       "remote": true,
       "contract": true,
       "website": "https://www.revionics.com/",

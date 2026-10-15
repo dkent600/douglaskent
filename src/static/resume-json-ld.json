@@ -7,7 +7,7 @@
       "url": "https://www.douglaskent.com/",
       "name": "Douglas Kent — Applied AI & Blockchain Software Engineer",
       "description": "Applied AI and blockchain software engineer who builds products end to end, from LLM applications to Web3 platforms. Hands-on technical leader and mentor.",
-      "dateModified": "2026-10-13T00:00:00Z",
+      "dateModified": "2026-10-15T00:00:00Z",
       "mainEntity": {
         "@id": "https://www.douglaskent.com/#douglas-kent"
       },
@@ -160,6 +160,7 @@
         "Domain Modeling",
         "End-to-End Product Ownership",
         "Agent/AI-assisted Development",
+        "Large Language Models (LLMs)",
         "DeFi",
         "MVVM",
         "FluentUI Web Components",
@@ -244,7 +245,7 @@
       "worksFor": [
         {
           "@type": "OrganizationRole",
-          "roleName": "Development Team Lead and Lead Developer",
+          "roleName": "Senior Web3 Application Developer, Software Development Team Lead",
           "description": "First front-end engineer at Curve Labs, owning design, architecture, implementation, and QA end to end for the frontends of multiple dApps on the Ethereum blockchain focused on decentralized (DeFi) and regenerative finance (ReFi), while leading teams of 2-5 developers. Among others, led the development team for a ReFi dApp for a regenerative economic system proposed for Curaçao.",
           "startDate": "2020-08",
           "endDate": "2022-11",
@@ -254,7 +255,7 @@
         },
         {
           "@type": "OrganizationRole",
-          "roleName": "Senior Lead Developer",
+          "roleName": "Senior Web3 Application Developer",
           "description": "First front-end engineer at DAOstack, one of the first major DAO designs in the history of DAOs, owning design, architecture, implementation, and QA end to end across multiple roles: used, reviewed and deployed Solidity smart contracts, wrote a TypeScript library to support dApps in accessing the smart contracts, wrote a test dApp, and significantly contributed to Alchemy, the dApp used for working with the DAOs.",
           "startDate": "2017-09",
           "endDate": "2020-10",
@@ -367,7 +368,8 @@
         "Requirements Analysis",
         "Domain Modeling",
         "End-to-End Product Ownership",
-        "Agent/AI-assisted Development"
+        "Agent/AI-assisted Development",
+        "Large Language Models (LLMs)"
       ],
       "author": {
         "@type": "Role",
