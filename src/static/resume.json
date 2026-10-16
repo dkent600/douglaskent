@@ -13,12 +13,12 @@
     "phone2": "+506 8591-5302 (CR)",
     "website": "https://www.douglaskent.com",
     "summary1": "I am an applied AI and blockchain software engineer who builds products end to end. My recent work is AI-native applications in which language models do the core work, built to be reliable despite non-deterministic models.",
-    "summary2": "I take a project across all its dimensions: the people it serves, the context it has to work in, its design and architecture, the build, and the proof that it works. I have worn enough hats, from Microsoft to garage startups, to recognize most problems before they become expensive. I have managed teams, but I do my best work as a hands-on technical lead and mentor.",
+    "summary2": "I take a project across all its dimensions: the people it serves, the context it has to work in, its design and architecture, the code, the build, and the proof that it all works. I have worn enough hats, from Microsoft to garage startups, to recognize most problems before they become expensive. I have managed teams, but I do my best work as a hands-on technical lead and mentor.",
     "summary3": "Please see my complete resume at: <a href='https://www.douglaskent.com' target='_blank' rel='noopener noreferrer'>https://www.douglaskent.com</a>.",
     "summary4": "Lived and worked for decades in both the U.S. and Canada, now based in Costa Rica. I have worked with distributed teams across Europe, Israel, India, and Australia, including leading offshore development teams in daily coordination.",
     "summary5": "I've worked with the likes of Microsoft, garage startups such as ConnectSoft, to Curve Labs where I led the development of a ReFi dApp front end designed to emerge a regenerative, decentralized economic system proposed for Curaçao.",
     "summary6": "I hope we can develop a mutually-beneficial and antifragile relationship together. Thanks for your interest and please read on!",
-    "summary7": "I have adopted major technologies while they were still new: rendering 3D graphics on early PCs, creating some of the first multimedia CD products, writing early applications for the internet and the World Wide Web, developing dApps and DAOs on the blockchain, and now building AI-native applications. Several startups brought me in as their first software or front-end engineer, and I have been building software professionally since 1985.",
+    "summary7": "I have adopted major technologies while they were still new: rendering 3D graphics on early PCs, creating some of the first multimedia CD products, writing early applications for the internet and the World Wide Web, developing and selling an app for the NeXT computer, developing dApps and DAOs on the blockchain, and now building AI-native applications. Several startups brought me in as their first software or front-end engineer, and I have been building software professionally since 1985.",
     "summary8": "I'm looking for a senior, hands-on technical role in applied or forward-deployed AI, architecture, or staff-level engineering, where I can continue learning and doing things that matter. I work remotely from Costa Rica, which overlaps well with US business hours, and am happy to travel.",
     "location": {
       "address": "Alegria Village",
@@ -173,6 +173,14 @@
   ],
   "skills": [
     {
+      "name": "Product Development",
+      "priority": 0.0099,
+      "categories": [
+        "Website and Application Development"
+      ],
+      "url": ""
+    },
+    {
       "name": "Large Language Models (LLMs)",
       "priority": 0.04,
       "categories": [
@@ -194,7 +202,7 @@
     },
     {
       "name": "Software Project Management",
-      "priority": 0.024,
+      "priority": 0.02,
       "categories": [
         "Engineering Practice & Leadership"
       ],
@@ -210,7 +218,7 @@
     },
     {
       "name": "Blockchain",
-      "priority": 0.009,
+      "priority": 0.147,
       "categories": [
         "Blockchain"
       ],
@@ -360,7 +368,7 @@
     },
     {
       "name": "Agent/AI-assisted Development",
-      "priority": 0.007,
+      "priority": 0.011,
       "categories": [
         "AI"
       ],
@@ -379,7 +387,7 @@
       "url": "https://en.wikipedia.org/wiki/De-identification"
     },
     {
-      "name": "Applied AI",
+      "name": "Applied AI Development",
       "priority": 0.005,
       "categories": [
         "AI"
@@ -388,13 +396,6 @@
     {
       "name": "LLM Orchestration",
       "priority": 0.112,
-      "categories": [
-        "AI"
-      ]
-    },
-    {
-      "name": "AI Product Development",
-      "priority": 0.036,
       "categories": [
         "AI"
       ]
@@ -492,25 +493,19 @@
     },
     {
       "name": "Aurelia",
-      "priority": 3.27,
-      "categories": [
-        "Website and Application Development",
-        "Software Development Platforms"
-      ],
-      "url": "https://docs.aurelia.io/"
-    },
-    {
-      "name": "Aurelia 2",
       "priority": 0.22,
       "categories": [
         "Website and Application Development",
         "Software Development Platforms"
       ],
-      "url": "https://docs.aurelia.io/"
+      "url": "https://docs.aurelia.io/",
+      "aliases": [
+        "Aurelia 2"
+      ]
     },
     {
       "name": "TypeScript",
-      "priority": 0.015,
+      "priority": 0.012,
       "categories": [
         "Website and Application Development",
         "Software Languages"
@@ -528,7 +523,7 @@
     },
     {
       "name": "dApp Development",
-      "priority": 0.1491,
+      "priority": 0.0095,
       "categories": [
         "Website and Application Development",
         "Blockchain"
@@ -586,7 +581,7 @@
     },
     {
       "name": "DAO Development",
-      "priority": 0.14915,
+      "priority": 0.0097,
       "categories": [
         "Blockchain"
       ],
@@ -1820,8 +1815,7 @@
         "De-identification",
         "LLM APIs",
         "GitHub Copilot",
-        "Applied AI",
-        "AI Product Development",
+        "Applied AI Development",
         "LLM Orchestration",
         "Synthetic Data Generation",
         "Non-Deterministic System Testing",
@@ -1939,7 +1933,8 @@
         "Balancer Liquidity Pools",
         "Mento",
         "Celo",
-        "GitHub"
+        "GitHub",
+        "Aurelia"
       ],
       "notable": true,
       "showOnShort": false
@@ -1993,7 +1988,6 @@
         "LitProtocol",
         "Web3Modal",
         "Ceramic",
-        "Aurelia",
         "HTML",
         "i18Next",
         "Webpack",
@@ -2016,7 +2010,9 @@
         "Code Review",
         "Smart Contract Security Review",
         "Technical Interviewing",
-        "Mentoring"
+        "Mentoring",
+        "Aurelia",
+        "Product Development"
       ]
     },
     {
@@ -2047,7 +2043,6 @@
         "JavaScript",
         "Solidity",
         "Subgraph",
-        "Aurelia",
         "HTML",
         "Webpack",
         "Bootstrap",
@@ -2066,7 +2061,9 @@
         "End-to-End Product Ownership",
         "SDK/Library Design",
         "Smart Contract Deployment",
-        "Prototyping"
+        "Prototyping",
+        "Aurelia",
+        "Product Development"
       ],
       "notable": true,
       "showOnShort": true
@@ -2179,7 +2176,8 @@
         "SpecFlow",
         "VSTest",
         "Agile",
-        "TFS"
+        "TFS",
+        "Product Development"
       ],
       "notable": true,
       "showOnShort": false
@@ -2227,7 +2225,8 @@
         "Mentoring",
         "Systems Integration",
         "Client Integration",
-        "Team Leadership"
+        "Team Leadership",
+        "Product Development"
       ],
       "notable": true,
       "contract": true,
@@ -2391,7 +2390,9 @@
       "summary": "Managed team of 7 in code development and release to market of the Reader's Digest Complete Do-It-Yourself Guide multimedia CD-ROM title",
       "endDate": "1996-02",
       "highlights": [],
-      "skills": [],
+      "skills": [
+        "Product Development"
+      ],
       "notable": true,
       "showOnShort": true
     },
@@ -2405,7 +2406,9 @@
       "summary": "Wrote the core GUI engine for Julia Child's Home Cooking With Master Chefs multimedia CD-ROM title",
       "endDate": "1995-06",
       "highlights": [],
-      "skills": [],
+      "skills": [
+        "Product Development"
+      ],
       "notable": true,
       "showOnShort": false
     },
@@ -2419,7 +2422,9 @@
       "summary": "Developed software for Toolbook 3.0 and multimedia screensavers (Jurassic Park, et al.)",
       "endDate": "1994-10",
       "highlights": [],
-      "skills": [],
+      "skills": [
+        "Product Development"
+      ],
       "notable": true,
       "showOnShort": false
     },
@@ -2459,7 +2464,9 @@
       "summary": "Developed software for Clip-Art Window Shopper, an early electronic clip-art distribution application, and Presto 3D, a 3D CAD application",
       "endDate": "1989-10",
       "highlights": [],
-      "skills": [],
+      "skills": [
+        "Product Development"
+      ],
       "notable": true,
       "showOnShort": false
     },
@@ -2486,7 +2493,9 @@
       "summary": "Ported Visuals (see UNC below) to the SAS Graphical User Interface System",
       "endDate": "1987-05",
       "highlights": [],
-      "skills": [],
+      "skills": [
+        "Product Development"
+      ],
       "notable": true,
       "showOnShort": false
     },
@@ -2518,7 +2527,6 @@
         "Been through a couple iterations as technologies have changed.  Was Durandal+KnockoutJS+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core."
       ],
       "skills": [
-        "Aurelia",
         "ASP.NET Core",
         "C#",
         "JavaScript",
@@ -2543,7 +2551,8 @@
         "SHA",
         "DES",
         "System.Security.Cryptography",
-        "SPA"
+        "SPA",
+        "Aurelia"
       ],
       "notable": true,
       "showOnShort": false
@@ -2565,7 +2574,6 @@
         "Well-structured, modular code amenable to future maintenance and enhancement"
       ],
       "skills": [
-        "Aurelia",
         "TypeScript",
         "ASP.NET Core",
         "C#",
@@ -2584,7 +2592,8 @@
         "CSS",
         "Responsive",
         "TFS",
-        "SPA"
+        "SPA",
+        "Aurelia"
       ],
       "notable": false,
       "showOnShort": false

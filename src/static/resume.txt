@@ -14,17 +14,18 @@ end. My recent work is AI-native applications in which language models do the
 core work, built to be reliable despite non-deterministic models.
 
 I take a project across all its dimensions: the people it serves, the context
-it has to work in, its design and architecture, the build, and the proof that
-it works. I have worn enough hats, from Microsoft to garage startups, to
-recognize most problems before they become expensive. I have managed teams,
-but I do my best work as a hands-on technical lead and mentor.
+it has to work in, its design and architecture, the code, the build, and the
+proof that it all works. I have worn enough hats, from Microsoft to garage
+startups, to recognize most problems before they become expensive. I have
+managed teams, but I do my best work as a hands-on technical lead and mentor.
 
 I have adopted major technologies while they were still new: rendering 3D
 graphics on early PCs, creating some of the first multimedia CD products,
 writing early applications for the internet and the World Wide Web, developing
-dApps and DAOs on the blockchain, and now building AI-native applications.
-Several startups brought me in as their first software or front-end engineer,
-and I have been building software professionally since 1985.
+and selling an app for the NeXT computer, developing dApps and DAOs on the
+blockchain, and now building AI-native applications. Several startups brought
+me in as their first software or front-end engineer, and I have been building
+software professionally since 1985.
 
 I'm looking for a senior, hands-on technical role in applied or
 forward-deployed AI, architecture, or staff-level engineering, where I can
@@ -163,21 +164,21 @@ WHAT YOU CAN EXPECT FROM ME
 SKILLS AND TECHNOLOGIES
 
 AI
-  Applied AI, Agent/AI-assisted Development, AI Product Development, Large
-  Language Models (LLMs), LLM Pipeline Architecture, LLM Evaluation, LLM
-  Orchestration, Non-Deterministic System Testing, Human-in-the-Loop Design,
-  Prompt Engineering, De-identification, Responsible AI, Synthetic Data
-  Generation, Claude Code for VS Code, Claude.ai (LLM), ChatGPT (LLM), GitHub
-  Copilot, LLM APIs
+  Applied AI Development, Agent/AI-assisted Development, Large Language Models
+  (LLMs), LLM Pipeline Architecture, LLM Evaluation, LLM Orchestration,
+  Non-Deterministic System Testing, Human-in-the-Loop Design, Prompt
+  Engineering, De-identification, Responsible AI, Synthetic Data Generation,
+  Claude Code for VS Code, Claude.ai (LLM), ChatGPT (LLM), GitHub Copilot, LLM
+  APIs
 
 Engineering Practice & Leadership
-  End-to-End Product Ownership, Technical Leadership, Team Leadership,
-  Software Project Management, Decision and Risk Analysis, Mentoring, Domain
+  End-to-End Product Ownership, Technical Leadership, Software Project
+  Management, Team Leadership, Decision and Risk Analysis, Mentoring, Domain
   Modeling, Technical Interviewing, Requirements Analysis, Code Review,
   Prototyping, Client Integration
 
 Blockchain
-  Blockchain, Cryptocurrencies, dApp Development, DAO Development, DAO
+  dApp Development, DAO Development, Blockchain, Cryptocurrencies, DAO
   Governance Systems, Liquidity Bootstrapping Pools, Balancer Liquidity Pools,
   DeFi, ReFi, Web3, Ethereum, Solidity, Wallets, Gnosis Safe, Metamask,
   WalletConnect, Web3Modal, ethers.js, web3.js, IPFS, Subgraph, Smart Contract
@@ -185,14 +186,14 @@ Blockchain
   Defender, Ceramic, 3Box, ENS, Mento, LitProtocol
 
 Website and Application Development
-  TypeScript, dApp Development, Web3, Wallets, Aurelia 2, AngularJS, React,
-  SPA, Web Components, MVVM, API Design, SDK/Library Design, Systems
-  Integration, OpenAPI, Exchange API Integration, Fastify, JavaScript,
+  dApp Development, Product Development, TypeScript, Web3, Wallets, Aurelia,
+  AngularJS, React, SPA, Web Components, MVVM, API Design, SDK/Library Design,
+  Systems Integration, OpenAPI, Exchange API Integration, Fastify, JavaScript,
   TailWind CSS, Axios, Node.js, Awilix, TSyringe, Vite, HTML, CSS, Custom
   (HTML) Elements, Shadow DOM, HTML Templates, Data Binding, Observables,
   Pub/Sub Pattern, RxJS, SASS, Responsive UIs, Service-Oriented Architecture
-  (SOA), Aurelia, FluentUI Web Components, Webpack, Rollup, C#, Markdown, XML,
-  D3.js, Highcharts, ASP.NET Core, MVC, WebApi, ASP.NET Identity, Razor, Ajax,
+  (SOA), FluentUI Web Components, Webpack, Rollup, C#, Markdown, XML, D3.js,
+  Highcharts, ASP.NET Core, MVC, WebApi, ASP.NET Identity, Razor, Ajax,
   jQuery, Bootstrap, RequireJS, C++, Java, KnockoutJS, DurandalJs, ASP.NET,
   Enterprise Scale Web Applications, Telerik, Bootstrap Material Design, XSLT,
   XML Schema Definition (XSD), JSPM, SystemJS, WCF, WWF, Microsoft
@@ -214,7 +215,7 @@ Module Bundling and Loading
   Vite, Webpack, Rollup, RequireJS, JSPM, SystemJS
 
 Software Development Platforms
-  Aurelia 2, Node.js, Aurelia, .NET
+  Aurelia, Node.js, .NET
 
 Test Frameworks
   Vitest, Jasmine, Jest, Karma, Moq, MSTest, NUnit, Selenium, SpecFlow, Unity
@@ -295,8 +296,8 @@ Highlights:
   structurally incapable of holding internal findings
 
 Skills / Technologies:
-Applied AI, Agent/AI-assisted Development, End-to-End Product Ownership,
-TypeScript, AI Product Development, Large Language Models (LLMs), LLM Pipeline
+Applied AI Development, End-to-End Product Ownership, Agent/AI-assisted
+Development, TypeScript, Large Language Models (LLMs), LLM Pipeline
 Architecture, LLM Evaluation, LLM Orchestration, Non-Deterministic System
 Testing, Human-in-the-Loop Design, Prompt Engineering, De-identification,
 Responsible AI, Synthetic Data Generation, Claude Code for VS Code, Claude.ai
@@ -325,8 +326,8 @@ Highlights:
   VS Code
 
 Skills / Technologies:
-Agent/AI-assisted Development, Blockchain, End-to-End Product Ownership,
-TypeScript, GitHub Copilot, Cryptocurrencies, DeFi, Aurelia 2, MVVM, TailWind
+End-to-End Product Ownership, Agent/AI-assisted Development, TypeScript,
+GitHub Copilot, Blockchain, Cryptocurrencies, DeFi, Aurelia 2, MVVM, TailWind
 CSS, Axios, Vite, FluentUI Web Components, GitHub
 
 
@@ -352,8 +353,8 @@ Highlights:
 - Axios for exchange-API communications
 
 Skills / Technologies:
-Agent/AI-assisted Development, Blockchain, End-to-End Product Ownership,
-TypeScript, GitHub Copilot, Cryptocurrencies, DeFi, API Design, OpenAPI,
+End-to-End Product Ownership, Agent/AI-assisted Development, TypeScript,
+GitHub Copilot, Blockchain, Cryptocurrencies, DeFi, API Design, OpenAPI,
 Exchange API Integration, Fastify, Axios, Node.js, TSyringe, Vite, GitHub
 
 
@@ -384,7 +385,7 @@ Highlights:
 
 Skills / Technologies:
 TypeScript, Balancer Liquidity Pools, DeFi, ReFi, Ethereum, Solidity,
-ethers.js, Celo, Defender, Mento, JavaScript, GitHub
+ethers.js, Aurelia, Celo, Defender, Mento, JavaScript, GitHub
 
 
 Senior Web3 Application Developer, Software Development Team Lead
@@ -433,14 +434,14 @@ Highlights:
   (https://www.prime.xyz)
 
 Skills / Technologies:
-Blockchain, End-to-End Product Ownership, Technical Leadership, TypeScript,
-Mentoring, Cryptocurrencies, dApp Development, DAO Development, DAO Governance
-Systems, Liquidity Bootstrapping Pools, Balancer Liquidity Pools, DeFi, ReFi,
-Web3, Ethereum, Solidity, Wallets, Gnosis Safe, Metamask, WalletConnect,
-Web3Modal, ethers.js, web3.js, IPFS, Subgraph, React, SPA, Technical
-Interviewing, Code Review, Smart Contract Security Review, Defender, Ceramic,
-ENS, LitProtocol, JavaScript, Node.js, Vite, HTML, CSS, SASS, Responsive,
-Aurelia, Webpack, Rollup, i18Next, GitHub
+dApp Development, DAO Development, Product Development, End-to-End Product
+Ownership, TypeScript, Technical Leadership, Mentoring, Blockchain,
+Cryptocurrencies, DAO Governance Systems, Liquidity Bootstrapping Pools,
+Balancer Liquidity Pools, DeFi, ReFi, Web3, Ethereum, Solidity, Wallets,
+Gnosis Safe, Metamask, WalletConnect, Web3Modal, ethers.js, web3.js, IPFS,
+Subgraph, Aurelia, React, SPA, Technical Interviewing, Code Review, Smart
+Contract Security Review, Defender, Ceramic, ENS, LitProtocol, JavaScript,
+Node.js, Vite, HTML, CSS, SASS, Responsive, Webpack, Rollup, i18Next, GitHub
 
 
 Senior Web3 Application Developer
@@ -480,11 +481,11 @@ Highlights:
   facilitate the creation of DAOstack DAOs
 
 Skills / Technologies:
-Blockchain, End-to-End Product Ownership, TypeScript, dApp Development, DAO
-Development, DAO Governance Systems, Web3, Ethereum, Solidity, Wallets,
-Subgraph, React, SPA, Prototyping, Smart Contract Deployment, 3Box,
-SDK/Library Design, JavaScript, Node.js, HTML, CSS, SASS, Responsive, Aurelia,
-Webpack, jQuery, Bootstrap, Bootstrap Material Design, GitHub
+dApp Development, DAO Development, Product Development, End-to-End Product
+Ownership, TypeScript, Blockchain, DAO Governance Systems, Web3, Ethereum,
+Solidity, Wallets, Subgraph, Aurelia, React, SPA, Prototyping, Smart Contract
+Deployment, 3Box, SDK/Library Design, JavaScript, Node.js, HTML, CSS, SASS,
+Responsive, Webpack, jQuery, Bootstrap, Bootstrap Material Design, GitHub
 
 
 Senior Web Developer
@@ -518,7 +519,7 @@ Highlights:
 - Well-structured, modular code amenable to future maintenance and enhancement
 
 Skills / Technologies:
-TypeScript, SPA, JavaScript, HTML, CSS, Responsive, Aurelia, C#, ASP.NET Core,
+TypeScript, Aurelia, SPA, JavaScript, HTML, CSS, Responsive, C#, ASP.NET Core,
 WebApi, ASP.NET Identity, Ajax, jQuery, Bootstrap, Microsoft SQL Server,
 T-SQL, Unity, Entity Framework Core, Azure, TFS
 
@@ -609,7 +610,7 @@ Highlights:
   Durandal+KnockoutJS+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core.
 
 Skills / Technologies:
-crypto-js, SPA, JavaScript, HTML, CSS, Aurelia, Webpack, C#, ASP.NET Core,
+crypto-js, Aurelia, SPA, JavaScript, HTML, CSS, Webpack, C#, ASP.NET Core,
 MVC, WebAPI, Identity, Ajax, jQuery, Bootstrap, RequireJS, KnockoutJS, SQL
 Server, T-SQL, MsTest, XUnit.NET, DES, Encryption, SHA,
 System.Security.Cryptography, entity framework
@@ -645,9 +646,9 @@ Highlights:
   prototype was written against Selenium to drive automated GUI tests
 
 Skills / Technologies:
-JavaScript, HTML, CSS, C#, MVC, jQuery, KnockoutJS, ASP.NET, Telerik, MEF,
-ADO, nHibernate, Agile, Moq, Selenium, SpecFlow, Unity, VSTest, Enterprise
-Framework, TFS
+Product Development, JavaScript, HTML, CSS, C#, MVC, jQuery, KnockoutJS,
+ASP.NET, Telerik, MEF, ADO, nHibernate, Agile, Moq, Selenium, SpecFlow, Unity,
+VSTest, Enterprise Framework, TFS
 
 
 Senior Lead Web Developer, Manager Partner Integrations
@@ -682,10 +683,10 @@ Highlights:
   the development of automated interfaces
 
 Skills / Technologies:
-Team Leadership, Mentoring, Client Integration, Systems Integration,
-JavaScript, HTML, CSS, C#, XML, MVC, jQuery, ASP.NET, XSLT, XSD, WCF, WWF, SQL
-Server, T-SQL, LINQ, Agile, Moq, MSTest, NUnit, Entity Framework, Enterprise
-Framework, TFS
+Product Development, Team Leadership, Mentoring, Client Integration, Systems
+Integration, JavaScript, HTML, CSS, C#, XML, MVC, jQuery, ASP.NET, XSLT, XSD,
+WCF, WWF, SQL Server, T-SQL, LINQ, Agile, Moq, MSTest, NUnit, Entity
+Framework, Enterprise Framework, TFS
 
 
 Web Application Developer
@@ -820,6 +821,9 @@ Description:
 Managed team of 7 in code development and release to market of the Reader's
 Digest Complete Do-It-Yourself Guide multimedia CD-ROM title
 
+Skills / Technologies:
+Product Development
+
 
 Founder & Developer - Mouthing Flowers
 Independent Software Developer | 02/1995 - 09/1999
@@ -841,6 +845,9 @@ Description:
 Wrote the core GUI engine for Julia Child's Home Cooking With Master Chefs
 multimedia CD-ROM title
 
+Skills / Technologies:
+Product Development
+
 
 Software Engineer
 Asymetrix Corporation | 04/1992 - 10/1994
@@ -849,6 +856,9 @@ https://home.click2learn.com/showcase
 Description:
 Developed software for Toolbook 3.0 and multimedia screensavers (Jurassic
 Park, et al.)
+
+Skills / Technologies:
+Product Development
 
 
 Software Engineer
@@ -874,6 +884,9 @@ Description:
 Developed software for Clip-Art Window Shopper, an early electronic clip-art
 distribution application, and Presto 3D, a 3D CAD application
 
+Skills / Technologies:
+Product Development
+
 
 Software Engineer
 University of North Carolina | 11/1988 - 12/1989
@@ -898,6 +911,9 @@ https://www.sas.com/
 
 Description:
 Ported Visuals (see UNC below) to the SAS Graphical User Interface System
+
+Skills / Technologies:
+Product Development
 
 
 Software Engineer
