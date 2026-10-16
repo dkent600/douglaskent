@@ -1,6 +1,6 @@
 import { customElement } from "aurelia";
 
-import { adminStore, type IEditableSkill } from "../admin-store";
+import { adminStore, type IEditableCompany, type IEditableSkill, type ISkillUse } from "../admin-store";
 
 import template from "./skills-editor.html";
 
@@ -123,6 +123,19 @@ export class SkillsEditor {
    */
   blockers(skill: IEditableSkill, _revision?: number): Array<string> {
     return this.store.companiesUsingSkill(skill);
+  }
+
+  /**
+   * The positions shown under each row. `_revision` is unused, as in `blockers`; it makes a
+   * rename here, which can change what matches, re-evaluate the binding.
+   */
+  positions(skill: IEditableSkill, _revision?: number): Array<ISkillUse> {
+    return this.store.positionsUsingSkill(skill);
+  }
+
+  /** Dates as the companies tab shows them. */
+  dates(company: IEditableCompany): string {
+    return [company.startDate, company.endDate].filter(Boolean).join(" – ");
   }
 
   remove(skill: IEditableSkill): void {

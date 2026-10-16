@@ -227,6 +227,23 @@
   padding: 0.4rem 0.5rem;
 }
 
+/** The skills tab: the positions that list a skill, under its head and always shown. */
+.row-positions {
+  font-size: 0.85em;
+  padding: 0 0.5rem 0.4rem 1.25rem;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Already at the reduced size; `.hint` would shrink it again.
+  .hint {
+    font-size: inherit;
+  }
+}
+
 .ordinal {
   background: var(--sunken);
   border-radius: 4px;

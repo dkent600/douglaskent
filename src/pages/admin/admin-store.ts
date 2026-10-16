@@ -46,6 +46,13 @@ export interface IEditableSkill {
   hide?: boolean;
 }
 
+/** One work entry that lists a skill. See `AdminStore.positionsUsingSkill`. */
+export interface ISkillUse {
+  company: IEditableCompany;
+  ordinal: number;
+  via: string | null;
+}
+
 export interface IEditableProfile {
   network: string;
   url: string;
@@ -409,6 +416,31 @@ export class AdminStore {
   public companiesUsingSkill(skill: IEditableSkill): Array<string> {
     const keys = new Set([skill.name.toLowerCase(), ...(skill.aliases ?? []).map((alias) => alias.toLowerCase())]);
     return this.companies.filter((company) => (company.skills ?? []).some((name) => keys.has(name.toLowerCase()))).map((company) => company.company);
+  }
+
+  /**
+   * The work entries that list this skill, by name or by any alias, in `work[]` order.
+   * `ordinal` is the entry's number on the companies tab, which is what tells apart two
+   * entries with the same company, position and dates. `via` is the alias as the entry
+   * spells it when that is what matched, and null when the entry uses the name. Matching
+   * ignores case, as `History` does.
+   */
+  public positionsUsingSkill(skill: IEditableSkill): Array<ISkillUse> {
+    const name = skill.name.toLowerCase();
+    const aliases = new Set((skill.aliases ?? []).map((alias) => alias.toLowerCase()));
+    const uses: Array<ISkillUse> = [];
+    this.companies.forEach((company, index) => {
+      const listed = company.skills ?? [];
+      if (listed.some((entry) => entry.toLowerCase() === name)) {
+        uses.push({ company, ordinal: index + 1, via: null });
+      } else {
+        const alias = listed.find((entry) => aliases.has(entry.toLowerCase()));
+        if (alias !== undefined) {
+          uses.push({ company, ordinal: index + 1, via: alias });
+        }
+      }
+    });
+    return uses;
   }
 
   public skillsUsingCategory(category: string): Array<string> {

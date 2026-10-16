@@ -33,6 +33,21 @@
         </span>
       </div>
 
+      <!-- Computed once per row: the lookup walks every company, and both the `if` and the repeat need it. -->
+      <let uses.bind="positions(skill, store.revision)"></let>
+      <div class="row-positions">
+        <ul if.bind="uses.length">
+          <!-- Company first: positions can contain commas ("Developer, Team Lead"). The number is the companies tab's. -->
+          <li repeat.for="use of uses">
+            <span class="hint">${use.ordinal}.</span>
+            ${use.company.company || '(no company)'} &mdash; ${use.company.position || '(no position)'}
+            <span class="hint">&middot; ${dates(use.company)}</span>
+            <span class="hint" if.bind="use.via"> &middot; as &ldquo;${use.via}&rdquo;</span>
+          </li>
+        </ul>
+        <span class="hint" else>In no position</span>
+      </div>
+
       <div class="row-body" if.bind="editing === skill">
         <div class="grid">
           <label>Name <span class="hint">renaming updates every company that references it</span>
