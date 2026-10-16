@@ -174,7 +174,7 @@
   "skills": [
     {
       "name": "Large Language Models (LLMs)",
-      "priority": 0.116,
+      "priority": 0.04,
       "categories": [
         "AI"
       ],
@@ -185,7 +185,7 @@
     },
     {
       "name": "Decision and Risk Analysis",
-      "priority": 1,
+      "priority": 0.025,
       "categories": [
         "Engineering Practice & Leadership",
         "Development Processes"
@@ -194,7 +194,7 @@
     },
     {
       "name": "Software Project Management",
-      "priority": 1,
+      "priority": 0.024,
       "categories": [
         "Engineering Practice & Leadership"
       ],
@@ -202,7 +202,7 @@
     },
     {
       "name": "Cryptocurrencies",
-      "priority": 0.1495,
+      "priority": 0.14905,
       "categories": [
         "Blockchain"
       ],
@@ -210,7 +210,7 @@
     },
     {
       "name": "Blockchain",
-      "priority": 0.149,
+      "priority": 0.009,
       "categories": [
         "Blockchain"
       ],
@@ -234,7 +234,7 @@
     },
     {
       "name": "ChatGPT (LLM)",
-      "priority": 1.12,
+      "priority": 0.14,
       "categories": [
         "AI"
       ],
@@ -242,7 +242,7 @@
     },
     {
       "name": "Claude.ai (LLM)",
-      "priority": 1.1,
+      "priority": 0.13,
       "categories": [
         "AI"
       ],
@@ -250,7 +250,7 @@
     },
     {
       "name": "Claude Code for VS Code",
-      "priority": 0.31,
+      "priority": 0.119,
       "categories": [
         "AI"
       ],
@@ -274,7 +274,7 @@
     },
     {
       "name": "MVVM",
-      "priority": 0.27,
+      "priority": 0.255,
       "categories": [
         "Website and Application Development"
       ],
@@ -306,7 +306,7 @@
     },
     {
       "name": "GitHub Copilot",
-      "priority": 1.11,
+      "priority": 0.145,
       "categories": [
         "AI"
       ],
@@ -322,7 +322,7 @@
     },
     {
       "name": "Prompt Engineering",
-      "priority": 0.14,
+      "priority": 0.117,
       "categories": [
         "AI"
       ],
@@ -352,7 +352,7 @@
     },
     {
       "name": "Human-in-the-Loop Design",
-      "priority": 0.13,
+      "priority": 0.115,
       "categories": [
         "AI"
       ],
@@ -360,7 +360,7 @@
     },
     {
       "name": "Agent/AI-assisted Development",
-      "priority": 0.17,
+      "priority": 0.007,
       "categories": [
         "AI"
       ],
@@ -371,7 +371,7 @@
     },
     {
       "name": "De-identification",
-      "priority": 0.19,
+      "priority": 0.118,
       "categories": [
         "AI",
         "Cryptography"
@@ -380,70 +380,70 @@
     },
     {
       "name": "Applied AI",
-      "priority": 0.115,
+      "priority": 0.005,
       "categories": [
         "AI"
       ]
     },
     {
       "name": "LLM Orchestration",
-      "priority": 1.01,
+      "priority": 0.112,
       "categories": [
         "AI"
       ]
     },
     {
       "name": "AI Product Development",
-      "priority": 1.02,
+      "priority": 0.036,
       "categories": [
         "AI"
       ]
     },
     {
       "name": "Non-Deterministic System Testing",
-      "priority": 1.03,
+      "priority": 0.113,
       "categories": [
         "AI"
       ]
     },
     {
       "name": "Synthetic Data Generation",
-      "priority": 1.04,
+      "priority": 0.1185,
       "categories": [
         "AI"
       ]
     },
     {
       "name": "Responsible AI",
-      "priority": 1.05,
+      "priority": 0.1182,
       "categories": [
         "AI"
       ]
     },
     {
       "name": "End-to-End Product Ownership",
-      "priority": 0.203,
+      "priority": 0.01,
       "categories": [
         "Engineering Practice & Leadership"
       ]
     },
     {
       "name": "Technical Leadership",
-      "priority": 0.206,
+      "priority": 0.013,
       "categories": [
         "Engineering Practice & Leadership"
       ]
     },
     {
       "name": "Team Leadership",
-      "priority": 1.5,
+      "priority": 0.022,
       "categories": [
         "Engineering Practice & Leadership"
       ]
     },
     {
       "name": "Mentoring",
-      "priority": 1.51,
+      "priority": 0.026,
       "categories": [
         "Engineering Practice & Leadership"
       ]
@@ -464,7 +464,7 @@
     },
     {
       "name": "Domain Modeling",
-      "priority": 1.54,
+      "priority": 0.26,
       "categories": [
         "Engineering Practice & Leadership"
       ]
@@ -510,7 +510,7 @@
     },
     {
       "name": "TypeScript",
-      "priority": 0.12,
+      "priority": 0.015,
       "categories": [
         "Website and Application Development",
         "Software Languages"
@@ -519,7 +519,7 @@
     },
     {
       "name": "Web3",
-      "priority": 0.18,
+      "priority": 0.1492,
       "categories": [
         "Website and Application Development",
         "Blockchain"
@@ -527,8 +527,8 @@
       "url": "https://en.wikipedia.org/wiki/Web3"
     },
     {
-      "name": "dApps",
-      "priority": 0.2,
+      "name": "dApp Development",
+      "priority": 0.1491,
       "categories": [
         "Website and Application Development",
         "Blockchain"
@@ -537,7 +537,7 @@
     },
     {
       "name": "Wallets",
-      "priority": 0.26,
+      "priority": 0.2,
       "categories": [
         "Website and Application Development",
         "Blockchain"
@@ -546,7 +546,7 @@
     },
     {
       "name": "Ethereum",
-      "priority": 0.16,
+      "priority": 0.1497,
       "categories": [
         "Blockchain"
       ],
@@ -570,7 +570,7 @@
     },
     {
       "name": "ReFi",
-      "priority": 0.28,
+      "priority": 0.14919,
       "categories": [
         "Blockchain"
       ],
@@ -578,15 +578,15 @@
     },
     {
       "name": "DeFi",
-      "priority": 0.24,
+      "priority": 0.14918,
       "categories": [
         "Blockchain"
       ],
       "url": "https://en.wikipedia.org/wiki/Decentralized_finance"
     },
     {
-      "name": "DAOs",
-      "priority": 0.23,
+      "name": "DAO Development",
+      "priority": 0.14915,
       "categories": [
         "Blockchain"
       ],
@@ -594,7 +594,7 @@
     },
     {
       "name": "DAO Governance Systems",
-      "priority": 0.235,
+      "priority": 0.14916,
       "categories": [
         "Blockchain"
       ],
@@ -610,7 +610,7 @@
     },
     {
       "name": "web3.js",
-      "priority": 2.11,
+      "priority": 0.211,
       "categories": [
         "Blockchain"
       ],
@@ -627,7 +627,7 @@
     },
     {
       "name": "Metamask",
-      "priority": 2.24,
+      "priority": 0.205,
       "categories": [
         "Blockchain"
       ],
@@ -635,7 +635,7 @@
     },
     {
       "name": "WalletConnect",
-      "priority": 2.25,
+      "priority": 0.207,
       "categories": [
         "Blockchain"
       ],
@@ -643,7 +643,7 @@
     },
     {
       "name": "Web3Modal",
-      "priority": 2.26,
+      "priority": 0.2075,
       "categories": [
         "Blockchain"
       ],
@@ -651,7 +651,7 @@
     },
     {
       "name": "Gnosis Safe",
-      "priority": 2.16,
+      "priority": 0.203,
       "categories": [
         "Blockchain"
       ],
@@ -687,7 +687,7 @@
     },
     {
       "name": "Balancer Liquidity Pools",
-      "priority": 2.14,
+      "priority": 0.149175,
       "categories": [
         "Blockchain"
       ],
@@ -695,7 +695,7 @@
     },
     {
       "name": "Liquidity Bootstrapping Pools",
-      "priority": 0.33,
+      "priority": 0.14917,
       "categories": [
         "Blockchain"
       ],
@@ -703,7 +703,7 @@
     },
     {
       "name": "IPFS",
-      "priority": 0.3,
+      "priority": 0.212,
       "categories": [
         "Blockchain",
         "Data Stores",
@@ -739,7 +739,7 @@
     },
     {
       "name": "Smart Contract Security Review",
-      "priority": 2.05,
+      "priority": 1.555,
       "categories": [
         "Blockchain"
       ]
@@ -901,7 +901,7 @@
     },
     {
       "name": "Subgraph",
-      "priority": 0.32,
+      "priority": 0.213,
       "categories": [
         "Blockchain"
       ],
@@ -1096,7 +1096,7 @@
     },
     {
       "name": "crypto-js",
-      "priority": 4.38,
+      "priority": 0.2111,
       "categories": [
         "Cryptography"
       ],
@@ -1180,7 +1180,7 @@
     },
     {
       "name": "React",
-      "priority": 3.26,
+      "priority": 0.228,
       "categories": [
         "Website and Application Development"
       ],
@@ -1188,7 +1188,7 @@
     },
     {
       "name": "AngularJS",
-      "priority": 3.28,
+      "priority": 0.225,
       "categories": [
         "Website and Application Development"
       ],
@@ -1223,7 +1223,7 @@
     },
     {
       "name": "SPA",
-      "priority": 0.29,
+      "priority": 0.23,
       "aliases": [
         "Single Page Application"
       ],
@@ -1971,9 +1971,9 @@
         "As products, these applications are innovative and impressive. Read more about them at <a href=\"https://www.kolektivo.network/\" target=\"_blank\">Kolektivo</a> and <a href=\"https://www.prime.xyz\" target=\"_blank\">The Prime Suite</a> "
       ],
       "skills": [
-        "dApps",
+        "dApp Development",
         "Ethereum",
-        "DAOs",
+        "DAO Development",
         "DAO Governance Systems",
         "Defender",
         "Web3",
@@ -2038,9 +2038,9 @@
         "Implemented <a href=\"https://github.com/daostack/vanille\" target=\"_blank\">Vanille</a>, open-source software that leverage <a href=\"https://github.com/daostack/arc\" target=\"_blank\">DAOStack Arc</a> to facilitate the creation of DAOstack DAOs"
       ],
       "skills": [
-        "dApps",
+        "dApp Development",
         "Ethereum",
-        "DAOs",
+        "DAO Development",
         "DAO Governance Systems",
         "Web3",
         "TypeScript",

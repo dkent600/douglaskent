@@ -163,35 +163,35 @@ WHAT YOU CAN EXPECT FROM ME
 SKILLS AND TECHNOLOGIES
 
 AI
-  LLM Pipeline Architecture, LLM Evaluation, Applied AI, Large Language Models
-  (LLMs), Human-in-the-Loop Design, Prompt Engineering, Agent/AI-assisted
-  Development, De-identification, Claude Code for VS Code, LLM Orchestration,
-  AI Product Development, Non-Deterministic System Testing, Synthetic Data
-  Generation, Responsible AI, LLM APIs, Claude.ai (LLM), GitHub Copilot,
-  ChatGPT (LLM)
+  Applied AI, Agent/AI-assisted Development, AI Product Development, Large
+  Language Models (LLMs), LLM Pipeline Architecture, LLM Evaluation, LLM
+  Orchestration, Non-Deterministic System Testing, Human-in-the-Loop Design,
+  Prompt Engineering, De-identification, Responsible AI, Synthetic Data
+  Generation, Claude Code for VS Code, Claude.ai (LLM), ChatGPT (LLM), GitHub
+  Copilot, LLM APIs
 
 Engineering Practice & Leadership
-  End-to-End Product Ownership, Technical Leadership, Decision and Risk
-  Analysis, Software Project Management, Team Leadership, Mentoring, Technical
-  Interviewing, Requirements Analysis, Domain Modeling, Code Review,
+  End-to-End Product Ownership, Technical Leadership, Team Leadership,
+  Software Project Management, Decision and Risk Analysis, Mentoring, Domain
+  Modeling, Technical Interviewing, Requirements Analysis, Code Review,
   Prototyping, Client Integration
 
 Blockchain
-  Blockchain, Cryptocurrencies, Solidity, Ethereum, Web3, dApps, ethers.js,
-  DAOs, DAO Governance Systems, DeFi, Wallets, ReFi, IPFS, Subgraph, Liquidity
-  Bootstrapping Pools, Smart Contract Security Review, Smart Contract
-  Deployment, web3.js, Celo, Arbitrum, Balancer Liquidity Pools, Gnosis Safe,
-  OpenZeppelin Defender, Ceramic, 3Box, ENS, Mento, LitProtocol, Metamask,
-  WalletConnect, Web3Modal
+  Blockchain, Cryptocurrencies, dApp Development, DAO Development, DAO
+  Governance Systems, Liquidity Bootstrapping Pools, Balancer Liquidity Pools,
+  DeFi, ReFi, Web3, Ethereum, Solidity, Wallets, Gnosis Safe, Metamask,
+  WalletConnect, Web3Modal, ethers.js, web3.js, IPFS, Subgraph, Smart Contract
+  Security Review, Smart Contract Deployment, Celo, Arbitrum, OpenZeppelin
+  Defender, Ceramic, 3Box, ENS, Mento, LitProtocol
 
 Website and Application Development
-  TypeScript, Web3, dApps, Aurelia 2, Web Components, Wallets, MVVM, SPA, API
-  Design, SDK/Library Design, Systems Integration, OpenAPI, Exchange API
-  Integration, Fastify, JavaScript, TailWind CSS, Axios, Node.js, Awilix,
-  TSyringe, Vite, HTML, CSS, Custom (HTML) Elements, Shadow DOM, HTML
-  Templates, Data Binding, Observables, Pub/Sub Pattern, RxJS, SASS,
-  Responsive UIs, Service-Oriented Architecture (SOA), React, Aurelia,
-  AngularJS, FluentUI Web Components, Webpack, Rollup, C#, Markdown, XML,
+  TypeScript, dApp Development, Web3, Wallets, Aurelia 2, AngularJS, React,
+  SPA, Web Components, MVVM, API Design, SDK/Library Design, Systems
+  Integration, OpenAPI, Exchange API Integration, Fastify, JavaScript,
+  TailWind CSS, Axios, Node.js, Awilix, TSyringe, Vite, HTML, CSS, Custom
+  (HTML) Elements, Shadow DOM, HTML Templates, Data Binding, Observables,
+  Pub/Sub Pattern, RxJS, SASS, Responsive UIs, Service-Oriented Architecture
+  (SOA), Aurelia, FluentUI Web Components, Webpack, Rollup, C#, Markdown, XML,
   D3.js, Highcharts, ASP.NET Core, MVC, WebApi, ASP.NET Identity, Razor, Ajax,
   jQuery, Bootstrap, RequireJS, C++, Java, KnockoutJS, DurandalJs, ASP.NET,
   Enterprise Scale Web Applications, Telerik, Bootstrap Material Design, XSLT,
@@ -228,7 +228,7 @@ Website and Application Hosting
   IPFS, Node.js, JRun, IIS
 
 Cryptography
-  De-identification, LitProtocol, crypto-js, DES, Encryption, SHA-2, .NET
+  De-identification, crypto-js, LitProtocol, DES, Encryption, SHA-2, .NET
   System.Security.Cryptography
 
 Scripting
@@ -295,14 +295,14 @@ Highlights:
   structurally incapable of holding internal findings
 
 Skills / Technologies:
-LLM Pipeline Architecture, LLM Evaluation, Applied AI, Large Language Models
-(LLMs), TypeScript, Human-in-the-Loop Design, Prompt Engineering,
-Agent/AI-assisted Development, De-identification, End-to-End Product
-Ownership, Aurelia 2, Claude Code for VS Code, LLM Orchestration, AI Product
-Development, Non-Deterministic System Testing, Synthetic Data Generation,
-Responsible AI, LLM APIs, Claude.ai (LLM), GitHub Copilot, ChatGPT (LLM),
-Requirements Analysis, Domain Modeling, Fastify, TailWind CSS, Axios, Node.js,
-Awilix, Vite, HTML, Visual Studio Code, Vitest, NPM
+Applied AI, Agent/AI-assisted Development, End-to-End Product Ownership,
+TypeScript, AI Product Development, Large Language Models (LLMs), LLM Pipeline
+Architecture, LLM Evaluation, LLM Orchestration, Non-Deterministic System
+Testing, Human-in-the-Loop Design, Prompt Engineering, De-identification,
+Responsible AI, Synthetic Data Generation, Claude Code for VS Code, Claude.ai
+(LLM), ChatGPT (LLM), GitHub Copilot, Aurelia 2, Domain Modeling, LLM APIs,
+Requirements Analysis, Fastify, TailWind CSS, Axios, Node.js, Awilix, Vite,
+HTML, Visual Studio Code, Vitest, NPM
 
 
 Applied Blockchain Software Engineer & Architect
@@ -325,8 +325,8 @@ Highlights:
   VS Code
 
 Skills / Technologies:
-TypeScript, Blockchain, Cryptocurrencies, Agent/AI-assisted Development,
-End-to-End Product Ownership, Aurelia 2, DeFi, MVVM, GitHub Copilot, TailWind
+Agent/AI-assisted Development, Blockchain, End-to-End Product Ownership,
+TypeScript, GitHub Copilot, Cryptocurrencies, DeFi, Aurelia 2, MVVM, TailWind
 CSS, Axios, Vite, FluentUI Web Components, GitHub
 
 
@@ -352,8 +352,8 @@ Highlights:
 - Axios for exchange-API communications
 
 Skills / Technologies:
-TypeScript, Blockchain, Cryptocurrencies, Agent/AI-assisted Development,
-End-to-End Product Ownership, DeFi, GitHub Copilot, API Design, OpenAPI,
+Agent/AI-assisted Development, Blockchain, End-to-End Product Ownership,
+TypeScript, GitHub Copilot, Cryptocurrencies, DeFi, API Design, OpenAPI,
 Exchange API Integration, Fastify, Axios, Node.js, TSyringe, Vite, GitHub
 
 
@@ -383,8 +383,8 @@ Highlights:
 - Reported the prices of cUSD, kCur and kG price to smart contract Oracles
 
 Skills / Technologies:
-TypeScript, Solidity, Ethereum, ethers.js, DeFi, ReFi, Celo, Balancer
-Liquidity Pools, Defender, Mento, JavaScript, GitHub
+TypeScript, Balancer Liquidity Pools, DeFi, ReFi, Ethereum, Solidity,
+ethers.js, Celo, Defender, Mento, JavaScript, GitHub
 
 
 Senior Web3 Application Developer, Software Development Team Lead
@@ -433,14 +433,14 @@ Highlights:
   (https://www.prime.xyz)
 
 Skills / Technologies:
-TypeScript, Blockchain, Cryptocurrencies, Solidity, Ethereum, Web3, dApps,
-End-to-End Product Ownership, Technical Leadership, ethers.js, DAOs, DAO
-Governance Systems, DeFi, Wallets, ReFi, SPA, IPFS, Subgraph, Liquidity
-Bootstrapping Pools, Mentoring, Technical Interviewing, Code Review, Smart
-Contract Security Review, web3.js, Balancer Liquidity Pools, Gnosis Safe,
-Defender, Ceramic, ENS, LitProtocol, Metamask, WalletConnect, Web3Modal,
-JavaScript, Node.js, Vite, HTML, CSS, SASS, Responsive, React, Aurelia,
-Webpack, Rollup, i18Next, GitHub
+Blockchain, End-to-End Product Ownership, Technical Leadership, TypeScript,
+Mentoring, Cryptocurrencies, dApp Development, DAO Development, DAO Governance
+Systems, Liquidity Bootstrapping Pools, Balancer Liquidity Pools, DeFi, ReFi,
+Web3, Ethereum, Solidity, Wallets, Gnosis Safe, Metamask, WalletConnect,
+Web3Modal, ethers.js, web3.js, IPFS, Subgraph, React, SPA, Technical
+Interviewing, Code Review, Smart Contract Security Review, Defender, Ceramic,
+ENS, LitProtocol, JavaScript, Node.js, Vite, HTML, CSS, SASS, Responsive,
+Aurelia, Webpack, Rollup, i18Next, GitHub
 
 
 Senior Web3 Application Developer
@@ -480,11 +480,11 @@ Highlights:
   facilitate the creation of DAOstack DAOs
 
 Skills / Technologies:
-TypeScript, Blockchain, Solidity, Ethereum, Web3, dApps, End-to-End Product
-Ownership, DAOs, DAO Governance Systems, Wallets, SPA, Subgraph, Prototyping,
-Smart Contract Deployment, 3Box, SDK/Library Design, JavaScript, Node.js,
-HTML, CSS, SASS, Responsive, React, Aurelia, Webpack, jQuery, Bootstrap,
-Bootstrap Material Design, GitHub
+Blockchain, End-to-End Product Ownership, TypeScript, dApp Development, DAO
+Development, DAO Governance Systems, Web3, Ethereum, Solidity, Wallets,
+Subgraph, React, SPA, Prototyping, Smart Contract Deployment, 3Box,
+SDK/Library Design, JavaScript, Node.js, HTML, CSS, SASS, Responsive, Aurelia,
+Webpack, jQuery, Bootstrap, Bootstrap Material Design, GitHub
 
 
 Senior Web Developer
@@ -541,7 +541,7 @@ Highlights:
 - Hosted on Azure
 
 Skills / Technologies:
-TypeScript, SPA, AngularJS, C#, WebApi, ASP.NET, SQL Server, T-SQL, Unity,
+TypeScript, AngularJS, SPA, C#, WebApi, ASP.NET, SQL Server, T-SQL, Unity,
 Entity Framework, Azure, TFS
 
 
@@ -609,9 +609,9 @@ Highlights:
   Durandal+KnockoutJS+MsTest+ASP.NET, is now Aurelia+XUnit+ASP.NET Core.
 
 Skills / Technologies:
-SPA, JavaScript, HTML, CSS, Aurelia, Webpack, C#, ASP.NET Core, MVC, WebAPI,
-Identity, Ajax, jQuery, Bootstrap, RequireJS, KnockoutJS, SQL Server, T-SQL,
-MsTest, XUnit.NET, crypto-js, DES, Encryption, SHA,
+crypto-js, SPA, JavaScript, HTML, CSS, Aurelia, Webpack, C#, ASP.NET Core,
+MVC, WebAPI, Identity, Ajax, jQuery, Bootstrap, RequireJS, KnockoutJS, SQL
+Server, T-SQL, MsTest, XUnit.NET, DES, Encryption, SHA,
 System.Security.Cryptography, entity framework
 
 
