@@ -345,40 +345,77 @@
 }
 
 /**
- * The priorities tab. Not built on `.chip`, which is a button and is scrolled inside a
- * capped `.chips` box: a pill here is a label plus an editable number, and the lists are
- * meant to be read whole rather than scrolled.
+ * The priorities tab: one skill per row, in a box that scrolls on its own. It has to be
+ * its own scroller rather than the page, because a move scrolls it to hold the moved row
+ * still; see `SkillPrioritiesEditor.nudge`.
  */
-.pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.pill {
-  align-items: center;
-  background: var(--surface);
+.priority-list {
   border: 1px solid var(--line);
-  border-radius: 999px;
-  display: inline-flex;
-  gap: 0.35rem;
-  padding: 0.1rem 0.15rem 0.1rem 0.6rem;
+  border-radius: 6px;
+  list-style: none;
+  margin: 0.5rem 0 0;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 0;
 }
 
-.pill-name {
-  font-size: 0.85em;
-  white-space: nowrap;
+.priority-row {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: auto minmax(12rem, 1fr) 5.5rem minmax(0, 1.5fr);
+  padding: 0.2rem 0.5rem;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  /** The skill last moved by an arrow or a drop, so it can be followed by eye. */
+  &.is-moved {
+    background: #dbe9ff;
+  }
+
+  &.is-dragging {
+    opacity: 0.4;
+  }
+
+  /** Where the dragged row would land: a bar along the edge it would go. */
+  &.drop-before {
+    box-shadow: inset 0 3px 0 var(--accent);
+  }
+
+  &.drop-after {
+    box-shadow: inset 0 -3px 0 var(--accent);
+  }
+
+  .hint {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.priority-move {
+  display: inline-flex;
+  gap: 0.15rem;
+}
+
+/** Two class selectors, to outrank the `.admin button` rule. */
+.admin .priority-move button {
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+}
+
+.priority-name {
+  cursor: grab;
 }
 
 /** Two class selectors, to outrank the `.admin input` width rule. */
-.admin .pill-priority {
+.admin .priority-value {
   background: var(--sunken);
-  border-radius: 999px;
-  font-size: 0.85em;
-  padding: 0.1rem 0.2rem;
-  text-align: center;
-  width: 5.25rem;
+  padding: 0.15rem 0.3rem;
+  text-align: right;
 }
 
 /** The filter box has been retyped but not yet blurred, so the list below is still stale. */

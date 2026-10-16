@@ -1,43 +1,51 @@
 <div class="editor">
   <div class="editor-head">
-    <p class="hint">
-      Every skill, as a pill under each category it belongs to, in the order the resume
-      itself puts them: priority ascending, ties alphabetical. Edit a priority and the pill
-      moves when the field loses focus. A skill in several categories has a pill in each,
-      showing the one shared value, so a change lands in all of them at once.
-    </p>
+    <label class="search">Category
+      <select value.bind="category" change.trigger="movedNote = ''">
+        <option model.bind="null">All categories</option>
+        <option repeat.for="name of store.categories" model.bind="name">${name}</option>
+        <option model.bind="''" if.bind="rows('', sortRevision).length">Uncategorised</option>
+      </select>
+    </label>
+    <p class="hint">${rows(category, sortRevision).length} skills</p>
   </div>
+  <p class="hint">
+    In the order the resume itself puts them: priority ascending, ties alphabetical. Use a
+    skill's &uarr; and &darr; buttons, or drag it by its name, and it is given a priority
+    between its new neighbours'. Or edit the number, and the skill moves when the field
+    loses focus. A skill has one priority, shared by every category it is in, so moving it
+    in one category can move it in the others.
+    <template if.bind="category === ''">
+      These are in no category listed under Categories, so the resume shows no skills pill for them.
+    </template>
+  </p>
+  <p class="renamed" if.bind="movedNote">${movedNote}</p>
 
-  <section class="sub" repeat.for="category of store.categories">
-    <h4>${category} <span class="hint">${skillsIn(category, sortRevision).length}</span></h4>
-    <div class="pills">
-      <!--
-        Repeats over skill objects rather than an index range: the identities are stable,
-        so the repeater moves the existing views on a re-sort instead of rebuilding them.
-      -->
-      <span class="pill" repeat.for="skill of skillsIn(category, sortRevision)">
-        <span class="pill-name">${skill.name}</span>
-        <!-- One-way, with the write done in the store, so a string never reaches the document. -->
-        <input type="number" step="any" class="pill-priority" value.to-view="skill.priority"
-          input.trigger="store.setSkillPriority(skill, $event.target.value)"
-          blur.trigger="commit(skill, $event.target)">
-      </span>
-    </div>
-  </section>
+  <!--
+    Repeats over skill objects rather than an index range: the identities are stable, so
+    the repeater moves the existing rows on a re-sort instead of rebuilding them, which is
+    what lets `nudge` measure the same row before and after.
 
-  <section class="sub" if.bind="uncategorised(sortRevision).length">
-    <h4>Uncategorised <span class="hint">${uncategorised(sortRevision).length}</span></h4>
-    <p class="hint">
-      In no category that is listed under Categories, so the resume shows no pill for these
-      at all.
-    </p>
-    <div class="pills">
-      <span class="pill" repeat.for="skill of uncategorised(sortRevision)">
-        <span class="pill-name">${skill.name}</span>
-        <input type="number" step="any" class="pill-priority" value.to-view="skill.priority"
-          input.trigger="store.setSkillPriority(skill, $event.target.value)"
-          blur.trigger="commit(skill, $event.target)">
+    The classes are inline expressions rather than a method call, because a method call is
+    only re-evaluated when its arguments change and these read drag state.
+  -->
+  <ol class="priority-list" ref="listEl">
+    <li class="priority-row ${lastMoved === skill ? 'is-moved' : ''} ${dragSkill === skill ? 'is-dragging' : ''} ${dropSkill === skill ? (dropAfter ? 'drop-after' : 'drop-before') : ''}"
+      repeat.for="skill of rows(category, sortRevision)"
+      dragover.trigger="dragOver(skill, $event)" dragleave.trigger="dragLeave(skill, $event)"
+      drop.trigger="drop(skill, $event)">
+      <span class="priority-move">
+        <button type="button" title="Move up" click.trigger="nudge(skill, -1, $event)" disabled.bind="$first">&uarr;</button>
+        <button type="button" title="Move down" click.trigger="nudge(skill, 1, $event)" disabled.bind="$last">&darr;</button>
       </span>
-    </div>
-  </section>
+      <!-- The name is the drag handle, not the whole row, so the number stays selectable. -->
+      <span class="priority-name" draggable="true" title="Drag to reorder"
+        dragstart.trigger="dragStart(skill, $event)" dragend.trigger="dragEnd()">${skill.name}</span>
+      <!-- One-way, with the write done in the store, so a string never reaches the document. -->
+      <input type="number" step="any" class="priority-value" value.to-view="skill.priority"
+        input.trigger="store.setSkillPriority(skill, $event.target.value)"
+        blur.trigger="commit(skill, $event.target)">
+      <span class="hint">${skill.categories.join(', ')}</span>
+    </li>
+  </ol>
 </div>
